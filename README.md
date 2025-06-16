@@ -1,19 +1,17 @@
-# @nattui/boilerplate-components
-
-> Boilerplate components for Natt UI
+# @nattui/react-components
 
 A collection of reusable React components built with TypeScript and CSS Modules.
 
 ## Installation
 
 ```bash
-pnpm add @nattui/boilerplate-components
+pnpm add @nattui/react-components
 ```
 
 ## Usage
 
 ```tsx
-import { Button } from "@nattui/boilerplate-components"
+import { Button } from "@nattui/react-components"
 
 function App() {
   return <Button onClick={() => console.log("Clicked!")}>Click me</Button>
@@ -31,8 +29,8 @@ function App() {
 
 ```bash
 # Clone the repository
-git clone https://github.com/nattui/boilerplate-components.git
-cd boilerplate-components
+git clone https://github.com/nattui/react-components.git
+cd react-components
 
 # Install dependencies
 pnpm install

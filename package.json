@@ -1,18 +1,18 @@
 {
-  "name": "@nattui/boilerplate-components",
+  "name": "@nattui/react-components",
   "version": "0.0.1",
-  "description": "A collection of reusable React components",
+  "description": "A collection of reusable React components built with TypeScript and CSS Modules",
   "keywords": [
     "components",
     "react"
   ],
-  "homepage": "https://github.com/nattui/boilerplate-components#readme",
+  "homepage": "https://github.com/nattui/react-components#readme",
   "bugs": {
-    "url": "https://github.com/nattui/boilerplate-components/issues"
+    "url": "https://github.com/nattui/react-components/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nattui/boilerplate-components.git"
+    "url": "git+https://github.com/nattui/react-components.git"
   },
   "license": "MIT",
   "author": "Natt Nguyen <hello@natt.sh> (https://natt.sh)",
