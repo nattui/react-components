@@ -1,5 +1,5 @@
 import { type ComponentProps } from "react"
-import styles from "./button.module.css"
+import styles from "@/button.module.css"
 
 export interface ButtonProperties extends ComponentProps<"button"> {}
 
