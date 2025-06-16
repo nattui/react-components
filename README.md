@@ -2,6 +2,9 @@
 
 A collection of reusable React components built with TypeScript and CSS Modules.
 
+> [!NOTE]
+> This project is currently a work in progress.
+
 ## Installation
 
 ```bash
@@ -22,8 +25,8 @@ function App() {
 
 ### Prerequisites
 
-- Node.js (latest LTS recommended)
-- pnpm
+- Node.js (latest LTS version recommended)
+- pnpm package manager
 
 ### Setup
 
@@ -63,7 +66,7 @@ pnpm check:lint
 # Fix linting issues
 pnpm check:lint:fix
 
-# Update dependencies
+# Update all dependencies
 pnpm update
 ```
 
