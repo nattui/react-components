@@ -13,7 +13,10 @@
   },
   "license": "MIT",
   "author": "Natt Nguyen <hello@natt.sh> (https://natt.sh)",
-  "main": "index.js",
+  "exports": "./dist/index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsup",
     "check": "pnpm check:format && pnpm check:lint",
