@@ -1,8 +1,11 @@
 {
   "name": "@nattui/boilerplate-components",
   "version": "0.0.1",
-  "description": "Boilerplate components for Natt UI",
-  "keywords": [],
+  "description": "A collection of reusable React components",
+  "keywords": [
+    "components",
+    "react"
+  ],
   "homepage": "https://github.com/nattui/boilerplate-components#readme",
   "bugs": {
     "url": "https://github.com/nattui/boilerplate-components/issues"
