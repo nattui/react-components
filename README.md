@@ -23,53 +23,6 @@ function App() {
 
 ## Development
 
-### Prerequisites
-
-- Node.js (latest LTS version recommended)
-- pnpm package manager
-
-### Setup
-
-```bash
-# Clone the repository
-git clone https://github.com/nattui/react-components.git
-cd react-components
-
-# Install dependencies
-pnpm install
-```
-
-### Available Scripts
-
-```bash
-# Build the library
-pnpm build
-
-# Development mode with watch
-pnpm dev
-
-# Run linting and formatting checks
-pnpm check
-
-# Fix linting and formatting issues
-pnpm check:fix
-
-# Check formatting only
-pnpm check:format
-
-# Fix formatting issues
-pnpm check:format:fix
-
-# Check linting only
-pnpm check:lint
-
-# Fix linting issues
-pnpm check:lint:fix
-
-# Update all dependencies
-pnpm update
-```
-
 ### Project Structure
 
 ```
