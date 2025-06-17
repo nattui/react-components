@@ -3,20 +3,20 @@ import { Button } from "@nattui/react-components";
 export default function Home() {
   return (
     <div className="flex flex-col gap-4 p-16">
-      <p>Size</p>
-      <div className="flex gap-4 items-center">
-        <Button size={32}>Add goal</Button>
-        <Button size={36}>Add goal</Button>
-        <Button size={40}>Add goal</Button>
-        <Button size={48}>Add goal</Button>
-      </div>
-
       <p>Variant</p>
       <div className="flex gap-4 items-center">
         <Button variant="primary">Add goal</Button>
         <Button variant="secondary">Add goal</Button>
         <Button variant="ghost">Add goal</Button>
         <Button variant="accent">Add goal</Button>
+      </div>
+
+      <p>Size</p>
+      <div className="flex gap-4 items-center">
+        <Button size={32}>Add goal</Button>
+        <Button size={36}>Add goal</Button>
+        <Button size={40}>Add goal</Button>
+        <Button size={48}>Add goal</Button>
       </div>
 
       <p>Rounded</p>

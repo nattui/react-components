@@ -10,6 +10,9 @@
   transition-property: all;
   cursor: pointer;
   outline-width: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
   font-weight: 500;
   line-height: 1.5;
   user-select: none;
@@ -20,14 +23,23 @@
   cursor: not-allowed;
 }
 
+.button:enabled[data-aria-pressed="true"] > *,
 .button:enabled:active > * {
   transform: translateY(1px);
   transition-duration: 150ms;
   transition-property: transform;
 }
 
+.button:enabled[data-aria-pressed="true"] > *,
+.button:enabled:active > *,
+.button:enabled:hover > * {
+  filter: none !important;
+}
+
+.button:enabled[data-aria-pressed="true"],
+.button:enabled:active,
 .button:enabled:hover {
-  opacity: 0.75;
+  opacity: 0.85;
 }
 
 /* Size */
@@ -56,23 +68,121 @@
 }
 
 /* Variant */
+/* Accent */
 .button__variant_accent {
-  background-color: var(--color-primary-9, #e93d82);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.25),
+    inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+  border-color: var(--color-primary-9, #e93d82);
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-primary-9, #e93d82),
+    var(--color-primary-10, #e03177)
+  );
   color: var(--color-gray-1, #fdfcfd);
 }
 
+.button__variant_accent:enabled[data-aria-pressed="true"],
+.button__variant_accent:enabled:active {
+  box-shadow:
+    inset 0 -1px 0 0 rgba(255, 255, 255, 0.25),
+    inset 0 1px 0 0 rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Ghost */
 .button__variant_ghost {
   background-color: transparent;
   color: var(--color-gray-11, #6f6e77);
 }
 
+.button__variant_ghost:enabled[data-aria-pressed="true"],
+.button__variant_ghost:enabled:active {
+  background-color: var(--color-gray-5, #e9e8ea) !important;
+  color: var(--color-gray-12, #1a1523);
+}
+
+.button__variant_ghost:enabled:hover {
+  background-color: color-mix(
+    in oklab,
+    var(--color-gray-5, #e9e8ea) 75%,
+    transparent
+  );
+  color: var(--color-gray-12, #1a1523);
+}
+
+/* Primary */
 .button__variant_primary {
-  background-color: var(--color-gray-12, #1a1523);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.25),
+    inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+  border-color: var(--color-gray-12, #1a1523);
+  background-image: linear-gradient(
+    to bottom,
+    color-mix(in oklab, var(--color-gray-12, #1a1523) 90%, transparent),
+    var(--color-gray-12, #1a1523)
+  );
   color: var(--color-gray-1, #fdfcfd);
 }
 
+.button__variant_primary:enabled[data-aria-pressed="true"],
+.button__variant_primary:enabled:active {
+  box-shadow:
+    inset 0 -1px 0 0 rgba(255, 255, 255, 0.25),
+    inset 0 1px 0 0 rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Secondary */
 .button__variant_secondary {
-  background-color: var(--color-gray-2, #f9f8f9);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.25),
+    inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+  border-color: var(--color-gray-6, #e4e2e4);
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-gray-1, #fdfcfd),
+    var(--color-gray-3, #f4f2f4)
+  );
+  color: var(--color-gray-11, #6f6e77);
+}
+
+.button__variant_secondary:enabled[data-aria-pressed="true"],
+.button__variant_secondary:enabled:active,
+.button__variant_secondary:enabled:hover {
+  border-color: var(--color-gray-8, #c8c7cb);
+  color: var(--color-gray-12, #1a1523);
+}
+
+.button__variant_secondary:enabled[data-aria-pressed="true"],
+.button__variant_secondary:enabled:active {
+  box-shadow:
+    inset 0 -1px 0 0 var(--color-gray-1, #fdfcfd),
+    inset 0 1px 0 0 rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Group */
+.button__variant_accent,
+.button__variant_primary,
+.button__variant_secondary {
+  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.05));
+}
+
+.button__variant_accent > * {
+  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.1));
+}
+
+.button__variant_primary > * {
+  filter: drop-shadow(0 1px 0 rgb(255 255 255 / 0.1));
+}
+
+.button__variant_accent:enabled:hover,
+.button__variant_primary:enabled:hover,
+.button__variant_secondary:enabled:hover {
+  filter: none;
+  box-shadow: inset 0 0 0 0 transparent;
+}
+
+.button__variant_ghost:enabled:hover,
+.button__variant_secondary:enabled:hover {
   color: var(--color-gray-12, #1a1523);
 }
 
