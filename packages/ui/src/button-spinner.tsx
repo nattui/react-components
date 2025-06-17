@@ -1,11 +1,11 @@
 import type { CSSProperties, JSX } from "react"
 import styles from "@/button-spinner.module.css"
 
-interface ButtonSpinnerProps {
+export interface ButtonSpinnerProps {
   size?: number
 }
 
-export default function ButtonSpinner(props: ButtonSpinnerProps): JSX.Element {
+export function ButtonSpinner(props: ButtonSpinnerProps): JSX.Element {
   const { size = 16 } = props
 
   return (

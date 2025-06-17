@@ -1,8 +1,9 @@
 import type { ComponentProps, JSX, ReactNode } from "react"
-import ButtonSpinner from "@/button-spinner"
+import { ButtonBackground } from "@/button-background"
+import { ButtonSpinner } from "@/button-spinner"
 import styles from "@/button.module.css"
 
-export interface ButtonProperties extends ComponentProps<"button"> {
+export interface ButtonProps extends ComponentProps<"button"> {
   fullWidth?: boolean
   iconEnd?: ReactNode
   iconStart?: ReactNode
@@ -12,7 +13,50 @@ export interface ButtonProperties extends ComponentProps<"button"> {
   variant?: "accent" | "ghost" | "primary" | "secondary"
 }
 
-export const buttonStyles = {
+export function Button(properties: ButtonProps): JSX.Element {
+  const {
+    children = "",
+    className: customClassName = "",
+    disabled = false,
+    fullWidth = false,
+    iconEnd = "",
+    iconStart = "",
+    isLoading = false,
+    rounded = false,
+    size = 36,
+    type = "button",
+    variant = "primary",
+    ...rest
+  } = properties
+
+  const combinedClassName = `
+    ${buttonClassName.base}
+    ${buttonClassName.size[size]}
+    ${buttonClassName.variant[variant]}
+    ${rounded ? buttonClassName.rounded.full : buttonClassName.rounded.base}
+    ${fullWidth ? buttonClassName.width.full : buttonClassName.width.base}
+    ${customClassName}
+  `
+    .replaceAll(/\s+/g, " ")
+    .trim()
+
+  return (
+    <button
+      className={combinedClassName}
+      disabled={disabled || isLoading}
+      type={type}
+      {...rest}
+    >
+      <ButtonBackground rounded={rounded} variant={variant} />
+      {isLoading && <ButtonSpinner />}
+      {!isLoading && iconStart}
+      <span>{children}</span>
+      {!isLoading && iconEnd}
+    </button>
+  )
+}
+
+export const buttonClassName = {
   base: styles.button,
   rounded: {
     base: styles.button__rounded_base,
@@ -34,46 +78,4 @@ export const buttonStyles = {
     base: styles.button__width_base,
     full: styles.button__width_full,
   },
-}
-
-export function Button(properties: ButtonProperties): JSX.Element {
-  const {
-    children = "",
-    className: customClassName = "",
-    disabled = false,
-    fullWidth = false,
-    iconEnd = "",
-    iconStart = "",
-    isLoading = false,
-    rounded = false,
-    size = 36,
-    type = "button",
-    variant = "primary",
-    ...rest
-  } = properties
-
-  const combinedClassName = `
-    ${buttonStyles.base}
-    ${buttonStyles.size[size]}
-    ${buttonStyles.variant[variant]}
-    ${rounded ? buttonStyles.rounded.full : buttonStyles.rounded.base}
-    ${fullWidth ? buttonStyles.width.full : buttonStyles.width.base}
-    ${customClassName}
-  `
-    .replaceAll(/\s+/g, " ")
-    .trim()
-
-  return (
-    <button
-      className={combinedClassName}
-      disabled={disabled || isLoading}
-      type={type}
-      {...rest}
-    >
-      {isLoading && <ButtonSpinner />}
-      {!isLoading && iconStart}
-      <span>{children}</span>
-      {!isLoading && iconEnd}
-    </button>
-  )
-}
+} as const

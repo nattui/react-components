@@ -1,0 +1,38 @@
+/* Base */
+.button_background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 50%;
+  left: 0;
+  opacity: 0.2;
+  z-index: -1;
+  filter: none !important;
+  transition: opacity 150ms;
+}
+
+/* Rounded */
+.button_background__rounded_base {
+  border-radius: 7px;
+}
+
+.button_background__rounded_full {
+  border-radius: 9999px;
+}
+
+/* Variant */
+.button_background__variant_accent {
+  background: linear-gradient(
+    to bottom,
+    var(--color-primary-7, #edadc8),
+    var(--color-primary-8, #e58fb1)
+  );
+}
+
+.button_background__variant_primary {
+  background: linear-gradient(
+    to bottom,
+    var(--color-gray-10, #86848d),
+    var(--color-gray-11, #6f6e77)
+  );
+}

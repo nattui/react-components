@@ -13,6 +13,7 @@
   border-width: 1px;
   border-style: solid;
   border-color: transparent;
+  overflow: hidden;
   font-weight: 500;
   line-height: 1.5;
   user-select: none;
@@ -23,6 +24,7 @@
   cursor: not-allowed;
 }
 
+/* Active */
 .button:enabled[data-aria-pressed="true"] > *,
 .button:enabled:active > * {
   transform: translateY(1px);
@@ -30,16 +32,25 @@
   transition-property: transform;
 }
 
+/* Disable child shadow */
 .button:enabled[data-aria-pressed="true"] > *,
 .button:enabled:active > *,
 .button:enabled:hover > * {
   filter: none !important;
 }
 
+/* Hover */
 .button:enabled[data-aria-pressed="true"],
 .button:enabled:active,
 .button:enabled:hover {
   opacity: 0.85;
+}
+
+/* Button background */
+.button:enabled[data-aria-pressed="true"] > div:first-child,
+.button:enabled:active > div:first-child,
+.button:enabled:hover > div:first-child {
+  opacity: 0;
 }
 
 /* Size */
