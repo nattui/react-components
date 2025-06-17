@@ -82,6 +82,24 @@ export default function Home() {
           Add goal
         </Button>
       </div>
+
+      <p>Icon</p>
+      <div className="flex gap-4 items-center">
+        <Button iconStart="👍" iconEnd="👍" variant="accent">
+          Add goal
+        </Button>
+        <Button iconStart="👍" iconEnd="👍" variant="primary">
+          Add goal
+        </Button>
+        <Button iconStart="👍" iconEnd="👍" variant="secondary">
+          Add goal
+        </Button>
+        <Button iconStart="👍" iconEnd="👍" variant="ghost">
+          Add goal
+        </Button>
+      </div>
+
+      <Button className="!absolute top-16 right-16">Absolute</Button>
     </div>
   );
 }
