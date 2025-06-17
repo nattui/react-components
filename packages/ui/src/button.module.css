@@ -1,5 +1,7 @@
+/* Base */
 .button {
   display: flex;
+  position: relative;
   column-gap: 8px;
   flex-shrink: 0;
   justify-content: safe center;
@@ -8,13 +10,22 @@
   transition-property: all;
   cursor: pointer;
   outline-width: 0;
-  border: 1px dashed red;
-  border-radius: 8px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5;
   user-select: none;
 }
 
+.button:active > * {
+  transform: translateY(1px);
+  transition-duration: 150ms;
+  transition-property: transform;
+}
+
+.button:hover {
+  opacity: 0.75;
+}
+
+/* Size */
 .button__size_32 {
   padding: 0 8px;
   height: 32px;
@@ -37,4 +48,43 @@
   padding: 0 20px;
   height: 48px;
   font-size: 16px;
+}
+
+/* Variant */
+.button__variant_accent {
+  background-color: var(--color-primary-9, #e93d82);
+  color: var(--color-gray-1, #fdfcfd);
+}
+
+.button__variant_ghost {
+  background-color: transparent;
+  color: var(--color-gray-11, #6f6e77);
+}
+
+.button__variant_primary {
+  background-color: var(--color-gray-12, #1a1523);
+  color: var(--color-gray-1, #fdfcfd);
+}
+
+.button__variant_secondary {
+  background-color: var(--color-gray-2, #f9f8f9);
+  color: var(--color-gray-12, #1a1523);
+}
+
+/* Rounded */
+.button__rounded_base {
+  border-radius: 8px;
+}
+
+.button__rounded_full {
+  border-radius: 9999px;
+}
+
+/* Width */
+.button__width_base {
+  width: max-content;
+}
+
+.button__width_full {
+  width: 100%;
 }
