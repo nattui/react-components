@@ -30,11 +30,11 @@ export function Button(properties: ButtonProps): JSX.Element {
   } = properties
 
   const combinedClassName = `
-    ${buttonClassName.base}
-    ${buttonClassName.size[size]}
-    ${buttonClassName.variant[variant]}
-    ${rounded ? buttonClassName.rounded.full : buttonClassName.rounded.base}
-    ${fullWidth ? buttonClassName.width.full : buttonClassName.width.base}
+    ${BUTTON_CLASS_NAME.BASE}
+    ${BUTTON_CLASS_NAME.SIZE[size]}
+    ${BUTTON_CLASS_NAME.VARIANT[variant.toUpperCase()]}
+    ${rounded ? BUTTON_CLASS_NAME.ROUNDED.FULL : BUTTON_CLASS_NAME.ROUNDED.BASE}
+    ${fullWidth ? BUTTON_CLASS_NAME.WIDTH.FULL : BUTTON_CLASS_NAME.WIDTH.BASE}
     ${customClassName}
   `
     .replaceAll(/\s+/g, " ")
@@ -56,26 +56,26 @@ export function Button(properties: ButtonProps): JSX.Element {
   )
 }
 
-export const buttonClassName = {
-  base: styles.button,
-  rounded: {
-    base: styles.button__rounded_base,
-    full: styles.button__rounded_full,
+export const BUTTON_CLASS_NAME = {
+  BASE: styles.button,
+  ROUNDED: {
+    BASE: styles.button__rounded_base,
+    FULL: styles.button__rounded_full,
   },
-  size: {
+  SIZE: {
     32: styles.button__size_32,
     36: styles.button__size_36,
     40: styles.button__size_40,
     48: styles.button__size_48,
   },
-  variant: {
-    accent: styles.button__variant_accent,
-    ghost: styles.button__variant_ghost,
-    primary: styles.button__variant_primary,
-    secondary: styles.button__variant_secondary,
+  VARIANT: {
+    ACCENT: styles.button__variant_accent,
+    GHOST: styles.button__variant_ghost,
+    PRIMARY: styles.button__variant_primary,
+    SECONDARY: styles.button__variant_secondary,
   },
-  width: {
-    base: styles.button__width_base,
-    full: styles.button__width_full,
+  WIDTH: {
+    BASE: styles.button__width_base,
+    FULL: styles.button__width_full,
   },
 } as const

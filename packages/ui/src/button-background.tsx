@@ -9,10 +9,10 @@ export function ButtonBackground(props: ButtonBackgroundProps): JSX.Element {
   const { rounded = false, variant = "primary" } = props
 
   const combinedBackgroundStyles = `
-    ${buttonBackgroundClassName.base}
-    ${rounded ? buttonBackgroundClassName.rounded.full : buttonBackgroundClassName.rounded.base}
-    ${variant === "accent" && buttonBackgroundClassName.variant.accent}
-    ${variant === "primary" && buttonBackgroundClassName.variant.primary}
+    ${BUTTON_BACKGROUND_CLASS_NAME.BASE}
+    ${rounded ? BUTTON_BACKGROUND_CLASS_NAME.ROUNDED.FULL : BUTTON_BACKGROUND_CLASS_NAME.ROUNDED.BASE}
+    ${variant === "accent" && BUTTON_BACKGROUND_CLASS_NAME.VARIANT.ACCENT}
+    ${variant === "primary" && BUTTON_BACKGROUND_CLASS_NAME.VARIANT.PRIMARY}
   `
     .replaceAll(/\s+/g, " ")
     .trim()
@@ -22,14 +22,14 @@ export function ButtonBackground(props: ButtonBackgroundProps): JSX.Element {
   return <div className={combinedBackgroundStyles} />
 }
 
-export const buttonBackgroundClassName = {
-  base: styles.button_background,
-  rounded: {
-    base: styles.button_background__rounded_base,
-    full: styles.button_background__rounded_full,
+export const BUTTON_BACKGROUND_CLASS_NAME = {
+  BASE: styles.button_background,
+  ROUNDED: {
+    BASE: styles.button_background__rounded_base,
+    FULL: styles.button_background__rounded_full,
   },
-  variant: {
-    accent: styles.button_background__variant_accent,
-    primary: styles.button_background__variant_primary,
+  VARIANT: {
+    ACCENT: styles.button_background__variant_accent,
+    PRIMARY: styles.button_background__variant_primary,
   },
 } as const
