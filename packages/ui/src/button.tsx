@@ -1,12 +1,15 @@
-import { type ComponentProps } from "react"
+import type { ComponentProps, JSX, ReactNode } from "react"
+import ButtonSpinner from "@/button-spinner"
 import styles from "@/button.module.css"
 
 export interface ButtonProperties extends ComponentProps<"button"> {
   fullWidth?: boolean
+  iconEnd?: ReactNode
+  iconStart?: ReactNode
   isLoading?: boolean
   rounded?: boolean
   size?: 32 | 36 | 40 | 48
-  variant?: "primary" | "secondary"
+  variant?: "accent" | "ghost" | "primary" | "secondary"
 }
 
 export const buttonStyles = {
@@ -33,12 +36,14 @@ export const buttonStyles = {
   },
 }
 
-export function Button(properties: ButtonProperties) {
+export function Button(properties: ButtonProperties): JSX.Element {
   const {
     children = "",
     className: customClassName = "",
     disabled = false,
     fullWidth = false,
+    iconEnd = "",
+    iconStart = "",
     isLoading = false,
     rounded = false,
     size = 36,
@@ -65,7 +70,10 @@ export function Button(properties: ButtonProperties) {
       type={type}
       {...rest}
     >
+      {isLoading && <ButtonSpinner />}
+      {!isLoading && iconStart}
       <span>{children}</span>
+      {!isLoading && iconEnd}
     </button>
   )
 }

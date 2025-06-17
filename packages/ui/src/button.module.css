@@ -15,13 +15,18 @@
   user-select: none;
 }
 
-.button:active > * {
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button:enabled:active > * {
   transform: translateY(1px);
   transition-duration: 150ms;
   transition-property: transform;
 }
 
-.button:hover {
+.button:enabled:hover {
   opacity: 0.75;
 }
 
