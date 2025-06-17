@@ -5,10 +5,10 @@ export default function Home() {
     <div className="flex flex-col gap-4 p-16">
       <p>Variant</p>
       <div className="flex gap-4 items-center">
-        <Button variant="primary">Add goal</Button>
-        <Button variant="secondary">Add goal</Button>
-        <Button variant="ghost">Add goal</Button>
-        <Button variant="accent">Add goal</Button>
+        <Button variant="accent">Accent</Button>
+        <Button variant="primary">Primary</Button>
+        <Button variant="secondary">Secondary</Button>
+        <Button variant="ghost">Ghost</Button>
       </div>
 
       <p>Size</p>
@@ -21,6 +21,9 @@ export default function Home() {
 
       <p>Rounded</p>
       <div className="flex gap-4 items-center">
+        <Button rounded variant="accent">
+          Add goal
+        </Button>
         <Button rounded variant="primary">
           Add goal
         </Button>
@@ -30,13 +33,13 @@ export default function Home() {
         <Button rounded variant="ghost">
           Add goal
         </Button>
-        <Button rounded variant="accent">
-          Add goal
-        </Button>
       </div>
 
       <p>Disabled</p>
       <div className="flex gap-4 items-center">
+        <Button disabled variant="accent">
+          Add goal
+        </Button>
         <Button disabled variant="primary">
           Add goal
         </Button>
@@ -46,13 +49,13 @@ export default function Home() {
         <Button disabled variant="ghost">
           Add goal
         </Button>
-        <Button disabled variant="accent">
-          Add goal
-        </Button>
       </div>
 
       <p>Loading</p>
       <div className="flex gap-4 items-center">
+        <Button isLoading variant="accent">
+          Add goal
+        </Button>
         <Button isLoading variant="primary">
           Add goal
         </Button>
@@ -62,7 +65,20 @@ export default function Home() {
         <Button isLoading variant="ghost">
           Add goal
         </Button>
-        <Button isLoading variant="accent">
+      </div>
+
+      <p>Active</p>
+      <div className="flex gap-4 items-center">
+        <Button aria-pressed variant="accent">
+          Add goal
+        </Button>
+        <Button aria-pressed variant="primary">
+          Add goal
+        </Button>
+        <Button aria-pressed variant="secondary">
+          Add goal
+        </Button>
+        <Button aria-pressed variant="ghost">
           Add goal
         </Button>
       </div>
