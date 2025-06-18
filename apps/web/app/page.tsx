@@ -1,4 +1,5 @@
 import { Button } from "@nattui/react-components";
+import { LucideArrowLeft, LucideArrowRight } from "lucide-react";
 
 export default function Home() {
   return (
@@ -86,29 +87,29 @@ export default function Home() {
       <p>Icon</p>
       <div className="flex gap-4 items-center">
         <Button
-          iconStart={<Icon name="start" />}
-          iconEnd={<Icon name="end" />}
+          iconStart={<LucideArrowLeft size={16} />}
+          iconEnd={<LucideArrowRight size={16} />}
           variant="accent"
         >
           Add goal
         </Button>
         <Button
-          iconStart={<Icon name="start" />}
-          iconEnd={<Icon name="end" />}
+          iconStart={<LucideArrowLeft size={16} />}
+          iconEnd={<LucideArrowRight size={16} />}
           variant="primary"
         >
           Add goal
         </Button>
         <Button
-          iconStart={<Icon name="start" />}
-          iconEnd={<Icon name="end" />}
+          iconStart={<LucideArrowLeft size={16} />}
+          iconEnd={<LucideArrowRight size={16} />}
           variant="secondary"
         >
           Add goal
         </Button>
         <Button
-          iconStart={<Icon name="start" />}
-          iconEnd={<Icon name="end" />}
+          iconStart={<LucideArrowLeft size={16} />}
+          iconEnd={<LucideArrowRight size={16} />}
           variant="ghost"
         >
           Add goal
@@ -118,8 +119,4 @@ export default function Home() {
       <Button className="!absolute top-16 right-16">Absolute</Button>
     </div>
   );
-}
-
-function Icon(props: { name: "start" | "end" }) {
-  return <div>{props.name === "start" ? "👉" : "👈"}</div>;
 }
