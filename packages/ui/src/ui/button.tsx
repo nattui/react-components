@@ -1,7 +1,7 @@
 import type { ComponentProps, JSX, ReactNode } from "react"
-import { ButtonBackground } from "@/button-background"
-import { ButtonSpinner } from "@/button-spinner"
-import styles from "@/button.module.css"
+import { ButtonBackground } from "@/ui/button-background"
+import { ButtonSpinner } from "@/ui/button-spinner"
+import styles from "@/ui/button.module.css"
 
 export type ButtonProps = ButtonPropsWithIcon | ButtonPropsWithText
 
