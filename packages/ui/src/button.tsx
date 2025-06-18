@@ -45,7 +45,7 @@ export function Button(properties: ButtonProps): JSX.Element {
   const combinedClassName = `
     ${BUTTON_CLASS_NAME.BASE}
     ${BUTTON_CLASS_NAME.SIZE[size]}
-    ${BUTTON_CLASS_NAME.VARIANT[variant.toUpperCase()]}
+    ${BUTTON_CLASS_NAME.VARIANT[variant.toUpperCase() as keyof typeof BUTTON_CLASS_NAME.VARIANT]}
     ${fullWidth ? BUTTON_CLASS_NAME.WIDTH.FULL : BUTTON_CLASS_NAME.WIDTH.BASE}
     ${iconOnly ? BUTTON_CLASS_NAME.ICON_ONLY : ""}
     ${rounded ? BUTTON_CLASS_NAME.ROUNDED.FULL : BUTTON_CLASS_NAME.ROUNDED.BASE}
