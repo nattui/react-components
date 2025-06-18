@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-4 p-16">
       <p>Variant</p>
-      <div className="flex gap-4 items-center">
+      <div className="flex gap-4 items-center flex-wrap">
         <Button variant="accent">Accent</Button>
         <Button variant="primary">Primary</Button>
         <Button variant="secondary">Secondary</Button>
@@ -13,7 +13,7 @@ export default function Home() {
       </div>
 
       <p>Size</p>
-      <div className="flex gap-4 items-center">
+      <div className="flex gap-4 items-center flex-wrap">
         <Button size={32}>Add goal</Button>
         <Button size={36}>Add goal</Button>
         <Button size={40}>Add goal</Button>
@@ -21,7 +21,7 @@ export default function Home() {
       </div>
 
       <p>Rounded</p>
-      <div className="flex gap-4 items-center">
+      <div className="flex gap-4 items-center flex-wrap">
         <Button rounded variant="accent">
           Add goal
         </Button>
@@ -37,7 +37,7 @@ export default function Home() {
       </div>
 
       <p>Disabled</p>
-      <div className="flex gap-4 items-center">
+      <div className="flex gap-4 items-center flex-wrap">
         <Button disabled variant="accent">
           Add goal
         </Button>
@@ -53,7 +53,7 @@ export default function Home() {
       </div>
 
       <p>Loading</p>
-      <div className="flex gap-4 items-center">
+      <div className="flex gap-4 items-center flex-wrap">
         <Button isLoading variant="accent">
           Add goal
         </Button>
@@ -69,7 +69,7 @@ export default function Home() {
       </div>
 
       <p>Active</p>
-      <div className="flex gap-4 items-center">
+      <div className="flex gap-4 items-center flex-wrap">
         <Button aria-pressed variant="accent">
           Add goal
         </Button>
@@ -85,7 +85,7 @@ export default function Home() {
       </div>
 
       <p>Icon</p>
-      <div className="flex gap-4 items-center">
+      <div className="flex gap-4 items-center flex-wrap">
         <Button
           iconStart={<LucideArrowLeft size={16} />}
           iconEnd={<LucideArrowRight size={16} />}
@@ -112,6 +112,13 @@ export default function Home() {
           iconEnd={<LucideArrowRight size={16} />}
           variant="ghost"
         >
+          Add goal
+        </Button>
+      </div>
+
+      <p>Full width</p>
+      <div className="flex gap-4 items-center flex-wrap">
+        <Button className="max-w-xs" fullWidth>
           Add goal
         </Button>
       </div>
