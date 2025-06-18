@@ -1,4 +1,6 @@
+/* ===================================================== */
 /* Base */
+/* ===================================================== */
 .button {
   display: flex;
   position: relative;
@@ -53,32 +55,59 @@
   opacity: 0;
 }
 
+/* ===================================================== */
+/* Icon only */
+/* ===================================================== */
+.button__icon_only {
+  padding: 0 !important;
+  width: var(--size) !important;
+}
+
+/* ===================================================== */
+/* Rounded */
+/* ===================================================== */
+.button__rounded_base {
+  border-radius: 8px;
+}
+
+.button__rounded_full {
+  border-radius: 9999px;
+}
+
+/* ===================================================== */
 /* Size */
+/* ===================================================== */
 .button__size_32 {
+  --size: 32px;
   padding: 0 8px;
-  height: 32px;
+  height: var(--size);
   font-size: 14px;
 }
 
 .button__size_36 {
+  --size: 36px;
   padding: 0 12px;
-  height: 36px;
+  height: var(--size);
   font-size: 14px;
 }
 
 .button__size_40 {
+  --size: 40px;
   padding: 0 16px;
-  height: 40px;
+  height: var(--size);
   font-size: 14px;
 }
 
 .button__size_48 {
+  --size: 48px;
   padding: 0 20px;
-  height: 48px;
+  height: var(--size);
   font-size: 16px;
 }
 
+/* ===================================================== */
 /* Variant */
+/* ===================================================== */
 /* Accent */
 .button__variant_accent {
   box-shadow:
@@ -197,16 +226,9 @@
   color: var(--color-gray-12, #1a1523);
 }
 
-/* Rounded */
-.button__rounded_base {
-  border-radius: 8px;
-}
-
-.button__rounded_full {
-  border-radius: 9999px;
-}
-
+/* ===================================================== */
 /* Width */
+/* ===================================================== */
 .button__width_base {
   width: max-content;
 }

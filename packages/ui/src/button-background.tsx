@@ -11,8 +11,8 @@ export function ButtonBackground(props: ButtonBackgroundProps): JSX.Element {
   const combinedBackgroundStyles = `
     ${BUTTON_BACKGROUND_CLASS_NAME.BASE}
     ${rounded ? BUTTON_BACKGROUND_CLASS_NAME.ROUNDED.FULL : BUTTON_BACKGROUND_CLASS_NAME.ROUNDED.BASE}
-    ${variant === "accent" && BUTTON_BACKGROUND_CLASS_NAME.VARIANT.ACCENT}
-    ${variant === "primary" && BUTTON_BACKGROUND_CLASS_NAME.VARIANT.PRIMARY}
+    ${variant === "accent" ? BUTTON_BACKGROUND_CLASS_NAME.VARIANT.ACCENT : ""}
+    ${variant === "primary" ? BUTTON_BACKGROUND_CLASS_NAME.VARIANT.PRIMARY : ""}
   `
     .replaceAll(/\s+/g, " ")
     .trim()
