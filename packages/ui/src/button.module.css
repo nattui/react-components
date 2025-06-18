@@ -47,9 +47,9 @@
 }
 
 /* Button background */
-.button:enabled[aria-pressed="true"] > div:first-child,
-.button:enabled:active > div:first-child,
-.button:enabled:hover > div:first-child {
+.button:enabled[aria-pressed="true"] > [data-element="button-background"],
+.button:enabled:active > [data-element="button-background"],
+.button:enabled:hover > [data-element="button-background"] {
   opacity: 0;
 }
 

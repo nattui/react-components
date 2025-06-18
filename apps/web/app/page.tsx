@@ -85,16 +85,32 @@ export default function Home() {
 
       <p>Icon</p>
       <div className="flex gap-4 items-center">
-        <Button iconStart="👍" iconEnd="👍" variant="accent">
+        <Button
+          iconStart={<Icon name="start" />}
+          iconEnd={<Icon name="end" />}
+          variant="accent"
+        >
           Add goal
         </Button>
-        <Button iconStart="👍" iconEnd="👍" variant="primary">
+        <Button
+          iconStart={<Icon name="start" />}
+          iconEnd={<Icon name="end" />}
+          variant="primary"
+        >
           Add goal
         </Button>
-        <Button iconStart="👍" iconEnd="👍" variant="secondary">
+        <Button
+          iconStart={<Icon name="start" />}
+          iconEnd={<Icon name="end" />}
+          variant="secondary"
+        >
           Add goal
         </Button>
-        <Button iconStart="👍" iconEnd="👍" variant="ghost">
+        <Button
+          iconStart={<Icon name="start" />}
+          iconEnd={<Icon name="end" />}
+          variant="ghost"
+        >
           Add goal
         </Button>
       </div>
@@ -102,4 +118,8 @@ export default function Home() {
       <Button className="!absolute top-16 right-16">Absolute</Button>
     </div>
   );
+}
+
+function Icon(props: { name: "start" | "end" }) {
+  return <div>{props.name === "start" ? "👉" : "👈"}</div>;
 }

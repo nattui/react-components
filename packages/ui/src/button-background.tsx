@@ -19,7 +19,12 @@ export function ButtonBackground(props: ButtonBackgroundProps): JSX.Element {
 
   if (!(variant === "accent" || variant === "primary")) return <></>
 
-  return <div className={combinedBackgroundStyles} />
+  return (
+    <div
+      className={combinedBackgroundStyles}
+      data-element="button-background"
+    />
+  )
 }
 
 export const BUTTON_BACKGROUND_CLASS_NAME = {
