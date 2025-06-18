@@ -1,6 +1,6 @@
 import type { JSX } from "react"
-import type { ButtonProps } from "@/ui/button"
-import styles from "@/ui/button-background.module.css"
+import type { ButtonProps } from "@/button"
+import styles from "@/button-background.module.css"
 
 export interface ButtonBackgroundProps
   extends Pick<ButtonProps, "rounded" | "variant"> {}

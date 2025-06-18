@@ -1,13 +1,12 @@
 import type { ComponentProps, JSX, ReactNode } from "react"
-import { ButtonBackground } from "@/ui/button-background"
-import { ButtonSpinner } from "@/ui/button-spinner"
-import styles from "@/ui/button.module.css"
+import { ButtonBackground } from "@/button-background"
+import { ButtonSpinner } from "@/button-spinner"
+import styles from "@/button.module.css"
 
-export type ButtonProps = ButtonPropsWithIcon | ButtonPropsWithText
-
-interface ButtonPropsBase extends ComponentProps<"button"> {
+export interface ButtonProps extends ComponentProps<"button"> {
   fullWidth?: boolean
   iconEnd?: ReactNode
+  iconOnly?: boolean
   iconStart?: ReactNode
   isLoading?: boolean
   rounded?: boolean
@@ -15,17 +14,19 @@ interface ButtonPropsBase extends ComponentProps<"button"> {
   variant?: "accent" | "ghost" | "primary" | "secondary"
 }
 
-interface ButtonPropsWithIcon extends ButtonPropsBase {
+type ButtonPropsInternal = ButtonPropsWithIcon | ButtonPropsWithText
+
+interface ButtonPropsWithIcon extends ButtonProps {
   children?: ReactNode
   iconOnly: true
 }
 
-interface ButtonPropsWithText extends ButtonPropsBase {
+interface ButtonPropsWithText extends ButtonProps {
   children?: string
   iconOnly?: false
 }
 
-export function Button(props: ButtonProps): JSX.Element {
+export function Button(props: ButtonPropsInternal): JSX.Element {
   const {
     children = "",
     className: customClassName = "",
