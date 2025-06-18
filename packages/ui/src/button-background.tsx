@@ -1,5 +1,5 @@
 import type { JSX } from "react"
-import { ButtonProps } from "@/button"
+import type { ButtonProps } from "@/button"
 import styles from "@/button-background.module.css"
 
 export interface ButtonBackgroundProps
