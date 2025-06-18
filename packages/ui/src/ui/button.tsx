@@ -25,7 +25,7 @@ interface ButtonPropsWithText extends ButtonPropsBase {
   iconOnly?: false
 }
 
-export function Button(properties: ButtonProps): JSX.Element {
+export function Button(props: ButtonProps): JSX.Element {
   const {
     children = "",
     className: customClassName = "",
@@ -40,7 +40,7 @@ export function Button(properties: ButtonProps): JSX.Element {
     type = "button",
     variant = "primary",
     ...rest
-  } = properties
+  } = props
 
   const combinedClassName = `
     ${BUTTON_CLASS_NAME.BASE}
