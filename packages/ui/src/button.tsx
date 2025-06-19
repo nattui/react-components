@@ -65,7 +65,7 @@ export function Button(props: ButtonPropsInternal): JSX.Element {
       <ButtonBackground rounded={rounded} variant={variant} />
       {isLoading && <ButtonSpinner />}
       {!isLoading && iconStart}
-      {children}
+      {iconOnly ? children : <span>{children}</span>}
       {!isLoading && iconEnd}
     </button>
   )
