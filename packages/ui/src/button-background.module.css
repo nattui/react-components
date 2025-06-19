@@ -1,14 +1,14 @@
 /* Base */
 .button_background {
-  position: absolute;
-  top: 0;
-  right: 0;
   bottom: 50%;
+  filter: none !important;
   left: 0;
   opacity: 0.2;
-  z-index: -1;
-  filter: none !important;
+  position: absolute;
+  right: 0;
+  top: 0;
   transition: opacity 150ms;
+  z-index: -1;
 }
 
 /* Rounded */
