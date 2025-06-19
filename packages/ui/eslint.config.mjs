@@ -1,4 +1,3 @@
-import css from "@eslint/css"
 import js from "@eslint/js"
 import pluginPerfectionist from "eslint-plugin-perfectionist"
 import pluginReact from "eslint-plugin-react"
@@ -38,16 +37,6 @@ export default defineConfig([
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
     languageOptions: { globals: globals.browser },
-  },
-  // CSS configuration
-  {
-    extends: ["css/recommended"],
-    files: ["**/*.css"],
-    language: "css/css",
-    plugins: { css },
-    rules: {
-      "css/use-baseline": "off",
-    },
   },
   // JavaScript configuration
   {
