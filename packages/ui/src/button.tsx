@@ -4,7 +4,7 @@ import { ButtonSpinner } from "@/button-spinner"
 import styles from "@/button.module.css"
 
 export interface ButtonProps
-  extends Omit<ComponentProps<"button">, "disabled"> {
+  extends Omit<ComponentProps<"button">, "aria-pressed" | "disabled"> {
   fullWidth?: boolean
   iconEnd?: ReactNode
   iconOnly?: boolean
