@@ -4,7 +4,8 @@
   "description": "A collection of reusable React components built with TypeScript and CSS Modules",
   "keywords": [
     "components",
-    "react"
+    "react",
+    "ui"
   ],
   "homepage": "https://github.com/nattui/react-components#readme",
   "bugs": {
