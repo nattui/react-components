@@ -44,16 +44,16 @@ export default function ButtonPage() {
 
       <p>Disabled</p>
       <div className="flex gap-4 items-center flex-wrap">
-        <Button disabled variant="accent">
+        <Button isDisabled variant="accent">
           Add goal
         </Button>
-        <Button disabled variant="primary">
+        <Button isDisabled variant="primary">
           Add goal
         </Button>
-        <Button disabled variant="secondary">
+        <Button isDisabled variant="secondary">
           Add goal
         </Button>
-        <Button disabled variant="ghost">
+        <Button isDisabled variant="ghost">
           Add goal
         </Button>
       </div>
@@ -76,16 +76,16 @@ export default function ButtonPage() {
 
       <p>Active</p>
       <div className="flex gap-4 items-center flex-wrap">
-        <Button aria-pressed variant="accent">
+        <Button isActive variant="accent">
           Add goal
         </Button>
-        <Button aria-pressed variant="primary">
+        <Button isActive variant="primary">
           Add goal
         </Button>
-        <Button aria-pressed variant="secondary">
+        <Button isActive variant="secondary">
           Add goal
         </Button>
-        <Button aria-pressed variant="ghost">
+        <Button isActive variant="ghost">
           Add goal
         </Button>
       </div>

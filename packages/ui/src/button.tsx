@@ -3,11 +3,14 @@ import { ButtonBackground } from "@/button-background"
 import { ButtonSpinner } from "@/button-spinner"
 import styles from "@/button.module.css"
 
-export interface ButtonProps extends ComponentProps<"button"> {
+export interface ButtonProps
+  extends Omit<ComponentProps<"button">, "disabled"> {
   fullWidth?: boolean
   iconEnd?: ReactNode
   iconOnly?: boolean
   iconStart?: ReactNode
+  isActive?: boolean
+  isDisabled?: boolean
   isLoading?: boolean
   rounded?: boolean
   size?: 32 | 36 | 40 | 48
@@ -30,11 +33,12 @@ export function Button(props: ButtonPropsInternal): JSX.Element {
   const {
     children = "",
     className: customClassName = "",
-    disabled = false,
     fullWidth = false,
     iconEnd = "",
     iconOnly = false,
     iconStart = "",
+    isActive = false,
+    isDisabled = false,
     isLoading = false,
     rounded = false,
     size = 36,
@@ -57,8 +61,9 @@ export function Button(props: ButtonPropsInternal): JSX.Element {
 
   return (
     <button
+      aria-pressed={isActive}
       className={combinedClassName}
-      disabled={disabled || isLoading}
+      disabled={isDisabled || isLoading}
       type={type}
       {...rest}
     >
