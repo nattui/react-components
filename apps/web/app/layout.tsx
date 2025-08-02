@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Link from "next/link";
 import type { PropsWithChildren } from "react";
 import "./globals.css";
+import Topbar from "@/app/topbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,14 +31,5 @@ export default function RootLayout(props: PropsWithChildren) {
         {children}
       </body>
     </html>
-  );
-}
-
-function Topbar() {
-  return (
-    <div className="flex gap-4 p-4">
-      {/* <Link href="/">Home</Link> */}
-      <Link href="/button">Button</Link>
-    </div>
   );
 }
