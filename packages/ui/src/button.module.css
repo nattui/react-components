@@ -21,7 +21,7 @@
   position: relative;
   transition-duration: 150ms;
   transition-property:
-    background-color, box-shadow, border-color, color, opacity;
+    background-color, border-color, box-shadow, color, opacity, scale;
   user-select: none;
 }
 
@@ -34,12 +34,17 @@
   outline-width: 2px;
 }
 
+.button:enabled[aria-pressed="true"],
+.button:enabled:active {
+  scale: 0.985;
+}
+
 /* Active children */
 .button:enabled[aria-pressed="true"] > *,
 .button:enabled:active > * {
-  transform: translateY(1px);
   transition-duration: 150ms;
-  transition-property: transform;
+  transition-property: translate;
+  translate: 0 1px;
 }
 
 /* Disable child shadow */
