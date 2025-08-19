@@ -21,7 +21,7 @@
   position: relative;
   transition-duration: 150ms;
   transition-property:
-    background-color, border-color, box-shadow, color, opacity, scale;
+    background-color, border-color, box-shadow, color, opacity, scale, translate;
   user-select: none;
 }
 
@@ -37,13 +37,6 @@
 .button:enabled[aria-pressed="true"],
 .button:enabled:active {
   scale: 0.985;
-}
-
-/* Active children */
-.button:enabled[aria-pressed="true"] > *,
-.button:enabled:active > * {
-  transition-duration: 150ms;
-  transition-property: translate;
   translate: 0 1px;
 }
 
