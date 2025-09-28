@@ -15,7 +15,6 @@
     "type": "git",
     "url": "git+https://github.com/nattui/react-components.git"
   },
-  "license": "MIT",
   "author": "Natt Nguyen <hello@natt.sh> (https://natt.sh)",
   "exports": {
     ".": {
