@@ -12,7 +12,7 @@ export interface ButtonProps
   isActive?: boolean
   isDisabled?: boolean
   isLoading?: boolean
-  rounded?: boolean
+  isRounded?: boolean
   size?: 32 | 36 | 40 | 48
   variant?: "accent" | "ghost" | "primary" | "secondary"
 }
@@ -40,7 +40,7 @@ export function Button(props: ButtonPropsInternal): JSX.Element {
     isActive = false,
     isDisabled = false,
     isLoading = false,
-    rounded = false,
+    isRounded = false,
     size = 36,
     type = "button",
     variant = "primary",
@@ -53,7 +53,7 @@ export function Button(props: ButtonPropsInternal): JSX.Element {
     ${BUTTON_CLASS_NAME.VARIANT[variant.toUpperCase() as keyof typeof BUTTON_CLASS_NAME.VARIANT]}
     ${fullWidth ? BUTTON_CLASS_NAME.WIDTH.FULL : BUTTON_CLASS_NAME.WIDTH.BASE}
     ${iconOnly ? BUTTON_CLASS_NAME.ICON_ONLY : ""}
-    ${rounded ? BUTTON_CLASS_NAME.ROUNDED.FULL : BUTTON_CLASS_NAME.ROUNDED.BASE}
+    ${isRounded ? BUTTON_CLASS_NAME.ROUNDED.FULL : BUTTON_CLASS_NAME.ROUNDED.BASE}
     ${customClassName}
   `
     .replaceAll(/\s+/g, " ")
@@ -67,7 +67,7 @@ export function Button(props: ButtonPropsInternal): JSX.Element {
       type={type}
       {...rest}
     >
-      <ButtonBackground rounded={rounded} variant={variant} />
+      <ButtonBackground isRounded={isRounded} variant={variant} />
       {isLoading && <ButtonSpinner />}
       {!isLoading && iconStart}
       {iconOnly ? children : <span>{children}</span>}

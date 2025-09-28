@@ -28,16 +28,16 @@ export default function ButtonPage() {
 
       <p>Rounded</p>
       <div className="flex gap-4 items-center flex-wrap">
-        <Button rounded variant="accent">
+        <Button isRounded variant="accent">
           Add goal
         </Button>
-        <Button rounded variant="primary">
+        <Button isRounded variant="primary">
           Add goal
         </Button>
-        <Button rounded variant="secondary">
+        <Button isRounded variant="secondary">
           Add goal
         </Button>
-        <Button rounded variant="ghost">
+        <Button isRounded variant="ghost">
           Add goal
         </Button>
       </div>

@@ -3,14 +3,14 @@ import type { ButtonProps } from "@/button"
 import styles from "@/button-background.module.css"
 
 export interface ButtonBackgroundProps
-  extends Pick<ButtonProps, "rounded" | "variant"> {}
+  extends Pick<ButtonProps, "isRounded" | "variant"> {}
 
 export function ButtonBackground(props: ButtonBackgroundProps): JSX.Element {
-  const { rounded = false, variant = "primary" } = props
+  const { isRounded = false, variant = "primary" } = props
 
   const combinedBackgroundStyles = `
     ${BUTTON_BACKGROUND_CLASS_NAME.BASE}
-    ${rounded ? BUTTON_BACKGROUND_CLASS_NAME.ROUNDED.FULL : BUTTON_BACKGROUND_CLASS_NAME.ROUNDED.BASE}
+    ${isRounded ? BUTTON_BACKGROUND_CLASS_NAME.ROUNDED.FULL : BUTTON_BACKGROUND_CLASS_NAME.ROUNDED.BASE}
     ${variant === "accent" ? BUTTON_BACKGROUND_CLASS_NAME.VARIANT.ACCENT : ""}
     ${variant === "primary" ? BUTTON_BACKGROUND_CLASS_NAME.VARIANT.PRIMARY : ""}
   `

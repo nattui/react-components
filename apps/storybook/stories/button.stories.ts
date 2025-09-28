@@ -17,7 +17,7 @@ const meta = {
     size: { control: "select", options: [32, 36, 40, 48] },
     isDisabled: { control: "boolean" },
     isLoading: { control: "boolean" },
-    rounded: { control: "boolean" },
+    isRounded: { control: "boolean" },
     fullWidth: { control: "boolean" },
   },
   args: { onClick: fn() },
@@ -91,7 +91,7 @@ export const Disabled: Story = {
 export const Rounded: Story = {
   args: {
     children: "Rounded Button",
-    rounded: true,
+    isRounded: true,
   },
 };
 
