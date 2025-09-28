@@ -8,6 +8,7 @@ const meta = {
   parameters: {
     layout: "centered",
   },
+  tags: ["autodocs"],
   argTypes: {
     variant: {
       control: "select",
@@ -25,8 +26,93 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Default: Story = {
   args: {
     children: "Button",
+  },
+};
+
+export const Primary: Story = {
+  args: {
+    children: "Primary Button",
+    variant: "primary",
+  },
+};
+
+export const Accent: Story = {
+  args: {
+    children: "Accent Button",
+    variant: "accent",
+  },
+};
+
+export const Secondary: Story = {
+  args: {
+    children: "Secondary Button",
+    variant: "secondary",
+  },
+};
+
+export const Ghost: Story = {
+  args: {
+    children: "Ghost Button",
+    variant: "ghost",
+  },
+};
+
+export const Large: Story = {
+  args: {
+    children: "Large Button",
+    size: 48,
+  },
+};
+
+export const Small: Story = {
+  args: {
+    children: "Small Button",
+    size: 32,
+  },
+};
+
+export const Loading: Story = {
+  args: {
+    children: "Loading...",
+    isLoading: true,
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    children: "Disabled Button",
+    isDisabled: true,
+  },
+};
+
+export const Rounded: Story = {
+  args: {
+    children: "Rounded Button",
+    rounded: true,
+  },
+};
+
+export const FullWidth: Story = {
+  args: {
+    children: "Full Width Button",
+    fullWidth: true,
+  },
+};
+
+export const IconOnly: Story = {
+  args: {
+    children: "🚀",
+    iconOnly: true,
+  },
+};
+
+export const WithIcons: Story = {
+  args: {
+    children: "Button with Icons",
+    iconStart: "🚀",
+    iconEnd: "✨",
   },
 };
