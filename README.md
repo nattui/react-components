@@ -5,6 +5,11 @@
 
 A collection of reusable React components built with TypeScript and CSS Modules.
 
+## Links
+
+- Website: https://react-components-web.vercel.app
+- Storybook: https://react-components-storybook-mu.vercel.app
+
 ## Installation
 
 ```bash
@@ -14,10 +19,10 @@ pnpm add @nattui/react-components
 ## Usage
 
 ```tsx
-import { Button } from "@nattui/react-components"
+import { Button } from "@nattui/react-components";
 
 function App() {
-  return <Button onClick={() => console.log("Clicked!")}>Click me</Button>
+  return <Button onClick={() => console.log("Clicked!")}>Click me</Button>;
 }
 ```
 
