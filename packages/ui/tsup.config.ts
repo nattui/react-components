@@ -5,7 +5,7 @@ export default defineConfig({
   dts: true,
   entry: ["src/index.ts"],
   external: ["react", "react-dom"],
-  format: ["esm", "cjs"],
+  format: ["cjs", "esm"],
   loader: { ".css": "copy" },
   sourcemap: true,
   splitting: true,
