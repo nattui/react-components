@@ -1,6 +1,6 @@
 {
   "name": "@nattui/react-components",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A collection of reusable React components built with TypeScript and CSS Modules",
   "keywords": [
     "components",
@@ -17,9 +17,15 @@
   },
   "license": "MIT",
   "author": "Natt Nguyen <hello@natt.sh> (https://natt.sh)",
-  "exports": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "main": "./dist/index.js",
-  "module": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsup",
