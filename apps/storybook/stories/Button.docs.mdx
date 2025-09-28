@@ -1,0 +1,75 @@
+# Button
+
+import { Meta, Canvas } from "@storybook/addon-docs/blocks"
+import * as ButtonStories from "./Button.stories"
+
+{/* <Meta of={ButtonStories} /> */}
+
+The Button component is a primary UI component for user interaction. It supports different sizes, styles, and can be configured as primary or secondary.
+
+## Overview
+
+<Canvas of={ButtonStories.Primary} />
+
+## Variants
+
+### Primary Button
+
+The primary button is used for the main call-to-action on a page.
+
+<Canvas of={ButtonStories.Primary} />
+
+### Secondary Button
+
+The secondary button is used for secondary actions.
+
+<Canvas of={ButtonStories.Secondary} />
+
+## Sizes
+
+### Large Button
+
+Use large buttons for prominent actions.
+
+<Canvas of={ButtonStories.Large} />
+
+### Medium Button (Default)
+
+The default medium size is suitable for most use cases.
+
+<Canvas of={ButtonStories.Secondary} />
+
+### Small Button
+
+Use small buttons in compact layouts or for less important actions.
+
+<Canvas of={ButtonStories.Small} />
+
+## Props
+
+The Button component accepts the following props:
+
+- **primary** (boolean): Whether this is the principal call to action on the page
+- **backgroundColor** (string): Custom background color
+- **size** ("small" | "medium" | "large"): Button size
+- **label** (string): Button text content
+- **onClick** (function): Click handler function
+
+## Usage
+
+```jsx
+import { Button } from './Button';
+
+// Primary button
+<Button primary label="Get Started" />
+
+// Secondary button
+<Button label="Learn More" />
+
+// Custom size and color
+<Button
+  size="large"
+  backgroundColor="#ff6b6b"
+  label="Custom Button"
+/>
+```
