@@ -8,10 +8,10 @@
     "update": "taze --recursive"
   },
   "devDependencies": {
-    "prettier": "^3.6.2",
-    "prettier-plugin-css-order": "^2.1.2",
-    "prettier-plugin-packagejson": "^2.5.19",
-    "prettier-plugin-sort-json": "^4.1.1",
+    "prettier": "catalog:",
+    "prettier-plugin-css-order": "catalog:",
+    "prettier-plugin-packagejson": "catalog:",
+    "prettier-plugin-sort-json": "catalog:",
     "taze": "^19.7.0",
     "turbo": "^2.5.8"
   },
