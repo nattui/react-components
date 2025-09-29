@@ -9,7 +9,3 @@
 packages:
   - "apps/*"
   - "packages/*"
-
-# Fix prettier error where failed to load plugins.
-publicHoistPattern:
-  - "prettier-plugin-*"
