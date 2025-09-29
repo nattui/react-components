@@ -2,7 +2,7 @@
   "name": "monorepo",
   "scripts": {
     "build": "turbo build",
-    "dev": "turbo dev --parallel",
+    "dev": "turbo dev",
     "update": "taze --recursive"
   },
   "devDependencies": {
