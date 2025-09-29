@@ -3,9 +3,10 @@
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev --parallel",
-    "update": "pnpx taze --recursive"
+    "update": "taze --recursive"
   },
   "devDependencies": {
+    "taze": "^19.7.0",
     "turbo": "^2.5.8"
   },
   "packageManager": "pnpm@10.12.1"
