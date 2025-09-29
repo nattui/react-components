@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "next/link"
 
 export default function Topbar() {
   return (
@@ -6,5 +6,5 @@ export default function Topbar() {
       <Link href="/button">Button</Link>
       <Link href="/input">Input</Link>
     </div>
-  );
+  )
 }

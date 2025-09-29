@@ -3,6 +3,7 @@
   "scripts": {
     "build": "turbo build",
     "check:format": "prettier --check .",
+    "check:format:fix": "prettier --write .",
     "dev": "turbo dev",
     "update": "taze --recursive"
   },

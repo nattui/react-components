@@ -1,9 +1,5 @@
-import { Button } from "@nattui/react-components";
-import {
-  LucideArrowLeft,
-  LucideArrowRight,
-  LucideDownload,
-} from "lucide-react";
+import { Button } from "@nattui/react-components"
+import { LucideArrowLeft, LucideArrowRight, LucideDownload } from "lucide-react"
 
 export default function ButtonPage() {
   return (
@@ -161,5 +157,5 @@ export default function ButtonPage() {
         </Button>
       </div>
     </div>
-  );
+  )
 }

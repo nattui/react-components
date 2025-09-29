@@ -1,10 +1,10 @@
 {
   "name": "web",
   "scripts": {
-    "dev": "next dev --port 3001 --turbopack",
     "build": "next build --turbopack",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "next dev --port 3001 --turbopack",
+    "lint": "next lint",
+    "start": "next start"
   },
   "dependencies": {
     "@nattui/react-components": "workspace:*",
