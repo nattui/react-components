@@ -9,3 +9,7 @@
 packages:
   - "apps/*"
   - "packages/*"
+
+# Hoist prettier plugins to make them accessible.
+publicHoistPattern:
+  - "prettier-plugin-*"
