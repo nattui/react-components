@@ -10,6 +10,6 @@ packages:
   - "apps/*"
   - "packages/*"
 
-# Hoist prettier plugins to make them accessible.
+# Fix prettier error where failed to load plugins.
 publicHoistPattern:
   - "prettier-plugin-*"
