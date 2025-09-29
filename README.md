@@ -19,10 +19,10 @@ pnpm add @nattui/react-components
 ## Usage
 
 ```tsx
-import { Button } from "@nattui/react-components";
+import { Button } from "@nattui/react-components"
 
 function App() {
-  return <Button onClick={() => console.log("Clicked!")}>Click me</Button>;
+  return <Button onClick={() => console.log("Clicked!")}>Click me</Button>
 }
 ```
 
