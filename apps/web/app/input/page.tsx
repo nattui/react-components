@@ -19,6 +19,16 @@ export default function InputPage() {
         Password
       </Label>
       <Input id="password" placeholder="••••••••" type="password" />
+
+      <Label className="mb-1" htmlFor="url-read-only">
+        URL (Read Only)
+      </Label>
+      <Input
+        id="url-read-only"
+        placeholder="https://example.com"
+        type="url"
+        isReadOnly
+      />
     </div>
   )
 }

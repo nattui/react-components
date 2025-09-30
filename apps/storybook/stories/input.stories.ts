@@ -122,6 +122,6 @@ export const WithMaxLength: Story = {
 export const ReadOnly: Story = {
   args: {
     value: "Read-only value",
-    readOnly: true,
+    isReadOnly: true,
   },
 }
