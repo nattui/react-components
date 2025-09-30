@@ -18,7 +18,12 @@ export default function InputPage() {
       <Label className="mb-1" htmlFor="password">
         Password
       </Label>
-      <Input id="password" placeholder="••••••••" type="password" />
+      <Input
+        className="mb-8"
+        id="password"
+        placeholder="••••••••"
+        type="password"
+      />
 
       <Label className="mb-1" htmlFor="url-read-only">
         URL (Read Only)
