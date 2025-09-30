@@ -1,0 +1,108 @@
+/* ===================================================== */
+/* Base */
+/* ===================================================== */
+.input {
+  appearance: none;
+  background-color: var(--color-gray-1, #fcfcfc);
+  border-color: var(--color-gray-5, #e0e0e0);
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 1px #0000000d;
+  color: var(--color-gray-12, #202020);
+  cursor: text;
+  font-size: 14px;
+  font-weight: 400;
+  height: 40px;
+  line-height: 1.5;
+  outline-color: var(--color-primary-9, #e93d82);
+  outline-offset: 2px;
+  outline-width: 0;
+  padding: 0 12px;
+  text-decoration: none;
+  transition-duration: 150ms;
+  transition-property: background-color, border-color, opacity;
+  width: 100%;
+}
+
+.input::placeholder {
+  color: var(--color-gray-11, #646464);
+  user-select: none;
+}
+
+.input:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.input:hover {
+  border-color: var(--color-gray-8, #bbbbbb);
+}
+
+.input:hover {
+  border-color: var(--color-gray-8, #bbbbbb);
+}
+
+.input:enabled:active,
+.input:enabled:focus,
+.input:enabled[aria-pressed="true"] {
+  border-color: var(--color-gray-8, #bbbbbb);
+}
+
+.input:focus-visible {
+  outline-width: 2px;
+}
+
+/*
+✅ appearance-none
+✅ cursor-text
+✅ font-400
+✅ h-40
+✅ leading-150
+✅ placeholder:select-none
+✅ placeholder:text-gray-9
+✅ px-12
+✅ text-14
+✅ text-gray-12
+✅ transition-[background-color,border-color,opacity]
+✅ w-full
+✅ bg-gray-1
+✅ border-solid
+✅ border
+✅ border-gray-5
+✅ hover:border-gray-8
+✅ disabled:cursor-not-allowed
+✅ disabled:opacity-50
+✅ duration-150
+✅ outline-0
+✅ outline-offset-2
+✅ outline-primary-9
+✅ rounded-8
+✅ shadow-1
+✅ aria-pressed:border-gray-8
+✅ active:border-gray-8
+✅ focus:border-gray-8
+❔ pl-36
+❔ disabled:bg-gray-1
+❔ disabled:border-gray-5
+data-[invalid]:!border-[red]
+data-[invalid]:!text-[red]
+✅ focus-visible:outline-2
+*/
+
+/*
+@theme {
+  --color-gray-1: #fcfcfc;
+  --color-gray-2: #f9f9f9;
+  --color-gray-3: #f0f0f0;
+  --color-gray-4: #e8e8e8;
+  --color-gray-5: #e0e0e0;
+  --color-gray-6: #d9d9d9;
+  --color-gray-7: #cecece;
+  --color-gray-8: #bbbbbb;
+  --color-gray-9: #8d8d8d;
+  --color-gray-10: #838383;
+  --color-gray-11: #646464;
+  --color-gray-12: #202020;
+}
+*/
