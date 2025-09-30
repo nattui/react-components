@@ -13,7 +13,16 @@ export default function InputPage() {
       </Label>
       <Input className="mb-8" id="email" placeholder="Enter your email" />
 
-      <Input className="mb-8" isDisabled placeholder="Disabled" />
+      <Label className="mb-1" htmlFor="url-disabled">
+        URL (Disabled)
+      </Label>
+      <Input
+        className="mb-8"
+        id="url-disabled"
+        isDisabled
+        value="https://example.com"
+        type="url"
+      />
 
       <Label className="mb-1" htmlFor="password">
         Password
