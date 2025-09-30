@@ -4,5 +4,5 @@
 .label {
   color: var(--color-gray-11, #646464);
   font-size: 13px;
-  width: min-content;
+  width: fit-content;
 }
