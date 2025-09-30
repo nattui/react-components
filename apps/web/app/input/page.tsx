@@ -30,7 +30,7 @@ export default function InputPage() {
       </Label>
       <Input
         id="url-read-only"
-        placeholder="https://example.com"
+        value="https://example.com"
         type="url"
         isReadOnly
       />
