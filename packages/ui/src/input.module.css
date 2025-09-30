@@ -17,6 +17,7 @@
   line-height: 1.5;
   outline-color: var(--color-primary-9, #e93d82);
   outline-offset: 2px;
+  outline-style: solid;
   outline-width: 0;
   padding: 0 12px;
   text-decoration: none;
@@ -35,11 +36,7 @@
   opacity: 0.5;
 }
 
-.input:hover {
-  border-color: var(--color-gray-8, #bbbbbb);
-}
-
-.input:hover {
+.input:enabled:hover {
   border-color: var(--color-gray-8, #bbbbbb);
 }
 
