@@ -7,7 +7,9 @@ export default function InputPage() {
       <Input id="name" placeholder="Enter your name" />
       <label htmlFor="email">Email</label>
       <Input id="email" placeholder="Enter your email" />
-      <Input disabled placeholder="Disabled" />
+      <Input isDisabled placeholder="Disabled" />
+      <label htmlFor="password">Password</label>
+      <Input id="password" placeholder="••••••••" type="password" />
     </div>
   )
 }
