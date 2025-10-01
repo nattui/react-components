@@ -13,7 +13,7 @@ export interface ButtonProps
   isFullWidth?: boolean
   isLoading?: boolean
   isRounded?: boolean
-  size?: 32 | 36 | 40 | 48
+  size?: 32 | 36 | 40 | 44
   variant?: "accent" | "ghost" | "primary" | "secondary"
 }
 
@@ -87,7 +87,7 @@ export const BUTTON_CLASS_NAME = {
     32: styles.button__size_32,
     36: styles.button__size_36,
     40: styles.button__size_40,
-    48: styles.button__size_48,
+    44: styles.button__size_44,
   },
   VARIANT: {
     ACCENT: styles.button__variant_accent,

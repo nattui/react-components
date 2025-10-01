@@ -1,5 +1,5 @@
 import { Button, Input, Label } from "@nattui/react-components"
-import { LucideEye, LucideLock, LucideMail } from "lucide-react"
+import { LucideEye, LucideLock, LucideLogIn, LucideMail } from "lucide-react"
 
 export default function InputPage() {
   return (
@@ -9,7 +9,12 @@ export default function InputPage() {
       </Label>
       <div className="relative mb-4">
         <LucideMail className="absolute left-3 top-3 text-gray-400" size={16} />
-        <Input className="pl-9!" id="email" type="email" />
+        <Input
+          className="pl-9!"
+          id="email"
+          type="email"
+          placeholder="name@example.com"
+        />
       </div>
 
       <Label className="mb-1" htmlFor="password">
@@ -17,7 +22,12 @@ export default function InputPage() {
       </Label>
       <div className="relative mb-4">
         <LucideLock className="absolute left-3 top-3 text-gray-400" size={16} />
-        <Input className="px-9!" id="password" type="password" />
+        <Input
+          className="px-9!"
+          id="password"
+          type="password"
+          placeholder="••••••••"
+        />
         <Button
           className="absolute! right-1 top-1 group"
           variant="ghost"
@@ -31,7 +41,13 @@ export default function InputPage() {
         </Button>
       </div>
 
-      <Button className="mb-8" variant="accent" size={40} isFullWidth>
+      <Button
+        className="mb-8"
+        iconStart={<LucideLogIn size={16} />}
+        isFullWidth
+        size={44}
+        variant="accent"
+      >
         Sign in
       </Button>
 

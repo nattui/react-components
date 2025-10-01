@@ -11,6 +11,7 @@
   display: flex;
   flex-shrink: 0;
   font-family: var(--font-sans, sans-serif);
+  font-size: 14px;
   font-weight: 500;
   justify-content: safe center;
   line-height: 1.5;
@@ -86,28 +87,24 @@
 /* ===================================================== */
 .button__size_32 {
   --size: 32px;
-  font-size: 14px;
   height: var(--size);
   padding: 0 8px;
 }
 
 .button__size_36 {
   --size: 36px;
-  font-size: 14px;
   height: var(--size);
   padding: 0 12px;
 }
 
 .button__size_40 {
   --size: 40px;
-  font-size: 14px;
   height: var(--size);
   padding: 0 16px;
 }
 
-.button__size_48 {
-  --size: 48px;
-  font-size: 16px;
+.button__size_44 {
+  --size: 44px;
   height: var(--size);
   padding: 0 20px;
 }
