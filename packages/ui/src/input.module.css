@@ -8,7 +8,7 @@
   border-radius: 8px;
   border-style: solid;
   border-width: 1px;
-  box-shadow: 0 1px #0000000d;
+  box-shadow: 0 1px rgba(0, 0, 0, 0.05);
   color: var(--color-gray-12, #202020);
   cursor: text;
   font-family: var(--font-sans, sans-serif);
@@ -23,7 +23,7 @@
   padding: 0 12px;
   text-decoration: none;
   transition-duration: 150ms;
-  transition-property: background-color, border-color, opacity;
+  transition-property: background-color, border-color, box-shadow, opacity;
   width: 100%;
 }
 
@@ -37,14 +37,12 @@
   opacity: 0.5;
 }
 
-.input:enabled:hover {
-  border-color: var(--color-gray-8, #bbbbbb);
-}
-
+.input:enabled:hover,
 .input:enabled:active,
 .input:enabled:focus,
 .input:enabled[aria-pressed="true"] {
   border-color: var(--color-gray-8, #bbbbbb);
+  box-shadow: 0 1px rgba(0, 0, 0, 0);
 }
 
 .input:focus-visible {

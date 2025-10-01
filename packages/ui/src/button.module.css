@@ -23,7 +23,8 @@
   position: relative;
   transition-duration: 150ms;
   transition-property:
-    background-color, border-color, box-shadow, color, opacity, scale, translate;
+    background-color, border-color, box-shadow, color, filter, opacity, scale,
+    translate;
   user-select: none;
 }
 
@@ -218,11 +219,17 @@
   filter: drop-shadow(0 1px 0 rgb(255 255 255 / 0.1));
 }
 
+.button__variant_accent:enabled:active,
 .button__variant_accent:enabled:hover,
+.button__variant_accent:enabled[aria-pressed="true"],
+.button__variant_primary:enabled:active,
 .button__variant_primary:enabled:hover,
-.button__variant_secondary:enabled:hover {
+.button__variant_primary:enabled[aria-pressed="true"],
+.button__variant_secondary:enabled:active,
+.button__variant_secondary:enabled:hover,
+.button__variant_secondary:enabled[aria-pressed="true"] {
   box-shadow: inset 0 0 0 0 transparent;
-  filter: none;
+  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0));
 }
 
 .button__variant_ghost:enabled:hover,
