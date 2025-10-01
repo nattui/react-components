@@ -95,6 +95,29 @@ export default function InputPage() {
           />
         </Button>
       </div>
+
+      <Label className="mb-1" htmlFor="input-with-end-icon-button">
+        Input with end icon button
+      </Label>
+      <div className="flex">
+        <Input
+          className="rounded-r-none! focus-visible:z-10"
+          id="input-with-end-icon-button"
+          placeholder="Download"
+          type="url"
+        />
+        <Button
+          className="group rounded-l-none! -ml-px shadow-none! focus-visible:z-10"
+          variant="secondary"
+          size={40}
+          iconOnly
+        >
+          <LucideCopy
+            className="text-gray-400 group-hover:text-gray-900 group-active:text-gray-900 transition-colors"
+            size={16}
+          />
+        </Button>
+      </div>
     </div>
   )
 }
