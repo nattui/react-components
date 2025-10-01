@@ -1,18 +1,32 @@
-import { Input, Label } from "@nattui/react-components"
-import { LucideMail } from "lucide-react"
+import { Button, Input, Label } from "@nattui/react-components"
+import { LucideEye, LucideLock, LucideMail } from "lucide-react"
 
 export default function InputPage() {
   return (
     <div className="flex flex-col p-8 max-w-sm mx-auto">
-      <Label className="mb-1" htmlFor="name">
-        Name
-      </Label>
-      <Input className="mb-8" id="name" placeholder="Enter your name" />
-
       <Label className="mb-1" htmlFor="email">
         Email
       </Label>
-      <Input className="mb-8" id="email" placeholder="Enter your email" />
+      <div className="relative mb-4">
+        <LucideMail className="absolute left-3 top-3 text-gray-400" size={16} />
+        <Input className="pl-9!" id="email" type="email" />
+      </div>
+
+      <Label className="mb-1" htmlFor="password">
+        Password
+      </Label>
+      <div className="relative mb-8">
+        <LucideLock className="absolute left-3 top-3 text-gray-400" size={16} />
+        <Input className="px-9!" id="password" type="password" />
+        <Button
+          className="absolute! right-1 top-1 text-gray-400"
+          variant="ghost"
+          size={32}
+          iconOnly
+        >
+          <LucideEye size={16} />
+        </Button>
+      </div>
 
       <Label className="mb-1" htmlFor="url-disabled">
         URL (Disabled)
@@ -25,16 +39,6 @@ export default function InputPage() {
         type="url"
       />
 
-      <Label className="mb-1" htmlFor="password">
-        Password
-      </Label>
-      <Input
-        className="mb-8"
-        id="password"
-        placeholder="••••••••"
-        type="password"
-      />
-
       <Label className="mb-1" htmlFor="url-read-only">
         URL (Read Only)
       </Label>
@@ -45,19 +49,6 @@ export default function InputPage() {
         type="url"
         isReadOnly
       />
-
-      <div className="relative">
-        <LucideMail
-          className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
-          size={16}
-        />
-        <Input
-          className="pl-9!"
-          defaultValue="example@example.com"
-          id="icon-email"
-          type="email"
-        />
-      </div>
     </div>
   )
 }
