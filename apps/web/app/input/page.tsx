@@ -2,7 +2,7 @@ import { Input, Label } from "@nattui/react-components"
 
 export default function InputPage() {
   return (
-    <div className="flex flex-col p-16">
+    <div className="flex flex-col p-16 max-w-sm">
       <Label className="mb-1" htmlFor="name">
         Name
       </Label>
