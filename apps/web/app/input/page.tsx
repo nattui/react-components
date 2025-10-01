@@ -1,5 +1,11 @@
 import { Button, Input, Label } from "@nattui/react-components"
-import { LucideEye, LucideLock, LucideLogIn, LucideMail } from "lucide-react"
+import {
+  LucideBan,
+  LucideEye,
+  LucideLock,
+  LucideLogIn,
+  LucideMail,
+} from "lucide-react"
 
 export default function InputPage() {
   return (
@@ -51,16 +57,19 @@ export default function InputPage() {
         Sign in
       </Button>
 
-      <Label className="mb-1" htmlFor="url-disabled">
-        URL (Disabled)
+      <Label className="mb-1" htmlFor="disabled">
+        Disabled
       </Label>
-      <Input
-        className="mb-8"
-        defaultValue="https://example.com"
-        id="url-disabled"
-        isDisabled
-        type="url"
-      />
+      <div className="relative mb-8">
+        <LucideBan className="absolute left-3 top-3 text-gray-400" size={16} />
+        <Input
+          className="pl-9!"
+          id="disabled"
+          isDisabled
+          placeholder="Disabled"
+          type="url"
+        />
+      </div>
 
       <Label className="mb-1" htmlFor="url-read-only">
         URL (Read Only)
