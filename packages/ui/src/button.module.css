@@ -23,7 +23,7 @@
   position: relative;
   transition-duration: 150ms;
   transition-property:
-    background-color, border-color, box-shadow, color, filter, opacity, scale,
+    background-color, border-color, box-shadow, color, filter, opacity,
     translate;
   user-select: none;
 }
@@ -39,7 +39,6 @@
 
 .button:enabled[aria-pressed="true"],
 .button:enabled:active {
-  scale: 0.985;
   translate: 0 1px;
 }
 
