@@ -1,8 +1,9 @@
 import { Input, Label } from "@nattui/react-components"
+import { LucideMail } from "lucide-react"
 
 export default function InputPage() {
   return (
-    <div className="flex flex-col p-16 max-w-sm">
+    <div className="flex flex-col p-8 max-w-sm mx-auto">
       <Label className="mb-1" htmlFor="name">
         Name
       </Label>
@@ -18,9 +19,9 @@ export default function InputPage() {
       </Label>
       <Input
         className="mb-8"
+        defaultValue="https://example.com"
         id="url-disabled"
         isDisabled
-        value="https://example.com"
         type="url"
       />
 
@@ -38,11 +39,25 @@ export default function InputPage() {
         URL (Read Only)
       </Label>
       <Input
+        className="mb-8"
         id="url-read-only"
-        value="https://example.com"
+        defaultValue="https://example.com"
         type="url"
         isReadOnly
       />
+
+      <div className="relative">
+        <LucideMail
+          className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+          size={16}
+        />
+        <Input
+          className="pl-9!"
+          defaultValue="example@example.com"
+          id="icon-email"
+          type="email"
+        />
+      </div>
     </div>
   )
 }

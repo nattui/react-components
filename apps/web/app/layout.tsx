@@ -5,8 +5,8 @@ import "./globals.css"
 import Topbar from "@/app/topbar"
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
   subsets: ["latin"],
+  variable: "--font-sans",
 })
 
 const geistMono = Geist_Mono({
