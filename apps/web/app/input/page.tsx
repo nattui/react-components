@@ -1,6 +1,7 @@
 import { Button, Input, Label } from "@nattui/react-components"
 import {
   LucideBan,
+  LucideCopy,
   LucideEye,
   LucideLock,
   LucideLogIn,
@@ -71,16 +72,29 @@ export default function InputPage() {
         />
       </div>
 
-      <Label className="mb-1" htmlFor="url-read-only">
-        URL (Read Only)
+      <Label className="mb-1" htmlFor="read-only">
+        Read Only
       </Label>
-      <Input
-        className="mb-8"
-        id="url-read-only"
-        defaultValue="https://example.com"
-        type="url"
-        isReadOnly
-      />
+      <div className="relative mb-8">
+        <Input
+          className="pr-9!"
+          defaultValue="This is a read-only input"
+          id="read-only"
+          isReadOnly
+          type="text"
+        />
+        <Button
+          className="absolute! right-1 top-1 group"
+          variant="ghost"
+          size={32}
+          iconOnly
+        >
+          <LucideCopy
+            className="text-gray-400 group-hover:text-gray-900 group-active:text-gray-900 transition-colors"
+            size={16}
+          />
+        </Button>
+      </div>
     </div>
   )
 }
