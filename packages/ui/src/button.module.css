@@ -10,6 +10,7 @@
   cursor: pointer;
   display: flex;
   flex-shrink: 0;
+  font-family: var(--font-sans, sans-serif);
   font-weight: 500;
   justify-content: safe center;
   line-height: 1.5;

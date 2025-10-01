@@ -11,6 +11,7 @@
   box-shadow: 0 1px #0000000d;
   color: var(--color-gray-12, #202020);
   cursor: text;
+  font-family: var(--font-sans, sans-serif);
   font-size: 14px;
   font-weight: 400;
   height: 40px;
