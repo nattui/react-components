@@ -21,7 +21,9 @@ type ButtonPropsInternal = ButtonPropsWithIcon | ButtonPropsWithText
 
 interface ButtonPropsWithIcon extends ButtonProps {
   children?: ReactNode
+  iconEnd?: never
   iconOnly: true
+  iconStart?: never
 }
 
 interface ButtonPropsWithText extends ButtonProps {
