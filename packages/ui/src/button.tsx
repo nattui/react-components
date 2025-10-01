@@ -5,12 +5,12 @@ import styles from "@/button.module.css"
 
 export interface ButtonProps
   extends Omit<ComponentProps<"button">, "aria-pressed" | "disabled"> {
-  fullWidth?: boolean
   iconEnd?: ReactNode
   iconOnly?: boolean
   iconStart?: ReactNode
   isActive?: boolean
   isDisabled?: boolean
+  isFullWidth?: boolean
   isLoading?: boolean
   isRounded?: boolean
   size?: 32 | 36 | 40 | 48
@@ -33,12 +33,12 @@ export function Button(props: ButtonPropsInternal): JSX.Element {
   const {
     children = "",
     className: customClassName = "",
-    fullWidth = false,
     iconEnd = "",
     iconOnly = false,
     iconStart = "",
     isActive = false,
     isDisabled = false,
+    isFullWidth = false,
     isLoading = false,
     isRounded = false,
     size = 36,
@@ -51,7 +51,7 @@ export function Button(props: ButtonPropsInternal): JSX.Element {
     ${BUTTON_CLASS_NAME.BASE}
     ${BUTTON_CLASS_NAME.SIZE[size]}
     ${BUTTON_CLASS_NAME.VARIANT[variant.toUpperCase() as keyof typeof BUTTON_CLASS_NAME.VARIANT]}
-    ${fullWidth ? BUTTON_CLASS_NAME.WIDTH.FULL : BUTTON_CLASS_NAME.WIDTH.BASE}
+    ${isFullWidth ? BUTTON_CLASS_NAME.WIDTH.FULL : BUTTON_CLASS_NAME.WIDTH.BASE}
     ${iconOnly ? BUTTON_CLASS_NAME.ICON_ONLY : ""}
     ${isRounded ? BUTTON_CLASS_NAME.ROUNDED.FULL : BUTTON_CLASS_NAME.ROUNDED.BASE}
     ${customClassName}

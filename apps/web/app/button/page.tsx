@@ -120,7 +120,7 @@ export default function ButtonPage() {
 
       <p>Full width</p>
       <div className="flex gap-4 items-center flex-wrap">
-        <Button className="max-w-xs" fullWidth>
+        <Button className="max-w-xs" isFullWidth>
           Add goal
         </Button>
       </div>

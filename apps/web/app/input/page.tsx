@@ -15,18 +15,25 @@ export default function InputPage() {
       <Label className="mb-1" htmlFor="password">
         Password
       </Label>
-      <div className="relative mb-8">
+      <div className="relative mb-4">
         <LucideLock className="absolute left-3 top-3 text-gray-400" size={16} />
         <Input className="px-9!" id="password" type="password" />
         <Button
-          className="absolute! right-1 top-1 text-gray-400"
+          className="absolute! right-1 top-1 group"
           variant="ghost"
           size={32}
           iconOnly
         >
-          <LucideEye size={16} />
+          <LucideEye
+            className="text-gray-400 group-hover:text-gray-900 group-active:text-gray-900 transition-colors"
+            size={16}
+          />
         </Button>
       </div>
+
+      <Button className="mb-8" variant="accent" size={40} isFullWidth>
+        Sign in
+      </Button>
 
       <Label className="mb-1" htmlFor="url-disabled">
         URL (Disabled)
