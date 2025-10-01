@@ -229,7 +229,7 @@
 .button__variant_secondary:enabled:hover,
 .button__variant_secondary:enabled[aria-pressed="true"] {
   box-shadow: inset 0 0 0 0 transparent;
-  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0));
+  filter: drop-shadow(0 1px 0 transparent);
 }
 
 .button__variant_ghost:enabled:hover,

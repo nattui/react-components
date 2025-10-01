@@ -37,12 +37,12 @@
   opacity: 0.5;
 }
 
-.input:enabled:hover,
 .input:enabled:active,
 .input:enabled:focus,
+.input:enabled:hover,
 .input:enabled[aria-pressed="true"] {
   border-color: var(--color-gray-8, #bbbbbb);
-  box-shadow: 0 1px rgba(0, 0, 0, 0);
+  box-shadow: 0 1px transparent;
 }
 
 .input:focus-visible {
