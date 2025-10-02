@@ -4,11 +4,12 @@ import styles from "@/input.module.css"
 export interface InputProps
   extends Omit<
     ComponentProps<"input">,
-    "aria-pressed" | "disabled" | "readOnly"
+    "aria-pressed" | "disabled" | "readOnly" | "required"
   > {
   isActive?: boolean
   isDisabled?: boolean
   isReadOnly?: boolean
+  isRequired?: boolean
 }
 
 export function Input(props: InputProps): JSX.Element {
@@ -17,6 +18,7 @@ export function Input(props: InputProps): JSX.Element {
     isActive = false,
     isDisabled = false,
     isReadOnly = false,
+    isRequired = false,
     type = "text",
     ...rest
   } = props
@@ -37,6 +39,7 @@ export function Input(props: InputProps): JSX.Element {
       className={combinedClassName}
       disabled={isDisabled}
       readOnly={isReadOnly}
+      required={isRequired}
       type={type}
       {...rest}
     />
