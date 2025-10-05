@@ -1,11 +1,4 @@
 {
-  "name": "storybook",
-  "type": "module",
-  "scripts": {
-    "build": "storybook build",
-    "dev": "storybook dev --no-open --port 6006",
-    "lint": "eslint ."
-  },
   "dependencies": {
     "@nattui/react-components": "workspace:*",
     "react": "^19.1.1",
@@ -28,5 +21,12 @@
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.44.1",
     "vite": "^7.1.7"
-  }
+  },
+  "name": "storybook",
+  "scripts": {
+    "build": "storybook build",
+    "dev": "storybook dev --no-open --port 6006",
+    "lint": "eslint ."
+  },
+  "type": "module"
 }

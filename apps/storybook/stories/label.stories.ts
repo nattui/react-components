@@ -3,19 +3,19 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { fn } from "storybook/test"
 
 const meta = {
-  title: "Components/Label",
+  args: {
+    onClick: fn(),
+  },
+  argTypes: {
+    children: { control: "text" },
+    htmlFor: { control: "text" },
+  },
   component: Label,
   parameters: {
     layout: "centered",
   },
   tags: ["autodocs"],
-  argTypes: {
-    children: { control: "text" },
-    htmlFor: { control: "text" },
-  },
-  args: {
-    onClick: fn(),
-  },
+  title: "Components/Label",
 } satisfies Meta<typeof Label>
 
 export default meta
@@ -75,8 +75,8 @@ export const WithCustomStyling: Story = {
     children: "Custom Styled Label",
     htmlFor: "custom-input",
     style: {
-      fontWeight: "bold",
       color: "#0066cc",
+      fontWeight: "bold",
     },
   },
 }
@@ -91,8 +91,8 @@ export const FormLabel: Story = {
 
 export const AccessibilityLabel: Story = {
   args: {
+    "aria-label": "Search through available options",
     children: "Search",
     htmlFor: "search-input",
-    "aria-label": "Search through available options",
   },
 }

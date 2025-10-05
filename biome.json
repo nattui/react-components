@@ -12,7 +12,13 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "includes": ["**", "!**/dist", "!**/.next"]
+    "includes": [
+      "**",
+      "!**/.next",
+      "!**/.turbo",
+      "!**/dist",
+      "!**/storybook-static"
+    ]
   },
   "formatter": {
     "enabled": true,
@@ -25,7 +31,6 @@
     }
   },
   "linter": {
-    "enabled": true,
     "rules": {
       "a11y": {
         "noLabelWithoutControl": "off",
@@ -35,6 +40,10 @@
         "noImportantStyles": "off",
         "noUselessFragments": "off"
       },
+      "correctness": {
+        "useUniqueElementIds": "off"
+      },
+
       "performance": {
         "noImgElement": "off"
       },

@@ -1,19 +1,16 @@
 {
-  "name": "monorepo",
-  "scripts": {
-    "build": "turbo build",
-    "check:format": "prettier --check .",
-    "check:format:fix": "prettier --write .",
-    "dev": "turbo dev",
-    "update": "taze --recursive"
-  },
   "devDependencies": {
-    "prettier": "catalog:",
-    "prettier-plugin-css-order": "catalog:",
-    "prettier-plugin-packagejson": "catalog:",
-    "prettier-plugin-sort-json": "catalog:",
+    "@biomejs/biome": "^2.2.5",
     "taze": "^19.7.0",
     "turbo": "^2.5.8"
   },
-  "packageManager": "pnpm@10.17.1"
+  "name": "monorepo",
+  "packageManager": "pnpm@10.17.1",
+  "scripts": {
+    "build": "turbo build",
+    "check": "biome check",
+    "check:fix": "biome check --write",
+    "dev": "turbo dev",
+    "update": "taze --recursive"
+  }
 }

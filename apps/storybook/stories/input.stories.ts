@@ -3,27 +3,27 @@ import type { Meta, StoryObj } from "@storybook/react-vite"
 import { fn } from "storybook/test"
 
 const meta = {
-  title: "Components/Input",
+  args: {
+    onBlur: fn(),
+    onChange: fn(),
+    onFocus: fn(),
+  },
+  argTypes: {
+    isActive: { control: "boolean" },
+    isDisabled: { control: "boolean" },
+    placeholder: { control: "text" },
+    type: {
+      control: "select",
+      options: ["text", "email", "password", "number", "tel", "url", "search"],
+    },
+    value: { control: "text" },
+  },
   component: Input,
   parameters: {
     layout: "centered",
   },
   tags: ["autodocs"],
-  argTypes: {
-    type: {
-      control: "select",
-      options: ["text", "email", "password", "number", "tel", "url", "search"],
-    },
-    isActive: { control: "boolean" },
-    isDisabled: { control: "boolean" },
-    placeholder: { control: "text" },
-    value: { control: "text" },
-  },
-  args: {
-    onChange: fn(),
-    onFocus: fn(),
-    onBlur: fn(),
-  },
+  title: "Components/Input",
 } satisfies Meta<typeof Input>
 
 export default meta
@@ -37,71 +37,72 @@ export const Default: Story = {
 
 export const WithValue: Story = {
   args: {
-    value: "Sample text",
     placeholder: "Enter text...",
+    value: "Sample text",
   },
 }
 
 export const Email: Story = {
   args: {
-    type: "email",
     placeholder: "Enter your email...",
+    type: "email",
   },
 }
 
 export const Password: Story = {
   args: {
-    type: "password",
     placeholder: "Enter your password...",
+    type: "password",
   },
 }
 
+// biome-ignore lint/suspicious/noShadowRestrictedNames: Clearly it is used for number input
 export const Number: Story = {
   args: {
-    type: "number",
     placeholder: "Enter a number...",
+    type: "number",
   },
 }
 
 export const Search: Story = {
   args: {
-    type: "search",
     placeholder: "Search...",
+    type: "search",
   },
 }
 
 export const Tel: Story = {
   args: {
-    type: "tel",
     placeholder: "Enter phone number...",
+    type: "tel",
   },
 }
 
 export const URL: Story = {
   args: {
-    type: "url",
     placeholder: "Enter URL...",
+    type: "url",
   },
 }
 
 export const Active: Story = {
   args: {
-    placeholder: "Active input",
     isActive: true,
+    placeholder: "Active input",
   },
 }
 
 export const Disabled: Story = {
   args: {
-    placeholder: "Disabled input",
     isDisabled: true,
+    placeholder: "Disabled input",
   },
 }
 
 export const DisabledWithValue: Story = {
   args: {
-    value: "Cannot edit this",
     isDisabled: true,
+    value: "Cannot edit this",
   },
 }
 
@@ -114,14 +115,14 @@ export const Required: Story = {
 
 export const WithMaxLength: Story = {
   args: {
-    placeholder: "Max 10 characters",
     maxLength: 10,
+    placeholder: "Max 10 characters",
   },
 }
 
 export const ReadOnly: Story = {
   args: {
-    value: "Read-only value",
     isReadOnly: true,
+    value: "Read-only value",
   },
 }

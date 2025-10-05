@@ -10,13 +10,13 @@ const geistSans = Geist({
 })
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
+  variable: "--font-geist-mono",
 })
 
 export const metadata: Metadata = {
-  title: "React Components",
   description: "React Components",
+  title: "React Components",
 }
 
 export default function RootLayout(props: PropsWithChildren) {

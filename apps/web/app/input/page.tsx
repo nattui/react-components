@@ -22,8 +22,8 @@ export default function InputPage() {
         <Input
           className="pl-9!"
           id="email"
-          type="email"
           placeholder="name@example.com"
+          type="email"
         />
       </div>
 
@@ -35,14 +35,14 @@ export default function InputPage() {
         <Input
           className="px-9!"
           id="password"
-          type="password"
           placeholder="••••••••"
+          type="password"
         />
         <Button
           className="absolute! right-1 top-1 group"
-          variant="ghost"
-          size={32}
           iconOnly
+          size={32}
+          variant="ghost"
         >
           <LucideEye
             className="text-gray-400 group-hover:text-gray-900 group-active:text-gray-900 transition-colors"
@@ -91,9 +91,9 @@ export default function InputPage() {
         />
         <Button
           className="absolute! right-1 top-1 group"
-          variant="ghost"
-          size={32}
           iconOnly
+          size={32}
+          variant="ghost"
         >
           <LucideCopy
             className="text-gray-400 group-hover:text-gray-900 group-active:text-gray-900 transition-colors"
@@ -116,9 +116,9 @@ export default function InputPage() {
         />
         <Button
           className="group rounded-l-none! -ml-px shadow-none! focus-visible:z-20 hover:z-10"
-          variant="secondary"
-          size={40}
           iconOnly
+          size={40}
+          variant="secondary"
         >
           <LucideDownload
             className="text-gray-400 group-hover:text-gray-900 group-active:text-gray-900 transition-colors"

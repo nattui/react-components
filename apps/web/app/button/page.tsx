@@ -89,29 +89,29 @@ export default function ButtonPage() {
       <p>Icon</p>
       <div className="flex gap-4 items-center flex-wrap">
         <Button
-          iconStart={<LucideArrowLeft size={16} />}
           iconEnd={<LucideArrowRight size={16} />}
+          iconStart={<LucideArrowLeft size={16} />}
           variant="accent"
         >
           Add goal
         </Button>
         <Button
-          iconStart={<LucideArrowLeft size={16} />}
           iconEnd={<LucideArrowRight size={16} />}
+          iconStart={<LucideArrowLeft size={16} />}
           variant="primary"
         >
           Add goal
         </Button>
         <Button
-          iconStart={<LucideArrowLeft size={16} />}
           iconEnd={<LucideArrowRight size={16} />}
+          iconStart={<LucideArrowLeft size={16} />}
           variant="secondary"
         >
           Add goal
         </Button>
         <Button
-          iconStart={<LucideArrowLeft size={16} />}
           iconEnd={<LucideArrowRight size={16} />}
+          iconStart={<LucideArrowLeft size={16} />}
           variant="ghost"
         >
           Add goal
