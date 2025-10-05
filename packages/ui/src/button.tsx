@@ -1,7 +1,7 @@
 import type { ComponentProps, JSX, ReactNode } from "react"
+import styles from "@/button.module.css"
 import { ButtonBackground } from "@/button-background"
 import { ButtonSpinner } from "@/button-spinner"
-import styles from "@/button.module.css"
 
 export interface ButtonProps
   extends Omit<ComponentProps<"button">, "aria-pressed" | "disabled"> {

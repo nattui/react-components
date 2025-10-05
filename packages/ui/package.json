@@ -1,66 +1,55 @@
 {
-  "name": "@nattui/react-components",
-  "version": "0.0.12",
+  "author": "Natt Nguyen <hello@natt.sh> (https://natt.sh)",
+  "bugs": {
+    "url": "https://github.com/nattui/react-components/issues"
+  },
   "description": "A collection of reusable React components built with TypeScript and CSS Modules",
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.5",
+    "@types/react": "^19.1.15",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.2"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "homepage": "https://github.com/nattui/react-components#readme",
   "keywords": [
     "components",
     "react",
     "ui"
   ],
-  "homepage": "https://github.com/nattui/react-components#readme",
-  "bugs": {
-    "url": "https://github.com/nattui/react-components/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nattui/react-components.git"
-  },
   "license": "MIT",
-  "author": "Natt Nguyen <hello@natt.sh> (https://natt.sh)",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
-    }
-  },
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "scripts": {
-    "build": "tsup",
-    "check": "pnpm check:format && pnpm check:lint",
-    "check:fix": "pnpm check:format:fix && pnpm check:lint:fix",
-    "check:format": "prettier --check .",
-    "check:format:fix": "prettier --write .",
-    "check:lint": "eslint .",
-    "check:lint:fix": "eslint --fix .",
-    "dev": "tsup --watch",
-    "prepublishOnly": "pnpm run build",
-    "update": "pnpx npm-check-updates --upgrade"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.36.0",
-    "@types/react": "^19.1.15",
-    "eslint": "^9.36.0",
-    "eslint-plugin-perfectionist": "^4.15.0",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-unicorn": "^59.0.1",
-    "eslint-plugin-unused-imports": "^4.2.0",
-    "globals": "^16.4.0",
-    "prettier": "catalog:",
-    "prettier-plugin-css-order": "catalog:",
-    "prettier-plugin-packagejson": "catalog:",
-    "prettier-plugin-sort-json": "catalog:",
-    "tsup": "^8.5.0",
-    "typescript": "^5.9.2",
-    "typescript-eslint": "^8.44.1"
-  },
+  "name": "@nattui/react-components",
   "peerDependencies": {
     "react": "^18.0.0 || ^19.0.0",
     "react-dom": "^18.0.0 || ^19.0.0"
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nattui/react-components.git"
+  },
+  "scripts": {
+    "build": "tsup",
+    "check": "biome check",
+    "check:fix": "biome check --write",
+    "check:format": "biome format",
+    "check:format:fix": "biome format --write",
+    "check:lint": "biome lint",
+    "check:lint:fix": "biome lint --write",
+    "dev": "tsup --watch",
+    "prepublishOnly": "pnpm run build",
+    "update": "pnpx npm-check-updates --upgrade"
+  },
+  "types": "./dist/index.d.ts",
+  "version": "0.0.12"
 }
