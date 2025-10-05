@@ -1,62 +1,39 @@
-import js from "@eslint/js"
+import pluginJs from "@eslint/js"
 import pluginPerfectionist from "eslint-plugin-perfectionist"
 import pluginReact from "eslint-plugin-react"
 import pluginUnicorn from "eslint-plugin-unicorn"
 import pluginUnusedImports from "eslint-plugin-unused-imports"
 import { defineConfig } from "eslint/config"
 import globals from "globals"
-import tseslint from "typescript-eslint"
+import pluginTsEslint from "typescript-eslint"
 
 export default defineConfig([
-  // Global ignores
   {
     ignores: ["dist/"],
   },
-  // Base configurations for JS/TS files only
-  {
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
-    ...pluginPerfectionist.configs["recommended-natural"],
-  },
-  {
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
-    ...pluginReact.configs.flat.recommended,
-    settings: {
-      react: {
-        version: "detect",
-      },
-    },
-  },
-  {
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
-    ...pluginUnicorn.configs.all,
-  },
-  ...tseslint.configs.recommended.map((config) => ({
-    ...config,
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
-  })),
-  {
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
-    languageOptions: { globals: globals.browser },
-  },
-  // JavaScript configuration
   {
     extends: ["js/recommended"],
     files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
-    plugins: { js },
+    languageOptions: {
+      globals: globals.node,
+    },
+    plugins: {
+      js: pluginJs,
+    },
   },
-  // Custom rules for JS/TS files only
   {
+    extends: [
+      pluginPerfectionist.configs["recommended-natural"],
+      pluginTsEslint.configs["recommended"],
+      pluginUnicorn.configs["all"],
+    ],
     files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
     plugins: {
+      react: pluginReact,
       "unused-imports": pluginUnusedImports,
     },
     rules: {
-      "@typescript-eslint/no-empty-object-type": [
-        "error",
-        {
-          allowInterfaces: "with-single-extends",
-        },
-      ],
+      "@typescript-eslint/no-empty-object-type": "off",
       "perfectionist/sort-imports": [
         "error",
         {
@@ -64,22 +41,11 @@ export default defineConfig([
           sortSideEffects: true,
         },
       ],
-      "react/react-in-jsx-scope": "off",
       "unicorn/consistent-function-scoping": "off",
-      "unicorn/import-style": "off",
       "unicorn/no-keyword-prefix": "off",
       "unicorn/no-unused-properties": "warn",
       "unicorn/prevent-abbreviations": "off",
       "unused-imports/no-unused-imports": "error",
-      "unused-imports/no-unused-vars": [
-        "warn",
-        {
-          args: "after-used",
-          argsIgnorePattern: "^_",
-          vars: "all",
-          varsIgnorePattern: "^_",
-        },
-      ],
     },
   },
 ])
