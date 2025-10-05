@@ -1,3 +1,11 @@
+# Catalog defines shared dependency versions across the workspace. This ensures
+# consistent versions of dependencies are used throughout all packages in the
+# monorepo.
+#
+# Documentation: https://pnpm.io/catalogs
+catalog:
+  "@biomejs/biome": "^2.2.5"
+
 # Defines which directories contain packages that should be included in your
 # pnpm workspace (monorepo).
 #
