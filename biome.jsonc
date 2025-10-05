@@ -40,7 +40,6 @@
       "correctness": {
         "useUniqueElementIds": "off"
       },
-
       "performance": {
         "noImgElement": "off"
       },
