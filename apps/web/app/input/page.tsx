@@ -11,14 +11,14 @@ import {
 
 export default function InputPage() {
   return (
-    <div className="flex flex-col p-8 max-w-sm mx-auto">
+    <div className="mx-auto flex max-w-sm flex-col p-8">
       <div className="h-20" />
 
       <Label className="mb-1" htmlFor="email">
         Email
       </Label>
       <div className="relative mb-4">
-        <LucideMail className="absolute left-3 top-3 text-gray-400" size={16} />
+        <LucideMail className="absolute top-3 left-3 text-gray-400" size={16} />
         <Input
           className="pl-9!"
           id="email"
@@ -31,7 +31,7 @@ export default function InputPage() {
         Password
       </Label>
       <div className="relative mb-4">
-        <LucideLock className="absolute left-3 top-3 text-gray-400" size={16} />
+        <LucideLock className="absolute top-3 left-3 text-gray-400" size={16} />
         <Input
           className="px-9!"
           id="password"
@@ -39,13 +39,13 @@ export default function InputPage() {
           type="password"
         />
         <Button
-          className="absolute! right-1 top-1 group"
+          className="absolute! group top-1 right-1"
           iconOnly
           size={32}
           variant="ghost"
         >
           <LucideEye
-            className="text-gray-400 group-hover:text-gray-900 group-active:text-gray-900 transition-colors"
+            className="text-gray-400 transition-colors group-hover:text-gray-900 group-active:text-gray-900"
             size={16}
           />
         </Button>
@@ -66,7 +66,7 @@ export default function InputPage() {
         Disabled
       </Label>
       <div className="relative">
-        <LucideBan className="absolute left-3 top-3 text-gray-400" size={16} />
+        <LucideBan className="absolute top-3 left-3 text-gray-400" size={16} />
         <Input
           className="pl-9!"
           id="disabled"
@@ -90,13 +90,13 @@ export default function InputPage() {
           type="text"
         />
         <Button
-          className="absolute! right-1 top-1 group"
+          className="absolute! group top-1 right-1"
           iconOnly
           size={32}
           variant="ghost"
         >
           <LucideCopy
-            className="text-gray-400 group-hover:text-gray-900 group-active:text-gray-900 transition-colors"
+            className="text-gray-400 transition-colors group-hover:text-gray-900 group-active:text-gray-900"
             size={16}
           />
         </Button>
@@ -109,19 +109,19 @@ export default function InputPage() {
       </Label>
       <div className="flex">
         <Input
-          className="rounded-r-none! focus-visible:z-20 hover:z-10"
+          className="rounded-r-none! hover:z-10 focus-visible:z-20"
           id="input-with-end-icon-button"
           placeholder="Download"
           type="url"
         />
         <Button
-          className="group rounded-l-none! -ml-px shadow-none! focus-visible:z-20 hover:z-10"
+          className="group -ml-px rounded-l-none! shadow-none! hover:z-10 focus-visible:z-20"
           iconOnly
           size={40}
           variant="secondary"
         >
           <LucideDownload
-            className="text-gray-400 group-hover:text-gray-900 group-active:text-gray-900 transition-colors"
+            className="text-gray-400 transition-colors group-hover:text-gray-900 group-active:text-gray-900"
             size={16}
           />
         </Button>
