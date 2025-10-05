@@ -7,8 +7,7 @@
         "useSortedAttributes": "on",
         "useSortedKeys": "on"
       }
-    },
-    "enabled": true
+    }
   },
   "files": {
     "ignoreUnknown": false,
