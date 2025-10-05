@@ -42,10 +42,6 @@
     "build": "tsup",
     "check": "biome check",
     "check:fix": "biome check --write",
-    "check:format": "biome format",
-    "check:format:fix": "biome format --write",
-    "check:lint": "biome lint",
-    "check:lint:fix": "biome lint --write",
     "dev": "tsup --watch",
     "prepublishOnly": "pnpm run build",
     "update": "pnpx npm-check-updates --upgrade"
