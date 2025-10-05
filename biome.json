@@ -12,7 +12,7 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "includes": ["**", "!**/dist", "!**/.next", "*.css"]
+    "includes": ["**", "!**/dist", "!**/.next"]
   },
   "formatter": {
     "enabled": true,
