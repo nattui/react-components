@@ -1,5 +1,4 @@
 {
-  "name": "monorepo",
   "scripts": {
     "build": "turbo build",
     "check": "biome check",
