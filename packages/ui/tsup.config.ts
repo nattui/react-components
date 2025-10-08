@@ -6,5 +6,7 @@ export default defineConfig({
   entry: ["src/index.ts"],
   external: ["react", "react-dom"],
   format: "esm",
-  loader: { ".css": "copy" },
+  loader: {
+    ".css": "copy",
+  },
 })
