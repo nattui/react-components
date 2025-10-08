@@ -1,11 +1,5 @@
 {
-  "devDependencies": {
-    "@biomejs/biome": "catalog:",
-    "taze": "^19.7.0",
-    "turbo": "^2.5.8"
-  },
   "name": "monorepo",
-  "packageManager": "pnpm@10.18.0",
   "scripts": {
     "build": "turbo build",
     "check": "biome check",
@@ -13,5 +7,11 @@
     "clean": "sh scripts/clean.sh",
     "dev": "turbo dev",
     "update": "taze --recursive"
-  }
+  },
+  "devDependencies": {
+    "@biomejs/biome": "catalog:",
+    "taze": "^19.7.0",
+    "turbo": "^2.5.8"
+  },
+  "packageManager": "pnpm@10.18.0"
 }
