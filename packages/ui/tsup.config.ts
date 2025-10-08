@@ -7,7 +7,4 @@ export default defineConfig({
   external: ["react", "react-dom"],
   format: "esm",
   loader: { ".css": "copy" },
-  sourcemap: true,
-  splitting: true,
-  treeshake: true,
 })
