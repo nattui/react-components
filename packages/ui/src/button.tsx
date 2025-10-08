@@ -3,7 +3,7 @@ import styles from "@/button.module.css"
 import { ButtonBackground } from "@/button-background"
 import { ButtonSpinner } from "@/button-spinner"
 
-export interface ButtonProps
+interface ButtonPropsInternal
   extends Omit<ComponentProps<"button">, "aria-pressed" | "disabled"> {
   iconEnd?: ReactNode
   iconOnly?: boolean
@@ -17,21 +17,21 @@ export interface ButtonProps
   variant?: "accent" | "ghost" | "primary" | "secondary"
 }
 
-type ButtonPropsInternal = ButtonPropsWithIcon | ButtonPropsWithText
-
-interface ButtonPropsWithIcon extends ButtonProps {
+interface ButtonPropsWithIcon extends ButtonPropsInternal {
   children?: ReactNode
   iconEnd?: never
   iconOnly: true
   iconStart?: never
 }
 
-interface ButtonPropsWithText extends ButtonProps {
+interface ButtonPropsWithText extends ButtonPropsInternal {
   children?: string
   iconOnly?: false
 }
 
-export function Button(props: ButtonPropsInternal): JSX.Element {
+export type ButtonProps = ButtonPropsWithIcon | ButtonPropsWithText
+
+export function Button(props: ButtonProps): JSX.Element {
   const {
     children = "",
     className: customClassName = "",
