@@ -17,21 +17,21 @@ interface ButtonPropsInternal
   variant?: "accent" | "ghost" | "primary" | "secondary"
 }
 
-interface ButtonPropsWithIcon extends ButtonPropsInternal {
+export interface ButtonIconProps extends ButtonPropsInternal {
   children?: ReactNode
   iconEnd?: never
   iconOnly: true
   iconStart?: never
 }
 
-interface ButtonPropsWithText extends ButtonPropsInternal {
+export interface ButtonProps extends ButtonPropsInternal {
   children?: string
   iconOnly?: false
 }
 
-export type ButtonProps = ButtonPropsWithIcon | ButtonPropsWithText
+type ButtonUnionProps = ButtonIconProps | ButtonProps
 
-export function Button(props: ButtonProps): JSX.Element {
+export function Button(props: ButtonUnionProps): JSX.Element {
   const {
     children = "",
     className: customClassName = "",
