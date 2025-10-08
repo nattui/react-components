@@ -3,8 +3,7 @@
   "type": "module",
   "scripts": {
     "build": "storybook build",
-    "dev": "storybook dev --no-open --port 6006",
-    "lint": "eslint ."
+    "dev": "storybook dev --no-open --port 6006"
   },
   "dependencies": {
     "@nattui/react-components": "workspace:*",
@@ -12,21 +11,14 @@
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.37.0",
     "@storybook/addon-a11y": "^10.0.0-beta.9",
     "@storybook/addon-docs": "^10.0.0-beta.9",
     "@storybook/react-vite": "^10.0.0-beta.9",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
     "@vitejs/plugin-react": "^5.0.4",
-    "eslint": "^9.37.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.23",
-    "eslint-plugin-storybook": "^10.0.0-beta.9",
-    "globals": "^16.4.0",
     "storybook": "^10.0.0-beta.9",
     "typescript": "~5.8.3",
-    "typescript-eslint": "^8.45.0",
     "vite": "^7.1.9"
   }
 }
