@@ -3,7 +3,6 @@
   "scripts": {
     "build": "next build --turbopack",
     "dev": "next dev --port 3001 --turbopack",
-    "lint": "next lint",
     "start": "next start"
   },
   "dependencies": {
@@ -14,13 +13,10 @@
     "react-dom": "catalog:"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.1",
     "@tailwindcss/postcss": "^4.1.14",
     "@types/node": "^20.19.19",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
-    "eslint": "^9.37.0",
-    "eslint-config-next": "^15.5.4",
     "tailwindcss": "^4.1.14",
     "typescript": "catalog:"
   }
