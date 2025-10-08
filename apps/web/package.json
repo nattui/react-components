@@ -10,18 +10,18 @@
     "@nattui/react-components": "workspace:*",
     "lucide-react": "^0.516.0",
     "next": "^15.5.4",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react": "catalog:",
+    "react-dom": "catalog:"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
     "@tailwindcss/postcss": "^4.1.14",
     "@types/node": "^20.19.19",
-    "@types/react": "^19.2.0",
-    "@types/react-dom": "^19.2.0",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
     "eslint": "^9.37.0",
     "eslint-config-next": "^15.5.4",
     "tailwindcss": "^4.1.14",
-    "typescript": "^5.9.3"
+    "typescript": "catalog:"
   }
 }
