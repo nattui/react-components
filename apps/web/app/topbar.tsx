@@ -1,8 +1,7 @@
 "use client"
 
-import Link from "next/link"
+import Link, { type LinkProps } from "next/link"
 import { usePathname } from "next/navigation"
-import type { PropsWithChildren } from "react"
 
 export default function Topbar() {
   return (
@@ -13,7 +12,7 @@ export default function Topbar() {
   )
 }
 
-function NavLink(props: PropsWithChildren<{ href: string }>) {
+function NavLink(props: LinkProps<string>) {
   const { children, href } = props
   const pathname = usePathname()
   const isActive = pathname === href

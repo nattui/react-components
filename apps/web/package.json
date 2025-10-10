@@ -1,22 +1,23 @@
 {
   "name": "web",
   "scripts": {
-    "build": "next build --turbopack",
-    "dev": "next dev --port 3001 --turbopack",
+    "build": "next build",
+    "dev": "next dev --port 3001",
     "start": "next start"
   },
   "dependencies": {
     "@nattui/react-components": "workspace:*",
     "lucide-react": "^0.516.0",
-    "next": "^15.5.4",
+    "next": "^16.0.0-beta.0",
     "react": "catalog:",
     "react-dom": "catalog:"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.14",
-    "@types/node": "^20.19.19",
+    "@types/node": "^20.19.20",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
+    "babel-plugin-react-compiler": "^1.0.0",
     "tailwindcss": "^4.1.14",
     "typescript": "catalog:"
   }
