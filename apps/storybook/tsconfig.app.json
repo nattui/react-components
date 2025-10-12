@@ -3,11 +3,9 @@
     "allowImportingTsExtensions": true,
     "erasableSyntaxOnly": true,
     "jsx": "react-jsx",
-
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "moduleDetection": "force",
-    /* Bundler mode */
     "moduleResolution": "bundler",
     "noEmit": true,
     "noFallthroughCasesInSwitch": true,
@@ -15,8 +13,6 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "skipLibCheck": true,
-
-    /* Linting */
     "strict": true,
     "target": "ES2022",
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
@@ -24,5 +20,5 @@
     "useDefineForClassFields": true,
     "verbatimModuleSyntax": true
   },
-  "include": ["src"]
+  "include": ["stories"]
 }
