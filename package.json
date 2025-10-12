@@ -1,4 +1,5 @@
 {
+  "name": "react-components",
   "workspaces": [
     "apps/*",
     "packages/*"
