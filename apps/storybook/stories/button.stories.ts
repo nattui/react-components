@@ -63,7 +63,7 @@ export const Ghost: Story = {
 export const Large: Story = {
   args: {
     children: "Large Button",
-    size: 48,
+    size: 44,
   },
 }
 
@@ -98,7 +98,7 @@ export const Rounded: Story = {
 export const FullWidth: Story = {
   args: {
     children: "Full Width Button",
-    fullWidth: true,
+    isFullWidth: true,
   },
 }
 

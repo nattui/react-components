@@ -108,8 +108,8 @@ export const DisabledWithValue: Story = {
 
 export const Required: Story = {
   args: {
+    isRequired: true,
     placeholder: "Required field",
-    required: true,
   },
 }
 
