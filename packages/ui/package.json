@@ -1,6 +1,6 @@
 {
   "name": "@nattui/react-components",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "A collection of reusable React components built with TypeScript and CSS Modules",
   "keywords": [
     "components",
