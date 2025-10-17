@@ -156,6 +156,22 @@ export default function ButtonPage() {
           <LucideDownload size={18} />
         </Button>
       </div>
+
+      <p>Icon only loading</p>
+      <div className="flex flex-wrap items-center gap-4">
+        <Button iconOnly isLoading size={32}>
+          <LucideDownload size={16} />
+        </Button>
+        <Button iconOnly isLoading size={36}>
+          <LucideDownload size={16} />
+        </Button>
+        <Button iconOnly isLoading size={40}>
+          <LucideDownload size={16} />
+        </Button>
+        <Button iconOnly isLoading size={44}>
+          <LucideDownload size={18} />
+        </Button>
+      </div>
     </div>
   )
 }

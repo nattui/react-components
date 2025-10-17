@@ -72,7 +72,7 @@ export function Button(props: ButtonUnionProps): JSX.Element {
       <ButtonBackground isRounded={isRounded} variant={variant} />
       {isLoading && <ButtonSpinner />}
       {!isLoading && iconStart}
-      {iconOnly ? children : <span>{children}</span>}
+      {iconOnly ? isLoading ? <></> : children : <span>{children}</span>}
       {!isLoading && iconEnd}
     </button>
   )
