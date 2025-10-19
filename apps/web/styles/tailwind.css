@@ -61,7 +61,7 @@
 
   button {
     font-weight: 500;
-    outline-color: var(--color-primary-9);
+    outline-color: var(--color-primary);
     outline-offset: 2px;
     outline-style: solid;
     outline-width: 0;
@@ -78,7 +78,7 @@
 
   a {
     font-family: var(--font-sans);
-    outline-color: var(--color-primary-9);
+    outline-color: var(--color-primary);
     outline-offset: 2px;
     outline-style: solid;
     outline-width: 0;
@@ -127,6 +127,6 @@
 
 @layer components {
   .c-link {
-    @apply before:bg-gray-6 hover:text-primary-9 leading-p150 relative inline-flex items-center gap-1 whitespace-nowrap transition-colors before:absolute before:bottom-2 before:h-[0.15rem] before:w-full before:rounded-full before:transition-all hover:before:translate-y-8 hover:before:bg-transparent;
+    @apply before:bg-gray-6 hover:text-primary leading-p150 relative inline-flex items-center gap-1 whitespace-nowrap transition-colors before:absolute before:bottom-2 before:h-[0.15rem] before:w-full before:rounded-full before:transition-all hover:before:translate-y-8 hover:before:bg-transparent;
   }
 }

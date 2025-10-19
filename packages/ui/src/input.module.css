@@ -16,7 +16,7 @@
   font-weight: 400;
   height: 40px;
   line-height: 1.5;
-  outline-color: var(--color-primary-9, #e93d82);
+  outline-color: var(--color-primary, #e93d82);
   outline-offset: 2px;
   outline-style: solid;
   outline-width: 0;
@@ -28,7 +28,7 @@
 }
 
 .input::placeholder {
-  color: var(--color-gray-9, #8d8d8d);
+  color: var(--color-gray, #8d8d8d);
   user-select: none;
 }
 

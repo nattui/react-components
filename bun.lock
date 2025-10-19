@@ -41,7 +41,7 @@
       "name": "web",
       "dependencies": {
         "@nattui/react-components": "workspace:*",
-        "@nattui/tailwind-tokenless": "^0.0.3",
+        "@nattui/tailwind-tokenless": "^0.0.5",
         "lucide-react": "^0.545.0",
         "next": "^16.0.0-beta.0",
         "react": "catalog:",
@@ -267,7 +267,7 @@
 
     "@nattui/react-components": ["@nattui/react-components@workspace:packages/ui"],
 
-    "@nattui/tailwind-tokenless": ["@nattui/tailwind-tokenless@0.0.3", "", {}, "sha512-BcyMy03FGWOhg8DsSc0rxnQakxNCjE8hswLIY14wo5KY3l8UWTegrzg+S2udLuStddwcH0Zj5+CfIohxKl/odA=="],
+    "@nattui/tailwind-tokenless": ["@nattui/tailwind-tokenless@0.0.5", "", {}, "sha512-LtwD1fBeawMqcLlLJOSpyxf0JHczj50OIHbmIcbErIpFkyJIjTOfghzwxHUTxJsUTGxGgOOE9JwWzsD9AlgvSA=="],
 
     "@next/env": ["@next/env@16.0.0-canary.2", "", {}, "sha512-3lnH9Iok37tpL6uegL0bxLOacgbNgo6molQoXLsAlCuBOn2ncK++Yno8Tn+4GYwEnvYzUID4RRYHfDYB9UUKDA=="],
 
