@@ -127,7 +127,7 @@ function SidebarItem(props: SidebarItemProps) {
 
   return (
     <div
-      className="flex items-center h-36 px-8 rounded-8 gap-x-6 hover:text-gray-12 text-gray-11 hover:bg-gray-3 cursor-pointer data-[is-expanded=false]:w-[36px] w-full transition-all duration-300 data-[variant=accent]:text-primary-11 data-[variant=accent]:hover:text-primary-12"
+      className="flex items-center h-36 px-8 rounded-8 gap-x-6 hover:text-gray-12 text-gray-11 hover:bg-gray-3 data-[is-expanded=false]:w-[36px] w-full transition-all duration-300 data-[variant=accent]:text-primary-11 data-[variant=accent]:hover:text-primary-12 cursor-pointer select-none"
       data-is-expanded={isExpanded}
       data-variant={variant}
     >
