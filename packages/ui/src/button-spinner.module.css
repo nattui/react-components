@@ -1,9 +1,9 @@
 .button_spinner {
-  position: relative;
-  width: var(--size);
-  height: var(--size);
-  scale: -1 1;
   animation: spinner 1000ms steps(12, end) infinite;
+  height: var(--size);
+  position: relative;
+  scale: -1 1;
+  width: var(--size);
 }
 
 @keyframes spinner {
@@ -13,25 +13,25 @@
 }
 
 .button_spinner > div {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  width: calc(var(--size) / 2);
   height: calc(var(--size) / 12);
   pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 50%;
   transform-origin: center left;
-  translate: 0 -50%;
   transition: all 150ms;
+  translate: 0 -50%;
+  width: calc(var(--size) / 2);
 }
 
 .button_spinner > div::after {
+  background-color: currentColor;
+  border-radius: 9999px;
+  content: "";
+  height: 100%;
   position: absolute;
   right: 0;
   width: 50%;
-  height: 100%;
-  content: "";
-  background-color: currentColor;
-  border-radius: 9999px;
 }
 
 .button_spinner > div:nth-child(1) {

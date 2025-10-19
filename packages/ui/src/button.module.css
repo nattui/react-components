@@ -2,30 +2,30 @@
 /* Base */
 /* ===================================================== */
 .button {
-  position: relative;
-  display: flex;
-  flex-shrink: 0;
-  column-gap: 8px;
   align-items: safe center;
-  justify-content: safe center;
-  overflow: hidden;
-  font-family: var(--font-sans, sans-serif);
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.5;
-  cursor: pointer;
-  user-select: none;
-  outline-width: 0;
-  outline-style: solid;
-  outline-color: var(--color-primary-9, #e93d82);
-  outline-offset: 2px;
   border-color: transparent;
   border-style: solid;
   border-width: 1px;
+  column-gap: 8px;
+  cursor: pointer;
+  display: flex;
+  flex-shrink: 0;
+  font-family: var(--font-sans, sans-serif);
+  font-size: 14px;
+  font-weight: 500;
+  justify-content: safe center;
+  line-height: 1.5;
+  outline-color: var(--color-primary-9, #e93d82);
+  outline-offset: 2px;
+  outline-style: solid;
+  outline-width: 0;
+  overflow: hidden;
+  position: relative;
   transition-duration: 150ms;
   transition-property:
     background-color, border-color, box-shadow, color, filter, opacity,
     translate;
+  user-select: none;
 }
 
 .button:disabled {
@@ -67,8 +67,8 @@
 /* Icon only */
 /* ===================================================== */
 .button__icon_only {
-  width: var(--size) !important;
   padding: 0 !important;
+  width: var(--size) !important;
 }
 
 /* ===================================================== */
@@ -114,7 +114,6 @@
 /* ===================================================== */
 /* Accent */
 .button__variant_accent {
-  color: var(--color-gray-1, #fdfcfd);
   background-image: linear-gradient(
     to bottom,
     var(--color-primary-9, #e93d82),
@@ -124,6 +123,7 @@
   box-shadow:
     inset 0 1px 0 0 rgba(255, 255, 255, 0.25),
     inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+  color: var(--color-gray-1, #fdfcfd);
 }
 
 .button__variant_accent:enabled[aria-pressed="true"],
@@ -135,28 +135,27 @@
 
 /* Ghost */
 .button__variant_ghost {
-  color: var(--color-gray-11, #6f6e77);
   background-color: transparent;
+  color: var(--color-gray-11, #6f6e77);
 }
 
 .button__variant_ghost:enabled[aria-pressed="true"],
 .button__variant_ghost:enabled:active {
-  color: var(--color-gray-12, #1a1523);
   background-color: var(--color-gray-5, #e9e8ea) !important;
+  color: var(--color-gray-12, #1a1523);
 }
 
 .button__variant_ghost:enabled:hover {
-  color: var(--color-gray-12, #1a1523);
   background-color: color-mix(
     in oklab,
     var(--color-gray-5, #e9e8ea) 75%,
     transparent
   );
+  color: var(--color-gray-12, #1a1523);
 }
 
 /* Primary */
 .button__variant_primary {
-  color: var(--color-gray-1, #fdfcfd);
   background-image: linear-gradient(
     to bottom,
     color-mix(in oklab, var(--color-gray-12, #1a1523) 90%, transparent),
@@ -166,6 +165,7 @@
   box-shadow:
     inset 0 1px 0 0 rgba(255, 255, 255, 0.25),
     inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+  color: var(--color-gray-1, #fdfcfd);
 }
 
 .button__variant_primary:enabled[aria-pressed="true"],
@@ -177,7 +177,6 @@
 
 /* Secondary */
 .button__variant_secondary {
-  color: var(--color-gray-11, #6f6e77);
   background-image: linear-gradient(
     to bottom,
     var(--color-gray-1, #fdfcfd),
@@ -187,13 +186,14 @@
   box-shadow:
     inset 0 1px 0 0 rgba(255, 255, 255, 0.25),
     inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+  color: var(--color-gray-11, #6f6e77);
 }
 
 .button__variant_secondary:enabled[aria-pressed="true"],
 .button__variant_secondary:enabled:active,
 .button__variant_secondary:enabled:hover {
-  color: var(--color-gray-12, #1a1523);
   border-color: var(--color-gray-8, #c8c7cb);
+  color: var(--color-gray-12, #1a1523);
 }
 
 .button__variant_secondary:enabled[aria-pressed="true"],

@@ -31,14 +31,10 @@
   ],
   "scripts": {
     "build": "tsup",
-    "check": "biome check",
-    "check:fix": "biome check --write",
     "dev": "tsup --watch",
-    "prepublishOnly": "pnpm run build",
-    "update": "pnpx npm-check-updates --upgrade"
+    "prepublishOnly": "pnpm run build"
   },
   "devDependencies": {
-    "@biomejs/biome": "catalog:",
     "@types/react": "catalog:",
     "tsup": "^8.5.0",
     "typescript": "catalog:"

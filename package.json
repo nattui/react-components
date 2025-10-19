@@ -6,20 +6,26 @@
   ],
   "scripts": {
     "build": "turbo build",
-    "check": "biome check",
-    "check:fix": "biome check --unsafe --write",
+    "check": "pnpm check:format && pnpm check:lint && pnpm check:type",
+    "check:fix": "pnpm check:format:fix && pnpm check:lint:fix && pnpm check:type",
+    "check:format": "prettier --check .",
+    "check:format:fix": "prettier --write .",
+    "check:lint": "eslint .",
+    "check:lint:fix": "eslint --fix .",
     "check:package": "sh scripts/sort-package-json.sh",
     "clean": "sh scripts/clean.sh",
     "dev": "turbo dev",
     "update": "bun update --interactive --recursive"
   },
   "devDependencies": {
-    "@biomejs/biome": "catalog:",
+    "prettier": "^3.6.2",
+    "prettier-plugin-css-order": "^2.1.2",
+    "prettier-plugin-packagejson": "^2.5.19",
+    "prettier-plugin-sort-json": "^4.1.1",
     "turbo": "^2.5.8"
   },
   "packageManager": "bun@1.3.0",
   "catalog": {
-    "@biomejs/biome": "^2.2.5",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
     "react": "^19.2.0",
