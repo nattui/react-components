@@ -16,7 +16,6 @@
     "url": "git+https://github.com/nattui/react-components.git"
   },
   "author": "Natt Nguyen <hello@natt.sh> (https://natt.sh)",
-  "type": "module",
   "exports": {
     ".": {
       "types": "./dist/index.d.mts",
