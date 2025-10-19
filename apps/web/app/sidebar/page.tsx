@@ -1,5 +1,3 @@
-/** biome-ignore-all lint/nursery/useSortedClasses: FIXME */
-
 "use client"
 
 import { Button } from "@nattui/react-components"
@@ -15,6 +13,13 @@ import {
   LucideVideo,
 } from "lucide-react"
 import { type ReactNode, useState } from "react"
+
+interface SidebarItemProps {
+  icon: ReactNode
+  isExpanded: boolean
+  label: string
+  variant?: "accent"
+}
 
 export default function SidebarPage() {
   const [isExpanded, setIsExpanded] = useState(true)
@@ -115,15 +120,8 @@ export default function SidebarPage() {
   )
 }
 
-interface SidebarItemProps {
-  icon: ReactNode
-  label: string
-  isExpanded: boolean
-  variant?: "accent"
-}
-
 function SidebarItem(props: SidebarItemProps) {
-  const { icon, label, isExpanded, variant } = props
+  const { icon, isExpanded, label, variant } = props
 
   return (
     <div

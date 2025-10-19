@@ -1,5 +1,5 @@
-import { Input } from "@nattui/react-components"
 import type { Meta, StoryObj } from "@storybook/react-vite"
+import { Input } from "@nattui/react-components"
 import { fn } from "storybook/test"
 
 const meta = {

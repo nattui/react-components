@@ -1,7 +1,19 @@
 import type { ComponentProps, JSX, ReactNode } from "react"
-import styles from "@/button.module.css"
 import { ButtonBackground } from "@/button-background"
 import { ButtonSpinner } from "@/button-spinner"
+import styles from "@/button.module.css"
+
+export interface ButtonIconProps extends ButtonPropsInternal {
+  children?: ReactNode
+  iconEnd?: never
+  iconOnly: true
+  iconStart?: never
+}
+
+export interface ButtonProps extends ButtonPropsInternal {
+  children?: string | string[]
+  iconOnly?: false
+}
 
 interface ButtonPropsInternal
   extends Omit<ComponentProps<"button">, "aria-pressed" | "disabled"> {
@@ -15,18 +27,6 @@ interface ButtonPropsInternal
   isRounded?: boolean
   size?: 32 | 36 | 40 | 44
   variant?: "accent" | "ghost" | "primary" | "secondary"
-}
-
-export interface ButtonIconProps extends ButtonPropsInternal {
-  children?: ReactNode
-  iconEnd?: never
-  iconOnly: true
-  iconStart?: never
-}
-
-export interface ButtonProps extends ButtonPropsInternal {
-  children?: string | string[]
-  iconOnly?: false
 }
 
 type ButtonUnionProps = ButtonIconProps | ButtonProps
