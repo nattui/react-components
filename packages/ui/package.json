@@ -1,6 +1,6 @@
 {
   "name": "@nattui/react-components",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "A collection of reusable React components built with TypeScript and CSS Modules",
   "keywords": [
     "components",
@@ -16,15 +16,16 @@
     "url": "git+https://github.com/nattui/react-components.git"
   },
   "author": "Natt Nguyen <hello@natt.sh> (https://natt.sh)",
+  "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/index.d.mts",
-      "import": "./dist/index.mjs"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
     }
   },
-  "main": "./dist/index.mjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.mts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
