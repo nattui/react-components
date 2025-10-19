@@ -11,20 +11,15 @@ export default defineConfig([
     ignores: ["**/.next/**", "**/dist/**", "**/storybook-static/**"],
   },
   {
-    extends: ["js/recommended"],
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
-    plugins: {
-      js: pluginJs,
-    },
-  },
-  {
     extends: [
+      pluginJs.configs.recommended,
       pluginPerfectionist.configs["recommended-natural"],
       pluginTsEslint.configs["recommended"],
       pluginUnicorn.configs["all"],
     ],
     files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
     plugins: {
+      js: pluginJs,
       react: pluginReact,
       "unused-imports": pluginUnusedImports,
     },
