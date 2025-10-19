@@ -1,6 +1,7 @@
 import pluginJs from "@eslint/js"
 import pluginPerfectionist from "eslint-plugin-perfectionist"
 import pluginReact from "eslint-plugin-react"
+import pluginReactHooks from "eslint-plugin-react-hooks"
 import pluginUnicorn from "eslint-plugin-unicorn"
 import pluginUnusedImports from "eslint-plugin-unused-imports"
 import { defineConfig } from "eslint/config"
@@ -19,9 +20,10 @@ export default defineConfig([
     ],
     files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
     plugins: {
+      "react-hooks": pluginReactHooks,
+      "unused-imports": pluginUnusedImports,
       js: pluginJs,
       react: pluginReact,
-      "unused-imports": pluginUnusedImports,
     },
     rules: {
       "@typescript-eslint/no-empty-object-type": "off",
