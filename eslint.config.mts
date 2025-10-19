@@ -12,7 +12,7 @@ export default defineConfig([
   },
   {
     extends: [
-      pluginJs.configs.recommended,
+      pluginJs.configs["recommended"],
       pluginPerfectionist.configs["recommended-natural"],
       pluginTsEslint.configs["recommended"],
       pluginUnicorn.configs["all"],
