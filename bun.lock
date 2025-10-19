@@ -29,6 +29,7 @@
       "name": "web",
       "dependencies": {
         "@nattui/react-components": "workspace:*",
+        "@nattui/tailwind-tokenless": "^0.0.2",
         "lucide-react": "^0.545.0",
         "next": "^16.0.0-beta.0",
         "react": "catalog:",
@@ -46,7 +47,7 @@
     },
     "packages/ui": {
       "name": "@nattui/react-components",
-      "version": "0.0.16",
+      "version": "0.0.21",
       "devDependencies": {
         "@biomejs/biome": "catalog:",
         "@types/react": "catalog:",
@@ -247,6 +248,8 @@
     "@jridgewell/trace-mapping": ["@jridgewell/trace-mapping@0.3.31", "", { "dependencies": { "@jridgewell/resolve-uri": "^3.1.0", "@jridgewell/sourcemap-codec": "^1.4.14" } }, "sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw=="],
 
     "@nattui/react-components": ["@nattui/react-components@workspace:packages/ui"],
+
+    "@nattui/tailwind-tokenless": ["@nattui/tailwind-tokenless@0.0.2", "", {}, "sha512-VL6VZ+P5bMeECHYugFSzfDxAQRJdzOa30U1JAQLxWmfc6yqLpwybGCFs2XgycKD/9lFXj1yNDP/G5NHBt5XBNQ=="],
 
     "@next/env": ["@next/env@16.0.0-canary.2", "", {}, "sha512-3lnH9Iok37tpL6uegL0bxLOacgbNgo6molQoXLsAlCuBOn2ncK++Yno8Tn+4GYwEnvYzUID4RRYHfDYB9UUKDA=="],
 

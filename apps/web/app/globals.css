@@ -1,9 +1,0 @@
-@import "tailwindcss";
-
-body {
-  background: #f9f8f9;
-}
-
-button {
-  font-family: var(--font-geist-sans);
-}

@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation"
 
 export default function Topbar() {
   return (
-    <div className="flex items-center gap-4 p-4">
+    <div className="flex items-center gap-16 p-16">
       <NavLink href="/button">Button</NavLink>
       <NavLink href="/input">Input</NavLink>
     </div>
@@ -21,7 +21,7 @@ function NavLink(props: LinkProps<string>) {
     <Link
       className={`font-medium text-[15px] transition-colors ${
         isActive
-          ? "text-[#e93d82] underline"
+          ? "text-primary-9 underline"
           : "text-gray-700 hover:text-gray-900 hover:underline"
       }`}
       href={href}

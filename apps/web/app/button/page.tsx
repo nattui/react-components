@@ -3,11 +3,11 @@ import { LucideArrowLeft, LucideArrowRight, LucideDownload } from "lucide-react"
 
 export default function ButtonPage() {
   return (
-    <div className="flex flex-col gap-4 p-16">
-      <Button className="!absolute top-16 right-16">Absolute</Button>
+    <div className="flex flex-col gap-16 p-64">
+      <Button className="!absolute top-64 right-64">Absolute</Button>
 
       <p>Variant</p>
-      <div className="flex flex-wrap items-center gap-4">
+      <div className="flex flex-wrap items-center gap-16">
         <Button variant="accent">Accent</Button>
         <Button variant="primary">Primary</Button>
         <Button variant="secondary">Secondary</Button>
@@ -15,7 +15,7 @@ export default function ButtonPage() {
       </div>
 
       <p>Size</p>
-      <div className="flex flex-wrap items-center gap-4">
+      <div className="flex flex-wrap items-center gap-16">
         <Button size={32}>Add goal</Button>
         <Button size={36}>Add goal</Button>
         <Button size={40}>Add goal</Button>
@@ -23,7 +23,7 @@ export default function ButtonPage() {
       </div>
 
       <p>Rounded</p>
-      <div className="flex flex-wrap items-center gap-4">
+      <div className="flex flex-wrap items-center gap-16">
         <Button isRounded variant="accent">
           Add goal
         </Button>
@@ -39,7 +39,7 @@ export default function ButtonPage() {
       </div>
 
       <p>Disabled</p>
-      <div className="flex flex-wrap items-center gap-4">
+      <div className="flex flex-wrap items-center gap-16">
         <Button isDisabled variant="accent">
           Add goal
         </Button>
@@ -55,7 +55,7 @@ export default function ButtonPage() {
       </div>
 
       <p>Loading</p>
-      <div className="flex flex-wrap items-center gap-4">
+      <div className="flex flex-wrap items-center gap-16">
         <Button isLoading variant="accent">
           Add goal
         </Button>
@@ -71,7 +71,7 @@ export default function ButtonPage() {
       </div>
 
       <p>Active</p>
-      <div className="flex flex-wrap items-center gap-4">
+      <div className="flex flex-wrap items-center gap-16">
         <Button isActive variant="accent">
           Add goal
         </Button>
@@ -87,7 +87,7 @@ export default function ButtonPage() {
       </div>
 
       <p>Icon</p>
-      <div className="flex flex-wrap items-center gap-4">
+      <div className="flex flex-wrap items-center gap-16">
         <Button
           iconEnd={<LucideArrowRight size={16} />}
           iconStart={<LucideArrowLeft size={16} />}
@@ -119,14 +119,14 @@ export default function ButtonPage() {
       </div>
 
       <p>Full width</p>
-      <div className="flex flex-wrap items-center gap-4">
-        <Button className="max-w-xs" isFullWidth>
+      <div className="flex flex-wrap items-center gap-16">
+        <Button className="max-w-320" isFullWidth>
           Add goal
         </Button>
       </div>
 
       <p>Icon only</p>
-      <div className="flex flex-wrap items-center gap-4">
+      <div className="flex flex-wrap items-center gap-16">
         <Button iconOnly variant="accent">
           <LucideDownload size={16} />
         </Button>
@@ -142,7 +142,7 @@ export default function ButtonPage() {
       </div>
 
       <p>Icon only size</p>
-      <div className="flex flex-wrap items-center gap-4">
+      <div className="flex flex-wrap items-center gap-16">
         <Button iconOnly size={32}>
           <LucideDownload size={16} />
         </Button>
@@ -158,7 +158,7 @@ export default function ButtonPage() {
       </div>
 
       <p>Icon only loading</p>
-      <div className="flex flex-wrap items-center gap-4">
+      <div className="flex flex-wrap items-center gap-16">
         <Button iconOnly isLoading size={32}>
           <LucideDownload size={16} />
         </Button>

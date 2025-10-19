@@ -11,16 +11,19 @@ import {
 
 export default function InputPage() {
   return (
-    <div className="mx-auto flex max-w-sm flex-col p-8">
+    <div className="mx-auto flex max-w-448 flex-col p-64">
       <div className="h-20" />
 
       <Label className="mb-1" htmlFor="email">
         Email
       </Label>
-      <div className="relative mb-4">
-        <LucideMail className="absolute top-3 left-3 text-gray-400" size={16} />
+      <div className="relative mb-16">
+        <LucideMail
+          className="absolute top-12 left-12 text-gray-11"
+          size={16}
+        />
         <Input
-          className="pl-9!"
+          className="pl-36!"
           id="email"
           placeholder="name@example.com"
           type="email"
@@ -30,22 +33,25 @@ export default function InputPage() {
       <Label className="mb-1" htmlFor="password">
         Password
       </Label>
-      <div className="relative mb-4">
-        <LucideLock className="absolute top-3 left-3 text-gray-400" size={16} />
+      <div className="relative mb-16">
+        <LucideLock
+          className="absolute top-12 left-12 text-gray-11"
+          size={16}
+        />
         <Input
-          className="px-9!"
+          className="px-36!"
           id="password"
           placeholder="••••••••"
           type="password"
         />
         <Button
-          className="absolute! group top-1 right-1"
+          className="absolute! group top-4 right-4"
           iconOnly
           size={32}
           variant="ghost"
         >
           <LucideEye
-            className="text-gray-400 transition-colors group-hover:text-gray-900 group-active:text-gray-900"
+            className="text-gray-11 transition-colors group-hover:text-gray-12 group-active:text-gray-12"
             size={16}
           />
         </Button>
@@ -66,9 +72,9 @@ export default function InputPage() {
         Disabled
       </Label>
       <div className="relative">
-        <LucideBan className="absolute top-3 left-3 text-gray-400" size={16} />
+        <LucideBan className="absolute top-12 left-12 text-gray-11" size={16} />
         <Input
-          className="pl-9!"
+          className="pl-36!"
           id="disabled"
           isDisabled
           placeholder="Disabled"
@@ -83,20 +89,20 @@ export default function InputPage() {
       </Label>
       <div className="relative">
         <Input
-          className="pr-9!"
+          className="pr-36!"
           defaultValue="This is a read-only input"
           id="read-only"
           isReadOnly
           type="text"
         />
         <Button
-          className="absolute! group top-1 right-1"
+          className="absolute! group top-4 right-4"
           iconOnly
           size={32}
           variant="ghost"
         >
           <LucideCopy
-            className="text-gray-400 transition-colors group-hover:text-gray-900 group-active:text-gray-900"
+            className="text-gray-11 transition-colors group-hover:text-gray-12 group-active:text-gray-12"
             size={16}
           />
         </Button>
@@ -121,7 +127,7 @@ export default function InputPage() {
           variant="secondary"
         >
           <LucideDownload
-            className="text-gray-400 transition-colors group-hover:text-gray-900 group-active:text-gray-900"
+            className="text-gray-11 transition-colors group-hover:text-gray-12 group-active:text-gray-12"
             size={16}
           />
         </Button>
