@@ -9,6 +9,7 @@ const config = {
     "prettier-plugin-css-order",
     "prettier-plugin-packagejson",
     "prettier-plugin-sort-json",
+    "prettier-plugin-tailwindcss",
   ],
   semi: false,
 }

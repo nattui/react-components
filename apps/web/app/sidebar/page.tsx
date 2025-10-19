@@ -28,11 +28,11 @@ export default function SidebarPage() {
   return (
     <div className="flex w-full">
       <div
-        className=" bg-gray-2 shadow-[0_0_0_1px_red] mx-auto w-256 h-[500px] relative data-[is-expanded=false]:w-[52px] transition-[width] duration-300 overflow-hidden"
+        className="bg-gray-2 relative mx-auto h-[500px] w-256 overflow-hidden shadow-[0_0_0_1px_red] transition-[width] duration-300 data-[is-expanded=false]:w-[52px]"
         data-is-expanded={isExpanded}
       >
         <Button
-          className="absolute! top-8 right-8 data-[is-expanded=false]:opacity-0 transition-opacity duration-300 data-[is-expanded=false]:pointer-events-none cursor-w-resize!"
+          className="absolute! top-8 right-8 cursor-w-resize! transition-opacity duration-300 data-[is-expanded=false]:pointer-events-none data-[is-expanded=false]:opacity-0"
           data-is-expanded={isExpanded}
           iconOnly
           onClick={() => setIsExpanded(false)}
@@ -41,7 +41,7 @@ export default function SidebarPage() {
           <LucidePanelLeft size={20} />
         </Button>
         <Button
-          className="ml-8 mt-8 mb-16"
+          className="mt-8 mb-16 ml-8"
           iconOnly
           onClick={() => setIsExpanded(true)}
           onMouseEnter={() => setIsHovered(true)}
@@ -52,7 +52,7 @@ export default function SidebarPage() {
             <LucidePanelLeft className="" size={20} />
           ) : (
             <svg
-              className="size-24 text-primary-9 bg-primary-x9"
+              className="text-primary-9 bg-primary-x9 size-24"
               fill="none"
               height="32"
               viewBox="0 0 32 32"
@@ -125,13 +125,13 @@ function SidebarItem(props: SidebarItemProps) {
 
   return (
     <div
-      className="flex items-center h-36 px-8 rounded-8 gap-x-6 hover:text-gray-12 text-gray-11 hover:bg-gray-3 data-[is-expanded=false]:w-[36px] w-full transition-all duration-300 data-[variant=accent]:text-primary-11 data-[variant=accent]:hover:text-primary-12 cursor-pointer select-none"
+      className="rounded-8 hover:text-gray-12 text-gray-11 hover:bg-gray-3 data-[variant=accent]:text-primary-11 data-[variant=accent]:hover:text-primary-12 flex h-36 w-full cursor-pointer items-center gap-x-6 px-8 transition-all duration-300 select-none data-[is-expanded=false]:w-[36px]"
       data-is-expanded={isExpanded}
       data-variant={variant}
     >
       {icon}
       <p
-        className="text-14 font-500 data-[is-expanded=false]:opacity-0 transition-opacity duration-300 shrink-0"
+        className="text-14 font-500 shrink-0 transition-opacity duration-300 data-[is-expanded=false]:opacity-0"
         data-is-expanded={isExpanded}
       >
         {label}

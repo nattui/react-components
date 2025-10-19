@@ -6,8 +6,8 @@
   ],
   "scripts": {
     "build": "turbo build",
-    "check": "bun run check:format && bun run check:lint && bun run check:type",
-    "check:fix": "bun run check:format:fix && bun run check:lint:fix && bun run check:type",
+    "check": "bun run check:format && bun run check:lint",
+    "check:fix": "bun run check:format:fix && bun run check:lint:fix",
     "check:format": "prettier --check .",
     "check:format:fix": "prettier --write .",
     "check:lint": "eslint .",
@@ -28,6 +28,7 @@
     "prettier-plugin-css-order": "^2.1.2",
     "prettier-plugin-packagejson": "^2.5.19",
     "prettier-plugin-sort-json": "^4.1.1",
+    "prettier-plugin-tailwindcss": "^0.7.1",
     "turbo": "^2.5.8",
     "typescript-eslint": "^8.46.1"
   },

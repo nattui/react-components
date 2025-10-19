@@ -20,7 +20,7 @@ function NavLink(props: LinkProps<string>) {
 
   return (
     <Link
-      className={`font-medium text-[15px] transition-colors ${
+      className={`text-[15px] font-medium transition-colors ${
         isActive
           ? "text-primary-9 underline"
           : "text-gray-700 hover:text-gray-900 hover:underline"
