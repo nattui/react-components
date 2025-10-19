@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "@nattui/react-components": "workspace:*",
-    "@nattui/tailwind-tokenless": "^0.0.2",
+    "@nattui/tailwind-tokenless": "^0.0.3",
     "lucide-react": "^0.545.0",
     "next": "^16.0.0-beta.0",
     "react": "catalog:",
