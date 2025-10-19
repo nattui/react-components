@@ -23,7 +23,7 @@ export default function SidebarPage() {
   return (
     <div className="flex w-full">
       <div
-        className="border bg-gray-2 border-gray-6 border-solid mx-auto w-256 h-[500px] relative data-[is-expanded=false]:w-[54px] transition-[width] duration-300 overflow-hidden"
+        className=" bg-gray-2 shadow-[0_0_0_1px_red] mx-auto w-256 h-[500px] relative data-[is-expanded=false]:w-[52px] transition-[width] duration-300 overflow-hidden"
         data-is-expanded={isExpanded}
       >
         <Button
@@ -47,7 +47,7 @@ export default function SidebarPage() {
             <LucidePanelLeft className="" size={20} />
           ) : (
             <svg
-              className="size-20 text-primary-9"
+              className="size-20 text-primary-9 bg-primary-9"
               fill="none"
               height="32"
               viewBox="0 0 32 32"
