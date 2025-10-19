@@ -8,6 +8,7 @@ export default function Topbar() {
     <div className="flex items-center gap-16 p-16">
       <NavLink href="/button">Button</NavLink>
       <NavLink href="/input">Input</NavLink>
+      <NavLink href="/sidebar">Sidebar</NavLink>
     </div>
   )
 }
