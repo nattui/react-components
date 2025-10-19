@@ -9,6 +9,7 @@ export default function Topbar() {
       <NavLink href="/button">Button</NavLink>
       <NavLink href="/input">Input</NavLink>
       <NavLink href="/sidebar">Sidebar</NavLink>
+      <NavLink href="/dialog">Dialog</NavLink>
     </div>
   )
 }
