@@ -5,8 +5,10 @@
     "lib": ["dom", "esnext"],
     "module": "esnext",
     "moduleResolution": "bundler",
+    "noEmit": true,
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "skipLibCheck": true
   }
 }
