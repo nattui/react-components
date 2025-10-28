@@ -25,11 +25,11 @@
     - Add accessible line height
 */
 body {
+  position: relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  isolation: isolate;
   line-height: 1.5;
-  position: relative;
+  isolation: isolate;
 }
 
 /*
@@ -71,8 +71,8 @@ textarea {
 */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
   margin: 0;
+  -webkit-appearance: none;
 }
 
 /*

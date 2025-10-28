@@ -28,7 +28,7 @@ export default function SidebarPage() {
   return (
     <div className="flex w-full">
       <div
-        className="bg-gray-2 relative mx-auto h-[500px] w-256 overflow-hidden shadow-[0_0_0_1px_red] transition-[width] duration-300 data-[is-expanded=false]:w-[52px]"
+        className="relative mx-auto h-[500px] w-256 overflow-hidden bg-gray-2 shadow-[0_0_0_1px_red] transition-[width] duration-300 data-[is-expanded=false]:w-[52px]"
         data-is-expanded={isExpanded}
       >
         <Button
@@ -52,7 +52,7 @@ export default function SidebarPage() {
             <LucidePanelLeft className="" size={20} />
           ) : (
             <svg
-              className="text-primary-9 bg-primary-x9 size-24"
+              className="size-24 bg-primary-x9 text-primary-9"
               fill="none"
               height="32"
               viewBox="0 0 32 32"
@@ -125,13 +125,13 @@ function SidebarItem(props: SidebarItemProps) {
 
   return (
     <div
-      className="rounded-8 hover:text-gray-12 text-gray-11 hover:bg-gray-3 data-[variant=accent]:text-primary-11 data-[variant=accent]:hover:text-primary-12 flex h-36 w-full cursor-pointer items-center gap-x-6 px-8 transition-all duration-300 select-none data-[is-expanded=false]:w-[36px]"
+      className="flex h-36 w-full cursor-pointer select-none items-center gap-x-6 rounded-8 px-8 text-gray-11 transition-all duration-300 hover:bg-gray-3 hover:text-gray-12 data-[is-expanded=false]:w-[36px] data-[variant=accent]:text-primary-11 data-[variant=accent]:hover:text-primary-12"
       data-is-expanded={isExpanded}
       data-variant={variant}
     >
       {icon}
       <p
-        className="text-14 font-500 shrink-0 transition-opacity duration-300 data-[is-expanded=false]:opacity-0"
+        className="shrink-0 font-500 text-14 transition-opacity duration-300 data-[is-expanded=false]:opacity-0"
         data-is-expanded={isExpanded}
       >
         {label}

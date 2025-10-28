@@ -2,7 +2,7 @@
 /* Base */
 /* ===================================================== */
 .label {
-  color: var(--color-gray-11, #646464);
-  font-size: 13px;
   width: fit-content;
+  font-size: 13px;
+  color: var(--color-gray-11, #646464);
 }

@@ -1,7 +1,7 @@
 import type { ComponentProps, JSX, ReactNode } from "react"
+import styles from "@/button.module.css"
 import { ButtonBackground } from "@/button-background"
 import { ButtonSpinner } from "@/button-spinner"
-import styles from "@/button.module.css"
 
 export interface ButtonIconProps extends ButtonPropsInternal {
   children?: ReactNode
