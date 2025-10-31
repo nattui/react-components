@@ -15,7 +15,7 @@
   cursor: text;
   outline-width: 0;
   outline-style: solid;
-  outline-color: var(--color-primary, #e93d82);
+  outline-color: var(--color-primary-9, #e93d82);
   outline-offset: 2px;
   background-color: var(--color-gray-1, #fcfcfc);
   border-color: var(--color-gray-5, #e0e0e0);
