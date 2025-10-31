@@ -6,8 +6,17 @@ import ColorCombobox from "@/app/components/color-combobox"
 export default function ComboboxPage() {
   const GRAY_OPTIONS = [
     "color-gray-gray",
-    "color-gray-gray-dark",
     "color-gray-mauve",
+    "color-gray-slate",
+    "color-gray-sage",
+    "color-gray-olive",
+    "color-gray-sand",
+    "color-gray-gray-dark",
+    "color-gray-mauve-dark",
+    "color-gray-slate-dark",
+    "color-gray-sage-dark",
+    "color-gray-olive-dark",
+    "color-gray-sand-dark",
   ] as const
 
   const GRAY_GROUP = [
