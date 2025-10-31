@@ -1,0 +1,520 @@
+/* ===================================================== */
+/* Tailwind */
+/* ===================================================== */
+@theme {
+  --color-\*: initial;
+
+  --color-gray-1: var(--color-gray-1);
+  --color-gray-2: var(--color-gray-2);
+  --color-gray-3: var(--color-gray-3);
+  --color-gray-4: var(--color-gray-4);
+  --color-gray-5: var(--color-gray-5);
+  --color-gray-6: var(--color-gray-6);
+  --color-gray-7: var(--color-gray-7);
+  --color-gray-8: var(--color-gray-8);
+  --color-gray-9: var(--color-gray-9);
+  --color-gray-10: var(--color-gray-10);
+  --color-gray-11: var(--color-gray-11);
+  --color-gray-12: var(--color-gray-12);
+
+  --color-gray-a1: var(--color-gray-a1);
+  --color-gray-a2: var(--color-gray-a2);
+  --color-gray-a3: var(--color-gray-a3);
+  --color-gray-a4: var(--color-gray-a4);
+  --color-gray-a5: var(--color-gray-a5);
+  --color-gray-a6: var(--color-gray-a6);
+  --color-gray-a7: var(--color-gray-a7);
+  --color-gray-a8: var(--color-gray-a8);
+  --color-gray-a9: var(--color-gray-a9);
+  --color-gray-a10: var(--color-gray-a10);
+  --color-gray-a11: var(--color-gray-a11);
+  --color-gray-a12: var(--color-gray-a12);
+
+  --color-primary-1: var(--color-primary-1);
+  --color-primary-2: var(--color-primary-2);
+  --color-primary-3: var(--color-primary-3);
+  --color-primary-4: var(--color-primary-4);
+  --color-primary-5: var(--color-primary-5);
+  --color-primary-6: var(--color-primary-6);
+  --color-primary-7: var(--color-primary-7);
+  --color-primary-8: var(--color-primary-8);
+  --color-primary-9: var(--color-primary-9);
+  --color-primary-10: var(--color-primary-10);
+  --color-primary-11: var(--color-primary-11);
+  --color-primary-12: var(--color-primary-12);
+
+  --color-primary-a1: var(--color-primary-a1);
+  --color-primary-a2: var(--color-primary-a2);
+  --color-primary-a3: var(--color-primary-a3);
+  --color-primary-a4: var(--color-primary-a4);
+  --color-primary-a5: var(--color-primary-a5);
+  --color-primary-a6: var(--color-primary-a6);
+  --color-primary-a7: var(--color-primary-a7);
+  --color-primary-a8: var(--color-primary-a8);
+  --color-primary-a9: var(--color-primary-a9);
+  --color-primary-a10: var(--color-primary-a10);
+  --color-primary-a11: var(--color-primary-a11);
+  --color-primary-a12: var(--color-primary-a12);
+}
+
+.color-gray-sage {
+  --color-gray-1: var(--color-primitive-sage-1);
+  --color-gray-2: var(--color-primitive-sage-2);
+  --color-gray-3: var(--color-primitive-sage-3);
+  --color-gray-4: var(--color-primitive-sage-4);
+  --color-gray-5: var(--color-primitive-sage-5);
+  --color-gray-6: var(--color-primitive-sage-6);
+  --color-gray-7: var(--color-primitive-sage-7);
+  --color-gray-8: var(--color-primitive-sage-8);
+  --color-gray-9: var(--color-primitive-sage-9);
+  --color-gray-10: var(--color-primitive-sage-10);
+  --color-gray-11: var(--color-primitive-sage-11);
+  --color-gray-12: var(--color-primitive-sage-12);
+
+  --color-gray-a1: var(--color-primitive-sage-a1);
+  --color-gray-a2: var(--color-primitive-sage-a2);
+  --color-gray-a3: var(--color-primitive-sage-a3);
+  --color-gray-a4: var(--color-primitive-sage-a4);
+  --color-gray-a5: var(--color-primitive-sage-a5);
+  --color-gray-a6: var(--color-primitive-sage-a6);
+  --color-gray-a7: var(--color-primitive-sage-a7);
+  --color-gray-a8: var(--color-primitive-sage-a8);
+  --color-gray-a9: var(--color-primitive-sage-a9);
+  --color-gray-a10: var(--color-primitive-sage-a10);
+  --color-gray-a11: var(--color-primitive-sage-a11);
+  --color-gray-a12: var(--color-primitive-sage-a12);
+}
+
+.color-primary-blue {
+  --color-primary-1: var(--color-primitive-blue-1);
+  --color-primary-2: var(--color-primitive-blue-2);
+  --color-primary-3: var(--color-primitive-blue-3);
+  --color-primary-4: var(--color-primitive-blue-4);
+  --color-primary-5: var(--color-primitive-blue-5);
+  --color-primary-6: var(--color-primitive-blue-6);
+  --color-primary-7: var(--color-primitive-blue-7);
+  --color-primary-8: var(--color-primitive-blue-8);
+  --color-primary-9: var(--color-primitive-blue-9);
+  --color-primary-10: var(--color-primitive-blue-10);
+  --color-primary-11: var(--color-primitive-blue-11);
+  --color-primary-12: var(--color-primitive-blue-12);
+
+  --color-primary-a1: var(--color-primitive-blue-a1);
+  --color-primary-a2: var(--color-primitive-blue-a2);
+  --color-primary-a3: var(--color-primitive-blue-a3);
+  --color-primary-a4: var(--color-primitive-blue-a4);
+  --color-primary-a5: var(--color-primitive-blue-a5);
+  --color-primary-a6: var(--color-primitive-blue-a6);
+  --color-primary-a7: var(--color-primitive-blue-a7);
+  --color-primary-a8: var(--color-primitive-blue-a8);
+  --color-primary-a9: var(--color-primitive-blue-a9);
+  --color-primary-a10: var(--color-primitive-blue-a10);
+  --color-primary-a11: var(--color-primitive-blue-a11);
+  --color-primary-a12: var(--color-primitive-blue-a12);
+}
+
+.color-gray-sage {
+  --color-gray-1: var(--color-primitive-sage-1);
+  --color-gray-2: var(--color-primitive-sage-2);
+  --color-gray-3: var(--color-primitive-sage-3);
+  --color-gray-4: var(--color-primitive-sage-4);
+  --color-gray-5: var(--color-primitive-sage-5);
+  --color-gray-6: var(--color-primitive-sage-6);
+  --color-gray-7: var(--color-primitive-sage-7);
+  --color-gray-8: var(--color-primitive-sage-8);
+  --color-gray-9: var(--color-primitive-sage-9);
+  --color-gray-10: var(--color-primitive-sage-10);
+  --color-gray-11: var(--color-primitive-sage-11);
+  --color-gray-12: var(--color-primitive-sage-12);
+
+  --color-gray-a1: var(--color-primitive-sage-a1);
+  --color-gray-a2: var(--color-primitive-sage-a2);
+  --color-gray-a3: var(--color-primitive-sage-a3);
+  --color-gray-a4: var(--color-primitive-sage-a4);
+  --color-gray-a5: var(--color-primitive-sage-a5);
+  --color-gray-a6: var(--color-primitive-sage-a6);
+  --color-gray-a7: var(--color-primitive-sage-a7);
+  --color-gray-a8: var(--color-primitive-sage-a8);
+  --color-gray-a9: var(--color-primitive-sage-a9);
+  --color-gray-a10: var(--color-primitive-sage-a10);
+  --color-gray-a11: var(--color-primitive-sage-a11);
+  --color-gray-a12: var(--color-primitive-sage-a12);
+}
+
+.color-primary-green {
+  --color-primary-1: var(--color-primitive-green-1);
+  --color-primary-2: var(--color-primitive-green-2);
+  --color-primary-3: var(--color-primitive-green-3);
+  --color-primary-4: var(--color-primitive-green-4);
+  --color-primary-5: var(--color-primitive-green-5);
+  --color-primary-6: var(--color-primitive-green-6);
+  --color-primary-7: var(--color-primitive-green-7);
+  --color-primary-8: var(--color-primitive-green-8);
+  --color-primary-9: var(--color-primitive-green-9);
+  --color-primary-10: var(--color-primitive-green-10);
+  --color-primary-11: var(--color-primitive-green-11);
+  --color-primary-12: var(--color-primitive-green-12);
+
+  --color-primary-a1: var(--color-primitive-green-a1);
+  --color-primary-a2: var(--color-primitive-green-a2);
+  --color-primary-a3: var(--color-primitive-green-a3);
+  --color-primary-a4: var(--color-primitive-green-a4);
+  --color-primary-a5: var(--color-primitive-green-a5);
+  --color-primary-a6: var(--color-primitive-green-a6);
+  --color-primary-a7: var(--color-primitive-green-a7);
+  --color-primary-a8: var(--color-primitive-green-a8);
+  --color-primary-a9: var(--color-primitive-green-a9);
+  --color-primary-a10: var(--color-primitive-green-a10);
+  --color-primary-a11: var(--color-primitive-green-a11);
+  --color-primary-a12: var(--color-primitive-green-a12);
+}
+
+:root {
+  /* =================================================== */
+  /* Black */
+  /* =================================================== */
+  --color-primitive-black-a1: rgba(0, 0, 0, 0.05);
+  --color-primitive-black-a2: rgba(0, 0, 0, 0.1);
+  --color-primitive-black-a3: rgba(0, 0, 0, 0.15);
+  --color-primitive-black-a4: rgba(0, 0, 0, 0.2);
+  --color-primitive-black-a5: rgba(0, 0, 0, 0.3);
+  --color-primitive-black-a6: rgba(0, 0, 0, 0.4);
+  --color-primitive-black-a7: rgba(0, 0, 0, 0.5);
+  --color-primitive-black-a8: rgba(0, 0, 0, 0.6);
+  --color-primitive-black-a9: rgba(0, 0, 0, 0.7);
+  --color-primitive-black-a10: rgba(0, 0, 0, 0.8);
+  --color-primitive-black-a11: rgba(0, 0, 0, 0.9);
+  --color-primitive-black-a12: rgba(0, 0, 0, 0.95);
+
+  /* =================================================== */
+  /* White */
+  /* =================================================== */
+  --color-primitive-white-a1: rgba(255, 255, 255, 0.05);
+  --color-primitive-white-a2: rgba(255, 255, 255, 0.1);
+  --color-primitive-white-a3: rgba(255, 255, 255, 0.15);
+  --color-primitive-white-a4: rgba(255, 255, 255, 0.2);
+  --color-primitive-white-a5: rgba(255, 255, 255, 0.3);
+  --color-primitive-white-a6: rgba(255, 255, 255, 0.4);
+  --color-primitive-white-a7: rgba(255, 255, 255, 0.5);
+  --color-primitive-white-a8: rgba(255, 255, 255, 0.6);
+  --color-primitive-white-a9: rgba(255, 255, 255, 0.7);
+  --color-primitive-white-a10: rgba(255, 255, 255, 0.8);
+  --color-primitive-white-a11: rgba(255, 255, 255, 0.9);
+  --color-primitive-white-a12: rgba(255, 255, 255, 0.95);
+
+  /* =================================================== */
+  /* Gray */
+  /* =================================================== */
+  --color-primitive-gray-1: #fcfcfc;
+  --color-primitive-gray-2: #f9f9f9;
+  --color-primitive-gray-3: #f0f0f0;
+  --color-primitive-gray-4: #e8e8e8;
+  --color-primitive-gray-5: #e0e0e0;
+  --color-primitive-gray-6: #d9d9d9;
+  --color-primitive-gray-7: #cecece;
+  --color-primitive-gray-8: #bbbbbb;
+  --color-primitive-gray-9: #8d8d8d;
+  --color-primitive-gray-10: #838383;
+  --color-primitive-gray-11: #646464;
+  --color-primitive-gray-12: #202020;
+
+  --color-primitive-gray-a1: #00000003;
+  --color-primitive-gray-a2: #00000006;
+  --color-primitive-gray-a3: #0000000f;
+  --color-primitive-gray-a4: #00000017;
+  --color-primitive-gray-a5: #0000001f;
+  --color-primitive-gray-a6: #00000026;
+  --color-primitive-gray-a7: #00000031;
+  --color-primitive-gray-a8: #00000044;
+  --color-primitive-gray-a9: #00000072;
+  --color-primitive-gray-a10: #0000007c;
+  --color-primitive-gray-a11: #0000009b;
+  --color-primitive-gray-a12: #000000df;
+
+  --color-primitive-gray-dark-1: #111111;
+  --color-primitive-gray-dark-2: #191919;
+  --color-primitive-gray-dark-3: #222222;
+  --color-primitive-gray-dark-4: #2a2a2a;
+  --color-primitive-gray-dark-5: #313131;
+  --color-primitive-gray-dark-6: #3a3a3a;
+  --color-primitive-gray-dark-7: #484848;
+  --color-primitive-gray-dark-8: #606060;
+  --color-primitive-gray-dark-9: #6e6e6e;
+  --color-primitive-gray-dark-10: #7b7b7b;
+  --color-primitive-gray-dark-11: #b4b4b4;
+  --color-primitive-gray-dark-12: #eeeeee;
+
+  --color-primitive-gray-dark-a1: #00000000;
+  --color-primitive-gray-dark-a2: #ffffff09;
+  --color-primitive-gray-dark-a3: #ffffff12;
+  --color-primitive-gray-dark-a4: #ffffff1b;
+  --color-primitive-gray-dark-a5: #ffffff22;
+  --color-primitive-gray-dark-a6: #ffffff2c;
+  --color-primitive-gray-dark-a7: #ffffff3b;
+  --color-primitive-gray-dark-a8: #ffffff55;
+  --color-primitive-gray-dark-a9: #ffffff64;
+  --color-primitive-gray-dark-a10: #ffffff72;
+  --color-primitive-gray-dark-a11: #ffffffaf;
+  --color-primitive-gray-dark-a12: #ffffffed;
+
+  /* =================================================== */
+  /* Mauve */
+  /* =================================================== */
+  --color-primitive-mauve-1: #fdfcfd;
+  --color-primitive-mauve-2: #faf9fb;
+  --color-primitive-mauve-3: #f2eff3;
+  --color-primitive-mauve-4: #eae7ec;
+  --color-primitive-mauve-5: #e3dfe6;
+  --color-primitive-mauve-6: #dbd8e0;
+  --color-primitive-mauve-7: #d0cdd7;
+  --color-primitive-mauve-8: #bcbac7;
+  --color-primitive-mauve-9: #8e8c99;
+  --color-primitive-mauve-10: #84828e;
+  --color-primitive-mauve-11: #65636d;
+  --color-primitive-mauve-12: #211f26;
+
+  --color-primitive-mauve-a1: #55005503;
+  --color-primitive-mauve-a2: #2b005506;
+  --color-primitive-mauve-a3: #30004010;
+  --color-primitive-mauve-a4: #20003618;
+  --color-primitive-mauve-a5: #20003820;
+  --color-primitive-mauve-a6: #14003527;
+  --color-primitive-mauve-a7: #10003332;
+  --color-primitive-mauve-a8: #08003145;
+  --color-primitive-mauve-a9: #05001d73;
+  --color-primitive-mauve-a10: #0500197d;
+  --color-primitive-mauve-a11: #0400119c;
+  --color-primitive-mauve-a12: #020008e0;
+
+  /* =================================================== */
+  /* Slate */
+  /* =================================================== */
+  --color-primitive-slate-1: #fcfcfd;
+  --color-primitive-slate-2: #f9f9fb;
+  --color-primitive-slate-3: #f0f0f3;
+  --color-primitive-slate-4: #e8e8ec;
+  --color-primitive-slate-5: #e0e1e6;
+  --color-primitive-slate-6: #d9d9e0;
+  --color-primitive-slate-7: #cdced6;
+  --color-primitive-slate-8: #b9bbc6;
+  --color-primitive-slate-9: #8b8d98;
+  --color-primitive-slate-10: #80838d;
+  --color-primitive-slate-11: #60646c;
+  --color-primitive-slate-12: #1c2024;
+
+  --color-primitive-slate-a1: #00005503;
+  --color-primitive-slate-a2: #00005506;
+  --color-primitive-slate-a3: #0000330f;
+  --color-primitive-slate-a4: #00002d17;
+  --color-primitive-slate-a5: #0009321f;
+  --color-primitive-slate-a6: #00002f26;
+  --color-primitive-slate-a7: #00062e32;
+  --color-primitive-slate-a8: #00083046;
+  --color-primitive-slate-a9: #00051d74;
+  --color-primitive-slate-a10: #00071b7f;
+  --color-primitive-slate-a11: #0007149f;
+  --color-primitive-slate-a12: #000509e3;
+
+  /* =================================================== */
+  /* Sage */
+  /* =================================================== */
+  --color-primitive-sage-1: #fbfdfc;
+  --color-primitive-sage-2: #f7f9f8;
+  --color-primitive-sage-3: #eef1f0;
+  --color-primitive-sage-4: #e6e9e8;
+  --color-primitive-sage-5: #dfe2e0;
+  --color-primitive-sage-6: #d7dad9;
+  --color-primitive-sage-7: #cbcfcd;
+  --color-primitive-sage-8: #b8bcba;
+  --color-primitive-sage-9: #868e8b;
+  --color-primitive-sage-10: #7c8481;
+  --color-primitive-sage-11: #5f6563;
+  --color-primitive-sage-12: #1a211e;
+
+  --color-primitive-sage-a1: #00804004;
+  --color-primitive-sage-a2: #00402008;
+  --color-primitive-sage-a3: #002d1e11;
+  --color-primitive-sage-a4: #001f1519;
+  --color-primitive-sage-a5: #00180820;
+  --color-primitive-sage-a6: #00140d28;
+  --color-primitive-sage-a7: #00140a34;
+  --color-primitive-sage-a8: #000f0847;
+  --color-primitive-sage-a9: #00110b79;
+  --color-primitive-sage-a10: #00100a83;
+  --color-primitive-sage-a11: #000a07a0;
+  --color-primitive-sage-a12: #000805e5;
+
+  /* =================================================== */
+  /* Olive */
+  /* =================================================== */
+  --color-primitive-olive-1: #fcfdfc;
+  --color-primitive-olive-2: #f8faf8;
+  --color-primitive-olive-3: #eff1ef;
+  --color-primitive-olive-4: #e7e9e7;
+  --color-primitive-olive-5: #dfe2df;
+  --color-primitive-olive-6: #d7dad7;
+  --color-primitive-olive-7: #cccfcc;
+  --color-primitive-olive-8: #b9bcb8;
+  --color-primitive-olive-9: #898e87;
+  --color-primitive-olive-10: #7f847d;
+  --color-primitive-olive-11: #60655f;
+  --color-primitive-olive-12: #1d211c;
+
+  --color-primitive-olive-a1: #00550003;
+  --color-primitive-olive-a2: #00490007;
+  --color-primitive-olive-a3: #00200010;
+  --color-primitive-olive-a4: #00160018;
+  --color-primitive-olive-a5: #00180020;
+  --color-primitive-olive-a6: #00140028;
+  --color-primitive-olive-a7: #000f0033;
+  --color-primitive-olive-a8: #040f0047;
+  --color-primitive-olive-a9: #050f0078;
+  --color-primitive-olive-a10: #040e0082;
+  --color-primitive-olive-a11: #020a00a0;
+  --color-primitive-olive-a12: #010600e3;
+
+  /* =================================================== */
+  /* Sand */
+  /* =================================================== */
+  --color-primitive-sand-1: #fdfdfc;
+  --color-primitive-sand-2: #f9f9f8;
+  --color-primitive-sand-3: #f1f0ef;
+  --color-primitive-sand-4: #e9e8e6;
+  --color-primitive-sand-5: #e2e1de;
+  --color-primitive-sand-6: #dad9d6;
+  --color-primitive-sand-7: #cfceca;
+  --color-primitive-sand-8: #bcbbb5;
+  --color-primitive-sand-9: #8d8d86;
+  --color-primitive-sand-10: #82827c;
+  --color-primitive-sand-11: #63635e;
+  --color-primitive-sand-12: #21201c;
+
+  --color-primitive-sand-a1: #55550003;
+  --color-primitive-sand-a2: #25250007;
+  --color-primitive-sand-a3: #20100010;
+  --color-primitive-sand-a4: #1f150019;
+  --color-primitive-sand-a5: #1f180021;
+  --color-primitive-sand-a6: #19130029;
+  --color-primitive-sand-a7: #19140035;
+  --color-primitive-sand-a8: #1915014a;
+  --color-primitive-sand-a9: #0f0f0079;
+  --color-primitive-sand-a10: #0c0c0083;
+  --color-primitive-sand-a11: #080800a1;
+  --color-primitive-sand-a12: #060500e3;
+
+  /* =================================================== */
+  /* Red */
+  /* =================================================== */
+  --color-primitive-red-1: #fffcfc;
+  --color-primitive-red-2: #fff7f7;
+  --color-primitive-red-3: #feebec;
+  --color-primitive-red-4: #ffdbdc;
+  --color-primitive-red-5: #ffcdce;
+  --color-primitive-red-6: #fdbdbe;
+  --color-primitive-red-7: #f4a9aa;
+  --color-primitive-red-8: #eb8e90;
+  --color-primitive-red-9: #e5484d;
+  --color-primitive-red-10: #dc3e42;
+  --color-primitive-red-11: #ce2c31;
+  --color-primitive-red-12: #641723;
+
+  --color-primitive-red-a1: #ff000003;
+  --color-primitive-red-a2: #ff000008;
+  --color-primitive-red-a3: #f3000d14;
+  --color-primitive-red-a4: #ff000824;
+  --color-primitive-red-a5: #ff000632;
+  --color-primitive-red-a6: #f8000442;
+  --color-primitive-red-a7: #df000356;
+  --color-primitive-red-a8: #d2000571;
+  --color-primitive-red-a9: #db0007b7;
+  --color-primitive-red-a10: #d10005c1;
+  --color-primitive-red-a11: #c40006d3;
+  --color-primitive-red-a12: #55000de8;
+
+  /* =================================================== */
+  /* Crimson */
+  /* =================================================== */
+  --color-primitive-crimson-1: #fffcfd;
+  --color-primitive-crimson-2: #fef7f9;
+  --color-primitive-crimson-3: #ffe9f0;
+  --color-primitive-crimson-4: #fedce7;
+  --color-primitive-crimson-5: #facedd;
+  --color-primitive-crimson-6: #f3bed1;
+  --color-primitive-crimson-7: #eaacc3;
+  --color-primitive-crimson-8: #e093b2;
+  --color-primitive-crimson-9: #e93d82;
+  --color-primitive-crimson-10: #df3478;
+  --color-primitive-crimson-11: #cb1d63;
+  --color-primitive-crimson-12: #621639;
+
+  --color-primitive-crimson-a1: #ff005503;
+  --color-primitive-crimson-a2: #e0004008;
+  --color-primitive-crimson-a3: #ff005216;
+  --color-primitive-crimson-a4: #f8005123;
+  --color-primitive-crimson-a5: #e5004f31;
+  --color-primitive-crimson-a6: #d0004b41;
+  --color-primitive-crimson-a7: #bf004753;
+  --color-primitive-crimson-a8: #b6004a6c;
+  --color-primitive-crimson-a9: #e2005bc2;
+  --color-primitive-crimson-a10: #d70056cb;
+  --color-primitive-crimson-a11: #c4004fe2;
+  --color-primitive-crimson-a12: #530026e9;
+
+  /* =================================================== */
+  /* Blue */
+  /* =================================================== */
+  --color-primitive-blue-1: #fbfdff;
+  --color-primitive-blue-2: #f4faff;
+  --color-primitive-blue-3: #e6f4fe;
+  --color-primitive-blue-4: #d5efff;
+  --color-primitive-blue-5: #c2e5ff;
+  --color-primitive-blue-6: #acd8fc;
+  --color-primitive-blue-7: #8ec8f6;
+  --color-primitive-blue-8: #5eb1ef;
+  --color-primitive-blue-9: #0090ff;
+  --color-primitive-blue-10: #0588f0;
+  --color-primitive-blue-11: #0d74ce;
+  --color-primitive-blue-12: #113264;
+
+  --color-primitive-blue-a1: #0080ff04;
+  --color-primitive-blue-a2: #008cff0b;
+  --color-primitive-blue-a3: #008ff519;
+  --color-primitive-blue-a4: #009eff2a;
+  --color-primitive-blue-a5: #0093ff3d;
+  --color-primitive-blue-a6: #0088f653;
+  --color-primitive-blue-a7: #0083eb71;
+  --color-primitive-blue-a8: #0084e6a1;
+  --color-primitive-blue-a9: #0090ff;
+  --color-primitive-blue-a10: #0086f0fa;
+  --color-primitive-blue-a11: #006dcbf2;
+  --color-primitive-blue-a12: #002359ee;
+
+  /* =================================================== */
+  /* Green */
+  /* =================================================== */
+  --color-primitive-green-1: #fbfefc;
+  --color-primitive-green-2: #f4fbf6;
+  --color-primitive-green-3: #e6f6eb;
+  --color-primitive-green-4: #d6f1df;
+  --color-primitive-green-5: #c4e8d1;
+  --color-primitive-green-6: #adddc0;
+  --color-primitive-green-7: #8eceaa;
+  --color-primitive-green-8: #5bb98b;
+  --color-primitive-green-9: #30a46c;
+  --color-primitive-green-10: #2b9a66;
+  --color-primitive-green-11: #218358;
+  --color-primitive-green-12: #193b2d;
+
+  --color-primitive-green-a1: #00c04004;
+  --color-primitive-green-a2: #00a32f0b;
+  --color-primitive-green-a3: #00a43319;
+  --color-primitive-green-a4: #00a83829;
+  --color-primitive-green-a5: #019c393b;
+  --color-primitive-green-a6: #00963c52;
+  --color-primitive-green-a7: #00914071;
+  --color-primitive-green-a8: #00924ba4;
+  --color-primitive-green-a9: #008f4acf;
+  --color-primitive-green-a10: #008647d4;
+  --color-primitive-green-a11: #00713fde;
+  --color-primitive-green-a12: #002616e6;
+}

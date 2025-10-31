@@ -1,9 +1,9 @@
 /* Order matters */
 @import "tailwindcss";
 @import "@nattui/tailwind-tokenless/styles/10/index.css";
-@import "@nattui/tailwind-tokenless/styles/colors/reset.css";
+/* @import "@nattui/tailwind-tokenless/styles/colors/reset.css";
 @import "@nattui/tailwind-tokenless/styles/colors/gray/sage.css";
-@import "@nattui/tailwind-tokenless/styles/colors/primary/green.css";
+@import "@nattui/tailwind-tokenless/styles/colors/primary/green.css"; */
 
 @layer base {
   .d {
@@ -126,7 +126,7 @@
 }
 
 @layer components {
-  .c-link {
+  /* .c-link {
     @apply before:bg-gray-6 hover:text-primary leading-p150 relative inline-flex items-center gap-1 whitespace-nowrap transition-colors before:absolute before:bottom-2 before:h-[0.15rem] before:w-full before:rounded-full before:transition-all hover:before:translate-y-8 hover:before:bg-transparent;
-  }
+  } */
 }

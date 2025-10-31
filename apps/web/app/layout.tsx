@@ -23,9 +23,9 @@ export default function RootLayout(props: PropsWithChildren) {
   const { children } = props
 
   return (
-    <html lang="en">
+    <html className="" lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} color-primary-blue antialiased`}
       >
         <Topbar />
         {children}
