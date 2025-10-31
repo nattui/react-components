@@ -114,7 +114,7 @@
 /* ===================================================== */
 /* Accent */
 .button__variant_accent {
-  color: var(--color-gray-1, #fdfcfd);
+  color: var(--color-white, #ffffff);
   background-image: linear-gradient(
     to bottom,
     var(--color-primary-9, #e93d82),
