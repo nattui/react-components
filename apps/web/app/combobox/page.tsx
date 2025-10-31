@@ -7,14 +7,35 @@ import { useId } from "react"
 export default function ComboboxPage() {
   const id = useId()
 
+  const handleValueChange = (value: string) => {
+    const body = document.body
+    const primaryClasses = [
+      "color-primary-blue",
+      "color-primary-red",
+      "color-primary-green",
+    ] as const
+    const grayClasses = ["color-gray-slate"] as const
+
+    if (primaryClasses.includes(value as (typeof primaryClasses)[number])) {
+      body.classList.remove(...primaryClasses)
+      body.classList.add(value)
+      return
+    }
+
+    if (grayClasses.includes(value as (typeof grayClasses)[number])) {
+      body.classList.remove(...grayClasses)
+      body.classList.add(value)
+    }
+  }
+
   return (
-    <Combobox.Root items={fruits}>
+    <Combobox.Root items={COLOR_OPTIONS} onValueChange={handleValueChange}>
       <div className="relative flex flex-col gap-4 font-500 text-14 text-gray-11">
-        <label htmlFor={id}>Choose a fruit</label>
+        <label htmlFor={id}>Choose a color class</label>
         <Combobox.Input
           className="focus:-outline-offset-1 h-40 w-256 rounded-md border border-gray-200 bg-gray-1 pl-14 font-normal text-16 text-gray-900 focus:outline-2 focus:outline-primary-9"
           id={id}
-          placeholder="e.g. Apple"
+          placeholder="e.g. color-primary-red"
         />
         <div className="absolute right-8 bottom-0 flex h-40 items-center justify-center text-gray-11">
           <Combobox.Clear
@@ -59,30 +80,9 @@ export default function ComboboxPage() {
   )
 }
 
-const fruits = [
-  "Apple",
-  "Banana",
-  "Orange",
-  "Pineapple",
-  "Grape",
-  "Mango",
-  "Strawberry",
-  "Blueberry",
-  "Raspberry",
-  "Blackberry",
-  "Cherry",
-  "Peach",
-  "Pear",
-  "Plum",
-  "Kiwi",
-  "Watermelon",
-  "Cantaloupe",
-  "Honeydew",
-  "Papaya",
-  "Guava",
-  "Lychee",
-  "Pomegranate",
-  "Apricot",
-  "Grapefruit",
-  "Passionfruit",
-]
+const COLOR_OPTIONS = [
+  "color-gray-slate",
+  "color-primary-blue",
+  "color-primary-red",
+  "color-primary-green",
+] as const
