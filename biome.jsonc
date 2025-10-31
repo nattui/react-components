@@ -10,11 +10,6 @@
     }
   },
   "css": {
-    "lint": {
-      "correctness": {
-        "noUnknownProperty": "ignore"
-      }
-    },
     "parser": {
       "tailwindDirectives": true
     }
@@ -43,6 +38,11 @@
         "noUselessFragments": "off"
       },
       "correctness": {
+        "noUnknownProperty": "off",
+        "noUnusedImports": {
+          "fix": "safe",
+          "level": "error"
+        },
         "useUniqueElementIds": "off"
       },
       "nursery": {

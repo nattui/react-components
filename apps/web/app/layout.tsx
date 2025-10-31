@@ -1,10 +1,10 @@
+import "@/styles/global.css"
 import type { Metadata } from "next"
-import { Geist_Mono, Inter } from "next/font/google"
+import { Geist, Geist_Mono } from "next/font/google"
 import type { PropsWithChildren } from "react"
 import Topbar from "@/app/topbar"
-import "@/styles/global.css"
 
-const geistSans = Inter({
+const geistSans = Geist({
   subsets: ["latin"],
   variable: "--font-sans",
 })
