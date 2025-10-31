@@ -1,5 +1,6 @@
 "use client"
 
+import { Button } from "@nattui/react-components"
 import ColorCombobox from "@/app/components/color-combobox"
 
 export default function ComboboxPage() {
@@ -40,7 +41,7 @@ export default function ComboboxPage() {
   ] as const
 
   return (
-    <div className="flex flex-col gap-16">
+    <div className="flex flex-col gap-16 p-64">
       <ColorCombobox
         label="Gray palette"
         managedGroup={GRAY_GROUP}
@@ -53,6 +54,7 @@ export default function ComboboxPage() {
         options={PRIMARY_OPTIONS}
         placeholder="e.g. color-primary-red"
       />
+      <Button variant="accent">Search</Button>
     </div>
   )
 }

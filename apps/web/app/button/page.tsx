@@ -4,7 +4,7 @@ import { LucideArrowLeft, LucideArrowRight, LucideDownload } from "lucide-react"
 export default function ButtonPage() {
   return (
     <div className="flex flex-col gap-16 p-64">
-      <Button className="!absolute top-64 right-64">Absolute</Button>
+      <Button className="absolute! top-64 right-64">Absolute</Button>
 
       <p>Variant</p>
       <div className="flex flex-wrap items-center gap-16">
