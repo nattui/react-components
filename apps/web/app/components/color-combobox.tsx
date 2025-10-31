@@ -9,7 +9,6 @@ type ColorComboboxProps = {
   placeholder?: string
   options?: readonly string[]
   onChange?: (value: string) => void
-  managedGroup?: readonly string[]
 }
 
 const DEFAULT_OPTIONS = [
@@ -25,13 +24,12 @@ export default function ColorCombobox(props: ColorComboboxProps) {
     placeholder = "e.g. color-primary-red",
     options = DEFAULT_OPTIONS,
     onChange,
-    managedGroup,
   } = props
   const id = useId()
 
   const handleValueChange = (value: string) => {
     const body = document.body
-    const group = (managedGroup ?? options) as readonly string[]
+    const group = options as readonly string[]
     if (!group || group.length === 0) return
     body.classList.remove(...group)
     body.classList.add(value)
