@@ -12,12 +12,10 @@ import {
 export default function InputPage() {
   return (
     <div className="mx-auto flex max-w-448 flex-col p-64">
-      <div className="h-20" />
-
       <Label className="mb-1" htmlFor="email">
         Email
       </Label>
-      <div className="relative mb-16">
+      <div className="relative">
         <LucideMail
           className="absolute top-14 left-14 text-gray-11"
           size={16}
@@ -30,11 +28,12 @@ export default function InputPage() {
           type="email"
         />
       </div>
+      <div className="h-16" />
 
       <Label className="mb-1" htmlFor="password">
         Password
       </Label>
-      <div className="relative mb-16">
+      <div className="relative">
         <LucideLock
           className="absolute top-14 left-14 text-gray-11"
           size={16}
@@ -58,6 +57,7 @@ export default function InputPage() {
           />
         </Button>
       </div>
+      <div className="h-16" />
 
       <Button
         iconStart={<LucideLogIn size={16} />}
@@ -67,8 +67,7 @@ export default function InputPage() {
       >
         Sign in
       </Button>
-
-      <div className="h-20" />
+      <div className="h-64" />
 
       <Label className="mb-1" htmlFor="disabled">
         Disabled
@@ -84,8 +83,7 @@ export default function InputPage() {
           type="url"
         />
       </div>
-
-      <div className="h-20" />
+      <div className="h-64" />
 
       <Label className="mb-1" htmlFor="read-only">
         Read Only
@@ -111,8 +109,7 @@ export default function InputPage() {
           />
         </Button>
       </div>
-
-      <div className="h-20" />
+      <div className="h-64" />
 
       <Label className="mb-1" htmlFor="input-with-end-icon-button">
         Input with end icon button
