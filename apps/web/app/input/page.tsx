@@ -60,7 +60,7 @@ export default function InputPage() {
       <Button
         iconStart={<LucideLogIn size={16} />}
         isFullWidth
-        size={44}
+        size={40}
         variant="accent"
       >
         Sign in

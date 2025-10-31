@@ -95,25 +95,25 @@
 .button__size_32 {
   --size: 32px;
   height: var(--size);
-  padding: 0 8px;
+  padding: 0 10px;
 }
 
 .button__size_36 {
   --size: 36px;
   height: var(--size);
-  padding: 0 12px;
+  padding: 0 14px;
 }
 
 .button__size_40 {
   --size: 40px;
   height: var(--size);
-  padding: 0 16px;
+  padding: 0 18px;
 }
 
 .button__size_44 {
   --size: 44px;
   height: var(--size);
-  padding: 0 20px;
+  padding: 0 22px;
 }
 
 /* ===================================================== */
