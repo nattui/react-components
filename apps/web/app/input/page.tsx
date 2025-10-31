@@ -19,13 +19,14 @@ export default function InputPage() {
       </Label>
       <div className="relative mb-16">
         <LucideMail
-          className="absolute top-12 left-12 text-gray-11"
+          className="absolute top-14 left-14 text-gray-11"
           size={16}
         />
         <Input
-          className="pl-36!"
+          className="pl-44!"
           id="email"
           placeholder="name@example.com"
+          size={44}
           type="email"
         />
       </div>
@@ -35,17 +36,18 @@ export default function InputPage() {
       </Label>
       <div className="relative mb-16">
         <LucideLock
-          className="absolute top-12 left-12 text-gray-11"
+          className="absolute top-14 left-14 text-gray-11"
           size={16}
         />
         <Input
-          className="px-36!"
+          className="px-44!"
           id="password"
           placeholder="••••••••"
+          size={44}
           type="password"
         />
         <Button
-          className="group absolute! top-4 right-4"
+          className="group absolute! top-6 right-6"
           iconOnly
           size={32}
           variant="ghost"
@@ -60,7 +62,7 @@ export default function InputPage() {
       <Button
         iconStart={<LucideLogIn size={16} />}
         isFullWidth
-        size={40}
+        size={44}
         variant="accent"
       >
         Sign in
@@ -72,12 +74,13 @@ export default function InputPage() {
         Disabled
       </Label>
       <div className="relative">
-        <LucideBan className="absolute top-12 left-12 text-gray-11" size={16} />
+        <LucideBan className="absolute top-6 right-6 text-gray-11" size={16} />
         <Input
-          className="pl-36!"
+          className="pl-44!"
           id="disabled"
           isDisabled
           placeholder="Disabled"
+          size={44}
           type="url"
         />
       </div>
@@ -89,14 +92,15 @@ export default function InputPage() {
       </Label>
       <div className="relative">
         <Input
-          className="pr-36!"
+          className="pr-44!"
           defaultValue="This is a read-only input"
           id="read-only"
           isReadOnly
+          size={44}
           type="text"
         />
         <Button
-          className="group absolute! top-4 right-4"
+          className="group absolute! top-6 right-6"
           iconOnly
           size={32}
           variant="ghost"
@@ -118,12 +122,13 @@ export default function InputPage() {
           className="rounded-r-none! hover:z-10 focus-visible:z-20"
           id="input-with-end-icon-button"
           placeholder="Download"
+          size={44}
           type="url"
         />
         <Button
           className="group -ml-px rounded-l-none! shadow-none! hover:z-10 focus-visible:z-20"
           iconOnly
-          size={40}
+          size={44}
           variant="secondary"
         >
           <LucideDownload

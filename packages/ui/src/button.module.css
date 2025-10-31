@@ -8,6 +8,8 @@
   column-gap: 8px;
   align-items: safe center;
   justify-content: safe center;
+  height: var(--size);
+  padding: var(--padding);
   overflow: hidden;
   font-family: var(--font-sans, sans-serif);
   font-size: 14px;
@@ -94,26 +96,22 @@
 /* ===================================================== */
 .button__size_32 {
   --size: 32px;
-  height: var(--size);
-  padding: 0 10px;
+  --padding: 0 10px;
 }
 
 .button__size_36 {
   --size: 36px;
-  height: var(--size);
-  padding: 0 14px;
+  --padding: 0 14px;
 }
 
 .button__size_40 {
   --size: 40px;
-  height: var(--size);
-  padding: 0 18px;
+  --padding: 0 18px;
 }
 
 .button__size_44 {
   --size: 44px;
-  height: var(--size);
-  padding: 0 22px;
+  --padding: 0 22px;
 }
 
 /* ===================================================== */
