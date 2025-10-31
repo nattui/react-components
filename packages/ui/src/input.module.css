@@ -27,6 +27,10 @@
   transition-property: background-color, border-color, box-shadow, opacity;
 }
 
+.dark .input {
+  background-color: var(--color-gray-2, #101010);
+}
+
 @supports (corner-shape: squircle) {
   .input {
     border-radius: 9999px;
