@@ -21,11 +21,9 @@ export default function ComboboxPage() {
 
   const PRIMARY_OPTIONS = [
     "color-primary-red",
+    "color-primary-crimson",
     "color-primary-blue",
     "color-primary-green",
-    "color-primary-red-dark",
-    "color-primary-blue-dark",
-    "color-primary-green-dark",
   ] as const
 
   return (

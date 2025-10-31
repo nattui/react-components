@@ -452,6 +452,62 @@
   --color-primary-a12: var(--color-primitive-red-dark-a12);
 }
 
+.color-primary-crimson {
+  --color-primary-1: var(--color-primitive-crimson-1);
+  --color-primary-2: var(--color-primitive-crimson-2);
+  --color-primary-3: var(--color-primitive-crimson-3);
+  --color-primary-4: var(--color-primitive-crimson-4);
+  --color-primary-5: var(--color-primitive-crimson-5);
+  --color-primary-6: var(--color-primitive-crimson-6);
+  --color-primary-7: var(--color-primitive-crimson-7);
+  --color-primary-8: var(--color-primitive-crimson-8);
+  --color-primary-9: var(--color-primitive-crimson-9);
+  --color-primary-10: var(--color-primitive-crimson-10);
+  --color-primary-11: var(--color-primitive-crimson-11);
+  --color-primary-12: var(--color-primitive-crimson-12);
+
+  --color-primary-a1: var(--color-primitive-crimson-a1);
+  --color-primary-a2: var(--color-primitive-red-a2);
+  --color-primary-a3: var(--color-primitive-crimson-a3);
+  --color-primary-a4: var(--color-primitive-crimson-a4);
+  --color-primary-a5: var(--color-primitive-crimson-a5);
+  --color-primary-a6: var(--color-primitive-crimson-a6);
+  --color-primary-a7: var(--color-primitive-crimson-a7);
+  --color-primary-a8: var(--color-primitive-crimson-a8);
+  --color-primary-a9: var(--color-primitive-crimson-a9);
+  --color-primary-a10: var(--color-primitive-crimson-a10);
+  --color-primary-a11: var(--color-primitive-crimson-a11);
+  --color-primary-a12: var(--color-primitive-crimson-a12);
+}
+
+.color-primary-crimson-dark {
+  --color-primary-1: var(--color-primitive-crimson-dark-1);
+  --color-primary-2: var(--color-primitive-crimson-dark-2);
+  --color-primary-3: var(--color-primitive-crimson-dark-3);
+  --color-primary-4: var(--color-primitive-crimson-dark-4);
+  --color-primary-5: var(--color-primitive-crimson-dark-5);
+  --color-primary-6: var(--color-primitive-crimson-dark-6);
+  --color-primary-7: var(--color-primitive-crimson-dark-7);
+  --color-primary-8: var(--color-primitive-crimson-dark-8);
+  --color-primary-9: var(--color-primitive-crimson-dark-9);
+  --color-primary-10: var(--color-primitive-crimson-dark-10);
+  --color-primary-11: var(--color-primitive-crimson-dark-11);
+  --color-primary-12: var(--color-primitive-crimson-dark-12);
+
+  --color-primary-a1: var(--color-primitive-crimson-dark-a1);
+  --color-primary-a2: var(--color-primitive-crimson-dark-a2);
+  --color-primary-a3: var(--color-primitive-crimson-dark-a3);
+  --color-primary-a4: var(--color-primitive-crimson-dark-a4);
+  --color-primary-a5: var(--color-primitive-crimson-dark-a5);
+  --color-primary-a6: var(--color-primitive-crimson-dark-a6);
+  --color-primary-a7: var(--color-primitive-crimson-dark-a7);
+  --color-primary-a8: var(--color-primitive-crimson-dark-a8);
+  --color-primary-a9: var(--color-primitive-crimson-dark-a9);
+  --color-primary-a10: var(--color-primitive-crimson-dark-a10);
+  --color-primary-a11: var(--color-primitive-crimson-dark-a11);
+  --color-primary-a12: var(--color-primitive-crimson-dark-a12);
+}
+
 .color-primary-blue {
   --color-primary-1: var(--color-primitive-blue-1);
   --color-primary-2: var(--color-primitive-blue-2);
