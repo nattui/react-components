@@ -17,6 +17,7 @@ export default function Topbar() {
 
 function NavLink(props: LinkProps<string>) {
   const { children, href } = props
+
   const pathname = usePathname()
   const isActive = pathname === href
 
