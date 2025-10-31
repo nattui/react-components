@@ -1,9 +1,6 @@
 /* Order matters */
 @import "tailwindcss";
 @import "@nattui/tailwind-tokenless/styles/10/index.css";
-/* @import "@nattui/tailwind-tokenless/styles/colors/reset.css";
-@import "@nattui/tailwind-tokenless/styles/colors/gray/sage.css";
-@import "@nattui/tailwind-tokenless/styles/colors/primary/green.css"; */
 
 @layer base {
   .d {
@@ -14,6 +11,24 @@
     font-size: 10px;
   }
 
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span,
+  a,
+  li,
+  blockquote,
+  figcaption,
+  strong,
+  em {
+    /* Does not work in body element */
+    letter-spacing: -0.02em;
+  }
+
   body {
     font-family: var(--font-sans);
     font-size: 16px;
@@ -21,7 +36,6 @@
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.5;
     color: var(--color-gray-11);
-    letter-spacing: -0.02em;
     background-color: var(--color-gray-2);
   }
 
