@@ -22,11 +22,8 @@ function NavLink(props: LinkProps<string>) {
 
   return (
     <Link
-      className={`font-medium text-[15px] transition-colors ${
-        isActive
-          ? "text-primary underline"
-          : "text-gray-11 hover:text-gray-12 hover:underline"
-      }`}
+      className="font-500 text-[15px] text-gray-11 transition-colors hover:text-gray-12 hover:underline data-[active=true]:text-primary-9 data-[active=true]:underline"
+      data-active={isActive}
       href={href}
     >
       {children}
