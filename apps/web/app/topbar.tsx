@@ -10,6 +10,7 @@ export default function Topbar() {
       <NavLink href="/input">Input</NavLink>
       <NavLink href="/sidebar">Sidebar</NavLink>
       <NavLink href="/dialog">Dialog</NavLink>
+      <NavLink href="/combobox">Combobox</NavLink>
     </div>
   )
 }
