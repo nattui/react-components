@@ -10,6 +10,11 @@
     }
   },
   "css": {
+    "lint": {
+      "correctness": {
+        "noUnknownProperty": "ignore"
+      }
+    },
     "parser": {
       "tailwindDirectives": true
     }
