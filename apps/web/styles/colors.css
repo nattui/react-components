@@ -58,7 +58,7 @@
 }
 
 /* ===================================================== */
-/* Theme gray */
+/* Theme */
 /* ===================================================== */
 .color-gray-gray {
   --color-gray-1: var(--color-primitive-gray-1);
@@ -228,9 +228,6 @@
   --color-gray-a12: var(--color-primitive-sand-a12);
 }
 
-/* ===================================================== */
-/* Theme primary */
-/* ===================================================== */
 .color-primary-blue {
   --color-primary-1: var(--color-primitive-blue-1);
   --color-primary-2: var(--color-primitive-blue-2);
@@ -257,34 +254,6 @@
   --color-primary-a10: var(--color-primitive-blue-a10);
   --color-primary-a11: var(--color-primitive-blue-a11);
   --color-primary-a12: var(--color-primitive-blue-a12);
-}
-
-.color-gray-sage {
-  --color-gray-1: var(--color-primitive-sage-1);
-  --color-gray-2: var(--color-primitive-sage-2);
-  --color-gray-3: var(--color-primitive-sage-3);
-  --color-gray-4: var(--color-primitive-sage-4);
-  --color-gray-5: var(--color-primitive-sage-5);
-  --color-gray-6: var(--color-primitive-sage-6);
-  --color-gray-7: var(--color-primitive-sage-7);
-  --color-gray-8: var(--color-primitive-sage-8);
-  --color-gray-9: var(--color-primitive-sage-9);
-  --color-gray-10: var(--color-primitive-sage-10);
-  --color-gray-11: var(--color-primitive-sage-11);
-  --color-gray-12: var(--color-primitive-sage-12);
-
-  --color-gray-a1: var(--color-primitive-sage-a1);
-  --color-gray-a2: var(--color-primitive-sage-a2);
-  --color-gray-a3: var(--color-primitive-sage-a3);
-  --color-gray-a4: var(--color-primitive-sage-a4);
-  --color-gray-a5: var(--color-primitive-sage-a5);
-  --color-gray-a6: var(--color-primitive-sage-a6);
-  --color-gray-a7: var(--color-primitive-sage-a7);
-  --color-gray-a8: var(--color-primitive-sage-a8);
-  --color-gray-a9: var(--color-primitive-sage-a9);
-  --color-gray-a10: var(--color-primitive-sage-a10);
-  --color-gray-a11: var(--color-primitive-sage-a11);
-  --color-gray-a12: var(--color-primitive-sage-a12);
 }
 
 .color-primary-green {
@@ -710,6 +679,32 @@
   --color-primitive-red-a11: #c40006d3;
   --color-primitive-red-a12: #55000de8;
 
+  --color-primitive-red-dark-1: #191111;
+  --color-primitive-red-dark-2: #201314;
+  --color-primitive-red-dark-3: #3b1219;
+  --color-primitive-red-dark-4: #500f1c;
+  --color-primitive-red-dark-5: #611623;
+  --color-primitive-red-dark-6: #72232d;
+  --color-primitive-red-dark-7: #8c333a;
+  --color-primitive-red-dark-8: #b54548;
+  --color-primitive-red-dark-9: #e5484d;
+  --color-primitive-red-dark-10: #ec5d5e;
+  --color-primitive-red-dark-11: #ff9592;
+  --color-primitive-red-dark-12: #ffd1d9;
+
+  --color-primitive-red-dark-a1: #f4121209;
+  --color-primitive-red-dark-a2: #f22f3e11;
+  --color-primitive-red-dark-a3: #ff173f2d;
+  --color-primitive-red-dark-a4: #fe0a3b44;
+  --color-primitive-red-dark-a5: #ff204756;
+  --color-primitive-red-dark-a6: #ff3e5668;
+  --color-primitive-red-dark-a7: #ff536184;
+  --color-primitive-red-dark-a8: #ff5d61b0;
+  --color-primitive-red-dark-a9: #fe4e54e4;
+  --color-primitive-red-dark-a10: #ff6465eb;
+  --color-primitive-red-dark-a11: #ff9592;
+  --color-primitive-red-dark-a12: #ffd1d9;
+
   /* =================================================== */
   /* Crimson */
   /* =================================================== */
@@ -738,6 +733,32 @@
   --color-primitive-crimson-a10: #d70056cb;
   --color-primitive-crimson-a11: #c4004fe2;
   --color-primitive-crimson-a12: #530026e9;
+
+  --color-primitive-crimson-dark-1: #191114;
+  --color-primitive-crimson-dark-2: #201318;
+  --color-primitive-crimson-dark-3: #381525;
+  --color-primitive-crimson-dark-4: #4d122f;
+  --color-primitive-crimson-dark-5: #5c1839;
+  --color-primitive-crimson-dark-6: #6d2545;
+  --color-primitive-crimson-dark-7: #873356;
+  --color-primitive-crimson-dark-8: #b0436e;
+  --color-primitive-crimson-dark-9: #e93d82;
+  --color-primitive-crimson-dark-10: #ee518a;
+  --color-primitive-crimson-dark-11: #ff92ad;
+  --color-primitive-crimson-dark-12: #fdd3e8;
+
+  --color-primitive-crimson-dark-a1: #f4126709;
+  --color-primitive-crimson-dark-a2: #f22f7a11;
+  --color-primitive-crimson-dark-a3: #fe2a8b2a;
+  --color-primitive-crimson-dark-a4: #fd158741;
+  --color-primitive-crimson-dark-a5: #fd278f51;
+  --color-primitive-crimson-dark-a6: #fe459763;
+  --color-primitive-crimson-dark-a7: #fd559b7f;
+  --color-primitive-crimson-dark-a8: #fe5b9bab;
+  --color-primitive-crimson-dark-a9: #fe418de8;
+  --color-primitive-crimson-dark-a10: #ff5693ed;
+  --color-primitive-crimson-dark-a11: #ff92ad;
+  --color-primitive-crimson-dark-a12: #ffd5eafd;
 
   /* =================================================== */
   /* Blue */
@@ -768,6 +789,32 @@
   --color-primitive-blue-a11: #006dcbf2;
   --color-primitive-blue-a12: #002359ee;
 
+  --color-primitive-blue-dark-1: #0d1520;
+  --color-primitive-blue-dark-2: #111927;
+  --color-primitive-blue-dark-3: #0d2847;
+  --color-primitive-blue-dark-4: #003362;
+  --color-primitive-blue-dark-5: #004074;
+  --color-primitive-blue-dark-6: #104d87;
+  --color-primitive-blue-dark-7: #205d9e;
+  --color-primitive-blue-dark-8: #2870bd;
+  --color-primitive-blue-dark-9: #0090ff;
+  --color-primitive-blue-dark-10: #3b9eff;
+  --color-primitive-blue-dark-11: #70b8ff;
+  --color-primitive-blue-dark-12: #c2e6ff;
+
+  --color-primitive-blue-dark-a1: #004df211;
+  --color-primitive-blue-dark-a2: #1166fb18;
+  --color-primitive-blue-dark-a3: #0077ff3a;
+  --color-primitive-blue-dark-a4: #0075ff57;
+  --color-primitive-blue-dark-a5: #0081fd6b;
+  --color-primitive-blue-dark-a6: #0f89fd7f;
+  --color-primitive-blue-dark-a7: #2a91fe98;
+  --color-primitive-blue-dark-a8: #3094feb9;
+  --color-primitive-blue-dark-a9: #0090ff;
+  --color-primitive-blue-dark-a10: #3b9eff;
+  --color-primitive-blue-dark-a11: #70b8ff;
+  --color-primitive-blue-dark-a12: #c2e6ff;
+
   /* =================================================== */
   /* Green */
   /* =================================================== */
@@ -796,4 +843,30 @@
   --color-primitive-green-a10: #008647d4;
   --color-primitive-green-a11: #00713fde;
   --color-primitive-green-a12: #002616e6;
+
+  --color-primitive-green-dark-1: #0e1512;
+  --color-primitive-green-dark-2: #121b17;
+  --color-primitive-green-dark-3: #132d21;
+  --color-primitive-green-dark-4: #113b29;
+  --color-primitive-green-dark-5: #174933;
+  --color-primitive-green-dark-6: #20573e;
+  --color-primitive-green-dark-7: #28684a;
+  --color-primitive-green-dark-8: #2f7c57;
+  --color-primitive-green-dark-9: #30a46c;
+  --color-primitive-green-dark-10: #33b074;
+  --color-primitive-green-dark-11: #3dd68c;
+  --color-primitive-green-dark-12: #b1f1cb;
+
+  --color-primitive-green-dark-a1: #00de4505;
+  --color-primitive-green-dark-a2: #29f99d0b;
+  --color-primitive-green-dark-a3: #22ff991e;
+  --color-primitive-green-dark-a4: #11ff992d;
+  --color-primitive-green-dark-a5: #2bffa23c;
+  --color-primitive-green-dark-a6: #44ffaa4b;
+  --color-primitive-green-dark-a7: #50fdac5e;
+  --color-primitive-green-dark-a8: #54ffad73;
+  --color-primitive-green-dark-a9: #44ffa49e;
+  --color-primitive-green-dark-a10: #43fea4ab;
+  --color-primitive-green-dark-a11: #46fea5d4;
+  --color-primitive-green-dark-a12: #bbffd7f0;
 }
