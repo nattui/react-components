@@ -74,7 +74,7 @@ export default function InputPage() {
         Disabled
       </Label>
       <div className="relative">
-        <LucideBan className="absolute top-6 right-6 text-gray-11" size={16} />
+        <LucideBan className="absolute top-14 left-14 text-gray-11" size={16} />
         <Input
           className="pl-44!"
           id="disabled"
