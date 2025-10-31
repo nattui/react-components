@@ -12,7 +12,7 @@ import {
 export default function InputPage() {
   return (
     <div className="mx-auto flex max-w-448 flex-col p-64">
-      <Label className="mb-1" htmlFor="email">
+      <Label className="mb-4" htmlFor="email">
         Email
       </Label>
       <div className="relative">
@@ -30,7 +30,7 @@ export default function InputPage() {
       </div>
       <div className="h-16" />
 
-      <Label className="mb-1" htmlFor="password">
+      <Label className="mb-4" htmlFor="password">
         Password
       </Label>
       <div className="relative">
@@ -69,7 +69,7 @@ export default function InputPage() {
       </Button>
       <div className="h-64" />
 
-      <Label className="mb-1" htmlFor="disabled">
+      <Label className="mb-4" htmlFor="disabled">
         Disabled
       </Label>
       <div className="relative">
@@ -85,7 +85,7 @@ export default function InputPage() {
       </div>
       <div className="h-64" />
 
-      <Label className="mb-1" htmlFor="read-only">
+      <Label className="mb-4" htmlFor="read-only">
         Read Only
       </Label>
       <div className="relative">
@@ -111,7 +111,7 @@ export default function InputPage() {
       </div>
       <div className="h-64" />
 
-      <Label className="mb-1" htmlFor="input-with-end-icon-button">
+      <Label className="mb-4" htmlFor="input-with-end-icon-button">
         Input with end icon button
       </Label>
       <div className="flex">
