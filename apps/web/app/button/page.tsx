@@ -24,64 +24,112 @@ export default function ButtonPage() {
 
       <p>Rounded</p>
       <div className="flex flex-wrap items-center gap-16">
-        <Button isRounded variant="accent">
+        <Button
+          isRounded
+          variant="accent"
+        >
           Add goal
         </Button>
-        <Button isRounded variant="primary">
+        <Button
+          isRounded
+          variant="primary"
+        >
           Add goal
         </Button>
-        <Button isRounded variant="secondary">
+        <Button
+          isRounded
+          variant="secondary"
+        >
           Add goal
         </Button>
-        <Button isRounded variant="ghost">
+        <Button
+          isRounded
+          variant="ghost"
+        >
           Add goal
         </Button>
       </div>
 
       <p>Disabled</p>
       <div className="flex flex-wrap items-center gap-16">
-        <Button isDisabled variant="accent">
+        <Button
+          isDisabled
+          variant="accent"
+        >
           Add goal
         </Button>
-        <Button isDisabled variant="primary">
+        <Button
+          isDisabled
+          variant="primary"
+        >
           Add goal
         </Button>
-        <Button isDisabled variant="secondary">
+        <Button
+          isDisabled
+          variant="secondary"
+        >
           Add goal
         </Button>
-        <Button isDisabled variant="ghost">
+        <Button
+          isDisabled
+          variant="ghost"
+        >
           Add goal
         </Button>
       </div>
 
       <p>Loading</p>
       <div className="flex flex-wrap items-center gap-16">
-        <Button isLoading variant="accent">
+        <Button
+          isLoading
+          variant="accent"
+        >
           Add goal
         </Button>
-        <Button isLoading variant="primary">
+        <Button
+          isLoading
+          variant="primary"
+        >
           Add goal
         </Button>
-        <Button isLoading variant="secondary">
+        <Button
+          isLoading
+          variant="secondary"
+        >
           Add goal
         </Button>
-        <Button isLoading variant="ghost">
+        <Button
+          isLoading
+          variant="ghost"
+        >
           Add goal
         </Button>
       </div>
 
       <p>Active</p>
       <div className="flex flex-wrap items-center gap-16">
-        <Button isActive variant="accent">
+        <Button
+          isActive
+          variant="accent"
+        >
           Add goal
         </Button>
-        <Button isActive variant="primary">
+        <Button
+          isActive
+          variant="primary"
+        >
           Add goal
         </Button>
-        <Button isActive variant="secondary">
+        <Button
+          isActive
+          variant="secondary"
+        >
           Add goal
         </Button>
-        <Button isActive variant="ghost">
+        <Button
+          isActive
+          variant="ghost"
+        >
           Add goal
         </Button>
       </div>
@@ -120,55 +168,98 @@ export default function ButtonPage() {
 
       <p>Full width</p>
       <div className="flex flex-wrap items-center gap-16">
-        <Button className="max-w-320" isFullWidth>
+        <Button
+          className="max-w-320"
+          isFullWidth
+        >
           Add goal
         </Button>
       </div>
 
       <p>Icon only</p>
       <div className="flex flex-wrap items-center gap-16">
-        <Button iconOnly variant="accent">
+        <Button
+          iconOnly
+          variant="accent"
+        >
           <LucideDownload size={16} />
         </Button>
-        <Button iconOnly variant="primary">
+        <Button
+          iconOnly
+          variant="primary"
+        >
           <LucideDownload size={16} />
         </Button>
-        <Button iconOnly variant="secondary">
+        <Button
+          iconOnly
+          variant="secondary"
+        >
           <LucideDownload size={16} />
         </Button>
-        <Button iconOnly variant="ghost">
+        <Button
+          iconOnly
+          variant="ghost"
+        >
           <LucideDownload size={16} />
         </Button>
       </div>
 
       <p>Icon only size</p>
       <div className="flex flex-wrap items-center gap-16">
-        <Button iconOnly size={32}>
+        <Button
+          iconOnly
+          size={32}
+        >
           <LucideDownload size={16} />
         </Button>
-        <Button iconOnly size={36}>
+        <Button
+          iconOnly
+          size={36}
+        >
           <LucideDownload size={16} />
         </Button>
-        <Button iconOnly size={40}>
+        <Button
+          iconOnly
+          size={40}
+        >
           <LucideDownload size={16} />
         </Button>
-        <Button iconOnly size={44}>
+        <Button
+          iconOnly
+          size={44}
+        >
           <LucideDownload size={18} />
         </Button>
       </div>
 
       <p>Icon only loading</p>
       <div className="flex flex-wrap items-center gap-16">
-        <Button iconOnly isLoading size={32}>
+        <Button
+          iconOnly
+          isLoading
+          size={32}
+        >
           <LucideDownload size={16} />
         </Button>
-        <Button iconOnly isLoading size={36}>
+        <Button
+          iconOnly
+          isLoading
+          size={36}
+        >
           <LucideDownload size={16} />
         </Button>
-        <Button iconOnly isLoading size={40}>
+        <Button
+          iconOnly
+          isLoading
+          size={40}
+        >
           <LucideDownload size={16} />
         </Button>
-        <Button iconOnly isLoading size={44}>
+        <Button
+          iconOnly
+          isLoading
+          size={44}
+        >
           <LucideDownload size={18} />
         </Button>
       </div>

@@ -23,7 +23,7 @@ export default function RootLayout(props: PropsWithChildren) {
   const { children } = props
 
   return (
-    <html className="" lang="en">
+    <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} color-gray-slate color-primary-blue`}
       >

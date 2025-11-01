@@ -49,7 +49,7 @@ export default function SidebarPage() {
           variant="ghost"
         >
           {isHovered ? (
-            <LucidePanelLeft className="" size={20} />
+            <LucidePanelLeft size={20} />
           ) : (
             <svg
               className="size-24 text-primary-11"
@@ -74,43 +74,83 @@ export default function SidebarPage() {
         </Button>
         <div className="flex flex-col px-8">
           <SidebarItem
-            icon={<LucideCirclePlus className="shrink-0" size={20} />}
+            icon={
+              <LucideCirclePlus
+                className="shrink-0"
+                size={20}
+              />
+            }
             isExpanded={isExpanded}
             label="New coin"
             variant="accent"
           />
           <SidebarItem
-            icon={<LucideCoins className="shrink-0" size={20} />}
+            icon={
+              <LucideCoins
+                className="shrink-0"
+                size={20}
+              />
+            }
             isExpanded={isExpanded}
             label="Coins"
           />
           <SidebarItem
-            icon={<LucideVideo className="shrink-0" size={20} />}
+            icon={
+              <LucideVideo
+                className="shrink-0"
+                size={20}
+              />
+            }
             isExpanded={isExpanded}
             label="Live"
           />
           <SidebarItem
-            icon={<LucideChartCandlestick className="shrink-0" size={20} />}
+            icon={
+              <LucideChartCandlestick
+                className="shrink-0"
+                size={20}
+              />
+            }
             isExpanded={isExpanded}
             label="Advanced"
           />
           <SidebarItem
-            icon={<LucideMessageCircle className="shrink-0" size={20} />}
+            icon={
+              <LucideMessageCircle
+                className="shrink-0"
+                size={20}
+              />
+            }
             isExpanded={isExpanded}
             label="Chat"
           />
           <SidebarItem
-            icon={<LucideUser className="shrink-0" size={20} />}
+            icon={
+              <LucideUser
+                className="shrink-0"
+                size={20}
+              />
+            }
             isExpanded={isExpanded}
             label="Profile"
           />
           <SidebarItem
-            icon={<LucideLifeBuoy className="shrink-0" size={20} />}
+            icon={
+              <LucideLifeBuoy
+                className="shrink-0"
+                size={20}
+              />
+            }
             isExpanded={isExpanded}
             label="Support"
           />
           <SidebarItem
-            icon={<LucideCircleEllipsis className="shrink-0" size={20} />}
+            icon={
+              <LucideCircleEllipsis
+                className="shrink-0"
+                size={20}
+              />
+            }
             isExpanded={isExpanded}
             label="More"
           />

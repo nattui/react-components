@@ -26,8 +26,7 @@
   border-width: 1px;
   transition-duration: 150ms;
   transition-property:
-    background-color, border-color, box-shadow, color, filter, opacity,
-    translate;
+    background-color, border-color, box-shadow, color, filter, opacity, translate;
 }
 
 .button:disabled {
@@ -152,11 +151,7 @@
 
 .button__variant_ghost:enabled:hover {
   color: var(--color-gray-12, #1a1523);
-  background-color: color-mix(
-    in oklab,
-    var(--color-gray-5, #e9e8ea) 75%,
-    transparent
-  );
+  background-color: color-mix(in oklab, var(--color-gray-5, #e9e8ea) 75%, transparent);
 }
 
 /* Primary */

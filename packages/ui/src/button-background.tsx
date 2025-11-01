@@ -2,8 +2,7 @@ import type { JSX } from "react"
 import type { ButtonProps } from "@/button"
 import styles from "@/button-background.module.css"
 
-export interface ButtonBackgroundProps
-  extends Pick<ButtonProps, "isRounded" | "variant"> {}
+export interface ButtonBackgroundProps extends Pick<ButtonProps, "isRounded" | "variant"> {}
 
 export function ButtonBackground(props: ButtonBackgroundProps): JSX.Element {
   const { isRounded = false, variant = "primary" } = props

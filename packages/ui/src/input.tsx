@@ -2,10 +2,7 @@ import type { ComponentProps, JSX } from "react"
 import styles from "@/input.module.css"
 
 export interface InputProps
-  extends Omit<
-    ComponentProps<"input">,
-    "aria-pressed" | "disabled" | "readOnly" | "required"
-  > {
+  extends Omit<ComponentProps<"input">, "aria-pressed" | "disabled" | "readOnly" | "required"> {
   isActive?: boolean
   isDisabled?: boolean
   isReadOnly?: boolean

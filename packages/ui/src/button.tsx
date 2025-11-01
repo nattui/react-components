@@ -15,8 +15,7 @@ export interface ButtonProps extends ButtonPropsInternal {
   iconOnly?: false
 }
 
-interface ButtonPropsInternal
-  extends Omit<ComponentProps<"button">, "aria-pressed" | "disabled"> {
+interface ButtonPropsInternal extends Omit<ComponentProps<"button">, "aria-pressed" | "disabled"> {
   iconEnd?: ReactNode
   iconOnly?: boolean
   iconStart?: ReactNode
@@ -69,7 +68,10 @@ export function Button(props: ButtonUnionProps): JSX.Element {
       type={type}
       {...rest}
     >
-      <ButtonBackground isRounded={isRounded} variant={variant} />
+      <ButtonBackground
+        isRounded={isRounded}
+        variant={variant}
+      />
       {isLoading && <ButtonSpinner />}
       {!isLoading && iconStart}
       {iconOnly ? isLoading ? <></> : children : <span>{children}</span>}
