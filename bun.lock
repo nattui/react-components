@@ -31,7 +31,7 @@
         "@base-ui-components/react": "^1.0.0-beta.4",
         "@nattui/colors": "^0.0.1",
         "@nattui/react-components": "workspace:*",
-        "@nattui/tailwind-tokenless": "^0.0.5",
+        "@nattui/tailwind-one": "^0.0.7",
         "lucide-react": "^0.548.0",
         "next": "^16.0.1",
         "react": "catalog:",
@@ -261,7 +261,7 @@
 
     "@nattui/react-components": ["@nattui/react-components@workspace:packages/ui"],
 
-    "@nattui/tailwind-tokenless": ["@nattui/tailwind-tokenless@0.0.5", "", {}, "sha512-LtwD1fBeawMqcLlLJOSpyxf0JHczj50OIHbmIcbErIpFkyJIjTOfghzwxHUTxJsUTGxGgOOE9JwWzsD9AlgvSA=="],
+    "@nattui/tailwind-one": ["@nattui/tailwind-one@0.0.7", "", {}, "sha512-C3czFgtSH1tgRU1+7Svqgp0/a/qDoiEQ74dvfNjlM8CP5GF0e/BK8oJuv+BgU5HInuiFCmdTitr0vXD4EHoKnQ=="],
 
     "@next/env": ["@next/env@16.0.1", "", {}, "sha512-LFvlK0TG2L3fEOX77OC35KowL8D7DlFF45C0OvKMC4hy8c/md1RC4UMNDlUGJqfCoCS2VWrZ4dSE6OjaX5+8mw=="],
 
