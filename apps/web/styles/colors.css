@@ -396,6 +396,48 @@
   --color-gray-a12: var(--color-primitive-sand-dark-a12);
 }
 
+.color-primary-gold {
+}
+
+.color-primary-gold-dark {
+}
+
+.color-primary-bronze {
+}
+
+.color-primary-bronze-dark {
+}
+
+.color-primary-brown {
+}
+
+.color-primary-brown-dark {
+}
+
+.color-primary-yellow {
+}
+
+.color-primary-yellow-dark {
+}
+
+.color-primary-amber {
+}
+
+.color-primary-amber-dark {
+}
+
+.color-primary-orange {
+}
+
+.color-primary-orange-dark {
+}
+
+.color-primary-tomato {
+}
+
+.color-primary-tomato-dark {
+}
+
 .color-primary-red {
   --color-primary-1: var(--color-primitive-red-1);
   --color-primary-2: var(--color-primitive-red-2);
@@ -450,6 +492,12 @@
   --color-primary-a10: var(--color-primitive-red-dark-a10);
   --color-primary-a11: var(--color-primitive-red-dark-a11);
   --color-primary-a12: var(--color-primitive-red-dark-a12);
+}
+
+.color-primary-ruby {
+}
+
+.color-primary-ruby-dark {
 }
 
 .color-primary-crimson {
@@ -508,6 +556,42 @@
   --color-primary-a12: var(--color-primitive-crimson-dark-a12);
 }
 
+.color-primary-pink {
+}
+
+.color-primary-pink-dark {
+}
+
+.color-primary-plum {
+}
+
+.color-primary-plum-dark {
+}
+
+.color-primary-purple {
+}
+
+.color-primary-purple-dark {
+}
+
+.color-primary-violet {
+}
+
+.color-primary-violet-dark {
+}
+
+.color-primary-iris {
+}
+
+.color-primary-iris-dark {
+}
+
+.color-primary-indigo {
+}
+
+.color-primary-indigo-dark {
+}
+
 .color-primary-blue {
   --color-primary-1: var(--color-primitive-blue-1);
   --color-primary-2: var(--color-primitive-blue-2);
@@ -564,6 +648,24 @@
   --color-primary-a12: var(--color-primitive-blue-dark-a12);
 }
 
+.color-primary-cyan {
+}
+
+.color-primary-cyan-dark {
+}
+
+.color-primary-teal {
+}
+
+.color-primary-teal-dark {
+}
+
+.color-primary-jade {
+}
+
+.color-primary-jade-dark {
+}
+
 .color-primary-green {
   --color-primary-1: var(--color-primitive-green-1);
   --color-primary-2: var(--color-primitive-green-2);
@@ -618,6 +720,30 @@
   --color-primary-a10: var(--color-primitive-green-dark-a10);
   --color-primary-a11: var(--color-primitive-green-dark-a11);
   --color-primary-a12: var(--color-primitive-green-dark-a12);
+}
+
+.color-primary-grass {
+}
+
+.color-primary-grass-dark {
+}
+
+.color-primary-lime {
+}
+
+.color-primary-lime-dark {
+}
+
+.color-primary-mint {
+}
+
+.color-primary-mint-dark {
+}
+
+.color-primary-sky {
+}
+
+.color-primary-sky-dark {
 }
 
 /* ===================================================== */
