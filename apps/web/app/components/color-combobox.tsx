@@ -52,7 +52,7 @@ export default function ColorCombobox(props: ColorComboboxProps) {
       <div className="relative flex flex-col gap-4 font-500 text-14 text-gray-11">
         <label htmlFor={id}>{label}</label>
         <Combobox.Input
-          className="focus:-outline-offset-1 h-40 w-256 rounded-md border border-gray-200 bg-gray-1 pl-14 font-normal text-16 text-gray-900 focus:outline-2 focus:outline-primary-9"
+          className="focus:-outline-offset-1 h-40 w-256 rounded-md border border-gray-5 bg-gray-1 pl-14 font-normal text-16 text-gray-11 focus:outline-2 focus:outline-primary-9"
           id={id}
           placeholder={placeholder}
         />
@@ -74,14 +74,14 @@ export default function ColorCombobox(props: ColorComboboxProps) {
 
       <Combobox.Portal>
         <Combobox.Positioner className="outline-none" sideOffset={4}>
-          <Combobox.Popup className="max-h-[min(var(--available-height),368px)] w-var(--anchor-width) max-w-var(--available-width) origin-(--transform-origin) scroll-pt-2 scroll-pb-2 overflow-y-auto overscroll-contain rounded-md bg-gray-1 py-2 text-gray-11 shadow-gray-200 shadow-lg outline-1 outline-gray-200 transition-[transform,scale,opacity] data-ending-style:scale-95 data-starting-style:scale-95 data-ending-style:opacity-0 data-starting-style:opacity-0">
+          <Combobox.Popup className="max-h-[min(var(--available-height),368px)] w-var(--anchor-width) max-w-var(--available-width) origin-(--transform-origin) scroll-pt-2 scroll-pb-2 overflow-y-auto overscroll-contain rounded-md bg-gray-1 py-2 text-gray-11 shadow-gray-6 shadow-lg outline-1 outline-gray-6 transition-[transform,scale,opacity] data-ending-style:scale-95 data-starting-style:scale-95 data-ending-style:opacity-0 data-starting-style:opacity-0">
             <Combobox.Empty className="px-4 py-2 text-[0.925rem] text-gray-11 leading-4 empty:m-0 empty:p-0">
               No options found.
             </Combobox.Empty>
             <Combobox.List>
               {(item: string) => (
                 <Combobox.Item
-                  className="grid h-24 cursor-default select-none grid-cols-[12px_1fr] items-center gap-2 py-2 pr-8 pl-4 text-16 leading-4 outline-none data-highlighted:relative data-highlighted:z-0 data-highlighted:text-gray-50 data-highlighted:before:absolute data-highlighted:before:inset-x-2 data-highlighted:before:inset-y-0 data-highlighted:before:z-[-1] data-highlighted:before:rounded-sm data-highlighted:before:bg-gray-2"
+                  className="grid h-24 cursor-default select-none grid-cols-[12px_1fr] items-center gap-2 py-2 pr-8 pl-4 text-16 leading-4 outline-none data-highlighted:relative data-highlighted:z-0 data-highlighted:text-gray-12 data-highlighted:before:absolute data-highlighted:before:inset-x-2 data-highlighted:before:inset-y-0 data-highlighted:before:z-[-1] data-highlighted:before:rounded-sm data-highlighted:before:bg-gray-3"
                   key={item}
                   value={item}
                 >

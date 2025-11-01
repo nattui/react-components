@@ -52,7 +52,7 @@ export default function SidebarPage() {
             <LucidePanelLeft className="" size={20} />
           ) : (
             <svg
-              className="size-24 bg-primary-x9 text-primary-9"
+              className="size-24 text-primary-11"
               fill="none"
               height="32"
               viewBox="0 0 32 32"

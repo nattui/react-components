@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "@base-ui-components/react": "^1.0.0-beta.4",
+    "@nattui/colors": "^0.0.1",
     "@nattui/react-components": "workspace:*",
     "@nattui/tailwind-tokenless": "^0.0.5",
     "lucide-react": "^0.548.0",
