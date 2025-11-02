@@ -24,7 +24,7 @@ interface ButtonPropsInternal extends Omit<ComponentProps<"button">, "aria-press
   isFullWidth?: boolean
   isLoading?: boolean
   isRounded?: boolean
-  size?: 32 | 36 | 40 | 44
+  size?: 32 | 36 | 40 | 44 | 48
   variant?: "accent" | "ghost" | "primary" | "secondary"
 }
 
@@ -42,7 +42,7 @@ export function Button(props: ButtonUnionProps): JSX.Element {
     isFullWidth = false,
     isLoading = false,
     isRounded = false,
-    size = 36,
+    size = 40,
     type = "button",
     variant = "primary",
     ...rest
@@ -92,6 +92,7 @@ export const BUTTON_CLASS_NAME = {
     36: styles.button__size_36,
     40: styles.button__size_40,
     44: styles.button__size_44,
+    48: styles.button__size_48,
   },
   VARIANT: {
     ACCENT: styles.button__variant_accent,

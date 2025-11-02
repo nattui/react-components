@@ -20,6 +20,7 @@ export default function ButtonPage() {
         <Button size={36}>Add goal</Button>
         <Button size={40}>Add goal</Button>
         <Button size={44}>Add goal</Button>
+        <Button size={48}>Add goal</Button>
       </div>
 
       <p>Rounded</p>
@@ -230,6 +231,12 @@ export default function ButtonPage() {
         >
           <LucideDownload size={18} />
         </Button>
+        <Button
+          iconOnly
+          size={48}
+        >
+          <LucideDownload size={18} />
+        </Button>
       </div>
 
       <p>Icon only loading</p>
@@ -259,6 +266,13 @@ export default function ButtonPage() {
           iconOnly
           isLoading
           size={44}
+        >
+          <LucideDownload size={18} />
+        </Button>
+        <Button
+          iconOnly
+          isLoading
+          size={48}
         >
           <LucideDownload size={18} />
         </Button>
