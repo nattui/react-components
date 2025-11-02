@@ -100,17 +100,17 @@
 
 .button__size_36 {
   --size: 36px;
-  --padding: 0 14px;
+  --padding: 0 12px;
 }
 
 .button__size_40 {
   --size: 40px;
-  --padding: 0 18px;
+  --padding: 0 14px;
 }
 
 .button__size_44 {
   --size: 44px;
-  --padding: 0 22px;
+  --padding: 0 16px;
 }
 
 /* ===================================================== */
