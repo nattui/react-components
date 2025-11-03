@@ -6,6 +6,7 @@ import { useState } from "react"
 
 export default function SidebarPage2() {
   const [isExpanded, setIsExpanded] = useState(true)
+  const [isHovered, setIsHovered] = useState(false)
 
   console.log(isExpanded)
 
@@ -14,15 +15,17 @@ export default function SidebarPage2() {
       <div className="d mx-auto">
         {/* Sidebar */}
         <div
-          className="relative flex h-full w-256 flex-col transition-[width] duration-150 data-[is-expanded=false]:w-64"
+          className="relative z-10 flex h-full w-256 flex-col transition-[width] data-[is-expanded=false]:w-64"
           data-is-expanded={isExpanded}
         >
           {/* Toggle */}
           <Button
-            className="absolute! top-16 right-16 cursor-w-resize! focus-visible:opacity-100! data-[is-expanded=false]:cursor-e-resize! data-[is-expanded=false]:opacity-0"
+            className="absolute! top-16 right-16 z-10 cursor-w-resize! focus-visible:opacity-100! data-[is-expanded=false]:cursor-e-resize! data-[is-expanded=false]:opacity-0"
             data-is-expanded={isExpanded}
             iconOnly
             onClick={() => setIsExpanded((previous) => !previous)}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
             size={32}
             variant="ghost"
           >
@@ -30,7 +33,11 @@ export default function SidebarPage2() {
           </Button>
 
           {/* Logo */}
-          <div className="mt-16 ml-16 w-fit p-4">
+          <div
+            className="mt-16 ml-16 w-fit p-4 transition-opacity data-[is-expanded=true]:opacity-100! data-[is-hovered=true]:opacity-0"
+            data-is-expanded={isExpanded}
+            data-is-hovered={isHovered}
+          >
             <Logomark />
           </div>
         </div>
