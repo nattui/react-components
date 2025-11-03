@@ -1,7 +1,7 @@
 "use client"
 
 import { Button, Spacer } from "@nattui/react-components"
-import { LucideHome, LucidePanelLeft, LucideUsers, LucideWandSparkles } from "lucide-react"
+import { LucideComponent, LucidePanelLeft, LucideWandSparkles } from "lucide-react"
 import Link, { type LinkProps } from "next/link"
 import { usePathname } from "next/navigation"
 import { type ComponentProps, type ReactNode, useState } from "react"
@@ -13,7 +13,7 @@ export function Sidebar() {
 
   return (
     <div
-      className="relative z-10 flex h-full w-256 flex-col border-gray-6 border-r transition-[width] data-[is-expanded=false]:w-64"
+      className="sticky top-0 bottom-0 z-10 flex h-dvh w-256 flex-col border-gray-6 border-r transition-[width] data-[is-expanded=false]:w-64"
       data-is-expanded={isExpanded}
     >
       {/* Toggle */}
@@ -46,7 +46,7 @@ export function Sidebar() {
         <SidebarNavigationItem
           href="/button"
           icon={
-            <LucideHome
+            <LucideComponent
               className="shrink-0"
               size={18}
             />
@@ -57,7 +57,7 @@ export function Sidebar() {
         <SidebarNavigationItem
           href="/input"
           icon={
-            <LucideUsers
+            <LucideComponent
               className="shrink-0"
               size={18}
             />
