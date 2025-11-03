@@ -2,7 +2,7 @@ import "@/styles/global.css"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import type { PropsWithChildren } from "react"
-import Sidebar from "@/components/sidebar"
+import { Sidebar } from "@/components/sidebar"
 
 export default function RootLayout(props: PropsWithChildren) {
   const { children } = props

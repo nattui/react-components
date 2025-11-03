@@ -18,7 +18,7 @@ const DEFAULT_OPTIONS = [
   "color-primary-green",
 ] as const
 
-export default function ColorCombobox(props: ColorComboboxProps) {
+export function ColorCombobox(props: ColorComboboxProps) {
   const {
     label = "Choose a color class",
     placeholder = "e.g. color-primary-red",

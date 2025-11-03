@@ -3,9 +3,11 @@
 import { Button } from "@nattui/react-components"
 import { LucideHome, LucidePanelLeft, LucideUsers, LucideWandSparkles } from "lucide-react"
 import Link, { type LinkProps } from "next/link"
+import { usePathname } from "next/navigation"
 import { type PropsWithChildren, type ReactNode, useState } from "react"
+import { Spacer } from "@/components/spacer"
 
-export default function Sidebar() {
+export function Sidebar() {
   const [isExpanded, setIsExpanded] = useState(true)
   const [isHovered, setIsHovered] = useState(false)
 
@@ -36,7 +38,7 @@ export default function Sidebar() {
       >
         <Logomark />
       </div>
-      <div className="h-16" />
+      <Spacer className="h-16" />
 
       {/* Navigation */}
       <SidebarNavigationLabel>Components</SidebarNavigationLabel>
@@ -64,7 +66,7 @@ export default function Sidebar() {
           label="Input"
         />
       </SidebarNavigationGroup>
-      <div className="h-16" />
+      <Spacer className="h-16" />
 
       <SidebarNavigationLabel>Experiments</SidebarNavigationLabel>
       <SidebarNavigationGroup>
@@ -113,9 +115,13 @@ function SidebarNavigationItem(props: {
 }) {
   const { icon, isExpanded, label, href } = props
 
+  const pathname = usePathname()
+  const isActive = pathname === href
+
   return (
     <Link
-      className="flex h-32 w-full items-center gap-x-8 rounded-8 px-6 transition-colors hover:bg-gray-3 hover:text-gray-12"
+      className="flex h-32 w-full items-center gap-x-8 rounded-8 px-6 transition-colors hover:bg-gray-3 hover:text-gray-12 data-[active=true]:bg-gray-3 data-[active=true]:text-gray-12"
+      data-active={isActive}
       href={href}
     >
       {icon}

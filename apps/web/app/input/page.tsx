@@ -8,10 +8,11 @@ import {
   LucideLogIn,
   LucideMail,
 } from "lucide-react"
+import { Spacer } from "@/components/spacer"
 
 export default function InputPage() {
   return (
-    <div className="mx-auto flex max-w-448 flex-col p-64">
+    <div className="mx-auto flex w-full max-w-448 flex-col p-64">
       <Label
         className="mb-4"
         htmlFor="email"
@@ -31,7 +32,7 @@ export default function InputPage() {
           type="email"
         />
       </div>
-      <div className="h-16" />
+      <Spacer className="h-16" />
 
       <Label
         className="mb-4"
@@ -63,7 +64,7 @@ export default function InputPage() {
           />
         </Button>
       </div>
-      <div className="h-16" />
+      <Spacer className="h-16" />
 
       <Button
         iconStart={<LucideLogIn size={16} />}
@@ -73,7 +74,7 @@ export default function InputPage() {
       >
         Sign in
       </Button>
-      <div className="h-64" />
+      <Spacer className="h-64" />
 
       <Label
         className="mb-4"
@@ -95,7 +96,7 @@ export default function InputPage() {
           type="url"
         />
       </div>
-      <div className="h-64" />
+      <Spacer className="h-64" />
 
       <Label
         className="mb-4"
@@ -124,7 +125,7 @@ export default function InputPage() {
           />
         </Button>
       </div>
-      <div className="h-64" />
+      <Spacer className="h-64" />
 
       <Label
         className="mb-4"
@@ -151,8 +152,6 @@ export default function InputPage() {
             size={16}
           />
         </Button>
-
-        <div className="h-20" />
       </div>
     </div>
   )

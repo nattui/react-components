@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@nattui/react-components"
-import ColorCombobox from "@/components/color-combobox"
+import { ColorCombobox } from "@/components/color-combobox"
 
 export default function ComboboxPage() {
   const GRAY_OPTIONS = [
