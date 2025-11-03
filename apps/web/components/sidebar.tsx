@@ -1,3 +1,6 @@
+/** biome-ignore-all lint/a11y/useKeyWithClickEvents: Invisible clickable overlay */
+/** biome-ignore-all lint/a11y/noStaticElementInteractions: Invisible clickable overlay */
+
 "use client"
 
 import { Button, Spacer } from "@nattui/react-components"
@@ -16,6 +19,12 @@ export function Sidebar() {
       className="sticky top-0 bottom-0 z-10 flex h-dvh w-256 flex-col border-gray-6 border-r transition-[width] data-[is-expanded=false]:w-64"
       data-is-expanded={isExpanded}
     >
+      {/* Expansion overlay */}
+      <div
+        className="-z-10 absolute inset-0 cursor-e-resize data-[is-expanded=true]:hidden"
+        data-is-expanded={isExpanded}
+        onClick={() => setIsExpanded(true)}
+      />
       {/* Toggle */}
       <Button
         className="absolute! top-16 right-16 z-10 cursor-w-resize! focus-visible:opacity-100! data-[is-expanded=false]:cursor-e-resize! data-[is-expanded=false]:opacity-0"
@@ -48,7 +57,7 @@ export function Sidebar() {
           nattui
         </p>
       </div>
-      <Spacer className="h-16" />
+      <Spacer className="pointer-events-none h-24" />
 
       {/* Navigation */}
       <SidebarNavigationLabel data-is-expanded={isExpanded}>Components</SidebarNavigationLabel>
@@ -76,7 +85,7 @@ export function Sidebar() {
           label="Input"
         />
       </SidebarNavigationGroup>
-      <Spacer className="h-16" />
+      <Spacer className="pointer-events-none h-16" />
 
       <SidebarNavigationLabel data-is-expanded={isExpanded}>Experiments</SidebarNavigationLabel>
       <SidebarNavigationGroup>
