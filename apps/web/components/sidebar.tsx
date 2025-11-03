@@ -21,9 +21,13 @@ export function Sidebar() {
         className="absolute! top-16 right-16 z-10 cursor-w-resize! focus-visible:opacity-100! data-[is-expanded=false]:cursor-e-resize! data-[is-expanded=false]:opacity-0"
         data-is-expanded={isExpanded}
         iconOnly
+        onBlur={() => setIsHovered(false)}
         onClick={() => setIsExpanded((previous) => !previous)}
+        onFocus={() => setIsHovered(true)}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        onTouchEnd={() => setIsHovered(false)}
+        onTouchStart={() => setIsHovered(true)}
         size={32}
         variant="ghost"
       >
