@@ -15,8 +15,8 @@ export function Sidebar() {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
-    <div
-      className="sticky top-0 bottom-0 z-10 flex h-dvh w-256 flex-col border-gray-6 border-r transition-[width] data-[is-expanded=false]:w-64"
+    <aside
+      className="sticky top-0 bottom-0 z-10 flex h-dvh w-256 shrink-0 flex-col border-gray-6 border-r transition-[width] data-[is-expanded=false]:w-64"
       data-is-expanded={isExpanded}
     >
       {/* Expansion overlay */}
@@ -112,7 +112,7 @@ export function Sidebar() {
           label="Combobox"
         />
       </SidebarNavigationGroup>
-    </div>
+    </aside>
   )
 }
 

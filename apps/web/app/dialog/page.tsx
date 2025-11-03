@@ -3,7 +3,7 @@ import { Button } from "@nattui/react-components"
 
 export default function DialogPage() {
   return (
-    <div className="flex flex-col p-64">
+    <div className="flex flex-col">
       <Dialog.Root>
         <Dialog.Trigger render={<Button>View notifications</Button>} />
         <Dialog.Portal>

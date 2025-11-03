@@ -73,7 +73,7 @@ export default function ComboboxPage() {
   ] as const
 
   return (
-    <div className="flex flex-col gap-16 p-64">
+    <div className="flex flex-col gap-16">
       <ColorCombobox
         label="Gray palette"
         options={GRAY_OPTIONS}

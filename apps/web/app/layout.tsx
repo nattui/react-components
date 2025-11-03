@@ -12,9 +12,11 @@ export default function RootLayout(props: PropsWithChildren) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} color-gray-slate color-primary-blue`}
       >
-        <div className="flex h-full">
+        <div className="flex">
           <Sidebar />
-          {children}
+          <main className="relative mx-auto flex w-full max-w-1024 flex-col px-16 py-80">
+            {children}
+          </main>
         </div>
       </body>
     </html>
