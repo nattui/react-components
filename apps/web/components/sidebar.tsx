@@ -1,11 +1,10 @@
 "use client"
 
-import { Button } from "@nattui/react-components"
+import { Button, Spacer } from "@nattui/react-components"
 import { LucideHome, LucidePanelLeft, LucideUsers, LucideWandSparkles } from "lucide-react"
 import Link, { type LinkProps } from "next/link"
 import { usePathname } from "next/navigation"
 import { type PropsWithChildren, type ReactNode, useState } from "react"
-import { Spacer } from "@/components/spacer"
 
 export function Sidebar() {
   const [isExpanded, setIsExpanded] = useState(true)
