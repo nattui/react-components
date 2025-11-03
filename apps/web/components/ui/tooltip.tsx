@@ -2,12 +2,11 @@ import { Tooltip as TooltipPrimitive } from "@base-ui-components/react/tooltip"
 import type { ComponentProps } from "react"
 
 function TooltipProvider(props: ComponentProps<typeof TooltipPrimitive.Provider>) {
-  const { delay = 0, ...rest } = props
+  const { ...rest } = props
 
   return (
     <TooltipPrimitive.Provider
       data-slot="tooltip-provider"
-      delay={delay}
       {...rest}
     />
   )
@@ -17,12 +16,10 @@ function Tooltip(props: ComponentProps<typeof TooltipPrimitive.Root>) {
   const { ...rest } = props
 
   return (
-    <TooltipProvider>
-      <TooltipPrimitive.Root
-        data-slot="tooltip"
-        {...rest}
-      />
-    </TooltipProvider>
+    <TooltipPrimitive.Root
+      data-slot="tooltip"
+      {...rest}
+    />
   )
 }
 
