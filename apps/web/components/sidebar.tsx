@@ -79,7 +79,7 @@ export function Sidebar() {
         >
           <Logomark className="size-24 text-primary-9" />
           <p
-            className="ml-8 truncate font-600 text-18/p100 text-gray-12 transition-opacity data-[is-expanded=false]:pointer-events-none data-[is-expanded=false]:opacity-0"
+            className="ml-8 truncate font-600 text-18/1 text-gray-12 transition-opacity data-[is-expanded=false]:pointer-events-none data-[is-expanded=false]:opacity-0"
             data-is-expanded={isExpanded}
           >
             nattui
