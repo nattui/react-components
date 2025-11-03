@@ -19,6 +19,7 @@
     -moz-osx-font-smoothing: grayscale;
     color: var(--color-gray-11);
     background-color: var(--color-gray-2);
+    isolation: isolate;
   }
 
   body.dark {
