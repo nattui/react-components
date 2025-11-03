@@ -4,7 +4,13 @@
 "use client"
 
 import { Button, Spacer } from "@nattui/react-components"
-import { LucideComponent, LucidePanelLeft, LucideWandSparkles } from "lucide-react"
+import {
+  LucideComponent,
+  LucideMessageSquareCode,
+  LucidePanelLeft,
+  LucideSquareMousePointer,
+  LucideTextCursorInput,
+} from "lucide-react"
 import Link, { type LinkProps } from "next/link"
 import { usePathname } from "next/navigation"
 import { type ComponentProps, type ReactNode, useState } from "react"
@@ -76,7 +82,7 @@ export function Sidebar() {
         <SidebarNavigationItem
           href="/input"
           icon={
-            <LucideComponent
+            <LucideTextCursorInput
               className="shrink-0"
               size={18}
             />
@@ -92,7 +98,7 @@ export function Sidebar() {
         <SidebarNavigationItem
           href="/dialog"
           icon={
-            <LucideWandSparkles
+            <LucideMessageSquareCode
               className="shrink-0"
               size={18}
             />
@@ -103,7 +109,7 @@ export function Sidebar() {
         <SidebarNavigationItem
           href="/combobox"
           icon={
-            <LucideWandSparkles
+            <LucideSquareMousePointer
               className="shrink-0"
               size={18}
             />

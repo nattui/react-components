@@ -11,7 +11,7 @@ import {
 
 export default function InputPage() {
   return (
-    <div className="mx-auto flex w-full max-w-320 flex-col">
+    <div className="flex w-full max-w-320 flex-col">
       <Label
         className="mb-4"
         htmlFor="email"

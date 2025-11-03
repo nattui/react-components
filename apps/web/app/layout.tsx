@@ -14,7 +14,7 @@ export default function RootLayout(props: PropsWithChildren) {
       >
         <div className="flex">
           <Sidebar />
-          <main className="relative mx-auto flex w-full max-w-1024 flex-col px-16 py-80">
+          <main className="relative mx-auto flex w-full max-w-768 flex-col px-16 py-80">
             {children}
           </main>
         </div>
