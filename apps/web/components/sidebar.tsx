@@ -36,11 +36,17 @@ export function Sidebar() {
 
       {/* Logo */}
       <div
-        className="mt-16 ml-16 w-fit p-4 transition-opacity data-[is-expanded=true]:opacity-100! data-[is-hovered=true]:opacity-0"
+        className="mt-16 ml-16 flex w-fit cursor-default select-none items-center justify-center p-4 transition-opacity data-[is-expanded=true]:opacity-100! data-[is-hovered=true]:opacity-0"
         data-is-expanded={isExpanded}
         data-is-hovered={isHovered}
       >
         <Logomark className="size-24 text-primary-9" />
+        <p
+          className="ml-8 truncate font-600 text-18/p100 text-gray-12 transition-opacity data-[is-expanded=false]:pointer-events-none data-[is-expanded=false]:opacity-0"
+          data-is-expanded={isExpanded}
+        >
+          nattui
+        </p>
       </div>
       <Spacer className="h-16" />
 
@@ -106,7 +112,7 @@ function SidebarNavigationLabel(props: ComponentProps<"p">) {
 
   return (
     <p
-      className="mx-16 mb-4 truncate pl-6 font-500 text-14 transition-opacity data-[is-expanded=false]:opacity-0"
+      className="mx-16 mb-4 truncate pl-6 font-500 text-14 transition-opacity data-[is-expanded=false]:pointer-events-none data-[is-expanded=false]:opacity-0"
       {...rest}
     />
   )
