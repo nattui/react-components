@@ -2,7 +2,24 @@ import "@/styles/global.css"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import type { PropsWithChildren } from "react"
-import Topbar from "@/app/topbar"
+import Sidebar from "@/components/sidebar"
+
+export default function RootLayout(props: PropsWithChildren) {
+  const { children } = props
+
+  return (
+    <html lang="en">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} color-gray-slate color-primary-blue`}
+      >
+        <div className="flex h-full">
+          <Sidebar />
+          {children}
+        </div>
+      </body>
+    </html>
+  )
+}
 
 const geistSans = Geist({
   subsets: ["latin"],
@@ -17,19 +34,4 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   description: "React Components",
   title: "React Components",
-}
-
-export default function RootLayout(props: PropsWithChildren) {
-  const { children } = props
-
-  return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} color-gray-slate color-primary-blue`}
-      >
-        <Topbar />
-        {children}
-      </body>
-    </html>
-  )
 }
