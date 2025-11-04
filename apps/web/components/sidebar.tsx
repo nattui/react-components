@@ -161,7 +161,7 @@ function SidebarNavigationGroup(props: ComponentProps<"div">) {
 
   return (
     <div
-      className="flex flex-col gap-y-4 overflow-y-auto px-16"
+      className="flex flex-col gap-y-4 px-16"
       {...rest}
     />
   )
