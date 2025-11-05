@@ -15,7 +15,7 @@ import Link, { type LinkProps } from "next/link"
 import { usePathname } from "next/navigation"
 import { type ComponentProps, type ReactNode, useState } from "react"
 import { Logomark } from "@/components/logomark"
-import { Tooltip, TooltipContent, TooltipPositioner, TooltipTrigger } from "@/components/ui/tooltip"
+import { Tooltip, TooltipContent, TooltipPositioner, TooltipTrigger } from "@/components/tooltip"
 
 export function Sidebar() {
   const [isExpanded, setIsExpanded] = useState(true)
