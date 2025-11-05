@@ -10,14 +10,14 @@
     "@nattui/react-components": "workspace:*",
     "@nattui/tailwind-colors": "^0.0.4",
     "@nattui/tailwind-exact": "^0.0.3",
-    "lucide-react": "^0.548.0",
+    "lucide-react": "^0.552.0",
     "next": "^16.0.1",
     "react": "catalog:",
     "react-dom": "catalog:"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.16",
-    "@types/node": "^24.9.2",
+    "@types/node": "^24.10.0",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "babel-plugin-react-compiler": "^1.0.0",
