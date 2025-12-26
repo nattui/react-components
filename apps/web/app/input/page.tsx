@@ -152,6 +152,37 @@ export default function InputPage() {
           />
         </Button>
       </div>
+      <Spacer className="h-64" />
+
+      <Label
+        className="mb-4"
+        htmlFor="valid"
+      >
+        Valid
+      </Label>
+      <Input
+        id="valid"
+        isValid
+        placeholder="Valid"
+        size={44}
+        type="url"
+      />
+
+      <Spacer className="h-64" />
+
+      <Label
+        className="mb-4"
+        htmlFor="invalid"
+      >
+        Invalid
+      </Label>
+      <Input
+        id="invalid"
+        isInvalid
+        placeholder="Invalid"
+        size={44}
+        type="url"
+      />
     </div>
   )
 }

@@ -5,8 +5,10 @@ export interface InputProps
   extends Omit<ComponentProps<"input">, "aria-pressed" | "disabled" | "readOnly" | "required"> {
   isActive?: boolean
   isDisabled?: boolean
+  isInvalid?: boolean
   isReadOnly?: boolean
   isRequired?: boolean
+  isValid?: boolean
   size?: 32 | 36 | 40 | 44
 }
 
@@ -15,8 +17,10 @@ export function Input(props: InputProps): JSX.Element {
     className: customClassName = "",
     isActive = false,
     isDisabled = false,
+    isInvalid = undefined,
     isReadOnly = false,
     isRequired = false,
+    isValid = undefined,
     size = 40,
     type = "text",
     ...rest
@@ -37,6 +41,8 @@ export function Input(props: InputProps): JSX.Element {
     <input
       aria-pressed={isActive}
       className={combinedClassName}
+      data-is-invalid={isInvalid}
+      data-is-valid={isValid}
       disabled={isDisabled}
       readOnly={isReadOnly}
       required={isRequired}

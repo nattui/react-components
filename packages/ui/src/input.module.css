@@ -57,6 +57,15 @@
   box-shadow: 0 1px transparent;
 }
 
+.input[data-is-valid="true"] {
+  outline-color: #30a46c;
+}
+
+.input[data-is-invalid="true"] {
+  outline-color: #e5484d;
+}
+
+/* Focus overrides valid and invalid */
 .input:focus-visible {
   outline-color: var(--color-primary-9, #e93d82);
 }
