@@ -14,10 +14,10 @@
   text-decoration: none;
   appearance: none;
   cursor: text;
-  outline-width: 0;
+  outline-width: 2px;
   outline-style: solid;
-  outline-color: var(--color-primary-9, #e93d82);
-  outline-offset: 2px;
+  outline-color: transparent;
+  outline-offset: -2px;
   background-color: var(--color-gray-1, #fcfcfc);
   border-color: var(--color-gray-5, #e0e0e0);
   border-style: solid;
@@ -58,7 +58,7 @@
 }
 
 .input:focus-visible {
-  outline-width: 2px;
+  outline-color: var(--color-primary-9, #e93d82);
 }
 
 /* ===================================================== */
