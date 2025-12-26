@@ -14,16 +14,26 @@
 
   body {
     font-family: var(--font-sans);
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     color: var(--color-gray-11);
     background-color: var(--color-gray-2);
-    isolation: isolate;
   }
 
-  body.dark {
-    background-color: var(--color-gray-1);
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span,
+  a,
+  li,
+  blockquote,
+  figcaption,
+  strong,
+  em {
+    /* Does not work in body element */
+    letter-spacing: -0.02em;
   }
 
   h1 {
@@ -56,7 +66,6 @@
 
   p {
     font-size: 1.6rem;
-    hyphens: auto;
     word-break: break-word;
   }
 
@@ -64,7 +73,7 @@
     font-weight: 500;
     outline-width: 0;
     outline-style: solid;
-    outline-color: var(--color-primary);
+    outline-color: var(--color-primary-9);
     outline-offset: 2px;
 
     &:focus-visible {
@@ -81,7 +90,7 @@
     font-family: var(--font-sans);
     outline-width: 0;
     outline-style: solid;
-    outline-color: var(--color-primary);
+    outline-color: var(--color-primary-9);
     outline-offset: 2px;
 
     &:focus-visible {
