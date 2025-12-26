@@ -18,10 +18,18 @@
     "tailwindcss": "4.1.18",
     "typescript": "catalog:"
   },
+  "ignoreScripts": [
+    "sharp",
+    "unrs-resolver"
+  ],
   "name": "web",
   "scripts": {
     "build": "next build",
     "dev": "next dev --port 3001",
     "start": "next start"
-  }
+  },
+  "trustedDependencies": [
+    "sharp",
+    "unrs-resolver"
+  ]
 }
