@@ -50,12 +50,12 @@ export function ColorCombobox(props: ColorComboboxProps) {
   return (
     <Combobox.Root
       items={options}
-      onValueChange={handleValueChange}
+      onValueChange={(value) => handleValueChange(value as string)}
     >
       <div className="relative flex flex-col gap-4 font-500 text-14 text-gray-11">
         <label htmlFor={id}>{label}</label>
         <Combobox.Input
-          className="focus:-outline-offset-1 h-40 w-256 rounded-md border border-gray-5 bg-gray-1 pl-14 font-normal text-16 text-gray-11 focus:outline-2 focus:outline-primary-9"
+          className="h-40 w-256 rounded-md border border-gray-5 bg-gray-1 pl-14 font-normal text-16 text-gray-11 focus:outline-2 focus:outline-primary-9 focus:-outline-offset-1"
           id={id}
           placeholder={placeholder}
         />

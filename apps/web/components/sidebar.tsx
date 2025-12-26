@@ -28,7 +28,7 @@ export function Sidebar() {
     >
       {/* Expansion overlay */}
       <div
-        className="-z-10 absolute inset-0 cursor-e-resize data-[is-expanded=true]:hidden"
+        className="absolute inset-0 -z-10 cursor-e-resize data-[is-expanded=true]:hidden"
         data-is-expanded={isExpanded}
         onClick={() => setIsExpanded(true)}
       />
