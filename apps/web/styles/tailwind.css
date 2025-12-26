@@ -18,24 +18,6 @@
     background-color: var(--color-gray-2);
   }
 
-  p,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  span,
-  a,
-  li,
-  blockquote,
-  figcaption,
-  strong,
-  em {
-    /* Does not work in body element */
-    letter-spacing: -0.02em;
-  }
-
   h1 {
     font-size: 5.6rem;
   }
