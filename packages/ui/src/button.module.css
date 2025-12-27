@@ -43,8 +43,8 @@
   line-height: 1.5;
   cursor: pointer;
   user-select: none;
-  outline-width: 0;
-  outline-style: solid;
+  outline-width: 2px;
+  outline-style: hidden;
   outline-color: var(--color-button-primary-9);
   outline-offset: 2px;
   border-color: transparent;
@@ -61,7 +61,7 @@
 }
 
 .button:focus-visible {
-  outline-width: 2px;
+  outline-style: solid;
 }
 
 .button:enabled[aria-pressed="true"],
