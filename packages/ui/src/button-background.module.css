@@ -35,7 +35,7 @@
 }
 
 :global(.dark) .button_background__variant_accent,
-:global(.dark) .button_background__variant_accent {
+:global(.dark) .button_background__variant_primary {
   top: 50%;
   bottom: 0;
   background-color: #000000;
