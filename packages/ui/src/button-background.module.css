@@ -1,12 +1,9 @@
 /* Base */
 .button_background {
   position: absolute;
-  top: 0;
   right: 0;
-  bottom: 50%;
   left: 0;
   z-index: -1;
-  opacity: 0.2;
   filter: none !important;
   transition-duration: inherit;
   transition-property: opacity;
@@ -31,17 +28,28 @@
 /* Variant */
 .button_background__variant_accent,
 .button_background__variant_primary {
-  background: linear-gradient(
-    to bottom,
-    var(--color-white-a6, rgba(0, 0, 0, 0.4)),
-    var(--color-white-a5, rgba(0, 0, 0, 0.3))
-  );
+  top: 0;
+  bottom: 50%;
+  background-color: #ffffff;
+  opacity: 8%;
+}
+
+:global(.dark) .button_background__variant_accent,
+:global(.dark) .button_background__variant_accent {
+  top: 50%;
+  bottom: 0;
+  background-color: #000000;
 }
 
 .button_background__variant_secondary {
-  background: linear-gradient(
-    to bottom,
-    var(--color-black-a2, rgba(0, 0, 0, 0.4)),
-    var(--color-black-a3, rgba(0, 0, 0, 0.3))
-  );
+  top: 50%;
+  bottom: 0;
+  background-color: #000000;
+  opacity: 4%;
+}
+
+:global(.dark) .button_background__variant_secondary {
+  top: 0;
+  bottom: 50%;
+  background-color: #ffffff;
 }
