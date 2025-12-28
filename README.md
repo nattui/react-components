@@ -1,14 +1,14 @@
-> [!WARNING]
-> This project is currently a work in progress.
-
 # @nattui/react-components
 
 A collection of reusable React components built with TypeScript and CSS Modules.
 
+> [!WARNING]
+> This project is currently a work in progress.
+
 ## Links
 
-- Website: https://react-components-web.vercel.app
-- Storybook: https://react-components-storybook-mu.vercel.app
+- Website: [https://react-components-web.vercel.app](https://react-components-web.vercel.app)
+- Storybook: [https://react-components-storybook-mu.vercel.app](https://react-components-storybook-mu.vercel.app)
 
 ## Installation
 
@@ -30,7 +30,7 @@ function App() {
 
 ### Project Structure
 
-```
+```txt
 src/
 ├── index.ts          # Main export file
 ├── button.tsx        # Button component
