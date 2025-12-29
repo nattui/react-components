@@ -9,7 +9,7 @@ export interface InputProps
   isReadOnly?: boolean
   isRequired?: boolean
   isValid?: boolean
-  size?: 32 | 36 | 40 | 44
+  size?: 32 | 36 | 40 | 44 | 48
 }
 
 export function Input(props: InputProps): JSX.Element {
@@ -60,5 +60,6 @@ export const INPUT_CLASS_NAME = {
     36: styles.input__size_36,
     40: styles.input__size_40,
     44: styles.input__size_44,
+    48: styles.input__size_48,
   },
 } as const
