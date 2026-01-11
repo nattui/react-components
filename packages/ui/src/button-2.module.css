@@ -201,3 +201,14 @@
 :global(.dark) .button__variant_secondary:hover:not(:disabled) {
   background-color: var(--color-gray-dark-3);
 }
+
+/* ===================================================== */
+/* Width */
+/* ===================================================== */
+.button__width_base {
+  width: fit-content;
+}
+
+.button__width_full {
+  width: 100%;
+}
