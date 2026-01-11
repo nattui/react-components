@@ -40,10 +40,22 @@
   outline-style: solid;
 }
 
-/* Test */
-.button {
+/* ===================================================== */
+/* Rounded */
+/* ===================================================== */
+.button__rounded_base {
+  border-radius: 8px;
+}
+
+@supports (corner-shape: squircle) {
+  .button__rounded_base {
+    border-radius: 9999px;
+    corner-shape: squircle;
+  }
+}
+
+.button__rounded_full {
   border-radius: 9999px;
-  corner-shape: squircle;
 }
 
 /* ===================================================== */
