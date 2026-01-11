@@ -19,7 +19,7 @@
   outline-color: var(--color-primary-9);
   outline-offset: 2px;
   transition-duration: 150ms;
-  transition-property: background-color, opacity, translate;
+  transition-property: background-color, box-shadow, opacity, translate;
 }
 
 /* When active, move the button down */
@@ -102,6 +102,13 @@
     0 -1px 0 1px rgba(0, 0, 0, 0.1) inset;
 }
 
+.button__variant_accent:active:not(:disabled) {
+  box-shadow:
+    0 0 0 1px var(--color-primary-9) inset,
+    0 -1px 0 1px rgba(255, 255, 255, 0.25) inset,
+    0 1px 0 1px rgba(0, 0, 0, 0.1) inset;
+}
+
 .button__variant_accent:hover:not(:disabled) {
   background-color: color-mix(in oklab, var(--color-primary-9) 100%, #ffffff 10%);
 }
@@ -143,6 +150,13 @@
     0 -1px 0 1px rgba(0, 0, 0, 0.1) inset;
 }
 
+.button__variant_primary:active:not(:disabled) {
+  box-shadow:
+    0 0 0 1px var(--color-gray-dark-2) inset,
+    0 -1px 0 1px rgba(255, 255, 255, 0.25) inset,
+    0 1px 0 1px rgba(0, 0, 0, 0.1) inset;
+}
+
 .button__variant_primary:hover:not(:disabled) {
   background-color: color-mix(in oklab, var(--color-gray-dark-2) 100%, #ffffff 10%);
 }
@@ -159,6 +173,13 @@
     0 0 0 1px var(--color-gray-light-2) inset,
     0 1px 0 1px rgba(255, 255, 255, 0.25) inset,
     0 -1px 0 1px rgba(0, 0, 0, 0.1) inset;
+}
+
+:global(.dark) .button__variant_primary:active:not(:disabled) {
+  box-shadow:
+    0 0 0 1px var(--color-gray-light-2) inset,
+    0 -1px 0 1px rgba(255, 255, 255, 0.25) inset,
+    0 1px 0 1px rgba(0, 0, 0, 0.1) inset;
 }
 
 :global(.dark) .button__variant_primary:hover:not(:disabled) {
@@ -180,6 +201,13 @@
     0 -1px 0 1px rgba(0, 0, 0, 0.1) inset;
 }
 
+.button__variant_secondary:active:not(:disabled) {
+  box-shadow:
+    0 0 0 1px var(--color-gray-light-4) inset,
+    0 -1px 0 1px rgba(255, 255, 255, 0.25) inset,
+    0 1px 0 1px rgba(0, 0, 0, 0.1) inset;
+}
+
 .button__variant_secondary:hover:not(:disabled) {
   background-color: var(--color-gray-light-3);
 }
@@ -196,6 +224,13 @@
     0 0 0 1px var(--color-gray-dark-4) inset,
     0 1px 0 1px rgba(255, 255, 255, 0.25) inset,
     0 -1px 0 1px rgba(0, 0, 0, 0.1) inset;
+}
+
+:global(.dark) .button__variant_secondary:active:not(:disabled) {
+  box-shadow:
+    0 0 0 1px var(--color-gray-dark-4) inset,
+    0 -1px 0 1px rgba(255, 255, 255, 0.25) inset,
+    0 1px 0 1px rgba(0, 0, 0, 0.1) inset;
 }
 
 :global(.dark) .button__variant_secondary:hover:not(:disabled) {
