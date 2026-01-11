@@ -2,7 +2,7 @@ import type { ComponentProps, JSX } from "react"
 import styles from "@/button-2.module.css"
 
 export interface ButtonProps extends ComponentProps<"button"> {
-  variant?: "accent" | "primary" | "secondary"
+  variant?: "accent" | "primary" | "secondary" | "ghost"
 }
 
 export function Button2(props: ButtonProps): JSX.Element {
@@ -37,6 +37,7 @@ export const BUTTON_CLASS_NAME = {
   BASE: styles.button,
   VARIANT: {
     ACCENT: styles.button__variant_accent,
+    GHOST: styles.button__variant_ghost,
     PRIMARY: styles.button__variant_primary,
     SECONDARY: styles.button__variant_secondary,
   },
