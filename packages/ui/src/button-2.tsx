@@ -3,6 +3,7 @@ import styles from "@/button-2.module.css"
 
 export interface ButtonProps extends ComponentProps<"button"> {
   isRounded?: boolean
+  size?: 32 | 36 | 40 | 44 | 48
   variant?: "accent" | "primary" | "secondary" | "ghost"
 }
 
@@ -11,6 +12,7 @@ export function Button2(props: ButtonProps): JSX.Element {
     children = "",
     className: customClassName = "",
     isRounded = false,
+    size = 40,
     type = "button",
     variant = "accent",
     ...rest
@@ -18,6 +20,7 @@ export function Button2(props: ButtonProps): JSX.Element {
 
   const combinedClassName = `
     ${BUTTON_CLASS_NAME.BASE}
+    ${BUTTON_CLASS_NAME.SIZE[size]}
     ${BUTTON_CLASS_NAME.VARIANT[variant.toUpperCase() as keyof typeof BUTTON_CLASS_NAME.VARIANT]}
     ${isRounded ? BUTTON_CLASS_NAME.ROUNDED.FULL : BUTTON_CLASS_NAME.ROUNDED.BASE}
     ${customClassName}
@@ -41,6 +44,13 @@ export const BUTTON_CLASS_NAME = {
   ROUNDED: {
     BASE: styles.button__rounded_base,
     FULL: styles.button__rounded_full,
+  },
+  SIZE: {
+    32: styles.button__size_32,
+    36: styles.button__size_36,
+    40: styles.button__size_40,
+    44: styles.button__size_44,
+    48: styles.button__size_48,
   },
   VARIANT: {
     ACCENT: styles.button__variant_accent,
