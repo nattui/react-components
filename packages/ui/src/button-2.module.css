@@ -1,0 +1,100 @@
+/* ===================================================== */
+/* Base */
+/* ===================================================== */
+.button {
+  display: flex;
+  flex-shrink: 0;
+  column-gap: 8px;
+  align-items: safe center;
+  justify-content: safe center;
+  height: var(--size, 40px);
+  padding: var(--padding, 0 12px);
+  overflow: hidden;
+  font-family: var(--font-sans, sans-serif);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  cursor: pointer;
+  user-select: none;
+  outline-width: 2px;
+  outline-style: hidden;
+  outline-color: var(--color-primary-9);
+  outline-offset: 2px;
+  /* border-color: transparent; */
+  /* border-style: solid; */
+  /* border-width: 1px; */
+  transition-duration: 150ms;
+  transition-property: opacity, translate;
+}
+
+/* When active, move the button down */
+.button:active:not(:disabled) {
+  translate: 0 1px;
+}
+
+/* When disabled, disable cursor and reduce opacity */
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* When focused, show outline */
+.button:focus-visible {
+  outline-style: solid;
+}
+
+/* When hovered, reduce opacity */
+.button:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+/* Test */
+.button {
+  border-radius: 9999px;
+  corner-shape: squircle;
+}
+
+/* ===================================================== */
+/* Variant */
+/* ===================================================== */
+/* Accent */
+.button__variant_accent {
+  color: var(--color-white);
+  background-image: linear-gradient(
+    to bottom,
+    color-mix(in oklab, var(--color-primary-9) 100%, #ffffff 8%) 50%,
+    color-mix(in oklab, var(--color-primary-9) 100%, #ffffff 0%) 50%
+  );
+  box-shadow:
+    0 0 0 1px var(--color-primary-9) inset,
+    0 1px 0 1px rgba(255, 255, 255, 0.25) inset,
+    0 -1px 0 1px rgba(0, 0, 0, 0.1) inset;
+}
+
+/* Primary */
+.button__variant_primary {
+  color: var(--color-white);
+  background-image: linear-gradient(
+    to bottom,
+    color-mix(in oklab, var(--color-gray-dark-2) 100%, #ffffff 8%) 50%,
+    color-mix(in oklab, var(--color-gray-dark-2) 100%, #ffffff 0%) 50%
+  );
+  box-shadow:
+    0 0 0 1px var(--color-gray-dark-2) inset,
+    0 1px 0 1px rgba(255, 255, 255, 0.25) inset,
+    0 -1px 0 1px rgba(0, 0, 0, 0.1) inset;
+}
+
+/* Secondary */
+.button__variant_secondary {
+  color: var(--color-black);
+  background-image: linear-gradient(
+    to bottom,
+    color-mix(in oklab, var(--color-gray-light-1) 100%, #000000 0%) 50%,
+    color-mix(in oklab, var(--color-gray-light-1) 100%, #000000 4%) 50%
+  );
+  box-shadow:
+    0 0 0 1px var(--color-gray-light-4) inset,
+    0 1px 0 1px rgba(255, 255, 255, 0.25) inset,
+    0 -1px 0 1px rgba(0, 0, 0, 0.1) inset;
+}

@@ -93,6 +93,17 @@ export function Sidebar() {
           label="Button"
         />
         <SidebarNavigationItem
+          href="/button-2"
+          icon={
+            <LucideComponent
+              className="shrink-0"
+              size={18}
+            />
+          }
+          isExpanded={isExpanded}
+          label="Button 2"
+        />
+        <SidebarNavigationItem
           href="/input"
           icon={
             <LucideTextCursorInput
