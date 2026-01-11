@@ -40,11 +40,6 @@
   outline-style: solid;
 }
 
-/* When hovered, reduce opacity */
-/* .button:hover:not(:disabled) {
-  opacity: 0.85;
-} */
-
 /* Test */
 .button {
   border-radius: 9999px;
