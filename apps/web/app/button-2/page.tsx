@@ -12,7 +12,7 @@ export default function ButtonPage() {
         <Button2 variant="primary">Primary</Button2>
         <Button2 variant="secondary">Secondary</Button2>
         <Button2 variant="ghost">Ghost</Button2>
-        <Button2 disabled>Primary</Button2>
+        <Button2 isDisabled>Primary</Button2>
         <Button2 isRounded>Accent</Button2>
         <Button2 isFullWidth>Full width</Button2>
         <Button2 iconOnly>
