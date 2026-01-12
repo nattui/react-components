@@ -1,22 +1,49 @@
-import type { ComponentProps, JSX } from "react"
+import type { ComponentProps, JSX, ReactNode } from "react"
 import styles from "@/button-2.module.css"
+import { ButtonSpinner } from "@/button-spinner"
 
-export interface ButtonProps extends ComponentProps<"button"> {
-  isFullWidth?: boolean
-  isRounded?: boolean
-  size?: 32 | 36 | 40 | 44 | 48
-  variant?: "accent" | "primary" | "secondary" | "ghost"
+export interface ButtonIconProps extends ButtonPropsInternal {
+  children?: ReactNode
+  iconEnd?: never
+  iconOnly: true
+  iconStart?: never
 }
 
-export function Button2(props: ButtonProps): JSX.Element {
+export interface ButtonProps extends ButtonPropsInternal {
+  children?: string | string[]
+  iconOnly?: false
+}
+
+interface ButtonPropsInternal extends Omit<ComponentProps<"button">, "aria-pressed" | "disabled"> {
+  iconEnd?: ReactNode
+  iconOnly?: boolean
+  iconStart?: ReactNode
+  isActive?: boolean
+  isDisabled?: boolean
+  isFullWidth?: boolean
+  isLoading?: boolean
+  isRounded?: boolean
+  size?: 32 | 36 | 40 | 44 | 48
+  variant?: "accent" | "ghost" | "primary" | "secondary"
+}
+
+type ButtonUnionProps = ButtonIconProps | ButtonProps
+
+export function Button2(props: ButtonUnionProps): JSX.Element {
   const {
     children = "",
     className: customClassName = "",
+    iconEnd = "",
+    iconOnly = false,
+    iconStart = "",
+    isActive = false,
+    isDisabled = false,
     isFullWidth = false,
+    isLoading = false,
     isRounded = false,
     size = 40,
     type = "button",
-    variant = "accent",
+    variant = "primary",
     ...rest
   } = props
 
@@ -25,6 +52,7 @@ export function Button2(props: ButtonProps): JSX.Element {
     ${BUTTON_CLASS_NAME.SIZE[size]}
     ${BUTTON_CLASS_NAME.VARIANT[variant.toUpperCase() as keyof typeof BUTTON_CLASS_NAME.VARIANT]}
     ${isFullWidth ? BUTTON_CLASS_NAME.WIDTH.FULL : BUTTON_CLASS_NAME.WIDTH.BASE}
+    ${iconOnly ? BUTTON_CLASS_NAME.ICON_ONLY : ""}
     ${isRounded ? BUTTON_CLASS_NAME.ROUNDED.FULL : BUTTON_CLASS_NAME.ROUNDED.BASE}
     ${customClassName}
   `
@@ -37,13 +65,17 @@ export function Button2(props: ButtonProps): JSX.Element {
       type={type}
       {...rest}
     >
-      {children}
+      {isLoading && <ButtonSpinner />}
+      {!isLoading && iconStart}
+      {iconOnly ? isLoading ? <></> : children : <span>{children}</span>}
+      {!isLoading && iconEnd}
     </button>
   )
 }
 
 export const BUTTON_CLASS_NAME = {
   BASE: styles.button,
+  ICON_ONLY: styles.button__icon_only,
   ROUNDED: {
     BASE: styles.button__rounded_base,
     FULL: styles.button__rounded_full,

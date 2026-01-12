@@ -1,4 +1,5 @@
 import { Button2 } from "@nattui/react-components"
+import { LucideDownload } from "lucide-react"
 
 export default function ButtonPage() {
   return (
@@ -14,6 +15,9 @@ export default function ButtonPage() {
         <Button2 disabled>Primary</Button2>
         <Button2 isRounded>Accent</Button2>
         <Button2 isFullWidth>Full width</Button2>
+        <Button2 iconOnly>
+          <LucideDownload size={16} />
+        </Button2>
       </div>
     </div>
   )
