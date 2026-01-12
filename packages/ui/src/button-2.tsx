@@ -61,7 +61,9 @@ export function Button2(props: ButtonUnionProps): JSX.Element {
 
   return (
     <button
+      aria-pressed={isActive}
       className={combinedClassName}
+      disabled={isDisabled || isLoading}
       type={type}
       {...rest}
     >
