@@ -34,7 +34,7 @@
   opacity: 0.5;
 }
 
-/* When focused, show outline */
+/* When keyboard focused, show outline */
 .button:focus-visible {
   outline-style: solid;
 }
