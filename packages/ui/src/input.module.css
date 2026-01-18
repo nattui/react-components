@@ -19,10 +19,7 @@
   outline-color: transparent;
   outline-offset: -2px;
   background-color: var(--color-gray-1, #fcfcfc);
-  box-shadow:
-    0 0 0 1px var(--color-gray-4) inset,
-    0 1px 0 1px rgba(255, 255, 255, 0.25) inset,
-    0 -1px 0 1px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 0 0 1px var(--color-gray-4) inset;
   transition-duration: 150ms;
   transition-property: box-shadow, opacity;
 }
@@ -48,10 +45,7 @@
 .input:enabled:focus,
 .input:enabled:hover,
 .input:enabled[aria-pressed="true"] {
-  box-shadow:
-    0 0 0 1px var(--color-gray-6) inset,
-    0 1px 0 1px rgba(255, 255, 255, 0.25) inset,
-    0 -1px 0 1px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 0 0 1px var(--color-gray-6) inset;
 }
 
 .input[data-is-valid="true"] {
