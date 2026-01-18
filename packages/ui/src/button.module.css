@@ -154,6 +154,10 @@
   background-color: var(--color-gray-4);
 }
 
+:global(.dark) .button__variant_ghost {
+  color: var(--color-white);
+}
+
 /* Primary */
 .button__variant_primary {
   color: var(--color-white);
@@ -228,18 +232,12 @@
     color-mix(in oklab, transparent 100%, #000000 0%) 50%,
     color-mix(in oklab, transparent 100%, #000000 4%) 50%
   );
-  box-shadow:
-    0 0 0 1px var(--color-gray-light-4) inset,
-    0 1px 0 1px rgba(255, 255, 255, 0.25) inset,
-    0 -1px 0 1px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 0 0 1px var(--color-gray-light-4) inset;
 }
 
 .button__variant_secondary:active:enabled,
 .button__variant_secondary[aria-pressed="true"]:enabled {
-  box-shadow:
-    0 0 0 1px var(--color-gray-light-4) inset,
-    0 -1px 0 1px rgba(255, 255, 255, 0.25) inset,
-    0 1px 0 1px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 0 0 1px var(--color-gray-light-4) inset;
 }
 
 .button__variant_secondary:active:enabled,
@@ -256,18 +254,12 @@
     color-mix(in oklab, transparent 100%, #ffffff 4%) 50%,
     color-mix(in oklab, transparent 100%, #ffffff 0%) 50%
   );
-  box-shadow:
-    0 0 0 1px var(--color-gray-dark-4) inset,
-    0 1px 0 1px rgba(255, 255, 255, 0.25) inset,
-    0 -1px 0 1px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 0 0 1px var(--color-gray-dark-4) inset;
 }
 
 :global(.dark) .button__variant_secondary:active:enabled,
 :global(.dark) .button__variant_secondary[aria-pressed="true"]:enabled {
-  box-shadow:
-    0 0 0 1px var(--color-gray-dark-4) inset,
-    0 -1px 0 1px rgba(255, 255, 255, 0.25) inset,
-    0 1px 0 1px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 0 0 1px var(--color-gray-dark-4) inset;
 }
 
 :global(.dark) .button__variant_secondary:active:enabled,
