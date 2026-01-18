@@ -1,13 +1,28 @@
 "use client"
 
-import { Switch } from "@nattui/react-components"
+import { Label, Switch } from "@nattui/react-components"
 
 export default function SwitchPage() {
   return (
     <div className="flex flex-col gap-16">
       <Switch />
-      <Switch defaultChecked />
-      <Switch disabled />
+      <Switch isDefaultChecked />
+      <Switch isDisabled />
+      <Switch
+        isDefaultChecked
+        isDisabled
+      />
+
+      <Switch isReadOnly />
+      <Switch isRequired />
+
+      <Label
+        className="flex items-center gap-8"
+        htmlFor="switch-with-label"
+      >
+        Switch with label
+        <Switch id="switch-with-label" />
+      </Label>
     </div>
   )
 }

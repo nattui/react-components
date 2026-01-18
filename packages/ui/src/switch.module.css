@@ -25,6 +25,11 @@
   background-color: var(--color-primary-9);
 }
 
+.switch[data-disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
 /* ===================================================== */
 /* Thumb */
 /* ===================================================== */
