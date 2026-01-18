@@ -10,6 +10,7 @@ import {
   LucidePanelLeft,
   LucideSquareMousePointer,
   LucideTextCursorInput,
+  LucideToggleLeft,
 } from "lucide-react"
 import Link, { type LinkProps } from "next/link"
 import { usePathname } from "next/navigation"
@@ -102,6 +103,17 @@ export function Sidebar() {
           }
           isExpanded={isExpanded}
           label="Input"
+        />
+        <SidebarNavigationItem
+          href="/switch"
+          icon={
+            <LucideToggleLeft
+              className="shrink-0"
+              size={18}
+            />
+          }
+          isExpanded={isExpanded}
+          label="Switch"
         />
       </SidebarNavigationGroup>
       <Spacer className="pointer-events-none h-16" />
