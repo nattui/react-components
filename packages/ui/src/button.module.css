@@ -103,7 +103,7 @@
   background-color: var(--color-primary-9);
   background-image: linear-gradient(
     to bottom,
-    color-mix(in oklab, transparent 100%, #ffffff 5%) 50%,
+    color-mix(in oklab, transparent 100%, #ffffff 2.5%) 50%,
     color-mix(in oklab, transparent 100%, #ffffff 0%) 50%
   );
   box-shadow:
@@ -130,7 +130,7 @@
   background-image: linear-gradient(
     to bottom,
     color-mix(in oklab, transparent 100%, #000000 0%) 50%,
-    color-mix(in oklab, transparent 100%, #000000 5%) 50%
+    color-mix(in oklab, transparent 100%, #000000 2.5%) 50%
   );
 }
 
@@ -156,7 +156,7 @@
   background-color: var(--color-gray-dark-2);
   background-image: linear-gradient(
     to bottom,
-    color-mix(in oklab, transparent 100%, #ffffff 5%) 50%,
+    color-mix(in oklab, transparent 100%, #ffffff 2.5%) 50%,
     color-mix(in oklab, transparent 100%, #ffffff 0%) 50%
   );
   box-shadow:
@@ -185,7 +185,7 @@
   background-image: linear-gradient(
     to bottom,
     color-mix(in oklab, transparent 100%, #000000 0%) 50%,
-    color-mix(in oklab, transparent 100%, #000000 5%) 50%
+    color-mix(in oklab, transparent 100%, #000000 2.5%) 50%
   );
   box-shadow:
     0 0 0 1px var(--color-gray-light-1) inset,
