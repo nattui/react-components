@@ -19,13 +19,12 @@
   outline-color: transparent;
   outline-offset: -2px;
   background-color: var(--color-gray-1, #fcfcfc);
-  border-color: var(--color-gray-5, #e0e0e0);
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 8px;
-  box-shadow: 0 1px rgba(0, 0, 0, 0.05);
+  box-shadow:
+    0 0 0 1px var(--color-gray-4) inset,
+    0 1px 0 1px rgba(255, 255, 255, 0.25) inset,
+    0 -1px 0 1px rgba(0, 0, 0, 0.1) inset;
   transition-duration: 150ms;
-  transition-property: background-color, border-color, box-shadow, opacity;
+  transition-property: box-shadow;
 }
 
 @supports (corner-shape: squircle) {
@@ -36,7 +35,7 @@
 }
 
 .input::placeholder {
-  color: var(--color-gray, #8d8d8d);
+  color: var(--color-gray-9, #8d8d8d);
   user-select: none;
 }
 
@@ -49,8 +48,10 @@
 .input:enabled:focus,
 .input:enabled:hover,
 .input:enabled[aria-pressed="true"] {
-  border-color: var(--color-gray-8, #bbbbbb);
-  box-shadow: 0 1px transparent;
+  box-shadow:
+    0 0 0 1px var(--color-gray-6) inset,
+    0 1px 0 1px rgba(255, 255, 255, 0.25) inset,
+    0 -1px 0 1px rgba(0, 0, 0, 0.1) inset;
 }
 
 .input[data-is-valid="true"] {

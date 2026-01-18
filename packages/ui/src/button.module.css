@@ -20,7 +20,7 @@
   outline-color: var(--color-primary-9);
   outline-offset: 2px;
   transition-duration: 150ms;
-  transition-property: background-color, box-shadow, opacity, translate;
+  transition-property: background-color, box-shadow, translate;
 }
 
 /* When pressed, move the button down */
