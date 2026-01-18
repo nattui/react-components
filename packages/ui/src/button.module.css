@@ -126,20 +126,12 @@
   background-color: color-mix(in oklab, var(--color-primary-9) 100%, #ffffff 10%);
 }
 
-.button__variant_accent > * {
-  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.1));
-}
-
 :global(.dark) .button__variant_accent {
   background-image: linear-gradient(
     to bottom,
     color-mix(in oklab, transparent 100%, #000000 0%) 50%,
     color-mix(in oklab, transparent 100%, #000000 8%) 50%
   );
-}
-
-:global(.dark) .button__variant_accent > * {
-  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.1));
 }
 
 /* Ghost */
@@ -187,10 +179,6 @@
   background-color: color-mix(in oklab, var(--color-gray-dark-2) 100%, #ffffff 10%);
 }
 
-.button__variant_primary > * {
-  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.1));
-}
-
 :global(.dark) .button__variant_primary {
   color: var(--color-black);
   background-color: var(--color-gray-light-2);
@@ -211,10 +199,6 @@
     0 0 0 1px var(--color-gray-light-2) inset,
     0 -1px 0 1px rgba(255, 255, 255, 0.25) inset,
     0 1px 0 1px rgba(0, 0, 0, 0.1) inset;
-}
-
-:global(.dark) .button__variant_primary > * {
-  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.1));
 }
 
 :global(.dark) .button__variant_primary:active:enabled,
