@@ -105,6 +105,17 @@ export function Sidebar() {
           label="Input"
         />
         <SidebarNavigationItem
+          href="/textarea"
+          icon={
+            <LucideTextCursorInput
+              className="shrink-0"
+              size={18}
+            />
+          }
+          isExpanded={isExpanded}
+          label="Textarea"
+        />
+        <SidebarNavigationItem
           href="/switch"
           icon={
             <LucideToggleLeft

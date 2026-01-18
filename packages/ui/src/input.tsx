@@ -8,6 +8,7 @@ export interface InputProps
   isInvalid?: boolean
   isReadOnly?: boolean
   isRequired?: boolean
+  isRounded?: boolean
   isValid?: boolean
   size?: 32 | 36 | 40 | 44 | 48
 }
@@ -20,6 +21,7 @@ export function Input(props: InputProps): JSX.Element {
     isInvalid = undefined,
     isReadOnly = false,
     isRequired = false,
+    isRounded = false,
     isValid = undefined,
     size = 40,
     type = "text",
@@ -32,6 +34,7 @@ export function Input(props: InputProps): JSX.Element {
     ${INPUT_CLASS_NAME.BASE}
     ${INPUT_CLASS_NAME.SIZE[size]}
     ${isPassword ? INPUT_CLASS_NAME.PASSWORD : ""}
+    ${isRounded ? INPUT_CLASS_NAME.ROUNDED.FULL : INPUT_CLASS_NAME.ROUNDED.BASE}
     ${customClassName}
   `
     .replaceAll(/\s+/g, " ")
@@ -55,6 +58,10 @@ export function Input(props: InputProps): JSX.Element {
 export const INPUT_CLASS_NAME = {
   BASE: styles.input,
   PASSWORD: styles.input__password,
+  ROUNDED: {
+    BASE: styles.input__rounded_base,
+    FULL: styles.input__rounded_full,
+  },
   SIZE: {
     32: styles.input__size_32,
     36: styles.input__size_36,
