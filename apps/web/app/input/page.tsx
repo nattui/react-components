@@ -141,7 +141,7 @@ export default function InputPage() {
           type="url"
         />
         <Button
-          className="group -ml-px rounded-l-none! shadow-none! hover:z-10 focus-visible:z-20"
+          className="group -ml-px rounded-l-none! hover:z-10 focus-visible:z-20"
           iconOnly
           size={44}
           variant="secondary"
