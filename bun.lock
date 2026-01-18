@@ -31,7 +31,7 @@
       "dependencies": {
         "@base-ui-components/react": "1.0.0-rc.0",
         "@nattui/react-components": "workspace:*",
-        "@nattui/tailwind-colors": "0.0.6",
+        "@nattui/tailwind-colors": "0.0.7",
         "@nattui/tailwind-exact": "0.0.3",
         "lucide-react": "0.562.0",
         "next": "16.1.3",
@@ -274,7 +274,7 @@
 
     "@nattui/react-components": ["@nattui/react-components@workspace:packages/ui"],
 
-    "@nattui/tailwind-colors": ["@nattui/tailwind-colors@0.0.6", "", {}, "sha512-zcyB5mslC56dhLa6+RHwajibLnixmz9bRW56owxenbe5OunBMGzZARJhh8qZC4zzbiQdhkwV9jld88RhxTy7Nw=="],
+    "@nattui/tailwind-colors": ["@nattui/tailwind-colors@0.0.7", "", {}, "sha512-DDXJ5fA+iSfxzJxvAMatAdUYNLU+8OtNV6dLJrl2guQArhlzX/b6JT55aHlrhOXEIeE4Ff2ZA95XA2QuGC83WQ=="],
 
     "@nattui/tailwind-exact": ["@nattui/tailwind-exact@0.0.3", "", {}, "sha512-1Lxk4UbUoBDTQfFpSKJiSUfAnZJpJH+OFSF1YDPAhgrA7+mNvZb0f/2skwfE+aa/BdFjk/buOzg5zbLxXnlEOw=="],
 
