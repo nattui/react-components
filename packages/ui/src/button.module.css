@@ -2,40 +2,12 @@
 /* Base */
 /* ===================================================== */
 .button {
-  --color-button-gray-1: var(--color-gray-1);
-  --color-button-gray-2: var(--color-gray-2);
-  --color-button-gray-3: var(--color-gray-3);
-  --color-button-gray-4: var(--color-gray-4);
-  --color-button-gray-5: var(--color-gray-5);
-  --color-button-gray-6: var(--color-gray-6);
-  --color-button-gray-7: var(--color-gray-7);
-  --color-button-gray-8: var(--color-gray-8);
-  --color-button-gray-9: var(--color-gray-9);
-  --color-button-gray-10: var(--color-gray-10);
-  --color-button-gray-11: var(--color-gray-11);
-  --color-button-gray-12: var(--color-gray-12);
-
-  --color-button-primary-1: var(--color-primary-light-1);
-  --color-button-primary-2: var(--color-primary-light-2);
-  --color-button-primary-3: var(--color-primary-light-3);
-  --color-button-primary-4: var(--color-primary-light-4);
-  --color-button-primary-5: var(--color-primary-light-5);
-  --color-button-primary-6: var(--color-primary-light-6);
-  --color-button-primary-7: var(--color-primary-light-7);
-  --color-button-primary-8: var(--color-primary-light-8);
-  --color-button-primary-9: var(--color-primary-light-9);
-  --color-button-primary-10: var(--color-primary-light-10);
-  --color-button-primary-11: var(--color-primary-light-11);
-  --color-button-primary-12: var(--color-primary-light-12);
-
-  position: relative;
   display: flex;
   flex-shrink: 0;
   column-gap: 8px;
   align-items: safe center;
   justify-content: safe center;
   height: var(--size);
-  padding: var(--padding);
   overflow: hidden;
   font-family: var(--font-sans, sans-serif);
   font-size: 14px;
@@ -45,49 +17,27 @@
   user-select: none;
   outline-width: 2px;
   outline-style: hidden;
-  outline-color: var(--color-button-primary-9);
+  outline-color: var(--color-primary-9);
   outline-offset: 2px;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 1px;
   transition-duration: 150ms;
-  transition-property:
-    background-color, border-color, box-shadow, color, filter, opacity, translate;
+  transition-property: background-color, box-shadow, opacity, translate;
 }
 
+/* When pressed, move the button down */
+.button:active:enabled,
+.button[aria-pressed="true"]:enabled {
+  translate: 0 1px;
+}
+
+/* When disabled, disable cursor and reduce opacity */
 .button:disabled {
   cursor: not-allowed;
   opacity: 0.5;
 }
 
+/* When keyboard focused, show outline */
 .button:focus-visible {
   outline-style: solid;
-}
-
-.button:enabled[aria-pressed="true"],
-.button:enabled:active {
-  translate: 0 1px;
-}
-
-/* Disable child shadow */
-.button:enabled[aria-pressed="true"] > *,
-.button:enabled:active > *,
-.button:enabled:hover > * {
-  filter: none !important;
-}
-
-/* Hover */
-.button:enabled[aria-pressed="true"],
-.button:enabled:active,
-.button:enabled:hover {
-  opacity: 0.85;
-}
-
-/* Button background */
-.button:enabled[aria-pressed="true"] > [data-element="button-background"],
-.button:enabled:active > [data-element="button-background"],
-.button:enabled:hover > [data-element="button-background"] {
-  opacity: 0;
 }
 
 /* ===================================================== */
@@ -121,27 +71,27 @@
 /* ===================================================== */
 .button__size_32 {
   --size: 32px;
-  --padding: 0 10px;
+  padding: 0 10px;
 }
 
 .button__size_36 {
   --size: 36px;
-  --padding: 0 12px;
+  padding: 0 12px;
 }
 
 .button__size_40 {
   --size: 40px;
-  --padding: 0 14px;
+  padding: 0 14px;
 }
 
 .button__size_44 {
   --size: 44px;
-  --padding: 0 16px;
+  padding: 0 16px;
 }
 
 .button__size_48 {
   --size: 48px;
-  --padding: 0 18px;
+  padding: 0 18px;
 }
 
 /* ===================================================== */
@@ -149,125 +99,200 @@
 /* ===================================================== */
 /* Accent */
 .button__variant_accent {
-  color: var(--color-white, #ffffff);
+  color: var(--color-white);
+  background-color: var(--color-primary-9);
   background-image: linear-gradient(
     to bottom,
-    var(--color-button-primary-9),
-    var(--color-button-primary-10)
+    color-mix(in oklab, transparent 100%, #ffffff 8%) 50%,
+    color-mix(in oklab, transparent 100%, #ffffff 0%) 50%
   );
-  border-color: var(--color-button-primary-9);
   box-shadow:
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.25),
-    inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+    0 0 0 1px var(--color-primary-9) inset,
+    0 1px 0 1px rgba(255, 255, 255, 0.25) inset,
+    0 -1px 0 1px rgba(0, 0, 0, 0.1) inset;
 }
 
-.button__variant_accent:enabled[aria-pressed="true"],
-.button__variant_accent:enabled:active {
+.button__variant_accent:active:enabled,
+.button__variant_accent[aria-pressed="true"]:enabled {
   box-shadow:
-    inset 0 -1px 0 0 rgba(255, 255, 255, 0.25),
-    inset 0 1px 0 0 var(--color-button-primary-11) !important;
+    0 0 0 1px var(--color-primary-9) inset,
+    0 -1px 0 1px rgba(255, 255, 255, 0.25) inset,
+    0 1px 0 1px rgba(0, 0, 0, 0.1) inset;
 }
 
-/* Ghost */
-.button__variant_ghost {
-  color: var(--color-button-gray-11);
-  background-color: transparent;
-}
-
-.button__variant_ghost:enabled[aria-pressed="true"],
-.button__variant_ghost:enabled:active {
-  color: var(--color-button-gray-12);
-  background-color: var(--color-button-gray-5) !important;
-}
-
-.button__variant_ghost:enabled:hover {
-  color: var(--color-button-gray-12);
-  background-color: color-mix(in oklab, var(--color-button-gray-5) 75%, transparent);
-}
-
-/* Primary */
-.button__variant_primary {
-  color: var(--color-button-gray-1);
-  background-image: linear-gradient(
-    to bottom,
-    color-mix(in oklab, var(--color-button-gray-12) 90%, transparent),
-    var(--color-button-gray-12)
-  );
-  border-color: var(--color-button-gray-12);
-  box-shadow:
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.25),
-    inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
-}
-
-.button__variant_primary:enabled[aria-pressed="true"],
-.button__variant_primary:enabled:active {
-  box-shadow:
-    inset 0 -1px 0 0 rgba(255, 255, 255, 0.25),
-    inset 0 1px 0 0 var(--color-button-gray-12) !important;
-}
-
-/* Secondary */
-.button__variant_secondary {
-  color: var(--color-button-gray-11);
-  background-color: var(--color-button-gray-2);
-  border-color: var(--color-button-gray-6);
-  box-shadow:
-    inset 0 1px 0 0 rgba(255, 255, 255, 1),
-    inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
-}
-
-.button__variant_secondary:enabled[aria-pressed="true"],
-.button__variant_secondary:enabled:active,
-.button__variant_secondary:enabled:hover {
-  color: var(--color-button-gray-12);
-  border-color: var(--color-button-gray-8);
-}
-
-.button__variant_secondary:enabled[aria-pressed="true"],
-.button__variant_secondary:enabled:active {
-  box-shadow:
-    inset 0 -1px 0 0 rgba(255, 255, 255, 1),
-    inset 0 1px 0 0 rgba(0, 0, 0, 0.1) !important;
-}
-
-/* Group */
-.button__variant_accent,
-.button__variant_primary,
-.button__variant_secondary {
-  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.05));
+.button__variant_accent:active:enabled,
+.button__variant_accent:hover:enabled,
+.button__variant_accent[aria-pressed="true"]:enabled {
+  background-color: color-mix(in oklab, var(--color-primary-9) 100%, #ffffff 10%);
 }
 
 .button__variant_accent > * {
   filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.1));
 }
 
+:global(.dark) .button__variant_accent {
+  background-image: linear-gradient(
+    to bottom,
+    color-mix(in oklab, transparent 100%, #000000 0%) 50%,
+    color-mix(in oklab, transparent 100%, #000000 8%) 50%
+  );
+}
+
+:global(.dark) .button__variant_accent > * {
+  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.1));
+}
+
+/* Ghost */
+.button__variant_ghost {
+  color: var(--color-black);
+  background-color: transparent;
+}
+
+.button__variant_ghost:active:enabled,
+.button__variant_ghost:hover:enabled,
+.button__variant_ghost[aria-pressed="true"]:enabled {
+  background-color: var(--color-gray-4);
+}
+
+:global(.dark) .button__variant_ghost {
+  color: var(--color-white);
+}
+
+/* Primary */
+.button__variant_primary {
+  color: var(--color-white);
+  background-color: var(--color-gray-dark-2);
+  background-image: linear-gradient(
+    to bottom,
+    color-mix(in oklab, transparent 100%, #ffffff 8%) 50%,
+    color-mix(in oklab, transparent 100%, #ffffff 0%) 50%
+  );
+  box-shadow:
+    0 0 0 1px var(--color-gray-dark-2) inset,
+    0 1px 0 1px rgba(255, 255, 255, 0.25) inset,
+    0 -1px 0 1px rgba(0, 0, 0, 0.1) inset;
+}
+
+.button__variant_primary:active:enabled,
+.button__variant_primary[aria-pressed="true"]:enabled {
+  box-shadow:
+    0 0 0 1px var(--color-gray-dark-2) inset,
+    0 -1px 0 1px rgba(255, 255, 255, 0.25) inset,
+    0 1px 0 1px rgba(0, 0, 0, 0.1) inset;
+}
+
+.button__variant_primary:active:enabled,
+.button__variant_primary:hover:enabled,
+.button__variant_primary[aria-pressed="true"]:enabled {
+  background-color: color-mix(in oklab, var(--color-gray-dark-2) 100%, #ffffff 10%);
+}
+
 .button__variant_primary > * {
-  filter: drop-shadow(0 1px 0 rgb(255 255 255 / 0.1));
+  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.1));
 }
 
-.button__variant_accent:enabled:active,
-.button__variant_accent:enabled:hover,
-.button__variant_accent:enabled[aria-pressed="true"],
-.button__variant_primary:enabled:active,
-.button__variant_primary:enabled:hover,
-.button__variant_primary:enabled[aria-pressed="true"],
-.button__variant_secondary:enabled:active,
-.button__variant_secondary:enabled:hover,
-.button__variant_secondary:enabled[aria-pressed="true"] {
-  box-shadow: inset 0 0 0 0 transparent;
-  filter: drop-shadow(0 1px 0 transparent);
+:global(.dark) .button__variant_primary {
+  color: var(--color-black);
+  background-color: var(--color-gray-light-2);
+  background-image: linear-gradient(
+    to bottom,
+    color-mix(in oklab, transparent 100%, #000000 0%) 50%,
+    color-mix(in oklab, transparent 100%, #000000 8%) 50%
+  );
+  box-shadow:
+    0 0 0 1px var(--color-gray-light-2) inset,
+    0 1px 0 1px rgba(255, 255, 255, 0.25) inset,
+    0 -1px 0 1px rgba(0, 0, 0, 0.1) inset;
 }
 
-.button__variant_ghost:enabled:hover,
-.button__variant_secondary:enabled:hover {
-  color: var(--color-button-gray-12);
+:global(.dark) .button__variant_primary:active:enabled,
+:global(.dark) .button__variant_primary[aria-pressed="true"]:enabled {
+  box-shadow:
+    0 0 0 1px var(--color-gray-light-2) inset,
+    0 -1px 0 1px rgba(255, 255, 255, 0.25) inset,
+    0 1px 0 1px rgba(0, 0, 0, 0.1) inset;
+}
+
+:global(.dark) .button__variant_primary > * {
+  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.1));
+}
+
+:global(.dark) .button__variant_primary:active:enabled,
+:global(.dark) .button__variant_primary:hover:enabled,
+:global(.dark) .button__variant_primary[aria-pressed="true"]:enabled {
+  background-color: color-mix(in oklab, var(--color-gray-light-2) 100%, #000000 10%);
+}
+
+/* Secondary */
+.button__variant_secondary {
+  color: var(--color-black);
+  background-color: var(--color-gray-light-1);
+  background-image: linear-gradient(
+    to bottom,
+    color-mix(in oklab, transparent 100%, #000000 0%) 50%,
+    color-mix(in oklab, transparent 100%, #000000 4%) 50%
+  );
+  box-shadow:
+    0 0 0 1px var(--color-gray-light-4) inset,
+    0 1px 0 1px rgba(255, 255, 255, 0.25) inset,
+    0 -1px 0 1px rgba(0, 0, 0, 0.1) inset;
+}
+
+.button__variant_secondary:active:enabled,
+.button__variant_secondary[aria-pressed="true"]:enabled {
+  box-shadow:
+    0 0 0 1px var(--color-gray-light-4) inset,
+    0 -1px 0 1px rgba(255, 255, 255, 0.25) inset,
+    0 1px 0 1px rgba(0, 0, 0, 0.1) inset;
+}
+
+.button__variant_secondary:active:enabled,
+.button__variant_secondary:hover:enabled,
+.button__variant_secondary[aria-pressed="true"]:enabled {
+  background-color: var(--color-gray-light-3);
+}
+
+.button__variant_secondary > * {
+  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.1));
+}
+
+:global(.dark) .button__variant_secondary {
+  color: var(--color-white);
+  background-color: var(--color-gray-dark-2);
+  background-image: linear-gradient(
+    to bottom,
+    color-mix(in oklab, transparent 100%, #ffffff 4%) 50%,
+    color-mix(in oklab, transparent 100%, #ffffff 0%) 50%
+  );
+  box-shadow:
+    0 0 0 1px var(--color-gray-dark-4) inset,
+    0 1px 0 1px rgba(255, 255, 255, 0.25) inset,
+    0 -1px 0 1px rgba(0, 0, 0, 0.1) inset;
+}
+
+:global(.dark) .button__variant_secondary:active:enabled,
+:global(.dark) .button__variant_secondary[aria-pressed="true"]:enabled {
+  box-shadow:
+    0 0 0 1px var(--color-gray-dark-4) inset,
+    0 -1px 0 1px rgba(255, 255, 255, 0.25) inset,
+    0 1px 0 1px rgba(0, 0, 0, 0.1) inset;
+}
+
+:global(.dark) .button__variant_secondary:active:enabled,
+:global(.dark) .button__variant_secondary:hover:enabled,
+:global(.dark) .button__variant_secondary[aria-pressed="true"]:enabled {
+  background-color: var(--color-gray-dark-3);
+}
+
+:global(.dark) .button__variant_secondary > * {
+  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.1));
 }
 
 /* ===================================================== */
 /* Width */
 /* ===================================================== */
 .button__width_base {
-  width: max-content;
+  width: max-content; /* Fit the button content */
 }
 
 .button__width_full {
