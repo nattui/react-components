@@ -103,7 +103,7 @@
   background-color: var(--color-primary-9);
   background-image: linear-gradient(
     to bottom,
-    color-mix(in oklab, transparent 100%, #ffffff 8%) 50%,
+    color-mix(in oklab, transparent 100%, #ffffff 5%) 50%,
     color-mix(in oklab, transparent 100%, #ffffff 0%) 50%
   );
   box-shadow:
@@ -130,7 +130,7 @@
   background-image: linear-gradient(
     to bottom,
     color-mix(in oklab, transparent 100%, #000000 0%) 50%,
-    color-mix(in oklab, transparent 100%, #000000 8%) 50%
+    color-mix(in oklab, transparent 100%, #000000 5%) 50%
   );
 }
 
@@ -156,7 +156,7 @@
   background-color: var(--color-gray-dark-2);
   background-image: linear-gradient(
     to bottom,
-    color-mix(in oklab, transparent 100%, #ffffff 8%) 50%,
+    color-mix(in oklab, transparent 100%, #ffffff 5%) 50%,
     color-mix(in oklab, transparent 100%, #ffffff 0%) 50%
   );
   box-shadow:
@@ -181,14 +181,14 @@
 
 :global(.dark) .button__variant_primary {
   color: var(--color-black);
-  background-color: var(--color-gray-light-2);
+  background-color: var(--color-gray-light-1);
   background-image: linear-gradient(
     to bottom,
     color-mix(in oklab, transparent 100%, #000000 0%) 50%,
-    color-mix(in oklab, transparent 100%, #000000 8%) 50%
+    color-mix(in oklab, transparent 100%, #000000 5%) 50%
   );
   box-shadow:
-    0 0 0 1px var(--color-gray-light-2) inset,
+    0 0 0 1px var(--color-gray-light-1) inset,
     0 1px 0 1px rgba(255, 255, 255, 0.25) inset,
     0 -1px 0 1px rgba(0, 0, 0, 0.1) inset;
 }
@@ -214,7 +214,7 @@
   background-image: linear-gradient(
     to bottom,
     color-mix(in oklab, transparent 100%, #000000 0%) 50%,
-    color-mix(in oklab, transparent 100%, #000000 4%) 50%
+    color-mix(in oklab, transparent 100%, #000000 2.5%) 50%
   );
   box-shadow: 0 0 0 1px var(--color-gray-4) inset;
 }
@@ -235,7 +235,7 @@
   background-color: var(--color-gray-2);
   background-image: linear-gradient(
     to bottom,
-    color-mix(in oklab, transparent 100%, #ffffff 4%) 50%,
+    color-mix(in oklab, transparent 100%, #ffffff 2.5%) 50%,
     color-mix(in oklab, transparent 100%, #ffffff 0%) 50%
   );
 }
