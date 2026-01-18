@@ -19,6 +19,7 @@
   outline-color: transparent;
   outline-offset: -2px;
   background-color: var(--color-gray-1, #fcfcfc);
+  border-style: none;
   box-shadow: 0 0 0 1px var(--color-gray-4) inset;
   transition-duration: 150ms;
   transition-property: box-shadow, opacity;
