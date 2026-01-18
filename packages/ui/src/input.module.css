@@ -28,10 +28,6 @@
   transition-property: background-color, border-color, box-shadow, opacity;
 }
 
-:global(.dark) .input {
-  background-color: var(--color-gray-2, #101010);
-}
-
 @supports (corner-shape: squircle) {
   .input {
     border-radius: 9999px;
@@ -68,6 +64,10 @@
 /* Focus overrides valid and invalid */
 .input:focus-visible {
   outline-color: var(--color-primary-9, #e93d82);
+}
+
+:global(.dark) .input {
+  background-color: var(--color-gray-2, #101010);
 }
 
 /* ===================================================== */
