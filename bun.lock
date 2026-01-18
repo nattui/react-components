@@ -50,7 +50,7 @@
     },
     "packages/ui": {
       "name": "@nattui/react-components",
-      "version": "0.0.32",
+      "version": "0.0.33",
       "devDependencies": {
         "@types/react": "catalog:",
         "tsup": "8.5.1",
