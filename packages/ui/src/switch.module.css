@@ -1,0 +1,43 @@
+/* ===================================================== */
+/* Base */
+/* ===================================================== */
+.switch {
+  display: flex;
+  width: 40px;
+  height: 24px;
+  padding: 2px;
+  cursor: pointer;
+  outline-width: 2px;
+  outline-style: none;
+  outline-color: var(--color-primary-9);
+  outline-offset: 2px;
+  background-color: var(--color-gray-6);
+  border-radius: 9999px;
+  transition-duration: 150ms;
+  transition-property: background-color;
+}
+
+.switch:focus-visible {
+  outline-style: solid;
+}
+
+.switch[data-checked] {
+  background-color: var(--color-primary-9);
+}
+
+/* ===================================================== */
+/* Thumb */
+/* ===================================================== */
+
+.switch__thumb {
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: var(--color-gray-1);
+  border-radius: 9999px;
+  transition-duration: 150ms;
+  transition-property: transform;
+}
+
+.switch__thumb[data-checked] {
+  transform: translateX(16px);
+}

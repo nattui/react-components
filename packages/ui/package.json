@@ -3,6 +3,9 @@
   "bugs": {
     "url": "https://github.com/nattui/react-components/issues"
   },
+  "dependencies": {
+    "@base-ui/react": "1.1.0"
+  },
   "description": "A collection of reusable React components built with TypeScript and CSS Modules",
   "devDependencies": {
     "@types/react": "catalog:",
