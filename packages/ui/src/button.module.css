@@ -217,8 +217,8 @@
     color-mix(in oklab, transparent 100%, #000000 2.5%) 50%
   );
   box-shadow:
-    0 -1px 0 0px rgba(0, 0, 0, 7.5%) inset,
-    0 0 0 1px var(--color-gray-4) inset;
+    0 -1px 0 0px rgba(0, 0, 0, 7.5%) inset, /* Bottom */
+    0 0 0 1px var(--color-gray-4) inset; /* Border */
 }
 
 .button__variant_secondary:active:enabled,
@@ -241,8 +241,8 @@
     color-mix(in oklab, transparent 100%, #ffffff 0%) 50%
   );
   box-shadow:
-    0 1px 0 0px rgba(255, 255, 255, 7.5%) inset,
-    0 0 0 1px var(--color-gray-4) inset;
+    0 1px 0 0px rgba(255, 255, 255, 7.5%) inset, /* Top */
+    0 0 0 1px var(--color-gray-4) inset; /* Border */
 }
 
 /* ===================================================== */
