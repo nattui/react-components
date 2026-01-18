@@ -154,10 +154,6 @@
   background-color: var(--color-gray-4);
 }
 
-:global(.dark) .button__variant_ghost {
-  color: var(--color-white);
-}
-
 /* Primary */
 .button__variant_primary {
   color: var(--color-white);
@@ -250,10 +246,6 @@
 .button__variant_secondary:hover:enabled,
 .button__variant_secondary[aria-pressed="true"]:enabled {
   background-color: var(--color-gray-light-3);
-}
-
-.button__variant_secondary > * {
-  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.1));
 }
 
 :global(.dark) .button__variant_secondary {
