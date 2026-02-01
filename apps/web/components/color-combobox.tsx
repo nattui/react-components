@@ -4,7 +4,7 @@ import { Combobox } from "@base-ui-components/react/combobox"
 import { LucideCheck, LucideChevronDown, LucideX } from "lucide-react"
 import { useId } from "react"
 
-type ColorComboboxProps = {
+interface ColorComboboxProps {
   label?: string
   placeholder?: string
   options?: readonly string[]
