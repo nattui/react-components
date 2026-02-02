@@ -6,9 +6,9 @@ import { useId } from "react"
 
 interface ColorComboboxProps {
   label?: string
-  placeholder?: string
-  options?: readonly string[]
   onChange?: (value: string) => void
+  options?: readonly string[]
+  placeholder?: string
 }
 
 const DEFAULT_OPTIONS = [

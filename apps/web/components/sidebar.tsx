@@ -129,17 +129,6 @@ export function Sidebar() {
   )
 }
 
-function SidebarNavigationLabel(props: ComponentProps<"p">) {
-  const { ...rest } = props
-
-  return (
-    <p
-      className="mx-16 mb-4 truncate pl-6 font-500 text-14 transition-opacity data-[is-expanded=false]:pointer-events-none data-[is-expanded=false]:opacity-0"
-      {...rest}
-    />
-  )
-}
-
 function SidebarNavigationGroup(props: ComponentProps<"div">) {
   const { ...rest } = props
 
@@ -147,10 +136,10 @@ function SidebarNavigationGroup(props: ComponentProps<"div">) {
 }
 
 function SidebarNavigationItem(props: {
+  href: LinkProps<string>["href"]
   icon: ReactNode
   isExpanded: boolean
   label: string
-  href: LinkProps<string>["href"]
 }) {
   const { icon, isExpanded, label, href } = props
 
@@ -177,5 +166,16 @@ function SidebarNavigationItem(props: {
         </TooltipContent>
       </TooltipPositioner>
     </Tooltip>
+  )
+}
+
+function SidebarNavigationLabel(props: ComponentProps<"p">) {
+  const { ...rest } = props
+
+  return (
+    <p
+      className="mx-16 mb-4 truncate pl-6 font-500 text-14 transition-opacity data-[is-expanded=false]:pointer-events-none data-[is-expanded=false]:opacity-0"
+      {...rest}
+    />
   )
 }

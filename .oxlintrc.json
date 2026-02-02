@@ -12,8 +12,27 @@
     "typescript",
     "unicorn"
   ],
+  "jsPlugins": ["eslint-plugin-perfectionist"],
   "categories": {},
   "rules": {
+    "perfectionist/sort-array-includes": "error",
+    "perfectionist/sort-classes": "error",
+    "perfectionist/sort-decorators": "error",
+    "perfectionist/sort-enums": "error",
+    "perfectionist/sort-export-attributes": "error",
+    "perfectionist/sort-exports": "error",
+    "perfectionist/sort-heritage-clauses": "error",
+    "perfectionist/sort-interfaces": "error",
+    "perfectionist/sort-intersection-types": "error",
+    "perfectionist/sort-jsx-props": "error",
+    "perfectionist/sort-maps": "error",
+    "perfectionist/sort-modules": "error",
+    "perfectionist/sort-named-exports": "error",
+    "perfectionist/sort-object-types": "error",
+    "perfectionist/sort-sets": "error",
+    "perfectionist/sort-switch-case": "error",
+    "perfectionist/sort-union-types": "error",
+    "perfectionist/sort-variable-declarations": "error",
     "sort-keys": "error"
   },
   "settings": {

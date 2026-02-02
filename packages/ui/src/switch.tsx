@@ -4,7 +4,7 @@ import styles from "@/switch.module.css"
 
 export interface SwitchProps extends Omit<
   ComponentProps<typeof BaseSwitch.Root>,
-  "checked" | "defaultChecked" | "disabled" | "required" | "readOnly" | "nativeButton"
+  "checked" | "defaultChecked" | "disabled" | "nativeButton" | "readOnly" | "required"
 > {
   isChecked?: boolean
   isDefaultChecked?: boolean
