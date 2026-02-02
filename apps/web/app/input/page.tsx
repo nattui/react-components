@@ -109,11 +109,16 @@ export default function InputPage() {
       </div>
       <Spacer className="h-64" />
 
+      <Label className="mb-4" htmlFor="active">
+        Active
+      </Label>
+      <Input id="active" isActive placeholder="Active" size={44} type="url" />
+      <Spacer className="h-64" />
+
       <Label className="mb-4" htmlFor="valid">
         Valid
       </Label>
       <Input id="valid" isValid placeholder="Valid" size={44} type="url" />
-
       <Spacer className="h-64" />
 
       <Label className="mb-4" htmlFor="invalid">

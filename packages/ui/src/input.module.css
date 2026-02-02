@@ -40,7 +40,7 @@
 .input:enabled:active,
 .input:enabled:focus,
 .input:enabled:hover,
-.input:enabled[aria-pressed="true"] {
+.input:enabled[data-is-active="true"] {
   box-shadow:
     0 -1px 0 0px rgba(0, 0, 0, 7.5%) inset,
     /* Bottom */ 0 0 0 1px var(--color-gray-6) inset; /* Border */
@@ -69,7 +69,7 @@
 :global(.dark) .input:enabled:active,
 :global(.dark) .input:enabled:focus,
 :global(.dark) .input:enabled:hover,
-:global(.dark) .input:enabled[aria-pressed="true"] {
+:global(.dark) .input:enabled[data-is-active="true"] {
   box-shadow:
     0 1px 0 0px rgba(255, 255, 255, 7.5%) inset,
     /* Top */ 0 0 0 1px var(--color-gray-6) inset; /* Border */
