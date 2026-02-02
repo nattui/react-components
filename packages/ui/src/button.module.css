@@ -124,7 +124,7 @@
 .button__variant_ghost:active:enabled,
 .button__variant_ghost:hover:enabled,
 .button__variant_ghost[aria-pressed="true"]:enabled {
-  background-color: var(--color-gray-4);
+  background-color: var(--color-gray-3);
 }
 
 :global(.dark) .button__variant_ghost {
