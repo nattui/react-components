@@ -51,12 +51,8 @@
 /* ===================================================== */
 /* Rounded */
 /* ===================================================== */
-.button__rounded_base {
-  border-radius: 12px;
-}
-
 .button__rounded_full {
-  border-radius: 9999px;
+  border-radius: 9999px !important;
 }
 
 /* ===================================================== */
@@ -65,26 +61,31 @@
 .button__size_32 {
   --size: 32px;
   padding: 0 10px;
+  border-radius: 8px;
 }
 
 .button__size_36 {
   --size: 36px;
   padding: 0 12px;
+  border-radius: 10px;
 }
 
 .button__size_40 {
   --size: 40px;
   padding: 0 14px;
+  border-radius: 12px;
 }
 
 .button__size_44 {
   --size: 44px;
   padding: 0 16px;
+  border-radius: 14px;
 }
 
 .button__size_48 {
   --size: 48px;
   padding: 0 18px;
+  border-radius: 16px;
 }
 
 /* ===================================================== */
