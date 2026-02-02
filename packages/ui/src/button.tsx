@@ -5,22 +5,22 @@ import styles from "@/button.module.css"
 export interface ButtonIconProps extends ButtonPropsInternal {
   children?: ReactNode
   iconEnd?: never
-  iconOnly: true
   iconStart?: never
+  isIconOnly: true
 }
 
 export interface ButtonProps extends ButtonPropsInternal {
   children?: string | string[]
-  iconOnly?: false
+  isIconOnly?: false
 }
 
 interface ButtonPropsInternal extends Omit<ComponentProps<"button">, "aria-pressed" | "disabled"> {
   iconEnd?: ReactNode
-  iconOnly?: boolean
   iconStart?: ReactNode
   isActive?: boolean
   isDisabled?: boolean
   isFullWidth?: boolean
+  isIconOnly?: boolean
   isLoading?: boolean
   isRounded?: boolean
   size?: 32 | 36 | 40 | 44 | 48
@@ -34,11 +34,11 @@ export function Button(props: ButtonUnionProps): JSX.Element {
     children = "",
     className: customClassName = "",
     iconEnd = "",
-    iconOnly = false,
     iconStart = "",
     isActive = false,
     isDisabled = false,
     isFullWidth = false,
+    isIconOnly = false,
     isLoading = false,
     isRounded = false,
     size = 40,
@@ -52,7 +52,7 @@ export function Button(props: ButtonUnionProps): JSX.Element {
     ${BUTTON_CLASS_NAME.SIZE[size]}
     ${BUTTON_CLASS_NAME.VARIANT[variant.toUpperCase() as keyof typeof BUTTON_CLASS_NAME.VARIANT]}
     ${isFullWidth ? BUTTON_CLASS_NAME.WIDTH.FULL : BUTTON_CLASS_NAME.WIDTH.BASE}
-    ${iconOnly ? BUTTON_CLASS_NAME.ICON_ONLY : ""}
+    ${isIconOnly ? BUTTON_CLASS_NAME.ICON_ONLY : ""}
     ${isRounded ? BUTTON_CLASS_NAME.ROUNDED.FULL : BUTTON_CLASS_NAME.ROUNDED.BASE}
     ${customClassName}
   `
@@ -69,7 +69,7 @@ export function Button(props: ButtonUnionProps): JSX.Element {
     >
       {isLoading && <ButtonSpinner />}
       {!isLoading && iconStart}
-      {iconOnly ? isLoading ? <></> : children : <span>{children}</span>}
+      {isIconOnly ? isLoading ? <></> : children : <span>{children}</span>}
       {!isLoading && iconEnd}
     </button>
   )

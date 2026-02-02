@@ -27,7 +27,7 @@ export default function InputPage() {
       <div className="relative">
         <LucideLock className="text-gray-11 absolute top-14 left-14" size={16} />
         <Input className="px-44!" id="password" placeholder="••••••••" type="password" />
-        <Button className="group absolute! top-6 right-6" iconOnly size={32} variant="ghost">
+        <Button className="group absolute! top-6 right-6" isIconOnly size={32} variant="ghost">
           <LucideEye
             className="text-gray-11 group-hover:text-gray-12 group-active:text-gray-12 transition-colors"
             size={16}
@@ -61,7 +61,7 @@ export default function InputPage() {
           isReadOnly
           type="text"
         />
-        <Button className="group absolute! top-6 right-6" iconOnly size={32} variant="ghost">
+        <Button className="group absolute! top-6 right-6" isIconOnly size={32} variant="ghost">
           <LucideCopy
             className="text-gray-11 group-hover:text-gray-12 group-active:text-gray-12 transition-colors"
             size={16}
@@ -82,7 +82,7 @@ export default function InputPage() {
         />
         <Button
           className="group -ml-px rounded-l-none! hover:z-10 focus-visible:z-20"
-          iconOnly
+          isIconOnly
           size={44}
           variant="secondary"
         >

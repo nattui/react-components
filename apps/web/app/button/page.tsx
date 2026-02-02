@@ -128,54 +128,54 @@ export default function ButtonPage() {
 
       <p>Icon only</p>
       <div className="flex flex-wrap items-center gap-16">
-        <Button iconOnly variant="accent">
+        <Button isIconOnly variant="accent">
           <LucideDownload size={16} />
         </Button>
-        <Button iconOnly variant="primary">
+        <Button isIconOnly variant="primary">
           <LucideDownload size={16} />
         </Button>
-        <Button iconOnly variant="secondary">
+        <Button isIconOnly variant="secondary">
           <LucideDownload size={16} />
         </Button>
-        <Button iconOnly variant="ghost">
+        <Button isIconOnly variant="ghost">
           <LucideDownload size={16} />
         </Button>
       </div>
 
       <p>Icon only size</p>
       <div className="flex flex-wrap items-center gap-16">
-        <Button iconOnly size={32}>
+        <Button isIconOnly size={32}>
           <LucideDownload size={16} />
         </Button>
-        <Button iconOnly size={36}>
+        <Button isIconOnly size={36}>
           <LucideDownload size={16} />
         </Button>
-        <Button iconOnly size={40}>
+        <Button isIconOnly size={40}>
           <LucideDownload size={16} />
         </Button>
-        <Button iconOnly size={44}>
+        <Button isIconOnly size={44}>
           <LucideDownload size={18} />
         </Button>
-        <Button iconOnly size={48}>
+        <Button isIconOnly size={48}>
           <LucideDownload size={18} />
         </Button>
       </div>
 
       <p>Icon only loading</p>
       <div className="flex flex-wrap items-center gap-16">
-        <Button iconOnly isLoading size={32}>
+        <Button isIconOnly isLoading size={32}>
           <LucideDownload size={16} />
         </Button>
-        <Button iconOnly isLoading size={36}>
+        <Button isIconOnly isLoading size={36}>
           <LucideDownload size={16} />
         </Button>
-        <Button iconOnly isLoading size={40}>
+        <Button isIconOnly isLoading size={40}>
           <LucideDownload size={16} />
         </Button>
-        <Button iconOnly isLoading size={44}>
+        <Button isIconOnly isLoading size={44}>
           <LucideDownload size={18} />
         </Button>
-        <Button iconOnly isLoading size={48}>
+        <Button isIconOnly isLoading size={48}>
           <LucideDownload size={18} />
         </Button>
       </div>
