@@ -4,6 +4,7 @@ import type { PropsWithChildren } from "react"
 import { Geist, Geist_Mono } from "next/font/google"
 import { Providers } from "@/app/providers"
 import { Sidebar } from "@/components/sidebar"
+import { Topbar } from "@/components/topbar"
 
 export default function RootLayout(props: PropsWithChildren) {
   const { children } = props
@@ -14,11 +15,16 @@ export default function RootLayout(props: PropsWithChildren) {
         className={`${geistSans.variable} ${geistMono.variable} color-gray-slate color-primary-blue`}
       >
         <Providers>
-          <div className="flex">
-            <Sidebar />
-            <main className="relative mx-auto flex w-full max-w-768 flex-col px-16 py-80">
-              {children}
-            </main>
+          <div className="flex size-full flex-col">
+            <Topbar />
+            <div className="flex size-full">
+              <Sidebar />
+              <main className="w-full">
+                <div className="relative mx-auto flex w-full max-w-768 flex-col px-16 py-80">
+                  {children}
+                </div>
+              </main>
+            </div>
           </div>
         </Providers>
       </body>
