@@ -25,7 +25,7 @@ export function Input(props: InputProps): JSX.Element {
     isRequired = false,
     isRounded = false,
     isValid = undefined,
-    size = 40,
+    size = 44,
     type = "text",
     ...rest
   } = props

@@ -17,13 +17,7 @@ export default function InputPage() {
       </Label>
       <div className="relative">
         <LucideMail className="text-gray-11 absolute top-14 left-14" size={16} />
-        <Input
-          className="pl-44!"
-          id="email"
-          placeholder="name@example.com"
-          size={44}
-          type="email"
-        />
+        <Input className="pl-44!" id="email" placeholder="name@example.com" type="email" />
       </div>
       <Spacer className="h-16" />
 
@@ -32,7 +26,7 @@ export default function InputPage() {
       </Label>
       <div className="relative">
         <LucideLock className="text-gray-11 absolute top-14 left-14" size={16} />
-        <Input className="px-44!" id="password" placeholder="••••••••" size={44} type="password" />
+        <Input className="px-44!" id="password" placeholder="••••••••" type="password" />
         <Button className="group absolute! top-6 right-6" iconOnly size={32} variant="ghost">
           <LucideEye
             className="text-gray-11 group-hover:text-gray-12 group-active:text-gray-12 transition-colors"
@@ -42,7 +36,7 @@ export default function InputPage() {
       </div>
       <Spacer className="h-16" />
 
-      <Button iconStart={<LucideLogIn size={16} />} isFullWidth size={44} variant="accent">
+      <Button iconStart={<LucideLogIn size={16} />} isFullWidth variant="accent">
         Sign in
       </Button>
       <Spacer className="h-64" />
@@ -52,14 +46,7 @@ export default function InputPage() {
       </Label>
       <div className="relative">
         <LucideBan className="text-gray-11 absolute top-14 left-14" size={16} />
-        <Input
-          className="pl-44!"
-          id="disabled"
-          isDisabled
-          placeholder="Disabled"
-          size={44}
-          type="url"
-        />
+        <Input className="pl-44!" id="disabled" isDisabled placeholder="Disabled" type="url" />
       </div>
       <Spacer className="h-64" />
 
@@ -72,7 +59,6 @@ export default function InputPage() {
           defaultValue="This is a read-only input"
           id="read-only"
           isReadOnly
-          size={44}
           type="text"
         />
         <Button className="group absolute! top-6 right-6" iconOnly size={32} variant="ghost">
@@ -92,13 +78,11 @@ export default function InputPage() {
           className="rounded-r-none! hover:z-10 focus-visible:z-20"
           id="input-with-end-icon-button"
           placeholder="Download"
-          size={44}
           type="url"
         />
         <Button
           className="group -ml-px rounded-l-none! hover:z-10 focus-visible:z-20"
           iconOnly
-          size={44}
           variant="secondary"
         >
           <LucideDownload
@@ -112,19 +96,19 @@ export default function InputPage() {
       <Label className="mb-4" htmlFor="active">
         Active
       </Label>
-      <Input id="active" isActive placeholder="Active" size={44} type="url" />
+      <Input id="active" isActive placeholder="Active" type="url" />
       <Spacer className="h-64" />
 
       <Label className="mb-4" htmlFor="valid">
         Valid
       </Label>
-      <Input id="valid" isValid placeholder="Valid" size={44} type="url" />
+      <Input id="valid" isValid placeholder="Valid" type="url" />
       <Spacer className="h-64" />
 
       <Label className="mb-4" htmlFor="invalid">
         Invalid
       </Label>
-      <Input id="invalid" isInvalid placeholder="Invalid" size={44} type="url" />
+      <Input id="invalid" isInvalid placeholder="Invalid" type="url" />
     </div>
   )
 }
