@@ -51,6 +51,10 @@
 /* ===================================================== */
 /* Rounded */
 /* ===================================================== */
+.button__rounded_base {
+  border-radius: 12px;
+}
+
 .button__rounded_full {
   border-radius: 9999px !important;
 }
