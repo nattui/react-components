@@ -7,17 +7,17 @@
   },
   "dependencies": {
     "@base-ui-components/react": "1.0.0-rc.0",
-    "@nattui/icons": "npm:lucide-react@0.562.0",
+    "@nattui/icons": "npm:lucide-react@0.563.0",
     "@nattui/react-components": "workspace:*",
     "@nattui/tailwind-colors": "0.0.7",
-    "@nattui/tailwind-exact": "0.0.3",
-    "next": "16.1.3",
+    "@nattui/tailwind-exact": "0.0.5",
+    "next": "16.1.6",
     "react": "catalog:",
     "react-dom": "catalog:"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "4.1.18",
-    "@types/node": "25.0.9",
+    "@types/node": "25.2.0",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "babel-plugin-react-compiler": "1.0.0",
