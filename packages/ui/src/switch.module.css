@@ -4,6 +4,7 @@
 .switch {
   display: flex;
   padding: 2px;
+  overflow: hidden;
   cursor: pointer;
   outline-width: 2px;
   outline-style: none;
@@ -50,12 +51,12 @@
 /* ===================================================== */
 .switch__size_14 {
   --translateX: 12px;
-  height: 18px;
   width: 30px;
+  height: 18px;
 }
 
 .switch__size_24 {
   --translateX: 16px;
-  height: 24px;
   width: 40px;
+  height: 24px;
 }
