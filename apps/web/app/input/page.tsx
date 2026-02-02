@@ -6,7 +6,7 @@ import {
   LucideEye,
   LucideLock,
   LucideLogIn,
-  LucideMail
+  LucideMail,
 } from "lucide-react"
 
 export default function InputPage() {

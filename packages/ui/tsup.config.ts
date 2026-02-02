@@ -7,6 +7,6 @@ export default defineConfig({
   external: ["react", "react-dom"],
   format: "esm",
   loader: {
-    ".css": "copy"
-  }
+    ".css": "copy",
+  },
 })

@@ -15,7 +15,7 @@ const DEFAULT_OPTIONS = [
   "color-gray-slate",
   "color-primary-blue",
   "color-primary-red",
-  "color-primary-green"
+  "color-primary-green",
 ] as const
 
 export function ColorCombobox(props: ColorComboboxProps) {
@@ -23,7 +23,7 @@ export function ColorCombobox(props: ColorComboboxProps) {
     label = "Choose a color class",
     placeholder = "e.g. color-primary-red",
     options = DEFAULT_OPTIONS,
-    onChange
+    onChange,
   } = props
   const id = useId()
 

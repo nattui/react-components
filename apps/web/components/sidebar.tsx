@@ -10,7 +10,7 @@ import {
   LucidePanelLeft,
   LucideSquareMousePointer,
   LucideTextCursorInput,
-  LucideToggleLeft
+  LucideToggleLeft,
 } from "lucide-react"
 import Link, { type LinkProps } from "next/link"
 import { usePathname } from "next/navigation"

@@ -58,6 +58,6 @@ export const TEXTAREA_CLASS_NAME = {
   INPUT: inputStyles.input,
   ROUNDED: {
     BASE: inputStyles.input__rounded_base,
-    FULL: inputStyles.input__rounded_full
-  }
+    FULL: inputStyles.input__rounded_full,
+  },
 } as const

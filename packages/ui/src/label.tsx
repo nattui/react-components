@@ -17,5 +17,5 @@ export function Label(props: LabelProps): JSX.Element {
 }
 
 export const LABEL_CLASS_NAME = {
-  BASE: styles.label
+  BASE: styles.label,
 } as const

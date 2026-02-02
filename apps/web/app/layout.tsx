@@ -28,15 +28,15 @@ export default function RootLayout(props: PropsWithChildren) {
 
 const geistSans = Geist({
   subsets: ["latin"],
-  variable: "--font-sans"
+  variable: "--font-sans",
 })
 
 const geistMono = Geist_Mono({
   subsets: ["latin"],
-  variable: "--font-geist-mono"
+  variable: "--font-geist-mono",
 })
 
 export const metadata: Metadata = {
   description: "React Components",
-  title: "React Components"
+  title: "React Components",
 }

@@ -17,5 +17,5 @@ export function Spacer(props: SpacerProps) {
 }
 
 export const SPACER_CLASS_NAME = {
-  BASE: styles.spacer
+  BASE: styles.spacer,
 } as const

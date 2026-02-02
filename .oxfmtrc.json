@@ -7,6 +7,5 @@
     "sortScripts": true
   },
   "ignorePatterns": [],
-  "semi": false,
-  "trailingComma": "none"
+  "semi": false
 }
