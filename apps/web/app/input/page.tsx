@@ -83,6 +83,7 @@ export default function InputPage() {
         <Button
           className="group -ml-px rounded-l-none! hover:z-10 focus-visible:z-20"
           iconOnly
+          size={44}
           variant="secondary"
         >
           <LucideDownload
