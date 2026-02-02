@@ -16,7 +16,7 @@ export default function InputPage() {
         Email
       </Label>
       <div className="relative">
-        <LucideMail className="absolute top-14 left-14 text-gray-11" size={16} />
+        <LucideMail className="text-gray-11 absolute top-14 left-14" size={16} />
         <Input
           className="pl-44!"
           id="email"
@@ -31,11 +31,11 @@ export default function InputPage() {
         Password
       </Label>
       <div className="relative">
-        <LucideLock className="absolute top-14 left-14 text-gray-11" size={16} />
+        <LucideLock className="text-gray-11 absolute top-14 left-14" size={16} />
         <Input className="px-44!" id="password" placeholder="••••••••" size={44} type="password" />
         <Button className="group absolute! top-6 right-6" iconOnly size={32} variant="ghost">
           <LucideEye
-            className="text-gray-11 transition-colors group-hover:text-gray-12 group-active:text-gray-12"
+            className="text-gray-11 group-hover:text-gray-12 group-active:text-gray-12 transition-colors"
             size={16}
           />
         </Button>
@@ -51,7 +51,7 @@ export default function InputPage() {
         Disabled
       </Label>
       <div className="relative">
-        <LucideBan className="absolute top-14 left-14 text-gray-11" size={16} />
+        <LucideBan className="text-gray-11 absolute top-14 left-14" size={16} />
         <Input
           className="pl-44!"
           id="disabled"
@@ -77,7 +77,7 @@ export default function InputPage() {
         />
         <Button className="group absolute! top-6 right-6" iconOnly size={32} variant="ghost">
           <LucideCopy
-            className="text-gray-11 transition-colors group-hover:text-gray-12 group-active:text-gray-12"
+            className="text-gray-11 group-hover:text-gray-12 group-active:text-gray-12 transition-colors"
             size={16}
           />
         </Button>
@@ -102,7 +102,7 @@ export default function InputPage() {
           variant="secondary"
         >
           <LucideDownload
-            className="text-gray-11 transition-colors group-hover:text-gray-12 group-active:text-gray-12"
+            className="text-gray-11 group-hover:text-gray-12 group-active:text-gray-12 transition-colors"
             size={16}
           />
         </Button>
