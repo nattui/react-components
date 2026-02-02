@@ -11,6 +11,7 @@ export interface SwitchProps extends Omit<
   isDisabled?: boolean
   isReadOnly?: boolean
   isRequired?: boolean
+  size?: 14 | 24
 }
 
 export function Switch(props: SwitchProps): JSX.Element {
@@ -21,11 +22,13 @@ export function Switch(props: SwitchProps): JSX.Element {
     isDisabled = false,
     isReadOnly = false,
     isRequired = false,
+    size = 24,
     ...rest
   } = props
 
   const combinedClassName = `
-    ${styles.switch}
+    ${SWITCH_CLASS_NAME.BASE}
+    ${SWITCH_CLASS_NAME.SIZE[size]}
     ${customClassName}
   `
     .replaceAll(/\s+/g, " ")
@@ -45,3 +48,11 @@ export function Switch(props: SwitchProps): JSX.Element {
     </BaseSwitch.Root>
   )
 }
+
+export const SWITCH_CLASS_NAME = {
+  BASE: styles.switch,
+  SIZE: {
+    14: styles.switch__size_14,
+    24: styles.switch__size_24,
+  },
+} as const

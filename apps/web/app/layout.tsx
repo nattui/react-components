@@ -8,11 +8,11 @@ import { Sidebar } from "@/components/sidebar"
 export default function RootLayout(props: PropsWithChildren) {
   const { children } = props
 
-  const fonts = `${geistSans.variable} ${geistMono.variable}`
-
   return (
-    <html className="color-gray-slate color-primary-blue" lang="en">
-      <body className={fonts}>
+    <html lang="en">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} color-gray-slate color-primary-blue`}
+      >
         <Providers>
           <div className="flex">
             <Sidebar />

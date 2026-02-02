@@ -2,5 +2,5 @@ export { Button, BUTTON_CLASS_NAME, type ButtonIconProps, type ButtonProps } fro
 export { Input, INPUT_CLASS_NAME, type InputProps } from "@/input"
 export { Label, LABEL_CLASS_NAME, type LabelProps } from "@/label"
 export { Spacer, SPACER_CLASS_NAME, type SpacerProps } from "@/spacer"
-export { Switch, type SwitchProps } from "@/switch"
+export { Switch, SWITCH_CLASS_NAME, type SwitchProps } from "@/switch"
 export { Textarea, TEXTAREA_CLASS_NAME, type TextareaProps } from "@/textarea"
