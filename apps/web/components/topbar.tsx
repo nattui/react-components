@@ -1,6 +1,7 @@
 import { Spacer } from "@nattui/react-components"
 import Link from "next/link"
 import { Logomark } from "@/components/logomark"
+import { Logotype } from "@/components/logotype"
 
 export function Topbar() {
   return (
@@ -11,8 +12,8 @@ export function Topbar() {
             className="-ml-8 flex items-center gap-x-8 p-8 transition-opacity hover:opacity-75"
             href="/button"
           >
-            <Logomark className="text-primary-9 size-24" />
-            <p className="font-600 text-18/1 text-gray-12">nattui</p>
+            <Logomark className="text-primary-9" />
+            <Logotype className="text-gray-12" />
           </Link>
         </div>
       </header>
