@@ -13,14 +13,9 @@ export function Label(props: LabelProps): JSX.Element {
     .replaceAll(/\s+/g, " ")
     .trim()
 
-  return (
-    <label
-      className={combinedClassName}
-      {...rest}
-    />
-  )
+  return <label className={combinedClassName} {...rest} />
 }
 
 export const LABEL_CLASS_NAME = {
-  BASE: styles.label,
+  BASE: styles.label
 } as const

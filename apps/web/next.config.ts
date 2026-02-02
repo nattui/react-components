@@ -3,7 +3,7 @@ import type { NextConfig } from "next"
 const nextConfig: NextConfig = {
   reactCompiler: true,
   reactStrictMode: false,
-  typedRoutes: true,
+  typedRoutes: true
 }
 
 export default nextConfig

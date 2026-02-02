@@ -15,7 +15,7 @@ const DEFAULT_OPTIONS = [
   "color-gray-slate",
   "color-primary-blue",
   "color-primary-red",
-  "color-primary-green",
+  "color-primary-green"
 ] as const
 
 export function ColorCombobox(props: ColorComboboxProps) {
@@ -23,7 +23,7 @@ export function ColorCombobox(props: ColorComboboxProps) {
     label = "Choose a color class",
     placeholder = "e.g. color-primary-red",
     options = DEFAULT_OPTIONS,
-    onChange,
+    onChange
   } = props
   const id = useId()
 
@@ -48,10 +48,7 @@ export function ColorCombobox(props: ColorComboboxProps) {
   }
 
   return (
-    <Combobox.Root
-      items={options}
-      onValueChange={(value) => handleValueChange(value as string)}
-    >
+    <Combobox.Root items={options} onValueChange={(value) => handleValueChange(value as string)}>
       <div className="relative flex flex-col gap-4 font-500 text-14 text-gray-11">
         <label htmlFor={id}>{label}</label>
         <Combobox.Input
@@ -76,10 +73,7 @@ export function ColorCombobox(props: ColorComboboxProps) {
       </div>
 
       <Combobox.Portal>
-        <Combobox.Positioner
-          className="outline-none"
-          sideOffset={4}
-        >
+        <Combobox.Positioner className="outline-none" sideOffset={4}>
           <Combobox.Popup className="max-h-[min(var(--available-height),368px)] w-var(--anchor-width) max-w-var(--available-width) origin-(--transform-origin) scroll-pt-2 scroll-pb-2 overflow-y-auto overscroll-contain rounded-md bg-gray-1 py-2 text-gray-11 shadow-gray-6 shadow-lg outline-1 outline-gray-6 transition-[transform,scale,opacity] data-ending-style:scale-95 data-starting-style:scale-95 data-ending-style:opacity-0 data-starting-style:opacity-0">
             <Combobox.Empty className="px-4 py-2 text-[0.925rem] text-gray-11 leading-4 empty:m-0 empty:p-0">
               No options found.

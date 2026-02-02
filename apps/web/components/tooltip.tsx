@@ -1,37 +1,22 @@
-import { Tooltip as TooltipPrimitive } from "@base-ui-components/react/tooltip"
 import type { ComponentProps } from "react"
+import { Tooltip as TooltipPrimitive } from "@base-ui-components/react/tooltip"
 
 function TooltipProvider(props: ComponentProps<typeof TooltipPrimitive.Provider>) {
   const { ...rest } = props
 
-  return (
-    <TooltipPrimitive.Provider
-      data-slot="tooltip-provider"
-      {...rest}
-    />
-  )
+  return <TooltipPrimitive.Provider data-slot="tooltip-provider" {...rest} />
 }
 
 function Tooltip(props: ComponentProps<typeof TooltipPrimitive.Root>) {
   const { ...rest } = props
 
-  return (
-    <TooltipPrimitive.Root
-      data-slot="tooltip"
-      {...rest}
-    />
-  )
+  return <TooltipPrimitive.Root data-slot="tooltip" {...rest} />
 }
 
 function TooltipTrigger(props: ComponentProps<typeof TooltipPrimitive.Trigger>) {
   const { ...rest } = props
 
-  return (
-    <TooltipPrimitive.Trigger
-      data-slot="tooltip-trigger"
-      {...rest}
-    />
-  )
+  return <TooltipPrimitive.Trigger data-slot="tooltip-trigger" {...rest} />
 }
 
 function TooltipPositioner(props: ComponentProps<typeof TooltipPrimitive.Positioner>) {

@@ -2,8 +2,10 @@ import type { ComponentProps, JSX } from "react"
 import inputStyles from "@/input.module.css"
 import styles from "@/textarea.module.css"
 
-export interface TextareaProps
-  extends Omit<ComponentProps<"textarea">, "aria-pressed" | "disabled" | "readOnly" | "required"> {
+export interface TextareaProps extends Omit<
+  ComponentProps<"textarea">,
+  "aria-pressed" | "disabled" | "readOnly" | "required"
+> {
   isActive?: boolean
   isDisabled?: boolean
   isInvalid?: boolean
@@ -56,6 +58,6 @@ export const TEXTAREA_CLASS_NAME = {
   INPUT: inputStyles.input,
   ROUNDED: {
     BASE: inputStyles.input__rounded_base,
-    FULL: inputStyles.input__rounded_full,
-  },
+    FULL: inputStyles.input__rounded_full
+  }
 } as const

@@ -13,14 +13,9 @@ export function Spacer(props: SpacerProps) {
     .replaceAll(/\s+/g, " ")
     .trim()
 
-  return (
-    <div
-      className={`${styles.spacer} ${combinedClassName}`.trim()}
-      {...rest}
-    />
-  )
+  return <div className={`${styles.spacer} ${combinedClassName}`.trim()} {...rest} />
 }
 
 export const SPACER_CLASS_NAME = {
-  BASE: styles.spacer,
+  BASE: styles.spacer
 } as const

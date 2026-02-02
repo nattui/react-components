@@ -10,7 +10,7 @@ import {
   LucidePanelLeft,
   LucideSquareMousePointer,
   LucideTextCursorInput,
-  LucideToggleLeft,
+  LucideToggleLeft
 } from "lucide-react"
 import Link, { type LinkProps } from "next/link"
 import { usePathname } from "next/navigation"
@@ -84,45 +84,25 @@ export function Sidebar() {
       <SidebarNavigationGroup>
         <SidebarNavigationItem
           href="/button"
-          icon={
-            <LucideComponent
-              className="shrink-0"
-              size={18}
-            />
-          }
+          icon={<LucideComponent className="shrink-0" size={18} />}
           isExpanded={isExpanded}
           label="Button"
         />
         <SidebarNavigationItem
           href="/input"
-          icon={
-            <LucideTextCursorInput
-              className="shrink-0"
-              size={18}
-            />
-          }
+          icon={<LucideTextCursorInput className="shrink-0" size={18} />}
           isExpanded={isExpanded}
           label="Input"
         />
         <SidebarNavigationItem
           href="/textarea"
-          icon={
-            <LucideTextCursorInput
-              className="shrink-0"
-              size={18}
-            />
-          }
+          icon={<LucideTextCursorInput className="shrink-0" size={18} />}
           isExpanded={isExpanded}
           label="Textarea"
         />
         <SidebarNavigationItem
           href="/switch"
-          icon={
-            <LucideToggleLeft
-              className="shrink-0"
-              size={18}
-            />
-          }
+          icon={<LucideToggleLeft className="shrink-0" size={18} />}
           isExpanded={isExpanded}
           label="Switch"
         />
@@ -133,23 +113,13 @@ export function Sidebar() {
       <SidebarNavigationGroup>
         <SidebarNavigationItem
           href="/dialog"
-          icon={
-            <LucideMessageSquareCode
-              className="shrink-0"
-              size={18}
-            />
-          }
+          icon={<LucideMessageSquareCode className="shrink-0" size={18} />}
           isExpanded={isExpanded}
           label="Dialog"
         />
         <SidebarNavigationItem
           href="/combobox"
-          icon={
-            <LucideSquareMousePointer
-              className="shrink-0"
-              size={18}
-            />
-          }
+          icon={<LucideSquareMousePointer className="shrink-0" size={18} />}
           isExpanded={isExpanded}
           label="Combobox"
         />
@@ -172,12 +142,7 @@ function SidebarNavigationLabel(props: ComponentProps<"p">) {
 function SidebarNavigationGroup(props: ComponentProps<"div">) {
   const { ...rest } = props
 
-  return (
-    <div
-      className="flex flex-col gap-y-4 px-16"
-      {...rest}
-    />
-  )
+  return <div className="flex flex-col gap-y-4 px-16" {...rest} />
 }
 
 function SidebarNavigationItem(props: {

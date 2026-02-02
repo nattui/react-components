@@ -1,6 +1,6 @@
 import type { ComponentProps, JSX, ReactNode } from "react"
-import styles from "@/button.module.css"
 import { ButtonSpinner } from "@/button-spinner"
+import styles from "@/button.module.css"
 
 export interface ButtonIconProps extends ButtonPropsInternal {
   children?: ReactNode
@@ -80,23 +80,23 @@ export const BUTTON_CLASS_NAME = {
   ICON_ONLY: styles.button__icon_only,
   ROUNDED: {
     BASE: styles.button__rounded_base,
-    FULL: styles.button__rounded_full,
+    FULL: styles.button__rounded_full
   },
   SIZE: {
     32: styles.button__size_32,
     36: styles.button__size_36,
     40: styles.button__size_40,
     44: styles.button__size_44,
-    48: styles.button__size_48,
+    48: styles.button__size_48
   },
   VARIANT: {
     ACCENT: styles.button__variant_accent,
     GHOST: styles.button__variant_ghost,
     PRIMARY: styles.button__variant_primary,
-    SECONDARY: styles.button__variant_secondary,
+    SECONDARY: styles.button__variant_secondary
   },
   WIDTH: {
     BASE: styles.button__width_base,
-    FULL: styles.button__width_full,
-  },
+    FULL: styles.button__width_full
+  }
 } as const

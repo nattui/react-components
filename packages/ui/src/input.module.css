@@ -21,8 +21,8 @@
   background-color: var(--color-gray-1, #fcfcfc);
   border-style: none;
   box-shadow:
-    0 -1px 0 0px rgba(0, 0, 0, 7.5%) inset, /* Bottom */
-    0 0 0 1px var(--color-gray-4) inset; /* Border */
+    0 -1px 0 0px rgba(0, 0, 0, 7.5%) inset,
+    /* Bottom */ 0 0 0 1px var(--color-gray-4) inset; /* Border */
   transition-duration: 150ms;
   transition-property: box-shadow, opacity;
 }
@@ -42,8 +42,8 @@
 .input:enabled:hover,
 .input:enabled[aria-pressed="true"] {
   box-shadow:
-    0 -1px 0 0px rgba(0, 0, 0, 7.5%) inset, /* Bottom */
-    0 0 0 1px var(--color-gray-6) inset; /* Border */
+    0 -1px 0 0px rgba(0, 0, 0, 7.5%) inset,
+    /* Bottom */ 0 0 0 1px var(--color-gray-6) inset; /* Border */
 }
 
 .input[data-is-valid="true"] {
@@ -62,8 +62,8 @@
 :global(.dark) .input {
   background-color: var(--color-gray-2, #101010);
   box-shadow:
-    0 1px 0 0px rgba(255, 255, 255, 7.5%) inset, /* Top */
-    0 0 0 1px var(--color-gray-4) inset; /* Border */
+    0 1px 0 0px rgba(255, 255, 255, 7.5%) inset,
+    /* Top */ 0 0 0 1px var(--color-gray-4) inset; /* Border */
 }
 
 :global(.dark) .input:enabled:active,
@@ -71,8 +71,8 @@
 :global(.dark) .input:enabled:hover,
 :global(.dark) .input:enabled[aria-pressed="true"] {
   box-shadow:
-    0 1px 0 0px rgba(255, 255, 255, 7.5%) inset, /* Top */
-    0 0 0 1px var(--color-gray-6) inset; /* Border */
+    0 1px 0 0px rgba(255, 255, 255, 7.5%) inset,
+    /* Top */ 0 0 0 1px var(--color-gray-6) inset; /* Border */
 }
 
 /* ===================================================== */

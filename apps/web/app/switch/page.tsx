@@ -8,18 +8,12 @@ export default function SwitchPage() {
       <Switch />
       <Switch isDefaultChecked />
       <Switch isDisabled />
-      <Switch
-        isDefaultChecked
-        isDisabled
-      />
+      <Switch isDefaultChecked isDisabled />
 
       <Switch isReadOnly />
       <Switch isRequired />
 
-      <Label
-        className="flex items-center gap-8"
-        htmlFor="switch-with-label"
-      >
+      <Label className="flex items-center gap-8" htmlFor="switch-with-label">
         Switch with label
         <Switch id="switch-with-label" />
       </Label>

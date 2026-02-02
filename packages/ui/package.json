@@ -1,45 +1,36 @@
 {
-  "author": "Natt Nguyen <hello@natt.sh> (https://natt.sh)",
-  "bugs": {
-    "url": "https://github.com/nattui/react-components/issues"
-  },
-  "dependencies": {
-    "@base-ui/react": "1.1.0"
-  },
+  "name": "@nattui/react-components",
+  "version": "0.0.34",
   "description": "A collection of reusable React components built with TypeScript and CSS Modules",
-  "devDependencies": {
-    "@types/react": "catalog:",
-    "tsup": "8.5.1",
-    "typescript": "catalog:"
-  },
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    }
-  },
-  "files": [
-    "dist"
-  ],
-  "homepage": "https://github.com/nattui/react-components#readme",
   "keywords": [
     "components",
     "react",
     "ui"
   ],
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "name": "@nattui/react-components",
-  "peerDependencies": {
-    "react": "^18.0.0 || ^19.0.0",
-    "react-dom": "^18.0.0 || ^19.0.0"
+  "homepage": "https://github.com/nattui/react-components#readme",
+  "bugs": {
+    "url": "https://github.com/nattui/react-components/issues"
   },
-  "publishConfig": {
-    "access": "public"
-  },
+  "author": "Natt Nguyen <hello@natt.sh> (https://natt.sh)",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nattui/react-components.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "build": "tsup",
@@ -47,7 +38,16 @@
     "dev": "tsup --watch",
     "prepublishOnly": "pnpm run build"
   },
-  "type": "module",
-  "types": "./dist/index.d.ts",
-  "version": "0.0.34"
+  "dependencies": {
+    "@base-ui/react": "1.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "catalog:",
+    "tsup": "8.5.1",
+    "typescript": "catalog:"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  }
 }

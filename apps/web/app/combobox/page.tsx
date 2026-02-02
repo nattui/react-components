@@ -16,7 +16,7 @@ export default function ComboboxPage() {
     "color-gray-slate-dark",
     "color-gray-sage-dark",
     "color-gray-olive-dark",
-    "color-gray-sand-dark",
+    "color-gray-sand-dark"
   ] as const
 
   const PRIMARY_OPTIONS = [
@@ -69,7 +69,7 @@ export default function ComboboxPage() {
     "color-primary-teal-dark",
     "color-primary-tomato-dark",
     "color-primary-violet-dark",
-    "color-primary-yellow-dark",
+    "color-primary-yellow-dark"
   ] as const
 
   return (

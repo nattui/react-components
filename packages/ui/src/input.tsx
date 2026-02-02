@@ -1,8 +1,10 @@
 import type { ComponentProps, JSX } from "react"
 import styles from "@/input.module.css"
 
-export interface InputProps
-  extends Omit<ComponentProps<"input">, "aria-pressed" | "disabled" | "readOnly" | "required"> {
+export interface InputProps extends Omit<
+  ComponentProps<"input">,
+  "aria-pressed" | "disabled" | "readOnly" | "required"
+> {
   isActive?: boolean
   isDisabled?: boolean
   isInvalid?: boolean
@@ -60,13 +62,13 @@ export const INPUT_CLASS_NAME = {
   PASSWORD: styles.input__password,
   ROUNDED: {
     BASE: styles.input__rounded_base,
-    FULL: styles.input__rounded_full,
+    FULL: styles.input__rounded_full
   },
   SIZE: {
     32: styles.input__size_32,
     36: styles.input__size_36,
     40: styles.input__size_40,
     44: styles.input__size_44,
-    48: styles.input__size_48,
-  },
+    48: styles.input__size_48
+  }
 } as const
