@@ -3,11 +3,6 @@ import { Input } from "@nattui/react-components"
 import { fn } from "storybook/test"
 
 const meta = {
-  args: {
-    onBlur: fn(),
-    onChange: fn(),
-    onFocus: fn(),
-  },
   argTypes: {
     isActive: { control: "boolean" },
     isDisabled: { control: "boolean" },
@@ -17,6 +12,11 @@ const meta = {
       options: ["text", "email", "password", "number", "tel", "url", "search"],
     },
     value: { control: "text" },
+  },
+  args: {
+    onBlur: fn(),
+    onChange: fn(),
+    onFocus: fn(),
   },
   component: Input,
   parameters: {

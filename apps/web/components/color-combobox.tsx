@@ -37,7 +37,7 @@ export function ColorCombobox(props: ColorComboboxProps) {
     // Toggle global dark mode when a gray "-dark" theme is selected
     const isGrayCombobox = group.some((cls) => cls.startsWith("color-gray-"))
     if (isGrayCombobox) {
-      if (/-dark$/.test(value)) {
+      if (value.endsWith('-dark')) {
         body.classList.add("dark")
       } else {
         body.classList.remove("dark")

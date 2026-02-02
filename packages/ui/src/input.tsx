@@ -44,8 +44,8 @@ export function Input(props: InputProps): JSX.Element {
 
   return (
     <input
-      aria-pressed={isActive}
       className={combinedClassName}
+      data-is-active={isActive}
       data-is-invalid={isInvalid}
       data-is-valid={isValid}
       disabled={isDisabled}

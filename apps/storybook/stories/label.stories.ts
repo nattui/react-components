@@ -3,12 +3,12 @@ import { Label } from "@nattui/react-components"
 import { fn } from "storybook/test"
 
 const meta = {
-  args: {
-    onClick: fn(),
-  },
   argTypes: {
     children: { control: "text" },
     htmlFor: { control: "text" },
+  },
+  args: {
+    onClick: fn(),
   },
   component: Label,
   parameters: {

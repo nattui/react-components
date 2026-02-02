@@ -40,8 +40,8 @@ export function Textarea(props: TextareaProps): JSX.Element {
 
   return (
     <textarea
-      aria-pressed={isActive}
       className={combinedClassName}
+      data-is-active={isActive}
       data-is-invalid={isInvalid}
       data-is-valid={isValid}
       disabled={isDisabled}

@@ -3,7 +3,6 @@ import { Button } from "@nattui/react-components"
 import { fn } from "storybook/test"
 
 const meta = {
-  args: { onClick: fn() },
   argTypes: {
     isDisabled: { control: "boolean" },
     isFullWidth: { control: "boolean" },
@@ -15,6 +14,7 @@ const meta = {
       options: ["accent", "primary", "secondary", "ghost"],
     },
   },
+  args: { onClick: fn() },
   component: Button,
   parameters: {
     layout: "centered",

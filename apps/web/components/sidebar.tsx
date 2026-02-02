@@ -28,6 +28,7 @@ export function Sidebar() {
       data-is-expanded={isExpanded}
     >
       {/* Expansion overlay */}
+      {/* oxlint-disable-next-line jsx_a11y/click-events-have-key-events */}
       <div
         className="absolute inset-0 -z-10 cursor-e-resize data-[is-expanded=true]:hidden"
         data-is-expanded={isExpanded}
