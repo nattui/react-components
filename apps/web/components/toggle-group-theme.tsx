@@ -23,12 +23,8 @@ export function ToggleGroupTheme() {
 
   function onValueChange(value: Theme[]) {
     if (value.length > 0) {
-      theme.forEach((item) => {
-        document.body.classList.remove(item)
-      })
-      value.forEach((item) => {
-        document.body.classList.add(item)
-      })
+      document.body.classList.remove(...theme)
+      document.body.classList.add(...value)
       setTheme(value)
     }
   }
