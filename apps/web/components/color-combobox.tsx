@@ -34,15 +34,15 @@ export function ColorCombobox(props: ColorComboboxProps) {
     body.classList.remove(...group)
     body.classList.add(value)
 
-    // Toggle global dark mode when a gray "-dark" theme is selected
-    const isGrayCombobox = group.some((cls) => cls.startsWith("color-gray-"))
-    if (isGrayCombobox) {
-      if (value.endsWith("-dark")) {
-        body.classList.add("dark")
-      } else {
-        body.classList.remove("dark")
-      }
-    }
+    // // Toggle global dark mode when a gray "-dark" theme is selected
+    // const isGrayCombobox = group.some((cls) => cls.startsWith("color-gray-"))
+    // if (isGrayCombobox) {
+    //   if (value.endsWith("-dark")) {
+    //     body.classList.add("dark")
+    //   } else {
+    //     body.classList.remove("dark")
+    //   }
+    // }
 
     onChange?.(value)
   }

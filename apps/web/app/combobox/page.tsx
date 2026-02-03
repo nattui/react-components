@@ -11,12 +11,6 @@ export default function ComboboxPage() {
     "color-gray-sage",
     "color-gray-olive",
     "color-gray-sand",
-    "color-gray-gray-dark",
-    "color-gray-mauve-dark",
-    "color-gray-slate-dark",
-    "color-gray-sage-dark",
-    "color-gray-olive-dark",
-    "color-gray-sand-dark",
   ] as const
 
   const PRIMARY_OPTIONS = [
@@ -45,32 +39,9 @@ export default function ComboboxPage() {
     "color-primary-tomato",
     "color-primary-violet",
     "color-primary-yellow",
-    "color-primary-amber-dark",
-    "color-primary-blue-dark",
-    "color-primary-bronze-dark",
-    "color-primary-brown-dark",
-    "color-primary-crimson-dark",
-    "color-primary-cyan-dark",
-    "color-primary-gold-dark",
-    "color-primary-grass-dark",
-    "color-primary-green-dark",
-    "color-primary-indigo-dark",
-    "color-primary-iris-dark",
-    "color-primary-jade-dark",
-    "color-primary-lime-dark",
-    "color-primary-mint-dark",
-    "color-primary-orange-dark",
-    "color-primary-pink-dark",
-    "color-primary-plum-dark",
-    "color-primary-purple-dark",
-    "color-primary-red-dark",
-    "color-primary-ruby-dark",
-    "color-primary-sky-dark",
-    "color-primary-teal-dark",
-    "color-primary-tomato-dark",
-    "color-primary-violet-dark",
-    "color-primary-yellow-dark",
   ] as const
+
+  const LIGHT_DARK_OPTIONS = ["light", "dark"] as const
 
   return (
     <div className="flex flex-col gap-16">
@@ -83,6 +54,11 @@ export default function ComboboxPage() {
         label="Primary palette"
         options={PRIMARY_OPTIONS}
         placeholder="e.g. color-primary-red"
+      />
+      <ColorCombobox
+        label="Light / Dark palette"
+        options={LIGHT_DARK_OPTIONS}
+        placeholder="e.g. light"
       />
       <Button variant="accent">Search</Button>
       <Button variant="primary">Search</Button>
