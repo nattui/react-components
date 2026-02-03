@@ -88,25 +88,40 @@ function ThemeToggle() {
       value={theme}
     >
       <Toggle
-        className="rounded-6 hover:bg-gray-2 data-pressed:bg-gray-1 data-pressed:text-gray-12 focus-visible:outline-primary-9 active:bg-gray-2 flex h-32 items-center justify-center gap-x-6 px-8 outline-2 outline-transparent transition-colors select-none"
+        className="rounded-6 hover:bg-gray-2 data-pressed:bg-gray-1 data-pressed:text-gray-12 focus-visible:outline-primary-9 active:bg-gray-2 group flex h-32 items-center justify-center gap-x-6 px-8 outline-2 outline-transparent transition-[background-color] select-none"
         value="light"
       >
-        <span className="text-gray-11 text-14 font-500">Light</span>
-        <LucideSun className="text-gray-11" size={16} />
+        <span className="text-gray-11 text-14 font-500 group-data-pressed:text-gray-12 transition-colors">
+          Light
+        </span>
+        <LucideSun
+          className="text-gray-11 group-data-pressed:text-gray-12 transition-colors"
+          size={16}
+        />
       </Toggle>
       <Toggle
-        className="rounded-6 hover:bg-gray-2 data-pressed:bg-gray-1 data-pressed:text-gray-12 focus-visible:outline-primary-9 active:bg-gray-2 flex h-32 items-center justify-center gap-x-6 px-8 outline-2 outline-transparent transition-colors select-none"
+        className="rounded-6 hover:bg-gray-2 data-pressed:bg-gray-1 data-pressed:text-gray-12 focus-visible:outline-primary-9 active:bg-gray-2 group flex h-32 items-center justify-center gap-x-6 px-8 outline-2 outline-transparent transition-[background-color] select-none"
         value="dark"
       >
-        <span className="text-gray-11 text-14 font-500">Dark</span>
-        <LucideMoon className="text-gray-11" size={16} />
+        <span className="text-gray-11 text-14 font-500 group-data-pressed:text-gray-12 transition-colors">
+          Dark
+        </span>
+        <LucideMoon
+          className="text-gray-11 group-data-pressed:text-gray-12 transition-colors"
+          size={16}
+        />
       </Toggle>
       <Toggle
-        className="rounded-6 hover:bg-gray-2 data-pressed:bg-gray-1 data-pressed:text-gray-12 focus-visible:outline-primary-9 active:bg-gray-2 flex h-32 items-center justify-center gap-x-6 px-8 outline-2 outline-transparent transition-colors select-none"
+        className="rounded-6 hover:bg-gray-2 data-pressed:bg-gray-1 data-pressed:text-gray-12 focus-visible:outline-primary-9 active:bg-gray-2 group flex h-32 items-center justify-center gap-x-6 px-8 outline-2 outline-transparent transition-[background-color] select-none"
         value="system"
       >
-        <span className="text-gray-11 text-14 font-500">System</span>
-        <LucideMonitor className="text-gray-11" size={16} />
+        <span className="text-gray-11 text-14 font-500 group-data-pressed:text-gray-12 transition-colors">
+          System
+        </span>
+        <LucideMonitor
+          className="text-gray-11 group-data-pressed:text-gray-12 transition-colors"
+          size={16}
+        />
       </Toggle>
     </ToggleGroup>
   )
