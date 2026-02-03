@@ -1,6 +1,6 @@
 "use client"
 
-import { Combobox } from "@base-ui-components/react/combobox"
+import { Combobox } from "@base-ui/react/combobox"
 import { LucideCheck, LucideChevronDown, LucideX } from "@nattui/icons"
 import { useId } from "react"
 

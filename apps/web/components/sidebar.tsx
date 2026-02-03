@@ -24,8 +24,8 @@ const links: {
     label: "Switch",
   },
   {
-    href: "/combobox",
-    label: "Color Combobox",
+    href: "/theme",
+    label: "Theme",
   },
 ]
 

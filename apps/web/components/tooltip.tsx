@@ -1,5 +1,5 @@
 import type { ComponentProps } from "react"
-import { Tooltip as TooltipPrimitive } from "@base-ui-components/react/tooltip"
+import { Tooltip as TooltipPrimitive } from "@base-ui/react/tooltip"
 
 function Tooltip(props: ComponentProps<typeof TooltipPrimitive.Root>) {
   const { ...rest } = props

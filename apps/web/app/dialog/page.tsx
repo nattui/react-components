@@ -1,4 +1,4 @@
-import { Dialog } from "@base-ui-components/react/dialog"
+import { Dialog } from "@base-ui/react/dialog"
 import { Button } from "@nattui/react-components"
 
 export default function DialogPage() {
