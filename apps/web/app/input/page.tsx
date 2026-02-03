@@ -15,7 +15,10 @@ export default function InputPage() {
       <Label htmlFor="email">Email</Label>
       <Spacer className="h-4" />
       <div className="relative">
-        <LucideMail className="text-gray-11 absolute top-14 left-14" size={16} />
+        <LucideMail
+          className="text-gray-11 pointer-events-none absolute top-14 left-14"
+          size={16}
+        />
         <Input className="pl-44!" id="email" placeholder="name@example.com" type="email" />
       </div>
       <Spacer className="h-16" />
@@ -23,7 +26,10 @@ export default function InputPage() {
       <Label htmlFor="password">Password</Label>
       <Spacer className="h-4" />
       <div className="relative">
-        <LucideLock className="text-gray-11 absolute top-14 left-14" size={16} />
+        <LucideLock
+          className="text-gray-11 pointer-events-none absolute top-14 left-14"
+          size={16}
+        />
         <Input className="px-44!" id="password" placeholder="••••••••" type="password" />
         <Button className="group absolute! top-6 right-6" isIconOnly size={32} variant="ghost">
           <LucideEye
@@ -34,7 +40,7 @@ export default function InputPage() {
       </div>
       <Spacer className="h-16" />
 
-      <Button iconStart={<LucideLogIn size={16} />} isFullWidth variant="accent">
+      <Button iconStart={<LucideLogIn size={16} />} isFullWidth size={44} variant="accent">
         Sign in
       </Button>
       <Spacer className="h-64" />
@@ -42,7 +48,7 @@ export default function InputPage() {
       <Label htmlFor="disabled">Disabled</Label>
       <Spacer className="h-4" />
       <div className="relative">
-        <LucideBan className="text-gray-11 absolute top-14 left-14" size={16} />
+        <LucideBan className="text-gray-11 pointer-events-none absolute top-14 left-14" size={16} />
         <Input className="pl-44!" id="disabled" isDisabled placeholder="Disabled" type="url" />
       </div>
       <Spacer className="h-64" />
