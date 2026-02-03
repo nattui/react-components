@@ -53,13 +53,13 @@ function ToggleTheme(props: ToggleThemeProps) {
       value={value}
       {...rest}
     >
-      <span className="text-gray-11 text-14 font-500 group-data-pressed:text-gray-12 group-hover:text-gray-12 transition-colors">
-        {text}
-      </span>
       <Icon
         className="text-gray-11 group-data-pressed:text-gray-12 group-hover:text-gray-12 transition-colors"
         size={ICON_SIZE}
       />
+      <span className="text-gray-11 text-14 font-500 group-data-pressed:text-gray-12 group-hover:text-gray-12 transition-colors">
+        {text}
+      </span>
     </Toggle>
   )
 }
