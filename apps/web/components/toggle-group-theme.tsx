@@ -49,12 +49,12 @@ function ToggleTheme(props: ToggleThemeProps) {
 
   return (
     <Toggle
-      className="rounded-6 data-pressed:bg-gray-1 data-pressed:text-gray-12 focus-visible:outline-primary-9 active:bg-gray-2 group flex h-32 cursor-pointer items-center justify-center gap-x-6 px-10 outline-2 outline-transparent transition-[background-color] select-none"
+      className="rounded-6 data-pressed:bg-gray-1 data-pressed:text-gray-12 focus-visible:outline-primary-9 active:bg-gray-2 group flex h-32 cursor-pointer items-center justify-center gap-x-8 px-10 outline-2 outline-transparent transition-[background-color] select-none"
       value={value}
       {...rest}
     >
       <Icon
-        className="text-gray-11 group-data-pressed:text-gray-12 group-hover:text-gray-12 transition-colors"
+        className="text-gray-11 group-data-pressed:text-primary-9 group-hover:text-gray-12 transition-colors"
         size={ICON_SIZE}
       />
       <span className="text-gray-11 text-14 font-500 group-data-pressed:text-gray-12 group-hover:text-gray-12 transition-colors">
