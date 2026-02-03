@@ -2,6 +2,7 @@
 
 import { Combobox } from "@base-ui/react/combobox"
 import { LucideCheck, LucideChevronDown, LucideX } from "@nattui/icons"
+import { Label } from "@nattui/react-components"
 import { useId } from "react"
 
 interface ColorComboboxProps {
@@ -50,7 +51,7 @@ export function ColorCombobox(props: ColorComboboxProps) {
   return (
     <Combobox.Root items={options} onValueChange={(value) => handleValueChange(value as string)}>
       <div className="font-500 text-14 text-gray-11 relative flex flex-col gap-4">
-        <label htmlFor={id}>{label}</label>
+        <Label htmlFor={id}>{label}</Label>
         <Combobox.Input
           className="border-gray-5 bg-gray-1 text-16 text-gray-11 focus:outline-primary-9 h-40 w-256 rounded-md border pl-14 font-normal focus:outline-2 focus:-outline-offset-1"
           id={id}

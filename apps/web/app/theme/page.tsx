@@ -1,6 +1,10 @@
 "use client"
 
+import { Toggle } from "@base-ui/react/toggle"
+import { ToggleGroup } from "@base-ui/react/toggle-group"
+import { LucideMonitor, LucideMoon, LucideSun } from "@nattui/icons"
 import { Button } from "@nattui/react-components"
+import { useState } from "react"
 import { ColorCombobox } from "@/components/color-combobox"
 
 export default function ComboboxPage() {
@@ -45,6 +49,8 @@ export default function ComboboxPage() {
 
   return (
     <div className="flex flex-col gap-16">
+      <ThemeToggle />
+
       <ColorCombobox
         label="Gray palette"
         options={GRAY_OPTIONS}
@@ -63,5 +69,45 @@ export default function ComboboxPage() {
       <Button variant="accent">Search</Button>
       <Button variant="primary">Search</Button>
     </div>
+  )
+}
+
+function ThemeToggle() {
+  const [theme, setTheme] = useState<string[]>(["light"])
+
+  function onValueChange(value: string[]) {
+    if (value.length > 0) {
+      setTheme(value)
+    }
+  }
+
+  return (
+    <ToggleGroup
+      className="rounded-8 bg-gray-3 flex w-fit gap-x-2 overflow-hidden p-2"
+      onValueChange={onValueChange}
+      value={theme}
+    >
+      <Toggle
+        className="rounded-6 hover:bg-gray-2 data-pressed:bg-gray-1 data-pressed:text-gray-12 focus-visible:outline-primary-9 active:bg-gray-2 flex h-32 items-center justify-center gap-x-6 px-8 outline-2 outline-transparent transition-colors select-none"
+        value="light"
+      >
+        <span className="text-gray-11 text-14 font-500">Light</span>
+        <LucideSun className="text-gray-11" size={16} />
+      </Toggle>
+      <Toggle
+        className="rounded-6 hover:bg-gray-2 data-pressed:bg-gray-1 data-pressed:text-gray-12 focus-visible:outline-primary-9 active:bg-gray-2 flex h-32 items-center justify-center gap-x-6 px-8 outline-2 outline-transparent transition-colors select-none"
+        value="dark"
+      >
+        <span className="text-gray-11 text-14 font-500">Dark</span>
+        <LucideMoon className="text-gray-11" size={16} />
+      </Toggle>
+      <Toggle
+        className="rounded-6 hover:bg-gray-2 data-pressed:bg-gray-1 data-pressed:text-gray-12 focus-visible:outline-primary-9 active:bg-gray-2 flex h-32 items-center justify-center gap-x-6 px-8 outline-2 outline-transparent transition-colors select-none"
+        value="system"
+      >
+        <span className="text-gray-11 text-14 font-500">System</span>
+        <LucideMonitor className="text-gray-11" size={16} />
+      </Toggle>
+    </ToggleGroup>
   )
 }
