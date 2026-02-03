@@ -12,18 +12,16 @@ import { Button, Input, Label, Spacer } from "@nattui/react-components"
 export default function InputPage() {
   return (
     <div className="flex w-full max-w-320 flex-col">
-      <Label className="mb-4" htmlFor="email">
-        Email
-      </Label>
+      <Label htmlFor="email">Email</Label>
+      <Spacer className="h-4" />
       <div className="relative">
         <LucideMail className="text-gray-11 absolute top-14 left-14" size={16} />
         <Input className="pl-44!" id="email" placeholder="name@example.com" type="email" />
       </div>
       <Spacer className="h-16" />
 
-      <Label className="mb-4" htmlFor="password">
-        Password
-      </Label>
+      <Label htmlFor="password">Password</Label>
+      <Spacer className="h-4" />
       <div className="relative">
         <LucideLock className="text-gray-11 absolute top-14 left-14" size={16} />
         <Input className="px-44!" id="password" placeholder="••••••••" type="password" />
@@ -41,18 +39,16 @@ export default function InputPage() {
       </Button>
       <Spacer className="h-64" />
 
-      <Label className="mb-4" htmlFor="disabled">
-        Disabled
-      </Label>
+      <Label htmlFor="disabled">Disabled</Label>
+      <Spacer className="h-4" />
       <div className="relative">
         <LucideBan className="text-gray-11 absolute top-14 left-14" size={16} />
         <Input className="pl-44!" id="disabled" isDisabled placeholder="Disabled" type="url" />
       </div>
       <Spacer className="h-64" />
 
-      <Label className="mb-4" htmlFor="read-only">
-        Read Only
-      </Label>
+      <Label htmlFor="read-only">Read Only</Label>
+      <Spacer className="h-4" />
       <div className="relative">
         <Input
           className="pr-44!"
@@ -70,9 +66,8 @@ export default function InputPage() {
       </div>
       <Spacer className="h-64" />
 
-      <Label className="mb-4" htmlFor="input-with-end-icon-button">
-        Input with end icon button
-      </Label>
+      <Label htmlFor="input-with-end-icon-button">Input with end icon button</Label>
+      <Spacer className="h-4" />
       <div className="flex">
         <Input
           className="rounded-r-none! hover:z-10 focus-visible:z-20"
@@ -94,21 +89,18 @@ export default function InputPage() {
       </div>
       <Spacer className="h-64" />
 
-      <Label className="mb-4" htmlFor="active">
-        Active
-      </Label>
+      <Label htmlFor="active">Active</Label>
+      <Spacer className="h-4" />
       <Input id="active" isActive placeholder="Active" type="url" />
       <Spacer className="h-64" />
 
-      <Label className="mb-4" htmlFor="valid">
-        Valid
-      </Label>
+      <Label htmlFor="valid">Valid</Label>
+      <Spacer className="h-4" />
       <Input id="valid" isValid placeholder="Valid" type="url" />
       <Spacer className="h-64" />
 
-      <Label className="mb-4" htmlFor="invalid">
-        Invalid
-      </Label>
+      <Label htmlFor="invalid">Invalid</Label>
+      <Spacer className="h-4" />
       <Input id="invalid" isInvalid placeholder="Invalid" type="url" />
     </div>
   )

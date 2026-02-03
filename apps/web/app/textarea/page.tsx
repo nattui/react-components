@@ -1,13 +1,12 @@
 "use client"
 
-import { Label, Textarea } from "@nattui/react-components"
+import { Label, Spacer, Textarea } from "@nattui/react-components"
 
 export default function TextareaPage() {
   return (
     <div className="flex w-full max-w-480 flex-col">
-      <Label className="mb-4" htmlFor="message">
-        Message
-      </Label>
+      <Label htmlFor="message">Message</Label>
+      <Spacer className="h-4" />
       <Textarea id="message" placeholder="Share what's on your mind" />
     </div>
   )
