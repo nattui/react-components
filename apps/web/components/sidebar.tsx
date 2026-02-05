@@ -38,7 +38,7 @@ export function Sidebar() {
 
   return (
     <aside className="bg-gray-1 sticky top-64 left-0 flex h-[calc(100dvh-64px)] w-256 shrink-0 flex-col">
-      <div className="flex flex-col gap-y-4 px-24">
+      <div className="flex flex-col gap-y-4 overflow-y-auto px-24">
         {links.map((link, index) => {
           const isActive = pathname === link.href
 
