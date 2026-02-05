@@ -2,7 +2,7 @@
 
 import { Toggle, ToggleGroup, ToggleProps } from "@base-ui/react"
 import { useDrag } from "@use-gesture/react"
-import { useRef, useState } from "react"
+import { type UIEvent, useRef, useState } from "react"
 import { categories } from "@/app/experiment/carousel/categories"
 
 type CategoryValue = (typeof categories)[number]["value"]
@@ -40,9 +40,19 @@ export default function CarouselPage() {
     }
   }
 
+  function onScroll(event: UIEvent<HTMLDivElement>) {
+    const scrollX = event.currentTarget.scrollLeft
+    console.log(":::: onScroll:", scrollX)
+  }
+
   return (
     <div className="d flex flex-col p-64">
-      <div className="scrollbar-hidden d touch-pan-x overflow-x-auto" ref={carouselRef} {...bind()}>
+      <div
+        className="scrollbar-hidden d touch-pan-x overflow-x-auto"
+        onScroll={onScroll}
+        ref={carouselRef}
+        {...bind()}
+      >
         <ToggleGroup
           className="flex gap-x-12 py-12"
           onValueChange={onValueChange}
