@@ -24,6 +24,10 @@ const links: {
     label: "Switch",
   },
   {
+    href: "/experiment/carousel",
+    label: "Carousel",
+  },
+  {
     href: "/theme",
     label: "Theme",
   },
