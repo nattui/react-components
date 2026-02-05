@@ -28,6 +28,9 @@ export default function CarouselPage() {
     {
       axis: "x",
       filterTaps: true,
+      pointer: {
+        keys: false,
+      },
     },
   )
 
