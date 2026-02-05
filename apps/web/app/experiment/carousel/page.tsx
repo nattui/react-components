@@ -3,58 +3,12 @@
 import { Toggle, ToggleGroup, ToggleProps } from "@base-ui/react"
 import { useDrag } from "@use-gesture/react"
 import { useRef, useState } from "react"
+import { categories } from "@/app/experiment/carousel/categories"
 
 type CategoryValue = (typeof categories)[number]["value"]
 
-const categories = [
-  {
-    label: "All",
-    value: "all",
-  },
-  {
-    label: "Gaming",
-    value: "gaming",
-  },
-  {
-    label: "Music",
-    value: "music",
-  },
-  {
-    label: "Podcasts",
-    value: "podcasts",
-  },
-  {
-    label: "Gaming consoles",
-    value: "gaming-consoles",
-  },
-  {
-    label: "APIs",
-    value: "apis",
-  },
-  {
-    label: "AI",
-    value: "ai",
-  },
-  {
-    label: "Live",
-    value: "live",
-  },
-  {
-    label: "Gadgets",
-    value: "gadgets",
-  },
-  {
-    label: "Chill-out music",
-    value: "chill-out-music",
-  },
-  {
-    label: "J-Pop",
-    value: "j-pop",
-  },
-]
-
 export default function CarouselPage() {
-  const [selectedCategory, setSelectedCategory] = useState<string>(categories[0].value)
+  const [selectedCategory, setSelectedCategory] = useState<CategoryValue>(categories[0].value)
 
   const carouselRef = useRef<HTMLDivElement>(null)
 
