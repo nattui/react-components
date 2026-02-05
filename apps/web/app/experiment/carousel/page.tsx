@@ -34,15 +34,15 @@ export default function CarouselPage() {
     },
   )
 
+  function onScroll(event: UIEvent<HTMLDivElement>) {
+    const scrollX = event.currentTarget.scrollLeft
+    console.log(":::: onScroll:", scrollX)
+  }
+
   function onValueChange(value: CategoryValue[]) {
     if (value.length > 0) {
       setSelectedCategory(value[0])
     }
-  }
-
-  function onScroll(event: UIEvent<HTMLDivElement>) {
-    const scrollX = event.currentTarget.scrollLeft
-    console.log(":::: onScroll:", scrollX)
   }
 
   return (
