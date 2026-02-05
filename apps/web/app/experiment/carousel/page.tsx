@@ -55,19 +55,27 @@ const categories = [
 export default function CarouselPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>(categories[0].value)
 
+  const [container, setContainer] = useState<HTMLDivElement | null>(null)
+
   function onValueChange(value: CategoryValue[]) {
     if (value.length > 0) {
       setSelectedCategory(value[0])
     }
   }
 
+  const width = container?.offsetWidth ?? 0
+  const scrollWidth = container?.scrollWidth ?? 0
+
   return (
     <div className="d flex flex-col p-64">
-      <div className="overflow-clip">
+      {/* Clip container */}
+      <div className="overflow-x-clip">
+        {/* Drag container */}
         <motion.div
+          ref={setContainer}
           drag="x"
           dragConstraints={{
-            left: 0,
+            left: -scrollWidth + width,
             right: 0,
           }}
           dragElastic={0.1}
@@ -99,7 +107,7 @@ function ToggleCategory(props: ToggleProps) {
 
   return (
     <Toggle
-      className="bg-gray-3 rounded-8 data-[is-selected=true]:bg-gray-12 group flex h-32 shrink-0 cursor-pointer items-center justify-center px-8 select-none"
+      className="bg-gray-3 rounded-8 data-[is-selected=true]:bg-gray-12 group focus-visible:outline-primary-9 flex h-32 shrink-0 cursor-pointer items-center justify-center px-8 outline-2 outline-transparent select-none"
       value={value}
       {...rest}
     >
