@@ -2,7 +2,7 @@ import { CarouselCategory } from "@/components/carousel-category/carousel-catego
 
 export default function CarouselPage() {
   return (
-    <div className="d flex flex-col p-64">
+    <div className="flex flex-col">
       <CarouselCategory />
     </div>
   )

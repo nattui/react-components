@@ -16,6 +16,18 @@ export const categories = [
     value: "podcasts",
   },
   {
+    label: "Computer programming",
+    value: "computer-programming",
+  },
+  {
+    label: "Computer hardware",
+    value: "computer-hardware",
+  },
+  {
+    label: "Smooth jazz",
+    value: "smooth-jazz",
+  },
+  {
     label: "Gaming consoles",
     value: "gaming-consoles",
   },
@@ -32,6 +44,10 @@ export const categories = [
     value: "live",
   },
   {
+    label: "Minecraft",
+    value: "minecraft",
+  },
+  {
     label: "Gadgets",
     value: "gadgets",
   },
@@ -42,5 +58,21 @@ export const categories = [
   {
     label: "J-Pop",
     value: "j-pop",
+  },
+  {
+    label: "Life simulation games",
+    value: "life-simulation-games",
+  },
+  {
+    label: "Recently uploaded",
+    value: "recently-uploaded",
+  },
+  {
+    label: "Watched",
+    value: "watched",
+  },
+  {
+    label: "New to you",
+    value: "new-to-you",
   },
 ]
