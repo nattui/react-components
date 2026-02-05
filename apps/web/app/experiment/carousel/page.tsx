@@ -8,11 +8,9 @@ import { categories } from "@/app/experiment/carousel/categories"
 type CategoryValue = (typeof categories)[number]["value"]
 
 export default function CarouselPage() {
-  const [selectedCategory, setSelectedCategory] = useState<CategoryValue>(categories[0].value)
-
-  const [scrollX, setScrollX] = useState(0)
-
   const [carousel, setCarousel] = useState<HTMLDivElement | null>(null)
+  const [scrollX, setScrollX] = useState(0)
+  const [selectedCategory, setSelectedCategory] = useState<CategoryValue>(categories[0].value)
 
   const scrollXMax = carousel ? carousel.scrollWidth - carousel.clientWidth : 0
 
@@ -53,10 +51,6 @@ export default function CarouselPage() {
     <div className="d flex flex-col p-64">
       {/* Carousel */}
       <div className="relative">
-        <div
-          className="from-gray-1 pointer-events-none absolute top-0 left-0 block h-full w-32 bg-linear-to-r to-transparent transition-opacity data-[is-hidden=true]:opacity-0"
-          data-is-hidden={scrollX === 0}
-        />
         {/* Scrollable */}
         <div
           className="scrollbar-hidden touch-pan-x overflow-x-auto"
@@ -70,26 +64,38 @@ export default function CarouselPage() {
             value={[selectedCategory]}
           >
             {categories.map((category) => (
-              <ToggleCategory
+              <CarouselCategoryToggle
                 data-is-selected={selectedCategory === category.value}
                 key={category.value}
                 value={category.value}
               >
                 {category.label}
-              </ToggleCategory>
+              </CarouselCategoryToggle>
             ))}
           </ToggleGroup>
         </div>
-        <div
-          className="from-gray-1 pointer-events-none absolute top-0 right-0 block h-full w-32 bg-linear-to-l to-transparent transition-opacity data-[is-hidden=true]:opacity-0"
-          data-is-hidden={scrollX === scrollXMax}
-        />
+
+        {/* Scroll indicators */}
+        <CarouselCategoryScrollIndicator isHidden={scrollX === 0} variant="start" />
+        <CarouselCategoryScrollIndicator isHidden={scrollX === scrollXMax} variant="end" />
       </div>
     </div>
   )
 }
 
-function ToggleCategory(props: ToggleProps) {
+function CarouselCategoryScrollIndicator(props: { isHidden: boolean; variant: "end" | "start" }) {
+  const { isHidden, variant } = props
+
+  return (
+    <div
+      className="from-gray-1 pointer-events-none absolute top-0 block h-full w-32 to-transparent transition-opacity data-[is-hidden=true]:opacity-0 data-[variant=end]:right-0 data-[variant=end]:bg-linear-to-l data-[variant=start]:left-0 data-[variant=start]:bg-linear-to-r"
+      data-is-hidden={isHidden}
+      data-variant={variant}
+    />
+  )
+}
+
+function CarouselCategoryToggle(props: ToggleProps) {
   const { children, value, ...rest } = props
 
   return (
