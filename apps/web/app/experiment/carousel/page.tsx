@@ -1,7 +1,6 @@
 "use client"
 
 import { Toggle, ToggleGroup, ToggleProps } from "@base-ui/react"
-import { motion } from "motion/react"
 import { useState } from "react"
 
 type CategoryValue = (typeof categories)[number]["value"]
@@ -52,10 +51,9 @@ const categories = [
     value: "j-pop",
   },
 ]
+
 export default function CarouselPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>(categories[0].value)
-
-  const [container, setContainer] = useState<HTMLDivElement | null>(null)
 
   function onValueChange(value: CategoryValue[]) {
     if (value.length > 0) {
@@ -63,24 +61,12 @@ export default function CarouselPage() {
     }
   }
 
-  const width = container?.offsetWidth ?? 0
-  const scrollWidth = container?.scrollWidth ?? 0
-
   return (
     <div className="d flex flex-col p-64">
       {/* Clip container */}
-      <div className="overflow-x-clip">
+      <div className="scrollbar-hidden overflow-x-auto">
         {/* Drag container */}
-        <motion.div
-          ref={setContainer}
-          drag="x"
-          dragConstraints={{
-            left: -scrollWidth + width,
-            right: 0,
-          }}
-          dragElastic={0.1}
-          dragMomentum={false}
-        >
+        <div>
           <ToggleGroup
             className="flex gap-x-12"
             onValueChange={onValueChange}
@@ -96,7 +82,7 @@ export default function CarouselPage() {
               </ToggleCategory>
             ))}
           </ToggleGroup>
-        </motion.div>
+        </div>
       </div>
     </div>
   )
