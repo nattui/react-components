@@ -19,8 +19,8 @@ export default function RootLayout(props: PropsWithChildren) {
             <Topbar />
             <div className="flex size-full">
               <Sidebar />
-              <main className="w-full">
-                <div className="relative mx-auto flex w-full max-w-768 flex-col px-16 py-80">
+              <main className="w-full px-16">
+                <div className="relative mx-auto flex w-full max-w-768 flex-col py-80">
                   {children}
                 </div>
               </main>
