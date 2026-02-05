@@ -1,7 +1,8 @@
 "use client"
 
 import { Toggle, ToggleGroup, ToggleProps } from "@base-ui/react"
-import { useState } from "react"
+import { useDrag } from "@use-gesture/react"
+import { useRef, useState } from "react"
 
 type CategoryValue = (typeof categories)[number]["value"]
 
@@ -55,6 +56,27 @@ const categories = [
 export default function CarouselPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>(categories[0].value)
 
+  const carouselRef = useRef<HTMLDivElement>(null)
+
+  const bind = useDrag(
+    ({ memo, movement: [mx] }) => {
+      const carousel = carouselRef.current
+      if (!carousel) return
+
+      if (!memo) {
+        memo = carousel.scrollLeft
+      }
+
+      carousel.scrollLeft = memo - mx
+
+      return memo
+    },
+    {
+      axis: "x",
+      filterTaps: true,
+    },
+  )
+
   function onValueChange(value: CategoryValue[]) {
     if (value.length > 0) {
       setSelectedCategory(value[0])
@@ -63,26 +85,22 @@ export default function CarouselPage() {
 
   return (
     <div className="d flex flex-col p-64">
-      {/* Clip container */}
-      <div className="scrollbar-hidden overflow-x-auto">
-        {/* Drag container */}
-        <div>
-          <ToggleGroup
-            className="flex gap-x-12"
-            onValueChange={onValueChange}
-            value={[selectedCategory]}
-          >
-            {categories.map((category) => (
-              <ToggleCategory
-                data-is-selected={selectedCategory === category.value}
-                key={category.value}
-                value={category.value}
-              >
-                {category.label}
-              </ToggleCategory>
-            ))}
-          </ToggleGroup>
-        </div>
+      <div className="scrollbar-hidden d overflow-x-auto" ref={carouselRef} {...bind()}>
+        <ToggleGroup
+          className="flex gap-x-12 py-12"
+          onValueChange={onValueChange}
+          value={[selectedCategory]}
+        >
+          {categories.map((category) => (
+            <ToggleCategory
+              data-is-selected={selectedCategory === category.value}
+              key={category.value}
+              value={category.value}
+            >
+              {category.label}
+            </ToggleCategory>
+          ))}
+        </ToggleGroup>
       </div>
     </div>
   )
