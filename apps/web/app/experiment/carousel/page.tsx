@@ -8,6 +8,14 @@ import { categories } from "@/app/experiment/carousel/categories"
 type CategoryValue = (typeof categories)[number]["value"]
 
 export default function CarouselPage() {
+  return (
+    <div className="d flex flex-col p-64">
+      <CarouselCategory />
+    </div>
+  )
+}
+
+function CarouselCategory() {
   const [carousel, setCarousel] = useState<HTMLDivElement | null>(null)
   const [scrollX, setScrollX] = useState(0)
   const [selectedCategory, setSelectedCategory] = useState<CategoryValue>(categories[0].value)
@@ -36,9 +44,7 @@ export default function CarouselPage() {
   )
 
   function onScroll(event: UIEvent<HTMLDivElement>) {
-    const currentScrollX = event.currentTarget.scrollLeft
-    setScrollX(currentScrollX)
-    console.log(":::: onScroll:", currentScrollX)
+    setScrollX(event.currentTarget.scrollLeft)
   }
 
   function onValueChange(value: CategoryValue[]) {
@@ -48,37 +54,34 @@ export default function CarouselPage() {
   }
 
   return (
-    <div className="d flex flex-col p-64">
-      {/* Carousel */}
-      <div className="relative">
-        {/* Scrollable */}
-        <div
-          className="scrollbar-hidden touch-pan-x overflow-x-auto"
-          onScroll={onScroll}
-          ref={setCarousel}
-          {...bind()}
+    <div className="relative">
+      {/* Scrollable */}
+      <div
+        className="scrollbar-hidden touch-pan-x overflow-x-auto"
+        onScroll={onScroll}
+        ref={setCarousel}
+        {...bind()}
+      >
+        <ToggleGroup
+          className="flex gap-x-12 py-12"
+          onValueChange={onValueChange}
+          value={[selectedCategory]}
         >
-          <ToggleGroup
-            className="flex gap-x-12 py-12"
-            onValueChange={onValueChange}
-            value={[selectedCategory]}
-          >
-            {categories.map((category) => (
-              <CarouselCategoryToggle
-                data-is-selected={selectedCategory === category.value}
-                key={category.value}
-                value={category.value}
-              >
-                {category.label}
-              </CarouselCategoryToggle>
-            ))}
-          </ToggleGroup>
-        </div>
-
-        {/* Scroll indicators */}
-        <CarouselCategoryScrollIndicator isHidden={scrollX === 0} variant="start" />
-        <CarouselCategoryScrollIndicator isHidden={scrollX === scrollXMax} variant="end" />
+          {categories.map((category) => (
+            <CarouselCategoryToggle
+              data-is-selected={selectedCategory === category.value}
+              key={category.value}
+              value={category.value}
+            >
+              {category.label}
+            </CarouselCategoryToggle>
+          ))}
+        </ToggleGroup>
       </div>
+
+      {/* Scroll indicators */}
+      <CarouselCategoryScrollIndicator isHidden={scrollX === 0} variant="start" />
+      <CarouselCategoryScrollIndicator isHidden={scrollX === scrollXMax} variant="end" />
     </div>
   )
 }
