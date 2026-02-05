@@ -42,7 +42,7 @@ export default function CarouselPage() {
 
   return (
     <div className="d flex flex-col p-64">
-      <div className="scrollbar-hidden d overflow-x-auto" ref={carouselRef} {...bind()}>
+      <div className="scrollbar-hidden d touch-pan-x overflow-x-auto" ref={carouselRef} {...bind()}>
         <ToggleGroup
           className="flex gap-x-12 py-12"
           onValueChange={onValueChange}
