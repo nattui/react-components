@@ -59,11 +59,11 @@ export default function CarouselPage() {
   const carouselRef = useRef<HTMLDivElement>(null)
 
   const bind = useDrag(
-    ({ memo, movement: [mx] }) => {
+    ({ first, memo, movement: [mx] }) => {
       const carousel = carouselRef.current
       if (!carousel) return
 
-      if (!memo) {
+      if (first) {
         memo = carousel.scrollLeft
       }
 
