@@ -105,3 +105,9 @@
     overflow-wrap: break-word;
   }
 }
+
+@utility scrollbar-hidden {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
