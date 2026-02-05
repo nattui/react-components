@@ -2,7 +2,7 @@
 
 import { Toggle, ToggleGroup, ToggleProps } from "@base-ui/react"
 import { useDrag } from "@use-gesture/react"
-import { type UIEvent, useRef, useState } from "react"
+import { type UIEvent, useState } from "react"
 import { categories } from "@/app/experiment/carousel/categories"
 
 type CategoryValue = (typeof categories)[number]["value"]
@@ -10,11 +10,14 @@ type CategoryValue = (typeof categories)[number]["value"]
 export default function CarouselPage() {
   const [selectedCategory, setSelectedCategory] = useState<CategoryValue>(categories[0].value)
 
-  const carouselRef = useRef<HTMLDivElement>(null)
+  const [scrollX, setScrollX] = useState(0)
+
+  const [carousel, setCarousel] = useState<HTMLDivElement | null>(null)
+
+  const scrollXMax = carousel ? carousel.scrollWidth - carousel.clientWidth : 0
 
   const bind = useDrag(
     ({ memo, movement: [mx] }) => {
-      const carousel = carouselRef.current
       if (!carousel) return
 
       if (!memo) {
@@ -35,8 +38,9 @@ export default function CarouselPage() {
   )
 
   function onScroll(event: UIEvent<HTMLDivElement>) {
-    const scrollX = event.currentTarget.scrollLeft
-    console.log(":::: onScroll:", scrollX)
+    const currentScrollX = event.currentTarget.scrollLeft
+    setScrollX(currentScrollX)
+    console.log(":::: onScroll:", currentScrollX)
   }
 
   function onValueChange(value: CategoryValue[]) {
@@ -47,27 +51,39 @@ export default function CarouselPage() {
 
   return (
     <div className="d flex flex-col p-64">
-      <div
-        className="scrollbar-hidden d touch-pan-x overflow-x-auto"
-        onScroll={onScroll}
-        ref={carouselRef}
-        {...bind()}
-      >
-        <ToggleGroup
-          className="flex gap-x-12 py-12"
-          onValueChange={onValueChange}
-          value={[selectedCategory]}
+      {/* Carousel */}
+      <div className="relative">
+        <div
+          className="from-gray-1 pointer-events-none absolute top-0 left-0 block h-full w-32 bg-linear-to-r to-transparent transition-opacity data-[is-hidden=true]:opacity-0"
+          data-is-hidden={scrollX === 0}
+        />
+        {/* Scrollable */}
+        <div
+          className="scrollbar-hidden touch-pan-x overflow-x-auto"
+          onScroll={onScroll}
+          ref={setCarousel}
+          {...bind()}
         >
-          {categories.map((category) => (
-            <ToggleCategory
-              data-is-selected={selectedCategory === category.value}
-              key={category.value}
-              value={category.value}
-            >
-              {category.label}
-            </ToggleCategory>
-          ))}
-        </ToggleGroup>
+          <ToggleGroup
+            className="flex gap-x-12 py-12"
+            onValueChange={onValueChange}
+            value={[selectedCategory]}
+          >
+            {categories.map((category) => (
+              <ToggleCategory
+                data-is-selected={selectedCategory === category.value}
+                key={category.value}
+                value={category.value}
+              >
+                {category.label}
+              </ToggleCategory>
+            ))}
+          </ToggleGroup>
+        </div>
+        <div
+          className="from-gray-1 pointer-events-none absolute top-0 right-0 block h-full w-32 bg-linear-to-l to-transparent transition-opacity data-[is-hidden=true]:opacity-0"
+          data-is-hidden={scrollX === scrollXMax}
+        />
       </div>
     </div>
   )
