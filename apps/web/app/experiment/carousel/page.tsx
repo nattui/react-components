@@ -64,7 +64,15 @@ export default function CarouselPage() {
   return (
     <div className="d flex flex-col p-64">
       <div className="overflow-clip">
-        <motion.div drag="x">
+        <motion.div
+          drag="x"
+          dragConstraints={{
+            left: 0,
+            right: 0,
+          }}
+          dragElastic={0.1}
+          dragMomentum={false}
+        >
           <ToggleGroup
             className="flex gap-x-12"
             onValueChange={onValueChange}
