@@ -8,7 +8,7 @@ export function CarouselCategoryScrollIndicator(props: CarouselCategoryScrollInd
 
   return (
     <div
-      className="from-gray-1 pointer-events-none absolute top-0 block h-full w-32 to-transparent transition-opacity data-[is-hidden=true]:opacity-0 data-[variant=end]:right-0 data-[variant=end]:bg-linear-to-l data-[variant=start]:left-0 data-[variant=start]:bg-linear-to-r"
+      className="from-gray-1 pointer-events-none absolute top-0 block h-full w-32 to-transparent transition-opacity data-[is-hidden=true]:opacity-0 data-[variant=end]:-right-px data-[variant=end]:bg-linear-to-l data-[variant=start]:-left-px data-[variant=start]:bg-linear-to-r" // -x-px to fix mobile Safari gap
       data-is-hidden={isHidden}
       data-variant={variant}
     />
