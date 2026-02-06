@@ -88,8 +88,8 @@ export function CarouselCategory() {
       </div>
 
       {/* Scroll indicators */}
-      <CarouselCategoryScrollIndicator isHidden={scrollX === 0} variant="start" />
-      <CarouselCategoryScrollIndicator isHidden={scrollX === scrollXMax} variant="end" />
+      <CarouselCategoryScrollIndicator isHidden={scrollX < 1} variant="start" />
+      <CarouselCategoryScrollIndicator isHidden={scrollXMax - scrollX < 1} variant="end" />
     </div>
   )
 }
