@@ -48,7 +48,7 @@ export function CarouselCategory() {
   }
 
   return (
-    <div className="relative">
+    <div className="relative overflow-hidden">
       {/* Scrollable */}
       <div
         className="scrollbar-hidden touch-pan-x overflow-x-auto"
