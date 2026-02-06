@@ -2,7 +2,7 @@
 
 import { ToggleGroup } from "@base-ui/react"
 import { useDrag } from "@use-gesture/react"
-import { type UIEvent, useState } from "react"
+import { type UIEvent, useEffect, useState } from "react"
 import { CarouselCategoryScrollIndicator } from "@/components/carousel-category/carousel-category-scroll-indicator"
 import { CarouselCategoryToggle } from "@/components/carousel-category/carousel-category-toggle"
 import { categories } from "@/components/carousel-category/categories"
@@ -12,9 +12,8 @@ type CategoryValue = (typeof categories)[number]["value"]
 export function CarouselCategory() {
   const [carousel, setCarousel] = useState<HTMLDivElement | null>(null)
   const [scrollX, setScrollX] = useState(0)
+  const [scrollXMax, setScrollXMax] = useState(0)
   const [selectedCategory, setSelectedCategory] = useState<CategoryValue>(categories[0].value)
-
-  const scrollXMax = carousel ? carousel.scrollWidth - carousel.clientWidth : 0
 
   const bind = useDrag(
     ({ memo, movement: [mx] }) => {
@@ -46,6 +45,21 @@ export function CarouselCategory() {
       setSelectedCategory(value[0])
     }
   }
+
+  // Recalculate the max scroll distance whenever the carousel resizes
+  useEffect(() => {
+    if (!carousel) return
+
+    const observer = new ResizeObserver(() => {
+      setScrollXMax(carousel.scrollWidth - carousel.clientWidth)
+    })
+
+    observer.observe(carousel)
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [carousel])
 
   return (
     <div className="relative overflow-hidden">
