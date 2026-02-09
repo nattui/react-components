@@ -12,7 +12,12 @@
     "typescript",
     "unicorn"
   ],
-  "jsPlugins": ["eslint-plugin-perfectionist"],
+  "jsPlugins": [
+    {
+      "name": "perfectionist",
+      "specifier": "eslint-plugin-perfectionist"
+    }
+  ],
   "categories": {},
   "rules": {
     "perfectionist/sort-array-includes": "error",

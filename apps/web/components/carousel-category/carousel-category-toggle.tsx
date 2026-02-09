@@ -12,8 +12,8 @@ export function CarouselCategoryToggle(props: ToggleProps) {
 
   return (
     <Toggle
-      onFocus={onFocus}
       className="bg-gray-3 rounded-8 data-[is-selected=true]:bg-gray-12 group focus-visible:outline-primary-9 flex h-32 shrink-0 cursor-pointer scroll-mx-128 items-center justify-center px-8 outline-2 -outline-offset-2 outline-transparent select-none"
+      onFocus={onFocus}
       value={value}
       {...rest}
     >
