@@ -12,14 +12,14 @@
     "@nattui/tailwind-colors": "0.0.8",
     "@nattui/tailwind-exact": "0.0.5",
     "@use-gesture/react": "10.3.1",
-    "motion": "12.31.0",
+    "motion": "12.34.0",
     "next": "16.1.6",
     "react": "catalog:",
     "react-dom": "catalog:"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "4.1.18",
-    "@types/node": "25.2.0",
+    "@types/node": "25.2.3",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "babel-plugin-react-compiler": "1.0.0",
