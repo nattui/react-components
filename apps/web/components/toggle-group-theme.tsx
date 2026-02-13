@@ -18,8 +18,8 @@ export function ToggleGroupTheme() {
 
   function onValueChange(value: Theme[]) {
     if (value.length > 0) {
-      document.body.classList.remove(...theme)
-      document.body.classList.add(...value)
+      globalThis.document.body.classList.remove(...theme)
+      globalThis.document.body.classList.add(...value)
       setTheme(value)
     }
   }

@@ -29,7 +29,7 @@ export function ColorCombobox(props: ColorComboboxProps) {
   const id = useId()
 
   function handleValueChange(value: string) {
-    const { body } = document
+    const { body } = globalThis.document
     const group = options as readonly string[]
     if (!group || group.length === 0) {
       return

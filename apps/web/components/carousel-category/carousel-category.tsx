@@ -52,7 +52,7 @@ export function CarouselCategory() {
       return
     }
 
-    const observer = new ResizeObserver(() => {
+    const observer = new globalThis.ResizeObserver(() => {
       setScrollXMax(carousel.scrollWidth - carousel.clientWidth)
     })
 
