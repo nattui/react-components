@@ -3,7 +3,7 @@
 import type { FocusEvent } from "react"
 import { Toggle, type ToggleProps } from "@base-ui/react"
 
-export function CarouselCategoryToggle(props: ToggleProps) {
+export function CarouselCategoryToggle(props: ToggleProps<string>) {
   const { children, value, ...rest } = props
 
   function onFocus(event: FocusEvent<HTMLButtonElement>) {
