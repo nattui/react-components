@@ -20,16 +20,27 @@
   ],
   "categories": {
     "correctness": "error",
+    "style": "error",
     "suspicious": "error"
   },
   "rules": {
+    "eslint-plugin-import/consistent-type-specifier-style": "allow",
+    "eslint-plugin-import/exports-last": "allow",
     "eslint-plugin-import/group-exports": "allow",
     "eslint-plugin-import/no-named-export": "allow",
     "eslint-plugin-import/no-unassigned-import": "allow",
+    "eslint-plugin-import/prefer-default-export": "allow",
     "eslint-plugin-react/jsx-max-depth": "allow",
     "eslint-plugin-react/jsx-props-no-spreading": "allow",
     "eslint-plugin-react/react-in-jsx-scope": "allow",
     "eslint-plugin-unicorn/consistent-function-scoping": "allow",
+    "eslint-plugin-unicorn/no-nested-ternary": "allow",
+    "eslint-plugin-unicorn/no-null": "allow",
+    "eslint/func-style": ["error", "declaration"],
+    "eslint/id-length": ["error", { "exceptions": ["_"] }],
+    "eslint/no-magic-numbers": "allow",
+    "eslint/no-nested-ternary": "allow",
+    "eslint/no-ternary": "allow",
     "eslint/sort-imports": "allow",
     "perfectionist/sort-array-includes": "error",
     "perfectionist/sort-classes": "error",
@@ -49,7 +60,7 @@
     "perfectionist/sort-switch-case": "error",
     "perfectionist/sort-union-types": "error",
     "perfectionist/sort-variable-declarations": "error",
-    "typescript-eslint/no-empty-interface": "allow"
+    "typescript/no-empty-interface": "allow"
   },
   "settings": {
     "jsx-a11y": {

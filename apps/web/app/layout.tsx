@@ -1,10 +1,20 @@
 import "@/styles/global.css"
 import type { Metadata } from "next"
 import type { PropsWithChildren } from "react"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Geist as sans, Geist_Mono as mono } from "next/font/google"
 import { Providers } from "@/app/providers"
 import { Sidebar } from "@/components/sidebar"
 import { Topbar } from "@/components/topbar"
+
+const geistSans = sans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
+
+const geistMono = mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+})
 
 export default function RootLayout(props: PropsWithChildren) {
   const { children } = props
@@ -31,16 +41,6 @@ export default function RootLayout(props: PropsWithChildren) {
     </html>
   )
 }
-
-const geistSans = Geist({
-  subsets: ["latin"],
-  variable: "--font-sans",
-})
-
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-geist-mono",
-})
 
 export const metadata: Metadata = {
   description: "React Components",

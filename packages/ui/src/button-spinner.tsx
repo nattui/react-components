@@ -1,4 +1,4 @@
-import type { CSSProperties, JSX } from "react"
+import { type CSSProperties, type JSX } from "react"
 import styles from "@/button-spinner.module.css"
 
 export interface ButtonSpinnerProps {

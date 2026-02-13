@@ -17,7 +17,9 @@ export function CarouselCategory() {
 
   const bind = useDrag(
     ({ memo, movement: [mx] }) => {
-      if (!carousel) return
+      if (!carousel) {
+        return
+      }
 
       if (!memo) {
         memo = carousel.scrollLeft
@@ -48,7 +50,9 @@ export function CarouselCategory() {
 
   // Recalculate the max scroll distance whenever the carousel resizes
   useEffect(() => {
-    if (!carousel) return
+    if (!carousel) {
+      return
+    }
 
     const observer = new ResizeObserver(() => {
       setScrollXMax(carousel.scrollWidth - carousel.clientWidth)

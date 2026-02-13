@@ -28,20 +28,22 @@ export function ColorCombobox(props: ColorComboboxProps) {
   } = props
   const id = useId()
 
-  const handleValueChange = (value: string) => {
-    const body = document.body
+  function handleValueChange(value: string) {
+    const { body } = document
     const group = options as readonly string[]
-    if (!group || group.length === 0) return
+    if (!group || group.length === 0) {
+      return
+    }
     body.classList.remove(...group)
     body.classList.add(value)
 
     // // Toggle global dark mode when a gray "-dark" theme is selected
-    // const isGrayCombobox = group.some((cls) => cls.startsWith("color-gray-"))
-    // if (isGrayCombobox) {
-    //   if (value.endsWith("-dark")) {
-    //     body.classList.add("dark")
+    // Const isGrayCombobox = group.some((cls) => cls.startsWith("color-gray-"))
+    // If (isGrayCombobox) {
+    //   If (value.endsWith("-dark")) {
+    //     Body.classList.add("dark")
     //   } else {
-    //     body.classList.remove("dark")
+    //     Body.classList.remove("dark")
     //   }
     // }
 
