@@ -56,7 +56,6 @@ export const Password: Story = {
   },
 }
 
-// biome-ignore lint/suspicious/noShadowRestrictedNames: Clearly it is used for number input
 export const Number: Story = {
   args: {
     placeholder: "Enter a number...",

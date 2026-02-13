@@ -18,8 +18,18 @@
       "specifier": "eslint-plugin-perfectionist"
     }
   ],
-  "categories": {},
+  "categories": {
+    "correctness": "error",
+    "suspicious": "error"
+  },
   "rules": {
+    "eslint-plugin-import/group-exports": "allow",
+    "eslint-plugin-import/no-named-export": "allow",
+    "eslint-plugin-import/no-unassigned-import": "allow",
+    "eslint-plugin-react/jsx-max-depth": "allow",
+    "eslint-plugin-react/jsx-props-no-spreading": "allow",
+    "eslint-plugin-react/react-in-jsx-scope": "allow",
+    "eslint-plugin-unicorn/consistent-function-scoping": "allow",
     "perfectionist/sort-array-includes": "error",
     "perfectionist/sort-classes": "error",
     "perfectionist/sort-decorators": "error",
