@@ -20,6 +20,7 @@
   ],
   "categories": {
     "correctness": "error",
+    "perf": "error",
     "restriction": "error",
     "style": "error",
     "suspicious": "error"
@@ -33,10 +34,15 @@
     "eslint-plugin-import/no-unassigned-import": "allow",
     "eslint-plugin-import/prefer-default-export": "allow",
     "eslint-plugin-import/unambiguous": "allow",
+    "eslint-plugin-react-perf/jsx-no-jsx-as-prop": "allow",
+    "eslint-plugin-react-perf/jsx-no-new-array-as-prop": "allow",
+    "eslint-plugin-react-perf/jsx-no-new-function-as-prop": "allow",
+    "eslint-plugin-react-perf/jsx-no-new-object-as-prop": "allow",
     "eslint-plugin-react/button-has-type": "allow",
     "eslint-plugin-react/jsx-filename-extension": "allow",
     "eslint-plugin-react/jsx-max-depth": "allow",
     "eslint-plugin-react/jsx-props-no-spreading": "allow",
+    "eslint-plugin-react/no-array-index-key": "allow",
     "eslint-plugin-react/only-export-components": "allow",
     "eslint-plugin-react/react-in-jsx-scope": "allow",
     "eslint-plugin-unicorn/consistent-function-scoping": "allow",
