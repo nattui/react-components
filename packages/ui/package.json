@@ -39,7 +39,7 @@
     "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
-    "@base-ui/react": "catalog:*"
+    "@base-ui/react": "catalog:"
   },
   "devDependencies": {
     "@types/react": "catalog:",
