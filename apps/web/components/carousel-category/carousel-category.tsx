@@ -10,7 +10,7 @@ import { categories } from "@/components/carousel-category/categories"
 type CategoryValue = (typeof categories)[number]["value"]
 
 export function CarouselCategory() {
-  const [carousel, setCarousel] = useState<HTMLDivElement | null>(null)
+  const [carousel, setCarousel] = useState<HTMLDivElement | null>()
   const [scrollX, setScrollX] = useState(0)
   const [scrollXMax, setScrollXMax] = useState(0)
   const [selectedCategory, setSelectedCategory] = useState<CategoryValue>(categories[0].value)

@@ -69,7 +69,7 @@ export function Button(props: ButtonUnionProps): JSX.Element {
     >
       {isLoading && <ButtonSpinner />}
       {!isLoading && iconStart}
-      {isIconOnly ? isLoading ? <></> : children : <span>{children}</span>}
+      {isIconOnly ? isLoading ? undefined : children : <span>{children}</span>}
       {!isLoading && iconEnd}
     </button>
   )
