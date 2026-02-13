@@ -21,13 +21,11 @@ export function CarouselCategory() {
         return
       }
 
-      if (!memo) {
-        memo = carousel.scrollLeft
-      }
+      const initialScroll = memo ?? carousel.scrollLeft
 
-      carousel.scrollLeft = memo - mx
+      carousel.scrollLeft = initialScroll - mx
 
-      return memo
+      return initialScroll
     },
     {
       axis: "x",

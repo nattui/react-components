@@ -37,17 +37,9 @@ export function ColorCombobox(props: ColorComboboxProps) {
     body.classList.remove(...group)
     body.classList.add(value)
 
-    // // Toggle global dark mode when a gray "-dark" theme is selected
-    // Const isGrayCombobox = group.some((cls) => cls.startsWith("color-gray-"))
-    // If (isGrayCombobox) {
-    //   If (value.endsWith("-dark")) {
-    //     Body.classList.add("dark")
-    //   } else {
-    //     Body.classList.remove("dark")
-    //   }
-    // }
-
-    onChange?.(value)
+    if (onChange) {
+      onChange(value)
+    }
   }
 
   return (
