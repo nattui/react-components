@@ -5,7 +5,7 @@ import { Toggle, type ToggleProps } from "@base-ui/react"
 import { motion, type ValueAnimationTransition } from "motion/react"
 import type { Theme } from "@/components/toggle-group-theme"
 
-interface ToggleGroupThemeItemProps extends ToggleProps {
+interface ToggleGroupThemeItemProps extends ToggleProps<Theme> {
   icon: LucideIcon
   isActive: boolean
   label: string
