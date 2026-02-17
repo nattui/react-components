@@ -1,7 +1,7 @@
 "use client"
 
-import type { FocusEvent } from "react"
 import { Toggle, type ToggleProps } from "@base-ui/react"
+import type { FocusEvent } from "react"
 
 export function CarouselCategoryToggle(props: ToggleProps<string>) {
   const { children, value, ...rest } = props

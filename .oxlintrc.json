@@ -81,7 +81,8 @@
     "typescript/explicit-function-return-type": "allow",
     "typescript/explicit-module-boundary-types": "allow",
     "typescript/no-empty-interface": "allow",
-    "typescript/no-empty-object-type": "allow"
+    "typescript/no-empty-object-type": "allow",
+    "typescript/no-use-before-define": "allow"
   },
   "settings": {
     "jsx-a11y": {

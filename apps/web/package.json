@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "@base-ui/react": "catalog:",
-    "@nattui/icons": "npm:lucide-react@0.564.0",
+    "@nattui/icons": "npm:lucide-react@0.566.0",
     "@nattui/react-components": "workspace:*",
     "@nattui/tailwind-colors": "0.0.8",
     "@nattui/tailwind-exact": "0.0.5",

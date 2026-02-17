@@ -1,7 +1,7 @@
 "use client"
 
-import type { LucideIcon } from "@nattui/icons"
 import { Toggle, type ToggleProps } from "@base-ui/react"
+import type { LucideIcon } from "@nattui/icons"
 import { motion, type ValueAnimationTransition } from "motion/react"
 import type { Theme } from "@/components/toggle-group-theme"
 
