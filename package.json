@@ -12,7 +12,6 @@
     "check:format:fix": "oxfmt",
     "check:lint": "oxlint",
     "check:lint:fix": "oxlint --fix --fix-suggestions --fix-dangerously",
-    "check:lint:init": "oxlint --init",
     "check:type": "turbo check:type",
     "clean": "sh scripts/clean.sh",
     "dev": "turbo dev",
