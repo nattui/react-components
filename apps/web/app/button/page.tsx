@@ -3,7 +3,7 @@ import { Button, Column } from "@nattui/react-components"
 
 export default function ButtonPage() {
   return (
-    <Column className="gap-16">
+    <Column gap={16}>
       <Button className="absolute top-64 right-64">Absolute</Button>
 
       <p>Variant</p>
