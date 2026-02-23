@@ -7,7 +7,7 @@ export default function ButtonPage() {
       <Button className="absolute top-64 right-64">Absolute</Button>
 
       <p>Variant</p>
-      <Row className="flex-wrap items-center" gap={16}>
+      <Row alignItems="center" flexWrap="wrap" gap={16}>
         <Button variant="accent">Accent</Button>
         <Button variant="primary">Primary</Button>
         <Button variant="secondary">Secondary</Button>
@@ -15,7 +15,7 @@ export default function ButtonPage() {
       </Row>
 
       <p>Size</p>
-      <Row className="flex-wrap items-center" gap={16}>
+      <Row alignItems="center" flexWrap="wrap" gap={16}>
         <Button size={32}>Add goal</Button>
         <Button size={36}>Add goal</Button>
         <Button size={40}>Add goal</Button>
@@ -24,7 +24,7 @@ export default function ButtonPage() {
       </Row>
 
       <p>Rounded</p>
-      <Row className="flex-wrap items-center" gap={16}>
+      <Row alignItems="center" flexWrap="wrap" gap={16}>
         <Button isRounded variant="accent">
           Add goal
         </Button>
@@ -40,7 +40,7 @@ export default function ButtonPage() {
       </Row>
 
       <p>Disabled</p>
-      <Row className="flex-wrap items-center" gap={16}>
+      <Row alignItems="center" flexWrap="wrap" gap={16}>
         <Button isDisabled variant="accent">
           Add goal
         </Button>
@@ -56,7 +56,7 @@ export default function ButtonPage() {
       </Row>
 
       <p>Loading</p>
-      <Row className="flex-wrap items-center" gap={16}>
+      <Row alignItems="center" flexWrap="wrap" gap={16}>
         <Button isLoading variant="accent">
           Add goal
         </Button>
@@ -72,7 +72,7 @@ export default function ButtonPage() {
       </Row>
 
       <p>Active</p>
-      <Row className="flex-wrap items-center" gap={16}>
+      <Row alignItems="center" flexWrap="wrap" gap={16}>
         <Button isActive variant="accent">
           Add goal
         </Button>
@@ -88,7 +88,7 @@ export default function ButtonPage() {
       </Row>
 
       <p>Icon</p>
-      <Row className="flex-wrap items-center" gap={16}>
+      <Row alignItems="center" flexWrap="wrap" gap={16}>
         <Button
           iconEnd={<LucideArrowRight size={16} />}
           iconStart={<LucideArrowLeft size={16} />}
@@ -120,14 +120,14 @@ export default function ButtonPage() {
       </Row>
 
       <p>Full width</p>
-      <Row className="flex-wrap items-center" gap={16}>
+      <Row alignItems="center" flexWrap="wrap" gap={16}>
         <Button className="max-w-320" isFullWidth>
           Add goal
         </Button>
       </Row>
 
       <p>Icon only</p>
-      <Row className="flex-wrap items-center" gap={16}>
+      <Row alignItems="center" flexWrap="wrap" gap={16}>
         <Button isIconOnly variant="accent">
           <LucideDownload size={16} />
         </Button>
@@ -143,7 +143,7 @@ export default function ButtonPage() {
       </Row>
 
       <p>Icon only size</p>
-      <Row className="flex-wrap items-center" gap={16}>
+      <Row alignItems="center" flexWrap="wrap" gap={16}>
         <Button isIconOnly size={32}>
           <LucideDownload size={16} />
         </Button>
@@ -162,7 +162,7 @@ export default function ButtonPage() {
       </Row>
 
       <p>Icon only loading</p>
-      <Row className="flex-wrap items-center" gap={16}>
+      <Row alignItems="center" flexWrap="wrap" gap={16}>
         <Button isIconOnly isLoading size={32}>
           <LucideDownload size={16} />
         </Button>

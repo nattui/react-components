@@ -1,4 +1,4 @@
-import { Button, Label, Spacer } from "@nattui/react-components"
+import { Button, Column, Label, Spacer } from "@nattui/react-components"
 import { ColorCombobox } from "@/components/color-combobox"
 import { ToggleGroupTheme } from "@/components/toggle-group-theme"
 
@@ -41,7 +41,7 @@ export default function ComboboxPage() {
   ] as const
 
   return (
-    <div className="flex flex-col">
+    <Column>
       <Label>Theme</Label>
       <Spacer className="h-4" />
       <ToggleGroupTheme />
@@ -63,6 +63,6 @@ export default function ComboboxPage() {
       <Button variant="accent">Search</Button>
       <Spacer className="h-16" />
       <Button variant="primary">Search</Button>
-    </div>
+    </Column>
   )
 }

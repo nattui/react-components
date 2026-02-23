@@ -1,10 +1,10 @@
 "use client"
 
-import { Column, Label, Switch } from "@nattui/react-components"
+import { Column, Label, Row, Switch } from "@nattui/react-components"
 
 export default function SwitchPage() {
   return (
-    <Column className="gap-16">
+    <Column gapY={16}>
       <Switch />
       <Switch isDefaultChecked />
       <Switch isDisabled />
@@ -14,12 +14,12 @@ export default function SwitchPage() {
       <Switch isRequired />
 
       <Label>Size</Label>
-      <div className="flex flex-wrap items-center gap-16">
+      <Row alignItems="center" flexWrap="wrap" gap={16}>
         <Switch size={14} />
         <Switch size={24} />
-      </div>
+      </Row>
 
-      <Label className="flex items-center gap-8" htmlFor="switch-with-label">
+      <Label className="flex items-center gap-x-8" htmlFor="switch-with-label">
         Switch with label
         <Switch id="switch-with-label" />
       </Label>

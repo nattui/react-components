@@ -7,7 +7,7 @@ import {
   LucideLogIn,
   LucideMail,
 } from "@nattui/icons"
-import { Button, Column, Input, Label, Spacer } from "@nattui/react-components"
+import { Button, Column, Input, Label, Row, Spacer } from "@nattui/react-components"
 
 export default function InputPage() {
   return (
@@ -74,7 +74,7 @@ export default function InputPage() {
 
       <Label htmlFor="input-with-end-icon-button">Input with end icon button</Label>
       <Spacer height={4} />
-      <div className="flex">
+      <Row>
         <Input
           className="rounded-r-none! hover:z-10 focus-visible:z-20"
           id="input-with-end-icon-button"
@@ -92,7 +92,7 @@ export default function InputPage() {
             size={16}
           />
         </Button>
-      </div>
+      </Row>
       <Spacer height={64} />
 
       <Label htmlFor="active">Active</Label>
