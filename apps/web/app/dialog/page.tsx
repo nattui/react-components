@@ -1,9 +1,9 @@
 import { Dialog } from "@base-ui/react/dialog"
-import { Button } from "@nattui/react-components"
+import { Button, Column } from "@nattui/react-components"
 
 export default function DialogPage() {
   return (
-    <div className="flex flex-col">
+    <Column>
       <Dialog.Root>
         <Dialog.Trigger render={<Button>View notifications</Button>} />
         <Dialog.Portal>
@@ -19,6 +19,6 @@ export default function DialogPage() {
           </Dialog.Popup>
         </Dialog.Portal>
       </Dialog.Root>
-    </div>
+    </Column>
   )
 }

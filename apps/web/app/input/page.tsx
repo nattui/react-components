@@ -7,11 +7,11 @@ import {
   LucideLogIn,
   LucideMail,
 } from "@nattui/icons"
-import { Button, Input, Label, Spacer } from "@nattui/react-components"
+import { Button, Column, Input, Label, Spacer } from "@nattui/react-components"
 
 export default function InputPage() {
   return (
-    <div className="flex w-full max-w-320 flex-col">
+    <Column className="w-full max-w-320">
       <Label htmlFor="email">Email</Label>
       <Spacer height={4} />
       <div className="relative">
@@ -108,6 +108,6 @@ export default function InputPage() {
       <Label htmlFor="invalid">Invalid</Label>
       <Spacer height={4} />
       <Input id="invalid" isInvalid placeholder="Invalid" type="url" />
-    </div>
+    </Column>
   )
 }

@@ -1,10 +1,10 @@
 import { LucideArrowLeft, LucideArrowRight, LucideDownload } from "@nattui/icons"
-import { Button } from "@nattui/react-components"
+import { Button, Column } from "@nattui/react-components"
 
 export default function ButtonPage() {
   return (
-    <div className="flex flex-col gap-16">
-      <Button className="absolute! top-64 right-64">Absolute</Button>
+    <Column className="gap-16">
+      <Button className="absolute top-64 right-64">Absolute</Button>
 
       <p>Variant</p>
       <div className="flex flex-wrap items-center gap-16">
@@ -179,6 +179,6 @@ export default function ButtonPage() {
           <LucideDownload size={18} />
         </Button>
       </div>
-    </div>
+    </Column>
   )
 }
