@@ -22,13 +22,7 @@ export function Spacer(props: SpacerProps) {
     ...(height === undefined ? {} : { height }),
   }
 
-  return (
-    <div
-      {...rest}
-      className={`${styles.spacer} ${combinedClassName}`.trim()}
-      style={combinedStyle}
-    />
-  )
+  return <div {...rest} className={combinedClassName} style={combinedStyle} />
 }
 
 export const SPACER_CLASS_NAME = {
