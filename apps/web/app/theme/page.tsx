@@ -43,25 +43,25 @@ export default function ComboboxPage() {
   return (
     <Column>
       <Label>Theme</Label>
-      <Spacer className="h-4" />
+      <Spacer height={4} />
       <ToggleGroupTheme />
-      <Spacer className="h-16" />
+      <Spacer height={16} />
 
       <ColorCombobox
         label="Gray palette"
         options={GRAY_OPTIONS}
         placeholder="e.g. color-gray-mauve"
       />
-      <Spacer className="h-16" />
+      <Spacer height={16} />
       <ColorCombobox
         label="Primary palette"
         options={PRIMARY_OPTIONS}
         placeholder="e.g. color-primary-red"
       />
-      <Spacer className="h-16" />
+      <Spacer height={16} />
 
       <Button variant="accent">Search</Button>
-      <Spacer className="h-16" />
+      <Spacer height={16} />
       <Button variant="primary">Search</Button>
     </Column>
   )
