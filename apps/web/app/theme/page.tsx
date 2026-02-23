@@ -44,7 +44,9 @@ export default function ComboboxPage() {
     <Column>
       <Label>Theme</Label>
       <Spacer height={4} />
-      <ToggleGroupTheme />
+      <div className="w-full overflow-x-auto">
+        <ToggleGroupTheme />
+      </div>
       <Spacer height={16} />
 
       <ColorCombobox
