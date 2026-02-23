@@ -1,8 +1,8 @@
 "use client"
 
 import { ToggleGroup } from "@base-ui/react"
-import { useDrag } from "@use-gesture/react"
-import { type UIEvent, useEffect, useState } from "react"
+import { useDrag, useScroll } from "@use-gesture/react"
+import { useEffect, useState } from "react"
 import { CarouselCategoryScrollIndicator } from "@/components/carousel-category/carousel-category-scroll-indicator"
 import { CarouselCategoryToggle } from "@/components/carousel-category/carousel-category-toggle"
 import { categories } from "@/components/carousel-category/categories"
@@ -15,7 +15,7 @@ export function CarouselCategory() {
   const [scrollXMax, setScrollXMax] = useState(0)
   const [selectedCategory, setSelectedCategory] = useState<CategoryValue>(categories[0].value)
 
-  const bind = useDrag(
+  const bindDrag = useDrag(
     ({ memo, movement: [mx] }) => {
       if (!carousel) {
         return
@@ -36,9 +36,9 @@ export function CarouselCategory() {
     },
   )
 
-  function onScroll(event: UIEvent<HTMLDivElement>) {
-    setScrollX(event.currentTarget.scrollLeft)
-  }
+  const bindScroll = useScroll(({ xy: [scrollLeft] }) => {
+    setScrollX(scrollLeft)
+  })
 
   function onValueChange(value: CategoryValue[]) {
     if (value.length > 0) {
@@ -67,10 +67,10 @@ export function CarouselCategory() {
     <div className="relative overflow-hidden">
       {/* Scrollable */}
       <div
+        {...bindDrag()}
+        {...bindScroll()}
         className="scrollbar-hidden touch-pan-x overflow-x-auto"
-        onScroll={onScroll}
         ref={setCarousel}
-        {...bind()}
       >
         <ToggleGroup
           className="flex gap-x-12 py-12"
