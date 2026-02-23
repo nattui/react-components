@@ -36,13 +36,13 @@ export function Switch(props: SwitchProps): JSX.Element {
 
   return (
     <BaseSwitch.Root
+      {...rest}
       checked={isChecked}
       className={combinedClassName}
       defaultChecked={isDefaultChecked}
       disabled={isDisabled}
       readOnly={isReadOnly}
       required={isRequired}
-      {...rest}
     >
       <BaseSwitch.Thumb className={styles.switch__thumb} />
     </BaseSwitch.Root>

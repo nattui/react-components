@@ -1,10 +1,13 @@
-import type { ComponentProps } from "react"
+import type { ComponentProps, CSSProperties } from "react"
 import styles from "@/spacer.module.css"
 
-export interface SpacerProps extends ComponentProps<"div"> {}
+export interface SpacerProps extends Omit<ComponentProps<"div">, "children"> {
+  height?: CSSProperties["height"]
+  width?: CSSProperties["width"]
+}
 
 export function Spacer(props: SpacerProps) {
-  const { className: customClassName = "", ...rest } = props
+  const { className: customClassName = "", height, style: customStyle, width, ...rest } = props
 
   const combinedClassName = `
     ${SPACER_CLASS_NAME.BASE}
@@ -13,7 +16,19 @@ export function Spacer(props: SpacerProps) {
     .replaceAll(/\s+/g, " ")
     .trim()
 
-  return <div className={`${styles.spacer} ${combinedClassName}`.trim()} {...rest} />
+  const combinedStyle = {
+    ...customStyle,
+    ...(width === undefined ? {} : { width }),
+    ...(height === undefined ? {} : { height }),
+  }
+
+  return (
+    <div
+      {...rest}
+      className={`${styles.spacer} ${combinedClassName}`.trim()}
+      style={combinedStyle}
+    />
+  )
 }
 
 export const SPACER_CLASS_NAME = {

@@ -61,11 +61,11 @@ export function Button(props: ButtonUnionProps): JSX.Element {
 
   return (
     <button
+      {...rest}
       aria-pressed={isActive}
       className={combinedClassName}
       disabled={isDisabled || isLoading}
       type={type}
-      {...rest}
     >
       {isLoading && <ButtonSpinner />}
       {!isLoading && iconStart}

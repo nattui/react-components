@@ -44,6 +44,7 @@ export function Input(props: InputProps): JSX.Element {
 
   return (
     <input
+      {...rest}
       className={combinedClassName}
       data-is-active={isActive}
       data-is-invalid={isInvalid}
@@ -52,7 +53,6 @@ export function Input(props: InputProps): JSX.Element {
       readOnly={isReadOnly}
       required={isRequired}
       type={type}
-      {...rest}
     />
   )
 }
