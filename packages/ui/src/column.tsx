@@ -1,7 +1,8 @@
-import type { ComponentProps, CSSProperties, JSX } from "react"
+import { createElement, type ComponentProps, type CSSProperties, type JSX } from "react"
 import styles from "@/column.module.css"
 
 export interface ColumnProps extends ComponentProps<"div"> {
+  as?: keyof JSX.IntrinsicElements
   gap?: CSSProperties["gap"]
   gapX?: CSSProperties["columnGap"]
   gapY?: CSSProperties["rowGap"]
@@ -9,6 +10,7 @@ export interface ColumnProps extends ComponentProps<"div"> {
 
 export function Column(props: ColumnProps): JSX.Element {
   const {
+    as = "div",
     className: customClassName = "",
     gap = undefined,
     gapX = undefined,
@@ -16,6 +18,8 @@ export function Column(props: ColumnProps): JSX.Element {
     style: customStyle,
     ...rest
   } = props
+
+  const Component = as
 
   const combinedClassName = `
     ${COLUMN_CLASS_NAME.BASE}
@@ -31,7 +35,11 @@ export function Column(props: ColumnProps): JSX.Element {
     ...(gapY === undefined ? {} : { rowGap: gapY }),
   }
 
-  return <div {...rest} className={combinedClassName} style={combinedStyle} />
+  return createElement(Component, {
+    ...rest,
+    className: combinedClassName,
+    style: combinedStyle,
+  })
 }
 
 export const COLUMN_CLASS_NAME = {
