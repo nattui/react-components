@@ -207,10 +207,10 @@ export default function ButtonPage() {
       <Spacer height={4} />
       <Row alignItems="center" flexWrap="wrap" gap={16}>
         <ButtonLink href="https://google.com" target="_blank" variant="accent">
-          Google
+          google.com
         </ButtonLink>
         <ButtonLink as={Link} href="/input" variant="accent">
-          Home
+          /input
         </ButtonLink>
       </Row>
     </Column>
