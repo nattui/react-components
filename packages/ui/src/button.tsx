@@ -2,19 +2,19 @@ import type { ComponentProps, JSX, ReactNode } from "react"
 import { ButtonSpinner } from "@/button-spinner"
 import styles from "@/button.module.css"
 
-export interface ButtonIconProps extends ButtonPropsInternal {
+export interface ButtonIconProps extends ButtonInternalProps {
   children?: ReactNode
   iconEnd?: never
   iconStart?: never
   isIconOnly: true
 }
 
-export interface ButtonProps extends ButtonPropsInternal {
+export interface ButtonProps extends ButtonInternalProps {
   children?: string | string[]
   isIconOnly?: false
 }
 
-interface ButtonPropsInternal extends Omit<ComponentProps<"button">, "aria-pressed" | "disabled"> {
+interface ButtonInternalProps extends Omit<ComponentProps<"button">, "aria-pressed" | "disabled"> {
   iconEnd?: ReactNode
   iconStart?: ReactNode
   isActive?: boolean

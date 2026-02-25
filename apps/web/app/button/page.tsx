@@ -1,5 +1,6 @@
 import { LucideArrowLeft, LucideArrowRight, LucideDownload } from "@nattui/icons"
-import { Button, Column, Row } from "@nattui/react-components"
+import { Button, ButtonLink, Column, Row } from "@nattui/react-components"
+import Link from "next/link"
 
 export default function ButtonPage() {
   return (
@@ -178,6 +179,16 @@ export default function ButtonPage() {
         <Button isIconOnly isLoading size={48}>
           <LucideDownload size={18} />
         </Button>
+      </Row>
+
+      <p>Link button</p>
+      <Row alignItems="center" flexWrap="wrap" gap={16}>
+        <ButtonLink href="https://google.com" target="_blank">
+          Google
+        </ButtonLink>
+        <ButtonLink as={Link} href="/input">
+          Home
+        </ButtonLink>
       </Row>
     </Column>
   )
