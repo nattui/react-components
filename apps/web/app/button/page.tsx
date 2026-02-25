@@ -1,21 +1,24 @@
 import { LucideArrowLeft, LucideArrowRight, LucideDownload } from "@nattui/icons"
-import { Button, ButtonLink, Column, Row } from "@nattui/react-components"
+import { Button, ButtonLink, Column, Label, Row, Spacer } from "@nattui/react-components"
 import Link from "next/link"
 
 export default function ButtonPage() {
   return (
-    <Column gapY={16}>
+    <Column>
       <Button className="absolute top-64 right-64">Absolute</Button>
 
-      <p>Variant</p>
+      <Label>Variant</Label>
+      <Spacer height={4} />
       <Row alignItems="center" flexWrap="wrap" gap={16}>
         <Button variant="accent">Accent</Button>
         <Button variant="primary">Primary</Button>
         <Button variant="secondary">Secondary</Button>
         <Button variant="ghost">Ghost</Button>
       </Row>
+      <Spacer height={16} />
 
-      <p>Size</p>
+      <Label>Size</Label>
+      <Spacer height={4} />
       <Row alignItems="center" flexWrap="wrap" gap={16}>
         <Button size={32}>Add goal</Button>
         <Button size={36}>Add goal</Button>
@@ -23,8 +26,10 @@ export default function ButtonPage() {
         <Button size={44}>Add goal</Button>
         <Button size={48}>Add goal</Button>
       </Row>
+      <Spacer height={16} />
 
-      <p>Rounded</p>
+      <Label>Rounded</Label>
+      <Spacer height={4} />
       <Row alignItems="center" flexWrap="wrap" gap={16}>
         <Button isRounded variant="accent">
           Add goal
@@ -39,8 +44,10 @@ export default function ButtonPage() {
           Add goal
         </Button>
       </Row>
+      <Spacer height={16} />
 
-      <p>Disabled</p>
+      <Label>Disabled</Label>
+      <Spacer height={4} />
       <Row alignItems="center" flexWrap="wrap" gap={16}>
         <Button isDisabled variant="accent">
           Add goal
@@ -55,8 +62,10 @@ export default function ButtonPage() {
           Add goal
         </Button>
       </Row>
+      <Spacer height={16} />
 
-      <p>Loading</p>
+      <Label>Loading</Label>
+      <Spacer height={4} />
       <Row alignItems="center" flexWrap="wrap" gap={16}>
         <Button isLoading variant="accent">
           Add goal
@@ -71,8 +80,10 @@ export default function ButtonPage() {
           Add goal
         </Button>
       </Row>
+      <Spacer height={16} />
 
-      <p>Active</p>
+      <Label>Active</Label>
+      <Spacer height={4} />
       <Row alignItems="center" flexWrap="wrap" gap={16}>
         <Button isActive variant="accent">
           Add goal
@@ -87,8 +98,10 @@ export default function ButtonPage() {
           Add goal
         </Button>
       </Row>
+      <Spacer height={16} />
 
-      <p>Icon</p>
+      <Label>Icon</Label>
+      <Spacer height={4} />
       <Row alignItems="center" flexWrap="wrap" gap={16}>
         <Button
           iconEnd={<LucideArrowRight size={16} />}
@@ -119,15 +132,19 @@ export default function ButtonPage() {
           Add goal
         </Button>
       </Row>
+      <Spacer height={16} />
 
-      <p>Full width</p>
+      <Label>Full width</Label>
+      <Spacer height={4} />
       <Row alignItems="center" flexWrap="wrap" gap={16}>
         <Button className="max-w-320" isFullWidth>
           Add goal
         </Button>
       </Row>
+      <Spacer height={16} />
 
-      <p>Icon only</p>
+      <Label>Icon only</Label>
+      <Spacer height={4} />
       <Row alignItems="center" flexWrap="wrap" gap={16}>
         <Button isIconOnly variant="accent">
           <LucideDownload size={16} />
@@ -142,8 +159,10 @@ export default function ButtonPage() {
           <LucideDownload size={16} />
         </Button>
       </Row>
+      <Spacer height={16} />
 
-      <p>Icon only size</p>
+      <Label>Icon only size</Label>
+      <Spacer height={4} />
       <Row alignItems="center" flexWrap="wrap" gap={16}>
         <Button isIconOnly size={32}>
           <LucideDownload size={16} />
@@ -161,8 +180,10 @@ export default function ButtonPage() {
           <LucideDownload size={18} />
         </Button>
       </Row>
+      <Spacer height={16} />
 
-      <p>Icon only loading</p>
+      <Label>Icon only loading</Label>
+      <Spacer height={4} />
       <Row alignItems="center" flexWrap="wrap" gap={16}>
         <Button isIconOnly isLoading size={32}>
           <LucideDownload size={16} />
@@ -180,8 +201,10 @@ export default function ButtonPage() {
           <LucideDownload size={18} />
         </Button>
       </Row>
+      <Spacer height={16} />
 
-      <p>Link button</p>
+      <Label>Link button</Label>
+      <Spacer height={4} />
       <Row alignItems="center" flexWrap="wrap" gap={16}>
         <ButtonLink href="https://google.com" target="_blank" variant="accent">
           Google
