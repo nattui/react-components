@@ -24,8 +24,8 @@
 }
 
 /* When pressed, move the button down */
-.button:active:enabled,
-.button[aria-pressed="true"]:enabled {
+.button:active:not(:disabled),
+.button[aria-pressed="true"]:not(:disabled) {
   translate: 0 1px;
 }
 
@@ -106,9 +106,9 @@
   );
 }
 
-.button__variant_accent:active:enabled,
-.button__variant_accent:hover:enabled,
-.button__variant_accent[aria-pressed="true"]:enabled {
+.button__variant_accent:active:not(:disabled),
+.button__variant_accent:hover:not(:disabled),
+.button__variant_accent[aria-pressed="true"]:not(:disabled) {
   background-color: color-mix(in oklab, var(--color-primary-9) 100%, #ffffff 10%);
 }
 
@@ -126,9 +126,9 @@
   background-color: transparent;
 }
 
-.button__variant_ghost:active:enabled,
-.button__variant_ghost:hover:enabled,
-.button__variant_ghost[aria-pressed="true"]:enabled {
+.button__variant_ghost:active:not(:disabled),
+.button__variant_ghost:hover:not(:disabled),
+.button__variant_ghost[aria-pressed="true"]:not(:disabled) {
   background-color: var(--color-gray-3);
 }
 
@@ -147,9 +147,9 @@
   );
 }
 
-.button__variant_primary:active:enabled,
-.button__variant_primary:hover:enabled,
-.button__variant_primary[aria-pressed="true"]:enabled {
+.button__variant_primary:active:not(:disabled),
+.button__variant_primary:hover:not(:disabled),
+.button__variant_primary[aria-pressed="true"]:not(:disabled) {
   background-color: color-mix(in oklab, var(--color-gray-dark-2) 100%, #ffffff 10%);
 }
 
@@ -163,9 +163,9 @@
   );
 }
 
-:global(.dark) .button__variant_primary:active:enabled,
-:global(.dark) .button__variant_primary:hover:enabled,
-:global(.dark) .button__variant_primary[aria-pressed="true"]:enabled {
+:global(.dark) .button__variant_primary:active:not(:disabled),
+:global(.dark) .button__variant_primary:hover:not(:disabled),
+:global(.dark) .button__variant_primary[aria-pressed="true"]:not(:disabled) {
   background-color: color-mix(in oklab, var(--color-gray-light-2) 100%, #000000 10%);
 }
 
@@ -181,9 +181,9 @@
   box-shadow: 0 0 0 1px var(--color-gray-4) inset;
 }
 
-.button__variant_secondary:active:enabled,
-.button__variant_secondary:hover:enabled,
-.button__variant_secondary[aria-pressed="true"]:enabled {
+.button__variant_secondary:active:not(:disabled),
+.button__variant_secondary:hover:not(:disabled),
+.button__variant_secondary[aria-pressed="true"]:not(:disabled) {
   background-color: var(--color-gray-2);
   box-shadow: 0 0 0 1px var(--color-gray-6) inset;
 }
