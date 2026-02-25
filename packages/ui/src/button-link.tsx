@@ -9,7 +9,6 @@ interface ButtonLinkInternalProps extends Pick<
   "isFullWidth" | "isIconOnly" | "isRounded" | "size" | "variant"
 > {
   as?: ElementType
-  className?: string
 }
 
 export function ButtonLink<ComponentType extends ElementType = "a">(
