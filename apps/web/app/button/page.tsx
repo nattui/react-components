@@ -186,7 +186,7 @@ export default function ButtonPage() {
         <ButtonLink href="https://google.com" target="_blank" variant="accent">
           Google
         </ButtonLink>
-        <ButtonLink as={Link} href="/input" variant="primary">
+        <ButtonLink as={Link} href="/input" variant="accent">
           Home
         </ButtonLink>
       </Row>
