@@ -1,7 +1,16 @@
-import { createElement, type ComponentProps, type CSSProperties, type JSX } from "react"
+import {
+  createElement,
+  type ComponentProps,
+  type CSSProperties,
+  type ElementType,
+  type JSX,
+} from "react"
 import styles from "@/row.module.css"
 
-export interface RowProps extends ComponentProps<"div"> {
+export type RowProps<ComponentType extends ElementType = "div"> = ComponentProps<ComponentType> &
+  RowInternalProps
+
+interface RowInternalProps {
   alignItems?: CSSProperties["alignItems"]
   as?: keyof JSX.IntrinsicElements
   flexWrap?: CSSProperties["flexWrap"]
