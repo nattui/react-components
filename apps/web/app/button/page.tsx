@@ -183,10 +183,10 @@ export default function ButtonPage() {
 
       <p>Link button</p>
       <Row alignItems="center" flexWrap="wrap" gap={16}>
-        <ButtonLink href="https://google.com" target="_blank">
+        <ButtonLink href="https://google.com" target="_blank" variant="accent">
           Google
         </ButtonLink>
-        <ButtonLink as={Link} href="/input">
+        <ButtonLink as={Link} href="/input" variant="primary">
           Home
         </ButtonLink>
       </Row>
