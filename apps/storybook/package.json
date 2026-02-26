@@ -11,11 +11,11 @@
     "react-dom": "catalog:"
   },
   "devDependencies": {
-    "@storybook/react-vite": "10.2.12",
+    "@storybook/react-vite": "10.2.13",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "@vitejs/plugin-react": "5.1.4",
-    "storybook": "10.2.12",
+    "storybook": "10.2.13",
     "typescript": "catalog:",
     "vite": "7.3.1"
   }
