@@ -7,7 +7,7 @@ export default function TestPage() {
     <Row
       alignItems="center"
       as="section"
-      className="border-gray-4 bg-gray-2 relative h-36 w-full border border-solid px-48 before:pointer-events-none before:absolute before:inset-0 before:bg-[url(/images/logomark.svg)] before:bg-center before:bg-repeat before:opacity-10 before:content-['']"
+      className="bg-gray-2 relative h-36 w-full px-48 before:pointer-events-none before:absolute before:inset-0 before:bg-[url(/images/logomark.svg)] before:bg-center before:bg-repeat before:opacity-10 before:content-['']"
       gapX={4}
       justifyContent="center"
     >
@@ -25,7 +25,7 @@ export default function TestPage() {
       </Row>
 
       {/* Close */}
-      <Button className="absolute top-0 right-0" isIconOnly size={32} variant="ghost">
+      <Button className="absolute top-2 right-2" isIconOnly size={32} variant="ghost">
         <LucideX className="text-gray-11" size={16} />
       </Button>
     </Row>
