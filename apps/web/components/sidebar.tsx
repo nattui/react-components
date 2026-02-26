@@ -31,6 +31,10 @@ const links: {
     href: "/theme",
     label: "Theme",
   },
+  {
+    href: "/test",
+    label: "Test",
+  },
 ]
 
 export function Sidebar() {
