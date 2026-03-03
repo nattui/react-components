@@ -9,7 +9,7 @@ export function DropdownMenuLabel(props: DropdownMenuLabelProps) {
 
   return (
     <MenuPrimitive.GroupLabel
-      className={`text-muted-foreground px-1.5 py-1 text-xs font-medium data-inset:pl-7 ${className}`}
+      className={`text-gray-11 px-6 py-4 text-12 font-500 data-inset:pl-28 ${className}`}
       data-inset={inset}
       data-slot="dropdown-menu-label"
       {...rest}

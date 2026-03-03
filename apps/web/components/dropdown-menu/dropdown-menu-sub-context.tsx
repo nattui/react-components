@@ -17,7 +17,7 @@ export function DropdownMenuSubContent(props: DropdownMenuSubContentProps) {
     <DropdownMenuContent
       align={align}
       alignOffset={alignOffset}
-      className={`data-open:animate-in data-closed:animate-out data-closed:fade-out-0 data-open:fade-in-0 data-closed:zoom-out-95 data-open:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 ring-foreground/10 bg-popover text-popover-foreground w-auto min-w-[96px] rounded-lg p-1 shadow-lg ring-1 duration-100 ${className}`}
+      className={`data-open:animate-in data-closed:animate-out data-closed:fade-out-0 data-open:fade-in-0 data-closed:zoom-out-95 data-open:zoom-in-95 data-[side=bottom]:slide-in-from-top-8 data-[side=left]:slide-in-from-right-8 data-[side=right]:slide-in-from-left-8 data-[side=top]:slide-in-from-bottom-8 shadow-gray-6 outline-gray-6 bg-gray-1 text-gray-11 w-auto min-w-96 rounded-8 p-4 shadow-5 outline-1 duration-100 ${className}`}
       data-slot="menu-sub-content"
       side={side}
       sideOffset={sideOffset}

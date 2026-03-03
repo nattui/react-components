@@ -25,7 +25,7 @@ export function DropdownMenuContent(props: DropdownMenuContentProps) {
         sideOffset={sideOffset}
       >
         <MenuPrimitive.Popup
-          className={`data-open:animate-in data-closed:animate-out data-closed:fade-out-0 data-open:fade-in-0 data-closed:zoom-out-95 data-open:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 ring-foreground/10 bg-popover text-popover-foreground data-[side=inline-start]:slide-in-from-right-2 data-[side=inline-end]:slide-in-from-left-2 z-50 max-h-(--available-height) w-(--anchor-width) min-w-32 origin-(--transform-origin) overflow-x-hidden overflow-y-auto rounded-lg p-1 shadow-md ring-1 duration-100 outline-none data-closed:overflow-hidden ${className}`}
+          className={`data-open:animate-in data-closed:animate-out data-closed:fade-out-0 data-open:fade-in-0 data-closed:zoom-out-95 data-open:zoom-in-95 data-[side=bottom]:slide-in-from-top-8 data-[side=left]:slide-in-from-right-8 data-[side=right]:slide-in-from-left-8 data-[side=top]:slide-in-from-bottom-8 data-[side=inline-start]:slide-in-from-right-8 data-[side=inline-end]:slide-in-from-left-8 shadow-gray-6 outline-gray-6 bg-gray-1 text-gray-11 z-50 max-h-(--available-height) w-(--anchor-width) min-w-128 origin-(--transform-origin) overflow-x-hidden overflow-y-auto rounded-8 p-4 shadow-4 outline-1 duration-100 data-closed:overflow-hidden ${className}`}
           data-slot="dropdown-menu-content"
           {...rest}
         />

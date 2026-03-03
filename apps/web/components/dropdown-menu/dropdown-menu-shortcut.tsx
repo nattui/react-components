@@ -7,7 +7,7 @@ export function DropdownMenuShortcut(props: DropdownMenuShortcutProps) {
 
   return (
     <span
-      className={`text-muted-foreground group-focus/menu-item:text-accent-foreground ml-auto text-xs tracking-widest ${className}`}
+      className={`text-gray-10 group-focus/dropdown-menu-item:text-gray-12 ml-auto text-12 tracking-p01 ${className}`}
       data-slot="menu-shortcut"
       {...rest}
     />

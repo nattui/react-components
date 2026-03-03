@@ -7,7 +7,7 @@ export function DropdownMenuSeparator(props: DropdownMenuSeparatorProps) {
 
   return (
     <MenuPrimitive.Separator
-      className={`bg-border -mx-1 my-1 h-px ${className}`}
+      className={`bg-gray-6 -mx-4 my-4 h-1 ${className}`}
       data-slot="dropdown-menu-separator"
       {...rest}
     />

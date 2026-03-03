@@ -10,7 +10,7 @@ export function DropdownMenuItem(props: DropdownMenuItemProps) {
 
   return (
     <MenuPrimitive.Item
-      className={`focus:bg-accent focus:text-accent-foreground data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 dark:data-[variant=destructive]:focus:bg-destructive/20 data-[variant=destructive]:focus:text-destructive data-[variant=destructive]:*:[svg]:text-destructive not-data-[variant=destructive]:focus:**:text-accent-foreground group/dropdown-menu-item relative flex cursor-default items-center gap-1.5 rounded-md px-1.5 py-1 text-sm outline-hidden select-none data-disabled:pointer-events-none data-disabled:opacity-50 data-inset:pl-7 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 ${className}`}
+      className={`focus:bg-gray-3 focus:text-gray-12 data-[variant=destructive]:text-red-11 data-[variant=destructive]:focus:bg-red-3 data-[variant=destructive]:focus:text-red-11 data-[variant=destructive]:*:[svg]:text-red-11 not-data-[variant=destructive]:focus:**:text-gray-12 group/dropdown-menu-item relative flex cursor-default items-center gap-6 rounded-6 px-6 py-4 text-14 outline-hidden select-none data-disabled:pointer-events-none data-disabled:opacity-50 data-inset:pl-28 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-16 ${className}`}
       data-inset={inset}
       data-slot="dropdown-menu-item"
       data-variant={variant}
