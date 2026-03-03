@@ -5,7 +5,7 @@ interface DropdownMenuLabelProps extends MenuPrimitive.GroupLabel.Props {
 }
 
 export function DropdownMenuLabel(props: DropdownMenuLabelProps) {
-  const { className, inset, ...rest } = props
+  const { className = "", inset, ...rest } = props
 
   return (
     <MenuPrimitive.GroupLabel

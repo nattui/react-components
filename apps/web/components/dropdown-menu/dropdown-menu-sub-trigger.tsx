@@ -6,7 +6,7 @@ interface DropdownMenuSubTriggerProps extends MenuPrimitive.SubmenuTrigger.Props
 }
 
 export function DropdownMenuSubTrigger(props: DropdownMenuSubTriggerProps) {
-  const { className, inset, children, ...rest } = props
+  const { className = "", inset, children, ...rest } = props
 
   return (
     <MenuPrimitive.SubmenuTrigger

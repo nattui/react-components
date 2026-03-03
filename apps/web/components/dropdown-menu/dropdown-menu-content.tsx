@@ -9,7 +9,7 @@ export function DropdownMenuContent(props: DropdownMenuContentProps) {
   const {
     align = "start",
     alignOffset = 0,
-    className,
+    className = "",
     side = "bottom",
     sideOffset = 4,
     ...rest

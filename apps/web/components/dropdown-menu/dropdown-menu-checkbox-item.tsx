@@ -6,7 +6,7 @@ interface DropdownMenuCheckboxItemProps extends MenuPrimitive.CheckboxItem.Props
 }
 
 export function DropdownMenuCheckboxItem(props: DropdownMenuCheckboxItemProps) {
-  const { className, children, checked, inset, ...rest } = props
+  const { className = "", children, checked, inset, ...rest } = props
 
   return (
     <MenuPrimitive.CheckboxItem

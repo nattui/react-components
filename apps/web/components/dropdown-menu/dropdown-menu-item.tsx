@@ -6,7 +6,7 @@ interface DropdownMenuItemProps extends MenuPrimitive.Item.Props {
 }
 
 export function DropdownMenuItem(props: DropdownMenuItemProps) {
-  const { className, inset, variant = "default", ...rest } = props
+  const { className = "", inset, variant = "default", ...rest } = props
 
   return (
     <MenuPrimitive.Item

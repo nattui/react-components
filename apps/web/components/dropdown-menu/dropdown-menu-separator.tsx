@@ -3,7 +3,7 @@ import { Menu as MenuPrimitive } from "@base-ui/react"
 interface DropdownMenuSeparatorProps extends MenuPrimitive.Separator.Props {}
 
 export function DropdownMenuSeparator(props: DropdownMenuSeparatorProps) {
-  const { className, ...rest } = props
+  const { className = "", ...rest } = props
 
   return (
     <MenuPrimitive.Separator

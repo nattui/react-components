@@ -3,7 +3,7 @@ import type { ComponentProps } from "react"
 interface DropdownMenuShortcutProps extends ComponentProps<"span"> {}
 
 export function DropdownMenuShortcut(props: DropdownMenuShortcutProps) {
-  const { className, ...rest } = props
+  const { className = "", ...rest } = props
 
   return (
     <span

@@ -6,7 +6,7 @@ interface DropdownMenuRadioItemProps extends MenuPrimitive.RadioItem.Props {
 }
 
 export function DropdownMenuRadioItem(props: DropdownMenuRadioItemProps) {
-  const { className, children, inset, ...rest } = props
+  const { className = "", children, inset, ...rest } = props
 
   return (
     <MenuPrimitive.RadioItem
