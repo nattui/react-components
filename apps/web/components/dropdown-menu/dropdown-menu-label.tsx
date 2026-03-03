@@ -1,10 +1,10 @@
 import { Menu as MenuPrimitive } from "@base-ui/react"
 
-interface MenuLabelProps extends MenuPrimitive.GroupLabel.Props {
+interface DropdownMenuLabelProps extends MenuPrimitive.GroupLabel.Props {
   inset?: boolean
 }
 
-export function MenuLabel(props: MenuLabelProps) {
+export function DropdownMenuLabel(props: DropdownMenuLabelProps) {
   const { className, inset, ...rest } = props
 
   return (

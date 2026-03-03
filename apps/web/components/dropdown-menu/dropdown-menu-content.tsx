@@ -1,11 +1,11 @@
 import { Menu as MenuPrimitive } from "@base-ui/react"
 
-interface MenuContentProps
+interface DropdownMenuContentProps
   extends
     Pick<MenuPrimitive.Positioner.Props, "align" | "alignOffset" | "side" | "sideOffset">,
     MenuPrimitive.Popup.Props {}
 
-export function MenuContent(props: MenuContentProps) {
+export function DropdownMenuContent(props: DropdownMenuContentProps) {
   const {
     align = "start",
     alignOffset = 0,

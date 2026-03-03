@@ -1,10 +1,10 @@
 import { Menu as MenuPrimitive } from "@base-ui/react"
 
-interface MenuSubTriggerProps extends MenuPrimitive.SubmenuTrigger.Props {
+interface DropdownMenuSubTriggerProps extends MenuPrimitive.SubmenuTrigger.Props {
   inset?: boolean
 }
 
-export function MenuSubTrigger(props: MenuSubTriggerProps) {
+export function DropdownMenuSubTrigger(props: DropdownMenuSubTriggerProps) {
   const { className, inset, children, ...rest } = props
 
   return (

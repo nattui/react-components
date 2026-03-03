@@ -1,6 +1,8 @@
 import type { ComponentProps } from "react"
 
-export function MenuShortcut(props: ComponentProps<"span">) {
+interface DropdownMenuShortcutProps extends ComponentProps<"span"> {}
+
+export function DropdownMenuShortcut(props: DropdownMenuShortcutProps) {
   const { className, ...rest } = props
 
   return (
