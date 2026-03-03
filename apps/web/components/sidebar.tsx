@@ -28,6 +28,10 @@ const links: {
     label: "Carousel",
   },
   {
+    href: "/menu",
+    label: "Menu",
+  },
+  {
     href: "/theme",
     label: "Theme",
   },
