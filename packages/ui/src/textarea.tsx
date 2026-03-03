@@ -40,7 +40,6 @@ export function Textarea(props: TextareaProps): JSX.Element {
 
   return (
     <textarea
-      {...rest}
       className={combinedClassName}
       data-is-active={isActive}
       data-is-invalid={isInvalid}
@@ -49,6 +48,7 @@ export function Textarea(props: TextareaProps): JSX.Element {
       readOnly={isReadOnly}
       required={isRequired}
       rows={rows}
+      {...rest}
     />
   )
 }

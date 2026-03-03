@@ -54,9 +54,9 @@ export function Row(props: RowProps): JSX.Element {
   }
 
   return createElement(Component, {
-    ...rest,
     className: combinedClassName,
     style: combinedStyle,
+    ...rest,
   })
 }
 

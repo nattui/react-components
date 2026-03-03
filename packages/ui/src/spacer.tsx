@@ -22,7 +22,7 @@ export function Spacer(props: SpacerProps) {
     ...(height === undefined ? {} : { height }),
   }
 
-  return <div {...rest} className={combinedClassName} style={combinedStyle} />
+  return <div className={combinedClassName} style={combinedStyle} {...rest} />
 }
 
 export const SPACER_CLASS_NAME = {

@@ -40,7 +40,7 @@ export function ButtonLink<ComponentType extends ElementType = "a">(
     .trim()
 
   return createElement(Component, {
-    ...rest,
     className: combinedClassName,
+    ...rest,
   })
 }

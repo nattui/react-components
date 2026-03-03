@@ -54,9 +54,9 @@ export function Column(props: ColumnProps): JSX.Element {
   }
 
   return createElement(Component, {
-    ...rest,
     className: combinedClassName,
     style: combinedStyle,
+    ...rest,
   })
 }
 

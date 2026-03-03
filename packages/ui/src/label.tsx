@@ -14,7 +14,7 @@ export function Label(props: LabelProps): JSX.Element {
     .trim()
 
   return (
-    <label {...rest} className={combinedClassName} htmlFor={htmlFor}>
+    <label className={combinedClassName} htmlFor={htmlFor} {...rest}>
       {children}
     </label>
   )
