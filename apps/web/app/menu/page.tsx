@@ -1,3 +1,5 @@
+"use client"
+
 import { LucideCoins, LucidePlus, LucideRadio } from "@nattui/icons"
 import { Button, Column, Label, Spacer } from "@nattui/react-components"
 import { DropdownMenu } from "@/components/dropdown-menu/dropdown-menu"
@@ -6,6 +8,14 @@ import { DropdownMenuItem } from "@/components/dropdown-menu/dropdown-menu-item"
 import { DropdownMenuTrigger } from "@/components/dropdown-menu/dropdown-menu-trigger"
 
 export default function MenuPage() {
+  function onNewCoin() {
+    console.log("New coin")
+  }
+
+  function onGoLive() {
+    console.log("Go live")
+  }
+
   return (
     <Column>
       <Label>Dropdown menu</Label>
@@ -19,11 +29,11 @@ export default function MenuPage() {
           }
         />
         <DropdownMenuContent align="start" className="w-144">
-          <DropdownMenuItem>
+          <DropdownMenuItem onClick={onNewCoin}>
             <LucideCoins size={20} />
             New coin
           </DropdownMenuItem>
-          <DropdownMenuItem>
+          <DropdownMenuItem onClick={onGoLive}>
             <LucideRadio size={20} />
             Go live
           </DropdownMenuItem>
