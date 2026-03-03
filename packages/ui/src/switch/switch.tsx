@@ -1,6 +1,6 @@
 import { Switch as BaseSwitch } from "@base-ui/react"
 import type { ComponentProps, JSX } from "react"
-import styles from "@/switch.module.css"
+import styles from "@/switch/switch.module.css"
 
 export interface SwitchProps extends Omit<
   ComponentProps<typeof BaseSwitch.Root>,

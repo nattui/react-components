@@ -1,5 +1,5 @@
 import type { ComponentProps, JSX } from "react"
-import styles from "@/label.module.css"
+import styles from "@/label/label.module.css"
 
 export interface LabelProps extends ComponentProps<"label"> {}
 

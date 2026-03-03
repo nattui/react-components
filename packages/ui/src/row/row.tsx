@@ -5,12 +5,12 @@ import {
   type ElementType,
   type JSX,
 } from "react"
-import styles from "@/column.module.css"
+import styles from "@/row/row.module.css"
 
-export type ColumnProps<ComponentType extends ElementType = "div"> = ColumnInternalProps &
-  ComponentProps<ComponentType>
+export type RowProps<ComponentType extends ElementType = "div"> = ComponentProps<ComponentType> &
+  RowInternalProps
 
-interface ColumnInternalProps {
+interface RowInternalProps {
   alignItems?: CSSProperties["alignItems"]
   as?: keyof JSX.IntrinsicElements
   flexWrap?: CSSProperties["flexWrap"]
@@ -20,7 +20,7 @@ interface ColumnInternalProps {
   justifyContent?: CSSProperties["justifyContent"]
 }
 
-export function Column(props: ColumnProps): JSX.Element {
+export function Row(props: RowProps): JSX.Element {
   const {
     alignItems = undefined,
     as = "div",
@@ -37,7 +37,7 @@ export function Column(props: ColumnProps): JSX.Element {
   const Component = as
 
   const combinedClassName = `
-    ${COLUMN_CLASS_NAME.BASE}
+    ${ROW_CLASS_NAME.BASE}
     ${customClassName}
   `
     .replaceAll(/\s+/g, " ")
@@ -60,6 +60,6 @@ export function Column(props: ColumnProps): JSX.Element {
   })
 }
 
-export const COLUMN_CLASS_NAME = {
-  BASE: styles.column,
+export const ROW_CLASS_NAME = {
+  BASE: styles.row,
 } as const

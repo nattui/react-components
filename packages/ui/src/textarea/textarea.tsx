@@ -1,8 +1,9 @@
 import type { ComponentProps, JSX } from "react"
-import styles from "@/input.module.css"
+import inputStyles from "@/input/input.module.css"
+import styles from "@/textarea/textarea.module.css"
 
-export interface InputProps extends Omit<
-  ComponentProps<"input">,
+export interface TextareaProps extends Omit<
+  ComponentProps<"textarea">,
   "aria-pressed" | "disabled" | "readOnly" | "required"
 > {
   isActive?: boolean
@@ -12,10 +13,9 @@ export interface InputProps extends Omit<
   isRequired?: boolean
   isRounded?: boolean
   isValid?: boolean
-  size?: 32 | 36 | 40 | 44 | 48
 }
 
-export function Input(props: InputProps): JSX.Element {
+export function Textarea(props: TextareaProps): JSX.Element {
   const {
     className: customClassName = "",
     isActive = false,
@@ -25,25 +25,21 @@ export function Input(props: InputProps): JSX.Element {
     isRequired = false,
     isRounded = false,
     isValid = undefined,
-    size = 44,
-    type = "text",
+    rows = 2,
     ...rest
   } = props
 
-  const isPassword = type === "password"
-
   const combinedClassName = `
-    ${INPUT_CLASS_NAME.BASE}
-    ${INPUT_CLASS_NAME.SIZE[size]}
-    ${isPassword ? INPUT_CLASS_NAME.PASSWORD : ""}
-    ${isRounded ? INPUT_CLASS_NAME.ROUNDED.FULL : INPUT_CLASS_NAME.ROUNDED.BASE}
+    ${TEXTAREA_CLASS_NAME.INPUT}
+    ${TEXTAREA_CLASS_NAME.BASE}
+    ${isRounded ? TEXTAREA_CLASS_NAME.ROUNDED.FULL : TEXTAREA_CLASS_NAME.ROUNDED.BASE}
     ${customClassName}
   `
     .replaceAll(/\s+/g, " ")
     .trim()
 
   return (
-    <input
+    <textarea
       className={combinedClassName}
       data-is-active={isActive}
       data-is-invalid={isInvalid}
@@ -51,24 +47,17 @@ export function Input(props: InputProps): JSX.Element {
       disabled={isDisabled}
       readOnly={isReadOnly}
       required={isRequired}
-      type={type}
+      rows={rows}
       {...rest}
     />
   )
 }
 
-export const INPUT_CLASS_NAME = {
-  BASE: styles.input,
-  PASSWORD: styles.input__password,
+export const TEXTAREA_CLASS_NAME = {
+  BASE: styles.textarea,
+  INPUT: inputStyles.input,
   ROUNDED: {
-    BASE: styles.input__rounded_base,
-    FULL: styles.input__rounded_full,
-  },
-  SIZE: {
-    32: styles.input__size_32,
-    36: styles.input__size_36,
-    40: styles.input__size_40,
-    44: styles.input__size_44,
-    48: styles.input__size_48,
+    BASE: inputStyles.input__rounded_base,
+    FULL: inputStyles.input__rounded_full,
   },
 } as const

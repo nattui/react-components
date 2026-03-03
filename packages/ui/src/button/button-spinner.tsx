@@ -1,5 +1,5 @@
 import type { CSSProperties, JSX } from "react"
-import styles from "@/button-spinner.module.css"
+import styles from "@/button/button-spinner.module.css"
 
 export interface ButtonSpinnerProps {
   size?: number

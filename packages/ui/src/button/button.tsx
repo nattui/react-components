@@ -1,6 +1,6 @@
 import type { ComponentProps, JSX, ReactNode } from "react"
-import { ButtonSpinner } from "@/button-spinner"
-import styles from "@/button.module.css"
+import { ButtonSpinner } from "@/button/button-spinner"
+import styles from "@/button/button.module.css"
 
 export interface ButtonIconProps extends ButtonInternalProps {
   children?: ReactNode

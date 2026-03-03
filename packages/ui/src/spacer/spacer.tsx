@@ -1,5 +1,5 @@
 import type { ComponentProps, CSSProperties } from "react"
-import styles from "@/spacer.module.css"
+import styles from "@/spacer/spacer.module.css"
 
 export interface SpacerProps extends Omit<ComponentProps<"div">, "children"> {
   height?: CSSProperties["height"]
