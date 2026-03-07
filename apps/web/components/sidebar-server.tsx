@@ -11,7 +11,6 @@ interface SidebarLink {
 
 export async function SidebarServer() {
   const links = await getSidebarLinksFromNotion()
-  console.log("links:", links)
   return <SidebarClient links={links} />
 }
 
