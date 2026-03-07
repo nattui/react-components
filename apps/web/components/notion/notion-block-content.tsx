@@ -1,4 +1,5 @@
 import { evaluate } from "@mdx-js/mdx"
+import { LucidePlus as IconPlus } from "@nattui/icons"
 import {
   Button,
   Column,
@@ -105,6 +106,7 @@ const COMPONENT_MARKER = "// component"
 const components: Record<string, ElementType> = {
   Button,
   Column,
+  IconPlus,
   Input,
   Label,
   Row,

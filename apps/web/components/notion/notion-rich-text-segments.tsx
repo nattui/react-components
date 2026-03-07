@@ -14,7 +14,7 @@ export function NotionRichTextSegments(props: NotionRichTextSegmentsProps) {
 
     if (segment.code) {
       segmentContent = (
-        <code className="rounded-4 bg-gray-3 text-14 px-4 py-2">{segmentContent}</code>
+        <code className="rounded-4 bg-gray-3 text-14 px-4 py-2 font-mono">{segmentContent}</code>
       )
     }
 

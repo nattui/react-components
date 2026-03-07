@@ -1,19 +1,19 @@
 import "@/styles/global.css"
 import type { Metadata } from "next"
-import { Geist as sans, Geist_Mono as mono } from "next/font/google"
+import { Geist as sans, JetBrains_Mono as mono } from "next/font/google"
 import type { PropsWithChildren } from "react"
 import { Providers } from "@/app/providers"
 import { SidebarServer } from "@/components/sidebar-server"
 import { Topbar } from "@/components/topbar"
 
-const geistSans = sans({
+const fontMono = mono({
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-mono",
 })
 
-const geistMono = mono({
+const fontSans = sans({
   subsets: ["latin"],
-  variable: "--font-geist-mono",
+  variable: "--font-sans",
 })
 
 export default function RootLayout(props: PropsWithChildren) {
@@ -22,7 +22,7 @@ export default function RootLayout(props: PropsWithChildren) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} color-gray-slate color-primary-blue`}
+        className={`${fontMono.variable} ${fontSans.variable} color-gray-slate color-primary-blue`}
       >
         <Providers>
           <div className="flex size-full flex-col">

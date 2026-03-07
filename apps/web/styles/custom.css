@@ -45,7 +45,7 @@ input::-webkit-datetime-edit-year-field:focus {
 
 /* Sugar-high syntax highlighting */
 :root {
-  --sh-class: #2d5e9d;
+  --sh-class: black;
   --sh-comment: #a19595;
   --sh-entity: #75140c;
   --sh-identifier: #3c845c;
