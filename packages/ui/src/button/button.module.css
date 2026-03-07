@@ -2,25 +2,26 @@
 /* Base */
 /* ===================================================== */
 .button {
+  align-items: safe center;
+  border-style: none;
+  column-gap: 8px;
+  cursor: pointer;
   display: flex;
   flex-shrink: 0;
-  column-gap: 8px;
-  align-items: safe center;
-  justify-content: safe center;
-  height: var(--size);
-  overflow: hidden;
   font-family: var(--font-sans, sans-serif);
   font-size: 14px;
   font-weight: 500;
+  height: var(--size);
+  justify-content: safe center;
   line-height: 1.5;
-  cursor: pointer;
-  user-select: none;
-  outline-width: 2px;
-  outline-style: none;
   outline-color: var(--color-primary-9);
   outline-offset: 2px;
+  outline-style: none;
+  outline-width: 2px;
+  overflow: hidden;
   transition-duration: 150ms;
   transition-property: background-color, box-shadow, opacity, translate;
+  user-select: none;
 }
 
 /* When pressed, move the button down */

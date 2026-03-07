@@ -16,6 +16,7 @@
       "name": "storybook",
       "dependencies": {
         "@nattui/react-components": "workspace:*",
+        "@nattui/tailwind-colors": "catalog:",
         "react": "catalog:",
         "react-dom": "catalog:",
       },
@@ -36,7 +37,7 @@
         "@mdx-js/mdx": "3.1.1",
         "@nattui/icons": "npm:lucide-react@0.577.0",
         "@nattui/react-components": "workspace:*",
-        "@nattui/tailwind-colors": "0.0.8",
+        "@nattui/tailwind-colors": "catalog:",
         "@nattui/tailwind-exact": "0.0.5",
         "@notionhq/client": "5.11.1",
         "@use-gesture/react": "10.3.1",
@@ -78,6 +79,7 @@
   ],
   "catalog": {
     "@base-ui/react": "1.2.0",
+    "@nattui/tailwind-colors": "0.0.8",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
     "react": "19.2.4",
