@@ -2,6 +2,7 @@ import { evaluate } from "@mdx-js/mdx"
 import { LucidePlus as IconPlus } from "@nattui/icons"
 import {
   Button,
+  ButtonLink,
   Column,
   Input,
   Label,
@@ -10,6 +11,7 @@ import {
   Switch,
   Textarea,
 } from "@nattui/react-components"
+import Link from "next/link"
 import type { ElementType, JSX } from "react"
 import { Fragment, jsx, jsxs } from "react/jsx-runtime"
 import { highlight } from "sugar-high"
@@ -105,10 +107,12 @@ const COMPONENT_MARKER = "// component"
 
 const components: Record<string, ElementType> = {
   Button,
+  ButtonLink,
   Column,
   IconPlus,
   Input,
   Label,
+  Link,
   Row,
   Spacer,
   Switch,
@@ -127,8 +131,9 @@ async function renderMappedComponents(code: string): Promise<JSX.Element | undef
     return
   }
 
+  const scopedMdxSource = scopeMappedComponentReferences(mdxSource)
   try {
-    const evaluated = await evaluate(mdxSource, {
+    const evaluated = await evaluate(scopedMdxSource, {
       Fragment,
       development: false,
       jsx,
@@ -139,4 +144,20 @@ async function renderMappedComponents(code: string): Promise<JSX.Element | undef
   } catch {
     // Invalid component markup falls back to the highlighted code block renderer.
   }
+}
+
+function scopeMappedComponentReferences(mdxSource: string): string {
+  // MDX expressions like `as={Link}` resolve identifiers lexically, not from `components`.
+  // Rewrite mapped references to `props.components.*` so evaluated snippets can resolve them.
+  const componentReferencePattern = new RegExp(
+    `=\\{\\s*(${Object.keys(components)
+      .map((componentName) => componentName.replaceAll(/[.*+?^${}()|[\]\\]/g, String.raw`\$&`))
+      .join("|")})\\s*\\}`,
+    "g",
+  )
+
+  return mdxSource.replaceAll(
+    componentReferencePattern,
+    (_match, componentName) => `={props.components.${componentName}}`,
+  )
 }
