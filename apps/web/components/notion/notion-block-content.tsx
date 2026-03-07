@@ -66,7 +66,8 @@ export async function NotionBlockContent(props: NotionBlockContentProps): Promis
     if (mappedComponentElements) {
       return (
         <>
-          <div className="rounded-12 bg-gray-2 border-gray-4 flex flex-wrap items-center justify-center gap-16 border p-16">
+          {/* Showcase component */}
+          <div className="rounded-12 bg-gray-2 border-gray-4 flex flex-wrap items-center justify-center gap-16 border px-16 py-48">
             {mappedComponentElements}
           </div>
           <Spacer className="h-24" />
