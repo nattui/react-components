@@ -39,6 +39,10 @@ const links: {
     href: "/test",
     label: "Test",
   },
+  {
+    href: "/notion",
+    label: "Notion",
+  },
 ]
 
 export function Sidebar() {
