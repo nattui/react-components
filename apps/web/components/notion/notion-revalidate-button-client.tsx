@@ -7,7 +7,7 @@ export function NotionRevalidateButtonClient() {
   const { pending } = useFormStatus()
 
   return (
-    <Button isLoading={pending} type="submit">
+    <Button isLoading={pending} type="submit" variant="secondary">
       {pending ? "Refreshing..." : "Refresh Notion content cache"}
     </Button>
   )
