@@ -3,49 +3,16 @@
 import Link, { type LinkProps } from "next/link"
 import { usePathname } from "next/navigation"
 
-const links: {
-  href: LinkProps<string>["href"]
-  label: string
-}[] = [
-  {
-    href: "/button",
-    label: "Button",
-  },
-  {
-    href: "/input",
-    label: "Input",
-  },
-  {
-    href: "/textarea",
-    label: "Textarea",
-  },
-  {
-    href: "/switch",
-    label: "Switch",
-  },
-  {
-    href: "/experiment/carousel",
-    label: "Carousel",
-  },
-  {
-    href: "/menu",
-    label: "Menu",
-  },
-  {
-    href: "/theme",
-    label: "Theme",
-  },
-  {
-    href: "/test",
-    label: "Test",
-  },
-  {
-    href: "/notion",
-    label: "Notion",
-  },
-]
+interface SidebarClientProps {
+  links: {
+    href: LinkProps<string>["href"]
+    label: string
+  }[]
+}
 
-export function Sidebar() {
+export function SidebarClient(props: SidebarClientProps) {
+  const { links } = props
+
   const pathname = usePathname()
 
   return (
