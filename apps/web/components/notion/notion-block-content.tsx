@@ -61,6 +61,7 @@ export async function NotionBlockContent(props: NotionBlockContentProps): Promis
   }
 
   if (block.type === "code") {
+    const codeHTML = highlight(block.code)
     const mappedComponentElements = await renderMappedComponents(block.code)
 
     if (mappedComponentElements) {
@@ -74,8 +75,6 @@ export async function NotionBlockContent(props: NotionBlockContentProps): Promis
         </>
       )
     }
-
-    const codeHTML = highlight(block.code)
 
     return (
       <>
