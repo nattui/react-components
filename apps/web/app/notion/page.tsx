@@ -3,8 +3,10 @@ import { getNotionPage, type NotionBlock } from "@/components/notion/notion"
 import { NotionBlockContent } from "@/components/notion/notion-block-content"
 import { NotionRevalidateButton } from "@/components/notion/notion-revalidate-button"
 
+const NOTION_PAGE_ID = "30ab76f65e6e809e881ff95294eaac61"
+
 export default async function NotionPage() {
-  const { blocks, createdTime, title } = await getNotionPage()
+  const { blocks, createdTime, title } = await getNotionPage(NOTION_PAGE_ID)
 
   const formattedCreatedTime = new Intl.DateTimeFormat("en-US", {
     dateStyle: "long",

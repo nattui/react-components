@@ -1,6 +1,6 @@
 import { Client } from "@notionhq/client"
 
-const { NOTION_API_KEY, NOTION_PAGE_ID } = process.env
+const { NOTION_API_KEY } = process.env
 
 const NOTION_API_VERSION = "2025-09-03"
 
@@ -53,9 +53,9 @@ interface NotionRichTextInput {
   plain_text: string
 }
 
-export async function getNotionPage(): Promise<NotionPage> {
-  if (!NOTION_API_KEY || !NOTION_PAGE_ID) {
-    throw new Error("NOTION_API_KEY and NOTION_PAGE_ID are required")
+export async function getNotionPage(pageId: string): Promise<NotionPage> {
+  if (!NOTION_API_KEY) {
+    throw new Error("NOTION_API_KEY is required")
   }
 
   // Keep a stable fallback when page metadata is missing or unexpected.
@@ -66,8 +66,8 @@ export async function getNotionPage(): Promise<NotionPage> {
   }
 
   const [metaContent, metaPage] = await Promise.all([
-    notion.blocks.children.list({ block_id: NOTION_PAGE_ID }),
-    notion.pages.retrieve({ page_id: NOTION_PAGE_ID }),
+    notion.blocks.children.list({ block_id: pageId }),
+    notion.pages.retrieve({ page_id: pageId }),
   ])
 
   if (!("properties" in metaPage)) {
