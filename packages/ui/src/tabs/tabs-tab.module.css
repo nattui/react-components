@@ -7,6 +7,6 @@
   transition-property: color;
 }
 
-.tabs_tab[data-active="true"] {
+.tabs_tab[data-active] {
   color: var(--color-gray-12);
 }
