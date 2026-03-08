@@ -38,7 +38,10 @@ export default async function ButtonLayout(props: PropsWithChildren) {
 
         {/* Tabs */}
         <Tabs.Root defaultValue="code">
-          <Tabs.List aria-label="Button sections" className="border-gray-4 relative border-b">
+          <Tabs.List
+            aria-label="Button sections"
+            className="border-gray-4 relative flex gap-x-8 border-b"
+          >
             <Tabs.Tab
               className="text-gray-11 data-active:text-gray-12 text-14 font-500 inline-flex px-4 pb-12 transition-colors"
               nativeButton={false}
