@@ -26,7 +26,7 @@ export function ToggleGroupTheme() {
 
   return (
     <ToggleGroup
-      className="rounded-8 bg-gray-3 flex w-fit gap-x-2 overflow-hidden p-2"
+      className="rounded-8 bg-gray-3 flex w-fit overflow-hidden p-2"
       onValueChange={onValueChange}
       value={theme}
     >

@@ -8,6 +8,10 @@ import {
   Label,
   Row,
   Spacer,
+  Tabs,
+  TabsList,
+  TabsTab,
+  TabsPanel,
   Switch,
   Textarea,
 } from "@nattui/react-components"
@@ -129,6 +133,10 @@ const components: Record<string, ElementType> = {
   Row,
   Spacer,
   Switch,
+  Tabs,
+  TabsList,
+  TabsPanel,
+  TabsTab,
   Textarea,
 }
 

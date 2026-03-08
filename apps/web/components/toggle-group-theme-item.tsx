@@ -33,7 +33,7 @@ export function ToggleGroupThemeItem(props: ToggleGroupThemeItemProps) {
       )}
 
       <Toggle
-        className="rounded-6 focus-visible:outline-primary-9 group z-10 flex h-32 cursor-pointer items-center justify-center gap-x-8 px-10 outline-2 outline-transparent transition-[background-color] select-none"
+        className="rounded-6 focus-visible:outline-primary-9 group z-10 flex h-32 cursor-pointer items-center justify-center gap-x-8 px-12 outline-2 -outline-offset-2 outline-transparent transition-[background-color] select-none"
         value={value}
         {...rest}
       >
