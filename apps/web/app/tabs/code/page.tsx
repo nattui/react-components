@@ -1,16 +1,7 @@
-import { getNotionPage, type NotionBlock } from "@/components/notion/notion"
-import { NotionBlockContent } from "@/components/notion/notion-block-content"
+import { NotionDocsCodePage } from "@/components/notion/notion-docs-code-page"
 
 const NOTION_PAGE_ID = "31db76f65e6e817a908afb8946d0f436"
 
-export default async function TabsCodePage() {
-  const { blocks } = await getNotionPage(NOTION_PAGE_ID)
-
-  return (
-    <>
-      {blocks.map((block: NotionBlock, index) => (
-        <NotionBlockContent block={block} blockIndex={index} key={index} />
-      ))}
-    </>
-  )
+export default function TabsCodePage() {
+  return <NotionDocsCodePage pageId={NOTION_PAGE_ID} />
 }
