@@ -3,5 +3,6 @@
   border-bottom-style: solid;
   border-bottom-width: 1px;
   display: flex;
+  overflow-x: auto;
   position: relative;
 }

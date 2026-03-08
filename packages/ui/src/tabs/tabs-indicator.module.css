@@ -1,6 +1,6 @@
 .tabs_indicator {
   background-color: var(--color-primary-9);
-  bottom: -1px;
+  bottom: 0px;
   height: 2px;
   left: var(--active-tab-left);
   position: absolute;
