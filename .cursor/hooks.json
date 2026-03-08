@@ -1,4 +1,12 @@
 {
   "version": 1,
-  "hooks": {}
+  "hooks": {
+    "stop": [
+      {
+        "command": "bun run .cursor/hooks/check-fix-stop.ts --stop",
+        "timeout": 300,
+        "loop_limit": 10
+      }
+    ]
+  }
 }
