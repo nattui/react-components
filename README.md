@@ -1,6 +1,6 @@
 # @nattui/react-components
 
-A collection of reusable React components built with TypeScript and CSS Modules.
+A collection of reusable React components built with Base UI, TypeScript, and CSS Modules.
 
 > [!WARNING]
 > This project is currently a work in progress.
