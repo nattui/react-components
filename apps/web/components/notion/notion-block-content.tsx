@@ -78,7 +78,7 @@ export async function NotionBlockContent(props: NotionBlockContentProps): Promis
     if (linkCards) {
       return (
         <>
-          <div className="grid gap-12 sm:grid-cols-2">{linkCards}</div>
+          <div className="flex flex-wrap gap-12">{linkCards}</div>
           <Spacer className="h-24" />
         </>
       )
@@ -247,19 +247,18 @@ function renderLinkCards(code: string): JSX.Element[] | undefined {
     const isExternal = isExternalHref(linkCard.href)
     return (
       <a
-        className="rounded-12 bg-gray-2 border-gray-4 hover:bg-gray-3 group flex min-w-0 items-center gap-12 border p-12 transition-colors"
+        className="rounded-full bg-gray-2 border-gray-4 hover:bg-gray-3 group inline-flex max-w-full items-center gap-10 border px-8 py-8 transition-colors"
         href={linkCard.href}
         key={`${linkCard.label}-${linkCard.href}`}
         rel={isExternal ? "noreferrer" : undefined}
         target={isExternal ? "_blank" : undefined}
       >
-        <div className="rounded-10 bg-gray-1 border-gray-4 text-gray-11 group-hover:text-gray-12 text-12 font-500 flex h-40 w-40 shrink-0 items-center justify-center border font-mono uppercase transition-colors">
+        <div className="rounded-full bg-gray-1 border-gray-4 text-gray-11 group-hover:text-gray-12 text-11 font-500 flex h-32 w-32 shrink-0 items-center justify-center border font-mono uppercase transition-colors">
           {linkCard.badge}
         </div>
-        <div className="min-w-0">
-          <p className="text-gray-12 text-14 font-500 leading-[1.3]">{linkCard.label}</p>
-          <p className="text-gray-11 text-12 truncate leading-[1.3]">{linkCard.meta}</p>
-        </div>
+        <p className="text-gray-12 min-w-0 truncate pr-4 text-14 font-500 leading-none whitespace-nowrap">
+          {linkCard.label}
+        </p>
       </a>
     )
   })
