@@ -1,15 +1,15 @@
-import { Column, Spacer, Tabs, TabsList, TabsPanel, TabsTab } from "@nattui/react-components"
-import Link from "next/link"
+import { Column, Spacer } from "@nattui/react-components"
 import type { PropsWithChildren } from "react"
 import { getNotionPage, type NotionBlock } from "@/components/notion/notion"
 import { NotionBlockContent } from "@/components/notion/notion-block-content"
+import { NotionTabs } from "@/components/notion/notion-tabs"
 
 const NOTION_PAGE_ID = "31cb76f65e6e8060bfe2dfab0608cd7f"
 
 export default async function ButtonLayout(props: PropsWithChildren) {
   const { children } = props
 
-  const { blocks, lastEditedTime, title } = await getNotionPage(NOTION_PAGE_ID)
+  const { blocks, lastEditedTime, tabs, title } = await getNotionPage(NOTION_PAGE_ID)
 
   const formattedUpdatedTime = new Intl.DateTimeFormat("en-US", {
     dateStyle: "long",
@@ -36,23 +36,9 @@ export default async function ButtonLayout(props: PropsWithChildren) {
         <Spacer height={24} />
 
         {/* Tabs */}
-        <Tabs defaultValue="code">
-          <TabsList>
-            <TabsTab isNativeButton={false} render={<Link href="/button/code" />} value="code">
-              Code
-            </TabsTab>
-            <TabsTab isNativeButton={false} render={<Link href="/button/code" />} value="specs">
-              Design
-            </TabsTab>
-          </TabsList>
+        {tabs.length > 0 && <NotionTabs tabs={tabs} />}
 
-          {/* Content */}
-          <TabsPanel value="code">{children}</TabsPanel>
-          <TabsPanel value="specs">
-            <p>Specs</p>
-            {children}
-          </TabsPanel>
-        </Tabs>
+        {children}
       </Column>
     </Column>
   )

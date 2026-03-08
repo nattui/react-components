@@ -29,6 +29,7 @@ export interface NotionPage {
   blocks: NotionBlock[]
   createdTime: string
   lastEditedTime: string
+  tabs: NotionTab[]
   title: string
 }
 
@@ -40,6 +41,11 @@ export interface NotionRichTextSegment {
   strikethrough: boolean
   text: string
   underline: boolean
+}
+
+export interface NotionTab {
+  href: string
+  label: string
 }
 
 interface NotionRichTextInput {
@@ -64,6 +70,7 @@ export async function getNotionPage(pageId: string): Promise<NotionPage> {
     blocks: [],
     createdTime: "",
     lastEditedTime: "",
+    tabs: [],
     title: "",
   }
 
@@ -89,6 +96,7 @@ export async function getNotionPage(pageId: string): Promise<NotionPage> {
   }
 
   const blocks: NotionBlock[] = []
+  const tabs: NotionTab[] = []
 
   // Shared paragraph/heading handler: skip empty text and normalize segment shape.
   function pushRichTextBlock(
@@ -103,6 +111,13 @@ export async function getNotionPage(pageId: string): Promise<NotionPage> {
       segments: toNotionRichTextSegments(richText),
       type,
     })
+  }
+
+  function pushTab(text: string): void {
+    const tab = toNotionTab(text)
+    if (tab) {
+      tabs.push(tab)
+    }
   }
 
   // Convert Notion API blocks into the small renderable union used by the UI.
@@ -139,12 +154,31 @@ export async function getNotionPage(pageId: string): Promise<NotionPage> {
         blocks.push({ code, language: result.code.language, type: "code" })
       }
     }
+
+    if (result.type === "bulleted_list_item") {
+      const text = result.bulleted_list_item.rich_text
+        .map((textBlock) => textBlock.plain_text)
+        .join("")
+      pushTab(text)
+    }
+
+    if (result.type === "numbered_list_item") {
+      const text = result.numbered_list_item.rich_text
+        .map((textBlock) => textBlock.plain_text)
+        .join("")
+      pushTab(text)
+    }
+
+    if (result.type === "child_page") {
+      pushTab(result.child_page.title)
+    }
   }
 
   return {
     blocks,
     createdTime: metaPage.created_time,
     lastEditedTime: metaPage.last_edited_time,
+    tabs,
     title,
   }
 }
@@ -160,4 +194,30 @@ function toNotionRichTextSegments(richText: NotionRichTextInput[]): NotionRichTe
     text: textBlock.plain_text,
     underline: textBlock.annotations.underline,
   }))
+}
+
+function toNotionTab(text: string): NotionTab | undefined {
+  const separatorIndex = text.indexOf("::")
+  if (separatorIndex === -1) {
+    return undefined
+  }
+
+  const label = text.slice(0, separatorIndex).trim()
+  const rawHref = text.slice(separatorIndex + 2).trim()
+  if (!label || !rawHref) {
+    return undefined
+  }
+
+  return {
+    href: toNotionTabHref(rawHref),
+    label,
+  }
+}
+
+function toNotionTabHref(rawHref: string): string {
+  if (rawHref.startsWith("/") || rawHref.startsWith("http://") || rawHref.startsWith("https://")) {
+    return rawHref
+  }
+
+  return `/${rawHref}`
 }
