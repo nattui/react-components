@@ -45,14 +45,11 @@ export default async function ButtonLayout(props: PropsWithChildren) {
 
         {/* Tabs */}
         <Tabs defaultValue="code">
-          <TabsList
-            aria-label="Button sections"
-            className="border-gray-4 relative flex gap-x-8 border-b"
-          >
-            <TabsTab nativeButton={false} render={<Link href="/button/code" />} value="code">
+          <TabsList>
+            <TabsTab isNativeButton={false} render={<Link href="/button/code" />} value="code">
               Code
             </TabsTab>
-            <TabsTab nativeButton={false} render={<Link href="/button/code" />} value="Specs">
+            <TabsTab isNativeButton={false} render={<Link href="/button/code" />} value="specs">
               Specs
             </TabsTab>
             <TabsIndicator />
@@ -60,6 +57,10 @@ export default async function ButtonLayout(props: PropsWithChildren) {
 
           {/* Content */}
           <TabsPanel value="code">{children}</TabsPanel>
+          <TabsPanel value="specs">
+            <p>Specs</p>
+            {children}
+          </TabsPanel>
         </Tabs>
       </Column>
 

@@ -6,13 +6,13 @@ export { Label, LABEL_CLASS_NAME, type LabelProps } from "@/label/label"
 export { Row, ROW_CLASS_NAME, type RowProps } from "@/row/row"
 export { Spacer, SPACER_CLASS_NAME, type SpacerProps } from "@/spacer/spacer"
 export { Switch, SWITCH_CLASS_NAME, type SwitchProps } from "@/switch/switch"
-export { Tabs, type TabsProps } from "@/tabs/tabs"
+export { Tabs, TABS_CLASS_NAME, type TabsProps } from "@/tabs/tabs"
 export {
   TABS_INDICATOR_CLASS_NAME,
   TabsIndicator,
   type TabsIndicatorProps,
 } from "@/tabs/tabs-indicator"
-export { TabsList, type TabsListProps } from "@/tabs/tabs-list"
-export { TabsPanel, type TabsPanelProps } from "@/tabs/tabs-panel"
-export { TabsTab, type TabsTabProps } from "@/tabs/tabs-tab"
+export { TABS_LIST_CLASS_NAME, TabsList, type TabsListProps } from "@/tabs/tabs-list"
+export { TABS_PANEL_CLASS_NAME, TabsPanel, type TabsPanelProps } from "@/tabs/tabs-panel"
+export { TABS_TAB_CLASS_NAME, TabsTab, type TabsTabProps } from "@/tabs/tabs-tab"
 export { Textarea, TEXTAREA_CLASS_NAME, type TextareaProps } from "@/textarea/textarea"
