@@ -19,7 +19,7 @@ export async function NotionDocsLayout(props: NotionDocsLayoutProps) {
   }).format(new Date(lastEditedTime))
 
   return (
-    <Column className="px-16">
+    <Column>
       <Column className="mx-auto w-full max-w-[620px]">
         {/* Title */}
         <h1 className="text-36 font-500 leading-[1.2]">{title}</h1>

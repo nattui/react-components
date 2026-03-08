@@ -14,7 +14,7 @@ export default async function NotionPage() {
   }).format(new Date(createdTime))
 
   return (
-    <Column className="px-16">
+    <Column>
       <Spacer height={64} />
 
       <NotionRevalidateButton />
