@@ -49,8 +49,8 @@ export default async function ButtonLayout(props: PropsWithChildren) {
             <TabsTab isNativeButton={false} render={<Link href="/button/code" />} value="code">
               Code
             </TabsTab>
-            <TabsTab isNativeButton={false} render={<Link href="/button/code" />} value="specs">
-              Specs
+            <TabsTab isNativeButton={false} render={<Link href="/input" />} value="specs">
+              Design
             </TabsTab>
             <TabsIndicator />
           </TabsList>
@@ -63,8 +63,6 @@ export default async function ButtonLayout(props: PropsWithChildren) {
           </TabsPanel>
         </Tabs>
       </Column>
-
-      <Spacer height={128} />
     </Column>
   )
 }
