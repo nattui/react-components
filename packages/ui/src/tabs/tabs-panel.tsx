@@ -1,6 +1,8 @@
 import { Tabs as BaseTabs } from "@base-ui/react"
 
-export function TabsPanel(props: BaseTabs.Panel.Props) {
+export interface TabsPanelProps extends BaseTabs.Panel.Props {}
+
+export function TabsPanel(props: TabsPanelProps) {
   const { className: customClassName = "", ...rest } = props
 
   const combinedClassName = `

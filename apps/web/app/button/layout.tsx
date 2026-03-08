@@ -49,26 +49,13 @@ export default async function ButtonLayout(props: PropsWithChildren) {
             aria-label="Button sections"
             className="border-gray-4 relative flex gap-x-8 border-b"
           >
-            <TabsTab
-              className="text-gray-11 data-active:text-gray-12 text-14 font-500 inline-flex px-4 pb-12 transition-colors"
-              nativeButton={false}
-              render={<Link href="/button/code" />}
-              value="code"
-            >
+            <TabsTab nativeButton={false} render={<Link href="/button/code" />} value="code">
               Code
             </TabsTab>
-            <TabsTab
-              className="text-gray-11 data-active:text-gray-12 text-14 font-500 inline-flex px-4 pb-12 transition-colors"
-              nativeButton={false}
-              render={<Link href="/button/code" />}
-              value="Specs"
-            >
+            <TabsTab nativeButton={false} render={<Link href="/button/code" />} value="Specs">
               Specs
             </TabsTab>
-            <TabsIndicator
-              className="bg-primary-9 absolute bottom-0 left-(--active-tab-left) h-2 w-(--active-tab-width) transition-[left,width]"
-              renderBeforeHydration
-            />
+            <TabsIndicator />
           </TabsList>
 
           {/* Content */}
