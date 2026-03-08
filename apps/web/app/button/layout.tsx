@@ -1,5 +1,12 @@
-import { Tabs } from "@base-ui/react"
-import { Column, Spacer } from "@nattui/react-components"
+import {
+  Column,
+  Spacer,
+  Tabs,
+  TabsIndicator,
+  TabsList,
+  TabsPanel,
+  TabsTab,
+} from "@nattui/react-components"
 import Link from "next/link"
 import type { PropsWithChildren } from "react"
 import { getNotionPage, type NotionBlock } from "@/components/notion/notion"
@@ -37,28 +44,36 @@ export default async function ButtonLayout(props: PropsWithChildren) {
         <Spacer height={24} />
 
         {/* Tabs */}
-        <Tabs.Root defaultValue="code">
-          <Tabs.List
+        <Tabs defaultValue="code">
+          <TabsList
             aria-label="Button sections"
             className="border-gray-4 relative flex gap-x-8 border-b"
           >
-            <Tabs.Tab
+            <TabsTab
               className="text-gray-11 data-active:text-gray-12 text-14 font-500 inline-flex px-4 pb-12 transition-colors"
               nativeButton={false}
               render={<Link href="/button/code" />}
               value="code"
             >
               Code
-            </Tabs.Tab>
-            <Tabs.Indicator
+            </TabsTab>
+            <TabsTab
+              className="text-gray-11 data-active:text-gray-12 text-14 font-500 inline-flex px-4 pb-12 transition-colors"
+              nativeButton={false}
+              render={<Link href="/button/code" />}
+              value="Specs"
+            >
+              Specs
+            </TabsTab>
+            <TabsIndicator
               className="bg-primary-9 absolute bottom-0 left-(--active-tab-left) h-2 w-(--active-tab-width) transition-[left,width]"
               renderBeforeHydration
             />
-          </Tabs.List>
+          </TabsList>
 
           {/* Content */}
-          <Tabs.Panel value="code">{children}</Tabs.Panel>
-        </Tabs.Root>
+          <TabsPanel value="code">{children}</TabsPanel>
+        </Tabs>
       </Column>
 
       <Spacer height={128} />
