@@ -247,16 +247,16 @@ function renderLinkCards(code: string): JSX.Element[] | undefined {
     const isExternal = isExternalHref(linkCard.href)
     return (
       <a
-        className="rounded-full bg-gray-2 border-gray-4 hover:bg-gray-3 group inline-flex max-w-full items-center gap-10 border px-8 py-8 transition-colors"
+        className="bg-gray-2 border-gray-4 hover:bg-gray-3 group inline-flex max-w-full items-center gap-6 rounded-full border px-6 py-4 transition-colors"
         href={linkCard.href}
         key={`${linkCard.label}-${linkCard.href}`}
         rel={isExternal ? "noreferrer" : undefined}
         target={isExternal ? "_blank" : undefined}
       >
-        <div className="rounded-full bg-gray-1 border-gray-4 text-gray-11 group-hover:text-gray-12 text-11 font-500 flex h-32 w-32 shrink-0 items-center justify-center border font-mono uppercase transition-colors">
+        <div className="bg-gray-1 border-gray-4 text-gray-11 group-hover:text-gray-12 text-13 font-500 flex size-24 shrink-0 items-center justify-center rounded-full border font-mono uppercase transition-colors">
           {linkCard.badge}
         </div>
-        <p className="text-gray-12 min-w-0 truncate pr-4 text-14 font-500 leading-none whitespace-nowrap">
+        <p className="text-gray-12 text-13 font-500 min-w-0 truncate pr-2 leading-none whitespace-nowrap">
           {linkCard.label}
         </p>
       </a>
