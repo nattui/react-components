@@ -4,9 +4,9 @@ import { getNotionPage, type NotionBlock } from "@/components/notion/notion"
 import { NotionBlockContent } from "@/components/notion/notion-block-content"
 import { NotionTabs } from "@/components/notion/notion-tabs"
 
-const NOTION_PAGE_ID = "31cb76f65e6e8060bfe2dfab0608cd7f"
+const NOTION_PAGE_ID = "31db76f65e6e80f2b125d026f1c318f1"
 
-export default async function ButtonLayout(props: PropsWithChildren) {
+export default async function TabsLayout(props: PropsWithChildren) {
   const { children } = props
 
   const { blocks, lastEditedTime, tabs, title } = await getNotionPage(NOTION_PAGE_ID)
