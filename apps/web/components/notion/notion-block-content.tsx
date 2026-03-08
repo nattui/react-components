@@ -78,7 +78,7 @@ export async function NotionBlockContent(props: NotionBlockContentProps): Promis
     if (linkCards) {
       return (
         <>
-          <div className="flex flex-wrap gap-12">{linkCards}</div>
+          <div className="-mt-12 flex flex-wrap gap-8">{linkCards}</div>
           <Spacer className="h-24" />
         </>
       )

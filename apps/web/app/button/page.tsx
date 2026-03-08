@@ -17,13 +17,13 @@ export default async function NotionPage() {
       <Column className="mx-auto w-full max-w-[620px]">
         {/* Title */}
         <h1 className="text-36 font-500 leading-[1.2]">{title}</h1>
-        <Spacer height={12} />
+        <Spacer height={8} />
 
         {/* Last Updated Time */}
         <p className="text-gray-11 text-14 flex items-center gap-x-8">
           <span>Last updated on {formattedUpdatedTime}</span>
         </p>
-        <Spacer height={24} />
+        <Spacer height={12} />
 
         {/* Content */}
         {blocks.map((block: NotionBlock, index) => (
