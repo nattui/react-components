@@ -7,11 +7,6 @@ export { Row, ROW_CLASS_NAME, type RowProps } from "@/row/row"
 export { Spacer, SPACER_CLASS_NAME, type SpacerProps } from "@/spacer/spacer"
 export { Switch, SWITCH_CLASS_NAME, type SwitchProps } from "@/switch/switch"
 export { Tabs, TABS_CLASS_NAME, type TabsProps } from "@/tabs/tabs"
-export {
-  TABS_INDICATOR_CLASS_NAME,
-  TabsIndicator,
-  type TabsIndicatorProps,
-} from "@/tabs/tabs-indicator"
 export { TABS_LIST_CLASS_NAME, TabsList, type TabsListProps } from "@/tabs/tabs-list"
 export { TABS_PANEL_CLASS_NAME, TabsPanel, type TabsPanelProps } from "@/tabs/tabs-panel"
 export { TABS_TAB_CLASS_NAME, TabsTab, type TabsTabProps } from "@/tabs/tabs-tab"

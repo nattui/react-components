@@ -5,6 +5,6 @@
   left: var(--active-tab-left);
   position: absolute;
   transition-duration: 150ms;
-  transition: left, width;
+  transition-property: left, width;
   width: var(--active-tab-width);
 }

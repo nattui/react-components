@@ -1,12 +1,4 @@
-import {
-  Column,
-  Spacer,
-  Tabs,
-  TabsIndicator,
-  TabsList,
-  TabsPanel,
-  TabsTab,
-} from "@nattui/react-components"
+import { Column, Spacer, Tabs, TabsList, TabsPanel, TabsTab } from "@nattui/react-components"
 import Link from "next/link"
 import type { PropsWithChildren } from "react"
 import { getNotionPage, type NotionBlock } from "@/components/notion/notion"
@@ -49,10 +41,9 @@ export default async function ButtonLayout(props: PropsWithChildren) {
             <TabsTab isNativeButton={false} render={<Link href="/button/code" />} value="code">
               Code
             </TabsTab>
-            <TabsTab isNativeButton={false} render={<Link href="/input" />} value="specs">
+            <TabsTab isNativeButton={false} render={<Link href="/button/code" />} value="specs">
               Design
             </TabsTab>
-            <TabsIndicator />
           </TabsList>
 
           {/* Content */}
