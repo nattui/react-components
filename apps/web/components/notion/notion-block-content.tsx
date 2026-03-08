@@ -73,7 +73,17 @@ export async function NotionBlockContent(props: NotionBlockContentProps): Promis
   }
 
   if (block.type === "code") {
-    const codeHTML = highlight(block.code)
+    const linkCards = renderLinkCards(block.code)
+
+    if (linkCards) {
+      return (
+        <>
+          <div className="grid gap-12 sm:grid-cols-2">{linkCards}</div>
+          <Spacer className="h-24" />
+        </>
+      )
+    }
+
     const mappedComponentElements = await renderMappedComponents(block.code)
 
     if (mappedComponentElements) {
@@ -87,6 +97,8 @@ export async function NotionBlockContent(props: NotionBlockContentProps): Promis
         </>
       )
     }
+
+    const codeHTML = highlight(block.code)
 
     return (
       <>
@@ -103,6 +115,7 @@ export async function NotionBlockContent(props: NotionBlockContentProps): Promis
   return <></>
 }
 
+const LINKS_MARKER = "// links"
 const COMPONENT_MARKER = "// component"
 
 const components: Record<string, ElementType> = {
@@ -117,6 +130,139 @@ const components: Record<string, ElementType> = {
   Spacer,
   Switch,
   Textarea,
+}
+
+interface LinkCard {
+  badge: string
+  href: string
+  label: string
+  meta: string
+}
+
+function formatLinkMeta(href: string): string {
+  if (href.startsWith("/")) {
+    return href
+  }
+  try {
+    const url = new URL(href)
+    const hostname = url.hostname.replace(/^www\./, "")
+    const pathname = url.pathname === "/" ? "" : url.pathname.replace(/\/$/, "")
+    return `${hostname}${pathname}`
+  } catch {
+    return href
+  }
+}
+
+function inferLinkBadge(label: string, href: string): string {
+  const normalizedText = `${label} ${href}`.toLowerCase()
+  if (normalizedText.includes("github")) {
+    return "GH"
+  }
+  if (normalizedText.includes("figma")) {
+    return "FG"
+  }
+  if (normalizedText.includes("story")) {
+    return "SB"
+  }
+  if (normalizedText.includes("download")) {
+    return "DL"
+  }
+  const compactLabel = label.replaceAll(/[^a-z0-9]/gi, "").toUpperCase()
+  return compactLabel.length >= 2 ? compactLabel.slice(0, 2) : "LK"
+}
+
+function inferLinkLabel(href: string): string {
+  const normalizedHref = href.toLowerCase()
+  if (normalizedHref.includes("github")) {
+    return "GitHub"
+  }
+  if (normalizedHref.includes("figma")) {
+    return "Figma"
+  }
+  if (normalizedHref.includes("story")) {
+    return "Storybook"
+  }
+  return "Link"
+}
+
+function isExternalHref(href: string): boolean {
+  return /^(?:https?:\/\/|mailto:)/.test(href)
+}
+
+function isLinkHref(segment: string): boolean {
+  return /^(?:https?:\/\/|mailto:|\/)/.test(segment)
+}
+
+function parseLinkCard(line: string): LinkCard | undefined {
+  const trimmedLine = line.trim()
+  if (trimmedLine.length === 0 || trimmedLine.startsWith("//")) {
+    return
+  }
+  const segments = trimmedLine
+    .split("::")
+    .map((segment) => segment.trim())
+    .filter(Boolean)
+  if (segments.length === 0) {
+    return
+  }
+  const hrefIndex = segments.findIndex((segment) => isLinkHref(segment))
+  if (hrefIndex === -1) {
+    return
+  }
+  const href = segments[hrefIndex]
+  const textSegments = segments.filter((_segment, index) => index !== hrefIndex)
+  const label = textSegments[0] ?? inferLinkLabel(href)
+  return {
+    badge: inferLinkBadge(label, href),
+    href,
+    label,
+    meta: textSegments[1] ?? formatLinkMeta(href),
+  }
+}
+
+function parseLinkCards(code: string): LinkCard[] | undefined {
+  const trimmedCode = code.trim()
+  if (!trimmedCode.startsWith(LINKS_MARKER)) {
+    return
+  }
+  const linkCards = trimmedCode
+    .slice(LINKS_MARKER.length)
+    .split("\n")
+    .flatMap((line) => {
+      const linkCard = parseLinkCard(line)
+      return linkCard ? [linkCard] : []
+    })
+  if (linkCards.length === 0) {
+    return
+  }
+  return linkCards
+}
+
+function renderLinkCards(code: string): JSX.Element[] | undefined {
+  const linkCards = parseLinkCards(code)
+  if (!linkCards) {
+    return
+  }
+  return linkCards.map((linkCard) => {
+    const isExternal = isExternalHref(linkCard.href)
+    return (
+      <a
+        className="rounded-12 bg-gray-2 border-gray-4 hover:bg-gray-3 group flex min-w-0 items-center gap-12 border p-12 transition-colors"
+        href={linkCard.href}
+        key={`${linkCard.label}-${linkCard.href}`}
+        rel={isExternal ? "noreferrer" : undefined}
+        target={isExternal ? "_blank" : undefined}
+      >
+        <div className="rounded-10 bg-gray-1 border-gray-4 text-gray-11 group-hover:text-gray-12 text-12 font-500 flex h-40 w-40 shrink-0 items-center justify-center border font-mono uppercase transition-colors">
+          {linkCard.badge}
+        </div>
+        <div className="min-w-0">
+          <p className="text-gray-12 text-14 font-500 leading-[1.3]">{linkCard.label}</p>
+          <p className="text-gray-11 text-12 truncate leading-[1.3]">{linkCard.meta}</p>
+        </div>
+      </a>
+    )
+  })
 }
 
 async function renderMappedComponents(code: string): Promise<JSX.Element | undefined> {
