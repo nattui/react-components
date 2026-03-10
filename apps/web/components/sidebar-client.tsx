@@ -29,7 +29,10 @@ export function SidebarClient(props: SidebarClientProps) {
           <div className="flex flex-col gap-y-8" key={sectionIndex}>
             {section.labelSegments.length > 0 && (
               <p className="text-gray-12 text-14 font-500 leading-none">
-                <NotionRichTextSegments blockIndex={sectionIndex} segments={section.labelSegments} />
+                <NotionRichTextSegments
+                  blockIndex={sectionIndex}
+                  segments={section.labelSegments}
+                />
               </p>
             )}
 
