@@ -1,5 +1,4 @@
 import { evaluate } from "@mdx-js/mdx"
-import { LucidePlus as IconPlus } from "@nattui/icons"
 import {
   Button,
   ButtonLink,
@@ -14,7 +13,8 @@ import {
   TabsUnderlinePanel,
   Switch,
   Textarea,
-} from "@nattui/react-components"
+} from "@nattstack/ui/react"
+import { LucidePlus as IconPlus } from "@nattui/icons"
 import Link from "next/link"
 import type { ElementType, JSX } from "react"
 import { Fragment, jsx, jsxs } from "react/jsx-runtime"

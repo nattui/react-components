@@ -1,4 +1,4 @@
-# @nattui/react-components
+# @nattstack/ui
 
 A collection of reusable React components built with Base UI, TypeScript, and CSS Modules.
 
@@ -13,13 +13,13 @@ A collection of reusable React components built with Base UI, TypeScript, and CS
 ## Installation
 
 ```bash
-pnpm add @nattui/react-components
+pnpm add @nattstack/ui
 ```
 
 ## Usage
 
 ```tsx
-import { Button } from "@nattui/react-components"
+import { Button } from "@nattstack/ui/react"
 
 function App() {
   return <Button onClick={() => console.log("Clicked!")}>Click me</Button>

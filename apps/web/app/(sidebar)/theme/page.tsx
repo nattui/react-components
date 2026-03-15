@@ -1,4 +1,4 @@
-import { Button, Column, Label, Spacer } from "@nattui/react-components"
+import { Button, Column, Label, Spacer } from "@nattstack/ui/react"
 import { ColorCombobox } from "@/components/color-combobox"
 import { ToggleGroupTheme } from "@/components/toggle-group-theme"
 

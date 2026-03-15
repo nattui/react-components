@@ -1,4 +1,4 @@
-import { Button } from "@nattui/react-components"
+import { Button } from "@nattstack/ui/react"
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { fn } from "storybook/test"
 
@@ -105,7 +105,7 @@ export const FullWidth: Story = {
 export const IconOnly: Story = {
   args: {
     children: "🚀",
-    iconOnly: true,
+    isIconOnly: true,
   },
 }
 

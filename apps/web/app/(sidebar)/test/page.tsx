@@ -1,5 +1,5 @@
+import { Button, Row } from "@nattstack/ui/react"
 import { LucideChevronRight, LucideX } from "@nattui/icons"
-import { Button, Row } from "@nattui/react-components"
 import Link from "next/link"
 
 export default function TestPage() {

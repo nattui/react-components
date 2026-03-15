@@ -1,3 +1,4 @@
+import { Button, Column, Input, Label, Row, Spacer } from "@nattstack/ui/react"
 import {
   LucideBan,
   LucideCopy,
@@ -7,7 +8,6 @@ import {
   LucideLogIn,
   LucideMail,
 } from "@nattui/icons"
-import { Button, Column, Input, Label, Row, Spacer } from "@nattui/react-components"
 
 export default function InputPage() {
   return (

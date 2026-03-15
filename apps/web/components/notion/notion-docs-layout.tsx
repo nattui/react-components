@@ -1,4 +1,4 @@
-import { Column, Spacer } from "@nattui/react-components"
+import { Column, Spacer } from "@nattstack/ui/react"
 import type { PropsWithChildren } from "react"
 import { getNotionPage } from "@/components/notion/notion"
 import { NotionDocsBlocks } from "@/components/notion/notion-docs-blocks"

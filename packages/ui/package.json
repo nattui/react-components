@@ -1,5 +1,5 @@
 {
-  "name": "@nattui/react-components",
+  "name": "@nattstack/ui",
   "version": "0.0.42",
   "description": "A collection of reusable React components built with TypeScript and CSS Modules",
   "keywords": [
@@ -7,14 +7,14 @@
     "react",
     "ui"
   ],
-  "homepage": "https://github.com/nattui/react-components#readme",
+  "homepage": "https://github.com/nattstack/ui#readme",
   "bugs": {
-    "url": "https://github.com/nattui/react-components/issues"
+    "url": "https://github.com/nattstack/ui/issues"
   },
   "author": "Natt Nguyen <hello@natt.sh> (https://natt.sh)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nattui/react-components.git"
+    "url": "git+https://github.com/nattstack/ui.git"
   },
   "files": [
     "dist"
@@ -24,7 +24,7 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": {
+    "./react": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     }

@@ -1,4 +1,4 @@
-import { Column, Spacer } from "@nattui/react-components"
+import { Column, Spacer } from "@nattstack/ui/react"
 import { getNotionPage, type NotionBlock } from "@/components/notion/notion"
 import { NotionBlockContent } from "@/components/notion/notion-block-content"
 import { NotionRevalidateButton } from "@/components/notion/notion-revalidate-button"

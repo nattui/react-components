@@ -6,7 +6,7 @@
     "dev": "storybook dev --no-open --port 6006"
   },
   "dependencies": {
-    "@nattui/react-components": "workspace:*",
+    "@nattstack/ui": "workspace:*",
     "@nattui/tailwind-colors": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:"
