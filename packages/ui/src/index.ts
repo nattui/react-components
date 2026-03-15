@@ -7,23 +7,15 @@ export { Row, ROW_CLASS_NAME, type RowProps } from "@/row/row"
 export { Spacer, SPACER_CLASS_NAME, type SpacerProps } from "@/spacer/spacer"
 export { Switch, SWITCH_CLASS_NAME, type SwitchProps } from "@/switch/switch"
 export {
-  TABS_UNDERLINE_CLASS_NAME,
-  TabsUnderline,
-  type TabsUnderlineProps,
-} from "@/tabs-underline/tabs-underline"
-export {
   TABS_UNDERLINE_LIST_CLASS_NAME,
   TabsUnderlineList,
   type TabsUnderlineListProps,
 } from "@/tabs-underline/tabs-underline-list"
 export {
-  TABS_UNDERLINE_PANEL_CLASS_NAME,
-  TabsUnderlinePanel,
-  type TabsUnderlinePanelProps,
-} from "@/tabs-underline/tabs-underline-panel"
-export {
   TABS_UNDERLINE_TAB_CLASS_NAME,
   TabsUnderlineTab,
   type TabsUnderlineTabProps,
 } from "@/tabs-underline/tabs-underline-tab"
+export { Tabs, TABS_CLASS_NAME, type TabsProps } from "@/tabs/tabs"
+export { TABS_PANEL_CLASS_NAME, TabsPanel, type TabsPanelProps } from "@/tabs/tabs-panel"
 export { Textarea, TEXTAREA_CLASS_NAME, type TextareaProps } from "@/textarea/textarea"

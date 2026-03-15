@@ -1,4 +1,4 @@
-.tabs_underline_panel {
+.tabs_panel {
   display: flex;
   flex-direction: column;
 }
