@@ -5,6 +5,7 @@ import { NotionDocsBlocks } from "@/components/notion/notion-docs-blocks"
 import { NotionTabs } from "@/components/notion/notion-tabs"
 
 type NotionDocsLayoutProps = PropsWithChildren<{
+  childPageIds?: string[]
   pageId: string
 }>
 
