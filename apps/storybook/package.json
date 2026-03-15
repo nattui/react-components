@@ -12,12 +12,12 @@
     "react-dom": "catalog:"
   },
   "devDependencies": {
-    "@storybook/react-vite": "10.2.17",
+    "@storybook/react-vite": "10.2.19",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
-    "@vitejs/plugin-react": "5.1.4",
-    "storybook": "10.2.17",
+    "@vitejs/plugin-react": "6.0.1",
+    "storybook": "10.2.19",
     "typescript": "catalog:",
-    "vite": "7.3.1"
+    "vite": "8.0.0"
   }
 }
