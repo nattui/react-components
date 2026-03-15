@@ -34,7 +34,7 @@ export default function MenuPage() {
             <LucideCoins size={20} />
             New coin
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={onGoLive} render={<Link href="/components/button" />}>
+          <DropdownMenuItem onClick={onGoLive} render={<Link href="/" />}>
             <LucideRadio size={20} />
             Go live
           </DropdownMenuItem>
