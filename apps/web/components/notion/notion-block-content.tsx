@@ -133,10 +133,10 @@ const components: Record<string, ElementType> = {
   Row,
   Spacer,
   Switch,
-  Tabs: TabsUnderline,
-  TabsList: TabsUnderlineList,
-  TabsPanel: TabsUnderlinePanel,
-  TabsTab: TabsUnderlineTab,
+  TabsUnderline,
+  TabsUnderlineList,
+  TabsUnderlinePanel,
+  TabsUnderlineTab,
   Textarea,
 }
 
