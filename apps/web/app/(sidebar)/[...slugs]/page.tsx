@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation"
 import { getDirectChildPages } from "@/app/(sidebar)/[...slugs]/get-direct-child-block"
+import { NotionDocsLayout } from "@/components/notion/notion-docs-layout"
 
 const NOTION_PAGE_ID = "30eb76f65e6e8038b950fe10d1b6b5ba"
 
@@ -37,12 +38,7 @@ export default async function Page(props: PageProps) {
     redirect(`/`)
   }
 
-  return (
-    <div>
-      <p>{matchedPageTitle}</p>
-      <p>{matchedPageId}</p>
-    </div>
-  )
+  return <NotionDocsLayout pageId={matchedPageId}>{matchedPageTitle}</NotionDocsLayout>
 }
 
 function normalizeSlug(value: string) {
