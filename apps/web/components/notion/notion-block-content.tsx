@@ -19,7 +19,7 @@ import Link from "next/link"
 import type { ElementType, JSX } from "react"
 import { Fragment, jsx, jsxs } from "react/jsx-runtime"
 import { highlight } from "sugar-high"
-import type { NotionBlock } from "@/components/notion/notion"
+import type { NotionBlock, NotionRichTextSegment } from "@/components/notion/notion"
 import { NotionRichTextSegments } from "@/components/notion/notion-rich-text-segments"
 
 interface NotionBlockContentProps {
@@ -27,31 +27,32 @@ interface NotionBlockContentProps {
   blockIndex: number
 }
 
+interface RenderHeadingProps {
+  blockIndex: number
+  className: string
+  level: "h1" | "h2" | "h3"
+  segments: NotionRichTextSegment[]
+}
+
 export async function NotionBlockContent(props: NotionBlockContentProps): Promise<JSX.Element> {
   const { block, blockIndex } = props
 
   if (block.type === "h2") {
-    return (
-      <>
-        <Spacer className="h-24" />
-        <h2 className="text-gray-12 text-24 font-500 leading-[1.3]">
-          <NotionRichTextSegments blockIndex={blockIndex} segments={block.segments} />
-        </h2>
-        <Spacer className="h-12" />
-      </>
-    )
+    return renderHeading({
+      blockIndex,
+      className: "text-gray-12 text-24 font-500 leading-[1.3]",
+      level: "h2",
+      segments: block.segments,
+    })
   }
 
   if (block.type === "h3") {
-    return (
-      <>
-        <Spacer className="h-24" />
-        <h3 className="text-gray-12 text-20 font-500 leading-[1.4]">
-          <NotionRichTextSegments blockIndex={blockIndex} segments={block.segments} />
-        </h3>
-        <Spacer className="h-12" />
-      </>
-    )
+    return renderHeading({
+      blockIndex,
+      className: "text-gray-12 text-20 font-500 leading-[1.4]",
+      level: "h3",
+      segments: block.segments,
+    })
   }
 
   if (block.type === "paragraph") {
@@ -117,6 +118,87 @@ export async function NotionBlockContent(props: NotionBlockContentProps): Promis
 
   // oxlint-disable-next-line react/jsx-no-useless-fragment returns empty fragment for typescript
   return <></>
+}
+
+function getHeadingId(segments: NotionRichTextSegment[], blockIndex: number): string {
+  const headingText = getHeadingText(segments)
+
+  const headingSlug = headingText
+    .toLowerCase()
+    .normalize("NFKD")
+    .replaceAll(/[\u0300-\u036F]/g, "")
+    .replaceAll(/[^a-z0-9]+/g, "-")
+    .replaceAll(/^-+|-+$/g, "")
+
+  return headingSlug || `heading-${blockIndex}`
+}
+
+function getHeadingText(segments: NotionRichTextSegment[]): string {
+  return segments.map((segment) => segment.text).join("").trim()
+}
+
+function renderHeading(props: RenderHeadingProps): JSX.Element {
+  const { blockIndex, className, level, segments } = props
+
+  const Heading = level
+  const headingText = getHeadingText(segments)
+  const headingId = getHeadingId(segments, blockIndex)
+
+  return (
+    <>
+      <Spacer className="h-24" />
+      <Heading className={`${className} group scroll-mt-[80px]`} id={headingId}>
+        <a
+          aria-label={headingText ? `Link to ${headingText}` : "Link to heading"}
+          className="relative inline-block max-w-full no-underline"
+          href={`#${headingId}`}
+        >
+          <span
+            aria-hidden
+            className="text-gray-10 pointer-events-none absolute top-0 right-full pr-8 opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100"
+          >
+            #
+          </span>
+          {renderHeadingSegments(blockIndex, segments)}
+        </a>
+      </Heading>
+      <Spacer className="h-12" />
+    </>
+  )
+}
+
+function renderHeadingSegments(
+  blockIndex: number,
+  segments: NotionRichTextSegment[],
+): JSX.Element[] {
+  return segments.map((segment, segmentIndex) => {
+    // The surrounding heading link owns hash navigation, so avoid nested anchors here.
+    let segmentContent: JSX.Element | string = segment.text
+
+    if (segment.code) {
+      segmentContent = (
+        <code className="rounded-4 bg-gray-3 text-14 px-4 py-2 font-mono">{segmentContent}</code>
+      )
+    }
+
+    if (segment.bold) {
+      segmentContent = <strong>{segmentContent}</strong>
+    }
+
+    if (segment.italic) {
+      segmentContent = <em>{segmentContent}</em>
+    }
+
+    if (segment.strikethrough) {
+      segmentContent = <s>{segmentContent}</s>
+    }
+
+    if (segment.underline) {
+      segmentContent = <u>{segmentContent}</u>
+    }
+
+    return <span key={`${blockIndex}-${segmentIndex}`}>{segmentContent}</span>
+  })
 }
 
 const LINKS_MARKER = "// links"
