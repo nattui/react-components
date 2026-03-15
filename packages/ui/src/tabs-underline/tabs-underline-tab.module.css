@@ -1,4 +1,4 @@
-.tabs_tab {
+.tabs_underline_tab {
   border-radius: 8px;
   color: var(--color-gray-11);
   cursor: pointer;
@@ -14,11 +14,11 @@
   transition-property: color;
 }
 
-.tabs_tab:focus-visible {
+.tabs_underline_tab:focus-visible {
   outline-style: solid;
 }
 
-.tabs_tab:hover,
-.tabs_tab[data-active] {
+.tabs_underline_tab:hover,
+.tabs_underline_tab[data-active] {
   color: var(--color-gray-12);
 }

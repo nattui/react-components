@@ -1,0 +1,27 @@
+import { Tabs as BaseTabs } from "@base-ui/react"
+import { TabsUnderlineIndicator } from "@/tabs-underline/tabs-underline-indicator"
+import styles from "@/tabs-underline/tabs-underline-list.module.css"
+
+export interface TabsUnderlineListProps extends BaseTabs.List.Props {}
+
+export function TabsUnderlineList(props: TabsUnderlineListProps) {
+  const { className: customClassName = "", children = "", ...rest } = props
+
+  const combinedClassName = `
+    ${TABS_UNDERLINE_LIST_CLASS_NAME.BASE}
+    ${customClassName}
+  `
+    .replaceAll(/\s+/g, " ")
+    .trim()
+
+  return (
+    <BaseTabs.List className={combinedClassName} data-slot="tabs-list" {...rest}>
+      {children}
+      <TabsUnderlineIndicator />
+    </BaseTabs.List>
+  )
+}
+
+export const TABS_UNDERLINE_LIST_CLASS_NAME = {
+  BASE: styles.tabs_underline_list,
+} as const

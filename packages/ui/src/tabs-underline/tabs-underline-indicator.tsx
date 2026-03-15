@@ -1,18 +1,18 @@
 import { Tabs as BaseTabs } from "@base-ui/react"
-import styles from "@/tabs/tabs-indicator.module.css"
+import styles from "@/tabs-underline/tabs-underline-indicator.module.css"
 
-export interface TabsIndicatorProps extends Omit<
+export interface TabsUnderlineIndicatorProps extends Omit<
   BaseTabs.Indicator.Props,
   "renderBeforeHydration"
 > {
   isRenderBeforeHydration?: boolean
 }
 
-export function TabsIndicator(props: TabsIndicatorProps) {
+export function TabsUnderlineIndicator(props: TabsUnderlineIndicatorProps) {
   const { className: customClassName = "", isRenderBeforeHydration = true, ...rest } = props
 
   const combinedClassName = `
-    ${TABS_INDICATOR_CLASS_NAME.BASE}
+    ${TABS_UNDERLINE_INDICATOR_CLASS_NAME.BASE}
     ${customClassName}
   `
     .replaceAll(/\s+/g, " ")
@@ -28,6 +28,6 @@ export function TabsIndicator(props: TabsIndicatorProps) {
   )
 }
 
-export const TABS_INDICATOR_CLASS_NAME = {
-  BASE: styles.tabs_indicator,
+export const TABS_UNDERLINE_INDICATOR_CLASS_NAME = {
+  BASE: styles.tabs_underline_indicator,
 } as const

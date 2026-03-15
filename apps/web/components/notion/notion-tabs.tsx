@@ -1,6 +1,6 @@
 "use client"
 
-import { Tabs, TabsList, TabsTab } from "@nattui/react-components"
+import { TabsUnderline, TabsUnderlineList, TabsUnderlineTab } from "@nattui/react-components"
 import Link, { type LinkProps } from "next/link"
 import { usePathname } from "next/navigation"
 import type { NotionTab } from "@/components/notion/notion"
@@ -20,19 +20,19 @@ export function NotionTabs(props: NotionTabsProps) {
   const selectedValue = tabs.some((tab) => tab.href === pathname) ? pathname : tabs[0].href
 
   return (
-    <Tabs value={selectedValue}>
-      <TabsList>
+    <TabsUnderline value={selectedValue}>
+      <TabsUnderlineList>
         {tabs.map((tab, index) => (
-          <TabsTab
+          <TabsUnderlineTab
             isNativeButton={false}
             key={index}
             render={<Link href={tab.href as LinkProps<string>["href"]} />}
             value={tab.href}
           >
             {tab.label}
-          </TabsTab>
+          </TabsUnderlineTab>
         ))}
-      </TabsList>
-    </Tabs>
+      </TabsUnderlineList>
+    </TabsUnderline>
   )
 }
