@@ -1,0 +1,56 @@
+import { redirect } from "next/navigation"
+import { getDirectChildPages } from "@/app/(sidebar)/[...slugs]/get-direct-child-block"
+
+const NOTION_PAGE_ID = "30eb76f65e6e8038b950fe10d1b6b5ba"
+
+interface PageProps {
+  params: Promise<{
+    slugs: string[]
+  }>
+}
+
+export default async function Page(props: PageProps) {
+  const { params } = props
+
+  const { slugs } = await params
+
+  const [slug] = slugs
+
+  const pages = await getDirectChildPages(NOTION_PAGE_ID)
+  const normalizedSlug = normalizeSlug(slug)
+
+  let matchedPageId = ""
+  let matchedPageTitle = ""
+
+  const hasMatch = pages.some((page) => {
+    const normalizedPageTitle = normalizeSlug(page.title)
+    if (normalizedPageTitle === normalizedSlug) {
+      matchedPageId = page.id
+      matchedPageTitle = page.title
+      return true
+    }
+
+    return false
+  })
+
+  if (!hasMatch) {
+    redirect(`/`)
+  }
+
+  return (
+    <div>
+      <p>{matchedPageTitle}</p>
+      <p>{matchedPageId}</p>
+    </div>
+  )
+}
+
+function normalizeSlug(value: string) {
+  return value
+    .trim()
+    .replaceAll(/([A-Z]+)([A-Z][a-z])/g, "$1-$2")
+    .replaceAll(/([a-z0-9])([A-Z])/g, "$1-$2")
+    .replaceAll(/[\s_]+/g, "-")
+    .replaceAll(/-+/g, "-")
+    .toLowerCase()
+}

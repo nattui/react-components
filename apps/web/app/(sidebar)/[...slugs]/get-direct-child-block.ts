@@ -1,4 +1,4 @@
-import { getChildBlocks, type NotionBlock } from "@/app/(sidebar)/[...pages]/get-child-block"
+import { getChildBlocks, type NotionBlock } from "@/app/(sidebar)/[...slugs]/get-child-block"
 
 interface NotionPageSummary {
   id: string
