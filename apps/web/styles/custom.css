@@ -52,6 +52,18 @@ input::-webkit-datetime-edit-year-field:focus {
   --sh-jsxliterals: black;
   --sh-keyword: #f47067;
   --sh-property: #ea3323;
-  --sh-sign: var(--color-gray-11);
+  --sh-sign: black;
   --sh-string: #96261f;
+}
+
+:root .dark {
+  --sh-class: white;
+  --sh-comment: #5e6a6a;
+  --sh-entity: #8aebf3;
+  --sh-identifier: #c37ba3;
+  --sh-jsxliterals: white;
+  --sh-keyword: #0b8f98;
+  --sh-property: #15ccdc;
+  --sh-sign: white;
+  --sh-string: #69d9e0;
 }
