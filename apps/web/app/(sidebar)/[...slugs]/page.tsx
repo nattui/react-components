@@ -18,14 +18,13 @@ export default async function Page(props: PageProps) {
   const [slug] = slugs
 
   const pages = await getDirectChildPages(NOTION_PAGE_ID)
-  const normalizedSlug = normalizeSlug(slug)
 
   let matchedPageId = ""
   let matchedPageTitle = ""
 
   const hasMatch = pages.some((page) => {
-    const normalizedPageTitle = normalizeSlug(page.title)
-    if (normalizedPageTitle === normalizedSlug) {
+    const pageTitle = pascalToKebabCase(page.title)
+    if (pageTitle === slug) {
       matchedPageId = page.id
       matchedPageTitle = page.title
       return true
@@ -41,7 +40,7 @@ export default async function Page(props: PageProps) {
   return <NotionDocsLayout pageId={matchedPageId}>{matchedPageTitle}</NotionDocsLayout>
 }
 
-function normalizeSlug(value: string) {
+function pascalToKebabCase(value: string) {
   return value
     .trim()
     .replaceAll(/([A-Z]+)([A-Z][a-z])/g, "$1-$2")
