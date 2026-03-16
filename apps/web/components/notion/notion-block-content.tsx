@@ -134,7 +134,10 @@ function getHeadingId(segments: NotionRichTextSegment[], blockIndex: number): st
 }
 
 function getHeadingText(segments: NotionRichTextSegment[]): string {
-  return segments.map((segment) => segment.text).join("").trim()
+  return segments
+    .map((segment) => segment.text)
+    .join("")
+    .trim()
 }
 
 function renderHeading(props: RenderHeadingProps): JSX.Element {
@@ -155,7 +158,7 @@ function renderHeading(props: RenderHeadingProps): JSX.Element {
         >
           <span
             aria-hidden
-            className="text-gray-10 pointer-events-none absolute top-0 right-full pr-8 opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100"
+            className="text-gray-10 pointer-events-none absolute top-0 right-full pr-8 opacity-0 transition-opacity group-focus-within:opacity-100 group-hover:opacity-100"
           >
             #
           </span>

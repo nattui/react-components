@@ -1,5 +1,5 @@
-import type { LinkProps } from "next/link"
 import { cacheTag } from "next/cache"
+import type { LinkProps } from "next/link"
 import { notion, type NotionRichTextSegment } from "@/components/notion/notion"
 import { SidebarClient } from "@/components/sidebar-client"
 
