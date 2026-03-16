@@ -1,4 +1,4 @@
-import { revalidatePath } from "next/cache"
+import { revalidatePath, revalidateTag } from "next/cache"
 import { NotionRevalidateButtonClient } from "@/components/notion/notion-revalidate-button-client"
 
 export function NotionRevalidateButton() {
@@ -15,5 +15,6 @@ export function NotionRevalidateButton() {
 async function revalidateNotionPageAction() {
   "use server"
 
+  revalidateTag("notion", "max")
   revalidatePath("/")
 }

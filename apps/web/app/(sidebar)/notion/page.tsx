@@ -1,4 +1,5 @@
 import { Column, Spacer } from "@nattstack/ui/react"
+import { cacheTag } from "next/cache"
 import { getNotionPage, type NotionBlock } from "@/components/notion/notion"
 import { NotionBlockContent } from "@/components/notion/notion-block-content"
 import { NotionRevalidateButton } from "@/components/notion/notion-revalidate-button"
@@ -6,6 +7,11 @@ import { NotionRevalidateButton } from "@/components/notion/notion-revalidate-bu
 const NOTION_PAGE_ID = "30ab76f65e6e809e881ff95294eaac61"
 
 export default async function NotionPage() {
+  "use cache"
+
+  cacheTag("notion")
+  cacheTag(`notion-page:${NOTION_PAGE_ID}`)
+
   const { blocks, createdTime, title } = await getNotionPage(NOTION_PAGE_ID)
 
   const formattedCreatedTime = new Intl.DateTimeFormat("en-US", {

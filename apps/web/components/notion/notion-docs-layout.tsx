@@ -1,4 +1,5 @@
 import { Column, Spacer } from "@nattstack/ui/react"
+import { cacheTag } from "next/cache"
 import type { PropsWithChildren } from "react"
 import { getNotionPage } from "@/components/notion/notion"
 import { NotionDocsBlocks } from "@/components/notion/notion-docs-blocks"
@@ -10,7 +11,12 @@ type NotionDocsLayoutProps = PropsWithChildren<{
 }>
 
 export async function NotionDocsLayout(props: NotionDocsLayoutProps) {
+  "use cache"
+
   const { children, pageId } = props
+
+  cacheTag("notion")
+  cacheTag(`notion-page:${pageId}`)
 
   const { blocks, lastEditedTime, tabs, title } = await getNotionPage(pageId)
 

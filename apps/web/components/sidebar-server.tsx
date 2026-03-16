@@ -1,4 +1,5 @@
 import type { LinkProps } from "next/link"
+import { cacheTag } from "next/cache"
 import { notion, type NotionRichTextSegment } from "@/components/notion/notion"
 import { SidebarClient } from "@/components/sidebar-client"
 
@@ -48,6 +49,11 @@ async function getSidebarBlocksFromNotionPage(cursor?: string): Promise<SidebarB
 }
 
 async function getSidebarSectionsFromNotion(): Promise<SidebarSection[]> {
+  "use cache"
+
+  cacheTag("notion")
+  cacheTag("notion-sidebar")
+
   try {
     const blocks = await getSidebarBlocksFromNotionPage()
     return toSidebarSections(blocks)
