@@ -46,7 +46,6 @@ export function SidebarClient(props: SidebarClientProps) {
                     data-is-active={isActive}
                     href={link.href}
                     key={`${sectionIndex}-${linkIndex}`}
-                    scroll={false}
                   >
                     {link.label}
                   </Link>
