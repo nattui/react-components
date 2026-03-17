@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Logomark } from "@/components/logomark"
 import { Logotype } from "@/components/logotype"
 import { NotionRevalidateButton } from "@/components/notion/notion-revalidate-button"
+import { ToggleGroupTheme } from "@/components/toggle-group-theme"
 
 export function Topbar() {
   return (
@@ -15,7 +16,10 @@ export function Topbar() {
           <Logotype className="text-gray-12" />
         </Link>
 
-        <NotionRevalidateButton />
+        <div className="flex items-center gap-x-8">
+          <ToggleGroupTheme />
+          <NotionRevalidateButton />
+        </div>
       </div>
     </header>
   )
