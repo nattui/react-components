@@ -8,7 +8,7 @@ export function NotionRevalidateButtonClient() {
 
   return (
     <Button isLoading={pending} type="submit" variant="secondary">
-      {pending ? "Refreshing..." : "Refresh Notion content cache"}
+      {pending ? "Refreshing..." : "Revalidate"}
     </Button>
   )
 }

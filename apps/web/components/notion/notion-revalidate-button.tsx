@@ -3,11 +3,9 @@ import { NotionRevalidateButtonClient } from "@/components/notion/notion-revalid
 
 export function NotionRevalidateButton() {
   return (
-    <div className="mx-auto w-full max-w-[620px]">
-      <form action={revalidateNotionPageAction}>
-        <NotionRevalidateButtonClient />
-      </form>
-    </div>
+    <form action={revalidateNotionPageAction}>
+      <NotionRevalidateButtonClient />
+    </form>
   )
 }
 

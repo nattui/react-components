@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Logomark } from "@/components/logomark"
 import { Logotype } from "@/components/logotype"
+import { NotionRevalidateButton } from "@/components/notion/notion-revalidate-button"
 
 export function Topbar() {
   return (
@@ -13,6 +14,8 @@ export function Topbar() {
           <Logomark className="text-primary-9" />
           <Logotype className="text-gray-12" />
         </Link>
+
+        <NotionRevalidateButton />
       </div>
     </header>
   )
