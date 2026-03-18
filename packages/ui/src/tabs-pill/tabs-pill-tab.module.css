@@ -3,6 +3,7 @@
   background-color: var(--color-gray-3);
   border-radius: 12px;
   color: var(--color-black);
+  cursor: pointer;
   display: flex;
   font-size: 14px;
   font-weight: 500;
@@ -30,6 +31,10 @@
   color: var(--color-white);
 }
 
-.tabs_pill_tab[data-active]:focus-visible {
-  outline-color: var(--color-white);
+:global(.dark) .tabs_pill_tab {
+  color: var(--color-white);
+}
+
+:global(.dark) .tabs_pill_tab[data-active] {
+  color: var(--color-black);
 }
