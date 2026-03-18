@@ -5,6 +5,7 @@
   color: var(--color-black);
   cursor: pointer;
   display: flex;
+  flex-shrink: 0;
   font-size: 14px;
   font-weight: 500;
   height: 40px;
