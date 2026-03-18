@@ -143,7 +143,7 @@
   background-color: var(--color-gray-dark-1);
   background-image: linear-gradient(
     to bottom,
-    color-mix(in oklab, transparent 100%, #ffffff 5%) 50%,
+    color-mix(in oklab, transparent 100%, #ffffff 2.5%) 50%,
     color-mix(in oklab, transparent 100%, #ffffff 0%) 50%
   );
 }
@@ -192,7 +192,7 @@
   color: var(--color-white);
   background-image: linear-gradient(
     to bottom,
-    color-mix(in oklab, transparent 100%, #ffffff 2%) 50%,
+    color-mix(in oklab, transparent 100%, #ffffff 1%) 50%,
     color-mix(in oklab, transparent 100%, #ffffff 0%) 50%
   );
 }
