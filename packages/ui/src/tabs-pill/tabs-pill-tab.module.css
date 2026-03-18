@@ -1,0 +1,35 @@
+.tabs_pill_tab {
+  align-items: center;
+  background-color: var(--color-gray-3);
+  border-radius: 12px;
+  color: var(--color-black);
+  display: flex;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  justify-content: center;
+  outline-color: var(--color-primary-9);
+  outline-offset: -4px;
+  outline-style: none;
+  outline-width: 2px;
+  padding: 0 14px;
+  transition-duration: 150ms;
+  transition-property: background-color, color;
+}
+
+.tabs_pill_tab:focus-visible {
+  outline-style: solid;
+}
+
+.tabs_pill_tab:hover {
+  background-color: var(--color-gray-4);
+}
+
+.tabs_pill_tab[data-active] {
+  background-color: transparent;
+  color: var(--color-white);
+}
+
+.tabs_pill_tab[data-active]:focus-visible {
+  outline-color: var(--color-white);
+}

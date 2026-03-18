@@ -7,6 +7,16 @@ export { Row, ROW_CLASS_NAME, type RowProps } from "@/row/row"
 export { Spacer, SPACER_CLASS_NAME, type SpacerProps } from "@/spacer/spacer"
 export { Switch, SWITCH_CLASS_NAME, type SwitchProps } from "@/switch/switch"
 export {
+  TABS_PILL_LIST_CLASS_NAME,
+  TabsPillList,
+  type TabsPillListProps,
+} from "@/tabs-pill/tabs-pill-list"
+export {
+  TABS_PILL_TAB_CLASS_NAME,
+  TabsPillTab,
+  type TabsPillTabProps,
+} from "@/tabs-pill/tabs-pill-tab"
+export {
   TABS_UNDERLINE_LIST_CLASS_NAME,
   TabsUnderlineList,
   type TabsUnderlineListProps,
