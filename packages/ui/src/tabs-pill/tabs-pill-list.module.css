@@ -1,6 +1,7 @@
 .tabs_pill_list {
   column-gap: 8px;
   display: flex;
+  isolation: isolate;
   overflow-x: auto;
   position: relative;
 }
