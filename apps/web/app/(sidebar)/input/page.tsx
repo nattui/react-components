@@ -7,7 +7,7 @@ import {
   LucideLock,
   LucideLogIn,
   LucideMail,
-} from "@nattui/icons"
+} from "@nattstack/icons"
 
 export default function InputPage() {
   return (

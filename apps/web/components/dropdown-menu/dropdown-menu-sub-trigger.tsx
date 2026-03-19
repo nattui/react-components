@@ -1,5 +1,5 @@
 import { Menu as MenuPrimitive } from "@base-ui/react"
-import { LucideChevronRight } from "@nattui/icons"
+import { LucideChevronRight } from "@nattstack/icons"
 
 interface DropdownMenuSubTriggerProps extends MenuPrimitive.SubmenuTrigger.Props {
   inset?: boolean

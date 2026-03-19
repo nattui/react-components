@@ -1,5 +1,5 @@
 import { Menu as MenuPrimitive } from "@base-ui/react"
-import { LucideCheck } from "@nattui/icons"
+import { LucideCheck } from "@nattstack/icons"
 
 interface DropdownMenuRadioItemProps extends MenuPrimitive.RadioItem.Props {
   inset?: boolean

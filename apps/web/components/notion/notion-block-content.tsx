@@ -18,7 +18,7 @@ import {
   Switch,
   Textarea,
 } from "@nattstack/ui/react"
-import { LucidePlus as IconPlus } from "@nattui/icons"
+import { LucidePlus as IconPlus } from "@nattstack/icons"
 import Link from "next/link"
 import type { ElementType, JSX } from "react"
 import { Fragment, jsx, jsxs } from "react/jsx-runtime"

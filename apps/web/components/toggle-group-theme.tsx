@@ -1,7 +1,7 @@
 "use client"
 
 import { ToggleGroup } from "@base-ui/react"
-import { LucideMonitor, LucideMoon, LucideSun } from "@nattui/icons"
+import { LucideMonitor, LucideMoon, LucideSun } from "@nattstack/icons"
 import { useState } from "react"
 import { ToggleGroupThemeItem } from "@/components/toggle-group-theme-item"
 
