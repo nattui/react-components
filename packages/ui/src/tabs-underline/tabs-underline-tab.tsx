@@ -3,7 +3,7 @@ import { normalizeWhitespace } from "@/utils/normalize-whitespace"
 import styles from "@/tabs-underline/tabs-underline-tab.module.css"
 
 export interface TabsUnderlineTabProps extends Omit<BaseTabs.Tab.Props, "nativeButton"> {
-  isNativeButton?: boolean
+  isNativeButton?: BaseTabs.Tab.Props["nativeButton"]
 }
 
 export function TabsUnderlineTab(props: TabsUnderlineTabProps) {

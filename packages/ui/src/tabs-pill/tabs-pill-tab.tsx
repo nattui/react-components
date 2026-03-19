@@ -3,7 +3,7 @@ import { normalizeWhitespace } from "@/utils/normalize-whitespace"
 import styles from "@/tabs-pill/tabs-pill-tab.module.css"
 
 export interface TabsPillTabProps extends Omit<BaseTabs.Tab.Props, "nativeButton"> {
-  isNativeButton?: boolean
+  isNativeButton?: BaseTabs.Tab.Props["nativeButton"]
 }
 
 export function TabsPillTab(props: TabsPillTabProps) {

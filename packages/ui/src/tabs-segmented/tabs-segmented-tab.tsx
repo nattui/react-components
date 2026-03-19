@@ -3,7 +3,7 @@ import { normalizeWhitespace } from "@/utils/normalize-whitespace"
 import styles from "@/tabs-segmented/tabs-segmented-tab.module.css"
 
 export interface TabsSegmentedTabProps extends Omit<BaseTabs.Tab.Props, "nativeButton"> {
-  isNativeButton?: boolean
+  isNativeButton?: BaseTabs.Tab.Props["nativeButton"]
 }
 
 export function TabsSegmentedTab(props: TabsSegmentedTabProps) {
