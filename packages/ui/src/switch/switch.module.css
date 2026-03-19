@@ -6,7 +6,7 @@
   padding: 2px;
   overflow: hidden;
   cursor: pointer;
-  outline-width: 2px;
+  outline-width: 0;
   outline-style: solid;
   outline-color: var(--color-primary-9);
   outline-offset: 2px;
