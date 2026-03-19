@@ -47,6 +47,7 @@ export default function ComboboxPage() {
         placeholder="e.g. color-gray-mauve"
       />
       <Spacer height={16} />
+
       <ColorCombobox
         label="Primary palette"
         options={PRIMARY_OPTIONS}
