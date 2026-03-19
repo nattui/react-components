@@ -27,7 +27,7 @@ import {
 export default function Page() {
   return (
     <>
-      <Row>
+      <Row gapX={8}>
         <Tooltip>
           <TooltipTrigger
             render={
