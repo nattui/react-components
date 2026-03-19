@@ -16,8 +16,8 @@
   line-height: 1.5;
   outline-color: var(--color-primary-9);
   outline-offset: 2px;
-  outline-style: none;
-  outline-width: 2px;
+  outline-style: solid;
+  outline-width: 0px;
   overflow: hidden;
   transition-duration: 150ms;
   transition-property: background-color, box-shadow, opacity, translate;
@@ -38,7 +38,7 @@
 
 /* When keyboard focused, show outline */
 .button:focus-visible {
-  outline-style: solid;
+  outline-width: 2px;
 }
 
 /* ===================================================== */

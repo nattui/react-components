@@ -3,10 +3,10 @@
   flex-direction: column;
   outline-color: var(--color-primary-9);
   outline-offset: -2px;
-  outline-style: none;
-  outline-width: 2px;
+  outline-style: solid;
+  outline-width: 0px;
 }
 
 .tabs_panel:focus-visible {
-  outline-style: solid;
+  outline-width: 2px;
 }

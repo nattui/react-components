@@ -12,15 +12,15 @@
   justify-content: center;
   outline-color: var(--color-primary-9);
   outline-offset: -4px;
-  outline-style: none;
-  outline-width: 2px;
+  outline-style: solid;
+  outline-width: 0px;
   padding: 0 14px;
   transition-duration: 150ms;
   transition-property: background-color, color;
 }
 
 .tabs_pill_tab:focus-visible {
-  outline-style: solid;
+  outline-width: 2px;
 }
 
 .tabs_pill_tab:hover {

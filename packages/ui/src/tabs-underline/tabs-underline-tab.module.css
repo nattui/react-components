@@ -8,15 +8,15 @@
   margin-bottom: 6px;
   outline-color: var(--color-primary-9);
   outline-offset: -2px;
-  outline-style: none;
-  outline-width: 2px;
+  outline-style: solid;
+  outline-width: 0px;
   padding: 6px 12px;
   transition-duration: 150ms;
   transition-property: color;
 }
 
 .tabs_underline_tab:focus-visible {
-  outline-style: solid;
+  outline-width: 2px;
 }
 
 .tabs_underline_tab:hover,
