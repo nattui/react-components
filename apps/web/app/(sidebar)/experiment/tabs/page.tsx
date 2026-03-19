@@ -1,6 +1,15 @@
-import { LucideMonitor, LucideMoon, LucideSun } from "@nattstack/icons"
+import {
+  LucideArrowDown,
+  LucideArrowLeft,
+  LucideArrowRight,
+  LucideArrowUp,
+  LucideMonitor,
+  LucideMoon,
+  LucideSun,
+} from "@nattstack/icons"
 import {
   Button,
+  Row,
   Spacer,
   Tabs,
   TabsPanel,
@@ -18,10 +27,49 @@ import {
 export default function Page() {
   return (
     <>
-      <Tooltip>
-        <TooltipTrigger render={<Button>Tooltip trigger</Button>} />
-        <TooltipContent>Add to library</TooltipContent>
-      </Tooltip>
+      <Row>
+        <Tooltip>
+          <TooltipTrigger
+            render={
+              <Button isIconOnly>
+                <LucideArrowUp size={16} />
+              </Button>
+            }
+          />
+          <TooltipContent side="top">Top side</TooltipContent>
+        </Tooltip>
+        <Tooltip>
+          <TooltipTrigger
+            render={
+              <Button isIconOnly>
+                <LucideArrowDown size={16} />
+              </Button>
+            }
+          />
+          <TooltipContent side="bottom">Bottom side</TooltipContent>
+        </Tooltip>
+        <Tooltip>
+          <TooltipTrigger
+            render={
+              <Button isIconOnly>
+                <LucideArrowRight size={16} />
+              </Button>
+            }
+          />
+          <TooltipContent side="left">Left side</TooltipContent>
+        </Tooltip>
+        <Tooltip>
+          <TooltipTrigger
+            render={
+              <Button isIconOnly>
+                <LucideArrowLeft size={16} />
+              </Button>
+            }
+          />
+          <TooltipContent side="left">Right end</TooltipContent>
+        </Tooltip>
+      </Row>
+
       <Spacer height={16} />
 
       <Tabs defaultValue="system">
