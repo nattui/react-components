@@ -42,7 +42,7 @@ export function SidebarClient(props: SidebarClientProps) {
 
                 return (
                   <Link
-                    className="text-14 font-500 data-[is-active=true]:text-primary-9 hover:text-gray-12 hover:bg-gray-4! rounded-8 data-[is-active=true]:bg-gray-3 relative flex h-24 w-full items-center px-8 transition-colors"
+                    className="text-14 font-500 data-[is-active=true]:text-primary-9 hover:text-gray-12 hover:bg-gray-4! rounded-8 data-[is-active=true]:bg-gray-3 text-gray-11 relative flex h-24 w-full items-center px-8 transition-colors"
                     data-is-active={isActive}
                     href={link.href}
                     key={`${sectionIndex}-${linkIndex}`}
