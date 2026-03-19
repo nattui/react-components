@@ -1,3 +1,4 @@
+import { LucideMonitor, LucideMoon, LucideSun } from "@nattstack/icons"
 import {
   Spacer,
   Tabs,
@@ -15,9 +16,9 @@ export default function Page() {
     <>
       <Tabs defaultValue="system">
         <TabsSegmentedList>
-          <TabsSegmentedTab value="system">⚙️ System</TabsSegmentedTab>
-          <TabsSegmentedTab value="light">☀️ Light</TabsSegmentedTab>
-          <TabsSegmentedTab value="dark">🌙 Dark</TabsSegmentedTab>
+          <TabsSegmentedTab value="system"><LucideMonitor size={16} /> System</TabsSegmentedTab>
+          <TabsSegmentedTab value="light"><LucideSun size={16} /> Light</TabsSegmentedTab>
+          <TabsSegmentedTab value="dark"><LucideMoon size={16} /> Dark</TabsSegmentedTab>
         </TabsSegmentedList>
         <Spacer height={16} />
 

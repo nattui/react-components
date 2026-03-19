@@ -2,7 +2,7 @@ import Link from "next/link"
 import { Logomark } from "@/components/logomark"
 import { Logotype } from "@/components/logotype"
 import { NotionRevalidateButton } from "@/components/notion/notion-revalidate-button"
-import { ToggleGroupTheme } from "@/components/toggle-group-theme"
+import { TabsTheme } from "@/components/tabs-theme"
 
 export function Topbar() {
   return (
@@ -17,7 +17,7 @@ export function Topbar() {
         </Link>
 
         <div className="flex items-center gap-x-8">
-          <ToggleGroupTheme />
+          <TabsTheme />
           <NotionRevalidateButton />
         </div>
       </div>

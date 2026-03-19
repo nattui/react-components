@@ -1,7 +1,10 @@
 .tabs_underline_tab {
+  align-items: center;
   border-radius: 8px;
   color: var(--color-gray-11);
+  column-gap: 8px;
   cursor: pointer;
+  display: flex;
   flex-shrink: 0;
   font-size: 14px;
   font-weight: 500;

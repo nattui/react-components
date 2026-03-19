@@ -1,9 +1,8 @@
 "use client"
 
-import { Tabs, TabsSegmentedList } from "@nattstack/ui/react"
+import { Tabs, TabsSegmentedList, TabsSegmentedTab } from "@nattstack/ui/react"
 import { LucideMonitor, LucideMoon, LucideSun } from "@nattstack/icons"
 import { useState } from "react"
-import { ToggleGroupThemeItem } from "@/components/toggle-group-theme-item"
 
 export const THEME = {
   DARK: "dark",
@@ -13,7 +12,7 @@ export const THEME = {
 
 export type Theme = (typeof THEME)[keyof typeof THEME]
 
-export function ToggleGroupTheme() {
+export function TabsTheme() {
   const [theme, setTheme] = useState<Theme>(THEME.LIGHT)
 
   function onValueChange(value: Theme) {
@@ -28,21 +27,9 @@ export function ToggleGroupTheme() {
       value={theme}
     >
       <TabsSegmentedList aria-label="Theme">
-        <ToggleGroupThemeItem
-          icon={LucideSun}
-          label="Light"
-          value={THEME.LIGHT}
-        />
-        <ToggleGroupThemeItem
-          icon={LucideMoon}
-          label="Dark"
-          value={THEME.DARK}
-        />
-        <ToggleGroupThemeItem
-          icon={LucideMonitor}
-          label="System"
-          value={THEME.SYSTEM}
-        />
+        <TabsSegmentedTab value={THEME.LIGHT}><LucideSun size={16} /> Light</TabsSegmentedTab>
+        <TabsSegmentedTab value={THEME.DARK}><LucideMoon size={16} /> Dark</TabsSegmentedTab>
+        <TabsSegmentedTab value={THEME.SYSTEM}><LucideMonitor size={16} /> System</TabsSegmentedTab>
       </TabsSegmentedList>
     </Tabs>
   )

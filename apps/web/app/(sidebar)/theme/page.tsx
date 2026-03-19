@@ -1,6 +1,6 @@
 import { Button, Column, Label, Spacer } from "@nattstack/ui/react"
 import { ColorCombobox } from "@/components/color-combobox"
-import { ToggleGroupTheme } from "@/components/toggle-group-theme"
+import { ToggleGroupTheme } from "@/components/tabs-theme"
 
 export default function ComboboxPage() {
   const GRAY_OPTIONS = [
