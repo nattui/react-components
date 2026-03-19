@@ -1,7 +1,7 @@
 "use client"
 
+import { TooltipProvider } from "@nattstack/ui/react"
 import type { PropsWithChildren } from "react"
-import { TooltipProvider } from "@/components/tooltip"
 
 export function Providers(props: PropsWithChildren) {
   const { children } = props

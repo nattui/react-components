@@ -3,16 +3,10 @@ import { normalizeWhitespace } from "@/utils/normalize-whitespace"
 import styles from "@/tooltip/tooltip-content.module.css"
 
 export interface TooltipContentProps
-  extends Pick<BaseTooltip.Positioner.Props, "align" | "side">, BaseTooltip.Popup.Props {}
+  extends Pick<BaseTooltip.Positioner.Props, "side">, BaseTooltip.Popup.Props {}
 
 export function TooltipContent(props: TooltipContentProps) {
-  const {
-    align = "center",
-    children,
-    className: customClassName = "",
-    side = "top",
-    ...rest
-  } = props
+  const { children, className: customClassName = "", side = "top", ...rest } = props
 
   const SIDE_OFFSET = 4
 
@@ -24,7 +18,6 @@ export function TooltipContent(props: TooltipContentProps) {
   return (
     <BaseTooltip.Portal>
       <BaseTooltip.Positioner
-        align={align}
         className={styles.tooltip_content_positioner}
         side={side}
         sideOffset={SIDE_OFFSET}
