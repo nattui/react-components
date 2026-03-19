@@ -39,3 +39,11 @@ export {
 export { Tabs, TABS_CLASS_NAME, type TabsProps } from "@/tabs/tabs"
 export { TABS_PANEL_CLASS_NAME, TabsPanel, type TabsPanelProps } from "@/tabs/tabs-panel"
 export { Textarea, TEXTAREA_CLASS_NAME, type TextareaProps } from "@/textarea/textarea"
+export { Tooltip, type TooltipProps } from "@/tooltip/tooltip"
+export {
+  TOOLTIP_CONTENT_CLASS_NAME,
+  TooltipContent,
+  type TooltipContentProps,
+} from "@/tooltip/tooltip-content"
+export { TooltipProvider, type TooltipProviderProps } from "@/tooltip/tooltip-provider"
+export { TooltipTrigger, type TooltipTriggerProps } from "@/tooltip/tooltip-trigger"

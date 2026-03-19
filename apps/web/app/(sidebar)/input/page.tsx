@@ -1,4 +1,3 @@
-import { Button, Column, Input, Label, Row, Spacer } from "@nattstack/ui/react"
 import {
   LucideBan,
   LucideCopy,
@@ -8,6 +7,7 @@ import {
   LucideLogIn,
   LucideMail,
 } from "@nattstack/icons"
+import { Button, Column, Input, Label, Row, Spacer } from "@nattstack/ui/react"
 
 export default function InputPage() {
   return (

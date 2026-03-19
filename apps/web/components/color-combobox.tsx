@@ -1,8 +1,8 @@
 "use client"
 
-import { Combobox } from "@base-ui/react/combobox"
-import { Label } from "@nattstack/ui/react"
+import { Combobox } from "@base-ui/react"
 import { LucideCheck, LucideChevronDown, LucideX } from "@nattstack/icons"
+import { Label } from "@nattstack/ui/react"
 import { useId } from "react"
 
 interface ColorComboboxProps {

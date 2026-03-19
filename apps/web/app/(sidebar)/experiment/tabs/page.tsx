@@ -1,5 +1,6 @@
 import { LucideMonitor, LucideMoon, LucideSun } from "@nattstack/icons"
 import {
+  Button,
   Spacer,
   Tabs,
   TabsPanel,
@@ -9,16 +10,33 @@ import {
   TabsSegmentedTab,
   TabsUnderlineList,
   TabsUnderlineTab,
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
 } from "@nattstack/ui/react"
 
 export default function Page() {
   return (
     <>
+      <Tooltip>
+        <TooltipTrigger render={<Button>Tooltip trigger</Button>} />
+        <TooltipContent>
+          <p>Add to library</p>
+        </TooltipContent>
+      </Tooltip>
+      <Spacer height={16} />
+
       <Tabs defaultValue="system">
         <TabsSegmentedList>
-          <TabsSegmentedTab value="system"><LucideMonitor size={16} /> System</TabsSegmentedTab>
-          <TabsSegmentedTab value="light"><LucideSun size={16} /> Light</TabsSegmentedTab>
-          <TabsSegmentedTab value="dark"><LucideMoon size={16} /> Dark</TabsSegmentedTab>
+          <TabsSegmentedTab value="system">
+            <LucideMonitor size={16} /> System
+          </TabsSegmentedTab>
+          <TabsSegmentedTab value="light">
+            <LucideSun size={16} /> Light
+          </TabsSegmentedTab>
+          <TabsSegmentedTab value="dark">
+            <LucideMoon size={16} /> Dark
+          </TabsSegmentedTab>
         </TabsSegmentedList>
         <Spacer height={16} />
 

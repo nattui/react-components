@@ -1,6 +1,6 @@
 // oxlint-disable eslint-plugin-react/no-multi-comp
 
-import { Tooltip as TooltipPrimitive } from "@base-ui/react/tooltip"
+import { Tooltip as TooltipPrimitive } from "@base-ui/react"
 import type { ComponentProps } from "react"
 
 function Tooltip(props: ComponentProps<typeof TooltipPrimitive.Root>) {

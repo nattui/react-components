@@ -1,0 +1,12 @@
+.tooltip_content {
+  background-color: var(--color-gray-1);
+  border-radius: 8px;
+  border: 1px solid var(--color-gray-4);
+  font-size: 12px;
+  padding: 4px 8px;
+}
+
+.tooltip_content_positioner {
+  isolation: isolate;
+  z-index: 50;
+}
