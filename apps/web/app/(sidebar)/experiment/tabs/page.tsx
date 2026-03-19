@@ -1,8 +1,8 @@
 import {
-  LucideArrowDown,
-  LucideArrowLeft,
-  LucideArrowRight,
-  LucideArrowUp,
+  LucideArrowDown as IconArrowDown,
+  LucideArrowLeft as IconArrowLeft,
+  LucideArrowRight as IconArrowRight,
+  LucideArrowUp as IconArrowUp,
   LucideMonitor,
   LucideMoon,
   LucideSun,
@@ -32,7 +32,7 @@ export default function Page() {
           <TooltipTrigger
             render={
               <Button isIconOnly>
-                <LucideArrowUp size={16} />
+                <IconArrowUp size={16} />
               </Button>
             }
           />
@@ -42,7 +42,7 @@ export default function Page() {
           <TooltipTrigger
             render={
               <Button isIconOnly>
-                <LucideArrowDown size={16} />
+                <IconArrowDown size={16} />
               </Button>
             }
           />
@@ -52,21 +52,21 @@ export default function Page() {
           <TooltipTrigger
             render={
               <Button isIconOnly>
-                <LucideArrowRight size={16} />
+                <IconArrowLeft size={16} />
               </Button>
             }
           />
-          <TooltipContent side="left">Left side</TooltipContent>
+          <TooltipContent side="left">Left end</TooltipContent>
         </Tooltip>
         <Tooltip>
           <TooltipTrigger
             render={
               <Button isIconOnly>
-                <LucideArrowLeft size={16} />
+                <IconArrowRight size={16} />
               </Button>
             }
           />
-          <TooltipContent side="left">Right end</TooltipContent>
+          <TooltipContent side="right">Right side</TooltipContent>
         </Tooltip>
       </Row>
 

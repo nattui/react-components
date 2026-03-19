@@ -1,5 +1,11 @@
 import { evaluate } from "@mdx-js/mdx"
-import { LucidePlus as IconPlus } from "@nattstack/icons"
+import {
+  LucidePlus as IconPlus,
+  LucideArrowDown as IconArrowDown,
+  LucideArrowLeft as IconArrowLeft,
+  LucideArrowRight as IconArrowRight,
+  LucideArrowUp as IconArrowUp,
+} from "@nattstack/icons"
 import {
   Button,
   ButtonLink,
@@ -219,6 +225,10 @@ const components: Record<string, ElementType> = {
   Button,
   ButtonLink,
   Column,
+  IconArrowDown,
+  IconArrowLeft,
+  IconArrowRight,
+  IconArrowUp,
   IconPlus,
   Input,
   Label,
