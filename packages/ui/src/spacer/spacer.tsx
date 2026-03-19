@@ -1,4 +1,5 @@
 import type { ComponentProps, CSSProperties } from "react"
+import { normalizeWhitespace } from "@/utils/normalize-whitespace"
 import styles from "@/spacer/spacer.module.css"
 
 export interface SpacerProps extends Omit<ComponentProps<"div">, "children"> {
@@ -9,12 +10,10 @@ export interface SpacerProps extends Omit<ComponentProps<"div">, "children"> {
 export function Spacer(props: SpacerProps) {
   const { className: customClassName = "", height, style: customStyle, width, ...rest } = props
 
-  const combinedClassName = `
+  const combinedClassName = normalizeWhitespace(`
     ${SPACER_CLASS_NAME.BASE}
     ${customClassName}
-  `
-    .replaceAll(/\s+/g, " ")
-    .trim()
+  `)
 
   const combinedStyle = {
     ...customStyle,

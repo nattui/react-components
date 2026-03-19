@@ -1,5 +1,6 @@
 import { Switch as BaseSwitch } from "@base-ui/react"
 import type { ComponentProps, JSX } from "react"
+import { normalizeWhitespace } from "@/utils/normalize-whitespace"
 import styles from "@/switch/switch.module.css"
 
 export interface SwitchProps extends Omit<
@@ -26,13 +27,11 @@ export function Switch(props: SwitchProps): JSX.Element {
     ...rest
   } = props
 
-  const combinedClassName = `
+  const combinedClassName = normalizeWhitespace(`
     ${SWITCH_CLASS_NAME.BASE}
     ${SWITCH_CLASS_NAME.SIZE[size]}
     ${customClassName}
-  `
-    .replaceAll(/\s+/g, " ")
-    .trim()
+  `)
 
   return (
     <BaseSwitch.Root

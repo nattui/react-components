@@ -1,4 +1,5 @@
 import type { ComponentProps, JSX } from "react"
+import { normalizeWhitespace } from "@/utils/normalize-whitespace"
 import inputStyles from "@/input/input.module.css"
 import styles from "@/textarea/textarea.module.css"
 
@@ -29,14 +30,12 @@ export function Textarea(props: TextareaProps): JSX.Element {
     ...rest
   } = props
 
-  const combinedClassName = `
+  const combinedClassName = normalizeWhitespace(`
     ${TEXTAREA_CLASS_NAME.INPUT}
     ${TEXTAREA_CLASS_NAME.BASE}
     ${isRounded ? TEXTAREA_CLASS_NAME.ROUNDED.FULL : TEXTAREA_CLASS_NAME.ROUNDED.BASE}
     ${customClassName}
-  `
-    .replaceAll(/\s+/g, " ")
-    .trim()
+  `)
 
   return (
     <textarea

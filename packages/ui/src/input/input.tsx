@@ -1,4 +1,5 @@
 import type { ComponentProps, JSX } from "react"
+import { normalizeWhitespace } from "@/utils/normalize-whitespace"
 import styles from "@/input/input.module.css"
 
 export interface InputProps extends Omit<
@@ -32,15 +33,13 @@ export function Input(props: InputProps): JSX.Element {
 
   const isPassword = type === "password"
 
-  const combinedClassName = `
+  const combinedClassName = normalizeWhitespace(`
     ${INPUT_CLASS_NAME.BASE}
     ${INPUT_CLASS_NAME.SIZE[size]}
     ${isPassword ? INPUT_CLASS_NAME.PASSWORD : ""}
     ${isRounded ? INPUT_CLASS_NAME.ROUNDED.FULL : INPUT_CLASS_NAME.ROUNDED.BASE}
     ${customClassName}
-  `
-    .replaceAll(/\s+/g, " ")
-    .trim()
+  `)
 
   return (
     <input

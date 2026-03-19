@@ -1,4 +1,5 @@
 import { Tabs as BaseTabs } from "@base-ui/react"
+import { normalizeWhitespace } from "@/utils/normalize-whitespace"
 import styles from "@/tabs-pill/tabs-pill-indicator.module.css"
 
 export interface TabsPillIndicatorProps extends Omit<
@@ -11,12 +12,10 @@ export interface TabsPillIndicatorProps extends Omit<
 export function TabsPillIndicator(props: TabsPillIndicatorProps) {
   const { className: customClassName = "", isRenderBeforeHydration = true, ...rest } = props
 
-  const combinedClassName = `
+  const combinedClassName = normalizeWhitespace(`
     ${TABS_PILL_INDICATOR_CLASS_NAME.BASE}
     ${customClassName}
-  `
-    .replaceAll(/\s+/g, " ")
-    .trim()
+  `)
 
   return (
     <BaseTabs.Indicator

@@ -17,6 +17,16 @@ export {
   type TabsPillTabProps,
 } from "@/tabs-pill/tabs-pill-tab"
 export {
+  TABS_SEGMENTED_LIST_CLASS_NAME,
+  TabsSegmentedList,
+  type TabsSegmentedListProps,
+} from "@/tabs-segmented/tabs-segmented-list"
+export {
+  TABS_SEGMENTED_TAB_CLASS_NAME,
+  TabsSegmentedTab,
+  type TabsSegmentedTabProps,
+} from "@/tabs-segmented/tabs-segmented-tab"
+export {
   TABS_UNDERLINE_LIST_CLASS_NAME,
   TabsUnderlineList,
   type TabsUnderlineListProps,

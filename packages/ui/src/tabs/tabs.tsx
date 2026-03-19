@@ -1,4 +1,5 @@
 import { Tabs as BaseTabs } from "@base-ui/react"
+import { normalizeWhitespace } from "@/utils/normalize-whitespace"
 import styles from "@/tabs/tabs.module.css"
 
 export interface TabsProps extends BaseTabs.Root.Props {}
@@ -6,12 +7,10 @@ export interface TabsProps extends BaseTabs.Root.Props {}
 export function Tabs(props: TabsProps) {
   const { className: customClassName = "", ...rest } = props
 
-  const combinedClassName = `
+  const combinedClassName = normalizeWhitespace(`
     ${TABS_CLASS_NAME.BASE}
     ${customClassName}
-  `
-    .replaceAll(/\s+/g, " ")
-    .trim()
+  `)
 
   return <BaseTabs.Root className={combinedClassName} data-slot="tabs" {...rest} />
 }

@@ -1,4 +1,5 @@
 import { Tabs as BaseTabs } from "@base-ui/react"
+import { normalizeWhitespace } from "@/utils/normalize-whitespace"
 import styles from "@/tabs-underline/tabs-underline-tab.module.css"
 
 export interface TabsUnderlineTabProps extends Omit<BaseTabs.Tab.Props, "nativeButton"> {
@@ -8,12 +9,10 @@ export interface TabsUnderlineTabProps extends Omit<BaseTabs.Tab.Props, "nativeB
 export function TabsUnderlineTab(props: TabsUnderlineTabProps) {
   const { className: customClassName = "", isNativeButton = true, ...rest } = props
 
-  const combinedClassName = `
+  const combinedClassName = normalizeWhitespace(`
     ${TABS_UNDERLINE_TAB_CLASS_NAME.BASE}
     ${customClassName}
-  `
-    .replaceAll(/\s+/g, " ")
-    .trim()
+  `)
 
   return (
     <BaseTabs.Tab

@@ -1,0 +1,10 @@
+.tabs_segmented_indicator {
+  background-color: var(--color-primary-9);
+  bottom: 0px;
+  height: 2px;
+  left: var(--active-tab-left);
+  position: absolute;
+  transition-duration: 150ms;
+  transition-property: left, width;
+  width: var(--active-tab-width);
+}

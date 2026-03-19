@@ -1,19 +1,19 @@
 import { Tabs as BaseTabs } from "@base-ui/react"
 import { normalizeWhitespace } from "@/utils/normalize-whitespace"
-import styles from "@/tabs-underline/tabs-underline-indicator.module.css"
+import styles from "@/tabs-segmented/tabs-segmented-indicator.module.css"
 
-export interface TabsUnderlineIndicatorProps extends Omit<
+export interface TabsSegmentedIndicatorProps extends Omit<
   BaseTabs.Indicator.Props,
   "renderBeforeHydration"
 > {
   isRenderBeforeHydration?: boolean
 }
 
-export function TabsUnderlineIndicator(props: TabsUnderlineIndicatorProps) {
+export function TabsSegmentedIndicator(props: TabsSegmentedIndicatorProps) {
   const { className: customClassName = "", isRenderBeforeHydration = true, ...rest } = props
 
   const combinedClassName = normalizeWhitespace(`
-    ${TABS_UNDERLINE_INDICATOR_CLASS_NAME.BASE}
+    ${TABS_SEGMENTED_INDICATOR_CLASS_NAME.BASE}
     ${customClassName}
   `)
 
@@ -27,6 +27,6 @@ export function TabsUnderlineIndicator(props: TabsUnderlineIndicatorProps) {
   )
 }
 
-export const TABS_UNDERLINE_INDICATOR_CLASS_NAME = {
-  BASE: styles.tabs_underline_indicator,
+export const TABS_SEGMENTED_INDICATOR_CLASS_NAME = {
+  BASE: styles.tabs_segmented_indicator,
 } as const

@@ -5,6 +5,7 @@ import {
   type ElementType,
   type JSX,
 } from "react"
+import { normalizeWhitespace } from "@/utils/normalize-whitespace"
 import styles from "@/column/column.module.css"
 
 export type ColumnProps<ComponentType extends ElementType = "div"> = ColumnInternalProps &
@@ -36,12 +37,10 @@ export function Column(props: ColumnProps): JSX.Element {
 
   const Component = as
 
-  const combinedClassName = `
+  const combinedClassName = normalizeWhitespace(`
     ${COLUMN_CLASS_NAME.BASE}
     ${customClassName}
-  `
-    .replaceAll(/\s+/g, " ")
-    .trim()
+  `)
 
   const combinedStyle = {
     ...customStyle,

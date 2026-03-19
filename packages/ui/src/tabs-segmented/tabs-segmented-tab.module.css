@@ -1,0 +1,25 @@
+.tabs_segmented_tab {
+  border-radius: 8px;
+  color: var(--color-gray-11);
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  outline-color: var(--color-primary-9);
+  outline-offset: -2px;
+  outline-style: solid;
+  outline-width: 0px;
+  padding: 6px 12px;
+  transition-duration: 150ms;
+  transition-property: color;
+}
+
+.tabs_segmented_tab:focus-visible {
+  outline-width: 2px;
+}
+
+.tabs_segmented_tab:hover,
+.tabs_segmented_tab[data-active] {
+  color: var(--color-gray-12);
+}

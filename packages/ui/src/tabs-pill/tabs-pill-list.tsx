@@ -1,5 +1,6 @@
 import { Tabs as BaseTabs } from "@base-ui/react"
 import { TabsPillIndicator } from "@/tabs-pill/tabs-pill-indicator"
+import { normalizeWhitespace } from "@/utils/normalize-whitespace"
 import styles from "@/tabs-pill/tabs-pill-list.module.css"
 
 export interface TabsPillListProps extends BaseTabs.List.Props {}
@@ -7,12 +8,10 @@ export interface TabsPillListProps extends BaseTabs.List.Props {}
 export function TabsPillList(props: TabsPillListProps) {
   const { className: customClassName = "", children = "", ...rest } = props
 
-  const combinedClassName = `
+  const combinedClassName = normalizeWhitespace(`
     ${TABS_PILL_LIST_CLASS_NAME.BASE}
     ${customClassName}
-  `
-    .replaceAll(/\s+/g, " ")
-    .trim()
+  `)
 
   return (
     <BaseTabs.List className={combinedClassName} data-slot="tabs-list" {...rest}>

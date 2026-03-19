@@ -5,6 +5,7 @@ import {
   type ElementType,
   type JSX,
 } from "react"
+import { normalizeWhitespace } from "@/utils/normalize-whitespace"
 import styles from "@/row/row.module.css"
 
 export type RowProps<ComponentType extends ElementType = "div"> = ComponentProps<ComponentType> &
@@ -36,12 +37,10 @@ export function Row(props: RowProps): JSX.Element {
 
   const Component = as
 
-  const combinedClassName = `
+  const combinedClassName = normalizeWhitespace(`
     ${ROW_CLASS_NAME.BASE}
     ${customClassName}
-  `
-    .replaceAll(/\s+/g, " ")
-    .trim()
+  `)
 
   const combinedStyle = {
     ...customStyle,

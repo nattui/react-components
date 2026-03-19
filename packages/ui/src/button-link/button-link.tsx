@@ -1,5 +1,6 @@
 import { createElement, type ComponentProps, type ElementType, type JSX } from "react"
 import { BUTTON_CLASS_NAME, type ButtonProps } from "@/button/button"
+import { normalizeWhitespace } from "@/utils/normalize-whitespace"
 
 export type ButtonLinkProps<ComponentType extends ElementType = "a"> = ButtonLinkInternalProps &
   ComponentProps<ComponentType>
@@ -27,7 +28,7 @@ export function ButtonLink<ComponentType extends ElementType = "a">(
 
   const Component = as as ElementType
 
-  const combinedClassName = `
+  const combinedClassName = normalizeWhitespace(`
     ${BUTTON_CLASS_NAME.BASE}
     ${BUTTON_CLASS_NAME.SIZE[size]}
     ${BUTTON_CLASS_NAME.VARIANT[variant.toUpperCase() as keyof typeof BUTTON_CLASS_NAME.VARIANT]}
@@ -35,9 +36,7 @@ export function ButtonLink<ComponentType extends ElementType = "a">(
     ${isIconOnly ? BUTTON_CLASS_NAME.ICON_ONLY : ""}
     ${isRounded ? BUTTON_CLASS_NAME.ROUNDED.FULL : BUTTON_CLASS_NAME.ROUNDED.BASE}
     ${customClassName}
-  `
-    .replaceAll(/\s+/g, " ")
-    .trim()
+  `)
 
   return createElement(Component, {
     className: combinedClassName,

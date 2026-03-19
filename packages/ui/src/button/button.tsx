@@ -1,5 +1,6 @@
 import type { ComponentProps, JSX, ReactNode } from "react"
 import { ButtonSpinner } from "@/button/button-spinner"
+import { normalizeWhitespace } from "@/utils/normalize-whitespace"
 import styles from "@/button/button.module.css"
 
 export interface ButtonIconProps extends ButtonInternalProps {
@@ -47,7 +48,7 @@ export function Button(props: ButtonUnionProps): JSX.Element {
     ...rest
   } = props
 
-  const combinedClassName = `
+  const combinedClassName = normalizeWhitespace(`
     ${BUTTON_CLASS_NAME.BASE}
     ${BUTTON_CLASS_NAME.SIZE[size]}
     ${BUTTON_CLASS_NAME.VARIANT[variant.toUpperCase() as keyof typeof BUTTON_CLASS_NAME.VARIANT]}
@@ -55,9 +56,7 @@ export function Button(props: ButtonUnionProps): JSX.Element {
     ${isIconOnly ? BUTTON_CLASS_NAME.ICON_ONLY : ""}
     ${isRounded ? BUTTON_CLASS_NAME.ROUNDED.FULL : BUTTON_CLASS_NAME.ROUNDED.BASE}
     ${customClassName}
-  `
-    .replaceAll(/\s+/g, " ")
-    .trim()
+  `)
 
   return (
     <button

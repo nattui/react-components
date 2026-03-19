@@ -1,0 +1,8 @@
+.tabs_segmented_list {
+  border-bottom-color: var(--color-gray-4);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  display: flex;
+  overflow-x: auto;
+  position: relative;
+}
