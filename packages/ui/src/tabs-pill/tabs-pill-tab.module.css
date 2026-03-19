@@ -1,7 +1,5 @@
 .tabs_pill_tab {
   align-items: center;
-  background-color: var(--color-gray-3);
-  border-radius: 12px;
   color: var(--color-black);
   column-gap: 8px;
   cursor: pointer;
@@ -39,4 +37,19 @@
 
 :global(.dark) .tabs_pill_tab[data-active] {
   color: var(--color-black);
+}
+
+.tabs_pill_tab_wrapper {
+  border-radius: 12px;
+  display: flex;
+  flex-shrink: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.tabs_pill_tab_background {
+  background-color: var(--color-gray-3);
+  inset: 0;
+  position: absolute;
+  z-index: -2;
 }

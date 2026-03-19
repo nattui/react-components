@@ -15,15 +15,20 @@ export function TabsPillTab(props: TabsPillTabProps) {
   `)
 
   return (
-    <BaseTabs.Tab
-      className={combinedClassName}
-      data-slot="tabs-tab"
-      nativeButton={isNativeButton}
-      {...rest}
-    />
+    <div className={TABS_PILL_TAB_CLASS_NAME.WRAPPER}>
+      <BaseTabs.Tab
+        className={combinedClassName}
+        data-slot="tabs-tab"
+        nativeButton={isNativeButton}
+        {...rest}
+      />
+      <div className={TABS_PILL_TAB_CLASS_NAME.BACKGROUND} />
+    </div>
   )
 }
 
 export const TABS_PILL_TAB_CLASS_NAME = {
+  BACKGROUND: styles.tabs_pill_tab_background,
   BASE: styles.tabs_pill_tab,
+  WRAPPER: styles.tabs_pill_tab_wrapper,
 } as const
