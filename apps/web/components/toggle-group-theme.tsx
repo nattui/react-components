@@ -1,6 +1,6 @@
 "use client"
 
-import { ToggleGroup } from "@base-ui/react"
+import { Tabs, TabsSegmentedList } from "@nattstack/ui/react"
 import { LucideMonitor, LucideMoon, LucideSun } from "@nattstack/icons"
 import { useState } from "react"
 import { ToggleGroupThemeItem } from "@/components/toggle-group-theme-item"
@@ -14,40 +14,36 @@ export const THEME = {
 export type Theme = (typeof THEME)[keyof typeof THEME]
 
 export function ToggleGroupTheme() {
-  const [theme, setTheme] = useState<Theme[]>([THEME.LIGHT])
+  const [theme, setTheme] = useState<Theme>(THEME.LIGHT)
 
-  function onValueChange(value: Theme[]) {
-    if (value.length > 0) {
-      globalThis.document.body.classList.remove(...theme)
-      globalThis.document.body.classList.add(...value)
-      setTheme(value)
-    }
+  function onValueChange(value: Theme) {
+    globalThis.document.body.classList.remove(...Object.values(THEME))
+    globalThis.document.body.classList.add(value)
+    setTheme(value)
   }
 
   return (
-    <ToggleGroup
-      className="rounded-8 bg-gray-3 flex w-fit overflow-hidden p-2"
-      onValueChange={onValueChange}
+    <Tabs
+      onValueChange={(value) => onValueChange(value as Theme)}
       value={theme}
     >
-      <ToggleGroupThemeItem
-        icon={LucideSun}
-        isActive={theme.includes(THEME.LIGHT)}
-        label="Light"
-        value={THEME.LIGHT}
-      />
-      <ToggleGroupThemeItem
-        icon={LucideMoon}
-        isActive={theme.includes(THEME.DARK)}
-        label="Dark"
-        value={THEME.DARK}
-      />
-      <ToggleGroupThemeItem
-        icon={LucideMonitor}
-        isActive={theme.includes(THEME.SYSTEM)}
-        label="System"
-        value={THEME.SYSTEM}
-      />
-    </ToggleGroup>
+      <TabsSegmentedList aria-label="Theme">
+        <ToggleGroupThemeItem
+          icon={LucideSun}
+          label="Light"
+          value={THEME.LIGHT}
+        />
+        <ToggleGroupThemeItem
+          icon={LucideMoon}
+          label="Dark"
+          value={THEME.DARK}
+        />
+        <ToggleGroupThemeItem
+          icon={LucideMonitor}
+          label="System"
+          value={THEME.SYSTEM}
+        />
+      </TabsSegmentedList>
+    </Tabs>
   )
 }
