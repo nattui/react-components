@@ -1,5 +1,6 @@
 .tabs_pill_tab {
   align-items: center;
+  border-radius: var(--border-radius);
   color: var(--color-black);
   column-gap: 8px;
   cursor: pointer;
@@ -40,7 +41,8 @@
 }
 
 .tabs_pill_tab_wrapper {
-  border-radius: 12px;
+  --border-radius: 12px;
+  border-radius: var(--border-radius);
   display: flex;
   flex-shrink: 0;
   overflow: hidden;
