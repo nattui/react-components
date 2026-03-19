@@ -4,6 +4,8 @@ import {
   TabsPanel,
   TabsPillList,
   TabsPillTab,
+  TabsSegmentedList,
+  TabsSegmentedTab,
   TabsUnderlineList,
   TabsUnderlineTab,
 } from "@nattstack/ui/react"
@@ -11,6 +13,20 @@ import {
 export default function Page() {
   return (
     <>
+      <Tabs>
+        <TabsSegmentedList>
+          <TabsSegmentedTab value="system">⚙️ System</TabsSegmentedTab>
+          <TabsSegmentedTab value="light">☀️ Light</TabsSegmentedTab>
+          <TabsSegmentedTab value="dark">🌙 Dark</TabsSegmentedTab>
+        </TabsSegmentedList>
+        <Spacer height={16} />
+
+        <TabsPanel value="system">⚙️ System</TabsPanel>
+        <TabsPanel value="light">☀️ Light</TabsPanel>
+        <TabsPanel value="dark">🌙 Dark</TabsPanel>
+      </Tabs>
+      <Spacer height={64} />
+
       <Tabs>
         <TabsPillList>
           <TabsPillTab value="cat">🐱 Cat</TabsPillTab>
