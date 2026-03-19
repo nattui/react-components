@@ -56,7 +56,7 @@ export default function Page() {
               </Button>
             }
           />
-          <TooltipContent side="left">Left end</TooltipContent>
+          <TooltipContent side="left">Left side</TooltipContent>
         </Tooltip>
         <Tooltip>
           <TooltipTrigger
