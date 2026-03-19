@@ -12,6 +12,10 @@ import {
   Spacer,
   Tabs,
   TabsUnderlineList,
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+  TooltipProvider,
   TabsUnderlineTab,
   TabsSegmentedList,
   TabsSegmentedTab,
@@ -231,6 +235,10 @@ const components: Record<string, ElementType> = {
   TabsUnderlineList,
   TabsUnderlineTab,
   Textarea,
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
 }
 
 interface LinkCard {
