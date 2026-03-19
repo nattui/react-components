@@ -1,4 +1,12 @@
 .tabs_panel {
   display: flex;
   flex-direction: column;
+  outline-color: var(--color-primary-9);
+  outline-offset: -2px;
+  outline-style: none;
+  outline-width: 2px;
+}
+
+.tabs_panel:focus-visible {
+  outline-style: solid;
 }
