@@ -42,12 +42,15 @@ export function SidebarClient(props: SidebarClientProps) {
 
                 return (
                   <Link
-                    className="text-14 font-500 data-[is-active=true]:text-primary-9 hover:text-gray-12 hover:bg-gray-4! rounded-12 data-[is-active=true]:bg-gray-3 flex h-24 w-full items-center px-8 transition-colors"
+                    className="text-14 font-500 data-[is-active=true]:text-primary-9 hover:text-gray-12 hover:bg-gray-4! rounded-8 data-[is-active=true]:bg-gray-3 relative flex h-24 w-full items-center px-8 transition-colors"
                     data-is-active={isActive}
                     href={link.href}
                     key={`${sectionIndex}-${linkIndex}`}
                   >
                     {link.label}
+                    {isActive && (
+                      <div className="bg-primary-9 absolute top-0 -left-24 h-full w-2" />
+                    )}
                   </Link>
                 )
               })}
