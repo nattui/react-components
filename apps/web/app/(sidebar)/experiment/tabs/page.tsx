@@ -13,7 +13,7 @@ import {
 export default function Page() {
   return (
     <>
-      <Tabs>
+      <Tabs defaultValue="system">
         <TabsSegmentedList>
           <TabsSegmentedTab value="system">⚙️ System</TabsSegmentedTab>
           <TabsSegmentedTab value="light">☀️ Light</TabsSegmentedTab>
@@ -27,7 +27,7 @@ export default function Page() {
       </Tabs>
       <Spacer height={64} />
 
-      <Tabs>
+      <Tabs defaultValue="cat">
         <TabsPillList>
           <TabsPillTab value="cat">🐱 Cat</TabsPillTab>
           <TabsPillTab value="fox">🦊 Fox</TabsPillTab>
@@ -53,7 +53,7 @@ export default function Page() {
       </Tabs>
       <Spacer height={64} />
 
-      <Tabs>
+      <Tabs defaultValue="cat">
         <TabsUnderlineList>
           <TabsUnderlineTab value="cat">🐱 Cat</TabsUnderlineTab>
           <TabsUnderlineTab value="fox">🦊 Fox</TabsUnderlineTab>

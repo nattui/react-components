@@ -1,10 +1,12 @@
 .tabs_segmented_indicator {
-  background-color: var(--color-primary-9);
-  bottom: 0px;
-  height: 2px;
+  background-color: var(--color-gray-1);
+  border-radius: 12px;
+  height: var(--active-tab-height);
   left: var(--active-tab-left);
   position: absolute;
+  top: var(--active-tab-top);
   transition-duration: 150ms;
   transition-property: left, width;
   width: var(--active-tab-width);
+  z-index: -1;
 }

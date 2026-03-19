@@ -1,16 +1,19 @@
 .tabs_segmented_tab {
-  border-radius: 8px;
+  align-items: center;
+  border-radius: 10px;
   color: var(--color-gray-11);
   cursor: pointer;
+  display: flex;
   flex-shrink: 0;
   font-size: 14px;
   font-weight: 500;
-  margin-bottom: 6px;
+  height: 100%;
+  justify-content: center;
   outline-color: var(--color-primary-9);
-  outline-offset: -2px;
+  outline-offset: -4px;
   outline-style: solid;
   outline-width: 0px;
-  padding: 6px 12px;
+  padding: 0 14px;
   transition-duration: 150ms;
   transition-property: color;
 }
@@ -19,7 +22,10 @@
   outline-width: 2px;
 }
 
-.tabs_segmented_tab:hover,
+.tabs_segmented_tab:hover {
+  color: var(--color-gray-12);
+}
+
 .tabs_segmented_tab[data-active] {
   color: var(--color-gray-12);
 }
