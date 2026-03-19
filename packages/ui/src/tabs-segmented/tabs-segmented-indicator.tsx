@@ -15,7 +15,7 @@ export function TabsSegmentedIndicator(props: TabsSegmentedIndicatorProps) {
   return (
     <BaseTabs.Indicator
       className={combinedClassName}
-      data-slot="tabs-indicator"
+      data-slot="tabs-segmented-indicator"
       renderBeforeHydration
       {...rest}
     />

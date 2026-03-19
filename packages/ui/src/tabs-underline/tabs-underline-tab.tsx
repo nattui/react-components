@@ -17,7 +17,7 @@ export function TabsUnderlineTab(props: TabsUnderlineTabProps) {
   return (
     <BaseTabs.Tab
       className={combinedClassName}
-      data-slot="tabs-tab"
+      data-slot="tabs-underline-tab"
       nativeButton={isNativeButton}
       {...rest}
     />

@@ -17,7 +17,7 @@ export function TabsSegmentedTab(props: TabsSegmentedTabProps) {
   return (
     <BaseTabs.Tab
       className={combinedClassName}
-      data-slot="tabs-tab"
+      data-slot="tabs-segmented-tab"
       nativeButton={isNativeButton}
       {...rest}
     />

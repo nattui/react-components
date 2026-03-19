@@ -15,7 +15,7 @@ export function TabsUnderlineIndicator(props: TabsUnderlineIndicatorProps) {
   return (
     <BaseTabs.Indicator
       className={combinedClassName}
-      data-slot="tabs-indicator"
+      data-slot="tabs-underline-indicator"
       renderBeforeHydration
       {...rest}
     />

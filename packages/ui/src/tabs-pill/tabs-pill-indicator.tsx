@@ -15,7 +15,7 @@ export function TabsPillIndicator(props: TabsPillIndicatorProps) {
   return (
     <BaseTabs.Indicator
       className={combinedClassName}
-      data-slot="tabs-indicator"
+      data-slot="tabs-pill-indicator"
       renderBeforeHydration
       {...rest}
     />

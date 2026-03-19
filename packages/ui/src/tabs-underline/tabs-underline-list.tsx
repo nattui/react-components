@@ -14,7 +14,7 @@ export function TabsUnderlineList(props: TabsUnderlineListProps) {
   `)
 
   return (
-    <BaseTabs.List className={combinedClassName} data-slot="tabs-list" {...rest}>
+    <BaseTabs.List className={combinedClassName} data-slot="tabs-underline-list" {...rest}>
       {children}
       <TabsUnderlineIndicator />
     </BaseTabs.List>

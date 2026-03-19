@@ -14,7 +14,7 @@ export function TabsSegmentedList(props: TabsSegmentedListProps) {
   `)
 
   return (
-    <BaseTabs.List className={combinedClassName} data-slot="tabs-list" {...rest}>
+    <BaseTabs.List className={combinedClassName} data-slot="tabs-segmented-list" {...rest}>
       {children}
       <TabsSegmentedIndicator />
     </BaseTabs.List>

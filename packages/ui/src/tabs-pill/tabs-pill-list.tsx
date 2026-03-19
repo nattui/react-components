@@ -14,7 +14,7 @@ export function TabsPillList(props: TabsPillListProps) {
   `)
 
   return (
-    <BaseTabs.List className={combinedClassName} data-slot="tabs-list" {...rest}>
+    <BaseTabs.List className={combinedClassName} data-slot="tabs-pill-list" {...rest}>
       {children}
       <TabsPillIndicator />
     </BaseTabs.List>

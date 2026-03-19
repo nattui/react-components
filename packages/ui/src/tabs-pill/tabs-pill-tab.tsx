@@ -18,7 +18,7 @@ export function TabsPillTab(props: TabsPillTabProps) {
     <div className={TABS_PILL_TAB_CLASS_NAME.WRAPPER}>
       <BaseTabs.Tab
         className={combinedClassName}
-        data-slot="tabs-tab"
+        data-slot="tabs-pill-tab"
         nativeButton={isNativeButton}
         {...rest}
       />
