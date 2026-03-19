@@ -2,15 +2,10 @@ import { Tabs as BaseTabs } from "@base-ui/react"
 import { normalizeWhitespace } from "@/utils/normalize-whitespace"
 import styles from "@/tabs-underline/tabs-underline-indicator.module.css"
 
-export interface TabsUnderlineIndicatorProps extends Omit<
-  BaseTabs.Indicator.Props,
-  "renderBeforeHydration"
-> {
-  isRenderBeforeHydration?: boolean
-}
+export interface TabsUnderlineIndicatorProps extends BaseTabs.Indicator.Props {}
 
 export function TabsUnderlineIndicator(props: TabsUnderlineIndicatorProps) {
-  const { className: customClassName = "", isRenderBeforeHydration = true, ...rest } = props
+  const { className: customClassName = "", ...rest } = props
 
   const combinedClassName = normalizeWhitespace(`
     ${TABS_UNDERLINE_INDICATOR_CLASS_NAME.BASE}
@@ -21,7 +16,7 @@ export function TabsUnderlineIndicator(props: TabsUnderlineIndicatorProps) {
     <BaseTabs.Indicator
       className={combinedClassName}
       data-slot="tabs-indicator"
-      renderBeforeHydration={isRenderBeforeHydration}
+      renderBeforeHydration
       {...rest}
     />
   )

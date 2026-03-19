@@ -2,15 +2,10 @@ import { Tabs as BaseTabs } from "@base-ui/react"
 import { normalizeWhitespace } from "@/utils/normalize-whitespace"
 import styles from "@/tabs-segmented/tabs-segmented-indicator.module.css"
 
-export interface TabsSegmentedIndicatorProps extends Omit<
-  BaseTabs.Indicator.Props,
-  "renderBeforeHydration"
-> {
-  isRenderBeforeHydration?: boolean
-}
+export interface TabsSegmentedIndicatorProps extends BaseTabs.Indicator.Props {}
 
 export function TabsSegmentedIndicator(props: TabsSegmentedIndicatorProps) {
-  const { className: customClassName = "", isRenderBeforeHydration = true, ...rest } = props
+  const { className: customClassName = "", ...rest } = props
 
   const combinedClassName = normalizeWhitespace(`
     ${TABS_SEGMENTED_INDICATOR_CLASS_NAME.BASE}
@@ -21,7 +16,7 @@ export function TabsSegmentedIndicator(props: TabsSegmentedIndicatorProps) {
     <BaseTabs.Indicator
       className={combinedClassName}
       data-slot="tabs-indicator"
-      renderBeforeHydration={isRenderBeforeHydration}
+      renderBeforeHydration
       {...rest}
     />
   )

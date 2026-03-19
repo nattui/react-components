@@ -20,9 +20,7 @@ export default function Page() {
     <>
       <Tooltip>
         <TooltipTrigger render={<Button>Tooltip trigger</Button>} />
-        <TooltipContent>
-          <p>Add to library</p>
-        </TooltipContent>
+        <TooltipContent>Add to library</TooltipContent>
       </Tooltip>
       <Spacer height={16} />
 
