@@ -36,13 +36,13 @@ export function SidebarClient(props: SidebarClientProps) {
               </p>
             )}
 
-            <div className="flex flex-col gap-y-4">
+            <div className="flex flex-col gap-y-2">
               {section.links.map((link, linkIndex) => {
                 const isActive = pathname === link.href
 
                 return (
                   <Link
-                    className="text-14 font-500 data-[is-active=true]:text-primary-9 hover:text-gray-12 ml-8 w-fit transition-colors"
+                    className="text-14 font-500 data-[is-active=true]:text-primary-9 hover:text-gray-12 hover:bg-gray-4! rounded-12 data-[is-active=true]:bg-gray-3 flex h-24 w-full items-center px-8 transition-colors"
                     data-is-active={isActive}
                     href={link.href}
                     key={`${sectionIndex}-${linkIndex}`}
