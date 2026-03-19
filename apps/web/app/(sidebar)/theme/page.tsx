@@ -1,6 +1,5 @@
-import { Button, Column, Label, Spacer } from "@nattstack/ui/react"
+import { Button, Column, Spacer } from "@nattstack/ui/react"
 import { ColorCombobox } from "@/components/color-combobox"
-import { ToggleGroupTheme } from "@/components/tabs-theme"
 
 export default function ComboboxPage() {
   const GRAY_OPTIONS = [
@@ -42,13 +41,6 @@ export default function ComboboxPage() {
 
   return (
     <Column>
-      <Label>Theme</Label>
-      <Spacer height={4} />
-      <div className="w-full overflow-x-auto">
-        <ToggleGroupTheme />
-      </div>
-      <Spacer height={16} />
-
       <ColorCombobox
         label="Gray palette"
         options={GRAY_OPTIONS}
