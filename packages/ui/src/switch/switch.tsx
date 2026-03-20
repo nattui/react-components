@@ -12,7 +12,7 @@ export interface SwitchProps extends Omit<
   isDisabled?: boolean
   isReadOnly?: boolean
   isRequired?: boolean
-  size?: 14 | 24
+  size?: 18 | 24
 }
 
 export function Switch(props: SwitchProps): JSX.Element {
@@ -51,7 +51,7 @@ export function Switch(props: SwitchProps): JSX.Element {
 export const SWITCH_CLASS_NAME = {
   BASE: styles.switch,
   SIZE: {
-    14: styles.switch__size_14,
+    18: styles.switch__size_18,
     24: styles.switch__size_24,
   },
 } as const

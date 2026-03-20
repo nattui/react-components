@@ -11,6 +11,7 @@ import {
   Button,
   Row,
   Spacer,
+  Switch,
   Tabs,
   TabsPanel,
   TabsPillList,
@@ -27,6 +28,15 @@ import {
 export default function Page() {
   return (
     <>
+      <Switch />
+      <Spacer height={16} />
+      <Switch isChecked />
+      <Spacer height={16} />
+      <Switch isDisabled />
+      <Spacer height={16} />
+      <Switch isChecked isDisabled />
+      <Spacer height={64} />
+
       <Row gapX={8}>
         <Tooltip>
           <TooltipTrigger

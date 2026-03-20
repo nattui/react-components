@@ -2,16 +2,16 @@
 /* Base */
 /* ===================================================== */
 .switch {
-  display: flex;
-  padding: 2px;
-  overflow: hidden;
-  cursor: pointer;
-  outline-width: 0;
-  outline-style: solid;
-  outline-color: var(--color-primary-9);
-  outline-offset: 2px;
   background-color: var(--color-gray-6);
   border-radius: 9999px;
+  cursor: pointer;
+  display: flex;
+  outline-color: var(--color-primary-9);
+  outline-offset: 2px;
+  outline-style: solid;
+  outline-width: 0;
+  overflow: hidden;
+  padding: 2px;
   transition-duration: 150ms;
   transition-property: background-color;
 }
@@ -49,7 +49,7 @@
 /* ===================================================== */
 /* Size */
 /* ===================================================== */
-.switch__size_14 {
+.switch__size_18 {
   --translateX: 12px;
   width: 30px;
   height: 18px;
