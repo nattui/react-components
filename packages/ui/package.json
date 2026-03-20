@@ -1,7 +1,7 @@
 {
   "name": "@nattstack/ui",
-  "version": "0.0.42",
-  "description": "A collection of reusable React components built with TypeScript and CSS Modules",
+  "version": "0.0.1",
+  "description": "A collection of reusable React components built with Base UI, TypeScript, and CSS Modules",
   "keywords": [
     "components",
     "react",
