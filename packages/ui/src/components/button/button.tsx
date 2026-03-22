@@ -1,0 +1,101 @@
+import type { ComponentProps, JSX, ReactNode } from "react"
+import { ButtonSpinner } from "@/components/button/button-spinner"
+import { normalizeWhitespace } from "@/utils/normalize-whitespace"
+import styles from "@/components/button/button.module.css"
+
+export interface ButtonIconProps extends ButtonInternalProps {
+  children?: ReactNode
+  iconEnd?: never
+  iconStart?: never
+  isIconOnly: true
+}
+
+export interface ButtonProps extends ButtonInternalProps {
+  children?: string | string[]
+  isIconOnly?: false
+}
+
+interface ButtonInternalProps extends Omit<ComponentProps<"button">, "aria-pressed" | "disabled"> {
+  iconEnd?: ReactNode
+  iconStart?: ReactNode
+  isActive?: boolean
+  isDisabled?: boolean
+  isFullWidth?: boolean
+  isIconOnly?: boolean
+  isLoading?: boolean
+  isRounded?: boolean
+  size?: 32 | 36 | 40 | 44 | 48
+  variant?: "accent" | "ghost" | "primary" | "secondary"
+}
+
+type ButtonUnionProps = ButtonIconProps | ButtonProps
+
+export function Button(props: ButtonUnionProps): JSX.Element {
+  const {
+    children = "",
+    className: customClassName = "",
+    iconEnd = "",
+    iconStart = "",
+    isActive = false,
+    isDisabled = false,
+    isFullWidth = false,
+    isIconOnly = false,
+    isLoading = false,
+    isRounded = false,
+    size = 40,
+    type = "button",
+    variant = "primary",
+    ...rest
+  } = props
+
+  const combinedClassName = normalizeWhitespace(`
+    ${BUTTON_CLASS_NAME.BASE}
+    ${BUTTON_CLASS_NAME.SIZE[size]}
+    ${BUTTON_CLASS_NAME.VARIANT[variant.toUpperCase() as keyof typeof BUTTON_CLASS_NAME.VARIANT]}
+    ${isFullWidth ? BUTTON_CLASS_NAME.WIDTH.FULL : BUTTON_CLASS_NAME.WIDTH.BASE}
+    ${isIconOnly ? BUTTON_CLASS_NAME.ICON_ONLY : ""}
+    ${isRounded ? BUTTON_CLASS_NAME.ROUNDED.FULL : BUTTON_CLASS_NAME.ROUNDED.BASE}
+    ${customClassName}
+  `)
+
+  return (
+    <button
+      aria-pressed={isActive}
+      className={combinedClassName}
+      disabled={isDisabled || isLoading}
+      type={type}
+      {...rest}
+    >
+      {isLoading && <ButtonSpinner />}
+      {!isLoading && iconStart}
+      {isIconOnly ? isLoading ? undefined : children : <span>{children}</span>}
+      {!isLoading && iconEnd}
+    </button>
+  )
+}
+
+export const BUTTON_CLASS_NAME = {
+  BASE: styles.button,
+  ICON_ONLY: styles.button__icon_only,
+  ROUNDED: {
+    BASE: styles.button__rounded_base,
+    FULL: styles.button__rounded_full,
+  },
+  SIZE: {
+    32: styles.button__size_32,
+    36: styles.button__size_36,
+    40: styles.button__size_40,
+    44: styles.button__size_44,
+    48: styles.button__size_48,
+  },
+  VARIANT: {
+    ACCENT: styles.button__variant_accent,
+    GHOST: styles.button__variant_ghost,
+    PRIMARY: styles.button__variant_primary,
+    SECONDARY: styles.button__variant_secondary,
+  },
+  WIDTH: {
+    BASE: styles.button__width_base,
+    FULL: styles.button__width_full,
+  },
+} as const

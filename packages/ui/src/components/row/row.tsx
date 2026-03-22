@@ -1,0 +1,64 @@
+import {
+  createElement,
+  type ComponentProps,
+  type CSSProperties,
+  type ElementType,
+  type JSX,
+} from "react"
+import { normalizeWhitespace } from "@/utils/normalize-whitespace"
+import styles from "@/components/row/row.module.css"
+
+export type RowProps<ComponentType extends ElementType = "div"> = ComponentProps<ComponentType> &
+  RowInternalProps
+
+interface RowInternalProps {
+  alignItems?: CSSProperties["alignItems"]
+  as?: keyof JSX.IntrinsicElements
+  flexWrap?: CSSProperties["flexWrap"]
+  gap?: CSSProperties["gap"]
+  gapX?: CSSProperties["columnGap"]
+  gapY?: CSSProperties["rowGap"]
+  justifyContent?: CSSProperties["justifyContent"]
+}
+
+export function Row(props: RowProps): JSX.Element {
+  const {
+    alignItems = undefined,
+    as = "div",
+    className: customClassName = "",
+    flexWrap = undefined,
+    gap = undefined,
+    gapX = undefined,
+    gapY = undefined,
+    justifyContent = undefined,
+    style: customStyle,
+    ...rest
+  } = props
+
+  const Component = as
+
+  const combinedClassName = normalizeWhitespace(`
+    ${ROW_CLASS_NAME.BASE}
+    ${customClassName}
+  `)
+
+  const combinedStyle = {
+    ...customStyle,
+    ...(gap === undefined ? {} : { gap }),
+    ...(gapX === undefined ? {} : { columnGap: gapX }),
+    ...(gapY === undefined ? {} : { rowGap: gapY }),
+    ...(flexWrap === undefined ? {} : { flexWrap }),
+    ...(alignItems === undefined ? {} : { alignItems }),
+    ...(justifyContent === undefined ? {} : { justifyContent }),
+  }
+
+  return createElement(Component, {
+    className: combinedClassName,
+    style: combinedStyle,
+    ...rest,
+  })
+}
+
+export const ROW_CLASS_NAME = {
+  BASE: styles.row,
+} as const
