@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/nattstack/ui/issues"
   },
-  "author": "Natt Nguyen <hello@natt.sh> (https://natt.sh)",
+  "author": "Natt <hello@natt.sh> (https://natt.sh)",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nattstack/ui.git"
