@@ -36,6 +36,9 @@ export default function Page() {
         <DrawerContent>
           <p>This is a drawer that slides in from the side. You can swipe to dismiss it.</p>
           <p>This is a drawer that slides in from the side. You can swipe to dismiss it.</p>
+          <p>This is a drawer that slides in from the side. You can swipe to dismiss it.</p>
+          <p>This is a drawer that slides in from the side. You can swipe to dismiss it.</p>
+          <p>This is a drawer that slides in from the side. You can swipe to dismiss it.</p>
         </DrawerContent>
       </Drawer>
       <Spacer height={64} />

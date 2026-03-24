@@ -3,10 +3,10 @@
 }
 
 .drawer_viewport {
-  align-items: center;
+  align-items: safe center;
   display: flex;
   inset: 0;
-  justify-content: center;
+  justify-content: safe center;
   position: fixed;
 }
 
