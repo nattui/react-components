@@ -13,9 +13,9 @@ import {
 } from "@nattstack/icons"
 import {
   Button,
-  Drawer,
-  DrawerContent,
-  DrawerTrigger,
+  DialogResponsive,
+  DialogResponsiveContent,
+  DialogResponsiveTrigger,
   Row,
   Spacer,
   Switch,
@@ -34,13 +34,16 @@ import {
 import { useState } from "react"
 
 export default function Page() {
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
+  const [isDialogResponsiveOpen, setIsDialogResponsiveOpen] = useState(false)
 
   return (
     <>
-      <Drawer isOpen={isDrawerOpen} onIsOpenChange={setIsDrawerOpen}>
-        <DrawerTrigger render={<Button>Open drawer</Button>} />
-        <DrawerContent>
+      <DialogResponsive
+        isOpen={isDialogResponsiveOpen}
+        onIsOpenChange={setIsDialogResponsiveOpen}
+      >
+        <DialogResponsiveTrigger render={<Button>Open dialog responsive</Button>} />
+        <DialogResponsiveContent>
           <img
             alt="Cat"
             className="aspect-16-9 rounded-[12px] object-cover select-none max-[640px]:rounded-[20px]"
@@ -63,8 +66,8 @@ export default function Page() {
             By clicking this button, you agree to the Terms and Conditions, Privacy Policy, and
             certify that you are over 18 years old.
           </p>
-        </DrawerContent>
-      </Drawer>
+        </DialogResponsiveContent>
+      </DialogResponsive>
       <Spacer height={64} />
 
       <Switch />

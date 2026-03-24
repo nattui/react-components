@@ -1,4 +1,4 @@
-.drawer_viewport {
+.dialog_responsive_viewport {
   align-items: safe center;
   cursor: pointer;
   display: flex;
@@ -10,7 +10,7 @@
 }
 
 @media (max-width: 640px) {
-  .drawer_viewport {
+  .dialog_responsive_viewport {
     align-items: safe flex-end;
     overscroll-behavior: none;
     padding: 48px 0 0;

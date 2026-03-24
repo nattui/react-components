@@ -1,11 +1,11 @@
-.drawer_content {
+.dialog_responsive_content {
   display: flex;
   flex-direction: column;
   padding: 16px;
 }
 
 @media (max-width: 640px) {
-  .drawer_content {
+  .dialog_responsive_content {
     padding-top: 0;
   }
 }
