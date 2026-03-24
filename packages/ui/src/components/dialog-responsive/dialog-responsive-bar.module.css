@@ -2,7 +2,6 @@
   background-color: var(--color-gray-4);
   border-radius: 9999px;
   display: none;
-  flex-shrink: 0;
   height: 4px;
   margin: 12px auto;
   width: 48px;
@@ -10,6 +9,6 @@
 
 @media (max-width: 640px) {
   .dialog_responsive_bar {
-    display: flex;
+    display: block;
   }
 }
