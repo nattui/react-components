@@ -7,7 +7,6 @@
   },
   "dependencies": {
     "@nattstack/ui": "workspace:*",
-    "@nattui/tailwind-colors": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:"
   },

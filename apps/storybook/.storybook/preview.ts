@@ -1,5 +1,5 @@
 import type { Preview } from "@storybook/react-vite"
-import "@nattui/tailwind-colors/src/index.css"
+import "@nattstack/ui/tailwind-colors"
 
 const preview: Preview = {
   decorators: [
