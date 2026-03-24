@@ -1,4 +1,4 @@
-import { Button, Column, Spacer } from "@nattstack/ui/react"
+import { Button, Column, Spacer } from "@nattstack/ui"
 import { ColorCombobox } from "@/components/color-combobox"
 
 export default function ComboboxPage() {

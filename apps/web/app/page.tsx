@@ -1,4 +1,4 @@
-import { ButtonLink, Column, Spacer } from "@nattstack/ui/react"
+import { ButtonLink, Column, Spacer } from "@nattstack/ui"
 import Link from "next/link"
 
 export default function HomePage() {

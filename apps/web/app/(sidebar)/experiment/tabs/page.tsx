@@ -23,7 +23,7 @@ import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@nattstack/ui/react"
+} from "@nattstack/ui"
 
 export default function Page() {
   return (

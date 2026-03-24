@@ -1,4 +1,4 @@
-import { Column, Spacer } from "@nattstack/ui/react"
+import { Column, Spacer } from "@nattstack/ui"
 import { cacheTag } from "next/cache"
 import type { PropsWithChildren } from "react"
 import { getNotionPage } from "@/components/notion/notion"

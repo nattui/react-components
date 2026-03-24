@@ -1,6 +1,6 @@
 "use client"
 
-import { Tabs, TabsUnderlineList, TabsUnderlineTab } from "@nattstack/ui/react"
+import { Tabs, TabsUnderlineList, TabsUnderlineTab } from "@nattstack/ui"
 import Link, { type LinkProps } from "next/link"
 import { usePathname } from "next/navigation"
 import type { NotionTab } from "@/components/notion/notion"

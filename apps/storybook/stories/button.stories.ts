@@ -1,4 +1,4 @@
-import { Button } from "@nattstack/ui/react"
+import { Button } from "@nattstack/ui"
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import { fn } from "storybook/test"
 

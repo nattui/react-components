@@ -1,5 +1,5 @@
 import { Dialog } from "@base-ui/react"
-import { Button, Column } from "@nattstack/ui/react"
+import { Button, Column } from "@nattstack/ui"
 
 export default function DialogPage() {
   return (

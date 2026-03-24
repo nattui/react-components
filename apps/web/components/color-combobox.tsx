@@ -2,7 +2,7 @@
 
 import { Combobox } from "@base-ui/react"
 import { LucideCheck, LucideChevronDown, LucideX } from "@nattstack/icons"
-import { Label } from "@nattstack/ui/react"
+import { Label } from "@nattstack/ui"
 import { useId } from "react"
 
 interface ColorComboboxProps {

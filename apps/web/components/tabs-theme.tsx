@@ -1,7 +1,7 @@
 "use client"
 
 import { LucideMonitor, LucideMoon, LucideSun } from "@nattstack/icons"
-import { Tabs, TabsSegmentedList, TabsSegmentedTab } from "@nattstack/ui/react"
+import { Tabs, TabsSegmentedList, TabsSegmentedTab } from "@nattstack/ui"
 import { useState } from "react"
 
 export const THEME = {

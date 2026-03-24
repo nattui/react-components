@@ -7,7 +7,7 @@ import {
   LucideLogIn,
   LucideMail,
 } from "@nattstack/icons"
-import { Button, Column, Input, Label, Row, Spacer } from "@nattstack/ui/react"
+import { Button, Column, Input, Label, Row, Spacer } from "@nattstack/ui"
 
 export default function InputPage() {
   return (

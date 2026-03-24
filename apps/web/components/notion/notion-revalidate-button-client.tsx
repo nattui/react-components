@@ -1,6 +1,6 @@
 "use client"
 
-import { Button } from "@nattstack/ui/react"
+import { Button } from "@nattstack/ui"
 import { useFormStatus } from "react-dom"
 
 export function NotionRevalidateButtonClient() {

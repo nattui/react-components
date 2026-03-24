@@ -1,5 +1,5 @@
 import { LucideChevronRight, LucideX } from "@nattstack/icons"
-import { Button, Row } from "@nattstack/ui/react"
+import { Button, Row } from "@nattstack/ui"
 import Link from "next/link"
 
 export default function TestPage() {

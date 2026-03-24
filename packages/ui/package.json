@@ -24,12 +24,12 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    "./colors": "./src/colors/index.css",
-    "./tailwind-colors": "./src/tailwind-colors/index.css",
-    "./react": {
+    ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
+    "./colors": "./src/colors/index.css",
+    "./tailwind-colors": "./src/tailwind-colors/index.css",
     "./tailwind-tokenless-10": "./src/tailwind-tokenless/10/index.css",
     "./tailwind-tokenless-16": "./src/tailwind-tokenless/16/index.css"
   },

@@ -28,7 +28,7 @@ import {
   TabsPanel,
   Switch,
   Textarea,
-} from "@nattstack/ui/react"
+} from "@nattstack/ui"
 import Link from "next/link"
 import type { ElementType, JSX } from "react"
 import { Fragment, jsx, jsxs } from "react/jsx-runtime"

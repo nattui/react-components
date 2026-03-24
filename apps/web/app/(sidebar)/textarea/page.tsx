@@ -1,6 +1,6 @@
 "use client"
 
-import { Column, Label, Spacer, Textarea } from "@nattstack/ui/react"
+import { Column, Label, Spacer, Textarea } from "@nattstack/ui"
 
 export default function TextareaPage() {
   return (

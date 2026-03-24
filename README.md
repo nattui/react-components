@@ -19,7 +19,7 @@ pnpm add @nattstack/ui
 ## Usage
 
 ```tsx
-import { Button } from "@nattstack/ui/react"
+import { Button } from "@nattstack/ui"
 
 function App() {
   return <Button onClick={() => console.log("Clicked!")}>Click me</Button>
