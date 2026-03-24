@@ -18,6 +18,12 @@ pnpm add @nattstack/ui
 
 ## Usage
 
+```css
+@import "tailwindcss";
+@import "@nattstack/ui/tailwind-colors";
+@import "@nattstack/ui/tailwind-tokenless-16";
+```
+
 ```tsx
 import { Button } from "@nattstack/ui"
 

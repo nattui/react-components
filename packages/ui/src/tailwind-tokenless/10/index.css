@@ -13,3 +13,7 @@
 @import "./radius.css";
 @import "./spacing.css";
 @import "./text.css";
+
+html {
+  font-size: 10px;
+}

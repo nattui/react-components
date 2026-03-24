@@ -8,10 +8,6 @@
     border: 1px dashed red;
   }
 
-  html {
-    font-size: 10px;
-  }
-
   body {
     font-family: var(--font-sans);
     color: var(--color-gray-11);
