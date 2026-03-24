@@ -38,7 +38,7 @@ export default function Page() {
         <DrawerContent>
           <img
             alt="Cat"
-            className="rounded-12 aspect-16-9 object-cover select-none"
+            className="aspect-16-9 rounded-[8px] object-cover select-none max-[640px]:rounded-[16px]"
             draggable={false}
             src="https://placecats.com/640/480"
           />

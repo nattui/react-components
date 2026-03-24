@@ -1,7 +1,4 @@
 .drawer_popup {
-  --bleed: 36px;
-  --viewport-padding: 24px;
-
   background-color: var(--color-gray-1);
   border-radius: 12px;
   cursor: auto;
@@ -49,10 +46,10 @@
   .drawer_popup[data-ending-style],
   .drawer_popup[data-starting-style] {
     opacity: 1;
-    transform: scale(1) translateY(calc(100% - var(--bleed) + 2px));
+    transform: scale(1) translateY(100%);
   }
 
   .drawer_popup[data-ending-style] {
-    transition-duration: calc(var(--drawer-swipe-strength) * 400ms);
+    transition-duration: calc(var(--drawer-swipe-strength) * 300ms);
   }
 }
