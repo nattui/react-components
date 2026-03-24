@@ -10,17 +10,17 @@
     "react",
     "react-perf",
     "typescript",
-    "unicorn"
+    "unicorn",
   ],
   "jsPlugins": [
     {
       "name": "unused-imports",
-      "specifier": "eslint-plugin-unused-imports"
+      "specifier": "eslint-plugin-unused-imports",
     },
     {
       "name": "perfectionist",
-      "specifier": "eslint-plugin-perfectionist"
-    }
+      "specifier": "eslint-plugin-perfectionist",
+    },
   ],
   "categories": {
     "correctness": "error",
@@ -29,7 +29,7 @@
     "perf": "error",
     "restriction": "error",
     "style": "error",
-    "suspicious": "error"
+    "suspicious": "error",
   },
   "rules": {
     "eslint-plugin-import/consistent-type-specifier-style": "allow",
@@ -65,6 +65,7 @@
     "eslint/sort-imports": "allow",
     "max-lines": "allow",
     "max-statements": "allow",
+    "nextjs/no-img-element": "allow",
     "no-console": "allow",
     "no-undef": "allow",
     "oxc/no-async-await": "allow",
@@ -92,22 +93,22 @@
     "typescript/no-empty-interface": "allow",
     "typescript/no-empty-object-type": "allow",
     "typescript/no-use-before-define": "allow",
-    "unused-imports/no-unused-imports": "error"
+    "unused-imports/no-unused-imports": "error",
   },
   "settings": {
     "jsx-a11y": {
       "polymorphicPropName": null,
       "components": {},
-      "attributes": {}
+      "attributes": {},
     },
     "next": {
-      "rootDir": []
+      "rootDir": [],
     },
     "react": {
       "formComponents": [],
       "linkComponents": [],
       "version": null,
-      "componentWrapperFunctions": []
+      "componentWrapperFunctions": [],
     },
     "jsdoc": {
       "ignorePrivate": false,
@@ -117,15 +118,15 @@
       "augmentsExtendsReplacesDocs": false,
       "implementsReplacesDocs": false,
       "exemptDestructuredRootsFromChecks": false,
-      "tagNamePreference": {}
+      "tagNamePreference": {},
     },
     "vitest": {
-      "typecheck": false
-    }
+      "typecheck": false,
+    },
   },
   "env": {
-    "builtin": true
+    "builtin": true,
   },
   "globals": {},
-  "ignorePatterns": []
+  "ignorePatterns": [],
 }

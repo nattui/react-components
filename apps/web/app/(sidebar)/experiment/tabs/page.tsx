@@ -1,15 +1,10 @@
 "use client"
 
-// oxlint-disable nextjs/no-img-element
-
 import {
   LucideArrowDown as IconArrowDown,
   LucideArrowLeft as IconArrowLeft,
   LucideArrowRight as IconArrowRight,
   LucideArrowUp as IconArrowUp,
-  // LucideMonitor,
-  // LucideMoon,
-  // LucideSun,
 } from "@nattstack/icons"
 import {
   Button,
@@ -23,8 +18,6 @@ import {
   TabsPanel,
   TabsPillList,
   TabsPillTab,
-  // TabsSegmentedList,
-  // TabsSegmentedTab,
   TabsUnderlineList,
   TabsUnderlineTab,
   Tooltip,

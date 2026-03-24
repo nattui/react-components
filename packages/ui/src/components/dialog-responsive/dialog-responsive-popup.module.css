@@ -34,6 +34,7 @@
 @media (max-width: 640px) {
   .dialog_responsive_popup {
     --radius-mobile: 24px;
+
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     border-top-left-radius: var(--radius-mobile);
