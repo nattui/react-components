@@ -24,6 +24,8 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
+    "./colors": "./src/colors/base-root.css",
+    "./tailwind-colors": "./src/colors/base-tailwind.css",
     "./react": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
