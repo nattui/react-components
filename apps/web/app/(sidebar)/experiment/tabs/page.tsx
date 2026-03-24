@@ -38,7 +38,7 @@ export default function Page() {
         <DrawerContent>
           <img
             alt="Cat"
-            className="aspect-16-9 rounded-[8px] object-cover select-none max-[640px]:rounded-[16px]"
+            className="aspect-16-9 rounded-[12px] object-cover select-none max-[640px]:rounded-[20px]"
             draggable={false}
             src="https://placecats.com/640/480"
           />
@@ -50,7 +50,9 @@ export default function Page() {
             Everyone has equal access meaning buy and sell when a component is first created.
           </p>
           <Spacer height={24} />
-          <Button isFullWidth>Continue</Button>
+          <Button isFullWidth size={48}>
+            Continue
+          </Button>
           <Spacer height={16} />
           <p className="text-12 mx-auto max-w-[480px] text-center">
             By clicking this button, you agree to the Terms and Conditions, Privacy Policy, and

@@ -1,6 +1,6 @@
 .drawer_popup {
   background-color: var(--color-gray-1);
-  border-radius: 12px;
+  border-radius: 16px;
   cursor: auto;
   display: flex;
   flex-direction: column;
@@ -33,10 +33,11 @@
 /* Mobile */
 @media (max-width: 640px) {
   .drawer_popup {
+    --radius-mobile: 24px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
+    border-top-left-radius: var(--radius-mobile);
+    border-top-right-radius: var(--radius-mobile);
     transform: translateY(var(--drawer-swipe-movement-y));
     transition-duration: 450ms;
     transition-property: transform;
