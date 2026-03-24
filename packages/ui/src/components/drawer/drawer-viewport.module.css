@@ -12,6 +12,7 @@
 @media (max-width: 640px) {
   .drawer_viewport {
     align-items: safe flex-end;
+    overscroll-behavior: none;
     padding: 48px 0 0;
   }
 }

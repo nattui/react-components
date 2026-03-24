@@ -9,10 +9,10 @@
   outline-offset: -4px;
   outline-style: solid;
   outline-width: 0;
-  width: 100%;
-  will-change: opacity, transform;
   transition-duration: 150ms;
   transition-property: opacity, transform;
+  width: 100%;
+  will-change: opacity, transform;
 }
 
 .drawer_popup:focus-visible {
