@@ -13,7 +13,11 @@ export function DialogResponsivePortal(props: DialogResponsivePortalProps) {
   `)
 
   return (
-    <BaseDrawer.Portal className={combinedClassName} data-slot="dialog-responsive-portal" {...rest} />
+    <BaseDrawer.Portal
+      className={combinedClassName}
+      data-slot="dialog-responsive-portal"
+      {...rest}
+    />
   )
 }
 

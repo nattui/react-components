@@ -23,7 +23,11 @@ export function DialogResponsiveContent(props: DialogResponsiveContentProps) {
       <DialogResponsiveViewport>
         <DialogResponsivePopup>
           <DialogResponsiveBar />
-          <BaseDrawer.Content className={combinedClassName} data-slot="dialog-responsive-content" {...rest}>
+          <BaseDrawer.Content
+            className={combinedClassName}
+            data-slot="dialog-responsive-content"
+            {...rest}
+          >
             {children}
           </BaseDrawer.Content>
         </DialogResponsivePopup>

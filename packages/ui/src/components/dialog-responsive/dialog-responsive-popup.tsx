@@ -12,7 +12,9 @@ export function DialogResponsivePopup(props: DialogResponsivePopupProps) {
     ${customClassName}
   `)
 
-  return <BaseDrawer.Popup className={combinedClassName} data-slot="dialog-responsive-popup" {...rest} />
+  return (
+    <BaseDrawer.Popup className={combinedClassName} data-slot="dialog-responsive-popup" {...rest} />
+  )
 }
 
 export const DIALOG_RESPONSIVE_POPUP_CLASS_NAME = {
