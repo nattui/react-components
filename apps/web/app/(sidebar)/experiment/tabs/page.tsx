@@ -1,3 +1,5 @@
+"use client"
+
 // oxlint-disable nextjs/no-img-element
 
 import {
@@ -29,11 +31,14 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@nattstack/ui"
+import { useState } from "react"
 
 export default function Page() {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
+
   return (
     <>
-      <Drawer>
+      <Drawer isOpen={isDrawerOpen} onIsOpenChange={setIsDrawerOpen}>
         <DrawerTrigger render={<Button>Open drawer</Button>} />
         <DrawerContent>
           <img
