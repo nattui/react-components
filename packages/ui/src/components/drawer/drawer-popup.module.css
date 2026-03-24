@@ -2,8 +2,18 @@
   background-color: var(--color-gray-1);
   border-radius: 12px;
   cursor: auto;
+  display: flex;
+  flex-direction: column;
   max-width: 640px;
+  outline-color: var(--color-primary-9);
+  outline-offset: -4px;
+  outline-style: solid;
+  outline-width: 0;
   width: 100%;
+}
+
+.drawer_popup:focus-visible {
+  outline-width: 2px;
 }
 
 @media (max-width: 640px) {
