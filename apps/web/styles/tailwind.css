@@ -1,7 +1,7 @@
 /* Order matters */
 @import "tailwindcss";
 @import "@nattstack/ui/tailwind-colors";
-@import "@nattui/tailwind-exact";
+@import "@nattstack/ui/tailwind-tokenless-10";
 
 @layer base {
   .d {

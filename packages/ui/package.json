@@ -29,7 +29,9 @@
     "./react": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
-    }
+    },
+    "./tailwind-tokenless-10": "./src/tokenless/10/index.css",
+    "./tailwind-tokenless-16": "./src/tokenless/16/index.css"
   },
   "publishConfig": {
     "access": "public"
