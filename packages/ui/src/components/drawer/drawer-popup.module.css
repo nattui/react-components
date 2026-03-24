@@ -1,0 +1,16 @@
+.drawer_popup {
+  background-color: var(--color-gray-1);
+  border-radius: 12px;
+  cursor: auto;
+  max-width: 640px;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .drawer_popup {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}

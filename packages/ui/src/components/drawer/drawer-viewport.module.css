@@ -1,0 +1,17 @@
+.drawer_viewport {
+  align-items: safe center;
+  cursor: pointer;
+  display: flex;
+  inset: 0;
+  justify-content: safe center;
+  overflow-y: auto;
+  padding: 24px;
+  position: fixed;
+}
+
+@media (max-width: 640px) {
+  .drawer_viewport {
+    align-items: safe flex-end;
+    padding: 48px 0 0;
+  }
+}
