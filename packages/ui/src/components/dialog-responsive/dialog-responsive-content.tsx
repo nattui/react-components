@@ -3,6 +3,7 @@ import { DialogResponsiveBackdrop } from "@/components/dialog-responsive/dialog-
 import { DialogResponsiveBar } from "@/components/dialog-responsive/dialog-responsive-bar"
 import { DialogResponsivePopup } from "@/components/dialog-responsive/dialog-responsive-popup"
 import { DialogResponsivePortal } from "@/components/dialog-responsive/dialog-responsive-portal"
+import { DialogResponsiveScroll } from "@/components/dialog-responsive/dialog-responsive-scroll"
 import { DialogResponsiveViewport } from "@/components/dialog-responsive/dialog-responsive-viewport"
 import { normalizeWhitespace } from "@/utils/normalize-whitespace"
 import styles from "@/components/dialog-responsive/dialog-responsive-content.module.css"
@@ -21,12 +22,18 @@ export function DialogResponsiveContent(props: DialogResponsiveContentProps) {
     <DialogResponsivePortal>
       <DialogResponsiveBackdrop />
       <DialogResponsiveViewport>
-        <DialogResponsivePopup>
-          <DialogResponsiveBar />
-          <BaseDrawer.Content className={combinedClassName} data-slot="dialog-responsive-content" {...rest}>
-            {children}
-          </BaseDrawer.Content>
-        </DialogResponsivePopup>
+        <DialogResponsiveScroll>
+          <DialogResponsivePopup>
+            <DialogResponsiveBar />
+            <BaseDrawer.Content
+              className={combinedClassName}
+              data-slot="dialog-responsive-content"
+              {...rest}
+            >
+              {children}
+            </BaseDrawer.Content>
+          </DialogResponsivePopup>
+        </DialogResponsiveScroll>
       </DialogResponsiveViewport>
     </DialogResponsivePortal>
   )
