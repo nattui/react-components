@@ -3,12 +3,15 @@ import {
   LucideArrowLeft as IconArrowLeft,
   LucideArrowRight as IconArrowRight,
   LucideArrowUp as IconArrowUp,
-  LucideMonitor,
-  LucideMoon,
-  LucideSun,
+  // LucideMonitor,
+  // LucideMoon,
+  // LucideSun,
 } from "@nattstack/icons"
 import {
   Button,
+  Drawer,
+  DrawerContent,
+  DrawerTrigger,
   Row,
   Spacer,
   Switch,
@@ -16,8 +19,8 @@ import {
   TabsPanel,
   TabsPillList,
   TabsPillTab,
-  TabsSegmentedList,
-  TabsSegmentedTab,
+  // TabsSegmentedList,
+  // TabsSegmentedTab,
   TabsUnderlineList,
   TabsUnderlineTab,
   Tooltip,
@@ -28,6 +31,15 @@ import {
 export default function Page() {
   return (
     <>
+      <Drawer>
+        <DrawerTrigger render={<Button>Open drawer</Button>} />
+        <DrawerContent>
+          <p>This is a drawer that slides in from the side. You can swipe to dismiss it.</p>
+          <p>This is a drawer that slides in from the side. You can swipe to dismiss it.</p>
+        </DrawerContent>
+      </Drawer>
+      <Spacer height={64} />
+
       <Switch />
       <Spacer height={16} />
       <Switch isChecked />
@@ -37,7 +49,7 @@ export default function Page() {
       <Switch isChecked isDisabled />
       <Spacer height={64} />
 
-      <Row gapX={8}>
+      <Row className="flex-wrap" gap={8}>
         <Tooltip>
           <TooltipTrigger
             render={
@@ -82,7 +94,7 @@ export default function Page() {
 
       <Spacer height={16} />
 
-      <Tabs defaultValue="system">
+      {/* <Tabs defaultValue="system">
         <TabsSegmentedList>
           <TabsSegmentedTab value="system">
             <LucideMonitor size={16} /> System
@@ -100,7 +112,7 @@ export default function Page() {
         <TabsPanel value="light">☀️ Light</TabsPanel>
         <TabsPanel value="dark">🌙 Dark</TabsPanel>
       </Tabs>
-      <Spacer height={64} />
+      <Spacer height={64} /> */}
 
       <Tabs defaultValue="cat">
         <TabsPillList>

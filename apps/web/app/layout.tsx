@@ -24,7 +24,7 @@ export default function RootLayout(props: PropsWithChildren) {
         className={`${fontMono.variable} ${fontSans.variable} color-gray-slate color-primary-blue`}
       >
         <Providers>
-          <div className="flex size-full flex-col">
+          <div className="isolate flex size-full flex-col">
             <Topbar />
             {children}
           </div>

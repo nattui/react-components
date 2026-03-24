@@ -17,7 +17,9 @@ export function Topbar() {
         </Link>
 
         <div className="flex items-center gap-x-8">
-          <TabsTheme />
+          <div className="max-640:hidden">
+            <TabsTheme />
+          </div>
           <NotionRevalidateButton />
         </div>
       </div>

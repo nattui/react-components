@@ -1,0 +1,31 @@
+.drawer_portal {
+  isolation: isolate;
+}
+
+.drawer_viewport {
+  align-items: center;
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  position: fixed;
+}
+
+.drawer_backdrop {
+  background-color: rgba(0, 0, 0, 0.2);
+  inset: 0;
+  position: fixed;
+}
+
+.drawer_popup {
+  background-color: var(--color-gray-1);
+  border-radius: 12px;
+  color: var(--color-gray-12);
+  padding: 24px;
+}
+
+.drawer_content {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 320px;
+  z-index: 30;
+}
