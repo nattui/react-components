@@ -31,17 +31,11 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@nattstack/ui"
-import { useState } from "react"
 
 export default function Page() {
-  const [isDialogResponsiveOpen, setIsDialogResponsiveOpen] = useState(false)
-
   return (
     <>
-      <DialogResponsive
-        isOpen={isDialogResponsiveOpen}
-        onIsOpenChange={setIsDialogResponsiveOpen}
-      >
+      <DialogResponsive>
         <DialogResponsiveTrigger render={<Button>Open dialog responsive</Button>} />
         <DialogResponsiveContent>
           <img
