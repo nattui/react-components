@@ -1,13 +1,12 @@
 .drawer_backdrop {
   --backdrop-opacity: 0.2;
-  --bleed: 36px;
 
   background-color: black;
   inset: 0;
   opacity: calc(var(--backdrop-opacity) * (1 - var(--drawer-swipe-progress)));
   outline-color: var(--color-primary-9);
   position: fixed;
-  transition-duration: 450ms;
+  transition-duration: 150ms;
   transition-property: opacity;
 }
 
@@ -16,12 +15,12 @@
   opacity: 0;
 }
 
-.drawer_backdrop[data-swiping] {
-  transition-duration: 0ms;
-}
-
 .drawer_backdrop[data-ending-style] {
   transition-duration: calc(var(--drawer-swipe-strength) * 400ms);
+}
+
+.drawer_backdrop[data-swiping] {
+  transition-duration: 0ms;
 }
 
 :global(.dark) .drawer_backdrop {
