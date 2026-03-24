@@ -1,6 +1,6 @@
 /* Order matters */
-@import "./root.css";
-@import "./root-p3.css";
+@import "../colors/root.css";
+@import "../colors/root-p3.css";
 @import "./theme-gray.css";
 @import "./theme-primary.css";
 @import "./tailwind.css";
