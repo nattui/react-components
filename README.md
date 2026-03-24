@@ -2,9 +2,6 @@
 
 A collection of reusable React components built with Base UI, TypeScript, and CSS Modules.
 
-> [!WARNING]
-> This project is currently a work in progress.
-
 ## Links
 
 - Website: [https://react-components-web.vercel.app](https://react-components-web.vercel.app)
@@ -13,43 +10,29 @@ A collection of reusable React components built with Base UI, TypeScript, and CS
 ## Installation
 
 ```bash
-pnpm add @nattstack/ui
+bun add @nattstack/ui
 ```
 
 ## Usage
 
 ```css
+/* global.css */
+
 @import "tailwindcss";
 @import "@nattstack/ui/tailwind-colors";
-@import "@nattstack/ui/tailwind-tokenless-16";
+@import "@nattstack/ui/tailwind-tokenless-10";
 ```
 
 ```tsx
+// app.tsx
+
 import { Button } from "@nattstack/ui"
 
 function App() {
-  return <Button onClick={() => console.log("Clicked!")}>Click me</Button>
+  return (
+    <body className="color-gray-slate color-primary-blue">
+      <Button>Click me</Button>
+    </body>
+  )
 }
 ```
-
-## Development
-
-### Project Structure
-
-```txt
-src/
-├── index.ts          # Main export file
-├── button.tsx        # Button component
-├── button.module.css # Button styles
-└── global.d.ts       # TypeScript declarations
-```
-
-### Build Configuration
-
-The project uses [tsup](https://tsup.egoist.dev/) for building:
-
-- **Output formats:** ESM and CommonJS
-- **TypeScript declarations:** Generated automatically
-- **CSS handling:** CSS files are copied to the dist folder
-- **Tree shaking:** Enabled for optimal bundle size
-- **Source maps:** Generated for debugging
