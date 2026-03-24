@@ -1,3 +1,5 @@
+// oxlint-disable nextjs/no-img-element
+
 import {
   LucideArrowDown as IconArrowDown,
   LucideArrowLeft as IconArrowLeft,
@@ -34,11 +36,26 @@ export default function Page() {
       <Drawer>
         <DrawerTrigger render={<Button>Open drawer</Button>} />
         <DrawerContent>
-          <p>This is a drawer that slides in from the side. You can swipe to dismiss it.</p>
-          <p>This is a drawer that slides in from the side. You can swipe to dismiss it.</p>
-          <p>This is a drawer that slides in from the side. You can swipe to dismiss it.</p>
-          <p>This is a drawer that slides in from the side. You can swipe to dismiss it.</p>
-          <p>This is a drawer that slides in from the side. You can swipe to dismiss it.</p>
+          <img
+            alt="Cat"
+            className="rounded-12 aspect-16-9 object-cover select-none"
+            draggable={false}
+            src="https://placecats.com/640/480"
+          />
+          <Spacer height={24} />
+          <p className="font-700 text-24 text-gray-12 text-center">Welcome to Natt UI!</p>
+          <Spacer height={16} />
+          <p className="text-center">Natt UI allows anyone to create their own components.</p>
+          <p className="text-center">
+            Everyone has equal access meaning buy and sell when a component is first created.
+          </p>
+          <Spacer height={24} />
+          <Button isFullWidth>Continue</Button>
+          <Spacer height={16} />
+          <p className="text-12 mx-auto max-w-[480px] text-center">
+            By clicking this button, you agree to the Terms and Conditions, Privacy Policy, and
+            certify that you are over 18 years old.
+          </p>
         </DrawerContent>
       </Drawer>
       <Spacer height={64} />

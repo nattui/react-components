@@ -11,6 +11,7 @@ export function DrawerContent(props: DrawerContentProps) {
       <BaseDrawer.Backdrop className={styles.drawer_backdrop} data-slot="drawer-backdrop" />
       <BaseDrawer.Viewport className={styles.drawer_viewport} data-slot="drawer-viewport">
         <BaseDrawer.Popup className={styles.drawer_popup} data-slot="drawer-popup">
+          <div className={styles.drawer_bar} data-slot="drawer-bar" />
           <BaseDrawer.Content
             className={styles.drawer_content}
             data-slot="drawer-content"
