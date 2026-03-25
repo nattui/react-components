@@ -1,10 +1,10 @@
-import type { ComponentProps } from "react"
+import type { ComponentProps, JSX } from "react"
 import { normalizeWhitespace } from "@/utils/normalize-whitespace"
 import styles from "@/components/dialog-responsive/dialog-responsive-bar.module.css"
 
 export interface DialogResponsiveBarProps extends ComponentProps<"div"> {}
 
-export function DialogResponsiveBar(props: DialogResponsiveBarProps) {
+export function DialogResponsiveBar(props: DialogResponsiveBarProps): JSX.Element {
   const { className: customClassName = "", ...rest } = props
 
   const combinedClassName = normalizeWhitespace(`

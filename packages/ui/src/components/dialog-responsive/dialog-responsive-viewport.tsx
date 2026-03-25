@@ -1,10 +1,11 @@
 import { Drawer as BaseDrawer } from "@base-ui/react"
+import type { JSX } from "react"
 import { normalizeWhitespace } from "@/utils/normalize-whitespace"
 import styles from "@/components/dialog-responsive/dialog-responsive-viewport.module.css"
 
 export interface DialogResponsiveViewportProps extends BaseDrawer.Viewport.Props {}
 
-export function DialogResponsiveViewport(props: DialogResponsiveViewportProps) {
+export function DialogResponsiveViewport(props: DialogResponsiveViewportProps): JSX.Element {
   const { className: customClassName = "", ...rest } = props
 
   const combinedClassName = normalizeWhitespace(`

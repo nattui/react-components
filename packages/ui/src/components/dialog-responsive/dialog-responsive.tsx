@@ -1,4 +1,5 @@
 import { Drawer as BaseDrawer } from "@base-ui/react"
+import type { JSX } from "react"
 
 export interface DialogResponsiveProps extends Omit<
   BaseDrawer.Root.Props,
@@ -8,7 +9,7 @@ export interface DialogResponsiveProps extends Omit<
   onIsOpenChange?: BaseDrawer.Root.Props["onOpenChange"]
 }
 
-export function DialogResponsive(props: DialogResponsiveProps) {
+export function DialogResponsive(props: DialogResponsiveProps): JSX.Element {
   const { isOpen, onIsOpenChange, ...rest } = props
 
   return (

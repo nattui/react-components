@@ -1,10 +1,11 @@
 import { Tabs as BaseTabs } from "@base-ui/react"
+import type { JSX } from "react"
 import { normalizeWhitespace } from "@/utils/normalize-whitespace"
 import styles from "@/components/tabs-segmented/tabs-segmented-indicator.module.css"
 
 export interface TabsSegmentedIndicatorProps extends BaseTabs.Indicator.Props {}
 
-export function TabsSegmentedIndicator(props: TabsSegmentedIndicatorProps) {
+export function TabsSegmentedIndicator(props: TabsSegmentedIndicatorProps): JSX.Element {
   const { className: customClassName = "", ...rest } = props
 
   const combinedClassName = normalizeWhitespace(`

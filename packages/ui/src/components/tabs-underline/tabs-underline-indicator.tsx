@@ -1,10 +1,11 @@
 import { Tabs as BaseTabs } from "@base-ui/react"
+import type { JSX } from "react"
 import { normalizeWhitespace } from "@/utils/normalize-whitespace"
 import styles from "@/components/tabs-underline/tabs-underline-indicator.module.css"
 
 export interface TabsUnderlineIndicatorProps extends BaseTabs.Indicator.Props {}
 
-export function TabsUnderlineIndicator(props: TabsUnderlineIndicatorProps) {
+export function TabsUnderlineIndicator(props: TabsUnderlineIndicatorProps): JSX.Element {
   const { className: customClassName = "", ...rest } = props
 
   const combinedClassName = normalizeWhitespace(`
