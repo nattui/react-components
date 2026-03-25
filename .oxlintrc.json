@@ -70,6 +70,7 @@
     "no-console": "allow",
     "no-undef": "allow",
     "oxc/no-async-await": "allow",
+    "oxc/no-barrel-file": "allow",
     "oxc/no-rest-spread-properties": "allow",
     "perfectionist/sort-array-includes": "error",
     "perfectionist/sort-classes": "error",
