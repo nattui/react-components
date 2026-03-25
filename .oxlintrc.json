@@ -63,6 +63,7 @@
     "eslint/no-ternary": "allow",
     "eslint/no-undefined": "allow",
     "eslint/sort-imports": "allow",
+    "import/no-nodejs-modules": "allow",
     "max-lines": "allow",
     "max-statements": "allow",
     "nextjs/no-img-element": "allow",
