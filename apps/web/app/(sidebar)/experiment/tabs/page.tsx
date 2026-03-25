@@ -20,6 +20,7 @@ import {
   TabsPillTab,
   TabsUnderlineList,
   TabsUnderlineTab,
+  Textarea,
   Tooltip,
   TooltipContent,
   TooltipTrigger,
@@ -28,6 +29,9 @@ import {
 export default function Page() {
   return (
     <>
+      <Textarea rows={3} />
+      <Spacer height={64} />
+
       <DialogResponsive>
         <DialogResponsiveTrigger render={<Button>Open dialog</Button>} />
         <DialogResponsivePopup>
