@@ -1,6 +1,6 @@
 {
   "name": "@nattstack/ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A collection of reusable React components built with Base UI, TypeScript, and CSS Modules",
   "keywords": [
     "components",
@@ -20,18 +20,18 @@
     "dist"
   ],
   "type": "module",
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/components/index.js",
+  "module": "./dist/components/index.js",
+  "types": "./dist/components/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+      "types": "./dist/components/index.d.ts",
+      "import": "./dist/components/index.js"
     },
-    "./colors": "./src/colors/index.css",
-    "./tailwind-colors": "./src/tailwind-colors/index.css",
-    "./tailwind-tokenless-10": "./src/tailwind-tokenless/10/index.css",
-    "./tailwind-tokenless-16": "./src/tailwind-tokenless/16/index.css"
+    "./colors": "./dist/colors/index.css",
+    "./tailwind-colors": "./dist/tailwind-colors/index.css",
+    "./tailwind-tokenless-10": "./dist/tailwind-tokenless/10/index.css",
+    "./tailwind-tokenless-16": "./dist/tailwind-tokenless/16/index.css"
   },
   "publishConfig": {
     "access": "public"

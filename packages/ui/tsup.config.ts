@@ -23,9 +23,10 @@ export default defineConfig({
       const src = resolve(root, from)
       const dst = resolve(root, to)
       cpSync(src, dst, { recursive: true })
-      console.log(`[postbuild] copied ${from} -> ${to}`)
+      console.log(`[ui] copied ${from} -> ${to}`)
     }
 
     return Promise.resolve()
   },
+  outDir: "dist/components",
 })
