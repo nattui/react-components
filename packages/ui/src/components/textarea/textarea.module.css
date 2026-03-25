@@ -2,8 +2,9 @@
 /* Base */
 /* ===================================================== */
 .textarea {
-  min-height: 66px;
+  height: auto;
   max-height: none;
+  min-height: 66px;
   padding: 12px !important;
   resize: vertical;
 }
