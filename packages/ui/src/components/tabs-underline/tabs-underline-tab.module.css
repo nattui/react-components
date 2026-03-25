@@ -26,3 +26,10 @@
 .tabs_underline_tab[data-active] {
   color: var(--color-gray-12);
 }
+
+/* Icon size */
+.tabs_underline_tab > svg {
+  --size-icon: 18px;
+  height: var(--size-icon);
+  width: var(--size-icon);
+}

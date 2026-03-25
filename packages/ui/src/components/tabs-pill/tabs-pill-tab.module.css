@@ -40,6 +40,13 @@
   color: var(--color-black);
 }
 
+/* Icon size */
+.tabs_pill_tab > svg {
+  --size-icon: 18px;
+  height: var(--size-icon);
+  width: var(--size-icon);
+}
+
 .tabs_pill_tab_wrapper {
   --border-radius: 12px;
   border-radius: var(--border-radius);
