@@ -28,7 +28,6 @@ export function TabsTheme() {
           <LucideSun
             className="data-[active=true]:text-primary-9"
             data-active={theme === THEME.LIGHT}
-            size={16}
           />
           Light
         </TabsSegmentedTab>
@@ -36,7 +35,6 @@ export function TabsTheme() {
           <LucideMoon
             className="data-[active=true]:text-primary-9"
             data-active={theme === THEME.DARK}
-            size={16}
           />
           Dark
         </TabsSegmentedTab>
@@ -44,7 +42,6 @@ export function TabsTheme() {
           <LucideMonitor
             className="data-[active=true]:text-primary-9"
             data-active={theme === THEME.SYSTEM}
-            size={16}
           />
           System
         </TabsSegmentedTab>
