@@ -15,7 +15,8 @@
     "check:type": "turbo check:type",
     "clean": "sh scripts/clean.sh",
     "dev": "turbo dev",
-    "update": "bun update --interactive --recursive"
+    "update": "bun update --interactive --recursive",
+    "version": "npm view @nattstack/ui versions"
   },
   "devDependencies": {
     "eslint-plugin-perfectionist": "5.7.0",
