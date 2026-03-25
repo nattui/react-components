@@ -1,6 +1,5 @@
 .dialog_responsive_backdrop {
   --backdrop-opacity: 0.25;
-
   background-color: black;
   inset: 0;
   opacity: calc(var(--backdrop-opacity) * (1 - var(--drawer-swipe-progress)));

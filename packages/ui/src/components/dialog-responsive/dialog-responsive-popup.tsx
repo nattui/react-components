@@ -1,11 +1,15 @@
 import { Drawer as BaseDrawer } from "@base-ui/react"
+import { DialogResponsiveBackdrop } from "@/components/dialog-responsive/dialog-responsive-backdrop"
+import { DialogResponsiveBar } from "@/components/dialog-responsive/dialog-responsive-bar"
+import { DialogResponsivePortal } from "@/components/dialog-responsive/dialog-responsive-portal"
+import { DialogResponsiveViewport } from "@/components/dialog-responsive/dialog-responsive-viewport"
 import { normalizeWhitespace } from "@/utils/normalize-whitespace"
 import styles from "@/components/dialog-responsive/dialog-responsive-popup.module.css"
 
 export interface DialogResponsivePopupProps extends BaseDrawer.Popup.Props {}
 
 export function DialogResponsivePopup(props: DialogResponsivePopupProps) {
-  const { className: customClassName = "", ...rest } = props
+  const { children, className: customClassName = "", ...rest } = props
 
   const combinedClassName = normalizeWhitespace(`
     ${DIALOG_RESPONSIVE_POPUP_CLASS_NAME.BASE}
@@ -13,7 +17,19 @@ export function DialogResponsivePopup(props: DialogResponsivePopupProps) {
   `)
 
   return (
-    <BaseDrawer.Popup className={combinedClassName} data-slot="dialog-responsive-popup" {...rest} />
+    <DialogResponsivePortal>
+      <DialogResponsiveBackdrop />
+      <DialogResponsiveViewport>
+        <BaseDrawer.Popup
+          className={combinedClassName}
+          data-slot="dialog-responsive-popup"
+          {...rest}
+        >
+          <DialogResponsiveBar />
+          {children}
+        </BaseDrawer.Popup>
+      </DialogResponsiveViewport>
+    </DialogResponsivePortal>
   )
 }
 

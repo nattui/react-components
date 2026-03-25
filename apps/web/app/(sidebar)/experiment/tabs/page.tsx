@@ -9,7 +9,7 @@ import {
 import {
   Button,
   DialogResponsive,
-  DialogResponsiveContent,
+  DialogResponsivePopup,
   DialogResponsiveTrigger,
   Row,
   Spacer,
@@ -29,8 +29,8 @@ export default function Page() {
   return (
     <>
       <DialogResponsive>
-        <DialogResponsiveTrigger render={<Button>Open dialog responsive</Button>} />
-        <DialogResponsiveContent>
+        <DialogResponsiveTrigger render={<Button>Open dialog</Button>} />
+        <DialogResponsivePopup>
           <img
             alt="Cat"
             className="aspect-16-9 rounded-[12px] object-cover select-none max-[640px]:rounded-[20px]"
@@ -53,7 +53,7 @@ export default function Page() {
             By clicking this button, you agree to the Terms and Conditions, Privacy Policy, and
             certify that you are over 18 years old.
           </p>
-        </DialogResponsiveContent>
+        </DialogResponsivePopup>
       </DialogResponsive>
       <Spacer height={64} />
 

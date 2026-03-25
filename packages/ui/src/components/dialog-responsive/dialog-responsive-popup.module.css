@@ -9,6 +9,7 @@
   outline-offset: -4px;
   outline-style: solid;
   outline-width: 0;
+  padding: 16px;
   transition-duration: 150ms;
   transition-property: opacity, transform;
   width: 100%;
@@ -34,11 +35,11 @@
 @media (max-width: 640px) {
   .dialog_responsive_popup {
     --radius-mobile: 24px;
-
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     border-top-left-radius: var(--radius-mobile);
     border-top-right-radius: var(--radius-mobile);
+    padding-top: 0;
     transform: translateY(var(--drawer-swipe-movement-y));
     transition-duration: 450ms;
     transition-property: transform;
