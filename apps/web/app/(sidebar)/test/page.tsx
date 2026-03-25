@@ -26,7 +26,7 @@ export default function TestPage() {
 
       {/* Close */}
       <Button className="absolute top-2 right-2" isIconOnly size={32} variant="ghost">
-        <LucideX className="text-gray-11" size={16} />
+        <LucideX className="text-gray-11" />
       </Button>
     </Row>
   )

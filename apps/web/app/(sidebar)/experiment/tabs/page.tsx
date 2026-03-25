@@ -71,7 +71,7 @@ export default function Page() {
           <TooltipTrigger
             render={
               <Button isIconOnly>
-                <IconArrowUp size={16} />
+                <IconArrowUp />
               </Button>
             }
           />
@@ -81,7 +81,7 @@ export default function Page() {
           <TooltipTrigger
             render={
               <Button isIconOnly>
-                <IconArrowDown size={16} />
+                <IconArrowDown />
               </Button>
             }
           />
@@ -91,7 +91,7 @@ export default function Page() {
           <TooltipTrigger
             render={
               <Button isIconOnly>
-                <IconArrowLeft size={16} />
+                <IconArrowLeft />
               </Button>
             }
           />
@@ -101,35 +101,14 @@ export default function Page() {
           <TooltipTrigger
             render={
               <Button isIconOnly>
-                <IconArrowRight size={16} />
+                <IconArrowRight />
               </Button>
             }
           />
           <TooltipContent side="right">Right side</TooltipContent>
         </Tooltip>
       </Row>
-
       <Spacer height={16} />
-
-      {/* <Tabs defaultValue="system">
-        <TabsSegmentedList>
-          <TabsSegmentedTab value="system">
-            <LucideMonitor size={16} /> System
-          </TabsSegmentedTab>
-          <TabsSegmentedTab value="light">
-            <LucideSun size={16} /> Light
-          </TabsSegmentedTab>
-          <TabsSegmentedTab value="dark">
-            <LucideMoon size={16} /> Dark
-          </TabsSegmentedTab>
-        </TabsSegmentedList>
-        <Spacer height={16} />
-
-        <TabsPanel value="system">⚙️ System</TabsPanel>
-        <TabsPanel value="light">☀️ Light</TabsPanel>
-        <TabsPanel value="dark">🌙 Dark</TabsPanel>
-      </Tabs>
-      <Spacer height={64} /> */}
 
       <Tabs defaultValue="cat">
         <TabsPillList>

@@ -24,18 +24,18 @@ export default function MenuPage() {
       <DropdownMenu>
         <DropdownMenuTrigger
           render={
-            <Button iconStart={<LucidePlus size={20} />} size={36} variant="secondary">
+            <Button iconStart={<LucidePlus className="size-20!" />} size={36} variant="secondary">
               Create
             </Button>
           }
         />
         <DropdownMenuContent align="start" className="w-144">
           <DropdownMenuItem onClick={onNewCoin}>
-            <LucideCoins size={20} />
+            <LucideCoins className="size-20!" />
             New coin
           </DropdownMenuItem>
           <DropdownMenuItem onClick={onGoLive} render={<Link href="/" />}>
-            <LucideRadio size={20} />
+            <LucideRadio className="size-20!" />
             Go live
           </DropdownMenuItem>
         </DropdownMenuContent>

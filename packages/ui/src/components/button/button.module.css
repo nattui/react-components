@@ -11,7 +11,7 @@
   font-family: var(--font-sans, sans-serif);
   font-size: 14px;
   font-weight: 500;
-  height: var(--size);
+  height: var(--size-button);
   justify-content: safe center;
   line-height: 1.5;
   outline-color: var(--color-primary-9);
@@ -41,11 +41,18 @@
   outline-width: 2px;
 }
 
+/* Icon size */
+.button > svg {
+  --size-icon: 18px;
+  height: var(--size-icon);
+  width: var(--size-icon);
+}
+
 /* ===================================================== */
 /* Icon only */
 /* ===================================================== */
 .button__icon_only {
-  width: var(--size) !important;
+  width: var(--size-button) !important;
   padding: 0 !important;
 }
 
@@ -64,31 +71,31 @@
 /* Size */
 /* ===================================================== */
 .button__size_32 {
-  --size: 32px;
+  --size-button: 32px;
   padding: 0 10px;
   border-radius: 8px;
 }
 
 .button__size_36 {
-  --size: 36px;
+  --size-button: 36px;
   padding: 0 12px;
   border-radius: 10px;
 }
 
 .button__size_40 {
-  --size: 40px;
+  --size-button: 40px;
   padding: 0 14px;
   border-radius: 12px;
 }
 
 .button__size_44 {
-  --size: 44px;
+  --size-button: 44px;
   padding: 0 16px;
   border-radius: 14px;
 }
 
 .button__size_48 {
-  --size: 48px;
+  --size-button: 48px;
   padding: 0 18px;
   border-radius: 16px;
 }
