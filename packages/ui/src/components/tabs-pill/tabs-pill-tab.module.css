@@ -42,7 +42,7 @@
 
 /* Icon size */
 .tabs_pill_tab > svg {
-  --size-icon: 18px;
+  --size-icon: 16px;
   height: var(--size-icon);
   width: var(--size-icon);
 }
