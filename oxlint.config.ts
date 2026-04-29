@@ -16,11 +16,19 @@ export default defineConfig({
     node: true,
   },
   globals: {},
-  ignorePatterns: ["apps/api/src/db/migrations/**", "apps/web/src/routeTree.gen.ts"],
+  ignorePatterns: [],
   jsPlugins: [
     {
       name: "perfectionist",
       specifier: "eslint-plugin-perfectionist",
+    },
+  ],
+  overrides: [
+    {
+      files: ["packages/ui/**/*.{ts,tsx}"],
+      rules: {
+        "eslint/no-magic-numbers": "allow",
+      },
     },
   ],
   plugins: [
