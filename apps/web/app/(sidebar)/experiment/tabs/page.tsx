@@ -170,7 +170,7 @@ export default function Page(): JSX.Element {
           <TooltipPopup side="right">Right side</TooltipPopup>
         </Tooltip>
       </Row>
-      <Spacer height={16} />
+      <Spacer height={128} />
 
       <Tabs defaultValue="cat">
         <TabsPillList>
