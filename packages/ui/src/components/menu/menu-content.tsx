@@ -27,8 +27,6 @@ export interface MenuContentProps
 }
 
 export function MenuContent(props: MenuContentProps): JSX.Element {
-  const DEFAULT_SIDE_OFFSET = 8
-
   const {
     align = "start",
     alignOffset = undefined,
@@ -44,7 +42,7 @@ export function MenuContent(props: MenuContentProps): JSX.Element {
     keepMounted = undefined,
     positionMethod = undefined,
     side = "bottom",
-    sideOffset = DEFAULT_SIDE_OFFSET,
+    sideOffset = 8,
     sticky = undefined,
     ...rest
   } = props

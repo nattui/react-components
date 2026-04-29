@@ -6,10 +6,8 @@ export interface ButtonSpinnerProps {
 }
 
 export function ButtonSpinner(props: ButtonSpinnerProps): JSX.Element {
-  const DEFAULT_SIZE = 20
-
   // Match the default button icon size from button.module.css.
-  const { size = DEFAULT_SIZE } = props
+  const { size = 20 } = props
 
   return (
     <div className={styles.button_spinner} style={{ "--size": `${size}px` } as CSSProperties}>

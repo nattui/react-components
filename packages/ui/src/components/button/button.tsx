@@ -24,15 +24,13 @@ interface ButtonInternalProps extends Omit<ComponentProps<"button">, "aria-press
   isIconOnly?: boolean
   isLoading?: boolean
   isRounded?: boolean
-  size?: 32 | 36 | 40 | 44 | 48 // oxlint-disable-line no-magic-numbers
+  size?: 32 | 36 | 40 | 44 | 48
   variant?: "ghost" | "primary" | "secondary"
 }
 
 type ButtonUnionProps = ButtonIconProps | ButtonProps
 
 export function Button(props: ButtonUnionProps): JSX.Element {
-  const DEFAULT_SIZE = 40
-
   const {
     children = "",
     className: customClassName = "",
@@ -44,7 +42,7 @@ export function Button(props: ButtonUnionProps): JSX.Element {
     isIconOnly = false,
     isLoading = false,
     isRounded = false,
-    size = DEFAULT_SIZE,
+    size = 40,
     type = "button",
     variant = "primary",
     ...rest

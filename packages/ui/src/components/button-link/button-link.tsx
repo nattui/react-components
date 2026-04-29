@@ -15,15 +15,13 @@ interface ButtonLinkInternalProps extends Pick<
 export function ButtonLink<ComponentType extends ElementType = "a">(
   props: ButtonLinkProps<ComponentType>,
 ): JSX.Element {
-  const DEFAULT_SIZE = 40
-
   const {
     as = "a",
     className: customClassName = "",
     isFullWidth = false,
     isIconOnly = false,
     isRounded = false,
-    size = DEFAULT_SIZE,
+    size = 40,
     variant = "primary",
     ...rest
   } = props
