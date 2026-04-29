@@ -4,6 +4,7 @@ import { LucideMonitor, LucideMoon, LucideSun } from "@nattstack/icons"
 import { Tabs, TabsSegmentedList, TabsSegmentedTab } from "@nattstack/ui"
 import { useState, type JSX } from "react"
 
+// oxlint-disable-next-line react/only-export-components
 export const THEME = {
   DARK: "dark",
   LIGHT: "light",

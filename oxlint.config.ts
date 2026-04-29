@@ -27,7 +27,9 @@ export default defineConfig({
     {
       files: ["packages/ui/**/*.{ts,tsx}"],
       rules: {
+        "eslint/complexity": "allow",
         "eslint/no-magic-numbers": "allow",
+        "react/only-export-components": "allow", // Opinion: UI components tend to have many properties
       },
     },
   ],
@@ -44,7 +46,6 @@ export default defineConfig({
   ],
   rules: {
     "eslint/capitalized-comments": "allow", // Allow capitalized comments
-    "eslint/complexity": "allow", // Opinion: UI components tend to have many properties
     "eslint/func-name-matching": "allow", // Allow function name matching
     "eslint/func-style": ["error", "declaration"], // Prefer function declarations over function expressions
     "eslint/id-length": ["error", { exceptions: ["_"] }], // Allow `_` for unused parameters
@@ -91,9 +92,8 @@ export default defineConfig({
     "react/jsx-props-no-spreading": "allow", // Allow spreading props for react components
     "react/no-array-index-key": "allow", // Allow array index for react keys
     "react/no-multi-comp": "allow",
-    "react/only-export-components": "allow", // Opinion: UI components holds related logic
     "react/react-in-jsx-scope": "allow",
-    "typescript/no-empty-interface": "allow", // Opinion: UI components makes it extensible
-    "typescript/no-empty-object-type": "allow", // Opinion: UI components makes it extensible
+    "typescript/no-empty-interface": ["error", { allowSingleExtends: true }], // Allow types to be extensible
+    "typescript/no-empty-object-type": ["error", { allowWithName: "Props$" }], // Allow types to be extensible
   },
 })

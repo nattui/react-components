@@ -12,6 +12,7 @@ interface PageProps {
   }>
 }
 
+// oxlint-disable-next-line react/only-export-components
 export async function generateStaticParams(): Promise<{ slugs: string[] }[]> {
   const slugs = await getComponentPageSlugs()
   return slugs.map((slug) => ({ slugs: [slug] }))

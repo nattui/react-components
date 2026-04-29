@@ -33,6 +33,7 @@ export default function RootLayout(props: PropsWithChildren): JSX.Element {
   )
 }
 
+// oxlint-disable-next-line react/only-export-components
 export const metadata: Metadata = {
   description: "React Components",
   title: "React Components",
