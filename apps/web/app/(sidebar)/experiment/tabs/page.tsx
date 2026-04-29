@@ -34,7 +34,7 @@ import {
   TabsUnderlineTab,
   Textarea,
   Tooltip,
-  TooltipContent,
+  TooltipPopup,
   TooltipTrigger,
   OTPField,
   OTPFieldInput,
@@ -137,7 +137,7 @@ export default function Page(): JSX.Element {
               </Button>
             }
           />
-          <TooltipContent side="top">Top side</TooltipContent>
+          <TooltipPopup side="top">Top side</TooltipPopup>
         </Tooltip>
         <Tooltip>
           <TooltipTrigger
@@ -147,7 +147,7 @@ export default function Page(): JSX.Element {
               </Button>
             }
           />
-          <TooltipContent side="bottom">Bottom side</TooltipContent>
+          <TooltipPopup side="bottom">Bottom side</TooltipPopup>
         </Tooltip>
         <Tooltip>
           <TooltipTrigger
@@ -157,7 +157,7 @@ export default function Page(): JSX.Element {
               </Button>
             }
           />
-          <TooltipContent side="left">Left side</TooltipContent>
+          <TooltipPopup side="left">Left side</TooltipPopup>
         </Tooltip>
         <Tooltip>
           <TooltipTrigger
@@ -167,7 +167,7 @@ export default function Page(): JSX.Element {
               </Button>
             }
           />
-          <TooltipContent side="right">Right side</TooltipContent>
+          <TooltipPopup side="right">Right side</TooltipPopup>
         </Tooltip>
       </Row>
       <Spacer height={16} />
