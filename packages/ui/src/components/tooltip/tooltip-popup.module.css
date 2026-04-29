@@ -9,9 +9,8 @@
   font-weight: 500;
   padding: 4px 8px;
   transform-origin: var(--transform-origin);
-  transition:
-    opacity 150ms,
-    scale 150ms;
+  transition-duration: 150ms;
+  transition-property: opacity, scale;
 }
 
 /* Animation */
