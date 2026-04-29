@@ -1,10 +1,14 @@
 .tooltip_content {
+  --scale: 0.975;
   background-color: var(--color-gray-dark-1);
   border-radius: 8px;
   color: var(--color-gray-dark-12);
   font-size: 13px;
   font-weight: 500;
   padding: 4px 8px;
+  transform-origin: var(--transform-origin);
+  transition-duration: 150ms;
+  transition-property: opacity, scale, translate;
 }
 
 .tooltip_content_positioner {
@@ -12,6 +16,14 @@
   z-index: 50;
 }
 
+/* Animation */
+.tooltip_content[data-ending-style],
+.tooltip_content[data-starting-style] {
+  opacity: 0;
+  scale: var(--scale);
+}
+
+/* Dark mode */
 :global(.dark) .tooltip_content {
   background-color: var(--color-gray-light-1);
   color: var(--color-gray-light-12);
