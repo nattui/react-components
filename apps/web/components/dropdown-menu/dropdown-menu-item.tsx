@@ -1,11 +1,12 @@
 import { Menu as MenuPrimitive } from "@base-ui/react"
+import type { JSX } from "react"
 
 interface DropdownMenuItemProps extends MenuPrimitive.Item.Props {
   inset?: boolean
   variant?: "default" | "destructive"
 }
 
-export function DropdownMenuItem(props: DropdownMenuItemProps) {
+export function DropdownMenuItem(props: DropdownMenuItemProps): JSX.Element {
   const { className = "", inset, variant = "default", ...rest } = props
 
   return (

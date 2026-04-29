@@ -1,7 +1,7 @@
 import "@/styles/global.css"
 import type { Metadata } from "next"
 import { Inter as sans, JetBrains_Mono as mono } from "next/font/google"
-import type { PropsWithChildren } from "react"
+import type { PropsWithChildren, JSX } from "react"
 import { Providers } from "@/app/providers"
 import { Topbar } from "@/components/topbar"
 
@@ -16,7 +16,7 @@ const fontSans = sans({
   weight: "variable",
 })
 
-export default function RootLayout(props: PropsWithChildren) {
+export default function RootLayout(props: PropsWithChildren): JSX.Element {
   const { children } = props
 
   return (

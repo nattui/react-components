@@ -1,6 +1,6 @@
 import { Column, Spacer } from "@nattstack/ui"
 import { cacheTag } from "next/cache"
-import type { PropsWithChildren } from "react"
+import type { PropsWithChildren, JSX } from "react"
 import { getNotionPage } from "@/components/notion/notion"
 import { NotionDocsBlocks } from "@/components/notion/notion-docs-blocks"
 import { NotionTabs } from "@/components/notion/notion-tabs"
@@ -10,7 +10,7 @@ type NotionDocsLayoutProps = PropsWithChildren<{
   pageId: string
 }>
 
-export async function NotionDocsLayout(props: NotionDocsLayoutProps) {
+export async function NotionDocsLayout(props: NotionDocsLayoutProps): Promise<JSX.Element> {
   "use cache"
 
   const { children, pageId } = props

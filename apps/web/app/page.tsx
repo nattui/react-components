@@ -1,7 +1,8 @@
 import { ButtonLink, Column, Spacer } from "@nattstack/ui"
 import Link from "next/link"
+import type { JSX } from "react"
 
-export default function HomePage() {
+export default function HomePage(): JSX.Element {
   return (
     <Column className="px-24">
       <p>Welcome to Natt UI React Components</p>

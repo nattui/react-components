@@ -1,17 +1,20 @@
 import { Menu as MenuPrimitive } from "@base-ui/react"
+import type { JSX } from "react"
 
 interface DropdownMenuContentProps
   extends
     Pick<MenuPrimitive.Positioner.Props, "align" | "alignOffset" | "side" | "sideOffset">,
     MenuPrimitive.Popup.Props {}
 
-export function DropdownMenuContent(props: DropdownMenuContentProps) {
+export function DropdownMenuContent(props: DropdownMenuContentProps): JSX.Element {
+  const SIDE_OFFSET = 4
+
   const {
     align = "start",
     alignOffset = 0,
     className = "",
     side = "bottom",
-    sideOffset = 4,
+    sideOffset = SIDE_OFFSET,
     ...rest
   } = props
 

@@ -1,12 +1,14 @@
-import type { ComponentProps } from "react"
+import type { ComponentProps, JSX } from "react"
 import { DropdownMenuContent } from "@/components/dropdown-menu/dropdown-menu-content"
 
 interface DropdownMenuSubContentProps extends ComponentProps<typeof DropdownMenuContent> {}
 
-export function DropdownMenuSubContent(props: DropdownMenuSubContentProps) {
+export function DropdownMenuSubContent(props: DropdownMenuSubContentProps): JSX.Element {
+  const ALIGN_OFFSET = -3
+
   const {
     align = "start",
-    alignOffset = -3,
+    alignOffset = ALIGN_OFFSET,
     side = "right",
     sideOffset = 0,
     className = "",

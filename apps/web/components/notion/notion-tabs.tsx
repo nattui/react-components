@@ -3,18 +3,19 @@
 import { Tabs, TabsUnderlineList, TabsUnderlineTab } from "@nattstack/ui"
 import Link, { type LinkProps } from "next/link"
 import { usePathname } from "next/navigation"
+import type { JSX } from "react"
 import type { NotionTab } from "@/components/notion/notion"
 
 interface NotionTabsProps {
   tabs: NotionTab[]
 }
 
-export function NotionTabs(props: NotionTabsProps) {
+export function NotionTabs(props: NotionTabsProps): JSX.Element {
   const { tabs } = props
   const pathname = usePathname()
 
   if (tabs.length === 0) {
-    return
+    return <></>
   }
 
   const selectedValue = tabs.some((tab) => tab.href === pathname) ? pathname : tabs[0].href

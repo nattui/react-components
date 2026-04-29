@@ -2,14 +2,14 @@
 
 import { ToggleGroup } from "@base-ui/react"
 import { useDrag, useScroll } from "@use-gesture/react"
-import { useEffect, useState } from "react"
+import { useEffect, useState, type JSX } from "react"
 import { CarouselCategoryScrollIndicator } from "@/components/carousel-category/carousel-category-scroll-indicator"
 import { CarouselCategoryToggle } from "@/components/carousel-category/carousel-category-toggle"
 import { categories } from "@/components/carousel-category/categories"
 
 type CategoryValue = (typeof categories)[number]["value"]
 
-export function CarouselCategory() {
+export function CarouselCategory(): JSX.Element {
   const [carousel, setCarousel] = useState<HTMLDivElement | null>()
   const [scrollX, setScrollX] = useState(0)
   const [scrollXMax, setScrollXMax] = useState(0)
@@ -40,7 +40,7 @@ export function CarouselCategory() {
     setScrollX(scrollLeft)
   })
 
-  function onValueChange(value: CategoryValue[]) {
+  function onValueChange(value: CategoryValue[]): void {
     if (value.length > 0) {
       setSelectedCategory(value[0])
     }
@@ -58,7 +58,7 @@ export function CarouselCategory() {
 
     observer.observe(carousel)
 
-    return () => {
+    return (): void => {
       observer.disconnect()
     }
   }, [carousel])
@@ -75,7 +75,7 @@ export function CarouselCategory() {
         <ToggleGroup
           className="flex gap-x-12 py-12"
           onValueChange={onValueChange}
-          value={[selectedCategory]}
+          value={[selectedCategory]} // oxlint-disable-line jsx-no-new-array-as-prop
         >
           {categories.map((category) => (
             <CarouselCategoryToggle

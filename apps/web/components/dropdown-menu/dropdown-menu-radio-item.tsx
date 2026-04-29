@@ -1,11 +1,12 @@
 import { Menu as MenuPrimitive } from "@base-ui/react"
 import { LucideCheck } from "@nattstack/icons"
+import type { JSX } from "react"
 
 interface DropdownMenuRadioItemProps extends MenuPrimitive.RadioItem.Props {
   inset?: boolean
 }
 
-export function DropdownMenuRadioItem(props: DropdownMenuRadioItemProps) {
+export function DropdownMenuRadioItem(props: DropdownMenuRadioItemProps): JSX.Element {
   const { className = "", children, inset, ...rest } = props
 
   return (

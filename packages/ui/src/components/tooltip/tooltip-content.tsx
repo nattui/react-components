@@ -7,7 +7,15 @@ export interface TooltipContentProps
   extends Pick<BaseTooltip.Positioner.Props, "side" | "sideOffset">, BaseTooltip.Popup.Props {}
 
 export function TooltipContent(props: TooltipContentProps): JSX.Element {
-  const { children, className: customClassName = "", side = "top", sideOffset = 4, ...rest } = props
+  const DEFAULT_SIDE_OFFSET = 4
+
+  const {
+    children,
+    className: customClassName = "",
+    side = "top",
+    sideOffset = DEFAULT_SIDE_OFFSET,
+    ...rest
+  } = props
 
   const combinedClassName = normalizeWhitespace(`
     ${TOOLTIP_CONTENT_CLASS_NAME.BASE}

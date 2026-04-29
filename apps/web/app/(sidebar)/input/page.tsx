@@ -8,8 +8,9 @@ import {
   LucideMail,
 } from "@nattstack/icons"
 import { Button, Column, Input, Label, Row, Spacer } from "@nattstack/ui"
+import type { JSX } from "react"
 
-export default function InputPage() {
+export default function InputPage(): JSX.Element {
   return (
     <Column className="w-full max-w-320">
       <Label htmlFor="email">Email</Label>

@@ -1,8 +1,8 @@
-import type { ComponentProps } from "react"
+import type { ComponentProps, JSX } from "react"
 
 interface LogotypeProps extends ComponentProps<"svg"> {}
 
-export function Logotype(props: LogotypeProps) {
+export function Logotype(props: LogotypeProps): JSX.Element {
   const { ...rest } = props
 
   return (

@@ -20,15 +20,15 @@
     "version": "npm view @nattstack/ui versions"
   },
   "devDependencies": {
-    "eslint-plugin-perfectionist": "5.8.0",
+    "eslint-plugin-perfectionist": "5.9.0",
     "eslint-plugin-unused-imports": "4.4.1",
-    "oxfmt": "0.45.0",
-    "oxlint": "1.60.0",
+    "oxfmt": "0.47.0",
+    "oxlint": "1.62.0",
     "turbo": "2.9.6"
   },
   "packageManager": "bun@1.3.0",
   "catalog": {
-    "@base-ui/react": "1.4.0",
+    "@base-ui/react": "1.4.1",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
     "react": "19.2.5",

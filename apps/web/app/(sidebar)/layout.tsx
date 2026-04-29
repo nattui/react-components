@@ -1,7 +1,7 @@
-import type { PropsWithChildren } from "react"
+import type { PropsWithChildren, JSX } from "react"
 import { SidebarServer } from "@/components/sidebar-server"
 
-export default function SidebarLayout(props: PropsWithChildren) {
+export default function SidebarLayout(props: PropsWithChildren): JSX.Element {
   const { children } = props
 
   return (

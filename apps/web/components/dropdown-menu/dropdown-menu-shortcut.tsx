@@ -1,8 +1,8 @@
-import type { ComponentProps } from "react"
+import type { ComponentProps, JSX } from "react"
 
 interface DropdownMenuShortcutProps extends ComponentProps<"span"> {}
 
-export function DropdownMenuShortcut(props: DropdownMenuShortcutProps) {
+export function DropdownMenuShortcut(props: DropdownMenuShortcutProps): JSX.Element {
   const { className = "", ...rest } = props
 
   return (

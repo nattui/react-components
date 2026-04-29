@@ -3,7 +3,7 @@
 import { Combobox } from "@base-ui/react"
 import { LucideCheck, LucideChevronDown, LucideX } from "@nattstack/icons"
 import { Label } from "@nattstack/ui"
-import { useId } from "react"
+import { useId, type JSX } from "react"
 
 interface ColorComboboxProps {
   label?: string
@@ -19,7 +19,7 @@ const DEFAULT_OPTIONS = [
   "color-primary-green",
 ] as const
 
-export function ColorCombobox(props: ColorComboboxProps) {
+export function ColorCombobox(props: ColorComboboxProps): JSX.Element {
   const {
     label = "Choose a color class",
     placeholder = "e.g. color-primary-red",
@@ -28,7 +28,7 @@ export function ColorCombobox(props: ColorComboboxProps) {
   } = props
   const id = useId()
 
-  function handleValueChange(value: string) {
+  function handleValueChange(value: string): void {
     const root = globalThis.document.documentElement
     const group = options as readonly string[]
     if (!group || group.length === 0) {

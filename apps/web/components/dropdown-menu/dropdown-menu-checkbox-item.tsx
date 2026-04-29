@@ -1,11 +1,12 @@
 import { Menu as MenuPrimitive } from "@base-ui/react"
 import { LucideCheck } from "@nattstack/icons"
+import type { JSX } from "react"
 
 interface DropdownMenuCheckboxItemProps extends MenuPrimitive.CheckboxItem.Props {
   inset?: boolean
 }
 
-export function DropdownMenuCheckboxItem(props: DropdownMenuCheckboxItemProps) {
+export function DropdownMenuCheckboxItem(props: DropdownMenuCheckboxItemProps): JSX.Element {
   const { className = "", children, checked, inset, ...rest } = props
 
   return (

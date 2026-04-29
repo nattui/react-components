@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation"
+import type { JSX } from "react"
 import {
   getComponentPageMatch,
   getComponentPageSlugs,
@@ -11,12 +12,12 @@ interface PageProps {
   }>
 }
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<{ slugs: string[] }[]> {
   const slugs = await getComponentPageSlugs()
   return slugs.map((slug) => ({ slugs: [slug] }))
 }
 
-export default async function Page(props: PageProps) {
+export default async function Page(props: PageProps): Promise<JSX.Element> {
   const { params } = props
   const { slugs } = await params
 

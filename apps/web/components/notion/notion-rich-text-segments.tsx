@@ -1,4 +1,4 @@
-import type { ReactNode } from "react"
+import type { JSX, ReactNode } from "react"
 import type { NotionRichTextSegment } from "@/components/notion/notion"
 
 interface NotionRichTextSegmentsProps {
@@ -6,7 +6,7 @@ interface NotionRichTextSegmentsProps {
   segments: NotionRichTextSegment[]
 }
 
-export function NotionRichTextSegments(props: NotionRichTextSegmentsProps) {
+export function NotionRichTextSegments(props: NotionRichTextSegmentsProps): JSX.Element[] {
   const { blockIndex, segments } = props
 
   return segments.map((segment, segmentIndex) => {

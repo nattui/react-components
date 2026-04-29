@@ -1,4 +1,4 @@
-export function pascalToKebabCase(value: string) {
+export function pascalToKebabCase(value: string): string {
   return value
     .trim()
     .replaceAll(/([A-Z]+)([A-Z][a-z])/g, "$1-$2")

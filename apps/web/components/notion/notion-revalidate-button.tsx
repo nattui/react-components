@@ -1,7 +1,8 @@
 import { revalidatePath, revalidateTag } from "next/cache"
+import type { JSX } from "react"
 import { NotionRevalidateButtonClient } from "@/components/notion/notion-revalidate-button-client"
 
-export function NotionRevalidateButton() {
+export function NotionRevalidateButton(): JSX.Element {
   return (
     <form action={revalidateNotionPageAction}>
       <NotionRevalidateButtonClient />
@@ -10,7 +11,7 @@ export function NotionRevalidateButton() {
 }
 
 // oxlint-disable-next-line require-await
-async function revalidateNotionPageAction() {
+async function revalidateNotionPageAction(): Promise<void> {
   "use server"
 
   revalidateTag("notion", "max")

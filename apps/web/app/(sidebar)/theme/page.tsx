@@ -1,7 +1,8 @@
 import { Button, Column, Spacer } from "@nattstack/ui"
+import type { JSX } from "react"
 import { ColorCombobox } from "@/components/color-combobox"
 
-export default function ComboboxPage() {
+export default function ComboboxPage(): JSX.Element {
   const GRAY_OPTIONS = [
     "color-gray-gray",
     "color-gray-mauve",

@@ -17,6 +17,8 @@ export interface TextareaProps extends Omit<
 }
 
 export function Textarea(props: TextareaProps): JSX.Element {
+  const DEFAULT_ROWS = 2
+
   const {
     className: customClassName = "",
     isActive = false,
@@ -26,7 +28,7 @@ export function Textarea(props: TextareaProps): JSX.Element {
     isRequired = false,
     isRounded = false,
     isValid = undefined,
-    rows = 2,
+    rows = DEFAULT_ROWS,
     ...rest
   } = props
 

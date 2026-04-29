@@ -292,8 +292,9 @@ function inferLinkBadge(label: string, href: string): string {
   if (normalizedText.includes("download")) {
     return "DL"
   }
+  const MIN_LENGTH = 2
   const compactLabel = label.replaceAll(/[^a-z0-9]/gi, "").toUpperCase()
-  return compactLabel.length >= 2 ? compactLabel.slice(0, 2) : "LK"
+  return compactLabel.length >= MIN_LENGTH ? compactLabel.slice(0, MIN_LENGTH) : "LK"
 }
 
 function inferLinkLabel(href: string): string {
@@ -331,7 +332,8 @@ function parseLinkCard(line: string): LinkCard | undefined {
     return
   }
   const hrefIndex = segments.findIndex((segment) => isLinkHref(segment))
-  if (hrefIndex === -1) {
+  const HREF_INDEX = -1
+  if (hrefIndex === HREF_INDEX) {
     return
   }
   const href = segments[hrefIndex]

@@ -1,11 +1,12 @@
 import { Column, Spacer } from "@nattstack/ui"
 import { cacheTag } from "next/cache"
+import type { JSX } from "react"
 import { getNotionPage, type NotionBlock } from "@/components/notion/notion"
 import { NotionBlockContent } from "@/components/notion/notion-block-content"
 
 const NOTION_PAGE_ID = "30ab76f65e6e809e881ff95294eaac61"
 
-export default async function NotionPage() {
+export default async function NotionPage(): Promise<JSX.Element> {
   "use cache"
 
   cacheTag("notion")

@@ -1,5 +1,6 @@
 import { cacheTag } from "next/cache"
 import type { LinkProps } from "next/link"
+import type { JSX } from "react"
 import { notion, type NotionRichTextSegment } from "@/components/notion/notion"
 import { SidebarClient } from "@/components/sidebar-client"
 
@@ -29,7 +30,7 @@ interface SidebarSection {
   links: SidebarLink[]
 }
 
-export async function SidebarServer() {
+export async function SidebarServer(): Promise<JSX.Element> {
   const sections = await getSidebarSectionsFromNotion()
   return <SidebarClient sections={sections} />
 }
@@ -102,12 +103,14 @@ function toSidebarLabelSegments(result: SidebarBlock): NotionRichTextSegment[] |
 
 function toSidebarLink(text: string): SidebarLink | undefined {
   const separatorIndex = text.indexOf("::")
-  if (separatorIndex === -1) {
+  const SEPARATOR_INDEX = -1
+  if (separatorIndex === SEPARATOR_INDEX) {
     return undefined
   }
 
+  const SEPARATOR_LENGTH = 2
   const label = text.slice(0, separatorIndex).trim()
-  const hrefValue = text.slice(separatorIndex + 2).trim()
+  const hrefValue = text.slice(separatorIndex + SEPARATOR_LENGTH).trim()
 
   if (!label || !hrefValue) {
     return undefined

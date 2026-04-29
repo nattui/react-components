@@ -2,7 +2,7 @@
 
 import { LucideMonitor, LucideMoon, LucideSun } from "@nattstack/icons"
 import { Tabs, TabsSegmentedList, TabsSegmentedTab } from "@nattstack/ui"
-import { useState } from "react"
+import { useState, type JSX } from "react"
 
 export const THEME = {
   DARK: "dark",
@@ -12,10 +12,10 @@ export const THEME = {
 
 export type Theme = (typeof THEME)[keyof typeof THEME]
 
-export function TabsTheme() {
+export function TabsTheme(): JSX.Element {
   const [theme, setTheme] = useState<Theme>(THEME.LIGHT)
 
-  function onValueChange(value: Theme) {
+  function onValueChange(value: Theme): void {
     globalThis.document.documentElement.classList.remove(...Object.values(THEME))
     globalThis.document.documentElement.classList.add(value)
     setTheme(value)

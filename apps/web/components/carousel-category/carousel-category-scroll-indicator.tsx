@@ -1,9 +1,13 @@
+import type { JSX } from "react"
+
 interface CarouselCategoryScrollIndicatorProps {
   isHidden: boolean
   variant: "end" | "start"
 }
 
-export function CarouselCategoryScrollIndicator(props: CarouselCategoryScrollIndicatorProps) {
+export function CarouselCategoryScrollIndicator(
+  props: CarouselCategoryScrollIndicatorProps,
+): JSX.Element {
   const { isHidden, variant } = props
 
   return (

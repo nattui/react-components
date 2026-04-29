@@ -1,10 +1,11 @@
 import Link from "next/link"
+import type { JSX } from "react"
 import { Logomark } from "@/components/logomark"
 import { Logotype } from "@/components/logotype"
 import { NotionRevalidateButton } from "@/components/notion/notion-revalidate-button"
 import { TabsTheme } from "@/components/tabs-theme"
 
-export function Topbar() {
+export function Topbar(): JSX.Element {
   return (
     <header className="bg-bg-secondary/90 sticky top-0 left-0 z-10 flex h-64 w-full px-24 backdrop-blur-[48px]">
       <div className="flex size-full items-center justify-between">

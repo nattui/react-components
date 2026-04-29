@@ -12,10 +12,12 @@ export interface SwitchProps extends Omit<
   isDisabled?: boolean
   isReadOnly?: boolean
   isRequired?: boolean
-  size?: 18 | 24
+  size?: 18 | 24 // oxlint-disable-line no-magic-numbers
 }
 
 export function Switch(props: SwitchProps): JSX.Element {
+  const DEFAULT_SIZE = 24
+
   const {
     className: customClassName = "",
     isChecked = undefined,
@@ -23,7 +25,7 @@ export function Switch(props: SwitchProps): JSX.Element {
     isDisabled = false,
     isReadOnly = false,
     isRequired = false,
-    size = 24,
+    size = DEFAULT_SIZE,
     ...rest
   } = props
 

@@ -3,20 +3,13 @@
 import { LucideCoins, LucidePlus, LucideRadio } from "@nattstack/icons"
 import { Button, Column, Label, Spacer } from "@nattstack/ui"
 import Link from "next/link"
+import type { JSX } from "react"
 import { DropdownMenu } from "@/components/dropdown-menu/dropdown-menu"
 import { DropdownMenuContent } from "@/components/dropdown-menu/dropdown-menu-content"
 import { DropdownMenuItem } from "@/components/dropdown-menu/dropdown-menu-item"
 import { DropdownMenuTrigger } from "@/components/dropdown-menu/dropdown-menu-trigger"
 
-export default function MenuPage() {
-  function onNewCoin() {
-    console.log("New coin")
-  }
-
-  function onGoLive() {
-    console.log("Go live")
-  }
-
+export default function MenuPage(): JSX.Element {
   return (
     <Column>
       <Label>Dropdown menu</Label>
@@ -42,4 +35,12 @@ export default function MenuPage() {
       </DropdownMenu>
     </Column>
   )
+}
+
+function onGoLive(): void {
+  console.log("Go live")
+}
+
+function onNewCoin(): void {
+  console.log("New coin")
 }

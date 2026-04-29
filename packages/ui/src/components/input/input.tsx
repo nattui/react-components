@@ -13,10 +13,12 @@ export interface InputProps extends Omit<
   isRequired?: boolean
   isRounded?: boolean
   isValid?: boolean
-  size?: 32 | 36 | 40 | 44 | 48
+  size?: 32 | 36 | 40 | 44 | 48 // oxlint-disable-line no-magic-numbers
 }
 
 export function Input(props: InputProps): JSX.Element {
+  const DEFAULT_SIZE = 48
+
   const {
     className: customClassName = "",
     isActive = false,
@@ -26,7 +28,7 @@ export function Input(props: InputProps): JSX.Element {
     isRequired = false,
     isRounded = false,
     isValid = undefined,
-    size = 48,
+    size = DEFAULT_SIZE,
     type = "text",
     ...rest
   } = props

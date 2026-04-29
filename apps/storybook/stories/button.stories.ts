@@ -8,7 +8,7 @@ const meta = {
     isFullWidth: { control: "boolean" },
     isLoading: { control: "boolean" },
     isRounded: { control: "boolean" },
-    size: { control: "select", options: [32, 36, 40, 48] },
+    size: { control: "select", options: [32, 36, 40, 48] }, // oxlint-disable-line no-magic-numbers
     variant: {
       control: "select",
       options: ["primary", "secondary", "ghost"],

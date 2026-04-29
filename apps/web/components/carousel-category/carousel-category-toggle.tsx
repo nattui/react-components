@@ -1,14 +1,10 @@
 "use client"
 
 import { Toggle, type ToggleProps } from "@base-ui/react"
-import type { FocusEvent } from "react"
+import type { FocusEvent, JSX } from "react"
 
-export function CarouselCategoryToggle(props: ToggleProps<string>) {
+export function CarouselCategoryToggle(props: ToggleProps<string>): JSX.Element {
   const { children, value, ...rest } = props
-
-  function onFocus(event: FocusEvent<HTMLButtonElement>) {
-    event.currentTarget.scrollIntoView({ behavior: "smooth" })
-  }
 
   return (
     <Toggle
@@ -22,4 +18,8 @@ export function CarouselCategoryToggle(props: ToggleProps<string>) {
       </p>
     </Toggle>
   )
+}
+
+function onFocus(event: FocusEvent<HTMLButtonElement>): void {
+  event.currentTarget.scrollIntoView({ behavior: "smooth" })
 }

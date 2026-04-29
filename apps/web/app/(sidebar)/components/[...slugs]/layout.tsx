@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation"
-import type { PropsWithChildren } from "react"
+import type { PropsWithChildren, JSX } from "react"
 import { getComponentPageMatch } from "@/app/(sidebar)/components/[...slugs]/get-component-page-match"
 import { NotionDocsLayout } from "@/components/notion/notion-docs-layout"
 
@@ -9,7 +9,7 @@ interface LayoutProps extends PropsWithChildren {
   }>
 }
 
-export default async function Layout(props: LayoutProps) {
+export default async function Layout(props: LayoutProps): Promise<JSX.Element> {
   const { children, params } = props
   const { slugs } = await params
 

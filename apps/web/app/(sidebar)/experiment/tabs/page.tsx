@@ -39,8 +39,9 @@ import {
   OTPField,
   OTPFieldInput,
 } from "@nattstack/ui"
+import type { JSX } from "react"
 
-export default function Page() {
+export default function Page(): JSX.Element {
   const OTP_LENGTH = 6
 
   return (

@@ -1,11 +1,12 @@
 import { Menu as MenuPrimitive } from "@base-ui/react"
 import { LucideChevronRight } from "@nattstack/icons"
+import type { JSX } from "react"
 
 interface DropdownMenuSubTriggerProps extends MenuPrimitive.SubmenuTrigger.Props {
   inset?: boolean
 }
 
-export function DropdownMenuSubTrigger(props: DropdownMenuSubTriggerProps) {
+export function DropdownMenuSubTrigger(props: DropdownMenuSubTriggerProps): JSX.Element {
   const { className = "", inset, children, ...rest } = props
 
   return (

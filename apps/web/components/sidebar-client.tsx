@@ -3,6 +3,7 @@
 import { Spacer } from "@nattstack/ui"
 import Link, { type LinkProps } from "next/link"
 import { usePathname } from "next/navigation"
+import type { JSX } from "react"
 import type { NotionRichTextSegment } from "@/components/notion/notion"
 import { NotionRichTextSegments } from "@/components/notion/notion-rich-text-segments"
 
@@ -18,7 +19,7 @@ interface SidebarSection {
   }[]
 }
 
-export function SidebarClient(props: SidebarClientProps) {
+export function SidebarClient(props: SidebarClientProps): JSX.Element {
   const { sections } = props
 
   const pathname = usePathname()

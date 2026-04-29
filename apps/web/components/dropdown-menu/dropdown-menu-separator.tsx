@@ -1,8 +1,9 @@
 import { Menu as MenuPrimitive } from "@base-ui/react"
+import type { JSX } from "react"
 
 interface DropdownMenuSeparatorProps extends MenuPrimitive.Separator.Props {}
 
-export function DropdownMenuSeparator(props: DropdownMenuSeparatorProps) {
+export function DropdownMenuSeparator(props: DropdownMenuSeparatorProps): JSX.Element {
   const { className = "", ...rest } = props
 
   return (

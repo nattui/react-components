@@ -24,13 +24,15 @@ interface ButtonInternalProps extends Omit<ComponentProps<"button">, "aria-press
   isIconOnly?: boolean
   isLoading?: boolean
   isRounded?: boolean
-  size?: 32 | 36 | 40 | 44 | 48
+  size?: 32 | 36 | 40 | 44 | 48 // oxlint-disable-line no-magic-numbers
   variant?: "ghost" | "primary" | "secondary"
 }
 
 type ButtonUnionProps = ButtonIconProps | ButtonProps
 
 export function Button(props: ButtonUnionProps): JSX.Element {
+  const DEFAULT_SIZE = 40
+
   const {
     children = "",
     className: customClassName = "",
@@ -42,7 +44,7 @@ export function Button(props: ButtonUnionProps): JSX.Element {
     isIconOnly = false,
     isLoading = false,
     isRounded = false,
-    size = 40,
+    size = DEFAULT_SIZE,
     type = "button",
     variant = "primary",
     ...rest
@@ -63,11 +65,12 @@ export function Button(props: ButtonUnionProps): JSX.Element {
       aria-pressed={isActive}
       className={combinedClassName}
       disabled={isDisabled || isLoading}
-      type={type}
+      type={type} // oxlint-disable-line button-has-type
       {...rest}
     >
       {isLoading && <ButtonSpinner />}
       {!isLoading && iconStart}
+      {/* oxlint-disable-next-line no-nested-ternary */}
       {isIconOnly ? isLoading ? undefined : children : <span>{children}</span>}
       {!isLoading && iconEnd}
     </button>

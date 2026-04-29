@@ -1,7 +1,8 @@
 import { Dialog } from "@base-ui/react"
 import { Button, Column } from "@nattstack/ui"
+import type { JSX } from "react"
 
-export default function DialogPage() {
+export default function DialogPage(): JSX.Element {
   return (
     <Column>
       <Dialog.Root>

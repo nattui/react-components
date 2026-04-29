@@ -197,13 +197,15 @@ function toNotionRichTextSegments(richText: NotionRichTextInput[]): NotionRichTe
 }
 
 function toNotionTab(text: string): NotionTab | undefined {
+  const SEPARATOR_INDEX = -1
   const separatorIndex = text.indexOf("::")
-  if (separatorIndex === -1) {
+  if (separatorIndex === SEPARATOR_INDEX) {
     return undefined
   }
 
+  const SEPARATOR_LENGTH = 2
   const label = text.slice(0, separatorIndex).trim()
-  const rawHref = text.slice(separatorIndex + 2).trim()
+  const rawHref = text.slice(separatorIndex + SEPARATOR_LENGTH).trim()
   if (!label || !rawHref) {
     return undefined
   }

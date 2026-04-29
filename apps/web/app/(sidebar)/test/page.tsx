@@ -1,8 +1,9 @@
 import { LucideChevronRight, LucideX } from "@nattstack/icons"
 import { Button, Row } from "@nattstack/ui"
 import Link from "next/link"
+import type { JSX } from "react"
 
-export default function TestPage() {
+export default function TestPage(): JSX.Element {
   return (
     <Row
       alignItems="center"

@@ -12,15 +12,12 @@ export default defineConfig({
     suspicious: "error",
   },
   env: {
-    builtin: true,
+    browser: true,
+    node: true,
   },
   globals: {},
-  ignorePatterns: [],
+  ignorePatterns: ["apps/api/src/db/migrations/**", "apps/web/src/routeTree.gen.ts"],
   jsPlugins: [
-    {
-      name: "unused-imports",
-      specifier: "eslint-plugin-unused-imports",
-    },
     {
       name: "perfectionist",
       specifier: "eslint-plugin-perfectionist",
@@ -28,58 +25,36 @@ export default defineConfig({
   ],
   plugins: [
     "eslint",
-    "import",
     "jsdoc",
     "jsx-a11y",
-    "nextjs",
     "oxc",
-    "react",
+    "promise",
     "react-perf",
+    "react",
     "typescript",
     "unicorn",
   ],
   rules: {
-    "eslint-plugin-import/consistent-type-specifier-style": "allow",
-    "eslint-plugin-import/exports-last": "allow",
-    "eslint-plugin-import/group-exports": "allow",
-    "eslint-plugin-import/no-default-export": "allow",
-    "eslint-plugin-import/no-named-export": "allow",
-    "eslint-plugin-import/no-relative-parent-imports": "allow",
-    "eslint-plugin-import/no-unassigned-import": "allow",
-    "eslint-plugin-import/prefer-default-export": "allow",
-    "eslint-plugin-import/unambiguous": "allow",
-    "eslint-plugin-react-perf/jsx-no-jsx-as-prop": "allow",
-    "eslint-plugin-react-perf/jsx-no-new-array-as-prop": "allow",
-    "eslint-plugin-react-perf/jsx-no-new-function-as-prop": "allow",
-    "eslint-plugin-react-perf/jsx-no-new-object-as-prop": "allow",
-    "eslint-plugin-react/button-has-type": "allow",
-    "eslint-plugin-react/jsx-filename-extension": "allow",
-    "eslint-plugin-react/jsx-max-depth": "allow",
-    "eslint-plugin-react/jsx-props-no-spreading": "allow",
-    "eslint-plugin-react/no-array-index-key": "allow",
-    "eslint-plugin-react/only-export-components": "allow",
-    "eslint-plugin-react/react-in-jsx-scope": "allow",
-    "eslint-plugin-unicorn/consistent-function-scoping": "allow",
-    "eslint-plugin-unicorn/no-nested-ternary": "allow",
-    "eslint/complexity": "allow",
-    "eslint/func-style": ["error", "declaration"],
-    "eslint/id-length": ["error", { exceptions: ["_"] }],
-    "eslint/max-lines-per-function": "allow",
-    "eslint/no-inline-comments": "allow",
-    "eslint/no-magic-numbers": "allow",
-    "eslint/no-nested-ternary": "allow",
-    "eslint/no-ternary": "allow",
-    "eslint/no-undefined": "allow",
-    "eslint/sort-imports": "allow",
-    "import/no-nodejs-modules": "allow",
-    "max-lines": "allow",
-    "max-statements": "allow",
-    "nextjs/no-img-element": "allow",
-    "no-console": "allow",
-    "no-undef": "allow",
+    "eslint/capitalized-comments": "allow", // Allow capitalized comments
+    "eslint/complexity": "allow", // Opinion: UI components tend to have many properties
+    "eslint/func-name-matching": "allow", // Allow function name matching
+    "eslint/func-style": ["error", "declaration"], // Prefer function declarations over function expressions
+    "eslint/id-length": ["error", { exceptions: ["_"] }], // Allow `_` for unused parameters
+    "eslint/max-lines": "allow", // Allow long files
+    "eslint/max-lines-per-function": "allow", // Allow long functions
+    "eslint/max-statements": "allow", // Allow large number of statements
+    "eslint/no-console": "allow", // Don't mind `console.log()`
+    "eslint/no-inline-comments": "allow", // Able to sort object keys and keep comments
+    "eslint/no-magic-numbers": ["error", { ignore: [0, 1] }], // Allow `0` and `1` for magic numbers
+    "eslint/no-shadow": "allow", // Allow same variable name in different scopes
+    "eslint/no-ternary": "allow", // Allow ternary operators
+    "eslint/no-undefined": "allow", // Conflicts with unicorn/no-null
+    "eslint/no-use-before-define": "allow",
+    "eslint/no-warning-comments": "allow", // Don't mind `TODO:` comments
+    "eslint/sort-imports": "allow", // Conflicts with oxfmt
     "oxc/no-async-await": "allow",
-    "oxc/no-barrel-file": "allow",
-    "oxc/no-rest-spread-properties": "allow",
+    "oxc/no-optional-chaining": "allow",
+    "oxc/no-rest-spread-properties": "allow", // Allow rest spread properties for object destructuring
     "perfectionist/sort-array-includes": "error",
     "perfectionist/sort-classes": "error",
     "perfectionist/sort-decorators": "error",
@@ -98,11 +73,19 @@ export default defineConfig({
     "perfectionist/sort-switch-case": "error",
     "perfectionist/sort-union-types": "error",
     "perfectionist/sort-variable-declarations": "error",
-    "typescript/explicit-function-return-type": "allow",
-    "typescript/explicit-module-boundary-types": "allow",
-    "typescript/no-empty-interface": "allow",
-    "typescript/no-empty-object-type": "allow",
-    "typescript/no-use-before-define": "allow",
-    "unused-imports/no-unused-imports": "error",
+    "react-perf/jsx-no-jsx-as-prop": "allow", // Allow jsx as prop for react components
+    "react-perf/jsx-no-new-function-as-prop": "allow",
+    "react-perf/jsx-no-new-object-as-prop": "allow", // Allow new object as prop for react components
+    "react/forbid-component-props": "allow", // Allow className prop
+    "react/jsx-filename-extension": "allow",
+    "react/jsx-max-depth": "allow",
+    "react/jsx-no-useless-fragment": "allow", // Allow empty fragments (for return type JSX.Element)
+    "react/jsx-props-no-spreading": "allow", // Allow spreading props for react components
+    "react/no-array-index-key": "allow", // Allow array index for react keys
+    "react/no-multi-comp": "allow",
+    "react/only-export-components": "allow", // Opinion: UI components holds related logic
+    "react/react-in-jsx-scope": "allow",
+    "typescript/no-empty-interface": "allow", // Opinion: UI components makes it extensible
+    "typescript/no-empty-object-type": "allow", // Opinion: UI components makes it extensible
   },
 })
