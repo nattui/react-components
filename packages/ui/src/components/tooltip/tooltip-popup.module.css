@@ -14,6 +14,11 @@
   transition-property: opacity, scale;
 }
 
+/* Skip animation when moving directly between tooltip triggers */
+.tooltip_popup[data-instant] {
+  transition-duration: 0ms;
+}
+
 .tooltip_popup_portal {
   z-index: 50;
 }
