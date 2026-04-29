@@ -10,7 +10,7 @@ export function TooltipContent(props: TooltipContentProps): JSX.Element {
   const DEFAULT_SIDE_OFFSET = 4
 
   const {
-    children,
+    children = "",
     className: customClassName = "",
     side = "top",
     sideOffset = DEFAULT_SIDE_OFFSET,
@@ -23,12 +23,8 @@ export function TooltipContent(props: TooltipContentProps): JSX.Element {
   `)
 
   return (
-    <BaseTooltip.Portal>
-      <BaseTooltip.Positioner
-        className={styles.tooltip_content_positioner}
-        side={side}
-        sideOffset={sideOffset}
-      >
+    <BaseTooltip.Portal className={styles.tooltip_content_portal}>
+      <BaseTooltip.Positioner side={side} sideOffset={sideOffset}>
         <BaseTooltip.Popup className={combinedClassName} data-slot="tooltip-content" {...rest}>
           {children}
         </BaseTooltip.Popup>

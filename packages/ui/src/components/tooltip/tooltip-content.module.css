@@ -11,8 +11,7 @@
   transition-property: opacity, scale, translate;
 }
 
-.tooltip_content_positioner {
-  isolation: isolate;
+.tooltip_content_portal {
   z-index: 50;
 }
 
