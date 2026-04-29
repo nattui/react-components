@@ -19,7 +19,7 @@ import {
   Tabs,
   TabsUnderlineList,
   Tooltip,
-  TooltipContent,
+  TooltipPopup,
   TooltipTrigger,
   TooltipProvider,
   TabsUnderlineTab,
@@ -252,7 +252,7 @@ const components: Record<string, ElementType> = {
   TabsUnderlineTab,
   Textarea,
   Tooltip,
-  TooltipContent,
+  TooltipPopup,
   TooltipProvider,
   TooltipTrigger,
 }
