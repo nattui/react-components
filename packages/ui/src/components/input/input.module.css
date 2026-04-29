@@ -3,7 +3,7 @@
 /* ===================================================== */
 .input {
   appearance: none;
-  background-color: var(--color-bg-primary);
+  background-color: var(--color-bg-shell-inner);
   border-style: none;
   box-shadow: 0 0 0 1px var(--color-border) inset;
   color: var(--color-text-primary);
