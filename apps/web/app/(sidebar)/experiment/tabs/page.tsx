@@ -143,6 +143,47 @@ export default function Page(): JSX.Element {
           <TooltipTrigger
             render={
               <Button isIconOnly>
+                <IconArrowUp />
+              </Button>
+            }
+          />
+          <TooltipPopup side="top">Top side</TooltipPopup>
+        </Tooltip>
+        <Tooltip>
+          <TooltipTrigger
+            render={
+              <Button isIconOnly>
+                <IconArrowUp />
+              </Button>
+            }
+          />
+          <TooltipPopup side="top">Top side</TooltipPopup>
+        </Tooltip>
+        <Tooltip>
+          <TooltipTrigger
+            render={
+              <Button isIconOnly>
+                <IconArrowUp />
+              </Button>
+            }
+          />
+          <TooltipPopup side="top">Top side</TooltipPopup>
+        </Tooltip>
+        <Tooltip>
+          <TooltipTrigger
+            render={
+              <Button isIconOnly>
+                <IconArrowUp />
+              </Button>
+            }
+          />
+          <TooltipPopup side="top">Top side</TooltipPopup>
+        </Tooltip>
+
+        <Tooltip>
+          <TooltipTrigger
+            render={
+              <Button isIconOnly>
                 <IconArrowDown />
               </Button>
             }

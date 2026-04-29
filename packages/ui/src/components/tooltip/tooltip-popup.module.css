@@ -1,5 +1,4 @@
 .tooltip_popup {
-  --scale: 0.975;
   background-color: var(--color-gray-dark-1);
   border-radius: 8px;
   box-shadow:
@@ -10,24 +9,28 @@
   font-weight: 500;
   padding: 4px 8px;
   transform-origin: var(--transform-origin);
-  transition-duration: 150ms;
-  transition-property: opacity, scale;
-}
-
-/* Skip animation when moving directly between tooltip triggers */
-.tooltip_popup[data-instant] {
-  transition-duration: 0ms;
-}
-
-.tooltip_popup_portal {
-  z-index: 50;
+  transition:
+    opacity 150ms,
+    scale 150ms;
 }
 
 /* Animation */
 .tooltip_popup[data-ending-style],
 .tooltip_popup[data-starting-style] {
   opacity: 0;
-  scale: var(--scale);
+  scale: 0.975;
+}
+
+/*
+    Skip animation when moving directly between tooltip triggers
+    Order matters: [data-instant] must be after [data-ending-style] and [data-starting-style]
+*/
+.tooltip_popup[data-instant] {
+  transition: none;
+}
+
+.tooltip_popup_portal {
+  z-index: 50;
 }
 
 /* Dark mode */
