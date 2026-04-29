@@ -27,9 +27,15 @@ export default defineConfig({
     {
       files: ["packages/ui/**/*.{ts,tsx}"],
       rules: {
-        "eslint/complexity": "allow",
-        "eslint/no-magic-numbers": "allow",
-        "react/only-export-components": "allow", // Opinion: UI components tend to have many properties
+        "eslint/complexity": "allow", // UI components tend to have many properties
+        "eslint/no-magic-numbers": [
+          "error",
+          { ignoreDefaultValues: true, ignoreNumericLiteralTypes: true },
+        ],
+        "eslint/no-nested-ternary": "allow",
+        "react/button-has-type": "allow",
+        "react/only-export-components": "allow",
+        "unicorn/no-nested-ternary": "allow",
       },
     },
   ],

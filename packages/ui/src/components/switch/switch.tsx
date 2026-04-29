@@ -12,8 +12,10 @@ export interface SwitchProps extends Omit<
   isDisabled?: boolean
   isReadOnly?: boolean
   isRequired?: boolean
-  size?: 18 | 24
+  size?: SwitchSize
 }
+
+type SwitchSize = keyof typeof SWITCH_CLASS_NAME.SIZE
 
 export function Switch(props: SwitchProps): JSX.Element {
   const {

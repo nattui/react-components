@@ -24,9 +24,11 @@ interface ButtonInternalProps extends Omit<ComponentProps<"button">, "aria-press
   isIconOnly?: boolean
   isLoading?: boolean
   isRounded?: boolean
-  size?: 32 | 36 | 40 | 44 | 48
+  size?: ButtonSize
   variant?: "ghost" | "primary" | "secondary"
 }
+
+type ButtonSize = keyof typeof BUTTON_CLASS_NAME.SIZE
 
 type ButtonUnionProps = ButtonIconProps | ButtonProps
 
@@ -63,12 +65,11 @@ export function Button(props: ButtonUnionProps): JSX.Element {
       aria-pressed={isActive}
       className={combinedClassName}
       disabled={isDisabled || isLoading}
-      type={type} // oxlint-disable-line button-has-type
+      type={type}
       {...rest}
     >
       {isLoading && <ButtonSpinner />}
       {!isLoading && iconStart}
-      {/* oxlint-disable-next-line no-nested-ternary */}
       {isIconOnly ? isLoading ? undefined : children : <span>{children}</span>}
       {!isLoading && iconEnd}
     </button>

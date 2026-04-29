@@ -13,8 +13,10 @@ export interface InputProps extends Omit<
   isRequired?: boolean
   isRounded?: boolean
   isValid?: boolean
-  size?: 32 | 36 | 40 | 44 | 48
+  size?: InputSize
 }
+
+type InputSize = keyof typeof INPUT_CLASS_NAME.SIZE
 
 export function Input(props: InputProps): JSX.Element {
   const {
