@@ -1,7 +1,7 @@
 @theme {
   --tracking-\*: initial;
-  --tracking-p0: 0em;
-  --tracking-p0025: 0.025em;
-  --tracking-p005: 0.05em;
-  --tracking-p01: 0.1em;
+  --tracking-0: 0em;
+  --tracking-5: 0.05em;
+  --tracking-10: 0.1em;
+  --tracking-25: 0.025em;
 }
