@@ -6,5 +6,5 @@
  * @returns {string} The normalized string with excess whitespace removed.
  */
 export function normalizeWhitespace(value: string): string {
-  return value.replaceAll(/\s+/g, " ").trim()
+  return value.replaceAll(/\s+/gu, " ").trim()
 }

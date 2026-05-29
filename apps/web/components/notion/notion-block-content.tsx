@@ -143,9 +143,9 @@ function getHeadingId(segments: NotionRichTextSegment[], blockIndex: number): st
   const headingSlug = headingText
     .toLowerCase()
     .normalize("NFKD")
-    .replaceAll(/[\u0300-\u036F]/g, "")
-    .replaceAll(/[^a-z0-9]+/g, "-")
-    .replaceAll(/^-+|-+$/g, "")
+    .replaceAll(/[\u0300-\u036F]/gu, "")
+    .replaceAll(/[^a-z0-9]+/gu, "-")
+    .replaceAll(/^-+|-+$/gu, "")
 
   return headingSlug || `heading-${blockIndex}`
 }
@@ -270,8 +270,8 @@ function formatLinkMeta(href: string): string {
   }
   try {
     const url = new URL(href)
-    const hostname = url.hostname.replace(/^www\./, "")
-    const pathname = url.pathname === "/" ? "" : url.pathname.replace(/\/$/, "")
+    const hostname = url.hostname.replace(/^www\./u, "")
+    const pathname = url.pathname === "/" ? "" : url.pathname.replace(/\/$/u, "")
     return `${hostname}${pathname}`
   } catch {
     return href
@@ -293,7 +293,7 @@ function inferLinkBadge(label: string, href: string): string {
     return "DL"
   }
   const MIN_LENGTH = 2
-  const compactLabel = label.replaceAll(/[^a-z0-9]/gi, "").toUpperCase()
+  const compactLabel = label.replaceAll(/[^a-z0-9]/giu, "").toUpperCase()
   return compactLabel.length >= MIN_LENGTH ? compactLabel.slice(0, MIN_LENGTH) : "LK"
 }
 
@@ -312,11 +312,11 @@ function inferLinkLabel(href: string): string {
 }
 
 function isExternalHref(href: string): boolean {
-  return /^(?:https?:\/\/|mailto:)/.test(href)
+  return /^(?:https?:\/\/|mailto:)/u.test(href)
 }
 
 function isLinkHref(segment: string): boolean {
-  return /^(?:https?:\/\/|mailto:|\/)/.test(segment)
+  return /^(?:https?:\/\/|mailto:|\/)/u.test(segment)
 }
 
 function parseLinkCard(line: string): LinkCard | undefined {
@@ -423,9 +423,9 @@ function scopeMappedComponentReferences(mdxSource: string): string {
   // Rewrite mapped references to `props.components.*` so evaluated snippets can resolve them.
   const componentReferencePattern = new RegExp(
     `=\\{\\s*(${Object.keys(components)
-      .map((componentName) => componentName.replaceAll(/[.*+?^${}()|[\]\\]/g, String.raw`\$&`))
+      .map((componentName) => componentName.replaceAll(/[.*+?^${}()|[\]\\]/gu, String.raw`\$&`))
       .join("|")})\\s*\\}`,
-    "g",
+    "gu",
   )
 
   return mdxSource.replaceAll(
