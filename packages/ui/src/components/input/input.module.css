@@ -67,13 +67,13 @@
 /* Size */
 /* ===================================================== */
 .input__size_32 {
-  border-radius: 6px;
+  border-radius: 8px;
   min-height: 32px;
   padding: 0 8px;
 }
 
 .input__size_36 {
-  border-radius: 8px;
+  border-radius: 9px;
   min-height: 36px;
   padding: 0 10px;
 }
@@ -85,13 +85,13 @@
 }
 
 .input__size_44 {
-  border-radius: 12px;
+  border-radius: 11px;
   min-height: 44px;
   padding: 0 14px;
 }
 
 .input__size_48 {
-  border-radius: 14px;
+  border-radius: 12px;
   min-height: 48px;
   padding: 0 16px;
 }
