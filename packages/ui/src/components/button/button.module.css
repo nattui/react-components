@@ -144,6 +144,10 @@
   background-color: var(--color-gray-3);
 }
 
+:global(.dark) .button__variant_secondary {
+  color: white;
+}
+
 /* ===================================================== */
 /* Width */
 /* ===================================================== */
