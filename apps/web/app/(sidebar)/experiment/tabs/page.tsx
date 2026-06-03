@@ -38,6 +38,7 @@ import {
   TooltipTrigger,
   OTPField,
   OTPFieldInput,
+  Checkbox,
 } from "@nattstack/ui"
 import type { JSX } from "react"
 
@@ -46,6 +47,8 @@ export default function Page(): JSX.Element {
 
   return (
     <>
+      <Checkbox defaultChecked />
+
       <Menu>
         <MenuTrigger>Open menu</MenuTrigger>
         <MenuContent>
