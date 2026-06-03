@@ -7,7 +7,7 @@ export default function HomePage(): JSX.Element {
     <Column className="px-24">
       <p>Welcome to Natt UI React Components</p>
       <Spacer height={16} />
-      <ButtonLink as={Link} href="/components/button">
+      <ButtonLink as={Link} href={{ pathname: "/components/[...slugs]", query: { slugs: ["button"] } }}>
         Go to components
       </ButtonLink>
     </Column>
