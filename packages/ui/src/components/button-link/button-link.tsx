@@ -2,14 +2,16 @@ import { createElement, type ComponentProps, type ElementType, type JSX } from "
 import { normalizeWhitespace } from "../../utils/normalize-whitespace"
 import { BUTTON_CLASS_NAME, type ButtonProps } from "../button/button"
 
-export type ButtonLinkProps<ComponentType extends ElementType = "a"> = ButtonLinkInternalProps &
-  ComponentProps<ComponentType>
+// Keep `as` tied to the generic so router links can infer their own props
+export type ButtonLinkProps<ComponentType extends ElementType = "a"> =
+  ButtonLinkInternalProps<ComponentType> &
+    Omit<ComponentProps<ComponentType>, keyof ButtonLinkInternalProps<ComponentType>>
 
-interface ButtonLinkInternalProps extends Pick<
+interface ButtonLinkInternalProps<ComponentType extends ElementType> extends Pick<
   ButtonProps,
   "isFullWidth" | "isIconOnly" | "isRounded" | "size" | "variant"
 > {
-  as?: ElementType
+  as?: ComponentType
 }
 
 export function ButtonLink<ComponentType extends ElementType = "a">(
