@@ -1,8 +1,8 @@
 export function pascalToKebabCase(value: string): string {
   return value
     .trim()
-    .replaceAll(/([A-Z]+)([A-Z][a-z])/gu, "$1-$2")
-    .replaceAll(/([a-z0-9])([A-Z])/gu, "$1-$2")
+    .replaceAll(/(?<acronym>[A-Z]+)(?<word>[A-Z][a-z])/gu, "$<acronym>-$<word>")
+    .replaceAll(/(?<prefix>[a-z0-9])(?<suffix>[A-Z])/gu, "$<prefix>-$<suffix>")
     .replaceAll(/[\s_]+/gu, "-")
     .replaceAll(/-+/gu, "-")
     .toLowerCase()
