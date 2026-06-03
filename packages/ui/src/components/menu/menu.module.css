@@ -77,7 +77,7 @@
 }
 
 .menu_content {
-  background-color: var(--color-bg-primary);
+  background-color: var(--color-bg-shell-inner);
   border-radius: 12px;
   box-shadow:
     0 0 0 1px var(--color-border) inset,
