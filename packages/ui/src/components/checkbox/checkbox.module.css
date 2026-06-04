@@ -43,7 +43,7 @@
   transition-property: opacity;
 }
 
-.checkbox[data-checked] > .indicator {
+.indicator[data-checked] {
   opacity: 1;
 }
 
