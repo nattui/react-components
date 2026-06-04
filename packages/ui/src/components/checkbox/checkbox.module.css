@@ -34,13 +34,29 @@
   border-color: transparent;
 }
 
+/* ===================================================== */
+/* Indicator */
+/* ===================================================== */
+.indicator {
+  opacity: 0;
+  transition-duration: 150ms;
+  transition-property: opacity;
+}
+
+.checkbox[data-checked] > .indicator {
+  opacity: 1;
+}
+
+/* ===================================================== */
+/* Icon */
+/* ===================================================== */
 .icon {
   --size: 12px;
   height: var(--size);
   width: var(--size);
 
   & > path {
-    stroke-width: 2px;
+    stroke-width: 3px;
     stroke: white;
   }
 }
