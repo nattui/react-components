@@ -48,6 +48,7 @@ export default function Page(): JSX.Element {
   return (
     <>
       <Checkbox defaultChecked />
+      <Checkbox>.</Checkbox>
 
       <Menu>
         <MenuTrigger>Open menu</MenuTrigger>

@@ -7,7 +7,7 @@ import styles from "./checkbox.module.css"
 export interface CheckboxProps extends ComponentProps<typeof BaseCheckbox.Root> {}
 
 export function Checkbox(props: CheckboxProps): JSX.Element {
-  const { className: customClassName = "", ...rest } = props
+  const { children = undefined, className: customClassName = "", ...rest } = props
 
   const combinedClassName = normalizeWhitespace(`
     ${CHECKBOX_CLASS_NAME.BASE}
@@ -17,7 +17,7 @@ export function Checkbox(props: CheckboxProps): JSX.Element {
   return (
     <BaseCheckbox.Root className={combinedClassName} {...rest}>
       <BaseCheckbox.Indicator className={styles.indicator}>
-        <CheckboxIcon />
+        {children ?? <CheckboxIcon className={styles.icon} />}
       </BaseCheckbox.Indicator>
     </BaseCheckbox.Root>
   )

@@ -2,4 +2,45 @@
 /* Base */
 /* ===================================================== */
 .checkbox {
+  --size: 16px;
+  align-items: center;
+  background-color: var(--color-bg-shell-inner);
+  border-radius: 4px;
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  display: flex;
+  height: var(--size);
+  justify-content: center;
+  outline-color: var(--color-primary);
+  outline-offset: 2px;
+  outline-style: solid;
+  outline-width: 0;
+  transition-duration: 150ms;
+  transition-property: background-color, border-color;
+  width: var(--size);
+}
+
+.checkbox:focus-visible {
+  outline-width: 2px;
+}
+
+.checkbox:hover {
+  background-color: var(--color-gray-3);
+  border-color: var(--color-gray-6);
+}
+
+.checkbox[data-checked] {
+  background-color: var(--color-primary);
+  border-color: transparent;
+}
+
+.icon {
+  --size: 12px;
+  height: var(--size);
+  width: var(--size);
+
+  & > path {
+    stroke-width: 2px;
+    stroke: white;
+  }
 }

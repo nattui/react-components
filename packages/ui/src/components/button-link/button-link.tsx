@@ -2,10 +2,18 @@ import { createElement, type ComponentProps, type ElementType, type JSX } from "
 import { normalizeWhitespace } from "../../utils/normalize-whitespace"
 import { BUTTON_CLASS_NAME, type ButtonProps } from "../button/button"
 
-// Keep `as` tied to the generic so router links can infer their own props
 export type ButtonLinkProps<ComponentType extends ElementType = "a"> =
-  ButtonLinkInternalProps<ComponentType> &
-    Omit<ComponentProps<ComponentType>, keyof ButtonLinkInternalProps<ComponentType>>
+  ButtonLinkHrefProps<ComponentType> &
+    ButtonLinkInternalProps<ComponentType> &
+    Omit<ComponentProps<ComponentType>, "href" | keyof ButtonLinkInternalProps<ComponentType>>
+
+type ButtonLinkHrefProps<ComponentType extends ElementType> =
+  // Router link components often narrow `href`, but concrete URLs should remain valid.
+  ComponentProps<ComponentType> extends { href: infer Href }
+    ? { href: Href | string }
+    : ComponentProps<ComponentType> extends { href?: infer Href }
+      ? { href?: Href | string }
+      : unknown
 
 interface ButtonLinkInternalProps<ComponentType extends ElementType> extends Pick<
   ButtonProps,

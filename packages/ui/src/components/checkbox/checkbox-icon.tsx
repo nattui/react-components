@@ -1,10 +1,21 @@
-import type { JSX } from "react"
+import type { ComponentProps, JSX } from "react"
 
-export function CheckboxIcon(): JSX.Element {
+interface CheckboxIconProps extends ComponentProps<"svg"> {}
+
+export function CheckboxIcon(props: CheckboxIconProps): JSX.Element {
+  const { ...rest } = props
+
   return (
-    <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      fill="none"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+      {...rest}
+    >
       <path
-        d="M2.75 15.0938L9 20.25L21.25 3.75"
+        d="M5 13.875L9.2 18L19 7"
         stroke="black"
         strokeLinecap="round"
         strokeLinejoin="round"
