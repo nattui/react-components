@@ -17,6 +17,7 @@
   padding: 0 14px;
   transition-duration: 150ms;
   transition-property: color;
+  white-space: nowrap;
 }
 
 .tabs_segmented_tab:focus-visible {
