@@ -67,6 +67,26 @@
   border-radius: 9999px !important;
 }
 
+.button__rounded_full.button__size_32 {
+  padding: 0 16px;
+}
+
+.button__rounded_full.button__size_36 {
+  padding: 0 18px;
+}
+
+.button__rounded_full.button__size_40 {
+  padding: 0 20px;
+}
+
+.button__rounded_full.button__size_44 {
+  padding: 0 22px;
+}
+
+.button__rounded_full.button__size_48 {
+  padding: 0 24px;
+}
+
 /* ===================================================== */
 /* Size */
 /* ===================================================== */
