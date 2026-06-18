@@ -1,10 +1,11 @@
 @theme {
   --shadow-\*: initial;
-  /*
-      Reference: https://www.reshaped.so/docs/tokens/shadow
-  */
-  --shadow-outline: 0px 1px 2px -0.5px #0000000f, 0px 2px 3px -1px #0000000f;
-  --shadow-raised: 0px 8px 12px -4px #00000014, 0px 1px 2px 0px #0000001a;
-  --shadow-overlay:
-    0px 16px 24px -4px #0000000f, 0px 8px 12px -4px #0000000f, 0px 4px 6px -2px #0000000f;
+  --shadow-0: 0 0 #0000;
+  --shadow-1: 0 1px rgb(0 0 0 / 0.05);
+  --shadow-2: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-3: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-4: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-5: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-6: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-7: 0 25px 50px -12px rgb(0 0 0 / 0.25);
 }
