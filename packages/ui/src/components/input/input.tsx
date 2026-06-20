@@ -4,9 +4,10 @@ import styles from "./input.module.css"
 
 export interface InputProps extends Omit<
   ComponentProps<"input">,
-  "aria-pressed" | "disabled" | "readOnly" | "required"
+  "aria-pressed" | "autoFocus" | "disabled" | "readOnly" | "required"
 > {
   isActive?: boolean
+  isAutoFocus?: boolean
   isDisabled?: boolean
   isInvalid?: boolean
   isReadOnly?: boolean
@@ -22,6 +23,7 @@ export function Input(props: InputProps): JSX.Element {
   const {
     className: customClassName = "",
     isActive = false,
+    isAutoFocus = false,
     isDisabled = false,
     isInvalid = undefined,
     isReadOnly = false,
@@ -42,6 +44,7 @@ export function Input(props: InputProps): JSX.Element {
 
   return (
     <input
+      autoFocus={isAutoFocus}
       className={combinedClassName}
       data-is-active={isActive}
       data-is-invalid={isInvalid}
