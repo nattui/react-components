@@ -100,15 +100,11 @@ h6 {
   color: var(--color-text-primary);
   font-family: var(--font-heading);
   font-weight: 500;
-  text-wrap: balance;
 }
 
 /*
     Improve paragraph wrapping for readability
 */
-p {
-  text-wrap: pretty;
-}
 
 /*
     Use a dedicated monospace font for code
