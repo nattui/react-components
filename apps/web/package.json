@@ -9,11 +9,11 @@
   "dependencies": {
     "@base-ui/react": "catalog:",
     "@mdx-js/mdx": "3.1.1",
-    "@nattstack/icons": "npm:lucide-react@1.18.0",
+    "@nattstack/icons": "npm:lucide-react@1.21.0",
     "@nattstack/ui": "workspace:*",
     "@notionhq/client": "5.22.0",
     "@use-gesture/react": "10.3.1",
-    "motion": "12.40.0",
+    "motion": "12.41.0",
     "next": "16.2.9",
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "4.3.1",
-    "@types/node": "25.9.3",
+    "@types/node": "26.0.0",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "babel-plugin-react-compiler": "1.0.0",
