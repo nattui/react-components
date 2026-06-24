@@ -1,4 +1,4 @@
-import { OTPFieldPreview as OTPFieldBase } from "@base-ui/react"
+import { OTPField as OTPFieldBase } from "@base-ui/react"
 import type { JSX } from "react"
 import { normalizeWhitespace } from "../../utils/normalize-whitespace"
 import styles from "./otp-field-input.module.css"
