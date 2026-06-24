@@ -54,7 +54,7 @@ export default defineConfig({
     "eslint/capitalized-comments": "allow", // Allow capitalized comments
     "eslint/func-name-matching": "allow", // Allow function name matching
     "eslint/func-style": ["error", "declaration"], // Prefer function declarations over function expressions
-    "eslint/id-length": ["error", { exceptions: ["_"] }], // Allow `_` for unused parameters
+    "eslint/id-length": ["error", { exceptions: ["_", "x", "y", "z"] }], // Allow `_` for unused parameters
     "eslint/max-lines": "allow", // Allow long files
     "eslint/max-lines-per-function": "allow", // Allow long functions
     "eslint/max-statements": "allow", // Allow large number of statements
@@ -64,10 +64,10 @@ export default defineConfig({
     "eslint/no-shadow": "allow", // Allow same variable name in different scopes
     "eslint/no-ternary": "allow", // Allow ternary operators
     "eslint/no-undefined": "allow", // Conflicts with unicorn/no-null
+    "eslint/no-unused-vars": ["error", { fix: { imports: "safe-fix" } }], // Prune unused imports
     "eslint/no-use-before-define": "allow",
     "eslint/no-warning-comments": "allow", // Don't mind `TODO:` comments
     "eslint/sort-imports": "allow", // Conflicts with oxfmt
-    "jsx-a11y/no-autofocus": "allow", // Allow autofocus for input fields
     "oxc/no-async-await": "allow",
     "oxc/no-optional-chaining": "allow",
     "oxc/no-rest-spread-properties": "allow", // Allow rest spread properties for object destructuring
@@ -95,10 +95,12 @@ export default defineConfig({
     "react/forbid-component-props": "allow", // Allow className prop
     "react/jsx-filename-extension": "allow",
     "react/jsx-max-depth": "allow",
+    "react/jsx-no-literals": "allow", // Allow string literals in JSX
     "react/jsx-no-useless-fragment": "allow", // Allow empty fragments (for return type JSX.Element)
     "react/jsx-props-no-spreading": "allow", // Allow spreading props for react components
     "react/no-array-index-key": "allow", // Allow array index for react keys
     "react/no-multi-comp": "allow",
+    "react/react-compiler": "allow", // Allows `setState` in useEffect
     "react/react-in-jsx-scope": "allow",
     "typescript/no-empty-interface": ["error", { allowSingleExtends: true }], // Allow types to be extensible
     "typescript/no-empty-object-type": ["error", { allowWithName: "Props$" }], // Allow types to be extensible

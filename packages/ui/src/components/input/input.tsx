@@ -1,3 +1,5 @@
+// oxlint-disable jsx-a11y/no-autofocus
+
 import type { ComponentProps, JSX } from "react"
 import { normalizeWhitespace } from "../../utils/normalize-whitespace"
 import styles from "./input.module.css"
