@@ -3,12 +3,15 @@ import type { MDXComponents } from "mdx/types"
 import type { ComponentType } from "react"
 import { MDX_COMPONENTS } from "#/components/mdx-components"
 import { InputContent } from "#/routes/components/-input-content"
+import { ThemeContent } from "#/routes/components/-theme-content"
 import ButtonContent from "#/routes/components/button.mdx"
 import DialogResponsiveContent from "#/routes/components/dialog-responsive.mdx"
+import MenuContent from "#/routes/components/menu.mdx"
 import SwitchContent from "#/routes/components/switch.mdx"
 import TabsPillContent from "#/routes/components/tabs-pill.mdx"
 import TabsSegmentedContent from "#/routes/components/tabs-segmented.mdx"
 import TabsUnderlineContent from "#/routes/components/tabs-underline.mdx"
+import TextareaContent from "#/routes/components/textarea.mdx"
 import TooltipContent from "#/routes/components/tooltip.mdx"
 
 interface ComponentPage {
@@ -31,6 +34,10 @@ const COMPONENT_PAGES: Record<string, ComponentPage> = {
     Content: InputContent,
     title: "Input",
   },
+  menu: {
+    Content: MenuContent,
+    title: "Menu",
+  },
   switch: {
     Content: SwitchContent,
     title: "Switch",
@@ -46,6 +53,14 @@ const COMPONENT_PAGES: Record<string, ComponentPage> = {
   "tabs-underline": {
     Content: TabsUnderlineContent,
     title: "TabsUnderline",
+  },
+  textarea: {
+    Content: TextareaContent,
+    title: "Textarea",
+  },
+  theme: {
+    Content: ThemeContent,
+    title: "Theme",
   },
   tooltip: {
     Content: TooltipContent,

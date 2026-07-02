@@ -7,10 +7,13 @@ const COMPONENT_LINKS = [
   { label: "Button", slug: "button" },
   { label: "Dialog responsive", slug: "dialog-responsive" },
   { label: "Input", slug: "input" },
+  { label: "Menu", slug: "menu" },
   { label: "Switch", slug: "switch" },
   { label: "Tabs pill", slug: "tabs-pill" },
   { label: "Tabs segmented", slug: "tabs-segmented" },
   { label: "Tabs underline", slug: "tabs-underline" },
+  { label: "Textarea", slug: "textarea" },
+  { label: "Theme", slug: "theme" },
   { label: "Tooltip", slug: "tooltip" },
 ] as const
 
