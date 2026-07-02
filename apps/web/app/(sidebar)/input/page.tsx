@@ -17,7 +17,7 @@ export default function InputPage(): JSX.Element {
       <Spacer height={4} />
       <div className="relative">
         <LucideMail
-          className="text-gray-11 pointer-events-none absolute top-14 left-14"
+          className="pointer-events-none absolute top-14 left-14 text-gray-11"
           size={16}
         />
         <Input className="pl-44!" id="email" placeholder="name@example.com" type="email" />
@@ -28,13 +28,17 @@ export default function InputPage(): JSX.Element {
       <Spacer height={4} />
       <div className="relative">
         <LucideLock
-          className="text-gray-11 pointer-events-none absolute top-14 left-14"
+          className="pointer-events-none absolute top-14 left-14 text-gray-11"
           size={16}
         />
         <Input className="px-44!" id="password" placeholder="••••••••" type="password" />
         <Button className="group absolute! top-6 right-6" isIconOnly size={32} variant="ghost">
           <LucideEye
-            className="text-gray-11 group-hover:text-gray-12 group-active:text-gray-12 transition-colors"
+            className="
+              text-gray-11 transition-colors
+              group-hover:text-gray-12
+              group-active:text-gray-12
+            "
             size={16}
           />
         </Button>
@@ -49,7 +53,7 @@ export default function InputPage(): JSX.Element {
       <Label htmlFor="disabled">Disabled</Label>
       <Spacer height={4} />
       <div className="relative">
-        <LucideBan className="text-gray-11 pointer-events-none absolute top-14 left-14" size={16} />
+        <LucideBan className="pointer-events-none absolute top-14 left-14 text-gray-11" size={16} />
         <Input className="pl-44!" id="disabled" isDisabled placeholder="Disabled" type="url" />
       </div>
       <Spacer height={64} />
@@ -66,7 +70,11 @@ export default function InputPage(): JSX.Element {
         />
         <Button className="group absolute! top-6 right-6" isIconOnly size={32} variant="ghost">
           <LucideCopy
-            className="text-gray-11 group-hover:text-gray-12 group-active:text-gray-12 transition-colors"
+            className="
+              text-gray-11 transition-colors
+              group-hover:text-gray-12
+              group-active:text-gray-12
+            "
             size={16}
           />
         </Button>
@@ -77,19 +85,31 @@ export default function InputPage(): JSX.Element {
       <Spacer height={4} />
       <Row>
         <Input
-          className="rounded-r-none! hover:z-10 focus-visible:z-20"
+          className="
+            rounded-r-none!
+            hover:z-10
+            focus-visible:z-20
+          "
           id="input-with-end-icon-button"
           placeholder="Download"
           type="url"
         />
         <Button
-          className="group -ml-px rounded-l-none! hover:z-10 focus-visible:z-20"
+          className="
+            group -ml-px rounded-l-none!
+            hover:z-10
+            focus-visible:z-20
+          "
           isIconOnly
           size={44}
           variant="secondary"
         >
           <LucideDownload
-            className="text-gray-11 group-hover:text-gray-12 group-active:text-gray-12 transition-colors"
+            className="
+              text-gray-11 transition-colors
+              group-hover:text-gray-12
+              group-active:text-gray-12
+            "
             size={16}
           />
         </Button>

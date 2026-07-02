@@ -44,23 +44,36 @@ export function ColorCombobox(props: ColorComboboxProps): JSX.Element {
 
   return (
     <Combobox.Root items={options} onValueChange={(value) => handleValueChange(value as string)}>
-      <div className="font-500 text-14 text-gray-11 relative flex flex-col gap-4">
+      <div className="relative flex flex-col gap-4 text-14 font-500 text-gray-11">
         <Label htmlFor={id}>{label}</Label>
         <Combobox.Input
-          className="border-gray-5 bg-gray-1 text-16 text-gray-11 focus:outline-primary-9 h-40 w-256 rounded-md border pl-14 font-normal focus:outline-2 focus:-outline-offset-1"
+          className="
+            rounded-md font-normal h-40 w-256 border border-gray-5 bg-gray-1
+            pl-14 text-16 text-gray-11
+            focus:outline-2 focus:-outline-offset-1 focus:outline-primary-9
+          "
           id={id}
           placeholder={placeholder}
         />
-        <div className="text-gray-11 absolute right-8 bottom-0 flex h-40 items-center justify-center">
+        <div className="
+          absolute right-8 bottom-0 flex h-40 items-center justify-center
+          text-gray-11
+        ">
           <Combobox.Clear
             aria-label="Clear selection"
-            className="flex h-40 w-24 items-center justify-center rounded bg-transparent p-0"
+            className="
+              rounded flex h-40 w-24 items-center justify-center bg-transparent
+              p-0
+            "
           >
             <LucideX className="size-4" />
           </Combobox.Clear>
           <Combobox.Trigger
             aria-label="Open popup"
-            className="flex h-40 w-24 items-center justify-center rounded bg-transparent p-0"
+            className="
+              rounded flex h-40 w-24 items-center justify-center bg-transparent
+              p-0
+            "
           >
             <LucideChevronDown className="size-16" />
           </Combobox.Trigger>
@@ -69,14 +82,37 @@ export function ColorCombobox(props: ColorComboboxProps): JSX.Element {
 
       <Combobox.Portal>
         <Combobox.Positioner className="outline-none" sideOffset={4}>
-          <Combobox.Popup className="w-var(--anchor-width) max-w-var(--available-width) bg-gray-1 text-gray-11 shadow-gray-6 outline-gray-6 max-h-[min(var(--available-height),368px)] origin-(--transform-origin) scroll-pt-2 scroll-pb-2 overflow-y-auto overscroll-contain rounded-md py-2 shadow-lg outline-1 transition-[transform,scale,opacity] data-ending-style:scale-95 data-ending-style:opacity-0 data-starting-style:scale-95 data-starting-style:opacity-0">
-            <Combobox.Empty className="text-gray-11 px-4 py-2 text-[0.925rem] leading-4 empty:m-0 empty:p-0">
+          <Combobox.Popup className="
+            w-var(--anchor-width) max-w-var(--available-width) rounded-md
+            shadow-lg max-h-[min(var(--available-height),368px)]
+            origin-(--transform-origin) scroll-pt-2 scroll-pb-2 overflow-y-auto
+            overscroll-contain bg-gray-1 py-2 text-gray-11 shadow-gray-6
+            outline-1 outline-gray-6 transition-[transform,scale,opacity]
+            data-ending-style:scale-95 data-ending-style:opacity-0
+            data-starting-style:scale-95 data-starting-style:opacity-0
+          ">
+            <Combobox.Empty className="
+              px-4 py-2 text-[0.925rem] leading-4 text-gray-11
+              empty:m-0 empty:p-0
+            ">
               No options found.
             </Combobox.Empty>
             <Combobox.List>
               {(item: string) => (
                 <Combobox.Item
-                  className="text-16 data-highlighted:text-gray-12 data-highlighted:before:bg-gray-3 grid h-24 cursor-default grid-cols-[12px_1fr] items-center gap-2 py-2 pr-8 pl-4 leading-4 outline-none select-none data-highlighted:relative data-highlighted:z-0 data-highlighted:before:absolute data-highlighted:before:inset-x-2 data-highlighted:before:inset-y-0 data-highlighted:before:z-[-1] data-highlighted:before:rounded-sm"
+                  className="
+                    data-highlighted:before:rounded-sm
+                    grid h-24 cursor-default grid-cols-[12px_1fr] items-center
+                    gap-2 py-2 pr-8 pl-4 text-16 leading-4 outline-none
+                    select-none
+                    data-highlighted:relative data-highlighted:z-0
+                    data-highlighted:text-gray-12
+                    data-highlighted:before:absolute
+                    data-highlighted:before:inset-x-2
+                    data-highlighted:before:inset-y-0
+                    data-highlighted:before:z-[-1]
+                    data-highlighted:before:bg-gray-3
+                  "
                   key={item}
                   value={item}
                 >

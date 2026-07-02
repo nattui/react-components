@@ -21,7 +21,12 @@ export default function RootLayout(props: PropsWithChildren): JSX.Element {
 
   return (
     <html className="color-gray-slate color-primary-blue" lang="en">
-      <body className={`${fontMono.variable} ${fontSans.variable}`}>
+      <body
+        className={`
+          ${fontMono.variable}
+          ${fontSans.variable}
+        `}
+      >
         <Providers>
           <div className="isolate flex size-full flex-col">
             <Topbar />

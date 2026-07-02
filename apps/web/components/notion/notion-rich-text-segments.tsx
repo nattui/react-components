@@ -14,7 +14,7 @@ export function NotionRichTextSegments(props: NotionRichTextSegmentsProps): JSX.
 
     if (segment.code) {
       segmentContent = (
-        <code className="rounded-4 bg-gray-3 text-14 px-4 py-2 font-mono">{segmentContent}</code>
+        <code className="rounded-4 bg-gray-3 px-4 py-2 font-mono text-14">{segmentContent}</code>
       )
     }
 
@@ -37,7 +37,10 @@ export function NotionRichTextSegments(props: NotionRichTextSegmentsProps): JSX.
     if (segment.href) {
       return (
         <a
-          className="decoration-gray-9 underline decoration-1 underline-offset-2 hover:no-underline"
+          className="
+            underline decoration-gray-9 decoration-1 underline-offset-2
+            hover:no-underline
+          "
           href={segment.href}
           key={`${blockIndex}-${segmentIndex}`}
           rel="noreferrer"

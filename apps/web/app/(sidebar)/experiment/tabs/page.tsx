@@ -99,12 +99,15 @@ export default function Page(): JSX.Element {
         <DialogResponsivePopup>
           <img
             alt="Cat"
-            className="aspect-16-9 rounded-[12px] object-cover select-none max-[640px]:rounded-[20px]"
+            className="
+              aspect-16-9 rounded-[12px] object-cover select-none
+              max-[640px]:rounded-[20px]
+            "
             draggable={false}
             src="https://placecats.com/640/480"
           />
           <Spacer height={24} />
-          <p className="font-700 text-24 text-gray-12 text-center">Welcome to Natt UI!</p>
+          <p className="text-center text-24 font-700 text-gray-12">Welcome to Natt UI!</p>
           <Spacer height={16} />
           <p className="text-center">Natt UI allows anyone to create their own components.</p>
           <p className="text-center">
@@ -115,7 +118,7 @@ export default function Page(): JSX.Element {
             Continue
           </Button>
           <Spacer height={16} />
-          <p className="text-12 mx-auto max-w-[480px] text-center">
+          <p className="mx-auto max-w-[480px] text-center text-12">
             By clicking this button, you agree to the Terms and Conditions, Privacy Policy, and
             certify that you are over 18 years old.
           </p>

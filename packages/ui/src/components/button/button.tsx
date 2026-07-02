@@ -1,3 +1,5 @@
+// oxlint-disable complexity react/button-has-type unicorn/no-nested-ternary
+
 import type { ComponentProps, JSX, ReactNode } from "react"
 import { normalizeWhitespace } from "../../utils/normalize-whitespace"
 import { ButtonSpinner } from "./button-spinner"

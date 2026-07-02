@@ -8,9 +8,6 @@ export default defineConfig({
   experimentalSortPackageJson: {
     sortScripts: true,
   },
-  experimentalTailwindcss: {
-    attributes: ["className"],
-  },
-  ignorePatterns: [],
+  ignorePatterns: ["src/routeTree.gen.ts"],
   semi: false,
 })

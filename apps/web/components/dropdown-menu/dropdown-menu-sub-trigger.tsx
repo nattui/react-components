@@ -11,7 +11,17 @@ export function DropdownMenuSubTrigger(props: DropdownMenuSubTriggerProps): JSX.
 
   return (
     <MenuPrimitive.SubmenuTrigger
-      className={`focus:bg-gray-3 focus:text-gray-12 data-open:bg-gray-3 data-open:text-gray-12 not-data-[variant=destructive]:focus:**:text-gray-12 data-popup-open:bg-gray-3 data-popup-open:text-gray-12 rounded-6 text-14 flex cursor-default items-center gap-6 px-6 py-4 outline-hidden select-none data-inset:pl-28 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-16 ${className}`}
+      className={`
+        flex cursor-default items-center gap-6 rounded-6 px-6 py-4 text-14
+        outline-hidden select-none
+        focus:bg-gray-3 focus:text-gray-12
+        not-data-[variant=destructive]:focus:**:text-gray-12
+        data-inset:pl-28
+        data-open:bg-gray-3 data-open:text-gray-12
+        data-popup-open:bg-gray-3 data-popup-open:text-gray-12
+        [&_svg]:pointer-events-none [&_svg]:shrink-0
+        [&_svg:not([class*='size-'])]:size-16
+        ${className}`}
       data-inset={inset}
       data-slot="dropdown-menu-sub-trigger"
       {...rest}

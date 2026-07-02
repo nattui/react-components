@@ -16,27 +16,15 @@ export default defineConfig({
     node: true,
   },
   globals: {},
-  ignorePatterns: [],
+  ignorePatterns: ["src/routeTree.gen.ts"],
   jsPlugins: [
+    {
+      name: "better-tailwindcss",
+      specifier: "eslint-plugin-better-tailwindcss",
+    },
     {
       name: "perfectionist",
       specifier: "eslint-plugin-perfectionist",
-    },
-  ],
-  overrides: [
-    {
-      files: ["packages/ui/**/*.{ts,tsx}"],
-      rules: {
-        "eslint/complexity": "allow", // UI components tend to have many properties
-        "eslint/no-magic-numbers": [
-          "error",
-          { ignoreDefaultValues: true, ignoreNumericLiteralTypes: true },
-        ],
-        "eslint/no-nested-ternary": "allow",
-        "react/button-has-type": "allow",
-        "react/only-export-components": "allow",
-        "unicorn/no-nested-ternary": "allow",
-      },
     },
   ],
   plugins: [
@@ -51,6 +39,9 @@ export default defineConfig({
     "unicorn",
   ],
   rules: {
+    "better-tailwindcss/enforce-consistent-class-order": "error",
+    "better-tailwindcss/enforce-consistent-line-wrapping": ["error", { strictness: "loose" }],
+    "better-tailwindcss/no-unnecessary-whitespace": "error",
     "eslint/capitalized-comments": "allow", // Allow capitalized comments
     "eslint/func-name-matching": "allow", // Allow function name matching
     "eslint/func-style": ["error", "declaration"], // Prefer function declarations over function expressions
@@ -68,6 +59,7 @@ export default defineConfig({
     "eslint/no-use-before-define": "allow",
     "eslint/no-warning-comments": "allow", // Don't mind `TODO:` comments
     "eslint/sort-imports": "allow", // Conflicts with oxfmt
+    "no-magic-numbers": "allow", // UI
     "oxc/no-async-await": "allow",
     "oxc/no-optional-chaining": "allow",
     "oxc/no-rest-spread-properties": "allow", // Allow rest spread properties for object destructuring
@@ -100,9 +92,15 @@ export default defineConfig({
     "react/jsx-props-no-spreading": "allow", // Allow spreading props for react components
     "react/no-array-index-key": "allow", // Allow array index for react keys
     "react/no-multi-comp": "allow",
+    "react/only-export-components": "allow", // UI
     "react/react-compiler": "allow", // Allows `setState` in useEffect
     "react/react-in-jsx-scope": "allow",
     "typescript/no-empty-interface": ["error", { allowSingleExtends: true }], // Allow types to be extensible
     "typescript/no-empty-object-type": ["error", { allowWithName: "Props$" }], // Allow types to be extensible
+  },
+  settings: {
+    "better-tailwindcss": {
+      entryPoint: "apps/web/styles/tailwind.css",
+    },
   },
 })

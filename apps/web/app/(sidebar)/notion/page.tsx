@@ -22,11 +22,11 @@ export default async function NotionPage(): Promise<JSX.Element> {
   return (
     <Column className="mx-auto max-w-[620px]">
       {/* Title */}
-      <h1 className="text-36 font-500 leading-[1.2]">{title}</h1>
+      <h1 className="text-36 leading-[1.2] font-500">{title}</h1>
       <Spacer height={12} />
 
       {/* Created Time */}
-      <p className="text-gray-11 text-14 flex items-center gap-x-8">
+      <p className="flex items-center gap-x-8 text-14 text-gray-11">
         <span>{formattedCreatedTime}</span>
         <span>·</span>
         <span>Natt Nguyen</span>

@@ -75,7 +75,7 @@ export async function NotionBlockContent(props: NotionBlockContentProps): Promis
   if (block.type === "paragraph") {
     return (
       <>
-        <p className="text-gray-12 text-16 leading-1-625">
+        <p className="text-16 leading-1-625 text-gray-12">
           <NotionRichTextSegments blockIndex={blockIndex} segments={block.segments} />
         </p>
         <Spacer className="h-24" />
@@ -88,7 +88,7 @@ export async function NotionBlockContent(props: NotionBlockContentProps): Promis
       <>
         {/* Notion serves image URLs from varying hosts, so render a plain image tag. */}
         {/* oxlint-disable-next-line @next/next/no-img-element */}
-        <img alt={block.alt} className="rounded-12 h-auto w-full" loading="lazy" src={block.url} />
+        <img alt={block.alt} className="h-auto w-full rounded-12" loading="lazy" src={block.url} />
         <Spacer className="h-24" />
       </>
     )
@@ -112,7 +112,10 @@ export async function NotionBlockContent(props: NotionBlockContentProps): Promis
       return (
         <>
           {/* Showcase component */}
-          <div className="rounded-12 bg-gray-2 border-gray-4 flex flex-wrap items-center justify-center gap-16 border px-16 py-48">
+          <div className="
+            flex flex-wrap items-center justify-center gap-16 rounded-12 border
+            border-gray-4 bg-gray-2 px-16 py-48
+          ">
             {mappedComponentElements}
           </div>
           <Spacer className="h-24" />
@@ -124,7 +127,10 @@ export async function NotionBlockContent(props: NotionBlockContentProps): Promis
 
     return (
       <>
-        <pre className="rounded-12 bg-gray-2 border-gray-4 text-13 overflow-x-auto border p-16 whitespace-break-spaces">
+        <pre className="
+          overflow-x-auto rounded-12 border border-gray-4 bg-gray-2 p-16 text-13
+          whitespace-break-spaces
+        ">
           {/* oxlint-disable-next-line react/no-danger */}
           <code aria-label={block.language} dangerouslySetInnerHTML={{ __html: codeHTML }} />
         </pre>
@@ -167,7 +173,13 @@ function renderHeading(props: RenderHeadingProps): JSX.Element {
   return (
     <>
       <Spacer className="h-24" />
-      <Heading className={`${className} group scroll-mt-[80px]`} id={headingId}>
+      <Heading
+        className={`
+          ${className}
+          group scroll-mt-[80px]
+        `}
+        id={headingId}
+      >
         <a
           aria-label={headingText ? `Link to ${headingText}` : "Link to heading"}
           className="relative inline-block max-w-full no-underline"
@@ -175,7 +187,12 @@ function renderHeading(props: RenderHeadingProps): JSX.Element {
         >
           <span
             aria-hidden
-            className="text-gray-10 pointer-events-none absolute top-0 right-full pr-8 opacity-0 transition-opacity group-focus-within:opacity-100 group-hover:opacity-100"
+            className="
+              pointer-events-none absolute top-0 right-full pr-8 text-gray-10
+              opacity-0 transition-opacity
+              group-focus-within:opacity-100
+              group-hover:opacity-100
+            "
           >
             #
           </span>
@@ -197,7 +214,7 @@ function renderHeadingSegments(
 
     if (segment.code) {
       segmentContent = (
-        <code className="rounded-4 bg-gray-3 text-14 px-4 py-2 font-mono">{segmentContent}</code>
+        <code className="rounded-4 bg-gray-3 px-4 py-2 font-mono text-14">{segmentContent}</code>
       )
     }
 
@@ -374,16 +391,28 @@ function renderLinkCards(code: string): JSX.Element[] | undefined {
     const isExternal = isExternalHref(linkCard.href)
     return (
       <a
-        className="bg-gray-2 border-gray-4 hover:bg-gray-3 group inline-flex max-w-full items-center gap-6 rounded-full border px-6 py-4 transition-colors"
+        className="
+          group inline-flex max-w-full items-center gap-6 rounded-full border
+          border-gray-4 bg-gray-2 px-6 py-4 transition-colors
+          hover:bg-gray-3
+        "
         href={linkCard.href}
         key={`${linkCard.label}-${linkCard.href}`}
         rel={isExternal ? "noreferrer" : undefined}
         target={isExternal ? "_blank" : undefined}
       >
-        <div className="bg-gray-1 border-gray-4 text-gray-11 group-hover:text-gray-12 text-13 font-500 flex size-24 shrink-0 items-center justify-center rounded-full border font-mono uppercase transition-colors">
+        <div className="
+          flex size-24 shrink-0 items-center justify-center rounded-full border
+          border-gray-4 bg-gray-1 font-mono text-13 font-500 text-gray-11
+          uppercase transition-colors
+          group-hover:text-gray-12
+        ">
           {linkCard.badge}
         </div>
-        <p className="text-gray-12 text-13 font-500 min-w-0 truncate pr-2 leading-none whitespace-nowrap">
+        <p className="
+          min-w-0 truncate pr-2 text-13 leading-none font-500 whitespace-nowrap
+          text-gray-12
+        ">
           {linkCard.label}
         </p>
       </a>

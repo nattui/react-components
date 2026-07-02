@@ -10,7 +10,10 @@ export function DropdownMenuLabel(props: DropdownMenuLabelProps): JSX.Element {
 
   return (
     <MenuPrimitive.GroupLabel
-      className={`text-gray-11 text-12 font-500 px-6 py-4 data-inset:pl-28 ${className}`}
+      className={`
+        px-6 py-4 text-12 font-500 text-gray-11
+        data-inset:pl-28
+        ${className}`}
       data-inset={inset}
       data-slot="dropdown-menu-label"
       {...rest}

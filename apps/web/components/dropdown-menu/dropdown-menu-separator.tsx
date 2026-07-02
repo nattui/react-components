@@ -8,7 +8,10 @@ export function DropdownMenuSeparator(props: DropdownMenuSeparatorProps): JSX.El
 
   return (
     <MenuPrimitive.Separator
-      className={`bg-gray-6 -mx-4 my-4 h-1 ${className}`}
+      className={`
+        -mx-4 my-4 h-1 bg-gray-6
+        ${className}
+      `}
       data-slot="dropdown-menu-separator"
       {...rest}
     />

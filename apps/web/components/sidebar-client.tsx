@@ -25,13 +25,16 @@ export function SidebarClient(props: SidebarClientProps): JSX.Element {
   const pathname = usePathname()
 
   return (
-    <aside className="bg-bg-secondary sticky top-64 left-0 flex h-[calc(100dvh-64px)] shrink-0 flex-col">
+    <aside className="
+      sticky top-64 left-0 flex h-[calc(100dvh-64px)] shrink-0 flex-col
+      bg-bg-secondary
+    ">
       <Spacer height={16} />
       <div className="flex flex-col gap-y-16 overflow-y-auto px-24">
         {sections.map((section, sectionIndex) => (
           <div className="flex flex-col gap-y-8" key={sectionIndex}>
             {section.labelSegments.length > 0 && (
-              <p className="text-gray-12 text-12 font-500 leading-none">
+              <p className="text-12 leading-none font-500 text-gray-12">
                 <NotionRichTextSegments
                   blockIndex={sectionIndex}
                   segments={section.labelSegments}
@@ -45,14 +48,22 @@ export function SidebarClient(props: SidebarClientProps): JSX.Element {
 
                 return (
                   <Link
-                    className="text-14 font-500 data-[is-active=true]:text-primary-9 hover:text-gray-12 hover:bg-gray-3 rounded-8 data-[is-active=true]:bg-gray-3 text-gray-11 relative flex h-28 w-full items-center px-8 transition-colors"
+                    className="
+                      relative flex h-28 w-full items-center rounded-8 px-8
+                      text-14 font-500 text-gray-11 transition-colors
+                      hover:bg-gray-3 hover:text-gray-12
+                      data-[is-active=true]:bg-gray-3
+                      data-[is-active=true]:text-primary-9
+                    "
                     data-is-active={isActive}
                     href={link.href}
                     key={`${sectionIndex}-${linkIndex}`}
                   >
                     {link.label}
                     {isActive && (
-                      <div className="bg-primary-9 absolute top-0 -left-24 h-full w-2" />
+                      <div className="
+                        absolute top-0 -left-24 h-full w-2 bg-primary-9
+                      " />
                     )}
                   </Link>
                 )
