@@ -1,39 +1,41 @@
-.tooltip_popup {
-  background-color: var(--color-gray-dark-1);
-  border-radius: 8px;
-  box-shadow:
-    0 1px 3px 0 rgb(0 0 0 / 0.1),
-    0 1px 2px -1px rgb(0 0 0 / 0.1);
-  color: var(--color-gray-dark-12);
-  font-size: 13px;
-  font-weight: 500;
-  padding: 4px 8px;
-  transform-origin: var(--transform-origin);
-  transition-duration: 150ms;
-  transition-property: opacity, scale;
-}
+@layer components {
+  .tooltip_popup {
+    background-color: var(--color-gray-dark-1);
+    border-radius: 8px;
+    box-shadow:
+      0 1px 3px 0 rgb(0 0 0 / 0.1),
+      0 1px 2px -1px rgb(0 0 0 / 0.1);
+    color: var(--color-gray-dark-12);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 4px 8px;
+    transform-origin: var(--transform-origin);
+    transition-duration: 150ms;
+    transition-property: opacity, scale;
+  }
 
-/* Animation */
-.tooltip_popup[data-ending-style],
-.tooltip_popup[data-starting-style] {
-  opacity: 0;
-  scale: 0.975;
-}
+  /* Animation */
+  .tooltip_popup[data-ending-style],
+  .tooltip_popup[data-starting-style] {
+    opacity: 0;
+    scale: 0.975;
+  }
 
-/*
-    Skip animation when moving directly between tooltip triggers
-    Order matters: [data-instant] must be after [data-ending-style] and [data-starting-style]
-*/
-.tooltip_popup[data-instant] {
-  transition: none;
-}
+  /*
+      Skip animation when moving directly between tooltip triggers
+      Order matters: [data-instant] must be after [data-ending-style] and [data-starting-style]
+  */
+  .tooltip_popup[data-instant] {
+    transition: none;
+  }
 
-.tooltip_popup_portal {
-  z-index: 50;
-}
+  .tooltip_popup_portal {
+    z-index: 50;
+  }
 
-/* Dark mode */
-:global(.dark) .tooltip_popup {
-  background-color: var(--color-gray-light-1);
-  color: var(--color-gray-light-12);
+  /* Dark mode */
+  :global(.dark) .tooltip_popup {
+    background-color: var(--color-gray-light-1);
+    color: var(--color-gray-light-12);
+  }
 }

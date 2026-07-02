@@ -1,65 +1,67 @@
-.tabs_pill_tab {
-  align-items: center;
-  border-radius: var(--border-radius);
-  color: black;
-  column-gap: 8px;
-  cursor: pointer;
-  display: flex;
-  flex-shrink: 0;
-  font-size: 14px;
-  font-weight: 500;
-  height: 40px;
-  justify-content: center;
-  outline-color: var(--color-primary-9);
-  outline-offset: -4px;
-  outline-style: solid;
-  outline-width: 0px;
-  padding: 0 14px;
-  transition-duration: 150ms;
-  transition-property: background-color, color;
-  white-space: nowrap;
-}
+@layer components {
+  .tabs_pill_tab {
+    align-items: center;
+    border-radius: var(--border-radius);
+    color: black;
+    column-gap: 8px;
+    cursor: pointer;
+    display: flex;
+    flex-shrink: 0;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    justify-content: center;
+    outline-color: var(--color-primary-9);
+    outline-offset: -4px;
+    outline-style: solid;
+    outline-width: 0px;
+    padding: 0 14px;
+    transition-duration: 150ms;
+    transition-property: background-color, color;
+    white-space: nowrap;
+  }
 
-.tabs_pill_tab:focus-visible {
-  outline-width: 2px;
-}
+  .tabs_pill_tab:focus-visible {
+    outline-width: 2px;
+  }
 
-.tabs_pill_tab:hover {
-  background-color: var(--color-gray-4);
-}
+  .tabs_pill_tab:hover {
+    background-color: var(--color-gray-4);
+  }
 
-.tabs_pill_tab[data-active] {
-  background-color: transparent;
-  color: white;
-}
+  .tabs_pill_tab[data-active] {
+    background-color: transparent;
+    color: white;
+  }
 
-:global(.dark) .tabs_pill_tab {
-  color: white;
-}
+  :global(.dark) .tabs_pill_tab {
+    color: white;
+  }
 
-:global(.dark) .tabs_pill_tab[data-active] {
-  color: black;
-}
+  :global(.dark) .tabs_pill_tab[data-active] {
+    color: black;
+  }
 
-/* Icon size */
-.tabs_pill_tab > svg {
-  --size-icon: 16px;
-  height: var(--size-icon);
-  width: var(--size-icon);
-}
+  /* Icon size */
+  .tabs_pill_tab > svg {
+    --size-icon: 16px;
+    height: var(--size-icon);
+    width: var(--size-icon);
+  }
 
-.tabs_pill_tab_wrapper {
-  --border-radius: 12px;
-  border-radius: var(--border-radius);
-  display: flex;
-  flex-shrink: 0;
-  overflow: hidden;
-  position: relative;
-}
+  .tabs_pill_tab_wrapper {
+    --border-radius: 12px;
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
+  }
 
-.tabs_pill_tab_background {
-  background-color: var(--color-gray-3);
-  inset: 0;
-  position: absolute;
-  z-index: -2;
+  .tabs_pill_tab_background {
+    background-color: var(--color-gray-3);
+    inset: 0;
+    position: absolute;
+    z-index: -2;
+  }
 }

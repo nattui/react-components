@@ -1,31 +1,33 @@
-.otp_field_input {
-  background-color: var(--color-gray-3);
-  border-radius: 14px;
-  box-shadow: 0 0 0 1px var(--color-border) inset;
-  color: var(--color-text-primary);
-  font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 500;
-  height: 48px;
-  outline-color: var(--color-outline);
-  outline-offset: -2px;
-  outline-style: solid;
-  outline-width: 0;
-  text-align: center;
-  transition-duration: 150ms;
-  transition-property: box-shadow;
-  width: 40px;
-}
+@layer components {
+  .otp_field_input {
+    background-color: var(--color-gray-3);
+    border-radius: 14px;
+    box-shadow: 0 0 0 1px var(--color-border) inset;
+    color: var(--color-text-primary);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    height: 48px;
+    outline-color: var(--color-outline);
+    outline-offset: -2px;
+    outline-style: solid;
+    outline-width: 0;
+    text-align: center;
+    transition-duration: 150ms;
+    transition-property: box-shadow;
+    width: 40px;
+  }
 
-.otp_field_input:enabled:hover {
-  box-shadow: 0 0 0 1px var(--color-gray-6) inset;
-}
+  .otp_field_input:enabled:hover {
+    box-shadow: 0 0 0 1px var(--color-gray-6) inset;
+  }
 
-.otp_field_input:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
+  .otp_field_input:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
 
-.otp_field_input:focus-visible {
-  outline-width: 2px;
+  .otp_field_input:focus-visible {
+    outline-width: 2px;
+  }
 }

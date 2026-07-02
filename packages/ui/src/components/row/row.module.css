@@ -1,4 +1,6 @@
-.row {
-  display: flex;
-  flex-direction: row;
+@layer components {
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
 }

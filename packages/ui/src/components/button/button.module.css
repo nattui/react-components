@@ -1,180 +1,188 @@
-/* ===================================================== */
-/* Base */
-/* ===================================================== */
-.button {
-  align-items: safe center;
-  border-style: none;
-  column-gap: 8px;
-  cursor: pointer;
-  display: flex;
-  flex-shrink: 0;
-  font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 500;
-  height: var(--size-button);
-  justify-content: safe center;
-  line-height: 1.5;
-  outline-color: var(--color-primary-9);
-  outline-offset: 2px;
-  outline-style: solid;
-  outline-width: 0px;
-  overflow: hidden;
-  transition-duration: 150ms;
-  transition-property: background-color, opacity, translate;
-  user-select: none;
-}
+@layer components {
+  /* ===================================================== */
+  /* Base */
+  /* ===================================================== */
+  .button {
+    align-items: safe center;
+    border-style: none;
+    column-gap: 8px;
+    cursor: pointer;
+    display: flex;
+    flex-shrink: 0;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    height: var(--size-button);
+    justify-content: safe center;
+    line-height: 1.5;
+    outline-color: var(--color-primary-9);
+    outline-offset: 2px;
+    outline-style: solid;
+    outline-width: 0px;
+    overflow: hidden;
+    transition-duration: 150ms;
+    transition-property: background-color, opacity, translate;
+    user-select: none;
+  }
 
-/* When pressed, move the button down */
-.button:active:not(:disabled),
-.button[aria-pressed="true"]:not(:disabled) {
-  translate: 0 1px;
-}
+  /* When pressed, move the button down */
+  .button:active:not(:disabled),
+  .button[aria-pressed="true"]:not(:disabled) {
+    translate: 0 1px;
+  }
 
-/* When disabled, disable cursor and reduce opacity */
-.button:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
+  /* When disabled, disable cursor and reduce opacity */
+  .button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
 
-/* When keyboard focused, show outline */
-.button:focus-visible {
-  outline-width: 2px;
-}
+  /* When keyboard focused, show outline */
+  .button:focus-visible {
+    outline-width: 2px;
+  }
 
-/* Icon size */
-.button > svg {
-  --size-icon: 16px;
-  height: var(--size-icon);
-  width: var(--size-icon);
-}
+  /* Icon size */
+  .button > svg {
+    --size-icon: 16px;
+    height: var(--size-icon);
+    width: var(--size-icon);
+  }
 
-/* ===================================================== */
-/* Icon only */
-/* ===================================================== */
-.button__icon_only {
-  width: var(--size-button) !important;
-  padding: 0 !important;
-}
+  /* ===================================================== */
+  /* Rounded */
+  /* ===================================================== */
+  .button__rounded_base {
+    border-radius: 12px;
+  }
 
-/* ===================================================== */
-/* Rounded */
-/* ===================================================== */
-.button__rounded_base {
-  border-radius: 12px;
-}
+  /* The double-class selector outranks the size classes' border-radius below */
+  .button.button__rounded_full {
+    border-radius: 9999px;
+  }
 
-.button__rounded_full {
-  border-radius: 9999px !important;
-}
+  .button__rounded_full.button__size_32 {
+    padding: 0 16px;
+  }
 
-.button__rounded_full.button__size_32 {
-  padding: 0 16px;
-}
+  .button__rounded_full.button__size_36 {
+    padding: 0 18px;
+  }
 
-.button__rounded_full.button__size_36 {
-  padding: 0 18px;
-}
+  .button__rounded_full.button__size_40 {
+    padding: 0 20px;
+  }
 
-.button__rounded_full.button__size_40 {
-  padding: 0 20px;
-}
+  .button__rounded_full.button__size_44 {
+    padding: 0 22px;
+  }
 
-.button__rounded_full.button__size_44 {
-  padding: 0 22px;
-}
+  .button__rounded_full.button__size_48 {
+    padding: 0 24px;
+  }
 
-.button__rounded_full.button__size_48 {
-  padding: 0 24px;
-}
+  /* ===================================================== */
+  /* Icon only */
+  /* ===================================================== */
+  /*
+      The double-class selector outranks the single-class size
+      and width rules. Keep this after the rounded padding rules
+      above; it wins that equal-specificity tie by source order.
+  */
+  .button.button__icon_only {
+    width: var(--size-button);
+    padding: 0;
+  }
 
-/* ===================================================== */
-/* Size */
-/* ===================================================== */
-.button__size_32 {
-  --size-button: 32px;
-  padding: 0 10px;
-  border-radius: 8px;
-}
+  /* ===================================================== */
+  /* Size */
+  /* ===================================================== */
+  .button__size_32 {
+    --size-button: 32px;
+    padding: 0 10px;
+    border-radius: 8px;
+  }
 
-.button__size_36 {
-  --size-button: 36px;
-  padding: 0 12px;
-  border-radius: 9px;
-}
+  .button__size_36 {
+    --size-button: 36px;
+    padding: 0 12px;
+    border-radius: 9px;
+  }
 
-.button__size_40 {
-  --size-button: 40px;
-  padding: 0 14px;
-  border-radius: 10px;
-}
+  .button__size_40 {
+    --size-button: 40px;
+    padding: 0 14px;
+    border-radius: 10px;
+  }
 
-.button__size_44 {
-  --size-button: 44px;
-  padding: 0 16px;
-  border-radius: 11px;
-}
+  .button__size_44 {
+    --size-button: 44px;
+    padding: 0 16px;
+    border-radius: 11px;
+  }
 
-.button__size_48 {
-  --size-button: 48px;
-  padding: 0 18px;
-  border-radius: 12px;
-}
+  .button__size_48 {
+    --size-button: 48px;
+    padding: 0 18px;
+    border-radius: 12px;
+  }
 
-/* ===================================================== */
-/* Variant */
-/* ===================================================== */
-/* Ghost */
-.button__variant_ghost {
-  color: black;
-  background-color: transparent;
-}
+  /* ===================================================== */
+  /* Variant */
+  /* ===================================================== */
+  /* Ghost */
+  .button__variant_ghost {
+    color: black;
+    background-color: transparent;
+  }
 
-.button__variant_ghost:active:not(:disabled),
-.button__variant_ghost:hover:not(:disabled),
-.button__variant_ghost[aria-pressed="true"]:not(:disabled) {
-  background-color: var(--color-gray-3);
-}
+  .button__variant_ghost:active:not(:disabled),
+  .button__variant_ghost:hover:not(:disabled),
+  .button__variant_ghost[aria-pressed="true"]:not(:disabled) {
+    background-color: var(--color-gray-3);
+  }
 
-:global(.dark) .button__variant_ghost {
-  color: white;
-}
+  :global(.dark) .button__variant_ghost {
+    color: white;
+  }
 
-/* Primary */
-.button__variant_primary {
-  color: white;
-  background-color: var(--color-primary-9);
-}
+  /* Primary */
+  .button__variant_primary {
+    color: white;
+    background-color: var(--color-primary-9);
+  }
 
-.button__variant_primary:active:not(:disabled),
-.button__variant_primary:hover:not(:disabled),
-.button__variant_primary[aria-pressed="true"]:not(:disabled) {
-  background-color: color-mix(in oklab, var(--color-primary-9) 100%, #ffffff 10%);
-}
+  .button__variant_primary:active:not(:disabled),
+  .button__variant_primary:hover:not(:disabled),
+  .button__variant_primary[aria-pressed="true"]:not(:disabled) {
+    background-color: color-mix(in oklab, var(--color-primary-9) 100%, #ffffff 10%);
+  }
 
-/* Secondary */
-.button__variant_secondary {
-  color: black;
-  background-color: var(--color-gray-2);
-  box-shadow: 0 0 0 1px var(--color-gray-4) inset;
-}
+  /* Secondary */
+  .button__variant_secondary {
+    color: black;
+    background-color: var(--color-gray-2);
+    box-shadow: 0 0 0 1px var(--color-gray-4) inset;
+  }
 
-.button__variant_secondary:active:not(:disabled),
-.button__variant_secondary:hover:not(:disabled),
-.button__variant_secondary[aria-pressed="true"]:not(:disabled) {
-  background-color: var(--color-gray-3);
-}
+  .button__variant_secondary:active:not(:disabled),
+  .button__variant_secondary:hover:not(:disabled),
+  .button__variant_secondary[aria-pressed="true"]:not(:disabled) {
+    background-color: var(--color-gray-3);
+  }
 
-:global(.dark) .button__variant_secondary {
-  color: white;
-}
+  :global(.dark) .button__variant_secondary {
+    color: white;
+  }
 
-/* ===================================================== */
-/* Width */
-/* ===================================================== */
-.button__width_base {
-  width: max-content; /* Fit the button content */
-}
+  /* ===================================================== */
+  /* Width */
+  /* ===================================================== */
+  .button__width_base {
+    width: max-content; /* Fit the button content */
+  }
 
-.button__width_full {
-  width: 100%;
+  .button__width_full {
+    width: 100%;
+  }
 }

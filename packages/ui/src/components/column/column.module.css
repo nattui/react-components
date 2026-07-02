@@ -1,4 +1,6 @@
-.column {
-  display: flex;
-  flex-direction: column;
+@layer components {
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
 }

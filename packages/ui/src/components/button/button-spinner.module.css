@@ -1,95 +1,97 @@
-.button_spinner {
-  position: relative;
-  width: var(--size);
-  height: var(--size);
-  scale: -1 1;
-  animation: spinner 1000ms steps(12, end) infinite;
-}
-
-@keyframes spinner {
-  to {
-    rotate: 1turn;
+@layer components {
+  .button_spinner {
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    scale: -1 1;
+    animation: spinner 1000ms steps(12, end) infinite;
   }
-}
 
-.button_spinner > div {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  width: calc(var(--size) / 2);
-  height: calc(var(--size) / 12);
-  pointer-events: none;
-  transform-origin: center left;
-  translate: 0 -50%;
-  transition: all 150ms;
-}
+  @keyframes spinner {
+    to {
+      rotate: 1turn;
+    }
+  }
 
-.button_spinner > div::after {
-  position: absolute;
-  right: 0;
-  width: 50%;
-  height: 100%;
-  content: "";
-  background-color: currentColor;
-  border-radius: 9999px;
-}
+  .button_spinner > div {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: calc(var(--size) / 2);
+    height: calc(var(--size) / 12);
+    pointer-events: none;
+    transform-origin: center left;
+    translate: 0 -50%;
+    transition: all 150ms;
+  }
 
-.button_spinner > div:nth-child(1) {
-  opacity: 1;
-  rotate: 0deg;
-}
+  .button_spinner > div::after {
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    content: "";
+    background-color: currentColor;
+    border-radius: 9999px;
+  }
 
-.button_spinner > div:nth-child(2) {
-  opacity: 0.925;
-  rotate: 30deg;
-}
+  .button_spinner > div:nth-child(1) {
+    opacity: 1;
+    rotate: 0deg;
+  }
 
-.button_spinner > div:nth-child(3) {
-  opacity: 0.85;
-  rotate: 60deg;
-}
+  .button_spinner > div:nth-child(2) {
+    opacity: 0.925;
+    rotate: 30deg;
+  }
 
-.button_spinner > div:nth-child(4) {
-  opacity: 0.775;
-  rotate: 90deg;
-}
+  .button_spinner > div:nth-child(3) {
+    opacity: 0.85;
+    rotate: 60deg;
+  }
 
-.button_spinner > div:nth-child(5) {
-  opacity: 0.7;
-  rotate: 120deg;
-}
+  .button_spinner > div:nth-child(4) {
+    opacity: 0.775;
+    rotate: 90deg;
+  }
 
-.button_spinner > div:nth-child(6) {
-  opacity: 0.625;
-  rotate: 150deg;
-}
+  .button_spinner > div:nth-child(5) {
+    opacity: 0.7;
+    rotate: 120deg;
+  }
 
-.button_spinner > div:nth-child(7) {
-  opacity: 0.55;
-  rotate: 180deg;
-}
+  .button_spinner > div:nth-child(6) {
+    opacity: 0.625;
+    rotate: 150deg;
+  }
 
-.button_spinner > div:nth-child(8) {
-  opacity: 0.475;
-  rotate: 210deg;
-}
+  .button_spinner > div:nth-child(7) {
+    opacity: 0.55;
+    rotate: 180deg;
+  }
 
-.button_spinner > div:nth-child(9) {
-  opacity: 0.4;
-  rotate: 240deg;
-}
+  .button_spinner > div:nth-child(8) {
+    opacity: 0.475;
+    rotate: 210deg;
+  }
 
-.button_spinner > div:nth-child(10) {
-  opacity: 0.325;
-  rotate: 270deg;
-}
+  .button_spinner > div:nth-child(9) {
+    opacity: 0.4;
+    rotate: 240deg;
+  }
 
-.button_spinner > div:nth-child(11) {
-  opacity: 0.25;
-  rotate: 300deg;
-}
+  .button_spinner > div:nth-child(10) {
+    opacity: 0.325;
+    rotate: 270deg;
+  }
 
-.button_spinner > div:nth-child(12) {
-  opacity: 0.15;
-  rotate: 330deg;
+  .button_spinner > div:nth-child(11) {
+    opacity: 0.25;
+    rotate: 300deg;
+  }
+
+  .button_spinner > div:nth-child(12) {
+    opacity: 0.15;
+    rotate: 330deg;
+  }
 }

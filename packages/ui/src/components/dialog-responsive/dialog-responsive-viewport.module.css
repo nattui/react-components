@@ -1,16 +1,18 @@
-.dialog_responsive_viewport {
-  align-items: safe center;
-  cursor: pointer;
-  display: flex;
-  inset: 0;
-  justify-content: safe center;
-  padding: 24px;
-  position: fixed;
-}
-
-@media (max-width: 640px) {
+@layer components {
   .dialog_responsive_viewport {
-    align-items: safe flex-end;
-    padding: 48px 0 0;
+    align-items: safe center;
+    cursor: pointer;
+    display: flex;
+    inset: 0;
+    justify-content: safe center;
+    padding: 24px;
+    position: fixed;
+  }
+
+  @media (max-width: 640px) {
+    .dialog_responsive_viewport {
+      align-items: safe flex-end;
+      padding: 48px 0 0;
+    }
   }
 }

@@ -1,4 +1,6 @@
-.tabs {
-  display: flex;
-  flex-direction: column;
+@layer components {
+  .tabs {
+    display: flex;
+    flex-direction: column;
+  }
 }

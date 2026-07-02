@@ -1,12 +1,14 @@
-.tabs_pill_indicator {
-  background-color: var(--color-gray-12);
-  border-radius: 12px;
-  height: var(--active-tab-height);
-  left: var(--active-tab-left);
-  position: absolute;
-  top: var(--active-tab-top);
-  transition-duration: 150ms;
-  transition-property: left, width;
-  width: var(--active-tab-width);
-  z-index: -1;
+@layer components {
+  .tabs_pill_indicator {
+    background-color: var(--color-gray-12);
+    border-radius: 12px;
+    height: var(--active-tab-height);
+    left: var(--active-tab-left);
+    position: absolute;
+    top: var(--active-tab-top);
+    transition-duration: 150ms;
+    transition-property: left, width;
+    width: var(--active-tab-width);
+    z-index: -1;
+  }
 }

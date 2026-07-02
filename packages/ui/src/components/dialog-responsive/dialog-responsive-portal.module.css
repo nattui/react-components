@@ -1,5 +1,7 @@
-.dialog_responsive_portal {
-  isolation: isolate;
-  position: relative;
-  z-index: 30;
+@layer components {
+  .dialog_responsive_portal {
+    isolation: isolate;
+    position: relative;
+    z-index: 30;
+  }
 }

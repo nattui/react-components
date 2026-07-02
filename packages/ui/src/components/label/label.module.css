@@ -1,8 +1,10 @@
-/* ===================================================== */
-/* Base */
-/* ===================================================== */
-.label {
-  color: var(--color-text-secondary);
-  font-size: 14px;
-  width: fit-content;
+@layer components {
+  /* ===================================================== */
+  /* Base */
+  /* ===================================================== */
+  .label {
+    color: var(--color-text-secondary);
+    font-size: 14px;
+    width: fit-content;
+  }
 }

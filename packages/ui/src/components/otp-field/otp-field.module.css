@@ -1,11 +1,13 @@
-.otp_field {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: center;
-  width: fit-content;
-}
+@layer components {
+  .otp_field {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    width: fit-content;
+  }
 
-.otp_field__masked > input {
-  font-family: var(--font-code);
+  .otp_field__masked > input {
+    font-family: var(--font-code);
+  }
 }

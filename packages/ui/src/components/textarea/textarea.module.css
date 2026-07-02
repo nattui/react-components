@@ -1,10 +1,12 @@
-/* ===================================================== */
-/* Base */
-/* ===================================================== */
-.textarea {
-  height: auto;
-  max-height: none;
-  min-height: 66px;
-  padding: 12px !important;
-  resize: vertical;
+@layer components {
+  /* ===================================================== */
+  /* Base */
+  /* ===================================================== */
+  .textarea {
+    height: auto;
+    max-height: none;
+    min-height: 66px;
+    padding: 12px;
+    resize: vertical;
+  }
 }
