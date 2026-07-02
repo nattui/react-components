@@ -164,7 +164,7 @@ function MdxCode(props: ComponentProps<"code">): JSX.Element {
 
   return (
     <code
-      className={joinClassNames("rounded-4 bg-gray-3 px-4 py-2 font-code text-14", className)}
+      className={joinClassNames("rounded-4 bg-gray-4/75 px-4 py-2 font-code text-14", className)}
       {...rest}
     >
       {children}
@@ -186,7 +186,7 @@ function MdxHeading1(props: ComponentProps<"h1">): JSX.Element {
   const { children, className, ...rest } = props
 
   return (
-    <h1 className={joinClassNames("mb-16 text-30 text-pretty", className)} {...rest}>
+    <h1 className={joinClassNames("mb-16 text-36 text-pretty", className)} {...rest}>
       {children}
     </h1>
   )
@@ -196,7 +196,7 @@ function MdxHeading2(props: ComponentProps<"h2">): JSX.Element {
   const { children, className, ...rest } = props
 
   return (
-    <h2 className={joinClassNames("mb-24 text-24", className)} {...rest}>
+    <h2 className={joinClassNames("mb-12 text-24", className)} {...rest}>
       {children}
     </h2>
   )
