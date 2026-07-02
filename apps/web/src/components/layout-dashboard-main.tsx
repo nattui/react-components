@@ -10,12 +10,7 @@ export function LayoutDashboardMain(props: PropsWithChildren): JSX.Element {
       <Row className="min-h-dvh">
         <Sidebar />
 
-        <Column
-          className="
-            rounded-8 shadow-2 outline-border my-8 mr-8 grow
-            px-(--margin-page-main) outline
-          "
-        >
+        <Column className="grow px-(--margin-page-main)">
           <Column className="mx-auto w-full max-w-640" {...rest}>
             <Spacer height={72} />
             {children}

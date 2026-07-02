@@ -41,7 +41,6 @@ body {
       cv05: Lower-case L with tail
   */
   font-feature-settings: "calt", "cv01", "cv05";
-  letter-spacing: -2%;
 }
 
 h1,
@@ -162,4 +161,8 @@ html {
     background-position: 0 0;
     filter: blur(0);
   }
+}
+
+strong {
+  font-weight: 500;
 }

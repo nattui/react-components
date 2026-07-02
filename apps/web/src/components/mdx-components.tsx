@@ -62,7 +62,7 @@ export function MdxComponentShowcase(props: MdxComponentShowcaseProps): JSX.Elem
   return (
     <div
       className={joinClassNames(
-        "mb-24 flex flex-wrap items-center justify-center gap-16 rounded-16 border border-gray-4 px-16 py-48 bg-bg-shell-outer",
+        "mb-24 flex flex-wrap items-center justify-center gap-16 rounded-16 border border-gray-4 px-16 py-48 bg-bg-shell-outer bg-[radial-gradient(circle,var(--color-border)_1px,transparent_1px)] bg-size-[16px_16px]",
         className,
       )}
       {...rest}
@@ -157,10 +157,7 @@ function MdxCode(props: ComponentProps<"code">): JSX.Element {
 
   return (
     <code
-      className={joinClassNames(
-        "rounded-4 bg-gray-3 px-4 py-2 font-code text-14 text-text-primary",
-        className,
-      )}
+      className={joinClassNames("rounded-4 bg-gray-3 px-4 py-2 font-code text-14", className)}
       {...rest}
     >
       {children}
@@ -241,7 +238,13 @@ function MdxParagraph(props: ComponentProps<"p">): JSX.Element {
   const { children, className, ...rest } = props
 
   return (
-    <p className={joinClassNames("mb-24 text-16/1-875 text-pretty", className)} {...rest}>
+    <p
+      className={joinClassNames(
+        "mb-24 text-16 leading-1-875 text-pretty text-text-primary",
+        className,
+      )}
+      {...rest}
+    >
       {children}
     </p>
   )
