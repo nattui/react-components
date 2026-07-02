@@ -19,6 +19,9 @@ export function Sidebar(): JSX.Element {
         <SidebarLink params={{ slug: "button" }} to="/components/$slug">
           Button
         </SidebarLink>
+        <SidebarLink params={{ slug: "switch" }} to="/components/$slug">
+          Switch
+        </SidebarLink>
       </Column>
     </Column>
   )

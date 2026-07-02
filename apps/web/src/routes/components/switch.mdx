@@ -1,0 +1,101 @@
+import { Switch } from "@nattstack/ui"
+
+# Switch
+
+A switch is a control that toggles between two states, on and off.
+
+```jsx
+// component
+
+<Switch />
+```
+
+```jsx
+<Switch />
+```
+
+# Checked state
+
+The `Switch` supports both **uncontrolled** and **controlled** checked states via the `isDefaultChecked` and `isChecked` props.
+
+## isDefaultChecked (Uncontrolled)
+
+Use `isDefaultChecked` when you want the switch to manage its own internal state after the initial render. This is ideal for simple use cases where you don't need to sync the value with external state.
+
+```jsx
+// component
+
+<Switch isDefaultChecked />
+```
+
+```jsx
+<Switch isDefaultChecked />
+```
+
+- Sets the **initial checked state** only
+- After mount, the component manages its own state
+- Does **not** update if the prop changes
+
+## isChecked (Controlled)
+
+Use `isChecked` when you need full control over the switch state from outside the component (e.g., via React state). This is the recommended approach for forms, state synchronization, or complex interactions.
+
+```jsx
+// component
+
+<Switch />
+```
+
+```jsx
+const [enabled, setEnabled] = useState(false)
+
+;<Switch isChecked={enabled} onCheckedChange={setEnabled} />
+```
+
+- The checked state is **fully controlled** by your code
+- Requires handling state updates via `onCheckedChange`
+- Always reflects the value passed in `isChecked`
+
+## When to Use Which
+
+- Use **`isDefaultChecked`** for simple, self-contained switches
+- Use **`isChecked`** when the switch state needs to be:
+  - Synchronized with other UI elements
+  - Persisted (e.g., settings, forms)
+  - Controlled programmatically
+
+Avoid using both props together, as this can lead to conflicting behavior.
+
+# Size
+
+The `Switch` comes with 2 sizes: `18` and `24` (default).
+
+```jsx
+// component
+
+<Switch size={18} />
+<Switch size={24} />
+```
+
+```jsx
+<Switch size={18} />
+<Switch size={24} />
+```
+
+# Disabled
+
+Use the `isDisabled` prop to prevent a switch from being interacted with. Disabled switches communicate that an action is currently unavailable.
+
+```jsx
+// component
+
+<Switch isDisabled />
+
+<Switch isChecked isDisabled />
+```
+
+```jsx
+<Switch isDisabled />
+
+<Switch isChecked isDisabled />
+```
