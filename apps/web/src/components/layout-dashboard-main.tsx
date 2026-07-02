@@ -1,9 +1,9 @@
-import { Column, Row } from "@nattstack/ui"
+import { Column, Row, Spacer } from "@nattstack/ui"
 import type { JSX, PropsWithChildren } from "react"
 import { Sidebar } from "#/components/sidebar"
 
 export function LayoutDashboardMain(props: PropsWithChildren): JSX.Element {
-  const { ...rest } = props
+  const { children, ...rest } = props
 
   return (
     <>
@@ -16,7 +16,10 @@ export function LayoutDashboardMain(props: PropsWithChildren): JSX.Element {
             outline
           "
         >
-          <Column className="mx-auto w-full max-w-768" {...rest} />
+          <Column className="mx-auto w-full max-w-768" {...rest}>
+            <Spacer height={72} />
+            {children}
+          </Column>
         </Column>
       </Row>
     </>
