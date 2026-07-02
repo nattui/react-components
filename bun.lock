@@ -16,9 +16,8 @@
     "apps/web": {
       "name": "web",
       "dependencies": {
-        "@base-ui/react": "1.6.0",
         "@nattstack/icons": "npm:nucleo-ui-outline-18@1.5.0",
-        "@nattstack/ui": "0.0.78",
+        "@nattstack/ui": "workspace:*",
         "@openpanel/web": "1.4.1",
         "@tailwindcss/vite": "4.3.2",
         "@tanstack/react-query": "5.101.2",

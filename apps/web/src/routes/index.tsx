@@ -1,4 +1,4 @@
-import { Column, Row, Spacer } from "@nattstack/ui"
+import { Button, Column, Row, Spacer } from "@nattstack/ui"
 import { createFileRoute } from "@tanstack/react-router"
 import { LayoutDashboardMain } from "#/components/layout-dashboard-main"
 import { Sidebar } from "#/components/sidebar"
@@ -18,7 +18,11 @@ export const Route = createFileRoute("/")({
           >
             <LayoutDashboardMain>
               <Spacer height={72} />
+
               <h1 className="text-30">Button</h1>
+              <Spacer height={16} />
+
+              <Button>Click me</Button>
               <Spacer height={1500} />
             </LayoutDashboardMain>
           </Column>
