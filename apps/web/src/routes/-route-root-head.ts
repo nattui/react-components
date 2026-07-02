@@ -9,8 +9,8 @@ interface RouteRootHead {
 
 const META = {
   DESCRIPTION:
-    "Design engineer crafting refined applications, interfaces, and experiences. Dreamer, dabbler and doer.",
-  TITLE: "Natt — Design Engineer",
+    "A collection of reusable React components built with Base UI, TypeScript, and CSS Modules.",
+  TITLE: "Natt UI",
 }
 
 export function RouteRootHead(): RouteRootHead {

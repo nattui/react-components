@@ -98,7 +98,7 @@ export const Route = createFileRoute("/components/$slug")({
     return {
       meta: [
         {
-          title: `${page.title} | Natt`,
+          title: `${page.title} · Natt UI`,
         },
       ],
     }
