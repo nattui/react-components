@@ -1,0 +1,87 @@
+import {
+  Button,
+  DialogResponsive,
+  DialogResponsivePopup,
+  DialogResponsiveTrigger,
+  Spacer,
+} from "@nattstack/ui"
+
+# DialogResponsive
+
+A dialog is a container that floats on top of another surface. Dialogs focus a user's attention on a single-step task, question, or message.
+
+The `DialogResponsive` component is a Base UI component.
+
+```jsx
+// component
+
+<DialogResponsive>
+  <DialogResponsiveTrigger render={<Button>Open dialog</Button>} />
+  <DialogResponsivePopup>
+    <img
+      alt="Cat"
+      className="aspect-16-9 rounded-[12px] object-cover select-none max-[640px]:rounded-[20px]"
+      draggable={false}
+      src="https://placecats.com/640/480"
+    />
+    <Spacer height={16} />
+
+    <p className="font-700 text-24 text-center text-gray-12">Welcome!</p>
+    <Spacer height={4} />
+    <p className="text-center">Anyone to create their own components.</p>
+    <Spacer height={24} />
+
+    <Button isFullWidth size={48}>
+      Continue
+    </Button>
+  </DialogResponsivePopup>
+</DialogResponsive>
+```
+
+```jsx
+<DialogResponsive>
+  <DialogResponsiveTrigger render={<Button>Open dialog</Button>} />
+  <DialogResponsivePopup>
+    <img
+      alt="Cat"
+      className="aspect-16-9 rounded-[12px] object-cover select-none max-[640px]:rounded-[20px]"
+      draggable={false}
+      src="https://placecats.com/640/480"
+    />
+    <Spacer height={16} />
+
+    <p className="font-700 text-24 text-center text-gray-12">Welcome!</p>
+    <Spacer height={4} />
+    <p className="text-center">Anyone to create their own components.</p>
+    <Spacer height={24} />
+
+    <Button isFullWidth size={48}>
+      Continue
+    </Button>
+  </DialogResponsivePopup>
+</DialogResponsive>
+```
+
+# State
+
+By default, `DialogResponsive` is an uncontrolled component that manages its own state.
+
+```jsx
+<DialogResponsive>
+  <DialogResponsiveTrigger render={<Button>Open dialog</Button>} />
+  <DialogResponsivePopup>Hello!</DialogResponsivePopup>
+</DialogResponsive>
+```
+
+Use `isOpen` and `onIsOpenChange` props if you need to access or control the state.
+
+```jsx
+const [isOpen, setIsOpen] = useState(false)
+
+return (
+  <DialogResponsive isOpen={isOpen} onIsOpenChange={setIsOpen}>
+    <DialogResponsiveTrigger render={<Button>Open dialog</Button>} />
+    <DialogResponsivePopup>Hello!</DialogResponsivePopup>
+  </DialogResponsive>
+)
+```

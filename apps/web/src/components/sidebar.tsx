@@ -3,6 +3,17 @@ import type { JSX } from "react"
 import { LogoLink } from "#/components/logo-link"
 import { SidebarLink } from "#/components/sidebar-link"
 
+const COMPONENT_LINKS = [
+  { label: "Button", slug: "button" },
+  { label: "Dialog responsive", slug: "dialog-responsive" },
+  { label: "Input", slug: "input" },
+  { label: "Switch", slug: "switch" },
+  { label: "Tabs pill", slug: "tabs-pill" },
+  { label: "Tabs segmented", slug: "tabs-segmented" },
+  { label: "Tabs underline", slug: "tabs-underline" },
+  { label: "Tooltip", slug: "tooltip" },
+] as const
+
 export function Sidebar(): JSX.Element {
   return (
     <Column as="aside" className="sticky top-0 left-0 h-dvh w-full max-w-[200px]">
@@ -16,27 +27,11 @@ export function Sidebar(): JSX.Element {
 
       {/* Middle */}
       <Column className="gap-y-2 px-8">
-        <SidebarLink params={{ slug: "button" }} to="/components/$slug">
-          Button
-        </SidebarLink>
-        <SidebarLink params={{ slug: "input" }} to="/components/$slug">
-          Input
-        </SidebarLink>
-        <SidebarLink params={{ slug: "switch" }} to="/components/$slug">
-          Switch
-        </SidebarLink>
-        <SidebarLink params={{ slug: "tabs-pill" }} to="/components/$slug">
-          TabsPill
-        </SidebarLink>
-        <SidebarLink params={{ slug: "tabs-segmented" }} to="/components/$slug">
-          TabsSegmented
-        </SidebarLink>
-        <SidebarLink params={{ slug: "tabs-underline" }} to="/components/$slug">
-          TabsUnderline
-        </SidebarLink>
-        <SidebarLink params={{ slug: "tooltip" }} to="/components/$slug">
-          Tooltip
-        </SidebarLink>
+        {COMPONENT_LINKS.map(({ label, slug }) => (
+          <SidebarLink key={slug} params={{ slug }} to="/components/$slug">
+            {label}
+          </SidebarLink>
+        ))}
       </Column>
     </Column>
   )
