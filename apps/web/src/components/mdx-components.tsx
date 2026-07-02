@@ -146,7 +146,7 @@ function MdxCode(props: ComponentProps<"code">): JSX.Element {
   if (language !== undefined && code !== undefined) {
     return (
       <code
-        className={joinClassNames("block min-w-full font-code text-14 leading-24", className)}
+        className={joinClassNames("block min-w-full font-code text-13", className)}
         data-language={language}
         {...rest}
       >
