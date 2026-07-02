@@ -5,7 +5,10 @@ import { RouteRootTheme } from "#/routes/-route-root-theme"
 export function RouteRoot(): JSX.Element {
   return (
     <html
-      className="color-gray-mauve color-primary-crimson [--margin-page:20px]"
+      className="
+        color-gray-mauve color-primary-crimson [--margin-page-application:16px]
+        [--margin-page-marketing:20px]
+      "
       lang="en"
       suppressHydrationWarning
     >
