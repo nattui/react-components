@@ -1,4 +1,5 @@
 import { Column, Row, Spacer } from "@nattstack/ui"
+import { Link } from "@tanstack/react-router"
 import type { JSX } from "react"
 import { LogoLink } from "#/components/logo-link"
 
@@ -14,10 +15,11 @@ export function Sidebar(): JSX.Element {
       <Spacer height={16} />
 
       {/* Middle */}
-      <p>Sidebar Middle</p>
-
-      {/* Bottom */}
-      <p>Sidebar Bottom</p>
+      <Column>
+        <Link params={{ slug: "button" }} to="/components/$slug">
+          Button
+        </Link>
+      </Column>
     </Column>
   )
 }

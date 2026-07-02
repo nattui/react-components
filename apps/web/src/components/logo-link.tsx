@@ -14,7 +14,7 @@ interface LogoLinkProps extends LinkComponentProps {
 }
 
 export function LogoLink(props: LogoLinkProps): JSX.Element {
-  const { preventAnimation = false, ...rest } = props
+  const { preventAnimation = false, to = "/", ...rest } = props
 
   const [isAnimating, setIsAnimating] = useState(false)
   const [spinCount, setSpinCount] = useState(0)
@@ -84,6 +84,7 @@ export function LogoLink(props: LogoLinkProps): JSX.Element {
         hover:opacity-75
       "
       onMouseEnter={handleMouseEnter}
+      to={to}
       {...rest}
     >
       <motion.span
