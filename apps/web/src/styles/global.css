@@ -82,15 +82,15 @@ svg {
 
 /* Sugar high syntax highlighting */
 pre code {
-  --sh-class: color-mix(in oklab, var(--color-primary) 80%, var(--color-text-primary));
-  --sh-comment: var(--color-gray-10);
-  --sh-entity: color-mix(in oklab, var(--color-primary) 60%, var(--color-text-primary));
-  --sh-identifier: var(--color-text-primary);
-  --sh-jsxliterals: color-mix(in oklab, var(--color-primary) 70%, var(--color-text-primary));
-  --sh-keyword: var(--color-primary);
-  --sh-property: color-mix(in oklab, var(--color-primary) 85%, var(--color-text-primary));
-  --sh-sign: var(--color-gray-11);
-  --sh-string: color-mix(in oklab, var(--color-primary) 45%, var(--color-text-primary));
+  --sh-class: #8a2d3b;
+  --sh-comment: #737373;
+  --sh-entity: #8a2d3b;
+  --sh-identifier: #171717;
+  --sh-jsxliterals: #171717;
+  --sh-keyword: #8a2d3b;
+  --sh-property: #b44957;
+  --sh-sign: #171717;
+  --sh-string: #171717;
 }
 
 pre code .sh__line {

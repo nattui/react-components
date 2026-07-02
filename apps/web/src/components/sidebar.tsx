@@ -5,7 +5,7 @@ import { SidebarLink } from "#/components/sidebar-link"
 
 export function Sidebar(): JSX.Element {
   return (
-    <Column as="aside" className="sticky top-0 left-0 h-dvh w-full max-w-[240px]">
+    <Column as="aside" className="sticky top-0 left-0 h-dvh w-full max-w-[200px]">
       <Spacer height={8} />
 
       {/* Top */}
