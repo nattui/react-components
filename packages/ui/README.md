@@ -4,8 +4,7 @@ A collection of reusable React components built with Base UI, TypeScript, and CS
 
 ## Links
 
-- Website: [https://nui-web.vercel.app](https://nui-web.vercel.app)
-- Storybook: [https://ui-storybook.vercel.app](https://ui-storybook.vercel.app)
+- Website: [https://ui.natt.so](https://ui.natt.so)
 
 ## Installation
 
