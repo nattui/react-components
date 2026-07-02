@@ -44,8 +44,6 @@
     "oxfmt": "0.57.0",
     "oxlint": "1.72.0",
     "portless": "0.15.1",
-    "remark-frontmatter": "5.0.0",
-    "remark-mdx-frontmatter": "5.2.0",
     "typescript": "npm:@typescript/native-preview@7.0.0-dev.20260701.1",
     "vite": "8.1.2"
   }

@@ -3,8 +3,6 @@ import tailwindcss from "@tailwindcss/vite"
 import { tanstackStart } from "@tanstack/react-start/plugin/vite"
 import react from "@vitejs/plugin-react"
 import { nitro } from "nitro/vite"
-import remarkFrontmatter from "remark-frontmatter"
-import remarkMdxFrontmatter from "remark-mdx-frontmatter"
 import { defineConfig } from "vite"
 
 export default defineConfig({
@@ -15,9 +13,7 @@ export default defineConfig({
     nitro({
       preset: "vercel",
     }),
-    mdx({
-      remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
-    }),
+    mdx(),
     react(),
     tailwindcss(),
   ],
