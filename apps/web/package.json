@@ -1,39 +1,53 @@
 {
   "name": "web",
+  "type": "module",
   "scripts": {
-    "build": "next build",
-    "dev": "next dev --port 3002",
-    "preview": "next start",
-    "start": "next start"
+    "build": "bun --bun vite build",
+    "check": "bun run check:format && bun run check:lint && bun run check:type",
+    "check:fix": "bun run check:format:fix && bun run check:lint:fix && bun run check:type",
+    "check:format": "oxfmt --check",
+    "check:format:fix": "oxfmt",
+    "check:lint": "oxlint",
+    "check:lint:fix": "oxlint --fix --fix-suggestions --fix-dangerously",
+    "check:type": "tsgo",
+    "dev": "portless ui bun --bun vite dev",
+    "preview": "portless ui bun --bun vite preview",
+    "update": "bun update --interactive --recursive"
   },
   "dependencies": {
-    "@base-ui/react": "catalog:",
-    "@mdx-js/mdx": "3.1.1",
-    "@nattstack/icons": "npm:lucide-react@1.23.0",
+    "@base-ui/react": "1.6.0",
+    "@nattstack/icons": "npm:nucleo-ui-outline-18@1.5.0",
     "@nattstack/ui": "workspace:*",
-    "@notionhq/client": "5.22.0",
-    "@use-gesture/react": "10.3.1",
+    "@openpanel/web": "1.4.1",
+    "@tailwindcss/vite": "4.3.2",
+    "@tanstack/react-query": "5.101.2",
+    "@tanstack/react-router": "1.170.17",
+    "@tanstack/react-start": "1.168.27",
+    "date-fns": "4.4.0",
     "motion": "12.42.2",
-    "next": "16.2.10",
-    "react": "catalog:",
-    "react-dom": "catalog:",
-    "sugar-high": "1.2.1"
+    "nitro": "3.0.260610-beta",
+    "react": "19.2.7",
+    "react-compare-slider": "4.0.0",
+    "react-dom": "19.2.7",
+    "sugar-high": "1.2.1",
+    "tailwindcss": "4.3.2",
+    "zustand": "5.0.14"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "4.3.2",
-    "@types/node": "26.1.0",
-    "@types/react": "catalog:",
-    "@types/react-dom": "catalog:",
-    "babel-plugin-react-compiler": "1.0.0",
-    "tailwindcss": "4.3.2",
-    "typescript": "catalog:"
-  },
-  "ignoreScripts": [
-    "sharp",
-    "unrs-resolver"
-  ],
-  "trustedDependencies": [
-    "sharp",
-    "unrs-resolver"
-  ]
+    "@mdx-js/rollup": "3.1.1",
+    "@types/mdx": "2.0.14",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.3",
+    "eslint-plugin-better-tailwindcss": "4.6.0",
+    "eslint-plugin-perfectionist": "5.9.1",
+    "lefthook": "2.1.9",
+    "oxfmt": "0.57.0",
+    "oxlint": "1.72.0",
+    "portless": "0.15.1",
+    "remark-frontmatter": "5.0.0",
+    "remark-mdx-frontmatter": "5.2.0",
+    "typescript": "npm:@typescript/native-preview@7.0.0-dev.20260701.1",
+    "vite": "8.1.2"
+  }
 }
