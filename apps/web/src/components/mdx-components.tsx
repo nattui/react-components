@@ -27,6 +27,8 @@ interface HighlightToken {
   }
 }
 
+type MdxComponentShowcaseProps = ComponentProps<"div">
+
 const LANGUAGE_PRESETS: Record<string, HighlightOptions> = {
   c,
   css,
@@ -39,6 +41,7 @@ const LANGUAGE_PRESETS: Record<string, HighlightOptions> = {
 }
 
 export const MDX_COMPONENTS: MDXComponents = {
+  MdxComponentShowcase,
   a: MdxAnchor,
   blockquote: MdxBlockquote,
   code: MdxCode,
@@ -51,6 +54,22 @@ export const MDX_COMPONENTS: MDXComponents = {
   p: MdxParagraph,
   pre: MdxPre,
   ul: MdxUnorderedList,
+}
+
+export function MdxComponentShowcase(props: MdxComponentShowcaseProps): JSX.Element {
+  const { children, className, ...rest } = props
+
+  return (
+    <div
+      className={joinClassNames(
+        "mb-24 flex flex-wrap items-center justify-center gap-16 rounded-16 border border-gray-4 bg-gray-2 px-16 py-48",
+        className,
+      )}
+      {...rest}
+    >
+      {children}
+    </div>
+  )
 }
 
 function getCodeLanguage(className: string | undefined): string | undefined {

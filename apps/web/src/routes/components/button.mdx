@@ -1,5 +1,6 @@
-import { Button, Column, Row } from "@nattstack/ui"
+import { Button, ButtonLink, Column, Row } from "@nattstack/ui"
 import { IconPlusOutline18 } from "@nattstack/icons"
+import { Link } from "@tanstack/react-router"
 
 # Button
 
@@ -17,7 +18,7 @@ Buttons are controls that let users take action, make choices, and move forward.
 
 # Variants
 
-The `Button` comes with three variants: `primary` (default), `secondary`, and `ghost`.
+The `Button` comes with three variants: `primary` (default), `secondary`, and `ghost`.
 
 ```jsx
 // component
@@ -57,4 +58,236 @@ The `Button` comes with three variants: `primary` (default), `secondary`, and 
 <Button isIconOnly variant="ghost">
   <IconPlus />
 </Button>
+```
+
+# Size
+
+The `Button` comes with 5 sizes: `32`, `36`, `40` (default), `44`, and `48`.
+
+```jsx
+// component
+
+<Column alignItems="center" gapY={16}>
+  <Row alignItems="center" flexWrap="wrap" gap={16} justifyContent="center">
+    <Button size={32}>Button 32</Button>
+    <Button size={36}>Button 36</Button>
+    <Button size={40}>Button 40</Button>
+    <Button size={44}>Button 44</Button>
+    <Button size={48}>Button 48</Button>
+  </Row>
+
+  <Row alignItems="center" flexWrap="wrap" gap={16} justifyContent="center">
+    <Button isIconOnly size={32}>
+      <IconPlusOutline18 />
+    </Button>
+    <Button isIconOnly size={36}>
+      <IconPlusOutline18 />
+    </Button>
+    <Button isIconOnly size={40}>
+      <IconPlusOutline18 />
+    </Button>
+    <Button isIconOnly size={44}>
+      <IconPlusOutline18 />
+    </Button>
+    <Button isIconOnly size={48}>
+      <IconPlusOutline18 />
+    </Button>
+  </Row>
+</Column>
+```
+
+```jsx
+<Button size={32}>Button 32</Button>
+<Button size={36}>Button 36</Button>
+<Button size={40}>Button 40</Button>
+<Button size={44}>Button 44</Button>
+<Button size={48}>Button 48</Button>
+
+<Button isIconOnly size={32}>
+  <IconPlus />
+</Button>
+<Button isIconOnly size={36}>
+  <IconPlus />
+</Button>
+<Button isIconOnly size={40}>
+  <IconPlus />
+</Button>
+<Button isIconOnly size={44}>
+  <IconPlus />
+</Button>
+<Button isIconOnly size={48}>
+  <IconPlus />
+</Button>
+```
+
+# Icons
+
+You can place icons **before** the label (`iconStart`), **after** the label (`iconEnd`), or use an **icon-only** (`isIconOnly`) **button** when the action is clearly represented by the icon.
+
+You don't need to explicitly set the icon size. Icons inherit the correct sizing from the Button component by default.
+
+```jsx
+// component
+
+<Button
+  iconEnd={<IconPlusOutline18 />}
+  iconStart={<IconPlusOutline18 />}
+>
+  {"Button"}
+</Button>
+
+<Button isIconOnly variant="ghost">
+  <IconPlusOutline18 />
+</Button>
+```
+
+```jsx
+<Button
+  iconEnd={<IconPlus />}
+  iconStart={<IconPlus />}
+>
+  Button
+</Button>
+
+<Button isIconOnly variant="ghost">
+  <IconPlus />
+</Button>
+```
+
+# Disabled
+
+Use the `isDisabled` prop to prevent a button from being interacted with. Disabled buttons communicate that an action is currently unavailable.
+
+```jsx
+// component
+
+<Button isDisabled>Disabled</Button>
+
+<Button isDisabled isIconOnly>
+  <IconPlusOutline18 />
+</Button>
+```
+
+```jsx
+<Button isDisabled>Disabled</Button>
+
+<Button isDisabled isIconOnly>
+  <IconPlus />
+</Button>
+```
+
+# Loading
+
+Use the `isLoading` prop to indicate that an action is in progress. While loading, the button shows a spinner and cannot be interacted with.
+
+Do not add `isDisabled` when using `isLoading`, as the button is automatically non-interactive while loading.
+
+```jsx
+// component
+
+<Button isLoading>Loading</Button>
+
+<Button isIconOnly isLoading>
+  <IconPlusOutline18 />
+</Button>
+```
+
+```jsx
+<Button isLoading>Loading</Button>
+
+<Button isIconOnly isLoading>
+  <IconPlus />
+</Button>
+```
+
+# Full width
+
+Use the `isFullWidth` prop to make the button expand to the full width of its container.
+
+```jsx
+// component
+
+<Button isFullWidth>Full width</Button>
+```
+
+```jsx
+<Button isFullWidth>Full width</Button>
+```
+
+# Rounded
+
+Use the `isRounded` prop to give the button fully rounded corners.
+
+```jsx
+// component
+
+<Button isRounded>Rounded</Button>
+
+<Button isIconOnly isRounded>
+  <IconPlusOutline18 />
+</Button>
+```
+
+```jsx
+<Button isRounded>Rounded</Button>
+
+<Button isIconOnly isRounded>
+  <IconPlus />
+</Button>
+```
+
+# Active
+
+Use the `isActive` prop to indicate a pressed or selected state.
+
+```jsx
+// component
+
+<Button variant="primary">Inactive</Button>
+<Button isActive variant="primary">Active</Button>
+
+<Button variant="secondary">Inactive</Button>
+<Button isActive variant="secondary">Active</Button>
+
+<Button variant="ghost">Inactive</Button>
+<Button isActive variant="ghost">Active</Button>
+```
+
+```jsx
+<Button variant="primary">Inactive</Button>
+<Button isActive variant="primary">Active</Button>
+
+<Button variant="secondary">Inactive</Button>
+<Button isActive variant="secondary">Active</Button>
+
+<Button variant="ghost">Inactive</Button>
+<Button isActive variant="ghost">Active</Button>
+```
+
+# Button link
+
+Use `ButtonLink` when navigation should visually appear as a button. It behaves like a link while keeping button styling.
+
+Use `href` for standard links, or `as` to render it with a routing component such as `Link`.
+
+```jsx
+// component
+
+<ButtonLink href="https://example.com" target="_blank">
+  {"Example"}
+</ButtonLink>
+
+<ButtonLink as={Link} href="/input">
+  {"NextLink"}
+</ButtonLink>
+```
+
+```jsx
+<ButtonLink href="https://example.com" target="_blank">
+  Example
+</ButtonLink>
+
+<ButtonLink as={Link} href="/input">
+  NextLink
+</ButtonLink>
 ```

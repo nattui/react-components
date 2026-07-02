@@ -1,6 +1,9 @@
 {
   "name": "web",
   "type": "module",
+  "imports": {
+    "#/*": "./src/*"
+  },
   "scripts": {
     "build": "bun --bun vite build",
     "check": "bun run check:format && bun run check:lint && bun run check:type",

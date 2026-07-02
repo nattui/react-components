@@ -4,6 +4,7 @@ import { tanstackStart } from "@tanstack/react-start/plugin/vite"
 import react from "@vitejs/plugin-react"
 import { nitro } from "nitro/vite"
 import { defineConfig } from "vite"
+import { mdxComponentShowcases } from "#/mdx-component-showcases"
 
 export default defineConfig({
   clearScreen: false,
@@ -13,6 +14,7 @@ export default defineConfig({
     nitro({
       preset: "vercel",
     }),
+    mdxComponentShowcases(),
     mdx(),
     react(),
     tailwindcss(),
