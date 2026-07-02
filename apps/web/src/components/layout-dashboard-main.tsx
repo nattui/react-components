@@ -12,8 +12,8 @@ export function LayoutDashboardMain(props: PropsWithChildren): JSX.Element {
 
         <Column
           className="
-            rounded-8 shadow-2 outline-border m-8 grow px-(--margin-page-main)
-            outline
+            rounded-8 shadow-2 outline-border my-8 mr-8 grow
+            px-(--margin-page-main) outline
           "
         >
           <Column className="mx-auto w-full max-w-768" {...rest}>

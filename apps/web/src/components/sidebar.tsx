@@ -1,7 +1,7 @@
 import { Column, Row, Spacer } from "@nattstack/ui"
-import { Link } from "@tanstack/react-router"
 import type { JSX } from "react"
 import { LogoLink } from "#/components/logo-link"
+import { SidebarLink } from "#/components/sidebar-link"
 
 export function Sidebar(): JSX.Element {
   return (
@@ -15,10 +15,10 @@ export function Sidebar(): JSX.Element {
       <Spacer height={16} />
 
       {/* Middle */}
-      <Column>
-        <Link params={{ slug: "button" }} to="/components/$slug">
+      <Column className="gap-y-2 px-8">
+        <SidebarLink params={{ slug: "button" }} to="/components/$slug">
           Button
-        </Link>
+        </SidebarLink>
       </Column>
     </Column>
   )
