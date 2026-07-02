@@ -41,28 +41,35 @@ const PRIMARY_OPTIONS = [
 const SELECT_CLASS_NAME =
   "h-40 w-256 rounded-8 border border-border bg-bg-shell-outer px-12 text-16 text-text-primary outline-none transition-colors focus:border-primary"
 
+interface ThemeSelectProps {
+  label: string
+  onValueChange: (value: string) => void
+  options: readonly string[]
+  value: string
+}
+
 export function ThemeContent(): JSX.Element {
-  const [grayPalette, setGrayPaletteValue] = useState("color-gray-slate")
-  const [primaryPalette, setPrimaryPaletteValue] = useState("color-primary-blue")
+  const [grayPalette, setGrayPalette] = useState("color-gray-slate")
+  const [primaryPalette, setPrimaryPalette] = useState("color-primary-blue")
 
   function handleGrayPaletteChange(value: string): void {
-    setGrayPaletteValue(value)
     setGrayPalette(value)
+    applyGrayPalette(value)
   }
 
   function handlePrimaryPaletteChange(value: string): void {
-    setPrimaryPaletteValue(value)
     setPrimaryPalette(value)
+    applyPrimaryPalette(value)
   }
 
   function handleReset(): void {
     const nextGrayPalette = "color-gray-slate"
     const nextPrimaryPalette = "color-primary-blue"
 
-    setGrayPaletteValue(nextGrayPalette)
-    setPrimaryPaletteValue(nextPrimaryPalette)
     setGrayPalette(nextGrayPalette)
     setPrimaryPalette(nextPrimaryPalette)
+    applyGrayPalette(nextGrayPalette)
+    applyPrimaryPalette(nextPrimaryPalette)
   }
 
   return (
@@ -97,11 +104,19 @@ export function ThemeContent(): JSX.Element {
   )
 }
 
-interface ThemeSelectProps {
-  label: string
-  onValueChange: (value: string) => void
-  options: readonly string[]
-  value: string
+function applyGrayPalette(value: string): void {
+  replaceRootClass(GRAY_OPTIONS, value)
+}
+
+function applyPrimaryPalette(value: string): void {
+  replaceRootClass(PRIMARY_OPTIONS, value)
+}
+
+function replaceRootClass(classNames: readonly string[], nextClassName: string): void {
+  const root = globalThis.document.documentElement
+
+  root.classList.remove(...classNames)
+  root.classList.add(nextClassName)
 }
 
 function ThemeSelect(props: ThemeSelectProps): JSX.Element {
@@ -123,19 +138,4 @@ function ThemeSelect(props: ThemeSelectProps): JSX.Element {
       </select>
     </div>
   )
-}
-
-function replaceRootClass(classNames: readonly string[], nextClassName: string): void {
-  const root = globalThis.document.documentElement
-
-  root.classList.remove(...classNames)
-  root.classList.add(nextClassName)
-}
-
-function setGrayPalette(value: string): void {
-  replaceRootClass(GRAY_OPTIONS, value)
-}
-
-function setPrimaryPalette(value: string): void {
-  replaceRootClass(PRIMARY_OPTIONS, value)
 }
