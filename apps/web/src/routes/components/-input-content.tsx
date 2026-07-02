@@ -22,11 +22,7 @@ export function InputContent(): JSX.Element {
         <Label htmlFor="email">Email</Label>
         <Spacer height={4} />
         <div className="relative">
-          <IconEnvelopeOutline18
-            className="
-                text-gray-11 pointer-events-none absolute top-14 left-14
-              "
-          />
+          <IconEnvelopeOutline18 className="text-gray-11 pointer-events-none absolute top-14 left-14" />
           <Input className="pl-44!" id="email" placeholder="name@example.com" type="email" />
         </div>
         <Spacer height={16} />
@@ -34,20 +30,16 @@ export function InputContent(): JSX.Element {
         <Label htmlFor="password">Password</Label>
         <Spacer height={4} />
         <div className="relative">
-          <IconLockOutline18
-            className="
-                text-gray-11 pointer-events-none absolute top-14 left-14
-              "
-          />
+          <IconLockOutline18 className="text-gray-11 pointer-events-none absolute top-14 left-14" />
           <Input className="px-44!" id="password" placeholder="••••••••" type="password" />
           <Button className="group absolute! top-6 right-6" isIconOnly size={32} variant="ghost">
             <IconEyeOutline18
               className="
-                  text-gray-11
-                  group-hover:text-gray-12
-                  group-active:text-gray-12
-                  transition-colors
-                "
+                text-gray-11
+                group-hover:text-gray-12
+                group-active:text-gray-12
+                transition-colors
+              "
             />
           </Button>
         </div>
@@ -61,11 +53,7 @@ export function InputContent(): JSX.Element {
         <Label htmlFor="disabled">Disabled</Label>
         <Spacer height={4} />
         <div className="relative">
-          <IconBanOutline18
-            className="
-                text-gray-11 pointer-events-none absolute top-14 left-14
-              "
-          />
+          <IconBanOutline18 className="text-gray-11 pointer-events-none absolute top-14 left-14" />
           <Input className="pl-44!" id="disabled" isDisabled placeholder="Disabled" type="url" />
         </div>
         <Spacer height={64} />
@@ -83,11 +71,11 @@ export function InputContent(): JSX.Element {
           <Button className="group absolute! top-6 right-6" isIconOnly size={32} variant="ghost">
             <IconCopyOutline18
               className="
-                  text-gray-11
-                  group-hover:text-gray-12
-                  group-active:text-gray-12
-                  transition-colors
-                "
+                text-gray-11
+                group-hover:text-gray-12
+                group-active:text-gray-12
+                transition-colors
+              "
             />
           </Button>
         </div>
@@ -98,31 +86,31 @@ export function InputContent(): JSX.Element {
         <Row>
           <Input
             className="
-                rounded-r-none!
-                hover:z-10
-                focus-visible:z-20
-              "
+              rounded-r-none!
+              hover:z-10
+              focus-visible:z-20
+            "
             id="input-with-end-icon-button"
             placeholder="Download"
             type="url"
           />
           <Button
             className="
-                group -ml-px rounded-l-none!
-                hover:z-10
-                focus-visible:z-20
-              "
+              group -ml-px rounded-l-none!
+              hover:z-10
+              focus-visible:z-20
+            "
             isIconOnly
             size={44}
             variant="secondary"
           >
             <IconDownloadOutline18
               className="
-                  text-gray-11
-                  group-hover:text-gray-12
-                  group-active:text-gray-12
-                  transition-colors
-                "
+                text-gray-11
+                group-hover:text-gray-12
+                group-active:text-gray-12
+                transition-colors
+              "
             />
           </Button>
         </Row>
