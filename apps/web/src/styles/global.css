@@ -7,9 +7,7 @@
   --font-\*: initial;
   --font-body: body, sans-serif;
   --font-code: code, monospace;
-  --font-handwriting: handwriting, cursive;
   --font-heading: heading, serif;
-  --font-signature: signature, cursive;
 }
 
 @font-face {
@@ -30,26 +28,10 @@
 
 @font-face {
   font-display: swap;
-  font-family: handwriting;
-  font-style: normal;
-  font-weight: 400;
-  src: url("/fonts/handwriting.woff2") format("woff2");
-}
-
-@font-face {
-  font-display: swap;
   font-family: heading;
   font-style: normal;
-  font-weight: 300;
-  src: url("/fonts/heading.woff2") format("woff2");
-}
-
-@font-face {
-  font-display: swap;
-  font-family: signature;
-  font-style: normal;
-  font-weight: 400;
-  src: url("/fonts/signature.woff2") format("woff2");
+  font-weight: 100 900;
+  src: url("/fonts/body.woff2") format("woff2");
 }
 
 body {

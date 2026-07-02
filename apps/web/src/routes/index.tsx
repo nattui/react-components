@@ -17,8 +17,14 @@ export const Route = createFileRoute("/")({
             <p>Sidebar Bottom</p>
           </Column>
 
-          <Column className="d grow">
-            <p>Content</p>
+          <Column
+            className="
+              rounded-8 shadow-2 outline-border m-8 grow px-(--margin-page-main)
+              outline
+            "
+          >
+            <Spacer height={72} />
+            <h1 className="text-30">Button</h1>
             <Spacer height={1500} />
           </Column>
         </Row>

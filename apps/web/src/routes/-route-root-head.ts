@@ -38,27 +38,6 @@ export function RouteRootHead(): RouteRootHead {
         type: "font/woff2",
       },
       {
-        as: "font",
-        crossOrigin: "anonymous",
-        href: "/fonts/handwriting.woff2",
-        rel: "preload",
-        type: "font/woff2",
-      },
-      {
-        as: "font",
-        crossOrigin: "anonymous",
-        href: "/fonts/heading.woff2",
-        rel: "preload",
-        type: "font/woff2",
-      },
-      {
-        as: "font",
-        crossOrigin: "anonymous",
-        href: "/fonts/signature.woff2",
-        rel: "preload",
-        type: "font/woff2",
-      },
-      {
         href: CSS,
         rel: "stylesheet",
       },
