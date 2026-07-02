@@ -39,7 +39,7 @@
   },
   "scripts": {
     "build": "tsdown",
-    "check:type": "tsgo",
+    "check:type": "tsc",
     "dev": "tsdown --watch",
     "prepublishOnly": "bun install && bun run check:type && bun run build",
     "release": "bun publish"
@@ -51,7 +51,7 @@
     "@tsdown/css": "0.22.3",
     "@types/bun": "1.3.14",
     "tsdown": "0.22.3",
-    "typescript": "npm:@typescript/native-preview@7.0.0-dev.20260701.1"
+    "typescript": "6.0.3"
   },
   "peerDependencies": {
     "@types/react": "^18 || ^19",
