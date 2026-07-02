@@ -93,6 +93,18 @@ pre code {
   --sh-string: #171717;
 }
 
+.dark pre code {
+  --sh-class: #8dd8d8;
+  --sh-comment: #8a8f98;
+  --sh-entity: #8dd8d8;
+  --sh-identifier: #f2f2f2;
+  --sh-jsxliterals: #f2f2f2;
+  --sh-keyword: #8dd8d8;
+  --sh-property: #16b3a6;
+  --sh-sign: #f2f2f2;
+  --sh-string: #f2f2f2;
+}
+
 pre code .sh__line {
   display: block;
   min-height: 1lh;
