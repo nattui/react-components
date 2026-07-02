@@ -1,11 +1,60 @@
-import { Button } from "@nattstack/ui"
+import { Button, Column, Row } from "@nattstack/ui"
+import { IconPlusOutline18 } from "@nattstack/icons"
 
 # Button
 
-<Button>Click me</Button>
+Buttons are controls that let users take action, make choices, and move forward.
 
-```tsx
-<Button>Click me</Button>
+```jsx
+// component
+
+<Button>Button</Button>
 ```
 
-asdf
+```jsx
+<Button>Button</Button>
+```
+
+# Variants
+
+The `Button` comes with three variants: `primary` (default), `secondary`, and `ghost`.
+
+```jsx
+// component
+
+<Column alignItems="center" gapY={16}>
+  <Row alignItems="center" flexWrap="wrap" gap={16} justifyContent="center">
+    <Button variant="primary">Primary</Button>
+    <Button variant="secondary">Secondary</Button>
+    <Button variant="ghost">Ghost</Button>
+  </Row>
+
+  <Row alignItems="center" flexWrap="wrap" gap={16} justifyContent="center">
+    <Button isIconOnly variant="primary">
+      <IconPlusOutline18 />
+    </Button>
+    <Button isIconOnly variant="secondary">
+      <IconPlusOutline18 />
+    </Button>
+    <Button isIconOnly variant="ghost">
+      <IconPlusOutline18 />
+    </Button>
+  </Row>
+</Column>
+```
+
+```jsx
+<Button variant="primary">Primary</Button>
+<Button variant="secondary">Secondary</Button>
+<Button variant="ghost">Ghost</Button>
+
+<Button isIconOnly variant="primary">
+  <IconPlus />
+</Button>
+<Button isIconOnly variant="secondary">
+  <IconPlus />
+</Button>
+<Button isIconOnly variant="ghost">
+  <IconPlus />
+</Button>
+```

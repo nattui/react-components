@@ -16,9 +16,10 @@ export function LayoutDashboardMain(props: PropsWithChildren): JSX.Element {
             px-(--margin-page-main) outline
           "
         >
-          <Column className="mx-auto w-full max-w-768" {...rest}>
+          <Column className="mx-auto w-full max-w-640" {...rest}>
             <Spacer height={72} />
             {children}
+            <Spacer height={128} />
           </Column>
         </Column>
       </Row>
