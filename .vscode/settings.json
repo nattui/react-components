@@ -1,11 +1,11 @@
 {
   "css.lint.unknownProperties": "ignore",
   "editor.codeActionsOnSave": {
-    "source.fixAll.oxc": "always"
+    "source.fixAll.oxc": "explicit"
   },
   "editor.defaultFormatter": "oxc.oxc-vscode",
   "editor.formatOnSave": true,
-  "tailwindCSS.experimental.configFile": "apps/web/styles/tailwind.css",
+  "tailwindCSS.experimental.configFile": "apps/web/src/styles/global.css",
   "tailwindCSS.rootFontSize": 10,
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#93e6fc",
