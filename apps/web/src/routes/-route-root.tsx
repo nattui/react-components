@@ -8,7 +8,7 @@ export function RouteRoot(): JSX.Element {
   return (
     <html
       className="
-        color-gray-mauve color-primary-crimson [--margin-page-dashboard:16px]
+        color-gray-slate color-primary-blue [--margin-page-dashboard:16px]
         [--margin-page-main:20px]
       "
       lang="en"
