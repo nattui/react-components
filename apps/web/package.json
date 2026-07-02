@@ -14,13 +14,13 @@
     "@notionhq/client": "5.22.0",
     "@use-gesture/react": "10.3.1",
     "motion": "12.42.2",
-    "next": "16.2.9",
+    "next": "16.2.10",
     "react": "catalog:",
     "react-dom": "catalog:",
     "sugar-high": "1.2.1"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "4.3.1",
+    "@tailwindcss/postcss": "4.3.2",
     "@types/node": "26.1.0",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
