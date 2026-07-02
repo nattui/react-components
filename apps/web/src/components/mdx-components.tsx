@@ -62,12 +62,19 @@ export function MdxComponentShowcase(props: MdxComponentShowcaseProps): JSX.Elem
   return (
     <div
       className={joinClassNames(
-        "mb-24 flex flex-wrap items-center justify-center gap-16 rounded-16 border border-gray-4 px-16 py-48 bg-bg-shell-outer bg-[radial-gradient(circle,var(--color-border)_1px,transparent_1px)] bg-size-[16px_16px]",
+        "mb-24 w-full min-w-0 overflow-x-auto rounded-16 border border-gray-4 bg-bg-shell-outer bg-[radial-gradient(circle,var(--color-border)_1px,transparent_1px)] bg-size-[16px_16px]",
         className,
       )}
       {...rest}
     >
-      {children}
+      <div
+        className="
+          flex w-max min-w-full flex-wrap items-center justify-center gap-16
+          px-16 py-48
+        "
+      >
+        {children}
+      </div>
     </div>
   )
 }
