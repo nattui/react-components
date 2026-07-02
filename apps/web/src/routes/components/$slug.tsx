@@ -2,6 +2,7 @@ import { createFileRoute, notFound } from "@tanstack/react-router"
 import type { MDXComponents } from "mdx/types"
 import type { ComponentType } from "react"
 import { MDX_COMPONENTS } from "#/components/mdx-components"
+import { InputContent } from "#/routes/components/-input-content"
 import ButtonContent from "#/routes/components/button.mdx"
 import SwitchContent from "#/routes/components/switch.mdx"
 import TabsPillContent from "#/routes/components/tabs-pill.mdx"
@@ -20,6 +21,10 @@ const COMPONENT_PAGES: Record<string, ComponentPage> = {
   button: {
     Content: ButtonContent,
     title: "Button",
+  },
+  input: {
+    Content: InputContent,
+    title: "Input",
   },
   switch: {
     Content: SwitchContent,
