@@ -62,7 +62,7 @@ export function MdxComponentShowcase(props: MdxComponentShowcaseProps): JSX.Elem
   return (
     <div
       className={joinClassNames(
-        "mb-24 flex flex-wrap items-center justify-center gap-16 rounded-16 border border-gray-4 bg-gray-2 px-16 py-48",
+        "mb-24 flex flex-wrap items-center justify-center gap-16 rounded-16 border border-gray-4 px-16 py-48 bg-bg-shell-outer",
         className,
       )}
       {...rest}
@@ -253,7 +253,7 @@ function MdxPre(props: ComponentProps<"pre">): JSX.Element {
   return (
     <pre
       className={joinClassNames(
-        "mb-24 overflow-x-auto rounded-16 bg-gray-3 p-16 text-14",
+        "mb-24 overflow-x-auto rounded-16 bg-bg-shell-outer border border-border p-16 text-14",
         className,
       )}
       {...rest}
