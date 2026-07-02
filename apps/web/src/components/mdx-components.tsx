@@ -70,7 +70,7 @@ export function MdxComponentShowcase(props: MdxComponentShowcaseProps): JSX.Elem
       <div
         className="
           flex w-max min-w-full flex-wrap items-center justify-center gap-16
-          px-16 py-48
+          px-24 py-48
         "
       >
         {children}
