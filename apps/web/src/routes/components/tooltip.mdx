@@ -1,0 +1,124 @@
+import {
+  Button,
+  Tooltip,
+  TooltipPopup,
+  TooltipTrigger,
+} from "@nattstack/ui"
+import {
+  IconArrowDownOutline18,
+  IconArrowLeftOutline18,
+  IconArrowRightOutline18,
+  IconArrowUpOutline18,
+} from "@nattstack/icons"
+
+# Tooltip
+
+The `Tooltip` component is a Base UI component.
+
+```jsx
+// component
+
+<Tooltip>
+  <TooltipTrigger render={<Button>Hover me</Button>} />
+  <TooltipPopup>This action cannot be undone</TooltipPopup>
+</Tooltip>
+```
+
+```jsx
+<Tooltip>
+  <TooltipTrigger render={<Button>Hover me</Button>} />
+  <TooltipPopup>This action cannot be undone</TooltipPopup>
+</Tooltip>
+```
+
+# Side
+
+The `Tooltip` comes with 4 sides: `top` (default), `bottom`, `left`, `right`.
+
+```jsx
+// component
+
+<Tooltip>
+  <TooltipTrigger
+    render={
+      <Button isIconOnly>
+        <IconArrowUpOutline18 />
+      </Button>
+    }
+  />
+  <TooltipPopup side="top">Top side</TooltipPopup>
+</Tooltip>
+<Tooltip>
+  <TooltipTrigger
+    render={
+      <Button isIconOnly>
+        <IconArrowDownOutline18 />
+      </Button>
+    }
+  />
+  <TooltipPopup side="bottom">Bottom side</TooltipPopup>
+</Tooltip>
+<Tooltip>
+  <TooltipTrigger
+    render={
+      <Button isIconOnly>
+        <IconArrowLeftOutline18 />
+      </Button>
+    }
+  />
+  <TooltipPopup side="left">Left side</TooltipPopup>
+</Tooltip>
+<Tooltip>
+  <TooltipTrigger
+    render={
+      <Button isIconOnly>
+        <IconArrowRightOutline18 />
+      </Button>
+    }
+  />
+  <TooltipPopup side="right">Right side</TooltipPopup>
+</Tooltip>
+```
+
+```jsx
+<Tooltip>
+  <TooltipTrigger
+    render={
+      <Button isIconOnly>
+        <IconArrowUpOutline18 />
+      </Button>
+    }
+  />
+  <TooltipPopup side="top">Top side</TooltipPopup>
+</Tooltip>
+<Tooltip>
+  <TooltipTrigger
+    render={
+      <Button isIconOnly>
+        <IconArrowDownOutline18 />
+      </Button>
+    }
+  />
+  <TooltipPopup side="bottom">Bottom side</TooltipPopup>
+</Tooltip>
+<Tooltip>
+  <TooltipTrigger
+    render={
+      <Button isIconOnly>
+        <IconArrowLeftOutline18 />
+      </Button>
+    }
+  />
+  <TooltipPopup side="left">Left side</TooltipPopup>
+</Tooltip>
+<Tooltip>
+  <TooltipTrigger
+    render={
+      <Button isIconOnly>
+        <IconArrowRightOutline18 />
+      </Button>
+    }
+  />
+  <TooltipPopup side="right">Right side</TooltipPopup>
+</Tooltip>
+```

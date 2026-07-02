@@ -22,6 +22,9 @@ export function Sidebar(): JSX.Element {
         <SidebarLink params={{ slug: "switch" }} to="/components/$slug">
           Switch
         </SidebarLink>
+        <SidebarLink params={{ slug: "tooltip" }} to="/components/$slug">
+          Tooltip
+        </SidebarLink>
       </Column>
     </Column>
   )

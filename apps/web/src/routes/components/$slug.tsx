@@ -4,6 +4,7 @@ import type { ComponentType } from "react"
 import { MDX_COMPONENTS } from "#/components/mdx-components"
 import ButtonContent from "#/routes/components/button.mdx"
 import SwitchContent from "#/routes/components/switch.mdx"
+import TooltipContent from "#/routes/components/tooltip.mdx"
 
 interface ComponentPage {
   Content: ComponentType<{
@@ -20,6 +21,10 @@ const COMPONENT_PAGES: Record<string, ComponentPage> = {
   switch: {
     Content: SwitchContent,
     title: "Switch",
+  },
+  tooltip: {
+    Content: TooltipContent,
+    title: "Tooltip",
   },
 }
 

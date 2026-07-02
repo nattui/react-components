@@ -1,15 +1,16 @@
-import { Button, Spacer } from "@nattstack/ui"
-import { createFileRoute } from "@tanstack/react-router"
+import { Spacer } from "@nattstack/ui"
+import { createFileRoute, Link } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/")({
   component: function RouteIndex() {
     return (
       <>
-        <h1 className="text-30">Button</h1>
+        <h1 className="text-30 font-500">Welcome to Natt UI React Components</h1>
         <Spacer height={16} />
 
-        <Button>Click me</Button>
-        <Spacer height={1500} />
+        <Link className="ui-link" params={{ slug: "button" }} to="/components/$slug">
+          Get started
+        </Link>
       </>
     )
   },
