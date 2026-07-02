@@ -16,7 +16,7 @@ export default defineConfig({
     node: true,
   },
   globals: {},
-  ignorePatterns: ["src/routeTree.gen.ts"],
+  ignorePatterns: ["apps/web/src/routeTree.gen.ts"],
   jsPlugins: [
     {
       name: "better-tailwindcss",

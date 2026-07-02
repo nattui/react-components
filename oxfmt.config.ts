@@ -8,6 +8,6 @@ export default defineConfig({
   experimentalSortPackageJson: {
     sortScripts: true,
   },
-  ignorePatterns: ["src/routeTree.gen.ts"],
+  ignorePatterns: ["apps/web/src/routeTree.gen.ts"],
   semi: false,
 })
