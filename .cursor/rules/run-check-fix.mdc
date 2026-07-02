@@ -1,0 +1,45 @@
+---
+description: Run bun run check:fix after code changes and fix remaining issues.
+alwaysApply: true
+---
+
+# Check and Fix
+
+After making code changes, run checks from the **repo root** and fix anything that fails.
+
+## Workflow
+
+1. Run `bun run check:fix` from the repo root.
+2. Fix any remaining issues that auto-fix did not resolve.
+3. Run `bun run check` to confirm format, lint, and type all pass.
+
+Do not consider the task done until `bun run check` exits successfully.
+
+## Commands
+
+Run these from the **monorepo root**, not from `apps/web` or `packages/ui`:
+
+```bash
+bun run check:fix   # auto-fix format + lint, then typecheck
+bun run check       # verify everything passes
+```
+
+`check:fix` runs, in order:
+
+- `check:format:fix` — oxfmt
+- `check:lint:fix` — oxlint with `--fix --fix-suggestions --fix-dangerously`
+- `check:type` — turbo typecheck across workspaces
+
+## Fixing remaining issues
+
+When lint still fails after `check:lint:fix`, fix by hand. Common oxlint fixes in this repo:
+
+- Use `replaceAll` instead of `replace` with a global regex
+- Use named capture groups: `(?<name>...)`
+- Add the `u` flag to regexes
+
+Type errors must be fixed manually — `check:fix` only reports them.
+
+## Generated files
+
+Do not edit or lint-fix generated files such as `apps/web/src/routeTree.gen.ts`. They are ignored by `oxlint.config.ts` when lint runs from the repo root.

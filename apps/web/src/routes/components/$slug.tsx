@@ -13,6 +13,7 @@ import TabsSegmentedContent from "#/routes/components/tabs-segmented.mdx"
 import TabsUnderlineContent from "#/routes/components/tabs-underline.mdx"
 import TextareaContent from "#/routes/components/textarea.mdx"
 import TooltipContent from "#/routes/components/tooltip.mdx"
+import { formatTitle } from "#/utils/format-title"
 
 interface ComponentPage {
   Content: ComponentType<{
@@ -98,7 +99,7 @@ export const Route = createFileRoute("/components/$slug")({
     return {
       meta: [
         {
-          title: `${page.title} · Natt UI`,
+          title: `${formatTitle(page.title)} · Natt UI`,
         },
       ],
     }
