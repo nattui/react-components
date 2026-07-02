@@ -8,6 +8,28 @@ interface CodeFence {
   indent: string
 }
 
+export function mdxComponentShowcases(): Plugin {
+  return {
+    enforce: "pre",
+    name: "mdx-component-showcases",
+    transform(code, id) {
+      if (!id.includes(".mdx")) {
+        return
+      }
+
+      const transformedCode = transformComponentShowcases(code)
+
+      if (transformedCode === undefined) {
+        return
+      }
+
+      return {
+        code: transformedCode,
+      }
+    },
+  }
+}
+
 function escapeRegExp(value: string): string {
   return value.replaceAll(/[.*+?^${}()|[\]\\]/gu, String.raw`\$&`)
 }
@@ -33,28 +55,6 @@ function isClosingFence(line: string, openingFence: string, openingIndent: strin
   )
 
   return closingFencePattern.test(line.trimEnd())
-}
-
-export function mdxComponentShowcases(): Plugin {
-  return {
-    enforce: "pre",
-    name: "mdx-component-showcases",
-    transform(code, id) {
-      if (!id.includes(".mdx")) {
-        return
-      }
-
-      const transformedCode = transformComponentShowcases(code)
-
-      if (transformedCode === undefined) {
-        return
-      }
-
-      return {
-        code: transformedCode,
-      }
-    },
-  }
 }
 
 function transformComponentShowcases(code: string): string | undefined {
