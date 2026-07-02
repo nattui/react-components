@@ -22,6 +22,15 @@ export function Sidebar(): JSX.Element {
         <SidebarLink params={{ slug: "switch" }} to="/components/$slug">
           Switch
         </SidebarLink>
+        <SidebarLink params={{ slug: "tabs-pill" }} to="/components/$slug">
+          TabsPill
+        </SidebarLink>
+        <SidebarLink params={{ slug: "tabs-segmented" }} to="/components/$slug">
+          TabsSegmented
+        </SidebarLink>
+        <SidebarLink params={{ slug: "tabs-underline" }} to="/components/$slug">
+          TabsUnderline
+        </SidebarLink>
         <SidebarLink params={{ slug: "tooltip" }} to="/components/$slug">
           Tooltip
         </SidebarLink>

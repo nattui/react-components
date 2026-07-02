@@ -1,0 +1,39 @@
+import { Spacer, Tabs, TabsPanel, TabsSegmentedList, TabsSegmentedTab } from "@nattstack/ui"
+
+# TabsSegmented
+
+Tabs are a navigational component that allows users to move easily between groups of related content.
+
+The `TabsSegmented` component is a Base UI component.
+
+```jsx
+// component
+
+<Tabs defaultValue="system">
+  <TabsSegmentedList>
+    <TabsSegmentedTab value="system">⚙️ System</TabsSegmentedTab>
+    <TabsSegmentedTab value="light">☀️ Light</TabsSegmentedTab>
+    <TabsSegmentedTab value="dark">🌙 Dark</TabsSegmentedTab>
+  </TabsSegmentedList>
+  <Spacer height={16} />
+
+  <TabsPanel value="system">⚙️ System</TabsPanel>
+  <TabsPanel value="light">☀️ Light</TabsPanel>
+  <TabsPanel value="dark">🌙 Dark</TabsPanel>
+</Tabs>
+```
+
+```jsx
+<Tabs defaultValue="system">
+  <TabsSegmentedList>
+    <TabsSegmentedTab value="system">⚙️ System</TabsSegmentedTab>
+    <TabsSegmentedTab value="light">☀️ Light</TabsSegmentedTab>
+    <TabsSegmentedTab value="dark">🌙 Dark</TabsSegmentedTab>
+  </TabsSegmentedList>
+  <Spacer height={16} />
+
+  <TabsPanel value="system">⚙️ System</TabsPanel>
+  <TabsPanel value="light">☀️ Light</TabsPanel>
+  <TabsPanel value="dark">🌙 Dark</TabsPanel>
+</Tabs>
+```

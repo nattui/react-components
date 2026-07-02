@@ -4,6 +4,9 @@ import type { ComponentType } from "react"
 import { MDX_COMPONENTS } from "#/components/mdx-components"
 import ButtonContent from "#/routes/components/button.mdx"
 import SwitchContent from "#/routes/components/switch.mdx"
+import TabsPillContent from "#/routes/components/tabs-pill.mdx"
+import TabsSegmentedContent from "#/routes/components/tabs-segmented.mdx"
+import TabsUnderlineContent from "#/routes/components/tabs-underline.mdx"
 import TooltipContent from "#/routes/components/tooltip.mdx"
 
 interface ComponentPage {
@@ -21,6 +24,18 @@ const COMPONENT_PAGES: Record<string, ComponentPage> = {
   switch: {
     Content: SwitchContent,
     title: "Switch",
+  },
+  "tabs-pill": {
+    Content: TabsPillContent,
+    title: "TabsPill",
+  },
+  "tabs-segmented": {
+    Content: TabsSegmentedContent,
+    title: "TabsSegmented",
+  },
+  "tabs-underline": {
+    Content: TabsUnderlineContent,
+    title: "TabsUnderline",
   },
   tooltip: {
     Content: TooltipContent,
