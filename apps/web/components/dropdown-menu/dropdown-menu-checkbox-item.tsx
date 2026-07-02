@@ -21,7 +21,8 @@ export function DropdownMenuCheckboxItem(props: DropdownMenuCheckboxItemProps): 
         data-inset:pl-28
         [&_svg]:pointer-events-none [&_svg]:shrink-0
         [&_svg:not([class*='size-'])]:size-16
-        ${className}`}
+        ${className}
+      `}
       data-inset={inset}
       data-slot="dropdown-menu-checkbox-item"
       {...rest}

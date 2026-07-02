@@ -31,7 +31,8 @@ export function DropdownMenuSubContent(props: DropdownMenuSubContentProps): JSX.
         data-[side=top]:slide-in-from-bottom-8
         w-auto min-w-96 rounded-8 bg-gray-1 p-4 text-gray-11 shadow-5
         shadow-gray-6 outline-1 outline-gray-6 duration-100
-        ${className}`}
+        ${className}
+      `}
       data-slot="dropdown-menu-sub-content"
       side={side}
       sideOffset={sideOffset}

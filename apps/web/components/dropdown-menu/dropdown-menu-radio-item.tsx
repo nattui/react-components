@@ -20,7 +20,8 @@ export function DropdownMenuRadioItem(props: DropdownMenuRadioItemProps): JSX.El
         data-inset:pl-28
         [&_svg]:pointer-events-none [&_svg]:shrink-0
         [&_svg:not([class*='size-'])]:size-16
-        ${className}`}
+        ${className}
+      `}
       data-inset={inset}
       data-slot="dropdown-menu-radio-item"
       {...rest}

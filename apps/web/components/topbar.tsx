@@ -7,10 +7,12 @@ import { TabsTheme } from "@/components/tabs-theme"
 
 export function Topbar(): JSX.Element {
   return (
-    <header className="
-      sticky top-0 left-0 z-10 flex h-64 w-full bg-bg-secondary/90 px-24
-      backdrop-blur-[48px]
-    ">
+    <header
+      className="
+        sticky top-0 left-0 z-10 flex h-64 w-full bg-bg-secondary/90 px-24
+        backdrop-blur-[48px]
+      "
+    >
       <div className="flex size-full items-center justify-between">
         <Link
           className="

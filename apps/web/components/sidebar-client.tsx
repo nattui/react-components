@@ -25,10 +25,12 @@ export function SidebarClient(props: SidebarClientProps): JSX.Element {
   const pathname = usePathname()
 
   return (
-    <aside className="
-      sticky top-64 left-0 flex h-[calc(100dvh-64px)] shrink-0 flex-col
-      bg-bg-secondary
-    ">
+    <aside
+      className="
+        sticky top-64 left-0 flex h-[calc(100dvh-64px)] shrink-0 flex-col
+        bg-bg-secondary
+      "
+    >
       <Spacer height={16} />
       <div className="flex flex-col gap-y-16 overflow-y-auto px-24">
         {sections.map((section, sectionIndex) => (
@@ -61,9 +63,11 @@ export function SidebarClient(props: SidebarClientProps): JSX.Element {
                   >
                     {link.label}
                     {isActive && (
-                      <div className="
-                        absolute top-0 -left-24 h-full w-2 bg-primary-9
-                      " />
+                      <div
+                        className="
+                          absolute top-0 -left-24 h-full w-2 bg-primary-9
+                        "
+                      />
                     )}
                   </Link>
                 )

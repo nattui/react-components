@@ -23,7 +23,8 @@ export function DropdownMenuItem(props: DropdownMenuItemProps): JSX.Element {
         data-disabled:pointer-events-none data-disabled:opacity-50
         data-inset:pl-28
         [&_svg]:pointer-events-none [&_svg]:shrink-0
-        ${className}`}
+        ${className}
+      `}
       data-inset={inset}
       data-slot="dropdown-menu-item"
       data-variant={variant}

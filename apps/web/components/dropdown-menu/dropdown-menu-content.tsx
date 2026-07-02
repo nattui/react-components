@@ -45,7 +45,8 @@ export function DropdownMenuContent(props: DropdownMenuContentProps): JSX.Elemen
             rounded-8 bg-gray-1 p-2 text-gray-11 shadow-4 shadow-gray-6
             outline-1 outline-gray-6 duration-100
             data-closed:overflow-hidden
-            ${className}`}
+            ${className}
+          `}
           data-slot="dropdown-menu-content"
           {...rest}
         />

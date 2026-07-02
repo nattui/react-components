@@ -112,10 +112,12 @@ export async function NotionBlockContent(props: NotionBlockContentProps): Promis
       return (
         <>
           {/* Showcase component */}
-          <div className="
-            flex flex-wrap items-center justify-center gap-16 rounded-12 border
-            border-gray-4 bg-gray-2 px-16 py-48
-          ">
+          <div
+            className="
+              flex flex-wrap items-center justify-center gap-16 rounded-12
+              border border-gray-4 bg-gray-2 px-16 py-48
+            "
+          >
             {mappedComponentElements}
           </div>
           <Spacer className="h-24" />
@@ -127,10 +129,12 @@ export async function NotionBlockContent(props: NotionBlockContentProps): Promis
 
     return (
       <>
-        <pre className="
-          overflow-x-auto rounded-12 border border-gray-4 bg-gray-2 p-16 text-13
-          whitespace-break-spaces
-        ">
+        <pre
+          className="
+            overflow-x-auto rounded-12 border border-gray-4 bg-gray-2 p-16
+            text-13 whitespace-break-spaces
+          "
+        >
           {/* oxlint-disable-next-line react/no-danger */}
           <code aria-label={block.language} dangerouslySetInnerHTML={{ __html: codeHTML }} />
         </pre>
@@ -401,18 +405,22 @@ function renderLinkCards(code: string): JSX.Element[] | undefined {
         rel={isExternal ? "noreferrer" : undefined}
         target={isExternal ? "_blank" : undefined}
       >
-        <div className="
-          flex size-24 shrink-0 items-center justify-center rounded-full border
-          border-gray-4 bg-gray-1 font-mono text-13 font-500 text-gray-11
-          uppercase transition-colors
-          group-hover:text-gray-12
-        ">
+        <div
+          className="
+            flex size-24 shrink-0 items-center justify-center rounded-full
+            border border-gray-4 bg-gray-1 font-mono text-13 font-500
+            text-gray-11 uppercase transition-colors
+            group-hover:text-gray-12
+          "
+        >
           {linkCard.badge}
         </div>
-        <p className="
-          min-w-0 truncate pr-2 text-13 leading-none font-500 whitespace-nowrap
-          text-gray-12
-        ">
+        <p
+          className="
+            min-w-0 truncate pr-2 text-13 leading-none font-500
+            whitespace-nowrap text-gray-12
+          "
+        >
           {linkCard.label}
         </p>
       </a>

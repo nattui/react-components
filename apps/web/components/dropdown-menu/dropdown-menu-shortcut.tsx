@@ -10,7 +10,8 @@ export function DropdownMenuShortcut(props: DropdownMenuShortcutProps): JSX.Elem
       className={`
         tracking-p01 ml-auto text-12 text-gray-10
         group-focus/dropdown-menu-item:text-gray-12
-        ${className}`}
+        ${className}
+      `}
       data-slot="dropdown-menu-shortcut"
       {...rest}
     />

@@ -21,7 +21,8 @@ export function DropdownMenuSubTrigger(props: DropdownMenuSubTriggerProps): JSX.
         data-popup-open:bg-gray-3 data-popup-open:text-gray-12
         [&_svg]:pointer-events-none [&_svg]:shrink-0
         [&_svg:not([class*='size-'])]:size-16
-        ${className}`}
+        ${className}
+      `}
       data-inset={inset}
       data-slot="dropdown-menu-sub-trigger"
       {...rest}

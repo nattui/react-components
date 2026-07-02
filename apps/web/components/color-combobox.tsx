@@ -55,10 +55,12 @@ export function ColorCombobox(props: ColorComboboxProps): JSX.Element {
           id={id}
           placeholder={placeholder}
         />
-        <div className="
-          absolute right-8 bottom-0 flex h-40 items-center justify-center
-          text-gray-11
-        ">
+        <div
+          className="
+            absolute right-8 bottom-0 flex h-40 items-center justify-center
+            text-gray-11
+          "
+        >
           <Combobox.Clear
             aria-label="Clear selection"
             className="
@@ -82,19 +84,24 @@ export function ColorCombobox(props: ColorComboboxProps): JSX.Element {
 
       <Combobox.Portal>
         <Combobox.Positioner className="outline-none" sideOffset={4}>
-          <Combobox.Popup className="
-            w-var(--anchor-width) max-w-var(--available-width) rounded-md
-            shadow-lg max-h-[min(var(--available-height),368px)]
-            origin-(--transform-origin) scroll-pt-2 scroll-pb-2 overflow-y-auto
-            overscroll-contain bg-gray-1 py-2 text-gray-11 shadow-gray-6
-            outline-1 outline-gray-6 transition-[transform,scale,opacity]
-            data-ending-style:scale-95 data-ending-style:opacity-0
-            data-starting-style:scale-95 data-starting-style:opacity-0
-          ">
-            <Combobox.Empty className="
-              px-4 py-2 text-[0.925rem] leading-4 text-gray-11
-              empty:m-0 empty:p-0
-            ">
+          <Combobox.Popup
+            className="
+              w-var(--anchor-width) max-w-var(--available-width) rounded-md
+              shadow-lg max-h-[min(var(--available-height),368px)]
+              origin-(--transform-origin) scroll-pt-2 scroll-pb-2
+              overflow-y-auto overscroll-contain bg-gray-1 py-2 text-gray-11
+              shadow-gray-6 outline-1 outline-gray-6
+              transition-[transform,scale,opacity]
+              data-ending-style:scale-95 data-ending-style:opacity-0
+              data-starting-style:scale-95 data-starting-style:opacity-0
+            "
+          >
+            <Combobox.Empty
+              className="
+                px-4 py-2 text-[0.925rem] leading-4 text-gray-11
+                empty:m-0 empty:p-0
+              "
+            >
               No options found.
             </Combobox.Empty>
             <Combobox.List>

@@ -27,10 +27,13 @@ export default function TestPage(): JSX.Element {
         gapX={4}
         justifyContent="center"
       >
-        <Link className="
-          truncate text-14 font-500
-          hover:underline
-        " href="/">
+        <Link
+          className="
+            truncate text-14 font-500
+            hover:underline
+          "
+          href="/"
+        >
           Encore × Neon: Powering Preview Environments with Neon branching
         </Link>
         <LucideChevronRight className="shrink-0" size={14} />
