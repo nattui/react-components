@@ -6,8 +6,8 @@ export function RouteRoot(): JSX.Element {
   return (
     <html
       className="
-        color-gray-mauve color-primary-crimson [--margin-page-application:16px]
-        [--margin-page-marketing:20px]
+        color-gray-mauve color-primary-crimson [--margin-page-dashboard:16px]
+        [--margin-page-main:20px]
       "
       lang="en"
       suppressHydrationWarning
