@@ -163,20 +163,13 @@
 
   /* Secondary ========================================= */
   .variant_secondary {
-    --color-direction: -1px;
-    --color-text: #000000;
-    --color-shadow: #0000001a;
     background-color: var(--color-bg-shell-outer);
-    box-shadow:
-      inset 0 var(--color-direction) 0 0 var(--color-shadow),
-      0 0 0 1px var(--color-border) inset;
-    color: var(--color-text);
+    box-shadow: inset 0 0 0 1px var(--color-border);
+    color: #000000;
   }
 
   :global(.dark) .variant_secondary {
-    --color-direction: 1px;
-    --color-text: #ffffff;
-    --color-shadow: #ffffff1a;
+    color: #ffffff;
   }
 
   .variant_secondary:hover:not(:disabled) {
