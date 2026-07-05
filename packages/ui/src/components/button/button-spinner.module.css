@@ -1,10 +1,10 @@
 @layer components {
-  .button_spinner {
-    position: relative;
-    width: var(--size);
-    height: var(--size);
-    scale: -1 1;
+  .base {
     animation: spinner 1000ms steps(12, end) infinite;
+    height: var(--size);
+    position: absolute;
+    scale: -1 1;
+    width: var(--size);
   }
 
   @keyframes spinner {
@@ -13,84 +13,84 @@
     }
   }
 
-  .button_spinner > div {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    width: calc(var(--size) / 2);
+  .base > div {
     height: calc(var(--size) / 12);
     pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 50%;
     transform-origin: center left;
-    translate: 0 -50%;
     transition: all 150ms;
+    translate: 0 -50%;
+    width: calc(var(--size) / 2);
   }
 
-  .button_spinner > div::after {
+  .base > div::after {
+    background-color: currentColor;
+    border-radius: 9999px;
+    content: "";
+    height: 100%;
     position: absolute;
     right: 0;
     width: 50%;
-    height: 100%;
-    content: "";
-    background-color: currentColor;
-    border-radius: 9999px;
   }
 
-  .button_spinner > div:nth-child(1) {
+  .base > div:nth-child(1) {
     opacity: 1;
     rotate: 0deg;
   }
 
-  .button_spinner > div:nth-child(2) {
+  .base > div:nth-child(2) {
     opacity: 0.925;
     rotate: 30deg;
   }
 
-  .button_spinner > div:nth-child(3) {
+  .base > div:nth-child(3) {
     opacity: 0.85;
     rotate: 60deg;
   }
 
-  .button_spinner > div:nth-child(4) {
+  .base > div:nth-child(4) {
     opacity: 0.775;
     rotate: 90deg;
   }
 
-  .button_spinner > div:nth-child(5) {
+  .base > div:nth-child(5) {
     opacity: 0.7;
     rotate: 120deg;
   }
 
-  .button_spinner > div:nth-child(6) {
+  .base > div:nth-child(6) {
     opacity: 0.625;
     rotate: 150deg;
   }
 
-  .button_spinner > div:nth-child(7) {
+  .base > div:nth-child(7) {
     opacity: 0.55;
     rotate: 180deg;
   }
 
-  .button_spinner > div:nth-child(8) {
+  .base > div:nth-child(8) {
     opacity: 0.475;
     rotate: 210deg;
   }
 
-  .button_spinner > div:nth-child(9) {
+  .base > div:nth-child(9) {
     opacity: 0.4;
     rotate: 240deg;
   }
 
-  .button_spinner > div:nth-child(10) {
+  .base > div:nth-child(10) {
     opacity: 0.325;
     rotate: 270deg;
   }
 
-  .button_spinner > div:nth-child(11) {
+  .base > div:nth-child(11) {
     opacity: 0.25;
     rotate: 300deg;
   }
 
-  .button_spinner > div:nth-child(12) {
+  .base > div:nth-child(12) {
     opacity: 0.15;
     rotate: 330deg;
   }

@@ -1,47 +1,47 @@
 import { IconPlusOutline18 } from "@nattstack/icons"
-import { Button2, Column } from "@nattstack/ui"
+import { Button, Column } from "@nattstack/ui"
 import { createFileRoute } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/test")({
   component: function RouteComponent() {
     return (
       <Column className="gap-y-8">
-        <Button2>Click me</Button2>
+        <Button>Click me</Button>
 
-        <Button2 isDisabled>Disabled</Button2>
-        <Button2 isLoading>Loading</Button2>
+        <Button isDisabled>Disabled</Button>
+        <Button isLoading>Loading</Button>
 
-        <Button2 isRounded size={32}>
+        <Button isRounded size={32}>
           Size 32
-        </Button2>
-        <Button2 isRounded size={36}>
+        </Button>
+        <Button isRounded size={36}>
           Size 36
-        </Button2>
-        <Button2 isRounded size={40}>
+        </Button>
+        <Button isRounded size={40}>
           Size 40
-        </Button2>
-        <Button2 isRounded size={44}>
+        </Button>
+        <Button isRounded size={44}>
           Size 44
-        </Button2>
-        <Button2 isRounded size={48}>
+        </Button>
+        <Button isRounded size={48}>
           Size 48
-        </Button2>
+        </Button>
 
-        <Button2 size={32}>Size 32</Button2>
-        <Button2 size={36}>Size 36</Button2>
-        <Button2 size={40}>Size 40</Button2>
-        <Button2 size={44}>Size 44</Button2>
-        <Button2 size={48}>Size 48</Button2>
+        <Button size={32}>Size 32</Button>
+        <Button size={36}>Size 36</Button>
+        <Button size={40}>Size 40</Button>
+        <Button size={44}>Size 44</Button>
+        <Button size={48}>Size 48</Button>
 
-        <Button2 isFullWidth>Full width</Button2>
+        <Button isFullWidth>Full width</Button>
 
-        <Button2 variant="ghost">Ghost</Button2>
-        <Button2 variant="primary">Primary</Button2>
-        <Button2 variant="secondary">Secondary</Button2>
+        <Button variant="ghost">Ghost</Button>
+        <Button variant="primary">Primary</Button>
+        <Button variant="secondary">Secondary</Button>
 
-        <Button2 iconStart={<IconPlusOutline18 />} variant="secondary">
+        <Button iconStart={<IconPlusOutline18 />} variant="secondary">
           Secondary
-        </Button2>
+        </Button>
       </Column>
     )
   },

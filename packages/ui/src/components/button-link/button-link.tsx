@@ -1,53 +1,55 @@
-import { createElement, type ComponentProps, type ElementType, type JSX } from "react"
-import { buttonVariants, type ButtonProps } from "../button/button"
+// oxlint-disable unicorn/no-empty-file
 
-export type ButtonLinkProps<ComponentType extends ElementType = "a"> =
-  ButtonLinkHrefProps<ComponentType> &
-    ButtonLinkInternalProps<ComponentType> &
-    Omit<ComponentProps<ComponentType>, "href" | keyof ButtonLinkInternalProps<ComponentType>>
+// import { createElement, type ComponentProps, type ElementType, type JSX } from "react"
+// import { buttonVariants, type ButtonProps } from "../button/button"
 
-type ButtonLinkHrefProps<ComponentType extends ElementType> =
-  // Router link components often narrow `href`, but concrete URLs should remain valid.
-  ComponentProps<ComponentType> extends { href: infer Href }
-    ? { href: Href | string }
-    : ComponentProps<ComponentType> extends { href?: infer Href }
-      ? { href?: Href | string }
-      : unknown
+// export type ButtonLinkProps<ComponentType extends ElementType = "a"> =
+//   ButtonLinkHrefProps<ComponentType> &
+//     ButtonLinkInternalProps<ComponentType> &
+//     Omit<ComponentProps<ComponentType>, "href" | keyof ButtonLinkInternalProps<ComponentType>>
 
-interface ButtonLinkInternalProps<ComponentType extends ElementType> extends Pick<
-  ButtonProps,
-  "isFullWidth" | "isIconOnly" | "isRounded" | "size" | "variant"
-> {
-  as?: ComponentType
-}
+// type ButtonLinkHrefProps<ComponentType extends ElementType> =
+//   // Router link components often narrow `href`, but concrete URLs should remain valid.
+//   ComponentProps<ComponentType> extends { href: infer Href }
+//     ? { href: Href | string }
+//     : ComponentProps<ComponentType> extends { href?: infer Href }
+//       ? { href?: Href | string }
+//       : unknown
 
-export function ButtonLink<ComponentType extends ElementType = "a">(
-  props: ButtonLinkProps<ComponentType>,
-): JSX.Element {
-  const {
-    as = "a",
-    className: customClassName = "",
-    isFullWidth = false,
-    isIconOnly = false,
-    isRounded = false,
-    size = 40,
-    variant = "primary",
-    ...rest
-  } = props
+// interface ButtonLinkInternalProps<ComponentType extends ElementType> extends Pick<
+//   ButtonProps,
+//   "isFullWidth" | "isIconOnly" | "isRounded" | "size" | "variant"
+// > {
+//   as?: ComponentType
+// }
 
-  const Component = as as ElementType
+// export function ButtonLink<ComponentType extends ElementType = "a">(
+//   props: ButtonLinkProps<ComponentType>,
+// ): JSX.Element {
+//   const {
+//     as = "a",
+//     className: customClassName = "",
+//     isFullWidth = false,
+//     isIconOnly = false,
+//     isRounded = false,
+//     size = 40,
+//     variant = "primary",
+//     ...rest
+//   } = props
 
-  const combinedClassName = buttonVariants({
-    className: customClassName as string,
-    isFullWidth,
-    isIconOnly,
-    isRounded,
-    size: size as ButtonProps["size"],
-    variant: variant as ButtonProps["variant"],
-  })
+//   const Component = as as ElementType
 
-  return createElement(Component, {
-    className: combinedClassName,
-    ...rest,
-  })
-}
+//   const combinedClassName = buttonVariants({
+//     className: customClassName as string,
+//     isFullWidth,
+//     isIconOnly,
+//     isRounded,
+//     size: size as ButtonProps["size"],
+//     variant: variant as ButtonProps["variant"],
+//   })
+
+//   return createElement(Component, {
+//     className: combinedClassName,
+//     ...rest,
+//   })
+// }

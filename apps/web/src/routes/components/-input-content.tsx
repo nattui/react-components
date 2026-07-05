@@ -1,10 +1,7 @@
 import {
   IconBanOutline18,
   IconCircleLoginOutline18,
-  IconCopyOutline18,
-  IconDownloadOutline18,
   IconEnvelopeOutline18,
-  IconEyeOutline18,
   IconLockOutline18,
 } from "@nattstack/icons"
 import { Button, Column, Input, Label, Row, Spacer } from "@nattstack/ui"
@@ -32,7 +29,7 @@ export function InputContent(): JSX.Element {
         <div className="relative">
           <IconLockOutline18 className="text-gray-11 pointer-events-none absolute top-14 left-14" />
           <Input className="px-44!" id="password" placeholder="••••••••" type="password" />
-          <Button className="group absolute! top-6 right-6" isIconOnly size={32} variant="ghost">
+          {/* <Button className="group absolute! top-6 right-6" isIconOnly size={32} variant="ghost">
             <IconEyeOutline18
               className="
                 text-gray-11
@@ -41,7 +38,7 @@ export function InputContent(): JSX.Element {
                 transition-colors
               "
             />
-          </Button>
+          </Button> */}
         </div>
         <Spacer height={16} />
 
@@ -68,7 +65,7 @@ export function InputContent(): JSX.Element {
             isReadOnly
             type="text"
           />
-          <Button className="group absolute! top-6 right-6" isIconOnly size={32} variant="ghost">
+          {/* <Button className="group absolute! top-6 right-6" isIconOnly size={32} variant="ghost">
             <IconCopyOutline18
               className="
                 text-gray-11
@@ -77,7 +74,7 @@ export function InputContent(): JSX.Element {
                 transition-colors
               "
             />
-          </Button>
+          </Button> */}
         </div>
         <Spacer height={64} />
 
@@ -94,7 +91,7 @@ export function InputContent(): JSX.Element {
             placeholder="Download"
             type="url"
           />
-          <Button
+          {/* <Button
             className="
               group -ml-px rounded-l-none!
               hover:z-10
@@ -112,7 +109,7 @@ export function InputContent(): JSX.Element {
                 transition-colors
               "
             />
-          </Button>
+          </Button> */}
         </Row>
         <Spacer height={64} />
 
