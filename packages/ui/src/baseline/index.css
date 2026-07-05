@@ -60,6 +60,14 @@ body > * {
 }
 
 /*
+    Button baseline
+*/
+button {
+  text-align: start;
+  width: fit-content;
+}
+
+/*
     Apply a shared focus ring treatment to interactive controls
 */
 a,
