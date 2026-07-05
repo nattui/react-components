@@ -149,7 +149,7 @@
   }
 
   .variant_primary::after {
-    background-image: radial-gradient(75% 100% at top, hsla(0, 0%, 100%, 0.25), transparent);
+    background-image: radial-gradient(75% 100% at 50% -50%, hsla(0, 0%, 100%, 0.25), transparent);
     content: "";
     inset: 0;
     mix-blend-mode: overlay;
