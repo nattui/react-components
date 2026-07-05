@@ -2,12 +2,14 @@
 
 import { cva, type VariantProps } from "class-variance-authority"
 import type { ComponentProps, JSX } from "react"
+import { ButtonSpinner } from "../button/button-spinner"
 import styles from "./button-2.module.css"
 
 export interface Button2Props extends Omit<ComponentProps<"button">, "disabled"> {
   children?: number | number[] | string | string[]
   isDisabled?: ComponentProps<"button">["disabled"]
   isFullWidth?: VariantProps<typeof button2>["isFullWidth"]
+  isLoading?: ComponentProps<"button">["disabled"]
   isRounded?: VariantProps<typeof button2>["isRounded"]
   size?: VariantProps<typeof button2>["size"]
   variant?: VariantProps<typeof button2>["variant"]
@@ -19,6 +21,7 @@ export function Button2(props: Button2Props): JSX.Element {
     className = "",
     isDisabled = false,
     isFullWidth = false,
+    isLoading = false,
     isRounded = false,
     type = "button",
     variant = "primary",
@@ -28,11 +31,20 @@ export function Button2(props: Button2Props): JSX.Element {
 
   return (
     <button
-      className={button2({ className, isFullWidth, isRounded, size, variant })}
-      disabled={isDisabled}
+      className={button2({
+        className,
+        isDisabled,
+        isFullWidth,
+        isLoading,
+        isRounded,
+        size,
+        variant,
+      })}
+      disabled={isDisabled || isLoading}
       type={type}
       {...rest}
     >
+      {isLoading && <ButtonSpinner />}
       <span>{children}</span>
     </button>
   )
@@ -40,9 +52,15 @@ export function Button2(props: Button2Props): JSX.Element {
 
 export const button2 = cva(styles.base, {
   variants: {
+    isDisabled: {
+      true: styles.disabled,
+    },
     isFullWidth: {
       false: styles.width_base,
       true: styles.width_full,
+    },
+    isLoading: {
+      true: styles.loading,
     },
     isRounded: {
       false: styles.rounded_base,

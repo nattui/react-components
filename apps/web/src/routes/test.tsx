@@ -6,7 +6,9 @@ export const Route = createFileRoute("/test")({
     return (
       <Column className="gap-y-8">
         <Button2>Click me</Button2>
+
         <Button2 isDisabled>Disabled</Button2>
+        <Button2 isLoading>Loading</Button2>
 
         <Button2 isRounded size={32}>
           Size 32

@@ -21,13 +21,25 @@
     translate: 0 1px;
   }
 
-  .base:disabled {
+  .base:focus-visible {
+    outline-color: var(--color-outline);
+  }
+
+  /* =================================================== */
+  /* Disabled */
+  /* =================================================== */
+  .disabled {
     cursor: not-allowed !important;
     opacity: 0.5;
   }
 
-  .base:focus-visible {
-    outline-color: var(--color-outline);
+  /* =================================================== */
+  /* Loading */
+  /* =================================================== */
+  .loading {
+    /* color: transparent !important; */
+    cursor: not-allowed !important;
+    opacity: 0.5;
   }
 
   /* =================================================== */
