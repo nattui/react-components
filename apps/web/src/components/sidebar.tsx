@@ -36,6 +36,7 @@ export function Sidebar(): JSX.Element {
             {label}
           </SidebarLink>
         ))}
+        <SidebarLink to="/test">Test</SidebarLink>
       </Column>
       <Spacer height={8} />
 
