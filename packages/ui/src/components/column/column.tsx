@@ -1,3 +1,4 @@
+import { cva } from "class-variance-authority"
 import {
   createElement,
   type ComponentProps,
@@ -5,7 +6,6 @@ import {
   type ElementType,
   type JSX,
 } from "react"
-import { normalizeWhitespace } from "../../utils/normalize-whitespace"
 import styles from "./column.module.css"
 
 export type ColumnProps<ComponentType extends ElementType = "div"> = ColumnInternalProps &
@@ -37,10 +37,7 @@ export function Column(props: ColumnProps): JSX.Element {
 
   const Component = as
 
-  const combinedClassName = normalizeWhitespace(`
-    ${COLUMN_CLASS_NAME.BASE}
-    ${customClassName}
-  `)
+  const combinedClassName = columnVariants({ className: customClassName })
 
   const combinedStyle = {
     ...customStyle,
@@ -59,6 +56,4 @@ export function Column(props: ColumnProps): JSX.Element {
   })
 }
 
-export const COLUMN_CLASS_NAME = {
-  BASE: styles.column,
-} as const
+export const columnVariants = cva(styles.column)

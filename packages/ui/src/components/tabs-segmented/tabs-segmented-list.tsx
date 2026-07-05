@@ -1,6 +1,6 @@
 import { Tabs as BaseTabs } from "@base-ui/react"
+import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import { normalizeWhitespace } from "../../utils/normalize-whitespace"
 import { TabsSegmentedIndicator } from "./tabs-segmented-indicator"
 import styles from "./tabs-segmented-list.module.css"
 
@@ -9,10 +9,7 @@ export interface TabsSegmentedListProps extends BaseTabs.List.Props {}
 export function TabsSegmentedList(props: TabsSegmentedListProps): JSX.Element {
   const { className: customClassName = "", children = "", ...rest } = props
 
-  const combinedClassName = normalizeWhitespace(`
-    ${TABS_SEGMENTED_LIST_CLASS_NAME.BASE}
-    ${customClassName}
-  `)
+  const combinedClassName = tabsSegmentedListVariants({ className: customClassName })
 
   return (
     <BaseTabs.List className={combinedClassName} data-slot="tabs-segmented-list" {...rest}>
@@ -22,6 +19,4 @@ export function TabsSegmentedList(props: TabsSegmentedListProps): JSX.Element {
   )
 }
 
-export const TABS_SEGMENTED_LIST_CLASS_NAME = {
-  BASE: styles.tabs_segmented_list,
-} as const
+export const tabsSegmentedListVariants = cva(styles.tabs_segmented_list)

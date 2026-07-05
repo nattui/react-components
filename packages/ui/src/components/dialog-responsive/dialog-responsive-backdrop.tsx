@@ -1,6 +1,6 @@
 import { Drawer as BaseDrawer } from "@base-ui/react"
+import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import { normalizeWhitespace } from "../../utils/normalize-whitespace"
 import styles from "./dialog-responsive-backdrop.module.css"
 
 export interface DialogResponsiveBackdropProps extends BaseDrawer.Backdrop.Props {}
@@ -8,10 +8,7 @@ export interface DialogResponsiveBackdropProps extends BaseDrawer.Backdrop.Props
 export function DialogResponsiveBackdrop(props: DialogResponsiveBackdropProps): JSX.Element {
   const { className: customClassName = "", ...rest } = props
 
-  const combinedClassName = normalizeWhitespace(`
-    ${DIALOG_RESPONSIVE_BACKDROP_CLASS_NAME.BASE}
-    ${customClassName}
-  `)
+  const combinedClassName = dialogResponsiveBackdropVariants({ className: customClassName })
 
   return (
     <BaseDrawer.Backdrop
@@ -22,6 +19,4 @@ export function DialogResponsiveBackdrop(props: DialogResponsiveBackdropProps): 
   )
 }
 
-export const DIALOG_RESPONSIVE_BACKDROP_CLASS_NAME = {
-  BASE: styles.dialog_responsive_backdrop,
-} as const
+export const dialogResponsiveBackdropVariants = cva(styles.dialog_responsive_backdrop)

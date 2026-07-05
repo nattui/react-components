@@ -1,5 +1,5 @@
+import { cva } from "class-variance-authority"
 import type { ComponentProps, CSSProperties, JSX } from "react"
-import { normalizeWhitespace } from "../../utils/normalize-whitespace"
 import styles from "./spacer.module.css"
 
 export interface SpacerProps extends Omit<ComponentProps<"div">, "children"> {
@@ -10,10 +10,7 @@ export interface SpacerProps extends Omit<ComponentProps<"div">, "children"> {
 export function Spacer(props: SpacerProps): JSX.Element {
   const { className: customClassName = "", height, style: customStyle, width, ...rest } = props
 
-  const combinedClassName = normalizeWhitespace(`
-    ${SPACER_CLASS_NAME.BASE}
-    ${customClassName}
-  `)
+  const combinedClassName = spacerVariants({ className: customClassName })
 
   const combinedStyle = {
     ...customStyle,
@@ -24,6 +21,4 @@ export function Spacer(props: SpacerProps): JSX.Element {
   return <div className={combinedClassName} style={combinedStyle} {...rest} />
 }
 
-export const SPACER_CLASS_NAME = {
-  BASE: styles.spacer,
-} as const
+export const spacerVariants = cva(styles.spacer)

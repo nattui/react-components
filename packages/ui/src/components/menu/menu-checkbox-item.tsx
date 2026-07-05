@@ -1,7 +1,7 @@
 import { Menu as BaseMenu } from "@base-ui/react"
+import { cx } from "class-variance-authority"
 import type { JSX, ReactNode } from "react"
 import { MENU_CLASS_NAME } from "./menu-class-names"
-import { getMenuClassName } from "./menu-utils"
 
 export interface MenuCheckboxItemProps extends Omit<
   BaseMenu.CheckboxItem.Props,
@@ -27,7 +27,7 @@ export function MenuCheckboxItem(props: MenuCheckboxItemProps): JSX.Element {
     ...rest
   } = props
 
-  const combinedClassName = getMenuClassName(MENU_CLASS_NAME.CHECKBOX_ITEM, customClassName)
+  const combinedClassName = cx(MENU_CLASS_NAME.CHECKBOX_ITEM, customClassName)
   const currentIndicator = indicator ?? (
     <svg fill="none" height="16" viewBox="0 0 16 16" width="16">
       <path d="M3.5 8.5L6.5 11.5L12.5 4.5" stroke="currentColor" strokeWidth="2" />

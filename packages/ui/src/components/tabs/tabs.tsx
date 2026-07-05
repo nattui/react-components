@@ -1,6 +1,6 @@
 import { Tabs as BaseTabs } from "@base-ui/react"
+import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import { normalizeWhitespace } from "../../utils/normalize-whitespace"
 import styles from "./tabs.module.css"
 
 export interface TabsProps extends BaseTabs.Root.Props {}
@@ -8,14 +8,9 @@ export interface TabsProps extends BaseTabs.Root.Props {}
 export function Tabs(props: TabsProps): JSX.Element {
   const { className: customClassName = "", ...rest } = props
 
-  const combinedClassName = normalizeWhitespace(`
-    ${TABS_CLASS_NAME.BASE}
-    ${customClassName}
-  `)
+  const combinedClassName = tabsVariants({ className: customClassName })
 
   return <BaseTabs.Root className={combinedClassName} data-slot="tabs" {...rest} />
 }
 
-export const TABS_CLASS_NAME = {
-  BASE: styles.tabs,
-} as const
+export const tabsVariants = cva(styles.tabs)

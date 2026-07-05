@@ -1,6 +1,6 @@
 import { Tabs as BaseTabs } from "@base-ui/react"
+import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import { normalizeWhitespace } from "../../utils/normalize-whitespace"
 import styles from "./tabs-underline-tab.module.css"
 
 export interface TabsUnderlineTabProps extends Omit<BaseTabs.Tab.Props, "nativeButton"> {
@@ -10,10 +10,7 @@ export interface TabsUnderlineTabProps extends Omit<BaseTabs.Tab.Props, "nativeB
 export function TabsUnderlineTab(props: TabsUnderlineTabProps): JSX.Element {
   const { className: customClassName = "", isNativeButton = true, ...rest } = props
 
-  const combinedClassName = normalizeWhitespace(`
-    ${TABS_UNDERLINE_TAB_CLASS_NAME.BASE}
-    ${customClassName}
-  `)
+  const combinedClassName = tabsUnderlineTabVariants({ className: customClassName })
 
   return (
     <BaseTabs.Tab
@@ -25,6 +22,4 @@ export function TabsUnderlineTab(props: TabsUnderlineTabProps): JSX.Element {
   )
 }
 
-export const TABS_UNDERLINE_TAB_CLASS_NAME = {
-  BASE: styles.tabs_underline_tab,
-} as const
+export const tabsUnderlineTabVariants = cva(styles.tabs_underline_tab)

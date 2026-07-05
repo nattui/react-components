@@ -1,5 +1,5 @@
+import { cva } from "class-variance-authority"
 import type { ComponentProps, JSX } from "react"
-import { normalizeWhitespace } from "../../utils/normalize-whitespace"
 import inputStyles from "../input/input.module.css"
 import styles from "./textarea.module.css"
 
@@ -30,12 +30,10 @@ export function Textarea(props: TextareaProps): JSX.Element {
     ...rest
   } = props
 
-  const combinedClassName = normalizeWhitespace(`
-    ${TEXTAREA_CLASS_NAME.INPUT}
-    ${TEXTAREA_CLASS_NAME.BASE}
-    ${isRounded ? TEXTAREA_CLASS_NAME.ROUNDED.FULL : TEXTAREA_CLASS_NAME.ROUNDED.BASE}
-    ${customClassName}
-  `)
+  const combinedClassName = textareaVariants({
+    className: customClassName,
+    isRounded,
+  })
 
   return (
     <textarea
@@ -52,11 +50,14 @@ export function Textarea(props: TextareaProps): JSX.Element {
   )
 }
 
-export const TEXTAREA_CLASS_NAME = {
-  BASE: styles.textarea,
-  INPUT: inputStyles.input,
-  ROUNDED: {
-    BASE: inputStyles.input__rounded_base,
-    FULL: inputStyles.input__rounded_full,
+export const textareaVariants = cva([inputStyles.input, styles.textarea], {
+  defaultVariants: {
+    isRounded: false,
   },
-} as const
+  variants: {
+    isRounded: {
+      false: inputStyles.input__rounded_base,
+      true: inputStyles.input__rounded_full,
+    },
+  },
+})

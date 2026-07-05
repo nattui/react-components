@@ -1,6 +1,6 @@
 import { Drawer as BaseDrawer } from "@base-ui/react"
+import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import { normalizeWhitespace } from "../../utils/normalize-whitespace"
 import { DialogResponsiveBackdrop } from "./dialog-responsive-backdrop"
 import { DialogResponsiveBar } from "./dialog-responsive-bar"
 import { DialogResponsivePortal } from "./dialog-responsive-portal"
@@ -12,10 +12,7 @@ export interface DialogResponsivePopupProps extends BaseDrawer.Popup.Props {}
 export function DialogResponsivePopup(props: DialogResponsivePopupProps): JSX.Element {
   const { children, className: customClassName = "", ...rest } = props
 
-  const combinedClassName = normalizeWhitespace(`
-    ${DIALOG_RESPONSIVE_POPUP_CLASS_NAME.BASE}
-    ${customClassName}
-  `)
+  const combinedClassName = dialogResponsivePopupVariants({ className: customClassName })
 
   return (
     <DialogResponsivePortal>
@@ -34,6 +31,4 @@ export function DialogResponsivePopup(props: DialogResponsivePopupProps): JSX.El
   )
 }
 
-export const DIALOG_RESPONSIVE_POPUP_CLASS_NAME = {
-  BASE: styles.dialog_responsive_popup,
-} as const
+export const dialogResponsivePopupVariants = cva(styles.dialog_responsive_popup)

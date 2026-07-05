@@ -1,7 +1,7 @@
 // oxlint-disable complexity react/button-has-type unicorn/no-nested-ternary
 
+import { cva, type VariantProps } from "class-variance-authority"
 import type { ComponentProps, JSX, ReactNode } from "react"
-import { normalizeWhitespace } from "../../utils/normalize-whitespace"
 import { ButtonSpinner } from "./button-spinner"
 import styles from "./button.module.css"
 
@@ -27,12 +27,14 @@ interface ButtonInternalProps extends Omit<ComponentProps<"button">, "aria-press
   isLoading?: boolean
   isRounded?: boolean
   size?: ButtonSize
-  variant?: "ghost" | "primary" | "secondary"
+  variant?: ButtonVariant
 }
 
-type ButtonSize = keyof typeof BUTTON_CLASS_NAME.SIZE
+type ButtonSize = NonNullable<VariantProps<typeof buttonVariants>["size"]>
 
 type ButtonUnionProps = ButtonIconProps | ButtonProps
+
+type ButtonVariant = NonNullable<VariantProps<typeof buttonVariants>["variant"]>
 
 export function Button(props: ButtonUnionProps): JSX.Element {
   const {
@@ -52,15 +54,14 @@ export function Button(props: ButtonUnionProps): JSX.Element {
     ...rest
   } = props
 
-  const combinedClassName = normalizeWhitespace(`
-    ${BUTTON_CLASS_NAME.BASE}
-    ${BUTTON_CLASS_NAME.SIZE[size]}
-    ${BUTTON_CLASS_NAME.VARIANT[variant.toUpperCase() as keyof typeof BUTTON_CLASS_NAME.VARIANT]}
-    ${isFullWidth ? BUTTON_CLASS_NAME.WIDTH.FULL : BUTTON_CLASS_NAME.WIDTH.BASE}
-    ${isIconOnly ? BUTTON_CLASS_NAME.ICON_ONLY : ""}
-    ${isRounded ? BUTTON_CLASS_NAME.ROUNDED.FULL : BUTTON_CLASS_NAME.ROUNDED.BASE}
-    ${customClassName}
-  `)
+  const combinedClassName = buttonVariants({
+    className: customClassName,
+    isFullWidth,
+    isIconOnly,
+    isRounded,
+    size,
+    variant,
+  })
 
   return (
     <button
@@ -78,27 +79,38 @@ export function Button(props: ButtonUnionProps): JSX.Element {
   )
 }
 
-export const BUTTON_CLASS_NAME = {
-  BASE: styles.button,
-  ICON_ONLY: styles.button__icon_only,
-  ROUNDED: {
-    BASE: styles.button__rounded_base,
-    FULL: styles.button__rounded_full,
+export const buttonVariants = cva(styles.button, {
+  defaultVariants: {
+    isFullWidth: false,
+    isIconOnly: false,
+    isRounded: false,
+    size: 40,
+    variant: "primary",
   },
-  SIZE: {
-    32: styles.button__size_32,
-    36: styles.button__size_36,
-    40: styles.button__size_40,
-    44: styles.button__size_44,
-    48: styles.button__size_48,
+  variants: {
+    isFullWidth: {
+      false: styles.button__width_base,
+      true: styles.button__width_full,
+    },
+    isIconOnly: {
+      false: "",
+      true: styles.button__icon_only,
+    },
+    isRounded: {
+      false: styles.button__rounded_base,
+      true: styles.button__rounded_full,
+    },
+    size: {
+      32: styles.button__size_32,
+      36: styles.button__size_36,
+      40: styles.button__size_40,
+      44: styles.button__size_44,
+      48: styles.button__size_48,
+    },
+    variant: {
+      ghost: styles.button__variant_ghost,
+      primary: styles.button__variant_primary,
+      secondary: styles.button__variant_secondary,
+    },
   },
-  VARIANT: {
-    GHOST: styles.button__variant_ghost,
-    PRIMARY: styles.button__variant_primary,
-    SECONDARY: styles.button__variant_secondary,
-  },
-  WIDTH: {
-    BASE: styles.button__width_base,
-    FULL: styles.button__width_full,
-  },
-} as const
+})

@@ -1,3 +1,4 @@
+import { cva } from "class-variance-authority"
 import {
   createElement,
   type ComponentProps,
@@ -5,7 +6,6 @@ import {
   type ElementType,
   type JSX,
 } from "react"
-import { normalizeWhitespace } from "../../utils/normalize-whitespace"
 import styles from "./row.module.css"
 
 export type RowProps<ComponentType extends ElementType = "div"> = ComponentProps<ComponentType> &
@@ -37,10 +37,7 @@ export function Row(props: RowProps): JSX.Element {
 
   const Component = as
 
-  const combinedClassName = normalizeWhitespace(`
-    ${ROW_CLASS_NAME.BASE}
-    ${customClassName}
-  `)
+  const combinedClassName = rowVariants({ className: customClassName })
 
   const combinedStyle = {
     ...customStyle,
@@ -59,6 +56,4 @@ export function Row(props: RowProps): JSX.Element {
   })
 }
 
-export const ROW_CLASS_NAME = {
-  BASE: styles.row,
-} as const
+export const rowVariants = cva(styles.row)

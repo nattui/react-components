@@ -1,7 +1,7 @@
 // oxlint-disable jsx-a11y/no-autofocus
 
+import { cva, type VariantProps } from "class-variance-authority"
 import type { ComponentProps, JSX } from "react"
-import { normalizeWhitespace } from "../../utils/normalize-whitespace"
 import styles from "./input.module.css"
 
 export interface InputProps extends Omit<
@@ -19,7 +19,7 @@ export interface InputProps extends Omit<
   size?: InputSize
 }
 
-type InputSize = keyof typeof INPUT_CLASS_NAME.SIZE
+type InputSize = NonNullable<VariantProps<typeof inputVariants>["size"]>
 
 export function Input(props: InputProps): JSX.Element {
   const {
@@ -37,12 +37,11 @@ export function Input(props: InputProps): JSX.Element {
     ...rest
   } = props
 
-  const combinedClassName = normalizeWhitespace(`
-    ${INPUT_CLASS_NAME.BASE}
-    ${INPUT_CLASS_NAME.SIZE[size]}
-    ${isRounded ? INPUT_CLASS_NAME.ROUNDED.FULL : INPUT_CLASS_NAME.ROUNDED.BASE}
-    ${customClassName}
-  `)
+  const combinedClassName = inputVariants({
+    className: customClassName,
+    isRounded,
+    size,
+  })
 
   return (
     <input
@@ -60,17 +59,22 @@ export function Input(props: InputProps): JSX.Element {
   )
 }
 
-export const INPUT_CLASS_NAME = {
-  BASE: styles.input,
-  ROUNDED: {
-    BASE: styles.input__rounded_base,
-    FULL: styles.input__rounded_full,
+export const inputVariants = cva(styles.input, {
+  defaultVariants: {
+    isRounded: false,
+    size: 48,
   },
-  SIZE: {
-    32: styles.input__size_32,
-    36: styles.input__size_36,
-    40: styles.input__size_40,
-    44: styles.input__size_44,
-    48: styles.input__size_48,
+  variants: {
+    isRounded: {
+      false: styles.input__rounded_base,
+      true: styles.input__rounded_full,
+    },
+    size: {
+      32: styles.input__size_32,
+      36: styles.input__size_36,
+      40: styles.input__size_40,
+      44: styles.input__size_44,
+      48: styles.input__size_48,
+    },
   },
-} as const
+})

@@ -1,6 +1,6 @@
 import { Checkbox as BaseCheckbox } from "@base-ui/react"
+import { cva } from "class-variance-authority"
 import type { ComponentProps, JSX } from "react"
-import { normalizeWhitespace } from "../../utils/normalize-whitespace"
 import { CheckboxIcon } from "./checkbox-icon"
 import styles from "./checkbox.module.css"
 
@@ -9,10 +9,7 @@ export interface CheckboxProps extends ComponentProps<typeof BaseCheckbox.Root> 
 export function Checkbox(props: CheckboxProps): JSX.Element {
   const { children = undefined, className: customClassName = "", ...rest } = props
 
-  const combinedClassName = normalizeWhitespace(`
-    ${CHECKBOX_CLASS_NAME.BASE}
-    ${customClassName}
-  `)
+  const combinedClassName = checkboxVariants({ className: customClassName })
 
   return (
     <BaseCheckbox.Root className={combinedClassName} {...rest}>
@@ -23,6 +20,4 @@ export function Checkbox(props: CheckboxProps): JSX.Element {
   )
 }
 
-export const CHECKBOX_CLASS_NAME = {
-  BASE: styles.checkbox,
-} as const
+export const checkboxVariants = cva(styles.checkbox)

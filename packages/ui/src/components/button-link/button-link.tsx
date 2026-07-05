@@ -1,6 +1,5 @@
 import { createElement, type ComponentProps, type ElementType, type JSX } from "react"
-import { normalizeWhitespace } from "../../utils/normalize-whitespace"
-import { BUTTON_CLASS_NAME, type ButtonProps } from "../button/button"
+import { buttonVariants, type ButtonProps } from "../button/button"
 
 export type ButtonLinkProps<ComponentType extends ElementType = "a"> =
   ButtonLinkHrefProps<ComponentType> &
@@ -38,15 +37,14 @@ export function ButtonLink<ComponentType extends ElementType = "a">(
 
   const Component = as as ElementType
 
-  const combinedClassName = normalizeWhitespace(`
-    ${BUTTON_CLASS_NAME.BASE}
-    ${BUTTON_CLASS_NAME.SIZE[size as keyof typeof BUTTON_CLASS_NAME.SIZE]}
-    ${BUTTON_CLASS_NAME.VARIANT[variant.toUpperCase() as keyof typeof BUTTON_CLASS_NAME.VARIANT]}
-    ${isFullWidth ? BUTTON_CLASS_NAME.WIDTH.FULL : BUTTON_CLASS_NAME.WIDTH.BASE}
-    ${isIconOnly ? BUTTON_CLASS_NAME.ICON_ONLY : ""}
-    ${isRounded ? BUTTON_CLASS_NAME.ROUNDED.FULL : BUTTON_CLASS_NAME.ROUNDED.BASE}
-    ${customClassName}
-  `)
+  const combinedClassName = buttonVariants({
+    className: customClassName as string,
+    isFullWidth,
+    isIconOnly,
+    isRounded,
+    size: size as ButtonProps["size"],
+    variant: variant as ButtonProps["variant"],
+  })
 
   return createElement(Component, {
     className: combinedClassName,

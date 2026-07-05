@@ -1,6 +1,6 @@
 import { Tooltip as BaseTooltip } from "@base-ui/react"
+import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import { normalizeWhitespace } from "../../utils/normalize-whitespace"
 import styles from "./tooltip-popup.module.css"
 
 export interface TooltipPopupProps
@@ -15,10 +15,7 @@ export function TooltipPopup(props: TooltipPopupProps): JSX.Element {
     ...rest
   } = props
 
-  const combinedClassName = normalizeWhitespace(`
-    ${TOOLTIP_POPUP_CLASS_NAME.BASE}
-    ${customClassName}
-  `)
+  const combinedClassName = tooltipPopupVariants({ className: customClassName })
 
   return (
     <BaseTooltip.Portal className={styles.tooltip_popup_portal}>
@@ -32,6 +29,4 @@ export function TooltipPopup(props: TooltipPopupProps): JSX.Element {
   )
 }
 
-export const TOOLTIP_POPUP_CLASS_NAME = {
-  BASE: styles.tooltip_popup,
-} as const
+export const tooltipPopupVariants = cva(styles.tooltip_popup)

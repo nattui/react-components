@@ -1,6 +1,6 @@
 import { Drawer as BaseDrawer } from "@base-ui/react"
+import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import { normalizeWhitespace } from "../../utils/normalize-whitespace"
 import styles from "./dialog-responsive-viewport.module.css"
 
 export interface DialogResponsiveViewportProps extends BaseDrawer.Viewport.Props {}
@@ -8,10 +8,7 @@ export interface DialogResponsiveViewportProps extends BaseDrawer.Viewport.Props
 export function DialogResponsiveViewport(props: DialogResponsiveViewportProps): JSX.Element {
   const { className: customClassName = "", ...rest } = props
 
-  const combinedClassName = normalizeWhitespace(`
-    ${DIALOG_RESPONSIVE_VIEWPORT_CLASS_NAME.BASE}
-    ${customClassName}
-  `)
+  const combinedClassName = dialogResponsiveViewportVariants({ className: customClassName })
 
   return (
     <BaseDrawer.Viewport
@@ -22,6 +19,4 @@ export function DialogResponsiveViewport(props: DialogResponsiveViewportProps): 
   )
 }
 
-export const DIALOG_RESPONSIVE_VIEWPORT_CLASS_NAME = {
-  BASE: styles.dialog_responsive_viewport,
-} as const
+export const dialogResponsiveViewportVariants = cva(styles.dialog_responsive_viewport)

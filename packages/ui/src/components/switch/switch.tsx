@@ -1,6 +1,6 @@
 import { Switch as BaseSwitch } from "@base-ui/react"
+import { cva, type VariantProps } from "class-variance-authority"
 import type { ComponentProps, JSX } from "react"
-import { normalizeWhitespace } from "../../utils/normalize-whitespace"
 import styles from "./switch.module.css"
 
 export interface SwitchProps extends Omit<
@@ -15,7 +15,7 @@ export interface SwitchProps extends Omit<
   size?: SwitchSize
 }
 
-type SwitchSize = keyof typeof SWITCH_CLASS_NAME.SIZE
+type SwitchSize = NonNullable<VariantProps<typeof switchVariants>["size"]>
 
 export function Switch(props: SwitchProps): JSX.Element {
   const {
@@ -29,11 +29,10 @@ export function Switch(props: SwitchProps): JSX.Element {
     ...rest
   } = props
 
-  const combinedClassName = normalizeWhitespace(`
-    ${SWITCH_CLASS_NAME.BASE}
-    ${SWITCH_CLASS_NAME.SIZE[size]}
-    ${customClassName}
-  `)
+  const combinedClassName = switchVariants({
+    className: customClassName,
+    size,
+  })
 
   return (
     <BaseSwitch.Root
@@ -50,10 +49,14 @@ export function Switch(props: SwitchProps): JSX.Element {
   )
 }
 
-export const SWITCH_CLASS_NAME = {
-  BASE: styles.switch,
-  SIZE: {
-    18: styles.switch__size_18,
-    24: styles.switch__size_24,
+export const switchVariants = cva(styles.switch, {
+  defaultVariants: {
+    size: 24,
   },
-} as const
+  variants: {
+    size: {
+      18: styles.switch__size_18,
+      24: styles.switch__size_24,
+    },
+  },
+})

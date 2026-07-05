@@ -1,7 +1,7 @@
 import { Menu as BaseMenu } from "@base-ui/react"
+import { cx } from "class-variance-authority"
 import type { JSX } from "react"
 import { MENU_CLASS_NAME } from "./menu-class-names"
-import { getMenuClassName } from "./menu-utils"
 
 export interface MenuRadioGroupProps extends Omit<
   BaseMenu.RadioGroup.Props,
@@ -14,7 +14,7 @@ export interface MenuRadioGroupProps extends Omit<
 export function MenuRadioGroup(props: MenuRadioGroupProps): JSX.Element {
   const { className: customClassName = "", isDisabled = false, ...rest } = props
 
-  const combinedClassName = getMenuClassName(MENU_CLASS_NAME.RADIO_GROUP, customClassName)
+  const combinedClassName = cx(MENU_CLASS_NAME.RADIO_GROUP, customClassName)
 
   return (
     <BaseMenu.RadioGroup

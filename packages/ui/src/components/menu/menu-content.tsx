@@ -1,7 +1,7 @@
 import { Menu as BaseMenu } from "@base-ui/react"
+import { cx } from "class-variance-authority"
 import type { JSX } from "react"
 import { MENU_CLASS_NAME } from "./menu-class-names"
-import { getMenuClassName } from "./menu-utils"
 
 export interface MenuContentProps
   extends
@@ -47,7 +47,7 @@ export function MenuContent(props: MenuContentProps): JSX.Element {
     ...rest
   } = props
 
-  const combinedClassName = getMenuClassName(MENU_CLASS_NAME.CONTENT, customClassName)
+  const combinedClassName = cx(MENU_CLASS_NAME.CONTENT, customClassName)
 
   return (
     <BaseMenu.Portal container={container} data-slot="menu-portal" keepMounted={keepMounted}>

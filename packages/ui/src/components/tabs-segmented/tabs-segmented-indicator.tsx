@@ -1,6 +1,6 @@
 import { Tabs as BaseTabs } from "@base-ui/react"
+import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import { normalizeWhitespace } from "../../utils/normalize-whitespace"
 import styles from "./tabs-segmented-indicator.module.css"
 
 export interface TabsSegmentedIndicatorProps extends BaseTabs.Indicator.Props {}
@@ -8,10 +8,7 @@ export interface TabsSegmentedIndicatorProps extends BaseTabs.Indicator.Props {}
 export function TabsSegmentedIndicator(props: TabsSegmentedIndicatorProps): JSX.Element {
   const { className: customClassName = "", ...rest } = props
 
-  const combinedClassName = normalizeWhitespace(`
-    ${TABS_SEGMENTED_INDICATOR_CLASS_NAME.BASE}
-    ${customClassName}
-  `)
+  const combinedClassName = tabsSegmentedIndicatorVariants({ className: customClassName })
 
   return (
     <BaseTabs.Indicator
@@ -23,6 +20,4 @@ export function TabsSegmentedIndicator(props: TabsSegmentedIndicatorProps): JSX.
   )
 }
 
-export const TABS_SEGMENTED_INDICATOR_CLASS_NAME = {
-  BASE: styles.tabs_segmented_indicator,
-} as const
+export const tabsSegmentedIndicatorVariants = cva(styles.tabs_segmented_indicator)
