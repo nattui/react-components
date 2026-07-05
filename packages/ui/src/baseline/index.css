@@ -63,6 +63,7 @@ body > * {
     Button baseline
 */
 button {
+  cursor: pointer;
   text-align: start;
   user-select: none;
   width: fit-content;
