@@ -6,7 +6,7 @@ export const Route = createFileRoute("/test")({
     return (
       <Column className="gap-y-8">
         <Button2 className="">Click me</Button2>
-        <Button2 className="" disabled>
+        <Button2 className="" isDisabled>
           Disabled
         </Button2>
       </Column>
