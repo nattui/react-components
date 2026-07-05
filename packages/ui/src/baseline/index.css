@@ -59,95 +59,89 @@ body > * {
   isolation: isolate;
 }
 
-/*
+@layer base {
+  /*
     Button baseline
-*/
-button {
-  cursor: pointer;
-  text-align: start;
-  user-select: none;
-  width: fit-content;
-}
+  */
+  button {
+    cursor: pointer;
+    text-align: start;
+    user-select: none;
+    width: fit-content;
+  }
 
-/*
+  /*
     Apply a shared focus ring treatment to interactive controls
-*/
-a,
-button {
-  outline-color: var(--color-outline);
-  outline-offset: -2px;
-  outline-style: solid;
-  outline-width: 0;
-}
+  */
+  a,
+  button {
+    outline-color: var(--color-outline);
+    outline-offset: -2px;
+    outline-style: solid;
+    outline-width: 0;
+  }
 
-a:focus-visible,
-button:focus-visible {
-  outline-width: 2px;
-}
+  a:focus-visible,
+  button:focus-visible {
+    outline-width: 2px;
+  }
 
-/*
+  /*
     Avoid text overflows
-*/
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  overflow-wrap: break-word;
-}
+  */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    overflow-wrap: break-word;
+  }
 
-/*
+  /*
     Default heading typography
-*/
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--color-text-primary);
-  font-family: var(--font-heading);
-  font-weight: 500;
-}
+  */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--color-text-primary);
+    font-family: var(--font-heading);
+    font-weight: 500;
+  }
 
-/*
+  /*
     Improve paragraph wrapping for readability
-*/
-
-/*
-    Use a dedicated monospace font for code
-*/
-code {
-  font-family: var(--font-code);
-}
-
-/*
+  */
+  /*
     (Safari mobile) Remove inner shadows from form fields
-*/
-input,
-textarea {
-  -webkit-appearance: none;
-  appearance: none;
-}
+  */
+  input,
+  textarea {
+    -webkit-appearance: none;
+    appearance: none;
+  }
 
-/*
+  /*
     Hide number spin buttons in WebKit browsers
     Chrome, Safari, Edge, Opera
-*/
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  margin: 0;
-  -webkit-appearance: none;
-}
+  */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+  }
 
-/*
+  /*
     Hide number spin buttons in Firefox
-*/
-input[type="number"] {
-  -moz-appearance: textfield;
-  appearance: textfield;
+  */
+  input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
 }
 
 /*

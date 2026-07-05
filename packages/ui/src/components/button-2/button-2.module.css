@@ -5,16 +5,18 @@
   .base {
     align-items: center;
     column-gap: 8px;
+    cursor: pointer;
     display: inline-flex;
     font-size: 14px;
     font-weight: 500;
     justify-content: center;
     outline-color: transparent;
-    outline-offset: 2px !important;
+    outline-offset: 2px;
     outline-style: solid;
     outline-width: 2px;
     transition-duration: 150ms;
     transition-property: background-color, translate;
+    user-select: none;
   }
 
   .base:active:not(:disabled) {
@@ -29,7 +31,7 @@
   /* Disabled */
   /* =================================================== */
   .disabled {
-    cursor: not-allowed !important;
+    cursor: not-allowed;
     opacity: 0.5;
   }
 
@@ -37,8 +39,8 @@
   /* Loading */
   /* =================================================== */
   .loading {
-    /* color: transparent !important; */
-    cursor: not-allowed !important;
+    /* color: transparent ; */
+    cursor: not-allowed;
     opacity: 0.5;
   }
 
@@ -170,10 +172,10 @@
   /* Width */
   /* =================================================== */
   .width_base {
-    width: fit-content !important;
+    width: fit-content;
   }
 
   .width_full {
-    width: stretch !important;
+    width: stretch;
   }
 }
