@@ -7,6 +7,7 @@ import styles from "./button-2.module.css"
 interface Button2Props extends Omit<ComponentProps<"button">, "disabled"> {
   children?: number | number[] | string | string[]
   isDisabled?: ComponentProps<"button">["disabled"]
+  isFullWidth?: VariantProps<typeof button2>["isFullWidth"]
   isRounded?: VariantProps<typeof button2>["isRounded"]
   size?: VariantProps<typeof button2>["size"]
 }
@@ -16,6 +17,7 @@ export function Button2(props: Button2Props): JSX.Element {
     children = "",
     className = "",
     isDisabled = false,
+    isFullWidth = false,
     isRounded = false,
     type = "button",
     size = 40,
@@ -24,7 +26,7 @@ export function Button2(props: Button2Props): JSX.Element {
 
   return (
     <button
-      className={button2({ className, isRounded, size })}
+      className={button2({ className, isFullWidth, isRounded, size })}
       disabled={isDisabled}
       type={type}
       {...rest}
@@ -36,6 +38,10 @@ export function Button2(props: Button2Props): JSX.Element {
 
 const button2 = cva(styles.base, {
   variants: {
+    isFullWidth: {
+      false: styles.width_base,
+      true: styles.width_full,
+    },
     isRounded: {
       false: styles.rounded_base,
       true: styles.rounded_full,

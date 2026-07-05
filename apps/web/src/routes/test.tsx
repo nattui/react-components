@@ -29,6 +29,8 @@ export const Route = createFileRoute("/test")({
         <Button2 size={40}>Size 40</Button2>
         <Button2 size={44}>Size 44</Button2>
         <Button2 size={48}>Size 48</Button2>
+
+        <Button2 isFullWidth>Full width</Button2>
       </Column>
     )
   },

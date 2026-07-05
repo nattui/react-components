@@ -116,4 +116,15 @@
   .size_48 {
     height: 48px;
   }
+
+  /* =================================================== */
+  /* Width */
+  /* =================================================== */
+  .width_base {
+    width: fit-content !important;
+  }
+
+  .width_full {
+    width: stretch !important;
+  }
 }

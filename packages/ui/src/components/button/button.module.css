@@ -183,6 +183,6 @@
   }
 
   .button__width_full {
-    width: 100%;
+    width: stretch;
   }
 }
