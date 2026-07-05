@@ -17,6 +17,7 @@
     transition-duration: 150ms;
     transition-property: background-color, box-shadow, translate;
     user-select: none;
+    position: relative;
   }
 
   .base:active:not(:disabled) {
@@ -145,6 +146,21 @@
       inset 0 0 0 1px var(--color-primary),
       inset 0 1px 0 1px hsla(0, 0%, 100%, 0.25);
     color: #ffffff;
+  }
+
+  .variant_primary::after {
+    background-image: radial-gradient(75% 100% at top, hsla(0, 0%, 100%, 0.25), transparent);
+    content: "";
+    inset: 0;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    position: absolute;
+    transition-duration: 150ms;
+    transition-property: opacity;
+  }
+
+  .variant_primary:hover:not(:disabled)::after {
+    opacity: 0;
   }
 
   :global(.dark) .variant_primary {
