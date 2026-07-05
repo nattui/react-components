@@ -2,6 +2,7 @@ import { Column, Row, Spacer } from "@nattstack/ui"
 import type { JSX } from "react"
 import { LogoLink } from "#/components/logo-link"
 import { SidebarLink } from "#/components/sidebar-link"
+import { TabsTheme } from "#/components/tabs-theme.js"
 
 const COMPONENT_LINKS = [
   { label: "Button", slug: "button" },
@@ -36,6 +37,11 @@ export function Sidebar(): JSX.Element {
           </SidebarLink>
         ))}
       </Column>
+      <Spacer height={8} />
+
+      <Row className="ml-16">
+        <TabsTheme />
+      </Row>
     </Column>
   )
 }
