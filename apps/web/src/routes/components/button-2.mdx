@@ -1,0 +1,138 @@
+import { Button2, Row } from "@nattstack/ui"
+import { IconPlusOutline18 } from "@nattstack/icons"
+
+# Button 2
+
+Buttons are controls that let users take action, make choices, and move forward.
+
+```jsx
+// component
+
+<Button2>Button</Button2>
+```
+
+```jsx
+<Button2>Button</Button2>
+```
+
+## Variants
+
+The `Button2` comes with three variants: `primary` (default), `secondary`, and `ghost`.
+
+```jsx
+// component
+
+<Row alignItems="center" flexWrap="wrap" gap={16} justifyContent="center">
+  <Button2 variant="primary">Primary</Button2>
+  <Button2 variant="secondary">Secondary</Button2>
+  <Button2 variant="ghost">Ghost</Button2>
+</Row>
+```
+
+```jsx
+<Button2 variant="primary">Primary</Button2>
+<Button2 variant="secondary">Secondary</Button2>
+<Button2 variant="ghost">Ghost</Button2>
+```
+
+## Size
+
+The `Button2` comes with 5 sizes: `32`, `36`, `40` (default), `44`, and `48`.
+
+```jsx
+// component
+
+<Row alignItems="center" flexWrap="wrap" gap={16} justifyContent="center">
+  <Button2 size={32}>Button 32</Button2>
+  <Button2 size={36}>Button 36</Button2>
+  <Button2 size={40}>Button 40</Button2>
+  <Button2 size={44}>Button 44</Button2>
+  <Button2 size={48}>Button 48</Button2>
+</Row>
+```
+
+```jsx
+<Button2 size={32}>Button 32</Button2>
+<Button2 size={36}>Button 36</Button2>
+<Button2 size={40}>Button 40</Button2>
+<Button2 size={44}>Button 44</Button2>
+<Button2 size={48}>Button 48</Button2>
+```
+
+## Icons
+
+You can place icons **before** the label (`iconStart`), **after** the label (`iconEnd`), or use an icon as the button label when the action is clearly represented by the icon.
+
+You don't need to explicitly set the icon size. Icons inherit the correct sizing from the Button2 component by default.
+
+```jsx
+// component
+
+<Button2 iconEnd={<IconPlusOutline18 />} iconStart={<IconPlusOutline18 />}>
+  {"Button"}
+</Button2>
+```
+
+```jsx
+<Button2 iconEnd={<IconPlusOutline18 />} iconStart={<IconPlusOutline18 />}>
+  Button
+</Button2>
+```
+
+## Disabled
+
+Use the `isDisabled` prop to prevent a button from being interacted with. Disabled buttons communicate that an action is currently unavailable.
+
+```jsx
+// component
+
+<Button2 isDisabled>Disabled</Button2>
+```
+
+```jsx
+<Button2 isDisabled>Disabled</Button2>
+```
+
+## Loading
+
+Use the `isLoading` prop to indicate that an action is in progress. While loading, the button shows a spinner and cannot be interacted with.
+
+Do not add `isDisabled` when using `isLoading`, as the button is automatically non-interactive while loading.
+
+```jsx
+// component
+
+<Button2 isLoading>Loading</Button2>
+```
+
+```jsx
+<Button2 isLoading>Loading</Button2>
+```
+
+## Full width
+
+Use the `isFullWidth` prop to make the button expand to the full width of its container.
+
+```jsx
+// component
+
+<Button2 isFullWidth>Full width</Button2>
+```
+
+```jsx
+<Button2 isFullWidth>Full width</Button2>
+```
+
+## Rounded
+
+Use the `isRounded` prop to give the button fully rounded corners.
+
+```jsx
+// component
+
+<Button2 isRounded>Rounded</Button2>
+```
+
+```jsx
+<Button2 isRounded>Rounded</Button2>
+```

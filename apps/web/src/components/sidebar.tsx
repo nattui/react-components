@@ -6,6 +6,7 @@ import { TabsTheme } from "#/components/tabs-theme.js"
 
 const COMPONENT_LINKS = [
   { label: "Button", slug: "button" },
+  { label: "Button 2", slug: "button-2" },
   { label: "Dialog responsive", slug: "dialog-responsive" },
   { label: "Input", slug: "input" },
   { label: "Menu", slug: "menu" },
