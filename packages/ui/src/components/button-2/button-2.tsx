@@ -2,7 +2,7 @@
 
 import { cva, type VariantProps } from "class-variance-authority"
 import type { ComponentProps, JSX, ReactNode } from "react"
-import { ButtonSpinner } from "../button/button-spinner"
+import { ButtonSpinner } from "./button-spinner"
 import styles from "./button-2.module.css"
 
 export interface Button2Props extends Omit<ComponentProps<"button">, "disabled"> {

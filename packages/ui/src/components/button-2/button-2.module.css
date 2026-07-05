@@ -41,9 +41,12 @@
   /* Loading */
   /* =================================================== */
   .loading {
-    /* color: transparent ; */
     cursor: not-allowed;
     opacity: 0.5;
+  }
+
+  .loading > *:not([data-slot="button-spinner"]) {
+    color: transparent;
   }
 
   /* =================================================== */

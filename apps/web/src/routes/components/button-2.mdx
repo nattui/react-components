@@ -22,11 +22,9 @@ The `Button2` comes with three variants: `primary` (default), `secondary`, and `
 ```jsx
 // component
 
-<Row alignItems="center" flexWrap="wrap" gap={16} justifyContent="center">
-  <Button2 variant="primary">Primary</Button2>
-  <Button2 variant="secondary">Secondary</Button2>
-  <Button2 variant="ghost">Ghost</Button2>
-</Row>
+<Button2 variant="primary">Primary</Button2>
+<Button2 variant="secondary">Secondary</Button2>
+<Button2 variant="ghost">Ghost</Button2>
 ```
 
 ```jsx
@@ -42,13 +40,11 @@ The `Button2` comes with 5 sizes: `32`, `36`, `40` (default), `44`, and `48`.
 ```jsx
 // component
 
-<Row alignItems="center" flexWrap="wrap" gap={16} justifyContent="center">
-  <Button2 size={32}>Button 32</Button2>
-  <Button2 size={36}>Button 36</Button2>
-  <Button2 size={40}>Button 40</Button2>
-  <Button2 size={44}>Button 44</Button2>
-  <Button2 size={48}>Button 48</Button2>
-</Row>
+<Button2 size={32}>Button 32</Button2>
+<Button2 size={36}>Button 36</Button2>
+<Button2 size={40}>Button 40</Button2>
+<Button2 size={44}>Button 44</Button2>
+<Button2 size={48}>Button 48</Button2>
 ```
 
 ```jsx
@@ -86,11 +82,15 @@ Use the `isDisabled` prop to prevent a button from being interacted with. Disabl
 ```jsx
 // component
 
-<Button2 isDisabled>Disabled</Button2>
+<Button2 isDisabled variant="primary">Disabled</Button2>
+<Button2 isDisabled variant="secondary">Disabled</Button2>
+<Button2 isDisabled variant="ghost">Disabled</Button2>
 ```
 
 ```jsx
-<Button2 isDisabled>Disabled</Button2>
+<Button2 isDisabled variant="primary">Disabled</Button2>
+<Button2 isDisabled variant="secondary">Disabled</Button2>
+<Button2 isDisabled variant="ghost">Disabled</Button2>
 ```
 
 ## Loading
@@ -102,11 +102,15 @@ Do not add `isDisabled` when using `isLoading`, as the button is automatically n
 ```jsx
 // component
 
-<Button2 isLoading>Loading</Button2>
+<Button2 isLoading variant="primary">Loading</Button2>
+<Button2 isLoading variant="secondary">Loading</Button2>
+<Button2 isLoading variant="ghost">Loading</Button2>
 ```
 
 ```jsx
-<Button2 isLoading>Loading</Button2>
+<Button2 isLoading variant="primary">Loading</Button2>
+<Button2 isLoading variant="secondary">Loading</Button2>
+<Button2 isLoading variant="ghost">Loading</Button2>
 ```
 
 ## Full width
@@ -130,9 +134,13 @@ Use the `isRounded` prop to give the button fully rounded corners.
 ```jsx
 // component
 
-<Button2 isRounded>Rounded</Button2>
+<Button2 isRounded variant="primary">Rounded</Button2>
+<Button2 isRounded variant="secondary">Rounded</Button2>
+<Button2 isRounded variant="ghost">Rounded</Button2>
 ```
 
 ```jsx
-<Button2 isRounded>Rounded</Button2>
+<Button2 isRounded variant="primary">Rounded</Button2>
+<Button2 isRounded variant="secondary">Rounded</Button2>
+<Button2 isRounded variant="ghost">Rounded</Button2>
 ```
