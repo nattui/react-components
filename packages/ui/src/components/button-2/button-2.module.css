@@ -156,7 +156,7 @@
     mix-blend-mode: overlay;
     pointer-events: none;
     position: absolute;
-    transition-duration: 150ms;
+    transition-duration: inherit;
     transition-property: opacity;
   }
 
