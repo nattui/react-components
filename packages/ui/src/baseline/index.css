@@ -64,6 +64,7 @@ body > * {
 */
 button {
   text-align: start;
+  user-select: none;
   width: fit-content;
 }
 
