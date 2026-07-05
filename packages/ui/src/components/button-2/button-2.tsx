@@ -1,12 +1,14 @@
 // oxlint-disable react/button-has-type
 
 import { cva, type VariantProps } from "class-variance-authority"
-import type { ComponentProps, JSX } from "react"
+import type { ComponentProps, JSX, ReactNode } from "react"
 import { ButtonSpinner } from "../button/button-spinner"
 import styles from "./button-2.module.css"
 
 export interface Button2Props extends Omit<ComponentProps<"button">, "disabled"> {
   children?: number | number[] | string | string[]
+  iconEnd?: ReactNode
+  iconStart?: ReactNode
   isDisabled?: ComponentProps<"button">["disabled"]
   isFullWidth?: VariantProps<typeof button2>["isFullWidth"]
   isLoading?: ComponentProps<"button">["disabled"]
@@ -20,6 +22,8 @@ export function Button2(props: Button2Props): JSX.Element {
     children = "",
     className = "",
     isDisabled = false,
+    iconStart = "",
+    iconEnd = "",
     isFullWidth = false,
     isLoading = false,
     isRounded = false,
@@ -45,7 +49,9 @@ export function Button2(props: Button2Props): JSX.Element {
       {...rest}
     >
       {isLoading && <ButtonSpinner />}
+      {iconStart}
       <span>{children}</span>
+      {iconEnd}
     </button>
   )
 }

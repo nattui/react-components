@@ -1,3 +1,4 @@
+import { IconPlusOutline18 } from "@nattstack/icons"
 import { Button2, Column } from "@nattstack/ui"
 import { createFileRoute } from "@tanstack/react-router"
 
@@ -37,6 +38,10 @@ export const Route = createFileRoute("/test")({
         <Button2 variant="ghost">Ghost</Button2>
         <Button2 variant="primary">Primary</Button2>
         <Button2 variant="secondary">Secondary</Button2>
+
+        <Button2 iconStart={<IconPlusOutline18 />} variant="secondary">
+          Secondary
+        </Button2>
       </Column>
     )
   },
