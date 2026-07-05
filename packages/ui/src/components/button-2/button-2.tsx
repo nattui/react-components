@@ -18,4 +18,4 @@ export function Button2(props: Button2Props): JSX.Element {
   )
 }
 
-const button2 = cva(styles.button_2)
+const button2 = cva(styles.base)

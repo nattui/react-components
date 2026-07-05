@@ -1,6 +1,42 @@
 @layer components {
-  .button_2 {
+  .base {
+    align-items: center;
+    background-color: var(--color-primary);
+    border-radius: 10px;
+    color: #ffffff;
+    display: inline-flex;
     font-size: 14px;
     font-weight: 500;
+    height: 40px;
+    justify-content: center;
+    outline-color: transparent;
+    outline-offset: 2px !important; /* Override baseline */
+    outline-style: solid;
+    outline-width: 2px;
+    padding: 0 14px;
+    transition-duration: 150ms;
+    transition-property: background-color, translate;
+  }
+
+  .base:active:not(:disabled) {
+    translate: 0 1px;
+  }
+
+  .base:disabled {
+    cursor: not-allowed !important;
+    opacity: 0.5;
+  }
+
+  .base:focus-visible {
+    outline-color: var(--color-outline);
+  }
+
+  .base:hover:not(:disabled) {
+    --color-mixed: #000000;
+    background-color: color-mix(in oklab, var(--color-primary) 100%, var(--color-mixed) 7.5%);
+  }
+
+  :global(.dark) .base:hover:not(:disabled) {
+    --color-mixed: #ffffff;
   }
 }
