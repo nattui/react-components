@@ -15,7 +15,7 @@
     outline-style: solid;
     outline-width: 2px;
     transition-duration: 150ms;
-    transition-property: background-color, translate;
+    transition-property: background-color, box-shadow, translate;
     user-select: none;
   }
 
@@ -141,12 +141,20 @@
   /* Primary =========================================== */
   .variant_primary {
     background-color: var(--color-primary);
+    box-shadow:
+      inset 0 0 0 1px var(--color-primary),
+      inset 0 1px 0 1px hsla(0, 0%, 100%, 0.25);
     color: #ffffff;
+  }
+
+  :global(.dark) .variant_primary {
+    box-shadow: inset 0 1px 0 0 hsla(0, 0%, 100%, 0.25);
   }
 
   .variant_primary:hover:not(:disabled) {
     --color-mixed: #000000;
     background-color: color-mix(in oklab, var(--color-primary) 100%, var(--color-mixed) 10%);
+    box-shadow: none;
   }
 
   :global(.dark) .variant_primary:hover:not(:disabled) {
@@ -155,17 +163,25 @@
 
   /* Secondary ========================================= */
   .variant_secondary {
+    --color-direction: -1px;
+    --color-text: #000000;
+    --color-shadow: #0000001a;
     background-color: var(--color-bg-shell-outer);
-    box-shadow: 0 0 0 1px var(--color-border) inset;
-    color: #000000;
+    box-shadow:
+      inset 0 var(--color-direction) 0 0 var(--color-shadow),
+      0 0 0 1px var(--color-border) inset;
+    color: var(--color-text);
+  }
+
+  :global(.dark) .variant_secondary {
+    --color-direction: 1px;
+    --color-text: #ffffff;
+    --color-shadow: #ffffff1a;
   }
 
   .variant_secondary:hover:not(:disabled) {
     background-color: var(--color-gray-4);
-  }
-
-  :global(.dark) .variant_secondary {
-    color: #ffffff;
+    box-shadow: none;
   }
 
   /* =================================================== */
