@@ -4,12 +4,13 @@ import { cva, type VariantProps } from "class-variance-authority"
 import type { ComponentProps, JSX } from "react"
 import styles from "./button-2.module.css"
 
-interface Button2Props extends Omit<ComponentProps<"button">, "disabled"> {
+export interface Button2Props extends Omit<ComponentProps<"button">, "disabled"> {
   children?: number | number[] | string | string[]
   isDisabled?: ComponentProps<"button">["disabled"]
   isFullWidth?: VariantProps<typeof button2>["isFullWidth"]
   isRounded?: VariantProps<typeof button2>["isRounded"]
   size?: VariantProps<typeof button2>["size"]
+  variant?: VariantProps<typeof button2>["variant"]
 }
 
 export function Button2(props: Button2Props): JSX.Element {
@@ -20,13 +21,14 @@ export function Button2(props: Button2Props): JSX.Element {
     isFullWidth = false,
     isRounded = false,
     type = "button",
+    variant = "primary",
     size = 40,
     ...rest
   } = props
 
   return (
     <button
-      className={button2({ className, isFullWidth, isRounded, size })}
+      className={button2({ className, isFullWidth, isRounded, size, variant })}
       disabled={isDisabled}
       type={type}
       {...rest}
@@ -36,7 +38,7 @@ export function Button2(props: Button2Props): JSX.Element {
   )
 }
 
-const button2 = cva(styles.base, {
+export const button2 = cva(styles.base, {
   variants: {
     isFullWidth: {
       false: styles.width_base,
@@ -52,6 +54,11 @@ const button2 = cva(styles.base, {
       40: styles.size_40,
       44: styles.size_44,
       48: styles.size_48,
+    },
+    variant: {
+      ghost: styles.variant_ghost,
+      primary: styles.variant_primary,
+      secondary: styles.variant_secondary,
     },
   },
 })

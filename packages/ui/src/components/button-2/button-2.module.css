@@ -4,8 +4,7 @@
   /* =================================================== */
   .base {
     align-items: center;
-    background-color: var(--color-primary);
-    color: #ffffff;
+    column-gap: 8px;
     display: inline-flex;
     font-size: 14px;
     font-weight: 500;
@@ -29,15 +28,6 @@
 
   .base:focus-visible {
     outline-color: var(--color-outline);
-  }
-
-  .base:hover:not(:disabled) {
-    --color-mixed: #000000;
-    background-color: color-mix(in oklab, var(--color-primary) 100%, var(--color-mixed) 7.5%);
-  }
-
-  :global(.dark) .base:hover:not(:disabled) {
-    --color-mixed: #ffffff;
   }
 
   /* =================================================== */
@@ -115,6 +105,53 @@
 
   .size_48 {
     height: 48px;
+  }
+
+  /* =================================================== */
+  /* Variant */
+  /* =================================================== */
+  /* Ghost ============================================= */
+  .variant_ghost {
+    background-color: transparent;
+    color: #000000;
+  }
+
+  .variant_ghost:hover:not(:disabled) {
+    background-color: var(--color-gray-4);
+  }
+
+  :global(.dark) .variant_ghost {
+    color: #ffffff;
+  }
+
+  /* Primary =========================================== */
+  .variant_primary {
+    background-color: var(--color-primary);
+    color: #ffffff;
+  }
+
+  .variant_primary:hover:not(:disabled) {
+    --color-mixed: #000000;
+    background-color: color-mix(in oklab, var(--color-primary) 100%, var(--color-mixed) 10%);
+  }
+
+  :global(.dark) .variant_primary:hover:not(:disabled) {
+    --color-mixed: #ffffff;
+  }
+
+  /* Secondary ========================================= */
+  .variant_secondary {
+    background-color: var(--color-bg-shell-outer);
+    box-shadow: 0 0 0 1px var(--color-border) inset;
+    color: #000000;
+  }
+
+  .variant_secondary:hover:not(:disabled) {
+    background-color: var(--color-gray-4);
+  }
+
+  :global(.dark) .variant_secondary {
+    color: #ffffff;
   }
 
   /* =================================================== */
