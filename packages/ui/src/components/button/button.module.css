@@ -150,6 +150,13 @@
       inset 0 0 0 1px var(--color-primary),
       inset 0 1px 0 1px hsla(0, 0%, 100%, 0.25);
     color: #ffffff;
+    /*
+        Contain the ::after mix-blend-mode inside the button. Without this the
+        blend escapes to the nearest stacking context (e.g. an isolated fixed
+        header), which disables backdrop-filter for every element in that
+        context in Chromium.
+    */
+    isolation: isolate;
   }
 
   .variant_primary::after {
