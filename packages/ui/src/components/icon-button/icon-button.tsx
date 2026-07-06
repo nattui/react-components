@@ -1,11 +1,10 @@
-import { cva } from "class-variance-authority"
+import { cva, cx } from "class-variance-authority"
 import type { JSX, ReactNode } from "react"
-import type { ButtonProps } from "../button/button"
+import { button, type ButtonProps } from "../button/button"
 import { ButtonSpinner } from "../button/button-spinner"
-import buttonStyles from "../button/button.module.css"
 import styles from "./icon-button.module.css"
 
-interface IconButtonProps extends Omit<
+export interface IconButtonProps extends Omit<
   ButtonProps,
   "children" | "iconEnd" | "iconStart" | "isFullWidth"
 > {
@@ -26,14 +25,19 @@ export function IconButton(props: IconButtonProps): JSX.Element {
 
   return (
     <button
-      className={iconButton({
-        className,
-        isDisabled,
-        isLoading,
-        isRounded,
-        size,
-        variant,
-      })}
+      className={cx(
+        button({
+          isDisabled,
+          isLoading,
+          isRounded,
+          size,
+          variant,
+        }),
+        iconButton({
+          className,
+          size,
+        }),
+      )}
       disabled={isDisabled || isLoading}
       type="button"
       {...rest}
@@ -44,29 +48,14 @@ export function IconButton(props: IconButtonProps): JSX.Element {
   )
 }
 
-export const iconButton = cva([buttonStyles.base, styles.base], {
+export const iconButton = cva(styles.base, {
   variants: {
-    isDisabled: {
-      true: buttonStyles.disabled,
-    },
-    isLoading: {
-      true: buttonStyles.loading,
-    },
-    isRounded: {
-      false: buttonStyles.rounded_base,
-      true: buttonStyles.rounded_full,
-    },
     size: {
       32: styles.size_32,
       36: styles.size_36,
       40: styles.size_40,
       44: styles.size_44,
       48: styles.size_48,
-    },
-    variant: {
-      ghost: buttonStyles.variant_ghost,
-      primary: buttonStyles.variant_primary,
-      secondary: buttonStyles.variant_secondary,
     },
   },
 })
