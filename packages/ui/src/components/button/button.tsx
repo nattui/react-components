@@ -1,5 +1,3 @@
-// oxlint-disable react/button-has-type
-
 import { cva, type VariantProps } from "class-variance-authority"
 import type { ComponentProps, JSX, ReactNode } from "react"
 import { ButtonSpinner } from "./button-spinner"
@@ -27,7 +25,6 @@ export function Button(props: ButtonProps): JSX.Element {
     isFullWidth = false,
     isLoading = false,
     isRounded = false,
-    type = "button",
     variant = "primary",
     size = 40,
     ...rest
@@ -45,7 +42,7 @@ export function Button(props: ButtonProps): JSX.Element {
         variant,
       })}
       disabled={isDisabled || isLoading}
-      type={type}
+      type="button"
       {...rest}
     >
       {isLoading && <ButtonSpinner />}

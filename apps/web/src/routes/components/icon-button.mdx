@@ -1,0 +1,168 @@
+import { ButtonLink, IconButton, Row } from "@nattstack/ui"
+import { IconPlusOutline18 } from "@nattstack/icons"
+
+# Icon button
+
+Icon buttons are controls that let users take action, make choices, and move forward.
+
+```jsx
+// component
+
+<IconButton>
+  <IconPlusOutline18 />
+</IconButton>
+```
+
+```jsx
+<IconButton>
+  <IconPlusOutline18 />
+</IconButton>
+```
+
+## Variants
+
+The `IconButton` comes with three variants: `primary` (default), `secondary`, and `ghost`.
+
+```jsx
+// component
+
+<IconButton variant="primary"><IconPlusOutline18 /></IconButton>
+<IconButton variant="secondary"><IconPlusOutline18 /></IconButton>
+<IconButton variant="ghost"><IconPlusOutline18 /></IconButton>
+```
+
+```jsx
+<IconButton variant="primary"><IconPlusOutline18 /></IconButton>
+<IconButton variant="secondary"><IconPlusOutline18 /></IconButton>
+<IconButton variant="ghost"><IconPlusOutline18 /></IconButton>
+```
+
+## Size
+
+The `IconButton` comes with 5 sizes: `32`, `36`, `40` (default), `44`, and `48`.
+
+```jsx
+// component
+
+<IconButton size={32}><IconPlusOutline18 /></IconButton>
+<IconButton size={36}><IconPlusOutline18 /></IconButton>
+<IconButton size={40}><IconPlusOutline18 /></IconButton>
+<IconButton size={44}><IconPlusOutline18 /></IconButton>
+<IconButton size={48}><IconPlusOutline18 /></IconButton>
+```
+
+```jsx
+<IconButton size={32}><IconPlusOutline18 /></IconButton>
+<IconButton size={36}><IconPlusOutline18 /></IconButton>
+<IconButton size={40}><IconPlusOutline18 /></IconButton>
+<IconButton size={44}><IconPlusOutline18 /></IconButton>
+<IconButton size={48}><IconPlusOutline18 /></IconButton>
+```
+
+## Icons
+
+```jsx
+// component
+
+<IconButton>
+  <IconPlusOutline18 />
+</IconButton>
+```
+
+```jsx
+<IconButton>
+  <IconPlusOutline18 />
+</IconButton>
+```
+
+## Disabled
+
+Use the `isDisabled` prop to prevent a button from being interacted with. Disabled buttons communicate that an action is currently unavailable.
+
+```jsx
+// component
+
+<IconButton isDisabled variant="primary"><IconPlusOutline18 /></IconButton>
+<IconButton isDisabled variant="secondary"><IconPlusOutline18 /></IconButton>
+<IconButton isDisabled variant="ghost"><IconPlusOutline18 /></IconButton>
+```
+
+```jsx
+<IconButton isDisabled variant="primary"><IconPlusOutline18 /></IconButton>
+<IconButton isDisabled variant="secondary"><IconPlusOutline18 /></IconButton>
+<IconButton isDisabled variant="ghost"><IconPlusOutline18 /></IconButton>
+```
+
+## Loading
+
+Use the `isLoading` prop to indicate that an action is in progress. While loading, the button shows a spinner and cannot be interacted with.
+
+Do not add `isDisabled` when using `isLoading`, as the button is automatically non-interactive while loading.
+
+```jsx
+// component
+
+<IconButton isLoading variant="primary"><IconPlusOutline18 /></IconButton>
+<IconButton isLoading variant="secondary"><IconPlusOutline18 /></IconButton>
+<IconButton isLoading variant="ghost"><IconPlusOutline18 /></IconButton>
+```
+
+```jsx
+<IconButton isLoading variant="primary"><IconPlusOutline18 /></IconButton>
+<IconButton isLoading variant="secondary"><IconPlusOutline18 /></IconButton>
+<IconButton isLoading variant="ghost"><IconPlusOutline18 /></IconButton>
+```
+
+## Full width
+
+Use the `isFullWidth` prop to make the button expand to the full width of its container.
+
+```jsx
+// component
+
+<IconButton isFullWidth>
+  <IconPlusOutline18 />
+</IconButton>
+```
+
+```jsx
+<IconButton isFullWidth>
+  <IconPlusOutline18 />
+</IconButton>
+```
+
+## Rounded
+
+Use the `isRounded` prop to give the button fully rounded corners.
+
+```jsx
+// component
+
+<IconButton isRounded variant="primary"><IconPlusOutline18 /></IconButton>
+<IconButton isRounded variant="secondary"><IconPlusOutline18 /></IconButton>
+<IconButton isRounded variant="ghost"><IconPlusOutline18 /></IconButton>
+```
+
+```jsx
+<IconButton isRounded variant="primary"><IconPlusOutline18 /></IconButton>
+<IconButton isRounded variant="secondary"><IconPlusOutline18 /></IconButton>
+<IconButton isRounded variant="ghost"><IconPlusOutline18 /></IconButton>
+```
+
+## Icon button
+
+Use the `IconButton` component to create a button that only shows an icon.
+
+```jsx
+// component
+
+<IconButton variant="primary"><IconPlusOutline18 /></IconButton>
+<IconButton variant="secondary"><IconPlusOutline18 /></IconButton>
+<IconButton variant="ghost"><IconPlusOutline18 /></IconButton>
+```
+
+```jsx
+<IconButton variant="primary"><IconPlusOutline18 /></IconButton>
+<IconButton variant="secondary"><IconPlusOutline18 /></IconButton>
+<IconButton variant="ghost"><IconPlusOutline18 /></IconButton>
+```

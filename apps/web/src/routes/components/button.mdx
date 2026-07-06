@@ -1,4 +1,4 @@
-import { Button, ButtonLink, Row } from "@nattstack/ui"
+import { Button, ButtonLink, IconButton, Row } from "@nattstack/ui"
 import { IconPlusOutline18 } from "@nattstack/icons"
 
 # Button
@@ -145,7 +145,25 @@ Use the `isRounded` prop to give the button fully rounded corners.
 <Button isRounded variant="ghost">Rounded</Button>
 ```
 
-## Button Link
+## Icon button
+
+Use the `IconButton` component to create a button that only shows an icon.
+
+```jsx
+// component
+
+<IconButton variant="primary"><IconPlusOutline18 /></IconButton>
+<IconButton variant="secondary"><IconPlusOutline18 /></IconButton>
+<IconButton variant="ghost"><IconPlusOutline18 /></IconButton>
+```
+
+```jsx
+<IconButton variant="primary"><IconPlusOutline18 /></IconButton>
+<IconButton variant="secondary"><IconPlusOutline18 /></IconButton>
+<IconButton variant="ghost"><IconPlusOutline18 /></IconButton>
+```
+
+## Button link
 
 Use the `ButtonLink` component to create a link that looks like a button.
 

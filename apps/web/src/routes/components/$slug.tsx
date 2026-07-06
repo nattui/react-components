@@ -6,6 +6,7 @@ import { InputContent } from "#/routes/components/-input-content"
 import { ThemeContent } from "#/routes/components/-theme-content"
 import ButtonContent from "#/routes/components/button.mdx"
 import DialogResponsiveContent from "#/routes/components/dialog-responsive.mdx"
+import IconButtonContent from "#/routes/components/icon-button.mdx"
 import MenuContent from "#/routes/components/menu.mdx"
 import SwitchContent from "#/routes/components/switch.mdx"
 import TabsPillContent from "#/routes/components/tabs-pill.mdx"
@@ -30,6 +31,10 @@ const COMPONENT_PAGES: Record<string, ComponentPage> = {
   "dialog-responsive": {
     Content: DialogResponsiveContent,
     title: "DialogResponsive",
+  },
+  "icon-button": {
+    Content: IconButtonContent,
+    title: "IconButton",
   },
   input: {
     Content: InputContent,
