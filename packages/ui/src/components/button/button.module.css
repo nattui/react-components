@@ -155,6 +155,11 @@
         blend escapes to the nearest stacking context (e.g. an isolated fixed
         header), which disables backdrop-filter for every element in that
         context in Chromium.
+
+        See: https://issues.chromium.org/issues/40690926
+        See: https://issues.chromium.org/issues/40794542
+        See: https://stackoverflow.com/q/66204563
+        See: https://drafts.fxtf.org/filter-effects-2/#BackdropRoot
     */
     isolation: isolate;
   }
