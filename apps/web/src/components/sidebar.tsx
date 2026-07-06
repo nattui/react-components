@@ -31,7 +31,7 @@ export function Sidebar(): JSX.Element {
       <Spacer height={16} />
 
       {/* Middle */}
-      <Column className="gap-y-2 px-8">
+      <Column className="gap-y-2 overflow-y-auto px-8">
         {COMPONENT_LINKS.map(({ label, slug }) => (
           <SidebarLink key={slug} params={{ slug }} to="/components/$slug">
             {label}
@@ -41,7 +41,7 @@ export function Sidebar(): JSX.Element {
       </Column>
       <Spacer height={8} />
 
-      <Row className="ml-16">
+      <Row className="mt-auto mb-16 ml-16">
         <TabsTheme />
       </Row>
     </Column>
