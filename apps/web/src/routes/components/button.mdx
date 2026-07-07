@@ -143,7 +143,7 @@ Use the `isRounded` prop to give the button fully rounded corners.
 
 ## Button link
 
-Use the `ButtonLink` component to create a link that looks like a button.
+Use the `ButtonLink` component to create a link that looks like a button. It renders an `<a>` element by default.
 
 ```jsx
 // component
@@ -163,4 +163,10 @@ Use the `ButtonLink` component to create a link that looks like a button.
   rel="noopener noreferrer"
   target="_blank"
 />
+```
+
+Use the `as` prop to render a custom link component, such as your router's `Link`.
+
+```jsx
+<ButtonLink as={Link} label="Home" to="/" />
 ```
