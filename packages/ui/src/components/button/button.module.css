@@ -47,6 +47,7 @@
 
   .loading > *:not([data-slot="button-spinner"]) {
     color: transparent;
+    text-shadow: none;
   }
 
   /* =================================================== */
