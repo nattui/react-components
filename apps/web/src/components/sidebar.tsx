@@ -21,7 +21,7 @@ const COMPONENT_LINKS = [
 
 export function Sidebar(): JSX.Element {
   return (
-    <Column as="aside" className="sticky top-0 left-0 h-dvh w-full max-w-[200px]">
+    <Column as="aside" className="sticky top-0 left-0 h-dvh w-full max-w-[200px] shrink-0">
       <Spacer height={8} />
 
       {/* Top */}
