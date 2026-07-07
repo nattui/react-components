@@ -80,7 +80,7 @@ export function LogoLink(props: LogoLinkProps): JSX.Element {
   return (
     <Link
       className="
-        flex w-fit items-center rounded-full p-8 transition-opacity select-none
+        rounded-10 flex w-fit items-center p-8 transition-opacity select-none
         hover:opacity-75
       "
       onMouseEnter={handleMouseEnter}
