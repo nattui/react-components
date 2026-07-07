@@ -6,42 +6,30 @@ export const Route = createFileRoute("/test")({
   component: function RouteComponent() {
     return (
       <Column className="gap-y-8">
-        <Button>Click me</Button>
+        <Button label="Click me" />
 
-        <Button isDisabled>Disabled</Button>
-        <Button isLoading>Loading</Button>
+        <Button isDisabled label="Disabled" />
+        <Button isLoading label="Loading" />
 
-        <Button isRounded size={32}>
-          Size 32
-        </Button>
-        <Button isRounded size={36}>
-          Size 36
-        </Button>
-        <Button isRounded size={40}>
-          Size 40
-        </Button>
-        <Button isRounded size={44}>
-          Size 44
-        </Button>
-        <Button isRounded size={48}>
-          Size 48
-        </Button>
+        <Button isRounded label="Size 32" size={32} />
+        <Button isRounded label="Size 36" size={36} />
+        <Button isRounded label="Size 40" size={40} />
+        <Button isRounded label="Size 44" size={44} />
+        <Button isRounded label="Size 48" size={48} />
 
-        <Button size={32}>Size 32</Button>
-        <Button size={36}>Size 36</Button>
-        <Button size={40}>Size 40</Button>
-        <Button size={44}>Size 44</Button>
-        <Button size={48}>Size 48</Button>
+        <Button label="Size 32" size={32} />
+        <Button label="Size 36" size={36} />
+        <Button label="Size 40" size={40} />
+        <Button label="Size 44" size={44} />
+        <Button label="Size 48" size={48} />
 
-        <Button isFullWidth>Full width</Button>
+        <Button isFullWidth label="Full width" />
 
-        <Button variant="ghost">Ghost</Button>
-        <Button variant="primary">Primary</Button>
-        <Button variant="secondary">Secondary</Button>
+        <Button label="Ghost" variant="ghost" />
+        <Button label="Primary" variant="primary" />
+        <Button label="Secondary" variant="secondary" />
 
-        <Button iconStart={<IconPlusOutline18 />} variant="secondary">
-          Secondary
-        </Button>
+        <Button iconStart={<IconPlusOutline18 />} label="Secondary" variant="secondary" />
       </Column>
     )
   },

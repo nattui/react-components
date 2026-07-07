@@ -4,7 +4,10 @@ import { button, type ButtonProps } from "../button/button"
 export type ButtonLinkProps<ComponentType extends ElementType = "a"> =
   ButtonLinkHrefProps<ComponentType> &
     ButtonLinkInternalProps<ComponentType> &
-    Omit<ComponentProps<ComponentType>, "href" | keyof ButtonLinkInternalProps<ComponentType>>
+    Omit<
+      ComponentProps<ComponentType>,
+      "children" | "href" | keyof ButtonLinkInternalProps<ComponentType>
+    >
 
 type ButtonLinkHrefProps<ComponentType extends ElementType> =
   // Router link components often narrow `href`, but concrete URLs should remain valid.
@@ -16,7 +19,7 @@ type ButtonLinkHrefProps<ComponentType extends ElementType> =
 
 interface ButtonLinkInternalProps<ComponentType extends ElementType> extends Pick<
   ButtonProps,
-  "isFullWidth" | "isRounded" | "size" | "variant"
+  "isFullWidth" | "isRounded" | "label" | "size" | "variant"
 > {
   as?: ComponentType
 }
@@ -26,10 +29,10 @@ export function ButtonLink<ComponentType extends ElementType = "a">(
 ): JSX.Element {
   const {
     as = "a",
-    children,
     className: customClassName = "",
     isFullWidth = false,
     isRounded = false,
+    label = "",
     size = 40,
     variant = "primary",
     ...rest
@@ -47,7 +50,7 @@ export function ButtonLink<ComponentType extends ElementType = "a">(
 
   return (
     <Component className={combinedClassName} {...rest}>
-      {children}
+      <span>{label}</span>
     </Component>
   )
 }

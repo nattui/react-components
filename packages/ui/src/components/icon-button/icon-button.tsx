@@ -6,15 +6,15 @@ import styles from "./icon-button.module.css"
 
 export interface IconButtonProps extends Omit<
   ButtonProps,
-  "children" | "iconEnd" | "iconStart" | "isFullWidth"
+  "iconEnd" | "iconStart" | "isFullWidth" | "label"
 > {
-  children?: ReactNode
+  icon?: ReactNode
 }
 
 export function IconButton(props: IconButtonProps): JSX.Element {
   const {
-    children = "",
     className = "",
+    icon = "",
     isDisabled = false,
     isLoading = false,
     isRounded = false,
@@ -43,7 +43,7 @@ export function IconButton(props: IconButtonProps): JSX.Element {
       {...rest}
     >
       {isLoading && <ButtonSpinner />}
-      {children}
+      {icon}
     </button>
   )
 }

@@ -42,9 +42,7 @@ export function InputContent(): JSX.Element {
         </div>
         <Spacer height={16} />
 
-        <Button iconStart={<IconCircleLoginOutline18 />} isFullWidth size={44}>
-          Sign in
-        </Button>
+        <Button iconStart={<IconCircleLoginOutline18 />} isFullWidth label="Sign in" size={44} />
         <Spacer height={64} />
 
         <Label htmlFor="disabled">Disabled</Label>

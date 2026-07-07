@@ -32,7 +32,7 @@ function App() {
     <html className="color-gray-slate color-primary-blue">
       <head>...</head>
       <body>
-        <Button>Click me</Button>
+        <Button label="Click me" />
       </body>
     </html>
   )

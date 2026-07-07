@@ -96,9 +96,7 @@ export function ThemeContent(): JSX.Element {
         />
         <Spacer height={16} />
 
-        <Button onClick={handleReset} variant="primary">
-          Reset
-        </Button>
+        <Button label="Reset" onClick={handleReset} variant="primary" />
       </Column>
     </>
   )

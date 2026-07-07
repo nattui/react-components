@@ -8,11 +8,11 @@ Buttons are controls that let users take action, make choices, and move forward.
 ```jsx
 // component
 
-<Button>Button</Button>
+<Button label="Button" />
 ```
 
 ```jsx
-<Button>Button</Button>
+<Button label="Button" />
 ```
 
 ## Variants
@@ -22,15 +22,15 @@ The `Button` comes with three variants: `primary` (default), `secondary`, and `g
 ```jsx
 // component
 
-<Button variant="primary">Primary</Button>
-<Button variant="secondary">Secondary</Button>
-<Button variant="ghost">Ghost</Button>
+<Button label="Primary" variant="primary" />
+<Button label="Secondary" variant="secondary" />
+<Button label="Ghost" variant="ghost" />
 ```
 
 ```jsx
-<Button variant="primary">Primary</Button>
-<Button variant="secondary">Secondary</Button>
-<Button variant="ghost">Ghost</Button>
+<Button label="Primary" variant="primary" />
+<Button label="Secondary" variant="secondary" />
+<Button label="Ghost" variant="ghost" />
 ```
 
 ## Size
@@ -40,19 +40,19 @@ The `Button` comes with 5 sizes: `32`, `36`, `40` (default), `44`, and `48`.
 ```jsx
 // component
 
-<Button size={32}>Button 32</Button>
-<Button size={36}>Button 36</Button>
-<Button size={40}>Button 40</Button>
-<Button size={44}>Button 44</Button>
-<Button size={48}>Button 48</Button>
+<Button label="Button 32" size={32} />
+<Button label="Button 36" size={36} />
+<Button label="Button 40" size={40} />
+<Button label="Button 44" size={44} />
+<Button label="Button 48" size={48} />
 ```
 
 ```jsx
-<Button size={32}>Button 32</Button>
-<Button size={36}>Button 36</Button>
-<Button size={40}>Button 40</Button>
-<Button size={44}>Button 44</Button>
-<Button size={48}>Button 48</Button>
+<Button label="Button 32" size={32} />
+<Button label="Button 36" size={36} />
+<Button label="Button 40" size={40} />
+<Button label="Button 44" size={44} />
+<Button label="Button 48" size={48} />
 ```
 
 ## Icons
@@ -64,15 +64,11 @@ You don't need to explicitly set the icon size. Icons inherit the correct sizing
 ```jsx
 // component
 
-<Button iconEnd={<IconPlusOutline18 />} iconStart={<IconPlusOutline18 />}>
-  {"Button"}
-</Button>
+<Button iconEnd={<IconPlusOutline18 />} iconStart={<IconPlusOutline18 />} label="Button" />
 ```
 
 ```jsx
-<Button iconEnd={<IconPlusOutline18 />} iconStart={<IconPlusOutline18 />}>
-  Button
-</Button>
+<Button iconEnd={<IconPlusOutline18 />} iconStart={<IconPlusOutline18 />} label="Button" />
 ```
 
 ## Disabled
@@ -82,15 +78,15 @@ Use the `isDisabled` prop to prevent a button from being interacted with. Disabl
 ```jsx
 // component
 
-<Button isDisabled variant="primary">Disabled</Button>
-<Button isDisabled variant="secondary">Disabled</Button>
-<Button isDisabled variant="ghost">Disabled</Button>
+<Button isDisabled label="Disabled" variant="primary" />
+<Button isDisabled label="Disabled" variant="secondary" />
+<Button isDisabled label="Disabled" variant="ghost" />
 ```
 
 ```jsx
-<Button isDisabled variant="primary">Disabled</Button>
-<Button isDisabled variant="secondary">Disabled</Button>
-<Button isDisabled variant="ghost">Disabled</Button>
+<Button isDisabled label="Disabled" variant="primary" />
+<Button isDisabled label="Disabled" variant="secondary" />
+<Button isDisabled label="Disabled" variant="ghost" />
 ```
 
 ## Loading
@@ -102,15 +98,15 @@ Do not add `isDisabled` when using `isLoading`, as the button is automatically n
 ```jsx
 // component
 
-<Button isLoading variant="primary">Loading</Button>
-<Button isLoading variant="secondary">Loading</Button>
-<Button isLoading variant="ghost">Loading</Button>
+<Button isLoading label="Loading" variant="primary" />
+<Button isLoading label="Loading" variant="secondary" />
+<Button isLoading label="Loading" variant="ghost" />
 ```
 
 ```jsx
-<Button isLoading variant="primary">Loading</Button>
-<Button isLoading variant="secondary">Loading</Button>
-<Button isLoading variant="ghost">Loading</Button>
+<Button isLoading label="Loading" variant="primary" />
+<Button isLoading label="Loading" variant="secondary" />
+<Button isLoading label="Loading" variant="ghost" />
 ```
 
 ## Full width
@@ -120,11 +116,11 @@ Use the `isFullWidth` prop to make the button expand to the full width of its co
 ```jsx
 // component
 
-<Button isFullWidth>Full width</Button>
+<Button isFullWidth label="Full width" />
 ```
 
 ```jsx
-<Button isFullWidth>Full width</Button>
+<Button isFullWidth label="Full width" />
 ```
 
 ## Rounded
@@ -134,45 +130,15 @@ Use the `isRounded` prop to give the button fully rounded corners.
 ```jsx
 // component
 
-<Button isRounded variant="primary">Rounded</Button>
-<Button isRounded variant="secondary">Rounded</Button>
-<Button isRounded variant="ghost">Rounded</Button>
+<Button isRounded label="Rounded" variant="primary" />
+<Button isRounded label="Rounded" variant="secondary" />
+<Button isRounded label="Rounded" variant="ghost" />
 ```
 
 ```jsx
-<Button isRounded variant="primary">Rounded</Button>
-<Button isRounded variant="secondary">Rounded</Button>
-<Button isRounded variant="ghost">Rounded</Button>
-```
-
-## Icon button
-
-Use the `IconButton` component to create a button that only shows an icon.
-
-```jsx
-// component
-
-<IconButton variant="primary">
-  <IconPlusOutline18 />
-</IconButton>
-<IconButton variant="secondary">
-  <IconPlusOutline18 />
-</IconButton>
-<IconButton variant="ghost">
-  <IconPlusOutline18 />
-</IconButton>
-```
-
-```jsx
-<IconButton variant="primary">
-  <IconPlusOutline18 />
-</IconButton>
-<IconButton variant="secondary">
-  <IconPlusOutline18 />
-</IconButton>
-<IconButton variant="ghost">
-  <IconPlusOutline18 />
-</IconButton>
+<Button isRounded label="Rounded" variant="primary" />
+<Button isRounded label="Rounded" variant="secondary" />
+<Button isRounded label="Rounded" variant="ghost" />
 ```
 
 ## Button link
@@ -182,13 +148,19 @@ Use the `ButtonLink` component to create a link that looks like a button.
 ```jsx
 // component
 
-<ButtonLink href="https://www.example.com" rel="noopener noreferrer" target="_blank">
-  {"Button Link"}
-</ButtonLink>
+<ButtonLink
+  href="https://www.example.com"
+  label="Button Link"
+  rel="noopener noreferrer"
+  target="_blank"
+/>
 ```
 
 ```jsx
-<ButtonLink href="https://www.example.com" rel="noopener noreferrer" target="_blank">
-  Button Link
-</ButtonLink>
+<ButtonLink
+  href="https://www.example.com"
+  label="Button Link"
+  rel="noopener noreferrer"
+  target="_blank"
+/>
 ```

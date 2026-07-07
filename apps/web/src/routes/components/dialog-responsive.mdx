@@ -16,7 +16,7 @@ The `DialogResponsive` component is a Base UI component.
 // component
 
 <DialogResponsive>
-  <DialogResponsiveTrigger render={<Button>Open dialog</Button>} />
+  <DialogResponsiveTrigger render={<Button label="Open dialog" />} />
   <DialogResponsivePopup>
     <img
       alt="Cat"
@@ -31,16 +31,14 @@ The `DialogResponsive` component is a Base UI component.
     <p className="text-center">Anyone to create their own components.</p>
     <Spacer height={24} />
 
-    <Button isFullWidth size={48}>
-      Continue
-    </Button>
+    <Button isFullWidth label="Continue" size={48} />
   </DialogResponsivePopup>
 </DialogResponsive>
 ```
 
 ```jsx
 <DialogResponsive>
-  <DialogResponsiveTrigger render={<Button>Open dialog</Button>} />
+  <DialogResponsiveTrigger render={<Button label="Open dialog" />} />
   <DialogResponsivePopup>
     <img
       alt="Cat"
@@ -55,9 +53,7 @@ The `DialogResponsive` component is a Base UI component.
     <p className="text-center">Anyone to create their own components.</p>
     <Spacer height={24} />
 
-    <Button isFullWidth size={48}>
-      Continue
-    </Button>
+    <Button isFullWidth label="Continue" size={48} />
   </DialogResponsivePopup>
 </DialogResponsive>
 ```
@@ -68,7 +64,7 @@ By default, `DialogResponsive` is an uncontrolled component that manages its own
 
 ```jsx
 <DialogResponsive>
-  <DialogResponsiveTrigger render={<Button>Open dialog</Button>} />
+  <DialogResponsiveTrigger render={<Button label="Open dialog" />} />
   <DialogResponsivePopup>Hello!</DialogResponsivePopup>
 </DialogResponsive>
 ```
@@ -80,7 +76,7 @@ const [isOpen, setIsOpen] = useState(false)
 
 return (
   <DialogResponsive isOpen={isOpen} onIsOpenChange={setIsOpen}>
-    <DialogResponsiveTrigger render={<Button>Open dialog</Button>} />
+    <DialogResponsiveTrigger render={<Button label="Open dialog" />} />
     <DialogResponsivePopup>Hello!</DialogResponsivePopup>
   </DialogResponsive>
 )

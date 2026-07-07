@@ -4,20 +4,19 @@ import { ButtonSpinner } from "./button-spinner"
 import styles from "./button.module.css"
 
 export interface ButtonProps extends Omit<ComponentProps<"button">, "children" | "disabled"> {
-  children?: number | number[] | string | string[]
   iconEnd?: ReactNode
   iconStart?: ReactNode
   isDisabled?: ComponentProps<"button">["disabled"]
   isFullWidth?: VariantProps<typeof button>["isFullWidth"]
   isLoading?: ComponentProps<"button">["disabled"]
   isRounded?: VariantProps<typeof button>["isRounded"]
+  label?: number | number[] | string | string[]
   size?: VariantProps<typeof button>["size"]
   variant?: VariantProps<typeof button>["variant"]
 }
 
 export function Button(props: ButtonProps): JSX.Element {
   const {
-    children = "",
     className = "",
     isDisabled = false,
     iconStart = "",
@@ -25,6 +24,7 @@ export function Button(props: ButtonProps): JSX.Element {
     isFullWidth = false,
     isLoading = false,
     isRounded = false,
+    label = "",
     variant = "primary",
     size = 40,
     ...rest
@@ -47,7 +47,7 @@ export function Button(props: ButtonProps): JSX.Element {
     >
       {isLoading && <ButtonSpinner />}
       {iconStart}
-      <span>{children}</span>
+      <span>{label}</span>
       {iconEnd}
     </button>
   )
