@@ -45,7 +45,7 @@ export function ButtonLink<ComponentType extends ElementType = "a">(
       {...rest}
     >
       {iconStart}
-      <span>{label}</span>
+      {label !== "" && <span>{label}</span>}
       {iconEnd}
     </Component>
   )

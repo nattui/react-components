@@ -47,7 +47,7 @@ export function Button(props: ButtonProps): JSX.Element {
     >
       {isLoading && <ButtonSpinner />}
       {iconStart}
-      <span>{label}</span>
+      {label !== "" && <span>{label}</span>}
       {iconEnd}
     </button>
   )
