@@ -19,7 +19,7 @@ type ButtonLinkHrefProps<ComponentType extends ElementType> =
 
 interface ButtonLinkInternalProps<ComponentType extends ElementType> extends Pick<
   ButtonProps,
-  "isFullWidth" | "isRounded" | "label" | "size" | "variant"
+  "iconEnd" | "iconStart" | "isFullWidth" | "isRounded" | "label" | "size" | "variant"
 > {
   as?: ComponentType
 }
@@ -30,6 +30,8 @@ export function ButtonLink<ComponentType extends ElementType = "a">(
   const {
     as = "a",
     className: customClassName = "",
+    iconEnd = "",
+    iconStart = "",
     isFullWidth = false,
     isRounded = false,
     label = "",
@@ -50,7 +52,9 @@ export function ButtonLink<ComponentType extends ElementType = "a">(
 
   return (
     <Component className={combinedClassName} {...rest}>
+      {iconStart}
       <span>{label}</span>
+      {iconEnd}
     </Component>
   )
 }
