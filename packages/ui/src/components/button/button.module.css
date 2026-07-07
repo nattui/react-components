@@ -164,7 +164,6 @@
         See: https://drafts.fxtf.org/filter-effects-2/#BackdropRoot
     */
     isolation: isolate;
-    text-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.25);
   }
 
   .variant_primary::after {
@@ -194,6 +193,16 @@
 
   :global(.dark) .variant_primary:hover:not(:disabled) {
     --color-mixed: #ffffff;
+  }
+
+  .variant_primary > * {
+    filter: drop-shadow(0 1px 1px hsla(0, 0%, 0%, 0.25));
+    transition-duration: inherit;
+    transition-property: filter;
+  }
+
+  .variant_primary:hover:not(:disabled) > * {
+    filter: none;
   }
 
   /* Secondary ========================================= */
