@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Clean script to remove node_modules, .next, dist, and .turbo directories
+# Clean script to remove node_modules and .turbo directories
 # from all folders and subfolders in the project
 
 set -e  # Exit on any error
@@ -59,9 +59,7 @@ remove_files_if_exist() {
     echo
 }
 
-remove_if_exists ".next"
 remove_if_exists ".turbo"
-remove_if_exists "dist"
 remove_if_exists "node_modules"
 
 remove_files_if_exist "bun.lock"
