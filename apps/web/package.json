@@ -12,7 +12,7 @@
     "check:format:fix": "oxfmt",
     "check:lint": "oxlint",
     "check:lint:fix": "oxlint --fix --fix-suggestions --fix-dangerously",
-    "check:type": "tsgo",
+    "check:type": "tsc",
     "dev": "portless ui bun --bun vite dev",
     "preview": "portless ui bun --bun vite preview",
     "update": "bun update --interactive --recursive"
@@ -47,7 +47,7 @@
     "oxfmt": "0.58.0",
     "oxlint": "1.73.0",
     "portless": "0.15.1",
-    "typescript": "npm:@typescript/native-preview@7.0.0-dev.20260707.2",
+    "typescript": "7.0.2",
     "vite": "8.1.3"
   }
 }
