@@ -1,72 +1,57 @@
 import { Button, Column, Label, Spacer, ToggleGroup, ToggleGroupItem } from "@nattstack/ui"
-import { useMemo, useState, type JSX } from "react"
-
-const GRAY_OPTIONS = [
-  "color-gray-gray",
-  "color-gray-mauve",
-  "color-gray-slate",
-  "color-gray-sage",
-  "color-gray-olive",
-  "color-gray-sand",
-] as const
-
-const PRIMARY_OPTIONS = [
-  // "color-primary-amber",
-  "color-primary-blue",
-  "color-primary-bronze",
-  "color-primary-brown",
-  "color-primary-crimson",
-  "color-primary-cyan",
-  "color-primary-gold",
-  "color-primary-grass",
-  "color-primary-green",
-  "color-primary-indigo",
-  "color-primary-iris",
-  "color-primary-jade",
-  // "color-primary-lime",
-  // "color-primary-mint",
-  "color-primary-orange",
-  "color-primary-pink",
-  "color-primary-plum",
-  "color-primary-purple",
-  "color-primary-red",
-  "color-primary-ruby",
-  // "color-primary-sky",
-  "color-primary-teal",
-  "color-primary-tomato",
-  "color-primary-violet",
-  // "color-primary-yellow",
-] as const
+import { useEffect, useMemo, useState, type JSX } from "react"
+import {
+  DEFAULT_GRAY_PALETTE,
+  DEFAULT_PRIMARY_PALETTE,
+  GRAY_PALETTE_OPTIONS,
+  GRAY_PALETTE_STORAGE_KEY,
+  PRIMARY_PALETTE_OPTIONS,
+  PRIMARY_PALETTE_STORAGE_KEY,
+  readStoredGrayPalette,
+  readStoredPrimaryPalette,
+} from "#/utils/theme-palette"
 
 interface ThemeToggleGroupProps {
   label: string
   onValueChange: (value: string) => void
   options: readonly string[]
-  value: string
+  value: string | undefined
 }
 
 export function ThemeContent(): JSX.Element {
-  const [grayPalette, setGrayPalette] = useState("color-gray-slate")
-  const [primaryPalette, setPrimaryPalette] = useState("color-primary-blue")
+  const [grayPalette, setGrayPalette] = useState<string | undefined>()
+  const [primaryPalette, setPrimaryPalette] = useState<string | undefined>()
+
+  /*
+      The server does not know the stored palettes, so the first render (and the SSR
+      markup) shows no pressed item. Reading the stored values in an effect re-renders
+      after hydration, which is what actually flips the pressed state in the DOM —
+      hydration alone never patches mismatched attributes.
+  */
+  useEffect(() => {
+    setGrayPalette(readStoredGrayPalette())
+    setPrimaryPalette(readStoredPrimaryPalette())
+  }, [])
 
   function handleGrayPaletteChange(value: string): void {
+    localStorage.setItem(GRAY_PALETTE_STORAGE_KEY, value)
     setGrayPalette(value)
     applyGrayPalette(value)
   }
 
   function handlePrimaryPaletteChange(value: string): void {
+    localStorage.setItem(PRIMARY_PALETTE_STORAGE_KEY, value)
     setPrimaryPalette(value)
     applyPrimaryPalette(value)
   }
 
   function handleReset(): void {
-    const nextGrayPalette = "color-gray-slate"
-    const nextPrimaryPalette = "color-primary-blue"
-
-    setGrayPalette(nextGrayPalette)
-    setPrimaryPalette(nextPrimaryPalette)
-    applyGrayPalette(nextGrayPalette)
-    applyPrimaryPalette(nextPrimaryPalette)
+    localStorage.removeItem(GRAY_PALETTE_STORAGE_KEY)
+    localStorage.removeItem(PRIMARY_PALETTE_STORAGE_KEY)
+    setGrayPalette(DEFAULT_GRAY_PALETTE)
+    setPrimaryPalette(DEFAULT_PRIMARY_PALETTE)
+    applyGrayPalette(DEFAULT_GRAY_PALETTE)
+    applyPrimaryPalette(DEFAULT_PRIMARY_PALETTE)
   }
 
   return (
@@ -80,7 +65,7 @@ export function ThemeContent(): JSX.Element {
         <ThemeToggleGroup
           label="Gray palette"
           onValueChange={handleGrayPaletteChange}
-          options={GRAY_OPTIONS}
+          options={GRAY_PALETTE_OPTIONS}
           value={grayPalette}
         />
         <Spacer height={24} />
@@ -88,7 +73,7 @@ export function ThemeContent(): JSX.Element {
         <ThemeToggleGroup
           label="Primary palette"
           onValueChange={handlePrimaryPaletteChange}
-          options={PRIMARY_OPTIONS}
+          options={PRIMARY_PALETTE_OPTIONS}
           value={primaryPalette}
         />
         <Spacer height={24} />
@@ -100,11 +85,11 @@ export function ThemeContent(): JSX.Element {
 }
 
 function applyGrayPalette(value: string): void {
-  replaceRootClass(GRAY_OPTIONS, value)
+  replaceRootClass(GRAY_PALETTE_OPTIONS, value)
 }
 
 function applyPrimaryPalette(value: string): void {
-  replaceRootClass(PRIMARY_OPTIONS, value)
+  replaceRootClass(PRIMARY_PALETTE_OPTIONS, value)
 }
 
 function formatColorName(option: string): string {
@@ -127,7 +112,7 @@ function replaceRootClass(classNames: readonly string[], nextClassName: string):
 function ThemeToggleGroup(props: ThemeToggleGroupProps): JSX.Element {
   const { label, onValueChange, options, value } = props
 
-  const pressedValues = useMemo(() => [value], [value])
+  const pressedValues = useMemo(() => (value === undefined ? [] : [value]), [value])
 
   function handleValueChange(groupValue: string[]): void {
     const [nextValue] = groupValue
