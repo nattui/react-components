@@ -1,5 +1,5 @@
-import { Button, Column, Label, Spacer } from "@nattstack/ui"
-import { useState, type ChangeEvent, type JSX } from "react"
+import { Button, Column, Label, Spacer, ToggleGroup, ToggleGroupItem } from "@nattstack/ui"
+import { useMemo, useState, type JSX } from "react"
 
 const GRAY_OPTIONS = [
   "color-gray-gray",
@@ -11,7 +11,7 @@ const GRAY_OPTIONS = [
 ] as const
 
 const PRIMARY_OPTIONS = [
-  "color-primary-amber",
+  // "color-primary-amber",
   "color-primary-blue",
   "color-primary-bronze",
   "color-primary-brown",
@@ -23,25 +23,22 @@ const PRIMARY_OPTIONS = [
   "color-primary-indigo",
   "color-primary-iris",
   "color-primary-jade",
-  "color-primary-lime",
-  "color-primary-mint",
+  // "color-primary-lime",
+  // "color-primary-mint",
   "color-primary-orange",
   "color-primary-pink",
   "color-primary-plum",
   "color-primary-purple",
   "color-primary-red",
   "color-primary-ruby",
-  "color-primary-sky",
+  // "color-primary-sky",
   "color-primary-teal",
   "color-primary-tomato",
   "color-primary-violet",
-  "color-primary-yellow",
+  // "color-primary-yellow",
 ] as const
 
-const SELECT_CLASS_NAME =
-  "h-40 w-256 rounded-8 border border-border bg-bg-shell-outer px-12 text-16 text-text-primary outline-none transition-colors focus:border-primary"
-
-interface ThemeSelectProps {
+interface ThemeToggleGroupProps {
   label: string
   onValueChange: (value: string) => void
   options: readonly string[]
@@ -80,21 +77,21 @@ export function ThemeContent(): JSX.Element {
       </p>
 
       <Column>
-        <ThemeSelect
+        <ThemeToggleGroup
           label="Gray palette"
           onValueChange={handleGrayPaletteChange}
           options={GRAY_OPTIONS}
           value={grayPalette}
         />
-        <Spacer height={16} />
+        <Spacer height={24} />
 
-        <ThemeSelect
+        <ThemeToggleGroup
           label="Primary palette"
           onValueChange={handlePrimaryPaletteChange}
           options={PRIMARY_OPTIONS}
           value={primaryPalette}
         />
-        <Spacer height={16} />
+        <Spacer height={24} />
 
         <Button label="Reset" onClick={handleReset} variant="primary" />
       </Column>
@@ -110,6 +107,16 @@ function applyPrimaryPalette(value: string): void {
   replaceRootClass(PRIMARY_OPTIONS, value)
 }
 
+function formatColorName(option: string): string {
+  const name = getColorName(option)
+
+  return name.charAt(0).toUpperCase() + name.slice(1)
+}
+
+function getColorName(option: string): string {
+  return option.split("-").at(-1) ?? option
+}
+
 function replaceRootClass(classNames: readonly string[], nextClassName: string): void {
   const root = globalThis.document.documentElement
 
@@ -117,23 +124,39 @@ function replaceRootClass(classNames: readonly string[], nextClassName: string):
   root.classList.add(nextClassName)
 }
 
-function ThemeSelect(props: ThemeSelectProps): JSX.Element {
+function ThemeToggleGroup(props: ThemeToggleGroupProps): JSX.Element {
   const { label, onValueChange, options, value } = props
 
-  function handleChange(event: ChangeEvent<HTMLSelectElement>): void {
-    onValueChange(event.currentTarget.value)
+  const pressedValues = useMemo(() => [value], [value])
+
+  function handleValueChange(groupValue: string[]): void {
+    const [nextValue] = groupValue
+
+    if (nextValue !== undefined) {
+      onValueChange(nextValue)
+    }
   }
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-8">
       <Label>{label}</Label>
-      <select className={SELECT_CLASS_NAME} onChange={handleChange} value={value}>
+      <ToggleGroup
+        aria-label={label}
+        className="max-w-[520px]"
+        onValueChange={handleValueChange}
+        value={pressedValues}
+      >
         {options.map((option) => (
-          <option key={option} value={option}>
-            {option}
-          </option>
+          <ToggleGroupItem className="w-80 flex-col gap-y-6" key={option} value={option}>
+            <span
+              aria-hidden
+              className="inset-ring-gray-12/15 size-24 rounded-full inset-ring"
+              style={{ backgroundColor: `var(--color-primitive-${getColorName(option)}-9)` }}
+            />
+            <span className="text-12">{formatColorName(option)}</span>
+          </ToggleGroupItem>
         ))}
-      </select>
+      </ToggleGroup>
     </div>
   )
 }

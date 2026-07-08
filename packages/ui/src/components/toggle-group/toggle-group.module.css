@@ -1,0 +1,7 @@
+@layer components {
+  .toggle_group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
