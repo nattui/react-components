@@ -49,9 +49,9 @@
     "class-variance-authority": "0.7.1"
   },
   "devDependencies": {
-    "@tsdown/css": "0.22.3",
+    "@tsdown/css": "0.22.4",
     "@types/bun": "1.3.14",
-    "tsdown": "0.22.3",
+    "tsdown": "0.22.4",
     "typescript": "6.0.3"
   },
   "peerDependencies": {
