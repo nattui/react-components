@@ -45,6 +45,11 @@ export type PrimaryPalette = (typeof PRIMARY_PALETTE_OPTIONS)[number]
 export const DEFAULT_GRAY_PALETTE: GrayPalette = "color-gray-slate"
 export const DEFAULT_PRIMARY_PALETTE: PrimaryPalette = "color-primary-blue"
 
+export function formatPrimaryPaletteLabel(palette: PrimaryPalette): string {
+  const colorName = palette.split("-").at(-1) ?? palette
+  return colorName.charAt(0).toUpperCase() + colorName.slice(1)
+}
+
 export function readStoredGrayPalette(): GrayPalette {
   const stored = localStorage.getItem(GRAY_PALETTE_STORAGE_KEY)
   return isGrayPalette(stored) ? stored : DEFAULT_GRAY_PALETTE
