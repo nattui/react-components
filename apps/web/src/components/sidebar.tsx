@@ -1,6 +1,6 @@
 import { Column, Row, Spacer } from "@nattstack/ui"
 import type { JSX } from "react"
-import { DialogAppearance } from "#/components/dialog-appearance.js"
+import { DialogAppearance } from "#/components/dialog-appearance"
 import { LogoLink } from "#/components/logo-link"
 import { SidebarLink } from "#/components/sidebar-link"
 
