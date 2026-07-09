@@ -1,7 +1,7 @@
 import { IconPlusOutline18 } from "@nattstack/icons"
 import { Button, Column, IconButton } from "@nattstack/ui"
 import { createFileRoute } from "@tanstack/react-router"
-import { DialogAppearance } from "#/components/dialog-appearance.js"
+import { DialogAppearance } from "#/components/dialog-appearance"
 
 export const Route = createFileRoute("/test")({
   component: function RouteComponent() {

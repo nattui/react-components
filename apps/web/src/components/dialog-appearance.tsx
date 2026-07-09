@@ -15,7 +15,7 @@ import {
   TooltipTrigger,
 } from "@nattstack/ui"
 import { useEffect, useState, type JSX } from "react"
-import { TabsTheme } from "#/components/tabs-theme.js"
+import { TabsTheme } from "#/components/tabs-theme"
 import {
   type PrimaryPalette,
   PRIMARY_PALETTE_OPTIONS,
