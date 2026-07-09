@@ -48,7 +48,7 @@ export function IconButton(props: IconButtonProps): JSX.Element {
   )
 }
 
-export const iconButton = cva(styles.base, {
+export const iconButton = cva("", {
   variants: {
     size: {
       32: styles.size_32,
