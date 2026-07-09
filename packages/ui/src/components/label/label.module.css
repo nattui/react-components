@@ -5,6 +5,7 @@
   .label {
     color: var(--color-text-secondary);
     font-size: 14px;
+    font-weight: 450;
     width: fit-content;
   }
 }
