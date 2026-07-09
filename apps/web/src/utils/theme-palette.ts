@@ -81,18 +81,9 @@ export function getPairedGrayPalette(palette: PrimaryPalette): GrayPalette {
   return PRIMARY_TO_GRAY_PALETTE[palette]
 }
 
-export function readStoredGrayPalette(): GrayPalette {
-  const stored = localStorage.getItem(GRAY_PALETTE_STORAGE_KEY)
-  return isGrayPalette(stored) ? stored : DEFAULT_GRAY_PALETTE
-}
-
 export function readStoredPrimaryPalette(): PrimaryPalette {
   const stored = localStorage.getItem(PRIMARY_PALETTE_STORAGE_KEY)
   return isPrimaryPalette(stored) ? stored : DEFAULT_PRIMARY_PALETTE
-}
-
-function isGrayPalette(value: unknown): value is GrayPalette {
-  return GRAY_PALETTE_OPTIONS.includes(value as GrayPalette)
 }
 
 function isPrimaryPalette(value: unknown): value is PrimaryPalette {

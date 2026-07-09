@@ -3,7 +3,6 @@ import type { MDXComponents } from "mdx/types"
 import type { ComponentType } from "react"
 import { MDX_COMPONENTS } from "#/components/mdx-components"
 import { InputContent } from "#/routes/components/-input-content"
-import { ThemeContent } from "#/routes/components/-theme-content"
 import ButtonContent from "#/routes/components/button.mdx"
 import DialogResponsiveContent from "#/routes/components/dialog-responsive.mdx"
 import IconButtonContent from "#/routes/components/icon-button.mdx"
@@ -63,10 +62,6 @@ const COMPONENT_PAGES: Record<string, ComponentPage> = {
   textarea: {
     Content: TextareaContent,
     title: "Textarea",
-  },
-  theme: {
-    Content: ThemeContent,
-    title: "Theme",
   },
   tooltip: {
     Content: TooltipContent,

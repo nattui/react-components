@@ -15,7 +15,6 @@ const COMPONENT_LINKS = [
   { label: "Tabs segmented", slug: "tabs-segmented" },
   { label: "Tabs underline", slug: "tabs-underline" },
   { label: "Textarea", slug: "textarea" },
-  { label: "Theme", slug: "theme" },
   { label: "Tooltip", slug: "tooltip" },
 ] as const
 
