@@ -57,16 +57,16 @@ export function DialogAppearance(): JSX.Element {
   return (
     <div>
       <DialogResponsive>
-        <DialogResponsiveTrigger
-          render={
-            <Tooltip>
-              <TooltipTrigger>
-                <IconButton icon={<IconDarkLightOutline18 />} size={32} variant="ghost" />
-              </TooltipTrigger>
-              <TooltipPopup side="right">Appearance</TooltipPopup>
-            </Tooltip>
-          }
-        />
+        <Tooltip>
+          <TooltipTrigger
+            render={
+              <DialogResponsiveTrigger
+                render={<IconButton icon={<IconDarkLightOutline18 />} size={32} variant="ghost" />}
+              />
+            }
+          />
+          <TooltipPopup side="right">Appearance</TooltipPopup>
+        </Tooltip>
         <DialogResponsivePopup className="max-w-[360px]">
           <h1>Appearance</h1>
           <Spacer height={8} />
