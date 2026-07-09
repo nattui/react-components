@@ -41,7 +41,7 @@ export function Sidebar(): JSX.Element {
       </Column>
       <Spacer height={8} />
 
-      <Row className="mt-auto mb-8 ml-8">
+      <Row className="mt-auto mb-[9px] ml-[9px]">
         <DialogAppearance />
       </Row>
     </Column>
