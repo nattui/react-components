@@ -18,9 +18,12 @@ import { useEffect, useState, type JSX } from "react"
 import { TabsTheme } from "#/components/tabs-theme"
 import {
   type PrimaryPalette,
+  GRAY_PALETTE_OPTIONS,
+  GRAY_PALETTE_STORAGE_KEY,
   PRIMARY_PALETTE_OPTIONS,
   PRIMARY_PALETTE_STORAGE_KEY,
   formatPrimaryPaletteLabel,
+  getPairedGrayPalette,
   readStoredPrimaryPalette,
 } from "#/utils/theme-palette"
 interface ToggleColorProps extends ToggleProps<PrimaryPalette> {
@@ -46,12 +49,16 @@ export function DialogAppearance(): JSX.Element {
       return
     }
 
+    /* Apply the natural Radix gray pairing, e.g. Red pairs with Mauve, Green with Sage. */
+    const nextGrayPalette = getPairedGrayPalette(nextPalette)
+
     localStorage.setItem(PRIMARY_PALETTE_STORAGE_KEY, nextPalette)
+    localStorage.setItem(GRAY_PALETTE_STORAGE_KEY, nextGrayPalette)
     setPrimaryPalette(nextPalette)
 
     const root = globalThis.document.documentElement
-    root.classList.remove(...PRIMARY_PALETTE_OPTIONS)
-    root.classList.add(nextPalette)
+    root.classList.remove(...PRIMARY_PALETTE_OPTIONS, ...GRAY_PALETTE_OPTIONS)
+    root.classList.add(nextPalette, nextGrayPalette)
   }
 
   return (

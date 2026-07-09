@@ -45,9 +45,40 @@ export type PrimaryPalette = (typeof PRIMARY_PALETTE_OPTIONS)[number]
 export const DEFAULT_GRAY_PALETTE: GrayPalette = "color-gray-slate"
 export const DEFAULT_PRIMARY_PALETTE: PrimaryPalette = "color-primary-blue"
 
+/*
+    Natural pairing from Radix Colors: each accent scale is designed to sit on a specific
+    gray scale (e.g. Red on Mauve, Green on Sage, Blue on Slate).
+*/
+const PRIMARY_TO_GRAY_PALETTE: Record<PrimaryPalette, GrayPalette> = {
+  "color-primary-blue": "color-gray-slate",
+  "color-primary-bronze": "color-gray-sand",
+  "color-primary-brown": "color-gray-sand",
+  "color-primary-crimson": "color-gray-mauve",
+  "color-primary-cyan": "color-gray-slate",
+  "color-primary-gold": "color-gray-sand",
+  "color-primary-grass": "color-gray-olive",
+  "color-primary-green": "color-gray-sage",
+  "color-primary-indigo": "color-gray-slate",
+  "color-primary-iris": "color-gray-slate",
+  "color-primary-jade": "color-gray-sage",
+  "color-primary-orange": "color-gray-sand",
+  "color-primary-pink": "color-gray-mauve",
+  "color-primary-plum": "color-gray-mauve",
+  "color-primary-purple": "color-gray-mauve",
+  "color-primary-red": "color-gray-mauve",
+  "color-primary-ruby": "color-gray-mauve",
+  "color-primary-teal": "color-gray-sage",
+  "color-primary-tomato": "color-gray-mauve",
+  "color-primary-violet": "color-gray-mauve",
+}
+
 export function formatPrimaryPaletteLabel(palette: PrimaryPalette): string {
   const colorName = palette.split("-").at(-1) ?? palette
   return colorName.charAt(0).toUpperCase() + colorName.slice(1)
+}
+
+export function getPairedGrayPalette(palette: PrimaryPalette): GrayPalette {
+  return PRIMARY_TO_GRAY_PALETTE[palette]
 }
 
 export function readStoredGrayPalette(): GrayPalette {
