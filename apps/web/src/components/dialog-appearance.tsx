@@ -68,8 +68,8 @@ export function DialogAppearance(): JSX.Element {
           <TooltipPopup side="right">Appearance</TooltipPopup>
         </Tooltip>
         <DialogResponsivePopup className="max-w-[360px]">
-          <h1>Appearance</h1>
-          <Spacer height={8} />
+          <h2 className="text-20">Appearance</h2>
+          <Spacer height={16} />
 
           <Row className="justify-between">
             <Label htmlFor="mode">Mode</Label>
