@@ -1,8 +1,8 @@
 import { Column, Row, Spacer } from "@nattstack/ui"
 import type { JSX } from "react"
+import { DialogAppearance } from "#/components/dialog-appearance.js"
 import { LogoLink } from "#/components/logo-link"
 import { SidebarLink } from "#/components/sidebar-link"
-import { TabsTheme } from "#/components/tabs-theme.js"
 
 const COMPONENT_LINKS = [
   { label: "Button", slug: "button" },
@@ -41,8 +41,8 @@ export function Sidebar(): JSX.Element {
       </Column>
       <Spacer height={8} />
 
-      <Row className="mt-auto mb-16 ml-16">
-        <TabsTheme />
+      <Row className="mt-auto mb-8 ml-8">
+        <DialogAppearance />
       </Row>
     </Column>
   )

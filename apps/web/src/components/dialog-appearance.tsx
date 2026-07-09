@@ -58,7 +58,7 @@ export function DialogAppearance(): JSX.Element {
     <div>
       <DialogResponsive>
         <DialogResponsiveTrigger
-          render={<IconButton icon={<IconDarkLightOutline18 />} variant="ghost" />}
+          render={<IconButton icon={<IconDarkLightOutline18 />} size={32} variant="ghost" />}
         />
         <DialogResponsivePopup className="max-w-[360px]">
           <h1>Appearance</h1>
