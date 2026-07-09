@@ -23,16 +23,17 @@ export const Route = createFileRoute("/test")({
           <DialogResponsiveTrigger
             render={<IconButton icon={<IconDarkLightOutline18 />} variant="ghost" />}
           />
-          <DialogResponsivePopup className="max-w-480">
+          <DialogResponsivePopup className="max-w-[360px]">
             <h1>Appearance</h1>
             <Spacer height={8} />
 
-            <Label>Mode</Label>
+            <Label htmlFor="mode">Mode</Label>
             <Spacer height={4} />
             <ToggleGroup
               aria-label="Text alignment"
               className="d flex w-fit items-center"
               defaultValue={["left"]}
+              id="mode"
             >
               <ToggleMode>
                 <IconSunOutline18 />
@@ -46,7 +47,7 @@ export const Route = createFileRoute("/test")({
             </ToggleGroup>
             <Spacer height={16} />
 
-            <Label>Color</Label>
+            <Label htmlFor="color">Color</Label>
             <Spacer height={4} />
             <ToggleGroup
               aria-label="Text alignment"
@@ -55,8 +56,8 @@ export const Route = createFileRoute("/test")({
                 items-center gap-8
               "
               defaultValue={["left"]}
+              id="color"
             >
-              {/* 20 items */}
               {Array.from({ length: 20 }).map((_, index) => (
                 <ToggleColor key={index} value={index.toString()}>
                   <IconSunOutline18 />
