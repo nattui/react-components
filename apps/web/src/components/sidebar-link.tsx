@@ -13,9 +13,9 @@ export function SidebarLink(props: LinkComponentProps): JSX.Element {
         `,
       }}
       className="
-        text-14 font-500
+        text-14
         hover:text-text-primary hover:bg-gray-3
-        rounded-8 flex h-32 shrink-0 items-center px-8
+        rounded-8 flex h-32 shrink-0 items-center px-8 font-[450]
       "
       {...props}
     />
