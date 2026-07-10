@@ -10,7 +10,7 @@ interface RouteRootHead {
 const META = {
   DESCRIPTION:
     "A collection of reusable React components built with Base UI, TypeScript, and CSS Modules.",
-  TITLE: "Natt UI",
+  TITLE: "Midi UI",
 }
 
 export function RouteRootHead(): RouteRootHead {
@@ -33,7 +33,21 @@ export function RouteRootHead(): RouteRootHead {
       {
         as: "font",
         crossOrigin: "anonymous",
+        href: "/fonts/button.woff2",
+        rel: "preload",
+        type: "font/woff2",
+      },
+      {
+        as: "font",
+        crossOrigin: "anonymous",
         href: "/fonts/code.woff2",
+        rel: "preload",
+        type: "font/woff2",
+      },
+      {
+        as: "font",
+        crossOrigin: "anonymous",
+        href: "/fonts/heading.woff2",
         rel: "preload",
         type: "font/woff2",
       },

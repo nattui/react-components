@@ -3,3 +3,9 @@ https://commitmono.com
 
 Inter (4.1)
 https://rsms.me/inter
+
+PP Mori SemiBold
+https://pangrampangram.com/products/mori
+
+Source Serif 4 18pt Regular
+https://github.com/adobe-fonts/source-serif

@@ -6,6 +6,7 @@
 @theme {
   --font-\*: initial;
   --font-body: body, sans-serif;
+  --font-button: button, sans-serif;
   --font-code: code, monospace;
   --font-heading: heading, serif;
 }
@@ -20,6 +21,14 @@
 
 @font-face {
   font-display: swap;
+  font-family: button;
+  font-style: normal;
+  font-weight: 600;
+  src: url("/fonts/button.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
   font-family: code;
   font-style: normal;
   font-weight: 400;
@@ -30,8 +39,8 @@
   font-display: swap;
   font-family: heading;
   font-style: normal;
-  font-weight: 100 900;
-  src: url("/fonts/body.woff2") format("woff2");
+  font-weight: 400;
+  src: url("/fonts/heading.woff2") format("woff2");
 }
 
 body {

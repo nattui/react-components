@@ -21,5 +21,5 @@ export default defineConfig({
   format: "esm",
   outDir: "dist/components",
   platform: "browser",
-  unbundle: true,
+  // unbundle: true,
 })
