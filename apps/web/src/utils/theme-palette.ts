@@ -43,7 +43,7 @@ export type GrayPalette = (typeof GRAY_PALETTE_OPTIONS)[number]
 export type PrimaryPalette = (typeof PRIMARY_PALETTE_OPTIONS)[number]
 
 export const DEFAULT_GRAY_PALETTE: GrayPalette = "color-gray-slate"
-export const DEFAULT_PRIMARY_PALETTE: PrimaryPalette = "color-primary-blue"
+export const DEFAULT_PRIMARY_PALETTE: PrimaryPalette = "color-primary-iris"
 
 /*
     Natural pairing from Radix Colors: each accent scale is designed to sit on a specific

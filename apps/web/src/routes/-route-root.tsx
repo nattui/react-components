@@ -8,10 +8,7 @@ import { RouteRootTheme } from "#/routes/-route-root-theme"
 export function RouteRoot(): JSX.Element {
   return (
     <html
-      className="
-        color-gray-slate color-primary-iris [--margin-page-dashboard:16px]
-        [--margin-page-main:20px]
-      "
+      className="[--margin-page-dashboard:16px] [--margin-page-main:20px]"
       lang="en"
       suppressHydrationWarning
     >
