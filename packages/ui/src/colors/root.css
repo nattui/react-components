@@ -582,18 +582,18 @@
   /* =================================================== */
   /* Iris */
   /* =================================================== */
-  --color-primitive-iris-1: #fdfdff;
-  --color-primitive-iris-2: #f8f8ff;
-  --color-primitive-iris-3: #f0f1fe;
-  --color-primitive-iris-4: #e6e7ff;
-  --color-primitive-iris-5: #dadcff;
-  --color-primitive-iris-6: #cbcdff;
-  --color-primitive-iris-7: #b8baf8;
-  --color-primitive-iris-8: #9b9ef0;
-  --color-primitive-iris-9: #5b5bd6;
-  --color-primitive-iris-10: #5151cd;
-  --color-primitive-iris-11: #5753c6;
-  --color-primitive-iris-12: #272962;
+  --color-primitive-iris-1: #fdfdfe;
+  --color-primitive-iris-2: #f7f9fe;
+  --color-primitive-iris-3: #eef2fb;
+  --color-primitive-iris-4: #e2eafc;
+  --color-primitive-iris-5: #d3dffb;
+  --color-primitive-iris-6: #c1d2f8;
+  --color-primitive-iris-7: #acbfed;
+  --color-primitive-iris-8: #8ea6e0;
+  --color-primitive-iris-9: #324d9e;
+  --color-primitive-iris-10: #243d8c;
+  --color-primitive-iris-11: #4360b3;
+  --color-primitive-iris-12: #212f53;
 
   --color-primitive-iris-dark-1: #13131e;
   --color-primitive-iris-dark-2: #171625;

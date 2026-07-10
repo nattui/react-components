@@ -9,7 +9,7 @@ export function RouteRoot(): JSX.Element {
   return (
     <html
       className="
-        color-gray-slate color-primary-blue [--margin-page-dashboard:16px]
+        color-gray-slate color-primary-iris [--margin-page-dashboard:16px]
         [--margin-page-main:20px]
       "
       lang="en"

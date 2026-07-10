@@ -146,7 +146,7 @@
 
   /* Primary =========================================== */
   .variant_primary {
-    background-color: #324d9e;
+    background-color: var(--color-primary);
     font-family: var(--font-button);
     /* box-shadow:
       inset 0 0 0 1px var(--color-primary),
@@ -165,6 +165,15 @@
         See: https://drafts.fxtf.org/filter-effects-2/#BackdropRoot
     */
     isolation: isolate;
+  }
+
+  .variant_primary:hover:not(:disabled) {
+    --color-mixed: #000000;
+    background-color: color-mix(in oklab, var(--color-primary) 100%, var(--color-mixed) 10%);
+  }
+
+  :global(.dark) .variant_primary:hover:not(:disabled) {
+    --color-mixed: #ffffff;
   }
 
   /* .variant_primary::after {
