@@ -6,7 +6,7 @@ import { Logomark } from "#/components/logomark"
 import { Logotype } from "#/components/logotype"
 import { isDevelopment } from "#/utils/environment"
 
-const FULL_ROTATION_DEGREES = 360
+const FULL_ROTATION_DEGREES = 180
 const SCROLL_ANIMATION_THRESHOLD_PX = 144
 
 interface LogoLinkProps extends LinkComponentProps {
