@@ -38,9 +38,9 @@ export const Route = createFileRoute("/demo-1")({
                   sign up
                 </Link>
               </p>
-              <Spacer height={32} />
+              <Spacer height={24} />
 
-              <Column className="w-full gap-y-8">
+              <Column className="w-full gap-y-12">
                 <Button
                   iconStart={<LogomarkGoogle className="absolute left-12" />}
                   isFullWidth
@@ -56,6 +56,7 @@ export const Route = createFileRoute("/demo-1")({
                   variant="secondary"
                 />
               </Column>
+
               <Spacer height={16} />
               <Row className="w-full items-center gap-x-4">
                 <Row className="bg-border h-1 w-full" />
@@ -63,10 +64,13 @@ export const Route = createFileRoute("/demo-1")({
                 <Row className="bg-border h-1 w-full" />
               </Row>
               <Spacer height={16} />
+
               <Input placeholder="Email" />
               <Spacer height={16} />
+
               <Button isFullWidth label="Sign in" size={BUTTON_SIZE} />
               <Spacer height={24} />
+
               <p className="text-13 text-center">
                 By logging in you agree with our{" "}
                 <Link className="ui-link-2" to="/demo-1">
