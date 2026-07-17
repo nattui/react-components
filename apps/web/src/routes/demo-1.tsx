@@ -23,7 +23,7 @@ export const Route = createFileRoute("/demo-1")({
         <Row
           className="
             outline-border shadow-5 rounded-16 bg-bg-shell-inner w-full
-            max-w-960 outline
+            max-w-960 overflow-hidden outline
           "
         >
           {/* Left */}
@@ -83,8 +83,8 @@ export const Route = createFileRoute("/demo-1")({
           {/* Right */}
           <Column
             className="
-              border-border bg-gray-3 relative grow basis-0 overflow-hidden
-              border-l
+              border-border bg-bg-shell-outer relative grow basis-0
+              overflow-hidden border-l
             "
           >
             <Column className="relative top-[-100px] h-full w-full">
@@ -144,9 +144,11 @@ const CARD_COUNT = INDUSTRY_CARDS.length
 const STEP_X = 128
 const STEP_Y = 32
 // Cards advance one slot on every tick, like a clock hand
-const TICK_MS = 2000
+const TICK_MS = 2500
 // Fraction of each tick spent moving; the rest is spent at rest
 const MOVE_PORTION = 0.2
+// Delay between each card's hop within a tick, front card first
+const STAGGER_MS = 50
 
 function CardIndustry(props: { imageUrl: string; index: number; title: string }): JSX.Element {
   const { imageUrl, index, title } = props
@@ -156,11 +158,15 @@ function CardIndustry(props: { imageUrl: string; index: number; title: string })
   // the extra slot below 0 lets the front card slide fully off-screen
   // (bottom-left) before wrapping to the rear, so no fade is needed.
   const slot = useTransform(time, (ms) => {
-    // Whole ticks elapsed, plus an eased hop at the start of each tick
+    // Whole ticks elapsed, plus an eased hop at the start of each tick.
+    // Each card's hop is delayed by its position in the stack, so the
+    // movement ripples from the front card to the rear one.
     const ticks = Math.floor(ms / TICK_MS)
     const tickProgress = (ms % TICK_MS) / TICK_MS
-    const hop = easeOutCubic(Math.min(1, tickProgress / MOVE_PORTION))
-    const advanced = ticks + hop
+    const stackOrder = (((index - ticks) % CARD_COUNT) + CARD_COUNT) % CARD_COUNT
+    const hopStart = (stackOrder * STAGGER_MS) / TICK_MS
+    const hopProgress = Math.min(1, Math.max(0, (tickProgress - hopStart) / MOVE_PORTION))
+    const advanced = ticks + easeOutBack(hopProgress)
     return ((((index - advanced) % CARD_COUNT) + CARD_COUNT) % CARD_COUNT) - 1
   })
   const x = useTransform(slot, (pos) => pos * STEP_X)
@@ -189,6 +195,11 @@ function CardIndustry(props: { imageUrl: string; index: number; title: string })
   )
 }
 
-function easeOutCubic(progress: number): number {
-  return 1 - (1 - progress) ** 3
+// How far past the target the hop overshoots before settling back;
+// higher = bouncier
+const BOUNCE_OVERSHOOT = 1.4
+
+function easeOutBack(progress: number): number {
+  const inverse = progress - 1
+  return 1 + (BOUNCE_OVERSHOOT + 1) * inverse ** 3 + BOUNCE_OVERSHOOT * inverse ** 2
 }
