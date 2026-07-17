@@ -2,17 +2,17 @@ import { createFileRoute, notFound } from "@tanstack/react-router"
 import type { MDXComponents } from "mdx/types"
 import type { ComponentType } from "react"
 import { MDX_COMPONENTS } from "#/components/mdx-components"
-import { InputContent } from "#/routes/components/-input-content"
-import ButtonContent from "#/routes/components/button.mdx"
-import DialogResponsiveContent from "#/routes/components/dialog-responsive.mdx"
-import IconButtonContent from "#/routes/components/icon-button.mdx"
-import MenuContent from "#/routes/components/menu.mdx"
-import SwitchContent from "#/routes/components/switch.mdx"
-import TabsPillContent from "#/routes/components/tabs-pill.mdx"
-import TabsSegmentedContent from "#/routes/components/tabs-segmented.mdx"
-import TabsUnderlineContent from "#/routes/components/tabs-underline.mdx"
-import TextareaContent from "#/routes/components/textarea.mdx"
-import TooltipContent from "#/routes/components/tooltip.mdx"
+import { InputContent } from "#/routes/_sidebar/components/-input-content"
+import ButtonContent from "#/routes/_sidebar/components/button.mdx"
+import DialogResponsiveContent from "#/routes/_sidebar/components/dialog-responsive.mdx"
+import IconButtonContent from "#/routes/_sidebar/components/icon-button.mdx"
+import MenuContent from "#/routes/_sidebar/components/menu.mdx"
+import SwitchContent from "#/routes/_sidebar/components/switch.mdx"
+import TabsPillContent from "#/routes/_sidebar/components/tabs-pill.mdx"
+import TabsSegmentedContent from "#/routes/_sidebar/components/tabs-segmented.mdx"
+import TabsUnderlineContent from "#/routes/_sidebar/components/tabs-underline.mdx"
+import TextareaContent from "#/routes/_sidebar/components/textarea.mdx"
+import TooltipContent from "#/routes/_sidebar/components/tooltip.mdx"
 import { formatTitle } from "#/utils/format-title"
 
 interface ComponentPage {
@@ -73,7 +73,7 @@ function getComponentPage(slug: string): ComponentPage | undefined {
   return COMPONENT_PAGES[slug]
 }
 
-export const Route = createFileRoute("/components/$slug")({
+export const Route = createFileRoute("/_sidebar/components/$slug")({
   component: function RouteComponentPage() {
     const { slug } = Route.useParams()
 

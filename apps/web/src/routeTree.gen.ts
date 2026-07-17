@@ -9,19 +9,18 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TestRouteImport } from './routes/test'
 import { Route as DemoRouteImport } from './routes/demo'
+import { Route as SidebarRouteRouteImport } from './routes/_sidebar/route'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ComponentsSlugRouteImport } from './routes/components/$slug'
+import { Route as SidebarComponentsSlugRouteImport } from './routes/_sidebar/components/$slug'
 
-const TestRoute = TestRouteImport.update({
-  id: '/test',
-  path: '/test',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const DemoRoute = DemoRouteImport.update({
   id: '/demo',
   path: '/demo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SidebarRouteRoute = SidebarRouteRouteImport.update({
+  id: '/_sidebar',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -29,60 +28,57 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ComponentsSlugRoute = ComponentsSlugRouteImport.update({
+const SidebarComponentsSlugRoute = SidebarComponentsSlugRouteImport.update({
   id: '/components/$slug',
   path: '/components/$slug',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => SidebarRouteRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/demo': typeof DemoRoute
-  '/test': typeof TestRoute
-  '/components/$slug': typeof ComponentsSlugRoute
+  '/components/$slug': typeof SidebarComponentsSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/demo': typeof DemoRoute
-  '/test': typeof TestRoute
-  '/components/$slug': typeof ComponentsSlugRoute
+  '/components/$slug': typeof SidebarComponentsSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_sidebar': typeof SidebarRouteRouteWithChildren
   '/demo': typeof DemoRoute
-  '/test': typeof TestRoute
-  '/components/$slug': typeof ComponentsSlugRoute
+  '/_sidebar/components/$slug': typeof SidebarComponentsSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/demo' | '/test' | '/components/$slug'
+  fullPaths: '/' | '/demo' | '/components/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/demo' | '/test' | '/components/$slug'
-  id: '__root__' | '/' | '/demo' | '/test' | '/components/$slug'
+  to: '/' | '/demo' | '/components/$slug'
+  id: '__root__' | '/' | '/_sidebar' | '/demo' | '/_sidebar/components/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  SidebarRouteRoute: typeof SidebarRouteRouteWithChildren
   DemoRoute: typeof DemoRoute
-  TestRoute: typeof TestRoute
-  ComponentsSlugRoute: typeof ComponentsSlugRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/test': {
-      id: '/test'
-      path: '/test'
-      fullPath: '/test'
-      preLoaderRoute: typeof TestRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/demo': {
       id: '/demo'
       path: '/demo'
       fullPath: '/demo'
       preLoaderRoute: typeof DemoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_sidebar': {
+      id: '/_sidebar'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof SidebarRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -92,21 +88,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/components/$slug': {
-      id: '/components/$slug'
+    '/_sidebar/components/$slug': {
+      id: '/_sidebar/components/$slug'
       path: '/components/$slug'
       fullPath: '/components/$slug'
-      preLoaderRoute: typeof ComponentsSlugRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof SidebarComponentsSlugRouteImport
+      parentRoute: typeof SidebarRouteRoute
     }
   }
 }
 
+interface SidebarRouteRouteChildren {
+  SidebarComponentsSlugRoute: typeof SidebarComponentsSlugRoute
+}
+
+const SidebarRouteRouteChildren: SidebarRouteRouteChildren = {
+  SidebarComponentsSlugRoute: SidebarComponentsSlugRoute,
+}
+
+const SidebarRouteRouteWithChildren = SidebarRouteRoute._addFileChildren(
+  SidebarRouteRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  SidebarRouteRoute: SidebarRouteRouteWithChildren,
   DemoRoute: DemoRoute,
-  TestRoute: TestRoute,
-  ComponentsSlugRoute: ComponentsSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
