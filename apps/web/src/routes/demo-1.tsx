@@ -88,8 +88,8 @@ export const Route = createFileRoute("/demo-1")({
             "
           >
             <Column className="d relative h-full w-full">
-              {INDUSTRY_CARDS.map((title, index) => (
-                <CardIndustry index={index} key={title} title={title} />
+              {INDUSTRY_CARDS.map((card, index) => (
+                <CardIndustry key={card.title} {...card} index={index} />
               ))}
             </Column>
             {/* <p className="text-14 leading-1-625 text-center">
@@ -103,48 +103,80 @@ export const Route = createFileRoute("/demo-1")({
   },
 })
 
+// Photos from Unsplash, sized down to roughly the card's rendered size
+function unsplashUrl(photoId: string): string {
+  return `https://images.unsplash.com/${photoId}?auto=format&fit=crop&w=400&h=400&q=70`
+}
+
 const INDUSTRY_CARDS = [
-  "Healthcare",
-  "Financial Services",
-  "Logistics",
-  "Home Services",
-  "Retail & Consumer",
-  "Travel & Hospitality",
-  "Debt Collection",
+  {
+    imageUrl: unsplashUrl("photo-1532938911079-1b06ac7ceec7"),
+    title: "Healthcare",
+  },
+  {
+    imageUrl: unsplashUrl("photo-1486406146926-c627a92ad1ab"),
+    title: "Financial Services",
+  },
+  {
+    imageUrl: unsplashUrl("photo-1606185540834-d6e7483ee1a4"),
+    title: "Logistics",
+  },
+  {
+    imageUrl: unsplashUrl("photo-1581783898377-1c85bf937427"),
+    title: "Home Services",
+  },
+  {
+    imageUrl: unsplashUrl("photo-1483985988355-763728e1935b"),
+    title: "Retail & Consumer",
+  },
+  {
+    imageUrl: unsplashUrl("photo-1584132869994-873f9363a562"),
+    title: "Travel & Hospitality",
+  },
+  {
+    imageUrl: unsplashUrl("photo-1707157284454-553ef0a4ed0d"),
+    title: "Debt Collection",
+  },
 ] as const
 
 const CARD_COUNT = INDUSTRY_CARDS.length
 // Diagonal distance between two neighboring cards in the stack
-const STEP_X = 64
+const STEP_X = 128
 const STEP_Y = 32
 // Time it takes a card to advance one slot toward the front
-const SLOT_DURATION_MS = 2500
-// Portion of a slot spent fading out at the front / fading in at the back
-const FADE = 0.5
+const SLOT_DURATION_MS = 3000
 
-function CardIndustry(props: { index: number; title: string }): JSX.Element {
-  const { index, title } = props
+function CardIndustry(props: { imageUrl: string; index: number; title: string }): JSX.Element {
+  const { imageUrl, index, title } = props
 
   const time = useTime()
-  // Position along the diagonal, in slots: 0 = front (bottom-left),
-  // decreasing over time and wrapping back to CARD_COUNT at the rear
+  // Position along the diagonal, in slots. Range is [-1, CARD_COUNT - 1):
+  // the extra slot below 0 lets the front card slide fully off-screen
+  // (bottom-left) before wrapping to the rear, so no fade is needed.
   const slot = useTransform(
     time,
-    (ms) => (((index - ms / SLOT_DURATION_MS) % CARD_COUNT) + CARD_COUNT) % CARD_COUNT,
+    (ms) => ((((index - ms / SLOT_DURATION_MS) % CARD_COUNT) + CARD_COUNT) % CARD_COUNT) - 1,
   )
   const x = useTransform(slot, (pos) => pos * STEP_X)
   const y = useTransform(slot, (pos) => -pos * STEP_Y)
   const zIndex = useTransform(slot, (pos) => Math.round((CARD_COUNT - pos) * 100))
-  const opacity = useTransform(slot, (pos) => Math.min(1, pos / FADE, (CARD_COUNT - pos) / FADE))
 
   return (
     <motion.div
       className="
-        shadow-5 rounded-20 text-16 font-500 absolute bottom-32 -left-64 flex
-        size-176 flex-col items-center justify-center bg-[blue] px-16
-        text-center text-[white]
+        rounded-6 text-16 font-500 absolute bottom-32 -left-64 flex size-176
+        flex-col items-center justify-center px-16 text-center text-[white]
       "
-      style={{ opacity, x, y, zIndex }}
+      style={{
+        // Dark scrim over the photo keeps the white title readable
+        background: `
+          linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+          url(${imageUrl}) center / cover no-repeat
+        `,
+        x,
+        y,
+        zIndex,
+      }}
     >
       {title}
     </motion.div>
