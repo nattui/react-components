@@ -1,5 +1,4 @@
 import type { JSX } from "react"
-import { isProduction } from "#/utils/environment"
 import CSS from "#/styles/global.css?url"
 
 interface RouteRootHead {
@@ -42,7 +41,7 @@ export function RouteRootHead(): RouteRootHead {
         rel: "stylesheet",
       },
       {
-        href: isProduction ? "/favicon/production.ico" : "/favicon/development.ico",
+        href: "https://dashboard.retellai.com/favicon-light.ico",
         rel: "icon",
         type: "image/x-icon",
       },
