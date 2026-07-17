@@ -2,43 +2,9 @@
 // oxlint-disable react/only-export-components
 
 import type { MDXComponents } from "mdx/types"
-import type { ComponentProps, CSSProperties, JSX } from "react"
-import { generate, tokenize } from "sugar-high"
-import { c, css, go, java, python, rust } from "sugar-high/presets"
-
-interface HighlightLine {
-  children: HighlightToken[]
-  properties: {
-    className: string
-  }
-}
-
-type HighlightOptions = NonNullable<Parameters<typeof tokenize>[1]>
-
-interface HighlightToken {
-  children: [
-    {
-      value: string
-    },
-  ]
-  properties: {
-    className: string
-    style?: CSSProperties
-  }
-}
+import type { ComponentProps, JSX } from "react"
 
 type MdxComponentShowcaseProps = ComponentProps<"div">
-
-const LANGUAGE_PRESETS: Record<string, HighlightOptions> = {
-  c,
-  css,
-  go,
-  java,
-  py: python,
-  python,
-  rs: rust,
-  rust,
-}
 
 export const MDX_COMPONENTS: MDXComponents = {
   MdxComponentShowcase,
@@ -83,39 +49,6 @@ function getCodeLanguage(className: string | undefined): string | undefined {
   return className?.match(/(?:^|\s)language-(?<language>[\w-]+)/u)?.groups?.language
 }
 
-function getCodeText(children: ComponentProps<"code">["children"]): string | undefined {
-  if (typeof children === "string") {
-    return children
-  }
-
-  if (typeof children === "number") {
-    return String(children)
-  }
-
-  return undefined
-}
-
-function highlightCode(code: string, language: string): JSX.Element[] {
-  const normalizedCode = code.replace(/\r?\n$/u, "")
-  const lines = generate(
-    tokenize(normalizedCode, LANGUAGE_PRESETS[language] ?? undefined),
-  ) as HighlightLine[]
-
-  return lines.map((line, lineIndex) => (
-    <span className={line.properties.className} key={lineIndex}>
-      {line.children.map((token, tokenIndex) => (
-        <span
-          className={token.properties.className}
-          key={tokenIndex}
-          style={token.properties.style}
-        >
-          {token.children[0].value}
-        </span>
-      ))}
-    </span>
-  ))
-}
-
 function joinClassNames(...classNames: (string | undefined)[]): string {
   return classNames.filter(Boolean).join(" ")
 }
@@ -148,16 +81,16 @@ function MdxBlockquote(props: ComponentProps<"blockquote">): JSX.Element {
 function MdxCode(props: ComponentProps<"code">): JSX.Element {
   const { children, className, ...rest } = props
   const language = getCodeLanguage(className)
-  const code = getCodeText(children)
 
-  if (language !== undefined && code !== undefined) {
+  /* Code fences arrive pre-highlighted by Lumis at MDX compile time. */
+  if (language !== undefined) {
     return (
       <code
         className={joinClassNames("block min-w-full font-code text-13", className)}
         data-language={language}
         {...rest}
       >
-        {highlightCode(code, language)}
+        {children}
       </code>
     )
   }
