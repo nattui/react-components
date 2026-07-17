@@ -87,7 +87,7 @@ export const Route = createFileRoute("/demo-1")({
               border-l
             "
           >
-            <Column className="d relative h-full w-full">
+            <Column className="relative top-[-100px] h-full w-full">
               {INDUSTRY_CARDS.map((card, index) => (
                 <CardIndustry key={card.title} {...card} index={index} />
               ))}
@@ -143,8 +143,10 @@ const CARD_COUNT = INDUSTRY_CARDS.length
 // Diagonal distance between two neighboring cards in the stack
 const STEP_X = 128
 const STEP_Y = 32
-// Time it takes a card to advance one slot toward the front
-const SLOT_DURATION_MS = 3000
+// Cards advance one slot on every tick, like a clock hand
+const TICK_MS = 2000
+// Fraction of each tick spent moving; the rest is spent at rest
+const MOVE_PORTION = 0.2
 
 function CardIndustry(props: { imageUrl: string; index: number; title: string }): JSX.Element {
   const { imageUrl, index, title } = props
@@ -153,10 +155,14 @@ function CardIndustry(props: { imageUrl: string; index: number; title: string })
   // Position along the diagonal, in slots. Range is [-1, CARD_COUNT - 1):
   // the extra slot below 0 lets the front card slide fully off-screen
   // (bottom-left) before wrapping to the rear, so no fade is needed.
-  const slot = useTransform(
-    time,
-    (ms) => ((((index - ms / SLOT_DURATION_MS) % CARD_COUNT) + CARD_COUNT) % CARD_COUNT) - 1,
-  )
+  const slot = useTransform(time, (ms) => {
+    // Whole ticks elapsed, plus an eased hop at the start of each tick
+    const ticks = Math.floor(ms / TICK_MS)
+    const tickProgress = (ms % TICK_MS) / TICK_MS
+    const hop = easeOutCubic(Math.min(1, tickProgress / MOVE_PORTION))
+    const advanced = ticks + hop
+    return ((((index - advanced) % CARD_COUNT) + CARD_COUNT) % CARD_COUNT) - 1
+  })
   const x = useTransform(slot, (pos) => pos * STEP_X)
   const y = useTransform(slot, (pos) => -pos * STEP_Y)
   const zIndex = useTransform(slot, (pos) => Math.round((CARD_COUNT - pos) * 100))
@@ -181,4 +187,8 @@ function CardIndustry(props: { imageUrl: string; index: number; title: string })
       {title}
     </motion.div>
   )
+}
+
+function easeOutCubic(progress: number): number {
+  return 1 - (1 - progress) ** 3
 }
