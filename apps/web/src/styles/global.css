@@ -81,6 +81,15 @@ svg {
   }
 }
 
+.ui-link-2 {
+  font-weight: 500;
+  color: var(--color-text-primary);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 /* Lumis syntax highlighting */
 pre code {
   --lumis-comment: #737373;

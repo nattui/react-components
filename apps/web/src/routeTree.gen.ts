@@ -9,24 +9,24 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as DemoRouteImport } from './routes/demo'
+import { Route as Demo1RouteImport } from './routes/demo-1'
 import { Route as SidebarRouteRouteImport } from './routes/_sidebar/route'
-import { Route as IndexRouteImport } from './routes/index'
+import { Route as SidebarIndexRouteImport } from './routes/_sidebar/index'
 import { Route as SidebarComponentsSlugRouteImport } from './routes/_sidebar/components/$slug'
 
-const DemoRoute = DemoRouteImport.update({
-  id: '/demo',
-  path: '/demo',
+const Demo1Route = Demo1RouteImport.update({
+  id: '/demo-1',
+  path: '/demo-1',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SidebarRouteRoute = SidebarRouteRouteImport.update({
   id: '/_sidebar',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
+const SidebarIndexRoute = SidebarIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => SidebarRouteRoute,
 } as any)
 const SidebarComponentsSlugRoute = SidebarComponentsSlugRouteImport.update({
   id: '/components/$slug',
@@ -35,43 +35,47 @@ const SidebarComponentsSlugRoute = SidebarComponentsSlugRouteImport.update({
 } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/demo': typeof DemoRoute
+  '/': typeof SidebarIndexRoute
+  '/demo-1': typeof Demo1Route
   '/components/$slug': typeof SidebarComponentsSlugRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/demo': typeof DemoRoute
+  '/demo-1': typeof Demo1Route
+  '/': typeof SidebarIndexRoute
   '/components/$slug': typeof SidebarComponentsSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
   '/_sidebar': typeof SidebarRouteRouteWithChildren
-  '/demo': typeof DemoRoute
+  '/demo-1': typeof Demo1Route
+  '/_sidebar/': typeof SidebarIndexRoute
   '/_sidebar/components/$slug': typeof SidebarComponentsSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/demo' | '/components/$slug'
+  fullPaths: '/' | '/demo-1' | '/components/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/demo' | '/components/$slug'
-  id: '__root__' | '/' | '/_sidebar' | '/demo' | '/_sidebar/components/$slug'
+  to: '/demo-1' | '/' | '/components/$slug'
+  id:
+    | '__root__'
+    | '/_sidebar'
+    | '/demo-1'
+    | '/_sidebar/'
+    | '/_sidebar/components/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
   SidebarRouteRoute: typeof SidebarRouteRouteWithChildren
-  DemoRoute: typeof DemoRoute
+  Demo1Route: typeof Demo1Route
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/demo': {
-      id: '/demo'
-      path: '/demo'
-      fullPath: '/demo'
-      preLoaderRoute: typeof DemoRouteImport
+    '/demo-1': {
+      id: '/demo-1'
+      path: '/demo-1'
+      fullPath: '/demo-1'
+      preLoaderRoute: typeof Demo1RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_sidebar': {
@@ -81,12 +85,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SidebarRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
+    '/_sidebar/': {
+      id: '/_sidebar/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof SidebarIndexRouteImport
+      parentRoute: typeof SidebarRouteRoute
     }
     '/_sidebar/components/$slug': {
       id: '/_sidebar/components/$slug'
@@ -99,10 +103,12 @@ declare module '@tanstack/react-router' {
 }
 
 interface SidebarRouteRouteChildren {
+  SidebarIndexRoute: typeof SidebarIndexRoute
   SidebarComponentsSlugRoute: typeof SidebarComponentsSlugRoute
 }
 
 const SidebarRouteRouteChildren: SidebarRouteRouteChildren = {
+  SidebarIndexRoute: SidebarIndexRoute,
   SidebarComponentsSlugRoute: SidebarComponentsSlugRoute,
 }
 
@@ -111,9 +117,8 @@ const SidebarRouteRouteWithChildren = SidebarRouteRoute._addFileChildren(
 )
 
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
   SidebarRouteRoute: SidebarRouteRouteWithChildren,
-  DemoRoute: DemoRoute,
+  Demo1Route: Demo1Route,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
