@@ -41,6 +41,8 @@ body {
       cv05: Lower-case L with tail
   */
   font-feature-settings: "calt", "cv01", "cv05";
+
+  --color-primary: var(--color-text-primary);
 }
 
 h1,

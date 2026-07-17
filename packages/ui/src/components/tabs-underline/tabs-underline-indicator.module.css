@@ -1,6 +1,6 @@
 @layer components {
   .tabs_underline_indicator {
-    background-color: var(--color-primary-9);
+    background-color: var(--color-primary);
     bottom: 0px;
     height: 2px;
     left: var(--active-tab-left);

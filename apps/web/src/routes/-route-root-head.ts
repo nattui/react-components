@@ -10,7 +10,7 @@ interface RouteRootHead {
 const META = {
   DESCRIPTION:
     "A collection of reusable React components built with Base UI, TypeScript, and CSS Modules.",
-  TITLE: "Natt UI",
+  TITLE: "Retell UI",
 }
 
 export function RouteRootHead(): RouteRootHead {

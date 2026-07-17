@@ -93,7 +93,7 @@ export function LogoLink(props: LogoLinkProps): JSX.Element {
         onAnimationComplete={() => setIsAnimating(false)}
         transition={{ duration: 1, ease: "easeInOut" }}
       >
-        <Logomark className="text-primary" />
+        <Logomark className="text-text-primary" />
       </motion.span>
       <Spacer width={8} />
 
