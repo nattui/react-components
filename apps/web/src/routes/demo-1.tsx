@@ -87,15 +87,26 @@ export const Route = createFileRoute("/demo-1")({
               overflow-hidden border-l
             "
           >
-            <Column className="relative top-[-100px] h-full w-full">
+            <Column className="relative top-[-140px] h-full w-full">
               {INDUSTRY_CARDS.map((card, index) => (
                 <CardIndustry key={card.title} {...card} index={index} />
               ))}
             </Column>
-            {/* <p className="text-14 leading-1-625 text-center">
-              With Retell, we’ve increased scheduling NPS by 38%, and filled underutilized provider
-              capacity, allowing our team to focus on meaningful patient care instead of phone tag.
-            </p> */}
+            <p
+              className="
+                text-20 leading-1-625 absolute top-32 left-32 max-w-320
+              "
+            >
+              <span className="text-text-primary">40M+</span> AI phone calls every month
+            </p>
+            <p
+              className="
+                text-14 leading-1-625 absolute right-32 bottom-32 max-w-320
+              "
+            >
+              We’ve increased scheduling NPS by 38%, and filled underutilized provider capacity,
+              allowing our team to focus on meaningful patient care instead of phone tag.
+            </p>
           </Column>
         </Row>
       </Column>
