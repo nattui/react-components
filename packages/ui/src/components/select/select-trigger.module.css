@@ -13,6 +13,7 @@
     outline-offset: 2px;
     outline-style: solid;
     outline-width: 2px;
+    overflow: hidden;
     padding: 0 16px;
     transition-duration: 150ms;
     transition-property: background-color;
@@ -49,5 +50,11 @@
 
   .select_trigger__icon {
     margin-left: auto;
+    transition-duration: 150ms;
+    transition-property: rotate;
+  }
+
+  .select_trigger[data-popup-open] .select_trigger__icon {
+    rotate: 180deg;
   }
 }

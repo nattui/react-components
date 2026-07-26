@@ -1,7 +1,7 @@
 // oxlint-disable react-perf/jsx-no-new-array-as-prop
 
 import { Claude, DeepSeek, Gemini, Grok, OpenAI } from "@lobehub/icons"
-import { IconChevronDownOutline18, IconPlusOutline18 } from "@nattstack/icons"
+import { IconPlusOutline18 } from "@nattstack/icons"
 import {
   Button,
   Column,
@@ -57,11 +57,7 @@ export const Route = createFileRoute("/test")({
           }}
           value={model}
         >
-          <SelectTrigger
-            className="w-full max-w-320"
-            icon={<IconChevronDownOutline18 size={14} />}
-            placeholder="Select a model"
-          />
+          <SelectTrigger className="w-full max-w-320" placeholder="Select a model" />
           <SelectContent>
             <SelectGroup>
               <SelectGroupLabel>Models</SelectGroupLabel>
