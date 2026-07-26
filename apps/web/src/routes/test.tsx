@@ -80,7 +80,7 @@ export const Route = createFileRoute("/test")({
           </SelectTrigger>
           <SelectContent>
             {MODELS_2.map((model) => (
-              <SelectItem key={model.value} value={model}>
+              <SelectItem key={model.value} label={model.label} value={model}>
                 {model.icon && <model.icon className="mr-8" size={ICON_SIZE} />}
                 <span className="text-14 text-text-primary truncate font-[450]">{model.label}</span>
                 {model.description && (
