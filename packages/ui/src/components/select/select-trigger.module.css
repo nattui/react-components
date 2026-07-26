@@ -72,7 +72,10 @@
   /* Icon */
   /* =================================================== */
   .icon {
-    margin-left: auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    size: 16px;
     transition-duration: 150ms;
     transition-property: rotate;
   }
