@@ -9,7 +9,11 @@
     border-radius: 12px;
     box-shadow:
       0 0 0 1px var(--color-border) inset,
-      0 16px 32px color-mix(in oklab, black 16%, transparent);
+      0 0.5px 0 color-mix(in oklab, black 3%, transparent),
+      0 36px 15px -4px color-mix(in oklab, black 1%, transparent),
+      0 20px 12px -3px color-mix(in oklab, black 3%, transparent),
+      0 9px 9px -2px color-mix(in oklab, black 4%, transparent),
+      0 2px 5px -1px color-mix(in oklab, black 5%, transparent);
     color: var(--color-text-primary);
     display: flex;
     flex-direction: column;
