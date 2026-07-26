@@ -54,13 +54,13 @@ export const Route = createFileRoute("/test")({
         <Row
           className="
             border-border rounded-10 bg-bg-shell-inner h-40 max-w-320
-            items-center justify-between border px-16
+            items-center justify-between gap-x-8 overflow-hidden border px-16
           "
         >
-          <Row className="items-center">
+          <Row className="w-full items-center">
             <Grok className="mr-8" size={ICON_SIZE} />
-            <span className="text-14 text-text-primary font-[450]">Cursor Grok 4.5</span>
-            <span className="text-12 text-gray-9 ml-8">High Fast</span>
+            <span className="text-14 text-text-primary truncate font-[450]">Cursor Grok 4.5</span>
+            <span className="text-12 text-gray-9 ml-8 truncate">High Fast</span>
           </Row>
 
           <IconChevronDownOutline18 size={14} />
