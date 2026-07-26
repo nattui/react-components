@@ -1,5 +1,5 @@
 import { Claude, Gemini, Grok, OpenAI, type IconType } from "@lobehub/icons"
-import { IconChevronDownOutline18, IconPlusOutline18 } from "@nattstack/icons"
+import { IconPlusOutline18 } from "@nattstack/icons"
 import {
   Button,
   Column,
@@ -61,27 +61,6 @@ export const Route = createFileRoute("/test")({
       <Column>
         <Label>Model</Label>
         <Spacer height={4} />
-        <Row
-          className="
-            rounded-10 bg-bg-shell-inner
-            hover:bg-gray-3
-            relative h-40 max-w-288 cursor-pointer items-center justify-between
-            overflow-hidden pr-48 pl-16
-            shadow-[inset_0_0_0_1px_var(--color-border)]
-            transition-[background-color]
-          "
-        >
-          <Row className="w-full items-center">
-            <Grok className="mr-8" size={ICON_SIZE} />
-            <span className="text-14 text-text-primary truncate font-[450]">Cursor Grok 4.5</span>
-            <span className="text-12 text-gray-9 ml-8 truncate">High Fast</span>
-          </Row>
-
-          <Row className="absolute right-16 size-16 items-center justify-center">
-            <IconChevronDownOutline18 size={14} />
-          </Row>
-        </Row>
-        <Spacer height={64} />
 
         <Select defaultValue={MODELS_2[0]} itemToStringValue={(item: Model) => item.value}>
           <SelectTrigger className="max-w-288">
@@ -89,31 +68,26 @@ export const Route = createFileRoute("/test")({
               {(model: Model) => (
                 <Row className="w-full items-center">
                   {model.icon && <model.icon className="mr-8" size={ICON_SIZE} />}
-                  <span className="text-14 text-text-primary truncate font-[450]">
-                    {model.label}
-                  </span>
+                  <span className="truncate">{model.label}</span>
                   {model.description && (
-                    <span className="text-12 text-gray-9 ml-8 truncate">{model.description}</span>
+                    <span className="text-12 text-gray-9 font-400 ml-8 truncate">
+                      {model.description}
+                    </span>
                   )}
                 </Row>
               )}
             </SelectValue>
           </SelectTrigger>
           <SelectContent>
-            <SelectGroup>
-              <SelectGroupLabel>Models</SelectGroupLabel>
-              {MODELS_2.map((model) => (
-                <SelectItem key={model.value} value={model}>
-                  {model.icon && <model.icon className="mr-8" size={ICON_SIZE} />}
-                  <span className="text-14 text-text-primary truncate font-[450]">
-                    {model.label}
-                  </span>
-                  {model.description && (
-                    <span className="text-12 text-gray-9 ml-8 truncate">{model.description}</span>
-                  )}
-                </SelectItem>
-              ))}
-            </SelectGroup>
+            {MODELS_2.map((model) => (
+              <SelectItem key={model.value} value={model}>
+                {model.icon && <model.icon className="mr-8" size={ICON_SIZE} />}
+                <span className="text-14 text-text-primary truncate font-[450]">{model.label}</span>
+                {model.description && (
+                  <span className="text-12 text-gray-9 ml-8 truncate">{model.description}</span>
+                )}
+              </SelectItem>
+            ))}
           </SelectContent>
         </Select>
         <Spacer height={16} />
