@@ -8,7 +8,7 @@
     display: grid;
     font-size: 14px;
     font-weight: 450;
-    grid-template-columns: 16px 1fr;
+    grid-template-columns: 1fr 16px;
     line-height: 1.5;
     min-height: 36px;
     outline: none;
@@ -26,22 +26,22 @@
     opacity: 0.5;
   }
 
-  .select_item__indicator {
-    align-items: safe center;
-    color: var(--color-primary-9);
-    display: flex;
-    grid-column-start: 1;
-    justify-content: safe center;
-  }
-
   .select_item__label {
     align-items: center;
     column-gap: 8px;
     display: flex;
-    grid-column-start: 2;
+    grid-column-start: 1;
     min-width: 0;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+
+  .select_item__indicator {
+    align-items: safe center;
+    color: var(--color-primary-9);
+    display: flex;
+    grid-column-start: 2;
+    justify-content: safe center;
   }
 }

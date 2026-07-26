@@ -20,6 +20,10 @@ export function SelectItem(props: SelectItemProps): JSX.Element {
       disabled={isDisabled}
       {...rest}
     >
+      <BaseSelect.ItemText className={styles.select_item__label} data-slot="select-item-text">
+        {children}
+      </BaseSelect.ItemText>
+
       <BaseSelect.ItemIndicator
         className={styles.select_item__indicator}
         data-slot="select-item-indicator"
@@ -43,10 +47,6 @@ export function SelectItem(props: SelectItemProps): JSX.Element {
           />
         </svg>
       </BaseSelect.ItemIndicator>
-
-      <BaseSelect.ItemText className={styles.select_item__label} data-slot="select-item-text">
-        {children}
-      </BaseSelect.ItemText>
     </BaseSelect.Item>
   )
 }
