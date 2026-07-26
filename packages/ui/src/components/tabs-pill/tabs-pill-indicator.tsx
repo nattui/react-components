@@ -20,4 +20,4 @@ export function TabsPillIndicator(props: TabsPillIndicatorProps): JSX.Element {
   )
 }
 
-export const tabsPillIndicatorVariants = cva(styles.tabs_pill_indicator)
+export const tabsPillIndicatorVariants = cva(styles.base)

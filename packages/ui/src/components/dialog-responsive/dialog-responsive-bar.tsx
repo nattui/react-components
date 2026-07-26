@@ -12,4 +12,4 @@ export function DialogResponsiveBar(props: DialogResponsiveBarProps): JSX.Elemen
   return <div className={combinedClassName} data-slot="dialog-responsive-bar" {...rest} />
 }
 
-export const dialogResponsiveBarVariants = cva(styles.dialog_responsive_bar)
+export const dialogResponsiveBarVariants = cva(styles.base)

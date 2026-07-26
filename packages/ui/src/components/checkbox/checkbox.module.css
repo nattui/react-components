@@ -2,7 +2,7 @@
   /* ===================================================== */
   /* Base */
   /* ===================================================== */
-  .checkbox {
+  .base {
     --size: 16px;
     align-items: center;
     background-color: var(--color-bg-shell-inner);
@@ -21,16 +21,16 @@
     width: var(--size);
   }
 
-  .checkbox:focus-visible {
+  .base:focus-visible {
     outline-width: 2px;
   }
 
-  .checkbox:hover {
+  .base:hover {
     background-color: var(--color-gray-3);
     border-color: var(--color-gray-6);
   }
 
-  .checkbox[data-checked] {
+  .base[data-checked] {
     background-color: var(--color-primary);
     border-color: transparent;
   }

@@ -1,5 +1,5 @@
 @layer components {
-  .tabs {
+  .base {
     display: flex;
     flex-direction: column;
   }

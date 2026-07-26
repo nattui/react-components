@@ -57,4 +57,4 @@ export function Row(props: RowProps): JSX.Element {
   })
 }
 
-export const rowVariants = cva(styles.row)
+export const rowVariants = cva(styles.base)

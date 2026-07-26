@@ -20,4 +20,4 @@ export function Checkbox(props: CheckboxProps): JSX.Element {
   )
 }
 
-export const checkboxVariants = cva(styles.checkbox)
+export const checkboxVariants = cva(styles.base)

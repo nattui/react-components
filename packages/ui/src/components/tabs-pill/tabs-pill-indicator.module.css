@@ -1,5 +1,5 @@
 @layer components {
-  .tabs_pill_indicator {
+  .base {
     background-color: var(--color-gray-12);
     border-radius: 12px;
     height: var(--active-tab-height);

@@ -1,5 +1,5 @@
 @layer components {
-  .otp_field_input {
+  .base {
     background-color: var(--color-gray-3);
     border-radius: 14px;
     box-shadow: 0 0 0 1px var(--color-border) inset;
@@ -18,16 +18,16 @@
     width: 40px;
   }
 
-  .otp_field_input:enabled:hover {
+  .base:enabled:hover {
     box-shadow: 0 0 0 1px var(--color-gray-6) inset;
   }
 
-  .otp_field_input:disabled {
+  .base:disabled {
     cursor: not-allowed;
     opacity: 0.5;
   }
 
-  .otp_field_input:focus-visible {
+  .base:focus-visible {
     outline-width: 2px;
   }
 }

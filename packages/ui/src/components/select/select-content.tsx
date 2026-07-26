@@ -57,7 +57,7 @@ export function SelectContent(props: SelectContentProps): JSX.Element {
         alignOffset={alignOffset}
         anchor={anchor}
         arrowPadding={arrowPadding}
-        className={styles.select_content_positioner}
+        className={styles.positioner}
         collisionAvoidance={collisionAvoidance}
         collisionBoundary={collisionBoundary}
         collisionPadding={collisionPadding}
@@ -76,4 +76,4 @@ export function SelectContent(props: SelectContentProps): JSX.Element {
   )
 }
 
-export const selectContentVariants = cva(styles.select_content)
+export const selectContentVariants = cva(styles.base)

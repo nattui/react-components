@@ -20,4 +20,4 @@ export function TabsUnderlineIndicator(props: TabsUnderlineIndicatorProps): JSX.
   )
 }
 
-export const tabsUnderlineIndicatorVariants = cva(styles.tabs_underline_indicator)
+export const tabsUnderlineIndicatorVariants = cva(styles.base)

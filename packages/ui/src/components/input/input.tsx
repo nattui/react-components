@@ -60,22 +60,22 @@ export function Input(props: InputProps): JSX.Element {
   )
 }
 
-export const inputVariants = cva(styles.input, {
+export const inputVariants = cva(styles.base, {
   defaultVariants: {
     isRounded: false,
     size: 48,
   },
   variants: {
     isRounded: {
-      false: styles.input__rounded_base,
-      true: styles.input__rounded_full,
+      false: styles.rounded_base,
+      true: styles.rounded_full,
     },
     size: {
-      32: styles.input__size_32,
-      36: styles.input__size_36,
-      40: styles.input__size_40,
-      44: styles.input__size_44,
-      48: styles.input__size_48,
+      32: styles.size_32,
+      36: styles.size_36,
+      40: styles.size_40,
+      44: styles.size_44,
+      48: styles.size_48,
     },
   },
 })

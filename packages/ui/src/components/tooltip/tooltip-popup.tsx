@@ -18,7 +18,7 @@ export function TooltipPopup(props: TooltipPopupProps): JSX.Element {
   const combinedClassName = tooltipPopupVariants({ className: customClassName })
 
   return (
-    <BaseTooltip.Portal className={styles.tooltip_popup_portal}>
+    <BaseTooltip.Portal className={styles.portal}>
       <BaseTooltip.Positioner side={side} sideOffset={sideOffset}>
         <BaseTooltip.Popup className={combinedClassName} data-slot="tooltip-popup" {...rest}>
           {children}
@@ -29,4 +29,4 @@ export function TooltipPopup(props: TooltipPopupProps): JSX.Element {
   )
 }
 
-export const tooltipPopupVariants = cva(styles.tooltip_popup)
+export const tooltipPopupVariants = cva(styles.base)

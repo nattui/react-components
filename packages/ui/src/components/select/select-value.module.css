@@ -1,5 +1,5 @@
 @layer components {
-  .select_value {
+  .base {
     align-items: center;
     color: var(--color-text-primary);
     column-gap: 8px;
@@ -11,7 +11,7 @@
     white-space: nowrap;
   }
 
-  .select_value[data-placeholder] {
+  .base[data-placeholder] {
     color: var(--color-gray-9);
   }
 }

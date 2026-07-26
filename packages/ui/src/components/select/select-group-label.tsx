@@ -17,4 +17,4 @@ export function SelectGroupLabel(props: SelectGroupLabelProps): JSX.Element {
   )
 }
 
-export const selectGroupLabelVariants = cva(styles.select_group_label)
+export const selectGroupLabelVariants = cva(styles.base)

@@ -15,4 +15,4 @@ export function SelectValue(props: SelectValueProps): JSX.Element {
   return <BaseSelect.Value className={combinedClassName} data-slot="select-value" {...rest} />
 }
 
-export const selectValueVariants = cva(styles.select_value)
+export const selectValueVariants = cva(styles.base)

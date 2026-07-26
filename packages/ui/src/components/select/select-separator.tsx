@@ -17,4 +17,4 @@ export function SelectSeparator(props: SelectSeparatorProps): JSX.Element {
   )
 }
 
-export const selectSeparatorVariants = cva(styles.select_separator)
+export const selectSeparatorVariants = cva(styles.base)

@@ -29,4 +29,4 @@ export function ToggleGroupItem(props: ToggleGroupItemProps): JSX.Element {
   )
 }
 
-export const toggleGroupItemVariants = cva(styles.toggle_group_item)
+export const toggleGroupItemVariants = cva(styles.base)

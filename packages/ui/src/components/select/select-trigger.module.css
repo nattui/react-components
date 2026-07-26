@@ -1,5 +1,5 @@
 @layer components {
-  .select_trigger {
+  .base {
     align-items: center;
     background-color: var(--color-bg-shell-inner);
     box-shadow: 0 0 0 1px var(--color-border) inset;
@@ -18,18 +18,18 @@
     width: stretch;
   }
 
-  .select_trigger:disabled {
+  .base:disabled {
     cursor: not-allowed;
     opacity: 0.5;
     background-color: var(--color-gray-3);
   }
 
-  .select_trigger:focus-visible {
+  .base:focus-visible {
     outline-color: var(--color-primary);
   }
 
-  .select_trigger:hover:not(:disabled),
-  .select_trigger[data-popup-open] {
+  .base:hover:not(:disabled),
+  .base[data-popup-open] {
     background-color: var(--color-gray-3);
   }
 
@@ -71,13 +71,13 @@
   /* =================================================== */
   /* Icon */
   /* =================================================== */
-  .select_trigger__icon {
+  .icon {
     margin-left: auto;
     transition-duration: 150ms;
     transition-property: rotate;
   }
 
-  .select_trigger[data-popup-open] .select_trigger__icon {
+  .base[data-popup-open] .icon {
     rotate: 180deg;
   }
 }

@@ -1,5 +1,5 @@
 @layer components {
-  .toggle_group {
+  .base {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;

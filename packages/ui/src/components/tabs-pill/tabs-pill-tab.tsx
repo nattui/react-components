@@ -13,16 +13,16 @@ export function TabsPillTab(props: TabsPillTabProps): JSX.Element {
   const combinedClassName = tabsPillTabVariants({ className: customClassName })
 
   return (
-    <div className={styles.tabs_pill_tab_wrapper}>
+    <div className={styles.wrapper}>
       <BaseTabs.Tab
         className={combinedClassName}
         data-slot="tabs-pill-tab"
         nativeButton={isNativeButton}
         {...rest}
       />
-      <div className={styles.tabs_pill_tab_background} />
+      <div className={styles.background} />
     </div>
   )
 }
 
-export const tabsPillTabVariants = cva(styles.tabs_pill_tab)
+export const tabsPillTabVariants = cva(styles.base)

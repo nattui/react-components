@@ -22,4 +22,4 @@ export function TabsUnderlineTab(props: TabsUnderlineTabProps): JSX.Element {
   )
 }
 
-export const tabsUnderlineTabVariants = cva(styles.tabs_underline_tab)
+export const tabsUnderlineTabVariants = cva(styles.base)

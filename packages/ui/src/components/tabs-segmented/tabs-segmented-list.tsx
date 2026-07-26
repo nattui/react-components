@@ -19,4 +19,4 @@ export function TabsSegmentedList(props: TabsSegmentedListProps): JSX.Element {
   )
 }
 
-export const tabsSegmentedListVariants = cva(styles.tabs_segmented_list)
+export const tabsSegmentedListVariants = cva(styles.base)

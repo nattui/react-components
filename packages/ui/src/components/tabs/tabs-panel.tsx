@@ -13,4 +13,4 @@ export function TabsPanel(props: TabsPanelProps): JSX.Element {
   return <BaseTabs.Panel className={combinedClassName} data-slot="tabs-panel" {...rest} />
 }
 
-export const tabsPanelVariants = cva(styles.tabs_panel)
+export const tabsPanelVariants = cva(styles.base)

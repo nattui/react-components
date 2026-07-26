@@ -19,4 +19,4 @@ export function DialogResponsivePortal(props: DialogResponsivePortalProps): JSX.
   )
 }
 
-export const dialogResponsivePortalVariants = cva(styles.dialog_responsive_portal)
+export const dialogResponsivePortalVariants = cva(styles.base)

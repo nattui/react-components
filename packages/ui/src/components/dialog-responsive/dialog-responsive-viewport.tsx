@@ -19,4 +19,4 @@ export function DialogResponsiveViewport(props: DialogResponsiveViewportProps): 
   )
 }
 
-export const dialogResponsiveViewportVariants = cva(styles.dialog_responsive_viewport)
+export const dialogResponsiveViewportVariants = cva(styles.base)

@@ -21,4 +21,4 @@ export function Label(props: LabelProps): JSX.Element {
   )
 }
 
-export const labelVariants = cva(styles.label)
+export const labelVariants = cva(styles.base)

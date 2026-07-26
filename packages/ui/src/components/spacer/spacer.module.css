@@ -1,5 +1,5 @@
 @layer components {
-  .spacer {
+  .base {
     flex-shrink: 0;
   }
 }

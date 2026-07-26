@@ -2,7 +2,7 @@
   /* ===================================================== */
   /* Base */
   /* ===================================================== */
-  .input {
+  .base {
     appearance: none;
     background-color: var(--color-bg-shell-inner);
     border-style: none;
@@ -23,76 +23,76 @@
     width: 100%;
   }
 
-  .input::placeholder {
+  .base::placeholder {
     color: var(--color-gray-9);
     user-select: none;
   }
 
-  .input:disabled {
+  .base:disabled {
     cursor: not-allowed;
     opacity: 0.5;
   }
 
-  .input:enabled:active,
-  .input:enabled:focus,
-  .input:enabled:hover,
-  .input:enabled[data-is-active="true"] {
+  .base:enabled:active,
+  .base:enabled:focus,
+  .base:enabled:hover,
+  .base:enabled[data-is-active="true"] {
     box-shadow: 0 0 0 1px var(--color-gray-6) inset;
   }
 
-  .input[data-is-valid="true"] {
+  .base[data-is-valid="true"] {
     outline-color: #30a46c;
   }
 
-  .input[data-is-invalid="true"] {
+  .base[data-is-invalid="true"] {
     outline-color: #e5484d;
   }
 
   /* Focus overrides valid and invalid */
-  .input:focus-visible {
+  .base:focus-visible {
     outline-color: var(--color-outline);
   }
 
   /* ===================================================== */
   /* Rounded */
   /* ===================================================== */
-  .input__rounded_base {
+  .rounded_base {
     border-radius: 12px;
   }
 
   /* The double-class selector outranks the size classes' border-radius below */
-  .input.input__rounded_full {
+  .base.rounded_full {
     border-radius: 9999px;
   }
 
   /* ===================================================== */
   /* Size */
   /* ===================================================== */
-  .input__size_32 {
+  .size_32 {
     border-radius: 8px;
     min-height: 32px;
     padding: 0 8px;
   }
 
-  .input__size_36 {
+  .size_36 {
     border-radius: 9px;
     min-height: 36px;
     padding: 0 10px;
   }
 
-  .input__size_40 {
+  .size_40 {
     border-radius: 10px;
     min-height: 40px;
     padding: 0 12px;
   }
 
-  .input__size_44 {
+  .size_44 {
     border-radius: 11px;
     min-height: 44px;
     padding: 0 14px;
   }
 
-  .input__size_48 {
+  .size_48 {
     border-radius: 12px;
     min-height: 48px;
     padding: 0 16px;

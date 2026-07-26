@@ -1,5 +1,5 @@
 @layer components {
-  .select_group_label {
+  .base {
     color: var(--color-text-secondary);
     font-size: 12px;
     font-weight: 450;

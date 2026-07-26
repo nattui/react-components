@@ -19,4 +19,4 @@ export function DialogResponsiveBackdrop(props: DialogResponsiveBackdropProps): 
   )
 }
 
-export const dialogResponsiveBackdropVariants = cva(styles.dialog_responsive_backdrop)
+export const dialogResponsiveBackdropVariants = cva(styles.base)

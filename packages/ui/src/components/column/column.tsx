@@ -57,4 +57,4 @@ export function Column(props: ColumnProps): JSX.Element {
   })
 }
 
-export const columnVariants = cva(styles.column)
+export const columnVariants = cva(styles.base)

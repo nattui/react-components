@@ -13,4 +13,4 @@ export function Tabs(props: TabsProps): JSX.Element {
   return <BaseTabs.Root className={combinedClassName} data-slot="tabs" {...rest} />
 }
 
-export const tabsVariants = cva(styles.tabs)
+export const tabsVariants = cva(styles.base)

@@ -1,5 +1,5 @@
 @layer components {
-  .dialog_responsive_backdrop {
+  .base {
     --backdrop-opacity: 0.25;
     background-color: black;
     inset: 0;
@@ -10,20 +10,20 @@
     transition-property: opacity;
   }
 
-  .dialog_responsive_backdrop[data-ending-style],
-  .dialog_responsive_backdrop[data-starting-style] {
+  .base[data-ending-style],
+  .base[data-starting-style] {
     opacity: 0;
   }
 
-  .dialog_responsive_backdrop[data-ending-style] {
+  .base[data-ending-style] {
     transition-duration: calc(var(--drawer-swipe-strength) * 400ms);
   }
 
-  .dialog_responsive_backdrop[data-swiping] {
+  .base[data-swiping] {
     transition-duration: 0ms;
   }
 
-  :global(.dark) .dialog_responsive_backdrop {
+  :global(.dark) .base {
     --backdrop-opacity: 0.75;
   }
 }

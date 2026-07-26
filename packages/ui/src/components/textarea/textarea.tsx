@@ -51,14 +51,14 @@ export function Textarea(props: TextareaProps): JSX.Element {
   )
 }
 
-export const textareaVariants = cva([inputStyles.input, styles.textarea], {
+export const textareaVariants = cva([inputStyles.base, styles.base], {
   defaultVariants: {
     isRounded: false,
   },
   variants: {
     isRounded: {
-      false: inputStyles.input__rounded_base,
-      true: inputStyles.input__rounded_full,
+      false: inputStyles.rounded_base,
+      true: inputStyles.rounded_full,
     },
   },
 })

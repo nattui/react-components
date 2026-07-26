@@ -1,5 +1,5 @@
 @layer components {
-  .select_item {
+  .base {
     align-items: safe center;
     border-radius: 8px;
     color: var(--color-text-primary);
@@ -16,16 +16,16 @@
     user-select: none;
   }
 
-  .select_item[data-highlighted] {
+  .base[data-highlighted] {
     background-color: var(--color-gray-3);
   }
 
-  .select_item[data-disabled] {
+  .base[data-disabled] {
     cursor: not-allowed;
     opacity: 0.5;
   }
 
-  .select_item__label {
+  .label {
     align-items: center;
     column-gap: 8px;
     display: flex;
@@ -36,7 +36,7 @@
     white-space: nowrap;
   }
 
-  .select_item__indicator {
+  .indicator {
     align-items: safe center;
     color: var(--color-primary-9);
     display: flex;

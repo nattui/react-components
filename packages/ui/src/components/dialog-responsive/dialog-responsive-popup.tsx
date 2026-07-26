@@ -31,4 +31,4 @@ export function DialogResponsivePopup(props: DialogResponsivePopupProps): JSX.El
   )
 }
 
-export const dialogResponsivePopupVariants = cva(styles.dialog_responsive_popup)
+export const dialogResponsivePopupVariants = cva(styles.base)

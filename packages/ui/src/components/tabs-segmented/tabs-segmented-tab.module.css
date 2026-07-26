@@ -1,5 +1,5 @@
 @layer components {
-  .tabs_segmented_tab {
+  .base {
     align-items: center;
     border-radius: 10px;
     color: var(--color-gray-11);
@@ -21,17 +21,17 @@
     white-space: nowrap;
   }
 
-  .tabs_segmented_tab:focus-visible {
+  .base:focus-visible {
     outline-width: 2px;
   }
 
-  .tabs_segmented_tab:hover,
-  .tabs_segmented_tab[data-active] {
+  .base:hover,
+  .base[data-active] {
     color: var(--color-gray-12);
   }
 
   /* Icon size */
-  .tabs_segmented_tab > svg {
+  .base > svg {
     --size-icon: 16px;
     height: var(--size-icon);
     width: var(--size-icon);

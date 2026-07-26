@@ -20,4 +20,4 @@ export function TabsSegmentedIndicator(props: TabsSegmentedIndicatorProps): JSX.
   )
 }
 
-export const tabsSegmentedIndicatorVariants = cva(styles.tabs_segmented_indicator)
+export const tabsSegmentedIndicatorVariants = cva(styles.base)

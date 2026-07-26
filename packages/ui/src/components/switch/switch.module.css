@@ -2,7 +2,7 @@
   /* ===================================================== */
   /* Base */
   /* ===================================================== */
-  .switch {
+  .base {
     background-color: var(--color-gray-6);
     border-radius: 9999px;
     cursor: pointer;
@@ -17,15 +17,15 @@
     transition-property: background-color;
   }
 
-  .switch:focus-visible {
+  .base:focus-visible {
     outline-width: 2px;
   }
 
-  .switch[data-checked] {
+  .base[data-checked] {
     background-color: var(--color-primary-9);
   }
 
-  .switch[data-disabled] {
+  .base[data-disabled] {
     cursor: not-allowed;
     opacity: 0.5;
   }
@@ -34,7 +34,7 @@
   /* Thumb */
   /* ===================================================== */
 
-  .switch__thumb {
+  .thumb {
     height: 100%;
     aspect-ratio: 1 / 1;
     background-color: white;
@@ -43,20 +43,20 @@
     transition-property: transform;
   }
 
-  .switch__thumb[data-checked] {
+  .thumb[data-checked] {
     transform: translateX(var(--translateX));
   }
 
   /* ===================================================== */
   /* Size */
   /* ===================================================== */
-  .switch__size_18 {
+  .size_18 {
     --translateX: 12px;
     width: 30px;
     height: 18px;
   }
 
-  .switch__size_24 {
+  .size_24 {
     --translateX: 16px;
     width: 40px;
     height: 24px;

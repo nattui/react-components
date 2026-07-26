@@ -1,5 +1,5 @@
 @layer components {
-  .tabs_underline_indicator {
+  .base {
     background-color: var(--color-primary-9);
     bottom: 0px;
     height: 2px;

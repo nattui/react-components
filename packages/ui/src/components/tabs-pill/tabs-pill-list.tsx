@@ -19,4 +19,4 @@ export function TabsPillList(props: TabsPillListProps): JSX.Element {
   )
 }
 
-export const tabsPillListVariants = cva(styles.tabs_pill_list)
+export const tabsPillListVariants = cva(styles.base)

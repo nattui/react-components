@@ -27,7 +27,7 @@ export function SelectTrigger(props: SelectTriggerProps): JSX.Element {
     <BaseSelect.Trigger className={combinedClassName} data-slot="select-trigger" {...rest}>
       {children}
 
-      <BaseSelect.Icon className={styles.select_trigger__icon} data-slot="select-icon">
+      <BaseSelect.Icon className={styles.icon} data-slot="select-icon">
         {/* chevron-down */}
         <svg height="14" viewBox="0 0 18 18" width="14" xmlns="http://www.w3.org/2000/svg">
           <polyline
@@ -44,7 +44,7 @@ export function SelectTrigger(props: SelectTriggerProps): JSX.Element {
   )
 }
 
-export const selectTriggerVariants = cva(styles.select_trigger, {
+export const selectTriggerVariants = cva(styles.base, {
   variants: {
     isRounded: {
       true: styles.rounded_full,

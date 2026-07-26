@@ -45,19 +45,19 @@ export function Switch(props: SwitchProps): JSX.Element {
       required={isRequired}
       {...rest}
     >
-      <BaseSwitch.Thumb className={styles.switch__thumb} />
+      <BaseSwitch.Thumb className={styles.thumb} />
     </BaseSwitch.Root>
   )
 }
 
-export const switchVariants = cva(styles.switch, {
+export const switchVariants = cva(styles.base, {
   defaultVariants: {
     size: 24,
   },
   variants: {
     size: {
-      18: styles.switch__size_18,
-      24: styles.switch__size_24,
+      18: styles.size_18,
+      24: styles.size_24,
     },
   },
 })

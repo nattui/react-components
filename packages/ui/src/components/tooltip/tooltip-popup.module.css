@@ -1,5 +1,5 @@
 @layer components {
-  .tooltip_popup {
+  .base {
     background-color: var(--color-gray-dark-1);
     border-radius: 8px;
     box-shadow:
@@ -15,8 +15,8 @@
   }
 
   /* Animation */
-  .tooltip_popup[data-ending-style],
-  .tooltip_popup[data-starting-style] {
+  .base[data-ending-style],
+  .base[data-starting-style] {
     opacity: 0;
     scale: 0.975;
   }
@@ -25,16 +25,16 @@
       Skip animation when moving directly between tooltip triggers
       Order matters: [data-instant] must be after [data-ending-style] and [data-starting-style]
   */
-  .tooltip_popup[data-instant] {
+  .base[data-instant] {
     transition: none;
   }
 
-  .tooltip_popup_portal {
+  .portal {
     z-index: 50;
   }
 
   /* Dark mode */
-  :global(.dark) .tooltip_popup {
+  :global(.dark) .base {
     background-color: var(--color-gray-light-1);
     color: var(--color-gray-light-12);
   }

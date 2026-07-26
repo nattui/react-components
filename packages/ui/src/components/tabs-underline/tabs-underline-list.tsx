@@ -19,4 +19,4 @@ export function TabsUnderlineList(props: TabsUnderlineListProps): JSX.Element {
   )
 }
 
-export const tabsUnderlineListVariants = cva(styles.tabs_underline_list)
+export const tabsUnderlineListVariants = cva(styles.base)

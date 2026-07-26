@@ -1,5 +1,5 @@
 @layer components {
-  .tabs_underline_list {
+  .base {
     border-bottom-color: var(--color-gray-4);
     border-bottom-style: solid;
     border-bottom-width: 1px;

@@ -1,5 +1,5 @@
 @layer components {
-  .dialog_responsive_popup {
+  .base {
     background-color: var(--color-gray-1);
     border-radius: 16px;
     cursor: auto;
@@ -17,24 +17,24 @@
     will-change: opacity, transform;
   }
 
-  .dialog_responsive_popup:focus-visible {
+  .base:focus-visible {
     outline-width: 2px;
   }
 
   /* Desktop */
-  .dialog_responsive_popup[data-ending-style],
-  .dialog_responsive_popup[data-starting-style] {
+  .base[data-ending-style],
+  .base[data-starting-style] {
     opacity: 0;
     transform: scale(0.975);
   }
 
-  .dialog_responsive_popup[data-swiping] {
+  .base[data-swiping] {
     user-select: none;
   }
 
   /* Mobile */
   @media (max-width: 640px) {
-    .dialog_responsive_popup {
+    .base {
       --radius-mobile: 24px;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
@@ -47,13 +47,13 @@
       transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
     }
 
-    .dialog_responsive_popup[data-ending-style],
-    .dialog_responsive_popup[data-starting-style] {
+    .base[data-ending-style],
+    .base[data-starting-style] {
       opacity: 1;
       transform: scale(1) translateY(100%);
     }
 
-    .dialog_responsive_popup[data-ending-style] {
+    .base[data-ending-style] {
       transition-duration: calc(var(--drawer-swipe-strength) * 300ms);
     }
   }

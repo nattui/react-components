@@ -27,14 +27,14 @@ export function OTPField(props: OTPFieldProps): JSX.Element {
   )
 }
 
-export const otpFieldVariants = cva(styles.otp_field, {
+export const otpFieldVariants = cva(styles.base, {
   defaultVariants: {
     isMasked: false,
   },
   variants: {
     isMasked: {
       false: "",
-      true: styles.otp_field__masked,
+      true: styles.masked,
     },
   },
 })

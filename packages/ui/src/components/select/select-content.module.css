@@ -1,10 +1,10 @@
 @layer components {
-  .select_content_positioner {
+  .positioner {
     isolation: isolate;
     z-index: 50;
   }
 
-  .select_content {
+  .base {
     background-color: var(--color-bg-shell-inner);
     border-radius: 12px;
     box-shadow:
@@ -33,37 +33,37 @@
     will-change: opacity, transform;
   }
 
-  .select_content:focus-visible {
+  .base:focus-visible {
     outline-width: 2px;
   }
 
-  .select_content[data-ending-style],
-  .select_content[data-starting-style] {
+  .base[data-ending-style],
+  .base[data-starting-style] {
     opacity: 0;
     transform: scale(0.975);
   }
 
-  .select_content[data-side="top"][data-ending-style],
-  .select_content[data-side="top"][data-starting-style] {
+  .base[data-side="top"][data-ending-style],
+  .base[data-side="top"][data-starting-style] {
     transform: scale(0.975) translateY(4px);
   }
 
-  .select_content[data-side="bottom"][data-ending-style],
-  .select_content[data-side="bottom"][data-starting-style] {
+  .base[data-side="bottom"][data-ending-style],
+  .base[data-side="bottom"][data-starting-style] {
     transform: scale(0.975) translateY(-4px);
   }
 
-  .select_content[data-side="left"][data-ending-style],
-  .select_content[data-side="left"][data-starting-style],
-  .select_content[data-side="inline-start"][data-ending-style],
-  .select_content[data-side="inline-start"][data-starting-style] {
+  .base[data-side="left"][data-ending-style],
+  .base[data-side="left"][data-starting-style],
+  .base[data-side="inline-start"][data-ending-style],
+  .base[data-side="inline-start"][data-starting-style] {
     transform: scale(0.975) translateX(4px);
   }
 
-  .select_content[data-side="right"][data-ending-style],
-  .select_content[data-side="right"][data-starting-style],
-  .select_content[data-side="inline-end"][data-ending-style],
-  .select_content[data-side="inline-end"][data-starting-style] {
+  .base[data-side="right"][data-ending-style],
+  .base[data-side="right"][data-starting-style],
+  .base[data-side="inline-end"][data-ending-style],
+  .base[data-side="inline-end"][data-starting-style] {
     transform: scale(0.975) translateX(-4px);
   }
 }

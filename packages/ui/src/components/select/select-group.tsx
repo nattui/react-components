@@ -15,4 +15,4 @@ export function SelectGroup(props: SelectGroupProps): JSX.Element {
   return <BaseSelect.Group className={combinedClassName} data-slot="select-group" {...rest} />
 }
 
-export const selectGroupVariants = cva(styles.select_group)
+export const selectGroupVariants = cva(styles.base)

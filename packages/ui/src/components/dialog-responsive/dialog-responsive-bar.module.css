@@ -1,5 +1,5 @@
 @layer components {
-  .dialog_responsive_bar {
+  .base {
     background-color: var(--color-gray-4);
     border-radius: 9999px;
     display: none;
@@ -9,7 +9,7 @@
   }
 
   @media (max-width: 640px) {
-    .dialog_responsive_bar {
+    .base {
       display: block;
     }
   }
