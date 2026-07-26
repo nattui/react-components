@@ -28,7 +28,7 @@ interface Model {
   value: string
 }
 
-const MODELS_2: Model[] = [
+const MODELS: Model[] = [
   {
     description: "Max",
     icon: Claude.Color,
@@ -62,7 +62,7 @@ export const Route = createFileRoute("/test")({
         <Label>Model</Label>
         <Spacer height={4} />
 
-        <Select defaultValue={MODELS_2[0]} itemToStringValue={(item: Model) => item.value}>
+        <Select defaultValue={MODELS[0]} itemToStringValue={(item: Model) => item.value}>
           <SelectTrigger className="max-w-288">
             <SelectValue placeholder="Select a model">
               {(model: Model) => (
@@ -70,7 +70,7 @@ export const Route = createFileRoute("/test")({
                   {model.icon && <model.icon className="mr-8" size={ICON_SIZE} />}
                   <span className="truncate">{model.label}</span>
                   {model.description && (
-                    <span className="text-12 text-gray-9 font-400 ml-8 truncate">
+                    <span className="text-12 text-gray-9 font-400 ml-6 truncate">
                       {model.description}
                     </span>
                   )}
@@ -79,12 +79,14 @@ export const Route = createFileRoute("/test")({
             </SelectValue>
           </SelectTrigger>
           <SelectContent>
-            {MODELS_2.map((model) => (
+            {MODELS.map((model) => (
               <SelectItem key={model.value} label={model.label} value={model}>
                 {model.icon && <model.icon className="mr-8" size={ICON_SIZE} />}
-                <span className="text-14 text-text-primary truncate font-[450]">{model.label}</span>
+                <span className="truncate">{model.label}</span>
                 {model.description && (
-                  <span className="text-12 text-gray-9 ml-8 truncate">{model.description}</span>
+                  <span className="text-12 text-gray-9 font-400 ml-6 truncate">
+                    {model.description}
+                  </span>
                 )}
               </SelectItem>
             ))}
