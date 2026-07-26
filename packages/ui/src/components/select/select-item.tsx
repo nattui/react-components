@@ -1,36 +1,17 @@
 import { Select as BaseSelect } from "@base-ui/react"
 import { cva } from "class-variance-authority"
-import type { JSX, ReactNode } from "react"
+import type { JSX } from "react"
 import styles from "./select-item.module.css"
 
 export interface SelectItemProps extends Omit<BaseSelect.Item.Props, "className" | "disabled"> {
   className?: string
-  indicator?: ReactNode
   isDisabled?: BaseSelect.Item.Props["disabled"]
 }
 
 export function SelectItem(props: SelectItemProps): JSX.Element {
-  const {
-    children,
-    className: customClassName = "",
-    indicator = undefined,
-    isDisabled = false,
-    ...rest
-  } = props
+  const { children, className: customClassName = "", isDisabled = false, ...rest } = props
 
   const combinedClassName = selectItemVariants({ className: customClassName })
-
-  const currentIndicator = indicator ?? (
-    <svg fill="none" height="16" viewBox="0 0 16 16" width="16">
-      <path
-        d="M3.35 9.25L6.15 12L12.65 4.65"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-      />
-    </svg>
-  )
 
   return (
     <BaseSelect.Item
@@ -43,8 +24,26 @@ export function SelectItem(props: SelectItemProps): JSX.Element {
         className={styles.select_item__indicator}
         data-slot="select-item-indicator"
       >
-        {currentIndicator}
+        {/* check */}
+        <svg
+          height="14px"
+          viewBox="0 0 18 18"
+          width="14px"
+          x="0px"
+          xmlns="http://www.w3.org/2000/svg"
+          y="0px"
+        >
+          <polyline
+            fill="none"
+            points="2.75 9.25 6.75 14.25 15.25 3.75"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="1.5"
+          />
+        </svg>
       </BaseSelect.ItemIndicator>
+
       <BaseSelect.ItemText className={styles.select_item__label} data-slot="select-item-text">
         {children}
       </BaseSelect.ItemText>
