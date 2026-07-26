@@ -1,6 +1,5 @@
-// oxlint-disable react-perf/jsx-no-new-array-as-prop
-
-import { Claude, DeepSeek, Gemini, Grok, OpenAI } from "@lobehub/icons"
+import { Select as BaseSelect } from "@base-ui/react"
+import { Grok, type IconType } from "@lobehub/icons"
 import { IconChevronDownOutline18, IconPlusOutline18 } from "@nattstack/icons"
 import {
   Button,
@@ -18,38 +17,28 @@ import {
   Spacer,
 } from "@nattstack/ui"
 import { createFileRoute } from "@tanstack/react-router"
-import { useState, type JSX, type ReactNode } from "react"
 import { DialogAppearance } from "#/components/dialog-appearance"
 
 const ICON_SIZE = 18
 
-const MODELS = [
+interface Model {
+  description?: string
+  icon?: IconType
+  label: string
+  value: string
+}
+
+const MODELS_2: Model[] = [
   {
-    label: <ModelOption icon={<OpenAI size={ICON_SIZE} />} label="GPT-4o" />,
-    value: "gpt-4o",
-  },
-  {
-    label: <ModelOption icon={<Claude.Color size={ICON_SIZE} />} label="Claude Sonnet 4" />,
-    value: "claude-sonnet-4",
-  },
-  {
-    label: <ModelOption icon={<Gemini.Color size={ICON_SIZE} />} label="Gemini 2.5 Pro" />,
-    value: "gemini-2.5-pro",
-  },
-  {
-    label: <ModelOption icon={<DeepSeek.Color size={ICON_SIZE} />} label="DeepSeek V3" />,
-    value: "deepseek-v3",
-  },
-  {
-    label: <ModelOption icon={<Grok size={ICON_SIZE} />} label="Grok 3" />,
-    value: "grok-3",
+    description: "High Fast",
+    icon: Grok,
+    label: "Cursor Grok 4.5",
+    value: "cursor-grok-4.5",
   },
 ]
 
 export const Route = createFileRoute("/test")({
   component: function RouteComponent() {
-    const [model, setModel] = useState<null | string>("gpt-4o")
-
     return (
       <Column>
         <Label>Model</Label>
@@ -76,22 +65,34 @@ export const Route = createFileRoute("/test")({
         </Row>
         <Spacer height={64} />
 
-        <Select
-          items={MODELS}
-          onValueChange={(value) => {
-            if (typeof value === "string" || value === null) {
-              setModel(value)
-            }
-          }}
-          value={model}
-        >
-          <SelectTrigger className="max-w-288" placeholder="Select a model" />
+        <Select defaultValue={MODELS_2[0]} itemToStringValue={(item: Model) => item.value}>
+          <SelectTrigger className="max-w-288" placeholder="Select a model">
+            <BaseSelect.Value>
+              {(model: Model) => (
+                <Row className="w-full items-center">
+                  {model.icon && <model.icon className="mr-8" size={ICON_SIZE} />}
+                  <span className="text-14 text-text-primary truncate font-[450]">
+                    {model.label}
+                  </span>
+                  {model.description && (
+                    <span className="text-12 text-gray-9 ml-8 truncate">{model.description}</span>
+                  )}
+                </Row>
+              )}
+            </BaseSelect.Value>
+          </SelectTrigger>
           <SelectContent>
             <SelectGroup>
               <SelectGroupLabel>Models</SelectGroupLabel>
-              {MODELS.map((option) => (
-                <SelectItem key={option.value} value={option.value}>
-                  {option.label}
+              {MODELS_2.map((model) => (
+                <SelectItem key={model.value} value={model}>
+                  {model.icon && <model.icon className="mr-8" size={ICON_SIZE} />}
+                  <span className="text-14 text-text-primary truncate font-[450]">
+                    {model.label}
+                  </span>
+                  {model.description && (
+                    <span className="text-12 text-gray-9 ml-8 truncate">{model.description}</span>
+                  )}
                 </SelectItem>
               ))}
             </SelectGroup>
@@ -158,25 +159,3 @@ export const Route = createFileRoute("/test")({
     )
   },
 })
-
-function ModelOption(props: { icon: ReactNode; label: string }): JSX.Element {
-  const { icon, label } = props
-
-  return (
-    <>
-      {icon}
-      {label}
-    </>
-  )
-}
-
-// function ToggleMode(props: ToggleProps<string>): JSX.Element {
-//   return (
-//     <Toggle
-//       aria-label="Align right"
-//       className="d flex size-40 items-center justify-center"
-//       value="right"
-//       {...props}
-//     />
-//   )
-// }
