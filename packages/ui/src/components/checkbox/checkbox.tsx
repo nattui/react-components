@@ -12,7 +12,7 @@ export function Checkbox(props: CheckboxProps): JSX.Element {
   const combinedClassName = checkboxVariants({ className: customClassName })
 
   return (
-    <BaseCheckbox.Root className={combinedClassName} {...rest}>
+    <BaseCheckbox.Root className={combinedClassName} data-slot="checkbox" {...rest}>
       <BaseCheckbox.Indicator className={styles.indicator}>
         {children ?? <CheckboxIcon className={styles.icon} />}
       </BaseCheckbox.Indicator>

@@ -7,6 +7,7 @@ export function CheckboxIcon(props: CheckboxIconProps): JSX.Element {
 
   return (
     <svg
+      data-slot="checkbox-icon"
       fill="none"
       height="24"
       viewBox="0 0 24 24"

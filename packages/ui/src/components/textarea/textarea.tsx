@@ -41,6 +41,7 @@ export function Textarea(props: TextareaProps): JSX.Element {
       data-is-active={isActive}
       data-is-invalid={isInvalid}
       data-is-valid={isValid}
+      data-slot="textarea"
       disabled={isDisabled}
       readOnly={isReadOnly}
       required={isRequired}

@@ -51,6 +51,7 @@ export function Row(props: RowProps): JSX.Element {
 
   return createElement(Component, {
     className: combinedClassName,
+    "data-slot": "row",
     style: combinedStyle,
     ...rest,
   })

@@ -38,6 +38,7 @@ export function Switch(props: SwitchProps): JSX.Element {
     <BaseSwitch.Root
       checked={isChecked}
       className={combinedClassName}
+      data-slot="switch"
       defaultChecked={isDefaultChecked}
       disabled={isDisabled}
       readOnly={isReadOnly}

@@ -10,7 +10,7 @@ export function OTPFieldInput(props: OTPFieldInputProps): JSX.Element {
 
   const combinedClassName = otpFieldInputVariants({ className: customClassName })
 
-  return <OTPFieldBase.Input className={combinedClassName} {...rest} />
+  return <OTPFieldBase.Input className={combinedClassName} data-slot="otp-field-input" {...rest} />
 }
 
 export const otpFieldInputVariants = cva(styles.otp_field_input)

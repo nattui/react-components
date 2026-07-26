@@ -42,6 +42,7 @@ export function ButtonLink<ComponentType extends ElementType = "a">(
         size,
         variant,
       })}
+      data-slot="button-link"
       {...rest}
     >
       {iconStart}

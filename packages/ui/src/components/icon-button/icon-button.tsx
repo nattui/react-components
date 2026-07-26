@@ -38,6 +38,7 @@ export function IconButton(props: IconButtonProps): JSX.Element {
           size,
         }),
       )}
+      data-slot="icon-button"
       disabled={isDisabled || isLoading}
       type="button"
       {...rest}

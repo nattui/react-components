@@ -10,7 +10,7 @@ export function Label(props: LabelProps): JSX.Element {
   const combinedClassName = labelVariants({ className: customClassName })
 
   return (
-    <label className={combinedClassName} htmlFor={htmlFor} {...rest}>
+    <label className={combinedClassName} data-slot="label" htmlFor={htmlFor} {...rest}>
       {children}
     </label>
   )

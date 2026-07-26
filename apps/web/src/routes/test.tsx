@@ -1,6 +1,7 @@
-import { Claude } from "@lobehub/icons"
-import { IconChevronDownOutline18, IconPlusOutline18 } from "@nattstack/icons"
-import { Button, Column, IconButton, Spacer } from "@nattstack/ui"
+// oxlint-disable react-perf/jsx-no-new-array-as-prop
+
+import { IconPlusOutline18 } from "@nattstack/icons"
+import { Button, Column, IconButton, Row, Spacer } from "@nattstack/ui"
 import { createFileRoute } from "@tanstack/react-router"
 import { DialogAppearance } from "#/components/dialog-appearance"
 
@@ -8,13 +9,12 @@ export const Route = createFileRoute("/test")({
   component: function RouteComponent() {
     return (
       <Column className="gap-y-8">
-        <Button
-          className="w-full max-w-256"
-          iconEnd={<IconChevronDownOutline18 className="ml-auto" size={14} />}
-          iconStart={<Claude.Color size={18} />}
-          label="Fable 5 Medium"
-          variant="secondary"
-        />
+        <Row className="d h-40 w-full">
+          <span>asdf</span>
+        </Row>
+
+        <Spacer height={64} />
+
         <Spacer height={64} />
 
         <DialogAppearance />

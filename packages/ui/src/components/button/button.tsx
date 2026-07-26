@@ -41,6 +41,7 @@ export function Button(props: ButtonProps): JSX.Element {
         size,
         variant,
       })}
+      data-slot="button"
       disabled={isDisabled || isLoading}
       type="button"
       {...rest}

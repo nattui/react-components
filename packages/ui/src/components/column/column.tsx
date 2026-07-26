@@ -51,6 +51,7 @@ export function Column(props: ColumnProps): JSX.Element {
 
   return createElement(Component, {
     className: combinedClassName,
+    "data-slot": "column",
     style: combinedStyle,
     ...rest,
   })

@@ -50,6 +50,7 @@ export function Input(props: InputProps): JSX.Element {
       data-is-active={isActive}
       data-is-invalid={isInvalid}
       data-is-valid={isValid}
+      data-slot="input"
       disabled={isDisabled}
       readOnly={isReadOnly}
       required={isRequired}

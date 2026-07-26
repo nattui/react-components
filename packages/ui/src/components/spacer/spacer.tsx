@@ -18,7 +18,7 @@ export function Spacer(props: SpacerProps): JSX.Element {
     ...(height === undefined ? {} : { height }),
   }
 
-  return <div className={combinedClassName} style={combinedStyle} {...rest} />
+  return <div className={combinedClassName} data-slot="spacer" style={combinedStyle} {...rest} />
 }
 
 export const spacerVariants = cva(styles.spacer)

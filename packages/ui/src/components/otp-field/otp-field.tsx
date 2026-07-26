@@ -19,6 +19,7 @@ export function OTPField(props: OTPFieldProps): JSX.Element {
   return (
     <OTPFieldBase.Root
       className={combinedClassName}
+      data-slot="otp-field"
       disabled={isDisabled}
       mask={isMasked}
       {...rest}
