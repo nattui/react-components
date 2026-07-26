@@ -19,6 +19,7 @@ export function SelectItem(props: SelectItemProps): JSX.Element {
   } = props
 
   const combinedClassName = selectItemVariants({ className: customClassName })
+
   const currentIndicator = indicator ?? (
     <svg fill="none" height="16" viewBox="0 0 16 16" width="16">
       <path
