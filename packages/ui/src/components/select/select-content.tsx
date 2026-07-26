@@ -42,7 +42,7 @@ export function SelectContent(props: SelectContentProps): JSX.Element {
     disableAnchorTracking = undefined,
     positionMethod = undefined,
     side = "bottom",
-    sideOffset = 8,
+    sideOffset = 6,
     sticky = undefined,
     ...rest
   } = props
