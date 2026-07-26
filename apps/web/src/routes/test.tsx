@@ -1,5 +1,5 @@
 import { Select as BaseSelect } from "@base-ui/react"
-import { Grok, type IconType } from "@lobehub/icons"
+import { Claude, Gemini, Grok, OpenAI, type IconType } from "@lobehub/icons"
 import { IconChevronDownOutline18, IconPlusOutline18 } from "@nattstack/icons"
 import {
   Button,
@@ -34,6 +34,24 @@ const MODELS_2: Model[] = [
     icon: Grok,
     label: "Cursor Grok 4.5",
     value: "cursor-grok-4.5",
+  },
+  {
+    description: "Max",
+    icon: Claude,
+    label: "Fable 5",
+    value: "fable-5",
+  },
+  {
+    description: "Fast",
+    icon: OpenAI,
+    label: "GPT-4o mini",
+    value: "gpt-4o-mini",
+  },
+  {
+    description: "Fast",
+    icon: Gemini,
+    label: "Gemini 2.5 Pro",
+    value: "gemini-2.5-pro",
   },
 ]
 
