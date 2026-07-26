@@ -40,6 +40,10 @@ export const Route = createFileRoute("/test")({
           </SelectContent>
         </Select>
 
+        <Select defaultValue="sans" disabled>
+          <SelectTrigger className="w-full max-w-320" placeholder="Select a font" />
+        </Select>
+
         <Spacer height={64} />
 
         <DialogAppearance />

@@ -19,23 +19,19 @@
     width: stretch;
   }
 
-  .select_trigger:hover:not(:disabled),
-  .select_trigger[data-popup-open] {
-    background-color: var(--color-gray-3);
-  }
-
-  .select_trigger:active:not(:disabled),
-  .select_trigger[data-pressed] {
-    translate: 0 1px;
-  }
-
   .select_trigger:disabled {
     cursor: not-allowed;
     opacity: 0.5;
+    background-color: var(--color-gray-3);
   }
 
   .select_trigger:focus-visible {
     outline-color: var(--color-primary);
+  }
+
+  .select_trigger:hover:not(:disabled),
+  .select_trigger[data-popup-open] {
+    background-color: var(--color-gray-3);
   }
 
   .select_trigger__value {
@@ -48,7 +44,7 @@
   }
 
   .select_trigger__value[data-placeholder] {
-    color: var(--color-text-secondary);
+    color: var(--color-gray-9);
   }
 
   .select_trigger__icon {
@@ -65,13 +61,5 @@
   .select_trigger__icon > svg {
     height: 16px;
     width: 16px;
-  }
-
-  :global(.dark) .select_trigger {
-    background-image: linear-gradient(
-      to bottom,
-      color-mix(in oklab, transparent 100%, #ffffff 1%) 50%,
-      color-mix(in oklab, transparent 100%, #ffffff 0%) 50%
-    );
   }
 }
