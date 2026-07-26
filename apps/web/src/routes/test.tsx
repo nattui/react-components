@@ -1,11 +1,12 @@
 // oxlint-disable react-perf/jsx-no-new-array-as-prop
 
 import { Claude, DeepSeek, Gemini, Grok, OpenAI } from "@lobehub/icons"
-import { IconPlusOutline18 } from "@nattstack/icons"
+import { IconChevronDownOutline18, IconPlusOutline18 } from "@nattstack/icons"
 import {
   Button,
   Column,
   IconButton,
+  Row,
   Select,
   SelectContent,
   SelectGroup,
@@ -50,6 +51,22 @@ export const Route = createFileRoute("/test")({
 
     return (
       <Column className="gap-y-8">
+        <Row
+          className="
+            border-border rounded-10 bg-bg-shell-inner h-40 max-w-320
+            items-center justify-between border px-16
+          "
+        >
+          <Row className="items-center">
+            <Grok className="mr-8" size={ICON_SIZE} />
+            <span className="text-14 text-text-primary font-[450]">Cursor Grok 4.5</span>
+            <span className="text-12 text-gray-9 ml-8">High Fast</span>
+          </Row>
+
+          <IconChevronDownOutline18 size={14} />
+        </Row>
+        <Spacer height={64} />
+
         <Select
           items={MODELS}
           onValueChange={(value) => {
@@ -71,6 +88,7 @@ export const Route = createFileRoute("/test")({
             </SelectGroup>
           </SelectContent>
         </Select>
+        <Spacer height={16} />
 
         <Select>
           <SelectTrigger className="max-w-288" placeholder="Select a font" />
@@ -90,11 +108,11 @@ export const Route = createFileRoute("/test")({
             </SelectItem>
           </SelectContent>
         </Select>
+        <Spacer height={16} />
 
         <Select defaultValue="sans" disabled>
           <SelectTrigger className="max-w-288" placeholder="Select a font" />
         </Select>
-
         <Spacer height={64} />
 
         <DialogAppearance />
