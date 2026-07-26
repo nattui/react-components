@@ -59,7 +59,7 @@ export const Route = createFileRoute("/test")({
           }}
           value={model}
         >
-          <SelectTrigger className="w-full max-w-320" placeholder="Select a model" />
+          <SelectTrigger className="max-w-288" placeholder="Select a model" />
           <SelectContent>
             <SelectGroup>
               <SelectGroupLabel>Models</SelectGroupLabel>
@@ -73,7 +73,7 @@ export const Route = createFileRoute("/test")({
         </Select>
 
         <Select>
-          <SelectTrigger className="w-full max-w-320" placeholder="Select a font" />
+          <SelectTrigger className="max-w-288" placeholder="Select a font" />
           <SelectContent>
             <SelectGroup>
               <SelectGroupLabel>Fonts</SelectGroupLabel>
@@ -92,7 +92,7 @@ export const Route = createFileRoute("/test")({
         </Select>
 
         <Select defaultValue="sans" disabled>
-          <SelectTrigger className="w-full max-w-320" placeholder="Select a font" />
+          <SelectTrigger className="max-w-288" placeholder="Select a font" />
         </Select>
 
         <Spacer height={64} />

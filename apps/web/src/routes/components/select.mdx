@@ -80,6 +80,109 @@ Use `SelectGroup` with a `SelectGroupLabel` to label related options, and `Selec
 </Select>
 ```
 
+## Size
+
+The `SelectTrigger` comes with 5 sizes: `32`, `36`, `40` (default), `44`, and `48`.
+
+```jsx
+// component
+
+<Select>
+  <SelectTrigger className="w-full max-w-320" placeholder="Size 32" size={32} />
+  <SelectContent>
+    <SelectItem value="sans">Sans-serif</SelectItem>
+    <SelectItem value="serif">Serif</SelectItem>
+  </SelectContent>
+</Select>
+
+<Select>
+  <SelectTrigger className="w-full max-w-320" placeholder="Size 36" size={36} />
+  <SelectContent>
+    <SelectItem value="sans">Sans-serif</SelectItem>
+    <SelectItem value="serif">Serif</SelectItem>
+  </SelectContent>
+</Select>
+
+<Select>
+  <SelectTrigger className="w-full max-w-320" placeholder="Size 40" size={40} />
+  <SelectContent>
+    <SelectItem value="sans">Sans-serif</SelectItem>
+    <SelectItem value="serif">Serif</SelectItem>
+  </SelectContent>
+</Select>
+
+<Select>
+  <SelectTrigger className="w-full max-w-320" placeholder="Size 44" size={44} />
+  <SelectContent>
+    <SelectItem value="sans">Sans-serif</SelectItem>
+    <SelectItem value="serif">Serif</SelectItem>
+  </SelectContent>
+</Select>
+
+<Select>
+  <SelectTrigger className="w-full max-w-320" placeholder="Size 48" size={48} />
+  <SelectContent>
+    <SelectItem value="sans">Sans-serif</SelectItem>
+    <SelectItem value="serif">Serif</SelectItem>
+  </SelectContent>
+</Select>
+```
+
+```jsx
+<Select>
+  <SelectTrigger placeholder="Size 32" size={32} />
+  <SelectContent>{/* ... */}</SelectContent>
+</Select>
+
+<Select>
+  <SelectTrigger placeholder="Size 36" size={36} />
+  <SelectContent>{/* ... */}</SelectContent>
+</Select>
+
+<Select>
+  <SelectTrigger placeholder="Size 40" size={40} />
+  <SelectContent>{/* ... */}</SelectContent>
+</Select>
+
+<Select>
+  <SelectTrigger placeholder="Size 44" size={44} />
+  <SelectContent>{/* ... */}</SelectContent>
+</Select>
+
+<Select>
+  <SelectTrigger placeholder="Size 48" size={48} />
+  <SelectContent>{/* ... */}</SelectContent>
+</Select>
+```
+
+## Rounded
+
+Use the `isRounded` prop to give the trigger fully rounded corners.
+
+```jsx
+// component
+
+<Select>
+  <SelectTrigger className="w-full max-w-320" isRounded placeholder="Select a font" />
+  <SelectContent>
+    <SelectItem value="sans">Sans-serif</SelectItem>
+    <SelectItem value="serif">Serif</SelectItem>
+    <SelectItem value="mono">Monospace</SelectItem>
+  </SelectContent>
+</Select>
+```
+
+```jsx
+<Select>
+  <SelectTrigger className="w-full max-w-320" isRounded placeholder="Select a font" />
+  <SelectContent>
+    <SelectItem value="sans">Sans-serif</SelectItem>
+    <SelectItem value="serif">Serif</SelectItem>
+    <SelectItem value="mono">Monospace</SelectItem>
+  </SelectContent>
+</Select>
+```
+
 ## Disabled
 
 Use the `isDisabled` prop on `SelectItem` to prevent a single option from being selected, or the `disabled` prop on `Select` to disable the entire control.
