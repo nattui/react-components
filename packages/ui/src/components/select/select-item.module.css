@@ -36,7 +36,7 @@
 
   .select_item__label {
     align-items: center;
-    column-gap: 6px;
+    column-gap: 8px;
     display: flex;
     grid-column-start: 2;
     min-width: 0;
