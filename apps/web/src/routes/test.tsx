@@ -6,6 +6,7 @@ import {
   Button,
   Column,
   IconButton,
+  Label,
   Row,
   Select,
   SelectContent,
@@ -50,12 +51,17 @@ export const Route = createFileRoute("/test")({
     const [model, setModel] = useState<null | string>("gpt-4o")
 
     return (
-      <Column className="gap-y-8">
+      <Column>
+        <Label>Model</Label>
+        <Spacer height={4} />
         <Row
           className="
-            rounded-10 bg-bg-shell-inner relative h-40 max-w-288 items-center
-            justify-between overflow-hidden pr-48 pl-16
+            rounded-10 bg-bg-shell-inner
+            hover:bg-gray-3
+            relative h-40 max-w-288 cursor-pointer items-center justify-between
+            overflow-hidden pr-48 pl-16
             shadow-[inset_0_0_0_1px_var(--color-border)]
+            transition-[background-color]
           "
         >
           <Row className="w-full items-center">
@@ -118,34 +124,36 @@ export const Route = createFileRoute("/test")({
         </Select>
         <Spacer height={64} />
 
-        <DialogAppearance />
+        <Column className="gap-y-16">
+          <DialogAppearance />
 
-        <IconButton icon={<IconPlusOutline18 />} />
+          <IconButton icon={<IconPlusOutline18 />} />
 
-        <Button label="Click me" />
+          <Button label="Click me" />
 
-        <Button isDisabled label="Disabled" />
-        <Button isLoading label="Loading" />
+          <Button isDisabled label="Disabled" />
+          <Button isLoading label="Loading" />
 
-        <Button isRounded label="Size 32" size={32} />
-        <Button isRounded label="Size 36" size={36} />
-        <Button isRounded label="Size 40" size={40} />
-        <Button isRounded label="Size 44" size={44} />
-        <Button isRounded label="Size 48" size={48} />
+          <Button isRounded label="Size 32" size={32} />
+          <Button isRounded label="Size 36" size={36} />
+          <Button isRounded label="Size 40" size={40} />
+          <Button isRounded label="Size 44" size={44} />
+          <Button isRounded label="Size 48" size={48} />
 
-        <Button label="Size 32" size={32} />
-        <Button label="Size 36" size={36} />
-        <Button label="Size 40" size={40} />
-        <Button label="Size 44" size={44} />
-        <Button label="Size 48" size={48} />
+          <Button label="Size 32" size={32} />
+          <Button label="Size 36" size={36} />
+          <Button label="Size 40" size={40} />
+          <Button label="Size 44" size={44} />
+          <Button label="Size 48" size={48} />
 
-        <Button isFullWidth label="Full width" />
+          <Button isFullWidth label="Full width" />
 
-        <Button label="Ghost" variant="ghost" />
-        <Button label="Primary" variant="primary" />
-        <Button label="Secondary" variant="secondary" />
+          <Button label="Ghost" variant="ghost" />
+          <Button label="Primary" variant="primary" />
+          <Button label="Secondary" variant="secondary" />
 
-        <Button iconStart={<IconPlusOutline18 />} label="Secondary" variant="secondary" />
+          <Button iconStart={<IconPlusOutline18 />} label="Secondary" variant="secondary" />
+        </Column>
       </Column>
     )
   },
