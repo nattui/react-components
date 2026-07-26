@@ -56,7 +56,6 @@ export function SelectTrigger(props: SelectTriggerProps): JSX.Element {
 export const selectTriggerVariants = cva(styles.select_trigger, {
   variants: {
     isRounded: {
-      false: styles.rounded_base,
       true: styles.rounded_full,
     },
     size: {

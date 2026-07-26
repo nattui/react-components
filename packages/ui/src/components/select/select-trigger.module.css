@@ -12,6 +12,7 @@
     outline-style: solid;
     outline-width: 2px;
     overflow: hidden;
+    padding: 0 16px;
     transition-duration: 150ms;
     transition-property: background-color;
     width: stretch;
@@ -33,80 +34,38 @@
   }
 
   /* =================================================== */
-  /* Rounded */
-  /* =================================================== */
-  .rounded_base.size_32 {
-    border-radius: 8px;
-    padding: 0 12px;
-  }
-
-  .rounded_base.size_36 {
-    border-radius: 9px;
-    padding: 0 14px;
-  }
-
-  .rounded_base.size_40 {
-    border-radius: 10px;
-    padding: 0 16px;
-  }
-
-  .rounded_base.size_44 {
-    border-radius: 11px;
-    padding: 0 18px;
-  }
-
-  .rounded_base.size_48 {
-    border-radius: 12px;
-    padding: 0 20px;
-  }
-
-  /* Pill — padding anchored at 20px (size 40); steps by Fibonacci 3, 5 → 12, 17, 20, 23, 28 */
-  .rounded_full.size_32 {
-    border-radius: 16px;
-    padding: 0 12px;
-  }
-
-  .rounded_full.size_36 {
-    border-radius: 18px;
-    padding: 0 17px;
-  }
-
-  .rounded_full.size_40 {
-    border-radius: 20px;
-    padding: 0 20px; /* anchor */
-  }
-
-  .rounded_full.size_44 {
-    border-radius: 22px;
-    padding: 0 23px;
-  }
-
-  .rounded_full.size_48 {
-    border-radius: 24px;
-    padding: 0 28px;
-  }
-
-  /* =================================================== */
   /* Size */
   /* =================================================== */
   .size_32 {
+    border-radius: 8px;
     height: 32px;
   }
 
   .size_36 {
+    border-radius: 9px;
     height: 36px;
   }
 
   .size_40 {
+    border-radius: 10px;
     height: 40px;
   }
 
   .size_44 {
+    border-radius: 11px;
     height: 44px;
   }
 
   .size_48 {
+    border-radius: 12px;
     height: 48px;
+  }
+
+  /* =================================================== */
+  /* Rounded — must stay below Size so source order wins */
+  /* =================================================== */
+  .rounded_full {
+    border-radius: 9999px;
   }
 
   .select_trigger__value {
