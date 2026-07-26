@@ -1,0 +1,6 @@
+@layer components {
+  .select_group {
+    display: flex;
+    flex-direction: column;
+  }
+}

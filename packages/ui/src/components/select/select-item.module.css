@@ -1,0 +1,51 @@
+@layer components {
+  .select_item {
+    align-items: safe center;
+    border-radius: 8px;
+    color: var(--color-text-primary);
+    column-gap: 8px;
+    cursor: pointer;
+    display: grid;
+    font-size: 14px;
+    font-weight: 500;
+    grid-template-columns: 16px 1fr;
+    line-height: 1.5;
+    min-height: 32px;
+    outline: none;
+    padding: 0 8px;
+    position: relative;
+    user-select: none;
+  }
+
+  .select_item[data-highlighted] {
+    background-color: var(--color-gray-3);
+  }
+
+  .select_item[data-disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  .select_item__indicator {
+    align-items: safe center;
+    color: var(--color-primary-9);
+    display: flex;
+    grid-column-start: 1;
+    height: 16px;
+    justify-content: safe center;
+    width: 16px;
+  }
+
+  .select_item__indicator > svg {
+    height: 16px;
+    width: 16px;
+  }
+
+  .select_item__label {
+    grid-column-start: 2;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

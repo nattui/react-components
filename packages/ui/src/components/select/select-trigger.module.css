@@ -1,0 +1,77 @@
+@layer components {
+  .select_trigger {
+    align-items: center;
+    background-color: var(--color-bg-shell-inner);
+    border-radius: 10px;
+    box-shadow: 0 0 0 1px var(--color-border) inset;
+    column-gap: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    flex-shrink: 0;
+    height: 40px;
+    outline-color: transparent;
+    outline-offset: 2px;
+    outline-style: solid;
+    outline-width: 2px;
+    padding: 0 16px;
+    transition-duration: 150ms;
+    transition-property: background-color;
+    width: stretch;
+  }
+
+  .select_trigger:hover:not(:disabled),
+  .select_trigger[data-popup-open] {
+    background-color: var(--color-gray-3);
+  }
+
+  .select_trigger:active:not(:disabled),
+  .select_trigger[data-pressed] {
+    translate: 0 1px;
+  }
+
+  .select_trigger:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  .select_trigger:focus-visible {
+    outline-color: var(--color-primary);
+  }
+
+  .select_trigger__value {
+    color: var(--color-text-primary);
+    font-size: 14px;
+    font-weight: 450;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .select_trigger__value[data-placeholder] {
+    color: var(--color-text-secondary);
+  }
+
+  .select_trigger__icon {
+    align-items: safe center;
+    color: var(--color-text-secondary);
+    display: flex;
+    flex-shrink: 0;
+    height: 16px;
+    justify-content: safe center;
+    width: 16px;
+    margin-left: auto;
+  }
+
+  .select_trigger__icon > svg {
+    height: 16px;
+    width: 16px;
+  }
+
+  :global(.dark) .select_trigger {
+    background-image: linear-gradient(
+      to bottom,
+      color-mix(in oklab, transparent 100%, #ffffff 1%) 50%,
+      color-mix(in oklab, transparent 100%, #ffffff 0%) 50%
+    );
+  }
+}

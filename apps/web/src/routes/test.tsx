@@ -1,7 +1,19 @@
 // oxlint-disable react-perf/jsx-no-new-array-as-prop
 
 import { IconPlusOutline18 } from "@nattstack/icons"
-import { Button, Column, IconButton, Row, Spacer } from "@nattstack/ui"
+import {
+  Button,
+  Column,
+  IconButton,
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectGroupLabel,
+  SelectItem,
+  SelectSeparator,
+  SelectTrigger,
+  Spacer,
+} from "@nattstack/ui"
 import { createFileRoute } from "@tanstack/react-router"
 import { DialogAppearance } from "#/components/dialog-appearance"
 
@@ -9,11 +21,24 @@ export const Route = createFileRoute("/test")({
   component: function RouteComponent() {
     return (
       <Column className="gap-y-8">
-        <Row className="d h-40 w-full">
-          <span>asdf</span>
-        </Row>
-
-        <Spacer height={64} />
+        <Select>
+          <SelectTrigger className="w-full max-w-320" placeholder="Select a font" />
+          <SelectContent>
+            <SelectGroup>
+              <SelectGroupLabel>Fonts</SelectGroupLabel>
+              <SelectItem value="sans">Sans-serif</SelectItem>
+              <SelectItem value="serif">Serif</SelectItem>
+              <SelectItem isDisabled value="cursive">
+                Cursive
+              </SelectItem>
+            </SelectGroup>
+            <SelectSeparator />
+            <SelectItem value="mono">Monospace</SelectItem>
+            <SelectItem value="Monospace monospace monospace monospace monospace">
+              Monospace monospace monospace monospace monospace
+            </SelectItem>
+          </SelectContent>
+        </Select>
 
         <Spacer height={64} />
 
