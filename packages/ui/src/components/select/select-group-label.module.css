@@ -2,8 +2,7 @@
   .select_group_label {
     color: var(--color-text-secondary);
     font-size: 12px;
-    font-weight: 600;
-    line-height: 1.5;
+    font-weight: 450;
     padding: 6px 8px 4px;
   }
 }

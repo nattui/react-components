@@ -4,7 +4,7 @@
   /* =================================================== */
   .base {
     align-items: center;
-    column-gap: 8px;
+    column-gap: 6px;
     cursor: pointer;
     display: inline-flex;
     font-size: 14px;

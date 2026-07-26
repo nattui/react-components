@@ -3,12 +3,13 @@ import { cva } from "class-variance-authority"
 import type { JSX } from "react"
 import styles from "./select-trigger.module.css"
 
-export interface SelectTriggerProps extends BaseSelect.Trigger.Props {
+export interface SelectTriggerProps extends Omit<BaseSelect.Trigger.Props, "children"> {
+  children?: BaseSelect.Value.Props["children"]
   placeholder?: BaseSelect.Value.Props["placeholder"]
 }
 
 export function SelectTrigger(props: SelectTriggerProps): JSX.Element {
-  const { className: customClassName = "", placeholder = "", ...rest } = props
+  const { children, className: customClassName = "", placeholder = "", ...rest } = props
 
   const combinedClassName = selectTriggerVariants({ className: customClassName })
 
@@ -18,7 +19,9 @@ export function SelectTrigger(props: SelectTriggerProps): JSX.Element {
         className={styles.select_trigger__value}
         data-slot="select-value"
         placeholder={placeholder}
-      />
+      >
+        {children}
+      </BaseSelect.Value>
 
       <BaseSelect.Icon className={styles.select_trigger__icon} data-slot="select-icon">
         {/* chevron-down */}

@@ -36,7 +36,10 @@
   }
 
   .select_trigger__value {
+    align-items: center;
     color: var(--color-text-primary);
+    column-gap: 6px;
+    display: inline-flex;
     font-size: 14px;
     font-weight: 450;
     overflow-x: hidden;

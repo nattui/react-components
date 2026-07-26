@@ -19,25 +19,27 @@ import { createFileRoute } from "@tanstack/react-router"
 import { useState, type JSX, type ReactNode } from "react"
 import { DialogAppearance } from "#/components/dialog-appearance"
 
+const ICON_SIZE = 18
+
 const MODELS = [
   {
-    label: <ModelOption icon={<OpenAI size={16} />} label="GPT-4o" />,
+    label: <ModelOption icon={<OpenAI size={ICON_SIZE} />} label="GPT-4o" />,
     value: "gpt-4o",
   },
   {
-    label: <ModelOption icon={<Claude.Color size={16} />} label="Claude Sonnet 4" />,
+    label: <ModelOption icon={<Claude.Color size={ICON_SIZE} />} label="Claude Sonnet 4" />,
     value: "claude-sonnet-4",
   },
   {
-    label: <ModelOption icon={<Gemini.Color size={16} />} label="Gemini 2.5 Pro" />,
+    label: <ModelOption icon={<Gemini.Color size={ICON_SIZE} />} label="Gemini 2.5 Pro" />,
     value: "gemini-2.5-pro",
   },
   {
-    label: <ModelOption icon={<DeepSeek.Color size={16} />} label="DeepSeek V3" />,
+    label: <ModelOption icon={<DeepSeek.Color size={ICON_SIZE} />} label="DeepSeek V3" />,
     value: "deepseek-v3",
   },
   {
-    label: <ModelOption icon={<Grok size={16} />} label="Grok 3" />,
+    label: <ModelOption icon={<Grok size={ICON_SIZE} />} label="Grok 3" />,
     value: "grok-3",
   },
 ]
@@ -132,10 +134,10 @@ function ModelOption(props: { icon: ReactNode; label: string }): JSX.Element {
   const { icon, label } = props
 
   return (
-    <span className="inline-flex items-center gap-x-8">
+    <>
       {icon}
       {label}
-    </span>
+    </>
   )
 }
 
