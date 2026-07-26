@@ -1,0 +1,149 @@
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectGroupLabel,
+  SelectItem,
+  SelectSeparator,
+  SelectTrigger,
+} from "@nattstack/ui"
+
+# Select
+
+Selects let users choose a single option from a list anchored to a trigger.
+
+The `Select` component is a Base UI component.
+
+```jsx
+// component
+
+<Select>
+  <SelectTrigger className="w-full max-w-320" placeholder="Select a font" />
+  <SelectContent>
+    <SelectItem value="sans">Sans-serif</SelectItem>
+    <SelectItem value="serif">Serif</SelectItem>
+    <SelectItem value="mono">Monospace</SelectItem>
+  </SelectContent>
+</Select>
+```
+
+```jsx
+<Select>
+  <SelectTrigger className="w-full max-w-320" placeholder="Select a font" />
+  <SelectContent>
+    <SelectItem value="sans">Sans-serif</SelectItem>
+    <SelectItem value="serif">Serif</SelectItem>
+    <SelectItem value="mono">Monospace</SelectItem>
+  </SelectContent>
+</Select>
+```
+
+## Groups
+
+Use `SelectGroup` with a `SelectGroupLabel` to label related options, and `SelectSeparator` to divide sections.
+
+```jsx
+// component
+
+<Select>
+  <SelectTrigger className="w-full max-w-320" placeholder="Select a font" />
+  <SelectContent>
+    <SelectGroup>
+      <SelectGroupLabel>Proportional</SelectGroupLabel>
+      <SelectItem value="sans">Sans-serif</SelectItem>
+      <SelectItem value="serif">Serif</SelectItem>
+    </SelectGroup>
+    <SelectSeparator />
+    <SelectGroup>
+      <SelectGroupLabel>Fixed width</SelectGroupLabel>
+      <SelectItem value="mono">Monospace</SelectItem>
+    </SelectGroup>
+  </SelectContent>
+</Select>
+```
+
+```jsx
+<Select>
+  <SelectTrigger className="w-full max-w-320" placeholder="Select a font" />
+  <SelectContent>
+    <SelectGroup>
+      <SelectGroupLabel>Proportional</SelectGroupLabel>
+      <SelectItem value="sans">Sans-serif</SelectItem>
+      <SelectItem value="serif">Serif</SelectItem>
+    </SelectGroup>
+    <SelectSeparator />
+    <SelectGroup>
+      <SelectGroupLabel>Fixed width</SelectGroupLabel>
+      <SelectItem value="mono">Monospace</SelectItem>
+    </SelectGroup>
+  </SelectContent>
+</Select>
+```
+
+## Disabled
+
+Use the `isDisabled` prop on `SelectItem` to prevent a single option from being selected, or the `disabled` prop on `Select` to disable the entire control.
+
+```jsx
+// component
+
+<Select>
+  <SelectTrigger className="w-full max-w-320" placeholder="Select a font" />
+  <SelectContent>
+    <SelectItem value="sans">Sans-serif</SelectItem>
+    <SelectItem value="serif">Serif</SelectItem>
+    <SelectItem isDisabled value="cursive">Cursive</SelectItem>
+  </SelectContent>
+</Select>
+
+<Select disabled>
+  <SelectTrigger className="w-full max-w-320" placeholder="Select a font" />
+</Select>
+```
+
+```jsx
+<Select>
+  <SelectTrigger className="w-full max-w-320" placeholder="Select a font" />
+  <SelectContent>
+    <SelectItem value="sans">Sans-serif</SelectItem>
+    <SelectItem value="serif">Serif</SelectItem>
+    <SelectItem isDisabled value="cursive">
+      Cursive
+    </SelectItem>
+  </SelectContent>
+</Select>
+
+<Select disabled>
+  <SelectTrigger className="w-full max-w-320" placeholder="Select a font" />
+</Select>
+```
+
+## State
+
+By default, `Select` is an uncontrolled component that manages its own state. Use the `defaultValue` prop to set the initially selected option.
+
+```jsx
+<Select defaultValue="sans">
+  <SelectTrigger placeholder="Select a font" />
+  <SelectContent>
+    <SelectItem value="sans">Sans-serif</SelectItem>
+    <SelectItem value="serif">Serif</SelectItem>
+  </SelectContent>
+</Select>
+```
+
+Use `value` and `onValueChange` props if you need to access or control the state.
+
+```jsx
+const [font, setFont] = useState(null)
+
+return (
+  <Select onValueChange={setFont} value={font}>
+    <SelectTrigger placeholder="Select a font" />
+    <SelectContent>
+      <SelectItem value="sans">Sans-serif</SelectItem>
+      <SelectItem value="serif">Serif</SelectItem>
+    </SelectContent>
+  </Select>
+)
+```

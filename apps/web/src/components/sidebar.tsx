@@ -10,6 +10,7 @@ const COMPONENT_LINKS = [
   { label: "Dialog responsive", slug: "dialog-responsive" },
   { label: "Input", slug: "input" },
   { label: "Menu", slug: "menu" },
+  { label: "Select", slug: "select" },
   { label: "Switch", slug: "switch" },
   { label: "Tabs pill", slug: "tabs-pill" },
   { label: "Tabs segmented", slug: "tabs-segmented" },
