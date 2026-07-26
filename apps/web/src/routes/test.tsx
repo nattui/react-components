@@ -1,7 +1,7 @@
 // oxlint-disable react-perf/jsx-no-new-array-as-prop
 
 import { Claude, DeepSeek, Gemini, Grok, OpenAI } from "@lobehub/icons"
-import { IconPlusOutline18 } from "@nattstack/icons"
+import { IconChevronDownOutline18, IconPlusOutline18 } from "@nattstack/icons"
 import {
   Button,
   Column,
@@ -20,12 +20,27 @@ import { useState, type JSX, type ReactNode } from "react"
 import { DialogAppearance } from "#/components/dialog-appearance"
 
 const MODELS = [
-  { icon: <OpenAI size={16} />, label: "GPT-4o", value: "gpt-4o" },
-  { icon: <Claude.Color size={16} />, label: "Claude Sonnet 4", value: "claude-sonnet-4" },
-  { icon: <Gemini.Color size={16} />, label: "Gemini 2.5 Pro", value: "gemini-2.5-pro" },
-  { icon: <DeepSeek.Color size={16} />, label: "DeepSeek V3", value: "deepseek-v3" },
-  { icon: <Grok size={16} />, label: "Grok 3", value: "grok-3" },
-] as const
+  {
+    label: <ModelOption icon={<OpenAI size={16} />} label="GPT-4o" />,
+    value: "gpt-4o",
+  },
+  {
+    label: <ModelOption icon={<Claude.Color size={16} />} label="Claude Sonnet 4" />,
+    value: "claude-sonnet-4",
+  },
+  {
+    label: <ModelOption icon={<Gemini.Color size={16} />} label="Gemini 2.5 Pro" />,
+    value: "gemini-2.5-pro",
+  },
+  {
+    label: <ModelOption icon={<DeepSeek.Color size={16} />} label="DeepSeek V3" />,
+    value: "deepseek-v3",
+  },
+  {
+    label: <ModelOption icon={<Grok size={16} />} label="Grok 3" />,
+    value: "grok-3",
+  },
+]
 
 export const Route = createFileRoute("/test")({
   component: function RouteComponent() {
@@ -34,6 +49,7 @@ export const Route = createFileRoute("/test")({
     return (
       <Column className="gap-y-8">
         <Select
+          items={MODELS}
           onValueChange={(value) => {
             if (typeof value === "string" || value === null) {
               setModel(value)
@@ -41,13 +57,17 @@ export const Route = createFileRoute("/test")({
           }}
           value={model}
         >
-          <SelectTrigger className="w-full max-w-320" placeholder="Select a model" />
+          <SelectTrigger
+            className="w-full max-w-320"
+            icon={<IconChevronDownOutline18 size={14} />}
+            placeholder="Select a model"
+          />
           <SelectContent>
             <SelectGroup>
               <SelectGroupLabel>Models</SelectGroupLabel>
               {MODELS.map((option) => (
                 <SelectItem key={option.value} value={option.value}>
-                  <ModelOption icon={option.icon} label={option.label} />
+                  {option.label}
                 </SelectItem>
               ))}
             </SelectGroup>

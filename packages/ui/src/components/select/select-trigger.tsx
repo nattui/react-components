@@ -13,18 +13,6 @@ export function SelectTrigger(props: SelectTriggerProps): JSX.Element {
 
   const combinedClassName = selectTriggerVariants({ className: customClassName })
 
-  const currentIcon = icon ?? (
-    <svg fill="none" height="16" viewBox="0 0 16 16" width="16">
-      <path
-        d="M4.5 6L8 2.5L11.5 6M4.5 10L8 13.5L11.5 10"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-      />
-    </svg>
-  )
-
   return (
     <BaseSelect.Trigger className={combinedClassName} data-slot="select-trigger" {...rest}>
       <BaseSelect.Value
@@ -33,9 +21,11 @@ export function SelectTrigger(props: SelectTriggerProps): JSX.Element {
         placeholder={placeholder}
       />
 
-      <BaseSelect.Icon className={styles.select_trigger__icon} data-slot="select-icon">
-        {currentIcon}
-      </BaseSelect.Icon>
+      {icon && (
+        <BaseSelect.Icon className={styles.select_trigger__icon} data-slot="select-icon">
+          {icon}
+        </BaseSelect.Icon>
+      )}
     </BaseSelect.Trigger>
   )
 }

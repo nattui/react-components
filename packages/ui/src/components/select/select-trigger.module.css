@@ -48,18 +48,6 @@
   }
 
   .select_trigger__icon {
-    align-items: safe center;
-    color: var(--color-text-secondary);
-    display: flex;
-    flex-shrink: 0;
-    height: 16px;
-    justify-content: safe center;
-    width: 16px;
     margin-left: auto;
-  }
-
-  .select_trigger__icon > svg {
-    height: 16px;
-    width: 16px;
   }
 }
