@@ -1,5 +1,6 @@
 // oxlint-disable react-perf/jsx-no-new-array-as-prop
 
+import { Claude, DeepSeek, Gemini, Grok, OpenAI } from "@lobehub/icons"
 import { IconPlusOutline18 } from "@nattstack/icons"
 import {
   Button,
@@ -15,12 +16,44 @@ import {
   Spacer,
 } from "@nattstack/ui"
 import { createFileRoute } from "@tanstack/react-router"
+import { useState, type JSX, type ReactNode } from "react"
 import { DialogAppearance } from "#/components/dialog-appearance"
+
+const MODELS = [
+  { icon: <OpenAI size={16} />, label: "GPT-4o", value: "gpt-4o" },
+  { icon: <Claude.Color size={16} />, label: "Claude Sonnet 4", value: "claude-sonnet-4" },
+  { icon: <Gemini.Color size={16} />, label: "Gemini 2.5 Pro", value: "gemini-2.5-pro" },
+  { icon: <DeepSeek.Color size={16} />, label: "DeepSeek V3", value: "deepseek-v3" },
+  { icon: <Grok size={16} />, label: "Grok 3", value: "grok-3" },
+] as const
 
 export const Route = createFileRoute("/test")({
   component: function RouteComponent() {
+    const [model, setModel] = useState<null | string>("gpt-4o")
+
     return (
       <Column className="gap-y-8">
+        <Select
+          onValueChange={(value) => {
+            if (typeof value === "string" || value === null) {
+              setModel(value)
+            }
+          }}
+          value={model}
+        >
+          <SelectTrigger className="w-full max-w-320" placeholder="Select a model" />
+          <SelectContent>
+            <SelectGroup>
+              <SelectGroupLabel>Models</SelectGroupLabel>
+              {MODELS.map((option) => (
+                <SelectItem key={option.value} value={option.value}>
+                  <ModelOption icon={option.icon} label={option.label} />
+                </SelectItem>
+              ))}
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+
         <Select>
           <SelectTrigger className="w-full max-w-320" placeholder="Select a font" />
           <SelectContent>
@@ -78,6 +111,17 @@ export const Route = createFileRoute("/test")({
     )
   },
 })
+
+function ModelOption(props: { icon: ReactNode; label: string }): JSX.Element {
+  const { icon, label } = props
+
+  return (
+    <span className="inline-flex items-center gap-x-8">
+      {icon}
+      {label}
+    </span>
+  )
+}
 
 // function ToggleMode(props: ToggleProps<string>): JSX.Element {
 //   return (
