@@ -53,8 +53,9 @@ export const Route = createFileRoute("/test")({
       <Column className="gap-y-8">
         <Row
           className="
-            border-border rounded-10 bg-bg-shell-inner h-40 max-w-320
-            items-center justify-between gap-x-8 overflow-hidden border px-16
+            rounded-10 bg-bg-shell-inner relative h-40 max-w-288 items-center
+            justify-between overflow-hidden pr-48 pl-16
+            shadow-[inset_0_0_0_1px_var(--color-border)]
           "
         >
           <Row className="w-full items-center">
@@ -63,7 +64,9 @@ export const Route = createFileRoute("/test")({
             <span className="text-12 text-gray-9 ml-8 truncate">High Fast</span>
           </Row>
 
-          <IconChevronDownOutline18 size={14} />
+          <Row className="absolute right-16 size-16 items-center justify-center">
+            <IconChevronDownOutline18 size={14} />
+          </Row>
         </Row>
         <Spacer height={64} />
 
