@@ -1,6 +1,6 @@
 import { defineConfig } from "tsdown"
 
-export default defineConfig({
+export default defineConfig((options) => ({
   clean: ["dist"],
   copy: [
     { from: "src/baseline", to: "dist" },
@@ -21,5 +21,5 @@ export default defineConfig({
   format: "esm",
   outDir: "dist/components",
   platform: "browser",
-  unbundle: true,
-})
+  unbundle: !options.watch,
+}))
