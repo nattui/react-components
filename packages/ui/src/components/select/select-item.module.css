@@ -5,10 +5,9 @@
     color: var(--color-text-primary);
     column-gap: 8px;
     cursor: pointer;
-    display: grid;
+    display: flex;
     font-size: 14px;
     font-weight: 450;
-    grid-template-columns: 1fr 16px;
     line-height: 1.5;
     min-height: 36px;
     outline: none;
@@ -30,7 +29,7 @@
     align-items: center;
     column-gap: 8px;
     display: flex;
-    grid-column-start: 1;
+    flex: 1;
     min-width: 0;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -41,7 +40,8 @@
     align-items: safe center;
     color: var(--color-primary-9);
     display: flex;
-    grid-column-start: 2;
+    flex-shrink: 0;
     justify-content: safe center;
+    width: 16px;
   }
 }
