@@ -7,7 +7,7 @@ import styles from "./tabs-pill-list.module.css"
 export interface TabsPillListProps extends BaseTabs.List.Props {}
 
 export function TabsPillList(props: TabsPillListProps): JSX.Element {
-  const { className: customClassName = "", children = "", ...rest } = props
+  const { className: customClassName = "", children = undefined, ...rest } = props
 
   const combinedClassName = tabsPillListVariants({ className: customClassName })
 

@@ -2,19 +2,16 @@
   .select_trigger {
     align-items: center;
     background-color: var(--color-bg-shell-inner);
-    border-radius: 10px;
     box-shadow: 0 0 0 1px var(--color-border) inset;
     column-gap: 8px;
     cursor: pointer;
     display: inline-flex;
     flex-shrink: 0;
-    height: 40px;
     outline-color: transparent;
     outline-offset: 2px;
     outline-style: solid;
     outline-width: 2px;
     overflow: hidden;
-    padding: 0 16px;
     transition-duration: 150ms;
     transition-property: background-color;
     width: stretch;
@@ -33,6 +30,83 @@
   .select_trigger:hover:not(:disabled),
   .select_trigger[data-popup-open] {
     background-color: var(--color-gray-3);
+  }
+
+  /* =================================================== */
+  /* Rounded */
+  /* =================================================== */
+  .rounded_base.size_32 {
+    border-radius: 8px;
+    padding: 0 12px;
+  }
+
+  .rounded_base.size_36 {
+    border-radius: 9px;
+    padding: 0 14px;
+  }
+
+  .rounded_base.size_40 {
+    border-radius: 10px;
+    padding: 0 16px;
+  }
+
+  .rounded_base.size_44 {
+    border-radius: 11px;
+    padding: 0 18px;
+  }
+
+  .rounded_base.size_48 {
+    border-radius: 12px;
+    padding: 0 20px;
+  }
+
+  /* Pill — padding anchored at 20px (size 40); steps by Fibonacci 3, 5 → 12, 17, 20, 23, 28 */
+  .rounded_full.size_32 {
+    border-radius: 16px;
+    padding: 0 12px;
+  }
+
+  .rounded_full.size_36 {
+    border-radius: 18px;
+    padding: 0 17px;
+  }
+
+  .rounded_full.size_40 {
+    border-radius: 20px;
+    padding: 0 20px; /* anchor */
+  }
+
+  .rounded_full.size_44 {
+    border-radius: 22px;
+    padding: 0 23px;
+  }
+
+  .rounded_full.size_48 {
+    border-radius: 24px;
+    padding: 0 28px;
+  }
+
+  /* =================================================== */
+  /* Size */
+  /* =================================================== */
+  .size_32 {
+    height: 32px;
+  }
+
+  .size_36 {
+    height: 36px;
+  }
+
+  .size_40 {
+    height: 40px;
+  }
+
+  .size_44 {
+    height: 44px;
+  }
+
+  .size_48 {
+    height: 48px;
   }
 
   .select_trigger__value {

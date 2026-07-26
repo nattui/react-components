@@ -7,7 +7,7 @@ import styles from "./tabs-underline-list.module.css"
 export interface TabsUnderlineListProps extends BaseTabs.List.Props {}
 
 export function TabsUnderlineList(props: TabsUnderlineListProps): JSX.Element {
-  const { className: customClassName = "", children = "", ...rest } = props
+  const { className: customClassName = "", children = undefined, ...rest } = props
 
   const combinedClassName = tabsUnderlineListVariants({ className: customClassName })
 

@@ -7,7 +7,7 @@ import styles from "./tabs-segmented-list.module.css"
 export interface TabsSegmentedListProps extends BaseTabs.List.Props {}
 
 export function TabsSegmentedList(props: TabsSegmentedListProps): JSX.Element {
-  const { className: customClassName = "", children = "", ...rest } = props
+  const { className: customClassName = "", children = undefined, ...rest } = props
 
   const combinedClassName = tabsSegmentedListVariants({ className: customClassName })
 

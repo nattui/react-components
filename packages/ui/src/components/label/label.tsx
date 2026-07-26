@@ -5,7 +5,12 @@ import styles from "./label.module.css"
 export interface LabelProps extends ComponentProps<"label"> {}
 
 export function Label(props: LabelProps): JSX.Element {
-  const { className: customClassName = "", htmlFor = undefined, children = "", ...rest } = props
+  const {
+    className: customClassName = "",
+    htmlFor = undefined,
+    children = undefined,
+    ...rest
+  } = props
 
   const combinedClassName = labelVariants({ className: customClassName })
 

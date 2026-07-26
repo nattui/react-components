@@ -8,7 +8,7 @@ export interface TooltipPopupProps
 
 export function TooltipPopup(props: TooltipPopupProps): JSX.Element {
   const {
-    children = "",
+    children = undefined,
     className: customClassName = "",
     side = "top",
     sideOffset = 4,

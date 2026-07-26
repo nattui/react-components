@@ -1,17 +1,30 @@
 import { Select as BaseSelect } from "@base-ui/react"
-import { cva } from "class-variance-authority"
+import { cva, type VariantProps } from "class-variance-authority"
 import type { JSX } from "react"
 import styles from "./select-trigger.module.css"
 
 export interface SelectTriggerProps extends Omit<BaseSelect.Trigger.Props, "children"> {
   children?: BaseSelect.Value.Props["children"]
+  isRounded?: VariantProps<typeof selectTriggerVariants>["isRounded"]
   placeholder?: BaseSelect.Value.Props["placeholder"]
+  size?: VariantProps<typeof selectTriggerVariants>["size"]
 }
 
 export function SelectTrigger(props: SelectTriggerProps): JSX.Element {
-  const { children, className: customClassName = "", placeholder = "", ...rest } = props
+  const {
+    children = undefined,
+    className: customClassName = "",
+    isRounded = false,
+    placeholder = "",
+    size = 40,
+    ...rest
+  } = props
 
-  const combinedClassName = selectTriggerVariants({ className: customClassName })
+  const combinedClassName = selectTriggerVariants({
+    className: customClassName,
+    isRounded,
+    size,
+  })
 
   return (
     <BaseSelect.Trigger className={combinedClassName} data-slot="select-trigger" {...rest}>
@@ -40,4 +53,18 @@ export function SelectTrigger(props: SelectTriggerProps): JSX.Element {
   )
 }
 
-export const selectTriggerVariants = cva(styles.select_trigger)
+export const selectTriggerVariants = cva(styles.select_trigger, {
+  variants: {
+    isRounded: {
+      false: styles.rounded_base,
+      true: styles.rounded_full,
+    },
+    size: {
+      32: styles.size_32,
+      36: styles.size_36,
+      40: styles.size_40,
+      44: styles.size_44,
+      48: styles.size_48,
+    },
+  },
+})
