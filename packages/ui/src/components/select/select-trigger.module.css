@@ -74,10 +74,12 @@
   .icon {
     align-items: center;
     display: flex;
+    height: 16px;
     justify-content: center;
-    size: 16px;
+    margin-left: auto;
     transition-duration: 150ms;
     transition-property: rotate;
+    width: 16px;
   }
 
   .base[data-popup-open] .icon {
