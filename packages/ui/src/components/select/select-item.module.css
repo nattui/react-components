@@ -1,23 +1,17 @@
 @layer components {
   .base {
-    align-items: safe center;
+    align-items: center;
     border-radius: 8px;
-    color: var(--color-text-primary);
     column-gap: 8px;
     cursor: pointer;
     display: flex;
-    font-size: 14px;
-    font-weight: 450;
-    line-height: 1.5;
-    min-height: 36px;
+    flex-shrink: 0;
+    height: 36px;
     outline: none;
-    padding: 0 8px;
-    position: relative;
+    padding: 0 12px;
+    transition-duration: 150ms;
+    transition-property: background-color;
     user-select: none;
-  }
-
-  .base[data-highlighted] {
-    background-color: var(--color-gray-3);
   }
 
   .base[data-disabled] {
@@ -25,23 +19,35 @@
     opacity: 0.5;
   }
 
+  .base[data-highlighted] {
+    background-color: var(--color-gray-3);
+  }
+
+  /* =================================================== */
+  /* Label */
+  /* =================================================== */
   .label {
     align-items: center;
-    column-gap: 8px;
+    color: var(--color-text-primary);
     display: flex;
-    flex: 1;
-    min-width: 0;
-    overflow: hidden;
+    font-size: 14px;
+    font-weight: 450;
+    overflow-x: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
 
+  /* =================================================== */
+  /* Indicator */
+  /* =================================================== */
   .indicator {
-    align-items: safe center;
+    align-items: center;
     color: var(--color-primary-9);
     display: flex;
     flex-shrink: 0;
-    justify-content: safe center;
+    height: 16px;
+    justify-content: center;
+    margin-left: auto;
     width: 16px;
   }
 }
