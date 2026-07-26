@@ -3,10 +3,8 @@ import { cva, type VariantProps } from "class-variance-authority"
 import type { JSX } from "react"
 import styles from "./select-trigger.module.css"
 
-export interface SelectTriggerProps extends Omit<BaseSelect.Trigger.Props, "children"> {
-  children?: BaseSelect.Value.Props["children"]
+export interface SelectTriggerProps extends BaseSelect.Trigger.Props {
   isRounded?: VariantProps<typeof selectTriggerVariants>["isRounded"]
-  placeholder?: BaseSelect.Value.Props["placeholder"]
   size?: VariantProps<typeof selectTriggerVariants>["size"]
 }
 
@@ -15,7 +13,6 @@ export function SelectTrigger(props: SelectTriggerProps): JSX.Element {
     children = undefined,
     className: customClassName = "",
     isRounded = false,
-    placeholder = "",
     size = 40,
     ...rest
   } = props
@@ -28,13 +25,7 @@ export function SelectTrigger(props: SelectTriggerProps): JSX.Element {
 
   return (
     <BaseSelect.Trigger className={combinedClassName} data-slot="select-trigger" {...rest}>
-      <BaseSelect.Value
-        className={styles.select_trigger__value}
-        data-slot="select-value"
-        placeholder={placeholder}
-      >
-        {children}
-      </BaseSelect.Value>
+      {children}
 
       <BaseSelect.Icon className={styles.select_trigger__icon} data-slot="select-icon">
         {/* chevron-down */}

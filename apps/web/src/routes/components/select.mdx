@@ -7,6 +7,7 @@ import {
   SelectItem,
   SelectSeparator,
   SelectTrigger,
+  SelectValue,
 } from "@nattstack/ui"
 
 export const MODELS = [
@@ -49,7 +50,9 @@ The `Select` component is a Base UI component.
 // component
 
 <Select>
-  <SelectTrigger className="max-w-256" placeholder="Select a font" />
+  <SelectTrigger className="max-w-256">
+    <SelectValue placeholder="Select a font" />
+  </SelectTrigger>
   <SelectContent>
     <SelectItem value="sans">Sans-serif</SelectItem>
     <SelectItem value="serif">Serif</SelectItem>
@@ -60,7 +63,9 @@ The `Select` component is a Base UI component.
 
 ```jsx
 <Select>
-  <SelectTrigger className="max-w-256" placeholder="Select a font" />
+  <SelectTrigger className="max-w-256">
+    <SelectValue placeholder="Select a font" />
+  </SelectTrigger>
   <SelectContent>
     <SelectItem value="sans">Sans-serif</SelectItem>
     <SelectItem value="serif">Serif</SelectItem>
@@ -77,7 +82,9 @@ Use `SelectGroup` with a `SelectGroupLabel` to label related options, and `Selec
 // component
 
 <Select>
-  <SelectTrigger className="max-w-256" placeholder="Select a font" />
+  <SelectTrigger className="max-w-256">
+    <SelectValue placeholder="Select a font" />
+  </SelectTrigger>
   <SelectContent>
     <SelectGroup>
       <SelectGroupLabel>Proportional</SelectGroupLabel>
@@ -95,7 +102,9 @@ Use `SelectGroup` with a `SelectGroupLabel` to label related options, and `Selec
 
 ```jsx
 <Select>
-  <SelectTrigger className="max-w-256" placeholder="Select a font" />
+  <SelectTrigger className="max-w-256">
+    <SelectValue placeholder="Select a font" />
+  </SelectTrigger>
   <SelectContent>
     <SelectGroup>
       <SelectGroupLabel>Proportional</SelectGroupLabel>
@@ -119,7 +128,9 @@ Options can include an icon before their label. Pass the options to the `items` 
 // component
 
 <Select defaultValue="gpt-4o" items={MODELS}>
-  <SelectTrigger className="max-w-256" placeholder="Select a model" />
+  <SelectTrigger className="max-w-256">
+    <SelectValue placeholder="Select a model" />
+  </SelectTrigger>
   <SelectContent>
     {MODELS.map((option) => (
       <SelectItem key={option.value} value={option.value}>
@@ -163,7 +174,9 @@ const MODELS = [
 
 return (
   <Select defaultValue="gpt-4o" items={MODELS}>
-    <SelectTrigger className="max-w-256" placeholder="Select a model" />
+    <SelectTrigger className="max-w-256">
+      <SelectValue placeholder="Select a model" />
+    </SelectTrigger>
     <SelectContent>
       {MODELS.map((option) => (
         <SelectItem key={option.value} value={option.value}>
@@ -183,7 +196,9 @@ The `SelectTrigger` comes with 5 sizes: `32`, `36`, `40` (default), `44`, and `4
 // component
 
 <Select>
-  <SelectTrigger className="max-w-256" placeholder="Size 32" size={32} />
+  <SelectTrigger className="max-w-256" size={32}>
+    <SelectValue placeholder="Size 32" />
+  </SelectTrigger>
   <SelectContent>
     <SelectItem value="sans">Sans-serif</SelectItem>
     <SelectItem value="serif">Serif</SelectItem>
@@ -191,7 +206,9 @@ The `SelectTrigger` comes with 5 sizes: `32`, `36`, `40` (default), `44`, and `4
 </Select>
 
 <Select>
-  <SelectTrigger className="max-w-256" placeholder="Size 36" size={36} />
+  <SelectTrigger className="max-w-256" size={36}>
+    <SelectValue placeholder="Size 36" />
+  </SelectTrigger>
   <SelectContent>
     <SelectItem value="sans">Sans-serif</SelectItem>
     <SelectItem value="serif">Serif</SelectItem>
@@ -199,7 +216,9 @@ The `SelectTrigger` comes with 5 sizes: `32`, `36`, `40` (default), `44`, and `4
 </Select>
 
 <Select>
-  <SelectTrigger className="max-w-256" placeholder="Size 40" size={40} />
+  <SelectTrigger className="max-w-256" size={40}>
+    <SelectValue placeholder="Size 40" />
+  </SelectTrigger>
   <SelectContent>
     <SelectItem value="sans">Sans-serif</SelectItem>
     <SelectItem value="serif">Serif</SelectItem>
@@ -207,7 +226,9 @@ The `SelectTrigger` comes with 5 sizes: `32`, `36`, `40` (default), `44`, and `4
 </Select>
 
 <Select>
-  <SelectTrigger className="max-w-256" placeholder="Size 44" size={44} />
+  <SelectTrigger className="max-w-256" size={44}>
+    <SelectValue placeholder="Size 44" />
+  </SelectTrigger>
   <SelectContent>
     <SelectItem value="sans">Sans-serif</SelectItem>
     <SelectItem value="serif">Serif</SelectItem>
@@ -215,7 +236,9 @@ The `SelectTrigger` comes with 5 sizes: `32`, `36`, `40` (default), `44`, and `4
 </Select>
 
 <Select>
-  <SelectTrigger className="max-w-256" placeholder="Size 48" size={48} />
+  <SelectTrigger className="max-w-256" size={48}>
+    <SelectValue placeholder="Size 48" />
+  </SelectTrigger>
   <SelectContent>
     <SelectItem value="sans">Sans-serif</SelectItem>
     <SelectItem value="serif">Serif</SelectItem>
@@ -225,27 +248,37 @@ The `SelectTrigger` comes with 5 sizes: `32`, `36`, `40` (default), `44`, and `4
 
 ```jsx
 <Select>
-  <SelectTrigger placeholder="Size 32" size={32} />
+  <SelectTrigger size={32}>
+    <SelectValue placeholder="Size 32" />
+  </SelectTrigger>
   <SelectContent>{/* ... */}</SelectContent>
 </Select>
 
 <Select>
-  <SelectTrigger placeholder="Size 36" size={36} />
+  <SelectTrigger size={36}>
+    <SelectValue placeholder="Size 36" />
+  </SelectTrigger>
   <SelectContent>{/* ... */}</SelectContent>
 </Select>
 
 <Select>
-  <SelectTrigger placeholder="Size 40" size={40} />
+  <SelectTrigger size={40}>
+    <SelectValue placeholder="Size 40" />
+  </SelectTrigger>
   <SelectContent>{/* ... */}</SelectContent>
 </Select>
 
 <Select>
-  <SelectTrigger placeholder="Size 44" size={44} />
+  <SelectTrigger size={44}>
+    <SelectValue placeholder="Size 44" />
+  </SelectTrigger>
   <SelectContent>{/* ... */}</SelectContent>
 </Select>
 
 <Select>
-  <SelectTrigger placeholder="Size 48" size={48} />
+  <SelectTrigger size={48}>
+    <SelectValue placeholder="Size 48" />
+  </SelectTrigger>
   <SelectContent>{/* ... */}</SelectContent>
 </Select>
 ```
@@ -258,7 +291,9 @@ Use the `isRounded` prop to give the trigger fully rounded corners.
 // component
 
 <Select>
-  <SelectTrigger className="max-w-256" isRounded placeholder="Select a font" />
+  <SelectTrigger className="max-w-256" isRounded>
+    <SelectValue placeholder="Select a font" />
+  </SelectTrigger>
   <SelectContent>
     <SelectItem value="sans">Sans-serif</SelectItem>
     <SelectItem value="serif">Serif</SelectItem>
@@ -269,7 +304,9 @@ Use the `isRounded` prop to give the trigger fully rounded corners.
 
 ```jsx
 <Select>
-  <SelectTrigger className="max-w-256" isRounded placeholder="Select a font" />
+  <SelectTrigger className="max-w-256" isRounded>
+    <SelectValue placeholder="Select a font" />
+  </SelectTrigger>
   <SelectContent>
     <SelectItem value="sans">Sans-serif</SelectItem>
     <SelectItem value="serif">Serif</SelectItem>
@@ -286,7 +323,9 @@ Use the `isDisabled` prop on `SelectItem` to prevent a single option from being 
 // component
 
 <Select>
-  <SelectTrigger className="max-w-256" placeholder="Select a font" />
+  <SelectTrigger className="max-w-256">
+    <SelectValue placeholder="Select a font" />
+  </SelectTrigger>
   <SelectContent>
     <SelectItem value="sans">Sans-serif</SelectItem>
     <SelectItem value="serif">Serif</SelectItem>
@@ -295,13 +334,17 @@ Use the `isDisabled` prop on `SelectItem` to prevent a single option from being 
 </Select>
 
 <Select disabled>
-  <SelectTrigger className="max-w-256" placeholder="Select a font" />
+  <SelectTrigger className="max-w-256">
+    <SelectValue placeholder="Select a font" />
+  </SelectTrigger>
 </Select>
 ```
 
 ```jsx
 <Select>
-  <SelectTrigger className="max-w-256" placeholder="Select a font" />
+  <SelectTrigger className="max-w-256">
+    <SelectValue placeholder="Select a font" />
+  </SelectTrigger>
   <SelectContent>
     <SelectItem value="sans">Sans-serif</SelectItem>
     <SelectItem value="serif">Serif</SelectItem>
@@ -312,7 +355,9 @@ Use the `isDisabled` prop on `SelectItem` to prevent a single option from being 
 </Select>
 
 <Select disabled>
-  <SelectTrigger className="max-w-256" placeholder="Select a font" />
+  <SelectTrigger className="max-w-256">
+    <SelectValue placeholder="Select a font" />
+  </SelectTrigger>
 </Select>
 ```
 
@@ -322,7 +367,9 @@ By default, `Select` is an uncontrolled component that manages its own state. Us
 
 ```jsx
 <Select defaultValue="sans">
-  <SelectTrigger placeholder="Select a font" />
+  <SelectTrigger>
+    <SelectValue placeholder="Select a font" />
+  </SelectTrigger>
   <SelectContent>
     <SelectItem value="sans">Sans-serif</SelectItem>
     <SelectItem value="serif">Serif</SelectItem>
@@ -337,7 +384,9 @@ const [font, setFont] = useState(null)
 
 return (
   <Select onValueChange={setFont} value={font}>
-    <SelectTrigger placeholder="Select a font" />
+    <SelectTrigger>
+      <SelectValue placeholder="Select a font" />
+    </SelectTrigger>
     <SelectContent>
       <SelectItem value="sans">Sans-serif</SelectItem>
       <SelectItem value="serif">Serif</SelectItem>

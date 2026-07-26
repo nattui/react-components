@@ -1,0 +1,17 @@
+@layer components {
+  .select_value {
+    align-items: center;
+    color: var(--color-text-primary);
+    column-gap: 8px;
+    display: inline-flex;
+    font-size: 14px;
+    font-weight: 450;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .select_value[data-placeholder] {
+    color: var(--color-gray-9);
+  }
+}

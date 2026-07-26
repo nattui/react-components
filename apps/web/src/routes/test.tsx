@@ -1,4 +1,3 @@
-import { Select as BaseSelect } from "@base-ui/react"
 import { Claude, Gemini, Grok, OpenAI, type IconType } from "@lobehub/icons"
 import { IconChevronDownOutline18, IconPlusOutline18 } from "@nattstack/icons"
 import {
@@ -14,6 +13,7 @@ import {
   SelectItem,
   SelectSeparator,
   SelectTrigger,
+  SelectValue,
   Spacer,
 } from "@nattstack/ui"
 import { createFileRoute } from "@tanstack/react-router"
@@ -84,8 +84,8 @@ export const Route = createFileRoute("/test")({
         <Spacer height={64} />
 
         <Select defaultValue={MODELS_2[0]} itemToStringValue={(item: Model) => item.value}>
-          <SelectTrigger className="max-w-288" placeholder="Select a model">
-            <BaseSelect.Value>
+          <SelectTrigger className="max-w-288">
+            <SelectValue placeholder="Select a model">
               {(model: Model) => (
                 <Row className="w-full items-center">
                   {model.icon && <model.icon className="mr-8" size={ICON_SIZE} />}
@@ -97,7 +97,7 @@ export const Route = createFileRoute("/test")({
                   )}
                 </Row>
               )}
-            </BaseSelect.Value>
+            </SelectValue>
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
@@ -119,7 +119,9 @@ export const Route = createFileRoute("/test")({
         <Spacer height={16} />
 
         <Select>
-          <SelectTrigger className="max-w-288" placeholder="Select a font" />
+          <SelectTrigger className="max-w-288">
+            <SelectValue placeholder="Select a font" />
+          </SelectTrigger>
           <SelectContent>
             <SelectGroup>
               <SelectGroupLabel>Fonts</SelectGroupLabel>
@@ -139,7 +141,9 @@ export const Route = createFileRoute("/test")({
         <Spacer height={16} />
 
         <Select defaultValue="sans" disabled>
-          <SelectTrigger className="max-w-288" placeholder="Select a font" />
+          <SelectTrigger className="max-w-288">
+            <SelectValue placeholder="Select a font" />
+          </SelectTrigger>
         </Select>
         <Spacer height={64} />
 
