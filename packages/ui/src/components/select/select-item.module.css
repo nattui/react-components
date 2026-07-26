@@ -25,9 +25,7 @@
   /* Label */
   /* =================================================== */
   .label {
-    align-items: center;
     color: var(--color-text-primary);
-    display: flex;
     font-size: 14px;
     font-weight: 450;
     overflow-x: hidden;

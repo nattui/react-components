@@ -66,7 +66,7 @@ export const Route = createFileRoute("/test")({
           <SelectTrigger className="max-w-288">
             <SelectValue placeholder="Select a model">
               {(model: Model) => (
-                <Row className="w-full items-center">
+                <Row className="items-center">
                   {model.icon && <model.icon className="mr-8" size={ICON_SIZE} />}
                   <span className="truncate">{model.label}</span>
                   {model.description && (
@@ -81,13 +81,15 @@ export const Route = createFileRoute("/test")({
           <SelectContent>
             {MODELS.map((model) => (
               <SelectItem key={model.value} label={model.label} value={model}>
-                {model.icon && <model.icon className="mr-8" size={ICON_SIZE} />}
-                <span className="truncate">{model.label}</span>
-                {model.description && (
-                  <span className="text-12 text-gray-9 font-400 ml-6 truncate">
-                    {model.description}
-                  </span>
-                )}
+                <Row className="items-center">
+                  {model.icon && <model.icon className="mr-8" size={ICON_SIZE} />}
+                  <span className="truncate">{model.label}</span>
+                  {model.description && (
+                    <span className="text-12 text-gray-9 font-400 ml-6 truncate">
+                      {model.description}
+                    </span>
+                  )}
+                </Row>
               </SelectItem>
             ))}
           </SelectContent>
