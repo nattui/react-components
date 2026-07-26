@@ -1,9 +1,6 @@
 @layer components {
   .base {
-    align-items: center;
     color: var(--color-text-primary);
-    column-gap: 8px;
-    display: inline-flex;
     font-size: 14px;
     font-weight: 450;
     overflow-x: hidden;

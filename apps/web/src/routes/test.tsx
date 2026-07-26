@@ -30,26 +30,26 @@ interface Model {
 
 const MODELS_2: Model[] = [
   {
-    description: "High Fast",
-    icon: Grok,
-    label: "Cursor Grok 4.5",
-    value: "cursor-grok-4.5",
-  },
-  {
     description: "Max",
-    icon: Claude,
+    icon: Claude.Color,
     label: "Fable 5",
     value: "fable-5",
   },
   {
-    description: "Fast",
+    description: "High Fast",
+    icon: Grok,
+    label: "Grok 4.5",
+    value: "grok-4.5",
+  },
+  {
+    description: "Medium",
     icon: OpenAI,
-    label: "GPT-4o mini",
-    value: "gpt-4o-mini",
+    label: "GPT-5.6 Sol",
+    value: "gpt-5.6-sol",
   },
   {
     description: "Fast",
-    icon: Gemini,
+    icon: Gemini.Color,
     label: "Gemini 2.5 Pro",
     value: "gemini-2.5-pro",
   },
