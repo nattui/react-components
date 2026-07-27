@@ -4,6 +4,7 @@ import type { ComponentType } from "react"
 import { MDX_COMPONENTS } from "#/components/mdx-components"
 import { InputContent } from "#/routes/components/-input-content"
 import ButtonContent from "#/routes/components/button.mdx"
+import ComboboxContent from "#/routes/components/combobox.mdx"
 import DialogResponsiveContent from "#/routes/components/dialog-responsive.mdx"
 import IconButtonContent from "#/routes/components/icon-button.mdx"
 import MenuContent from "#/routes/components/menu.mdx"
@@ -27,6 +28,10 @@ const COMPONENT_PAGES: Record<string, ComponentPage> = {
   button: {
     Content: ButtonContent,
     title: "Button",
+  },
+  combobox: {
+    Content: ComboboxContent,
+    title: "Combobox",
   },
   "dialog-responsive": {
     Content: DialogResponsiveContent,

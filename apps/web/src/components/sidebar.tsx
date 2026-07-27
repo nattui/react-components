@@ -7,6 +7,7 @@ import { SidebarLink } from "#/components/sidebar-link"
 const COMPONENT_LINKS = [
   { label: "Button", slug: "button" },
   { label: "Icon button", slug: "icon-button" },
+  { label: "Combobox", slug: "combobox" },
   { label: "Dialog responsive", slug: "dialog-responsive" },
   { label: "Input", slug: "input" },
   { label: "Menu", slug: "menu" },
