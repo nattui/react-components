@@ -4,6 +4,8 @@
     z-index: 50;
   }
 
+  /* The popup itself never scrolls; the inner list is the scroll
+     container, matching the combobox structure. */
   .base {
     background-color: var(--color-bg-shell-inner);
     border-radius: 12px;
@@ -24,7 +26,6 @@
     outline-offset: -2px;
     outline-style: solid;
     outline-width: 0;
-    overflow: auto;
     padding: 4px;
     row-gap: 2px;
     transform-origin: var(--transform-origin);
@@ -36,6 +37,17 @@
 
   .base:focus-visible {
     outline-width: 2px;
+  }
+
+  /* Mirrors combobox-list: min-height lets it shrink inside
+     the popup's max-height so it scrolls instead of overflowing. */
+  .list {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    row-gap: 2px;
   }
 
   .base[data-ending-style],

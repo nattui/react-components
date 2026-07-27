@@ -69,7 +69,9 @@ export function SelectContent(props: SelectContentProps): JSX.Element {
         sticky={sticky}
       >
         <BaseSelect.Popup className={combinedClassName} data-slot="select-content" {...rest}>
-          {children}
+          <BaseSelect.List className={styles.list} data-slot="select-list">
+            {children}
+          </BaseSelect.List>
         </BaseSelect.Popup>
       </BaseSelect.Positioner>
     </BaseSelect.Portal>

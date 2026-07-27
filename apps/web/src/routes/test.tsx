@@ -351,6 +351,20 @@ export const Route = createFileRoute("/test")({
         </Select>
         <Spacer height={16} />
 
+        <Select itemToStringValue={(item: Country) => item.value}>
+          <SelectTrigger className="max-w-288">
+            <SelectValue placeholder="Select a country (long list)" />
+          </SelectTrigger>
+          <SelectContent>
+            {COUNTRIES.map((country) => (
+              <SelectItem key={country.code} label={country.label} value={country}>
+                {country.label}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+        <Spacer height={16} />
+
         <Select defaultValue="sans" disabled>
           <SelectTrigger className="max-w-288">
             <SelectValue placeholder="Select a font" />
