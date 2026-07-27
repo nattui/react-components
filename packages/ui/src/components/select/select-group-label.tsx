@@ -1,7 +1,7 @@
 import { Select as BaseSelect } from "@base-ui/react"
 import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import styles from "../picker/picker.module.css"
+import styles from "../picker/picker-group.module.css"
 
 export interface SelectGroupLabelProps extends Omit<BaseSelect.GroupLabel.Props, "className"> {
   className?: string
@@ -17,4 +17,4 @@ export function SelectGroupLabel(props: SelectGroupLabelProps): JSX.Element {
   )
 }
 
-export const selectGroupLabelVariants = cva(styles.group_label)
+export const selectGroupLabelVariants = cva(styles.label)

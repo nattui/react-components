@@ -1,7 +1,7 @@
 import { Select as BaseSelect } from "@base-ui/react"
 import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import styles from "../picker/picker.module.css"
+import styles from "../picker/picker-item.module.css"
 
 export interface SelectItemProps extends Omit<BaseSelect.Item.Props, "className" | "disabled"> {
   className?: string
@@ -20,11 +20,11 @@ export function SelectItem(props: SelectItemProps): JSX.Element {
       disabled={isDisabled}
       {...rest}
     >
-      <BaseSelect.ItemText className={styles.item_label} data-slot="select-item-text">
+      <BaseSelect.ItemText className={styles.label} data-slot="select-item-text">
         {children}
       </BaseSelect.ItemText>
 
-      <BaseSelect.ItemIndicator className={styles.item_indicator} data-slot="select-item-indicator">
+      <BaseSelect.ItemIndicator className={styles.indicator} data-slot="select-item-indicator">
         {/* check */}
         <svg
           height="14px"
@@ -48,4 +48,4 @@ export function SelectItem(props: SelectItemProps): JSX.Element {
   )
 }
 
-export const selectItemVariants = cva(styles.item)
+export const selectItemVariants = cva(styles.base)

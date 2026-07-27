@@ -1,7 +1,8 @@
 import { Select as BaseSelect } from "@base-ui/react"
 import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import styles from "../picker/picker.module.css"
+import listStyles from "../picker/picker-list.module.css"
+import popupStyles from "../picker/picker-popup.module.css"
 
 export interface SelectContentProps
   extends
@@ -57,7 +58,7 @@ export function SelectContent(props: SelectContentProps): JSX.Element {
         alignOffset={alignOffset}
         anchor={anchor}
         arrowPadding={arrowPadding}
-        className={styles.positioner}
+        className={popupStyles.positioner}
         collisionAvoidance={collisionAvoidance}
         collisionBoundary={collisionBoundary}
         collisionPadding={collisionPadding}
@@ -69,7 +70,7 @@ export function SelectContent(props: SelectContentProps): JSX.Element {
         sticky={sticky}
       >
         <BaseSelect.Popup className={combinedClassName} data-slot="select-content" {...rest}>
-          <BaseSelect.List className={styles.list} data-slot="select-list">
+          <BaseSelect.List className={listStyles.base} data-slot="select-list">
             {children}
           </BaseSelect.List>
         </BaseSelect.Popup>
@@ -78,4 +79,4 @@ export function SelectContent(props: SelectContentProps): JSX.Element {
   )
 }
 
-export const selectContentVariants = cva(styles.popup)
+export const selectContentVariants = cva(popupStyles.base)

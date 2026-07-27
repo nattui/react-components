@@ -1,0 +1,11 @@
+/* Shared between the picker components (select and combobox) so
+   they cannot drift apart. If one family needs to diverge, merge a
+   component-local class through cva instead of editing this file. */
+@layer components {
+  .base {
+    background-color: var(--color-border);
+    flex-shrink: 0;
+    height: 1px;
+    margin: 4px 8px;
+  }
+}

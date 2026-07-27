@@ -1,7 +1,7 @@
 import { Select as BaseSelect } from "@base-ui/react"
 import { cva, type VariantProps } from "class-variance-authority"
 import type { JSX } from "react"
-import styles from "../picker/picker.module.css"
+import styles from "../picker/picker-trigger.module.css"
 
 export interface SelectTriggerProps extends BaseSelect.Trigger.Props {
   isRounded?: VariantProps<typeof selectTriggerVariants>["isRounded"]
@@ -27,7 +27,7 @@ export function SelectTrigger(props: SelectTriggerProps): JSX.Element {
     <BaseSelect.Trigger className={combinedClassName} data-slot="select-trigger" {...rest}>
       {children}
 
-      <BaseSelect.Icon className={styles.trigger_icon} data-slot="select-icon">
+      <BaseSelect.Icon className={styles.icon} data-slot="select-icon">
         {/* chevron-down */}
         <svg height="14" viewBox="0 0 18 18" width="14" xmlns="http://www.w3.org/2000/svg">
           <polyline
@@ -44,17 +44,17 @@ export function SelectTrigger(props: SelectTriggerProps): JSX.Element {
   )
 }
 
-export const selectTriggerVariants = cva(styles.trigger, {
+export const selectTriggerVariants = cva(styles.base, {
   variants: {
     isRounded: {
-      true: styles.trigger_rounded_full,
+      true: styles.rounded_full,
     },
     size: {
-      32: styles.trigger_size_32,
-      36: styles.trigger_size_36,
-      40: styles.trigger_size_40,
-      44: styles.trigger_size_44,
-      48: styles.trigger_size_48,
+      32: styles.size_32,
+      36: styles.size_36,
+      40: styles.size_40,
+      44: styles.size_44,
+      48: styles.size_48,
     },
   },
 })
