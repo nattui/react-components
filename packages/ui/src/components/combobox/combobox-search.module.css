@@ -1,21 +1,18 @@
 @layer components {
   /* Sits inside the popup, which has 4px padding and a 1px inset
      border ring. The -3px margins stretch the field up to the ring
-     so the bottom border spans the popup while the ring stays visible. */
+     so the bottom border spans the popup while the ring stays visible.
+     Stays pinned at the top naturally: only ComboboxList scrolls. */
   .base {
     align-items: center;
     background-color: var(--color-bg-shell-inner);
     border-bottom: 1px solid var(--color-border);
-    border-top-left-radius: 9999px;
-    border-top-right-radius: 9999px;
     column-gap: 8px;
     display: flex;
     flex-shrink: 0;
     height: 40px;
     margin: -3px -3px 0;
     padding: 0 16px;
-    position: sticky;
-    z-index: 1;
   }
 
   /* =================================================== */

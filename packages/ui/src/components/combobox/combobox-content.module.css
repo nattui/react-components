@@ -4,6 +4,8 @@
     z-index: 50;
   }
 
+  /* The popup itself never scrolls; ComboboxList is the scroll
+     container so ComboboxSearch stays pinned at the top. */
   .base {
     background-color: var(--color-bg-shell-inner);
     border-radius: 12px;
@@ -24,7 +26,6 @@
     outline-offset: -2px;
     outline-style: solid;
     outline-width: 0;
-    overflow: auto;
     padding: 4px;
     row-gap: 2px;
     transform-origin: var(--transform-origin);
