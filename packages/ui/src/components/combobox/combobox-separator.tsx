@@ -1,7 +1,7 @@
 import { Combobox as BaseCombobox } from "@base-ui/react"
 import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import styles from "./combobox-separator.module.css"
+import styles from "../picker/picker.module.css"
 
 export interface ComboboxSeparatorProps extends Omit<BaseCombobox.Separator.Props, "className"> {
   className?: string
@@ -21,4 +21,4 @@ export function ComboboxSeparator(props: ComboboxSeparatorProps): JSX.Element {
   )
 }
 
-export const comboboxSeparatorVariants = cva(styles.base)
+export const comboboxSeparatorVariants = cva(styles.separator)

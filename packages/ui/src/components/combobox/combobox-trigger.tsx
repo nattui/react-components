@@ -1,7 +1,7 @@
 import { Combobox as BaseCombobox } from "@base-ui/react"
 import { cva, type VariantProps } from "class-variance-authority"
 import type { JSX } from "react"
-import styles from "./combobox-trigger.module.css"
+import styles from "../picker/picker.module.css"
 
 export interface ComboboxTriggerProps extends BaseCombobox.Trigger.Props {
   isRounded?: VariantProps<typeof comboboxTriggerVariants>["isRounded"]
@@ -27,7 +27,7 @@ export function ComboboxTrigger(props: ComboboxTriggerProps): JSX.Element {
     <BaseCombobox.Trigger className={combinedClassName} data-slot="combobox-trigger" {...rest}>
       {children}
 
-      <BaseCombobox.Icon className={styles.icon} data-slot="combobox-icon">
+      <BaseCombobox.Icon className={styles.trigger_icon} data-slot="combobox-icon">
         {/* chevron-down */}
         <svg height="14" viewBox="0 0 18 18" width="14" xmlns="http://www.w3.org/2000/svg">
           <polyline
@@ -44,17 +44,17 @@ export function ComboboxTrigger(props: ComboboxTriggerProps): JSX.Element {
   )
 }
 
-export const comboboxTriggerVariants = cva(styles.base, {
+export const comboboxTriggerVariants = cva(styles.trigger, {
   variants: {
     isRounded: {
-      true: styles.rounded_full,
+      true: styles.trigger_rounded_full,
     },
     size: {
-      32: styles.size_32,
-      36: styles.size_36,
-      40: styles.size_40,
-      44: styles.size_44,
-      48: styles.size_48,
+      32: styles.trigger_size_32,
+      36: styles.trigger_size_36,
+      40: styles.trigger_size_40,
+      44: styles.trigger_size_44,
+      48: styles.trigger_size_48,
     },
   },
 })

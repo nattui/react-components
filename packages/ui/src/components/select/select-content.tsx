@@ -1,7 +1,7 @@
 import { Select as BaseSelect } from "@base-ui/react"
 import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import styles from "./select-content.module.css"
+import styles from "../picker/picker.module.css"
 
 export interface SelectContentProps
   extends
@@ -78,4 +78,4 @@ export function SelectContent(props: SelectContentProps): JSX.Element {
   )
 }
 
-export const selectContentVariants = cva(styles.base)
+export const selectContentVariants = cva(styles.popup)

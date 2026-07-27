@@ -1,7 +1,7 @@
 import { Select as BaseSelect } from "@base-ui/react"
 import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import styles from "./select-separator.module.css"
+import styles from "../picker/picker.module.css"
 
 export interface SelectSeparatorProps extends Omit<BaseSelect.Separator.Props, "className"> {
   className?: string
@@ -17,4 +17,4 @@ export function SelectSeparator(props: SelectSeparatorProps): JSX.Element {
   )
 }
 
-export const selectSeparatorVariants = cva(styles.base)
+export const selectSeparatorVariants = cva(styles.separator)

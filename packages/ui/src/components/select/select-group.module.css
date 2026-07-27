@@ -1,7 +1,0 @@
-@layer components {
-  .base {
-    display: flex;
-    flex-direction: column;
-    row-gap: 2px;
-  }
-}

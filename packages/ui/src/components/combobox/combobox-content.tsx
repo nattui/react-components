@@ -1,7 +1,7 @@
 import { Combobox as BaseCombobox } from "@base-ui/react"
 import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import styles from "./combobox-content.module.css"
+import styles from "../picker/picker.module.css"
 
 export interface ComboboxContentProps
   extends
@@ -73,4 +73,4 @@ export function ComboboxContent(props: ComboboxContentProps): JSX.Element {
   )
 }
 
-export const comboboxContentVariants = cva(styles.base)
+export const comboboxContentVariants = cva(styles.popup)

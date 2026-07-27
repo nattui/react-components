@@ -1,7 +1,7 @@
 import { Combobox as BaseCombobox } from "@base-ui/react"
 import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import styles from "./combobox-item.module.css"
+import styles from "../picker/picker.module.css"
 
 export interface ComboboxItemProps extends Omit<BaseCombobox.Item.Props, "className" | "disabled"> {
   className?: string
@@ -20,11 +20,14 @@ export function ComboboxItem(props: ComboboxItemProps): JSX.Element {
       disabled={isDisabled}
       {...rest}
     >
-      <span className={styles.label} data-slot="combobox-item-text">
+      <span className={styles.item_label} data-slot="combobox-item-text">
         {children}
       </span>
 
-      <BaseCombobox.ItemIndicator className={styles.indicator} data-slot="combobox-item-indicator">
+      <BaseCombobox.ItemIndicator
+        className={styles.item_indicator}
+        data-slot="combobox-item-indicator"
+      >
         {/* check */}
         <svg
           height="14px"
@@ -48,4 +51,4 @@ export function ComboboxItem(props: ComboboxItemProps): JSX.Element {
   )
 }
 
-export const comboboxItemVariants = cva(styles.base)
+export const comboboxItemVariants = cva(styles.item)

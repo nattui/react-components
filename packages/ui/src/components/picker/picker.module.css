@@ -1,0 +1,271 @@
+/* Shared styles for the picker-style popups (select and combobox).
+   Both families import from here so they cannot drift apart; if one
+   ever needs to diverge, add a small component-local module for the
+   delta and merge it through cva instead of editing this file. */
+@layer components {
+  /* =================================================== */
+  /* Positioner */
+  /* =================================================== */
+  .positioner {
+    isolation: isolate;
+    z-index: 50;
+  }
+
+  /* =================================================== */
+  /* Trigger */
+  /* =================================================== */
+  .trigger {
+    align-items: center;
+    background-color: var(--color-bg-shell-inner);
+    box-shadow: inset 0 0 0 1px var(--color-border);
+    column-gap: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    flex-shrink: 0;
+    outline-color: transparent;
+    outline-offset: 2px;
+    outline-style: solid;
+    outline-width: 2px;
+    overflow: hidden;
+    padding: 0 16px;
+    transition-duration: 150ms;
+    transition-property: background-color, box-shadow;
+    width: stretch;
+  }
+
+  .trigger:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    background-color: var(--color-gray-3);
+  }
+
+  .trigger:focus-visible {
+    outline-color: var(--color-primary);
+  }
+
+  .trigger:hover:not(:disabled) {
+    box-shadow: inset 0 0 0 1px var(--color-gray-6);
+  }
+
+  .trigger[data-popup-open] {
+    background-color: var(--color-gray-3);
+  }
+
+  /* =================================================== */
+  /* Trigger — Size */
+  /* =================================================== */
+  .trigger_size_32 {
+    border-radius: 8px;
+    height: 32px;
+  }
+
+  .trigger_size_36 {
+    border-radius: 9px;
+    height: 36px;
+  }
+
+  .trigger_size_40 {
+    border-radius: 10px;
+    height: 40px;
+  }
+
+  .trigger_size_44 {
+    border-radius: 11px;
+    height: 44px;
+  }
+
+  .trigger_size_48 {
+    border-radius: 12px;
+    height: 48px;
+  }
+
+  /* =================================================== */
+  /* Trigger — Rounded (must stay below Size so source order wins) */
+  /* =================================================== */
+  .trigger_rounded_full {
+    border-radius: 9999px;
+  }
+
+  /* =================================================== */
+  /* Trigger — Icon */
+  /* =================================================== */
+  .trigger_icon {
+    align-items: center;
+    display: flex;
+    height: 16px;
+    justify-content: center;
+    margin-left: auto;
+    transition-duration: 150ms;
+    transition-property: rotate;
+    width: 16px;
+  }
+
+  .trigger[data-popup-open] .trigger_icon {
+    rotate: 180deg;
+  }
+
+  /* =================================================== */
+  /* Popup */
+  /* =================================================== */
+  /* The popup itself never scrolls; the list is the scroll
+     container so pinned rows (like the combobox search) stay
+     fixed while items scroll. */
+  .popup {
+    background-color: var(--color-bg-shell-inner);
+    border-color: var(--color-border);
+    border-radius: 12px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow:
+      0 0.5px 0 color-mix(in oklab, black 3%, transparent),
+      0 36px 15px -4px color-mix(in oklab, black 1%, transparent),
+      0 20px 12px -3px color-mix(in oklab, black 3%, transparent),
+      0 9px 9px -2px color-mix(in oklab, black 4%, transparent),
+      0 2px 5px -1px color-mix(in oklab, black 5%, transparent);
+    color: var(--color-text-primary);
+    display: flex;
+    flex-direction: column;
+    max-height: min(var(--available-height), 480px);
+    max-width: var(--available-width);
+    min-width: max(var(--anchor-width), 240px);
+    outline-color: var(--color-primary-9);
+    outline-offset: -2px;
+    outline-style: solid;
+    outline-width: 0;
+    overflow: hidden;
+    transform-origin: var(--transform-origin);
+    transition-duration: 150ms;
+    transition-property: opacity, transform;
+    width: var(--anchor-width);
+    will-change: opacity, transform;
+  }
+
+  .popup:focus-visible {
+    outline-width: 2px;
+  }
+
+  .popup[data-ending-style],
+  .popup[data-starting-style] {
+    opacity: 0;
+    transform: scale(0.975);
+  }
+
+  .popup[data-side="top"][data-ending-style],
+  .popup[data-side="top"][data-starting-style] {
+    transform: scale(0.975) translateY(4px);
+  }
+
+  .popup[data-side="bottom"][data-ending-style],
+  .popup[data-side="bottom"][data-starting-style] {
+    transform: scale(0.975) translateY(-4px);
+  }
+
+  .popup[data-side="left"][data-ending-style],
+  .popup[data-side="left"][data-starting-style],
+  .popup[data-side="inline-start"][data-ending-style],
+  .popup[data-side="inline-start"][data-starting-style] {
+    transform: scale(0.975) translateX(4px);
+  }
+
+  .popup[data-side="right"][data-ending-style],
+  .popup[data-side="right"][data-starting-style],
+  .popup[data-side="inline-end"][data-ending-style],
+  .popup[data-side="inline-end"][data-starting-style] {
+    transform: scale(0.975) translateX(-4px);
+  }
+
+  /* =================================================== */
+  /* List */
+  /* =================================================== */
+  /* The list is the scroll container (not the popup) so the popup
+     frame stays fixed while items scroll. Being a scroll container
+     zeroes its flex min-height, so it can shrink inside the popup's
+     max-height. scroll-padding keeps keyboard scrolls clear of the
+     list's own padding. */
+  .list {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 4px;
+    row-gap: 2px;
+    scroll-padding: 4px;
+  }
+
+  /* Hide the list when no items match so it doesn't leave
+     a stray flex-gap slot in the popup. */
+  .list[data-empty] {
+    display: none;
+  }
+
+  /* =================================================== */
+  /* Item */
+  /* =================================================== */
+  .item {
+    align-items: center;
+    border-radius: 8px;
+    column-gap: 8px;
+    cursor: pointer;
+    display: flex;
+    flex-shrink: 0;
+    height: 36px;
+    outline: none;
+    padding: 0 12px;
+    user-select: none;
+  }
+
+  .item[data-disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  .item[data-highlighted] {
+    background-color: var(--color-gray-3);
+  }
+
+  .item_label {
+    color: var(--color-text-primary);
+    font-size: 14px;
+    font-weight: 450;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .item_indicator {
+    align-items: center;
+    color: var(--color-primary-9);
+    display: flex;
+    flex-shrink: 0;
+    height: 16px;
+    justify-content: center;
+    margin-left: auto;
+    width: 16px;
+  }
+
+  /* =================================================== */
+  /* Group */
+  /* =================================================== */
+  .group {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2px;
+  }
+
+  .group_label {
+    color: var(--color-text-secondary);
+    font-size: 12px;
+    font-weight: 450;
+    padding: 6px 12px 4px;
+  }
+
+  /* =================================================== */
+  /* Separator */
+  /* =================================================== */
+  .separator {
+    background-color: var(--color-border);
+    flex-shrink: 0;
+    height: 1px;
+    margin: 4px 8px;
+  }
+}
