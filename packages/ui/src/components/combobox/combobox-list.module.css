@@ -1,11 +1,11 @@
 @layer components {
   /* The list is the scroll container (not the popup) so the
      search field stays pinned at the top while items scroll.
-     min-height lets it shrink inside the popup's max-height. */
+     Being a scroll container zeroes its flex min-height, so it
+     can shrink inside the popup's max-height. */
   .base {
     display: flex;
     flex-direction: column;
-    min-height: 0;
     overflow-y: auto;
     overscroll-behavior: contain;
     padding: 4px;
