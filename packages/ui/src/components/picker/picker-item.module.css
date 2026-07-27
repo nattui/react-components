@@ -20,7 +20,15 @@
     opacity: 0.5;
   }
 
-  .base[data-highlighted] {
+  .base[data-highlighted]:not([data-disabled]) {
+    background-color: var(--color-gray-3);
+  }
+
+  /* Base UI keeps disabled items in the arrow-key order so they stay
+     discoverable. Hovering one must not suggest it is actionable, but
+     keyboard navigation still needs a visible position indicator, so
+     only suppress the highlight while the pointer is over the item. */
+  .base[data-highlighted][data-disabled]:not(:hover) {
     background-color: var(--color-gray-3);
   }
 
