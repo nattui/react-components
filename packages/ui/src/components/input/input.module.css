@@ -9,7 +9,6 @@
     box-shadow: 0 0 0 1px var(--color-border) inset;
     color: var(--color-text-primary);
     cursor: text;
-    font-family: var(--font-body);
     font-size: 14px;
     font-weight: 400;
     line-height: 1.5;

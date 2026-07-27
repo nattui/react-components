@@ -18,7 +18,6 @@
     cursor: pointer;
     display: inline-flex;
     flex-shrink: 0;
-    font-family: var(--font-body);
     font-size: 14px;
     font-weight: 500;
     height: 40px;
@@ -86,7 +85,6 @@
     color: var(--color-text-primary);
     display: flex;
     flex-direction: column;
-    font-family: var(--font-body);
     max-height: min(var(--available-height), 480px);
     max-width: min(var(--available-width), 320px);
     min-width: 180px;
