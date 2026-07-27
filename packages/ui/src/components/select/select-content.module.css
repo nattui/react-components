@@ -20,16 +20,17 @@
     max-height: min(var(--available-height), 480px);
     max-width: var(--available-width);
     min-width: max(var(--anchor-width), 240px);
-    width: var(--anchor-width);
     outline-color: var(--color-primary-9);
     outline-offset: -2px;
     outline-style: solid;
     outline-width: 0;
     overflow: auto;
     padding: 4px;
+    row-gap: 2px;
     transform-origin: var(--transform-origin);
     transition-duration: 150ms;
     transition-property: opacity, transform;
+    width: var(--anchor-width);
     will-change: opacity, transform;
   }
 
