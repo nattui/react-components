@@ -2,7 +2,7 @@
   .base {
     align-items: center;
     background-color: var(--color-bg-shell-inner);
-    box-shadow: 0 0 0 1px var(--color-border) inset;
+    box-shadow: inset 0 0 0 1px var(--color-border);
     column-gap: 8px;
     cursor: pointer;
     display: inline-flex;
@@ -14,7 +14,7 @@
     overflow: hidden;
     padding: 0 16px;
     transition-duration: 150ms;
-    transition-property: background-color;
+    transition-property: background-color, box-shadow;
     width: stretch;
   }
 
@@ -28,7 +28,10 @@
     outline-color: var(--color-primary);
   }
 
-  .base:hover:not(:disabled),
+  .base:hover:not(:disabled) {
+    box-shadow: inset 0 0 0 1px var(--color-gray-6);
+  }
+
   .base[data-popup-open] {
     background-color: var(--color-gray-3);
   }
