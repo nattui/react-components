@@ -6,6 +6,6 @@
     background-color: var(--color-border);
     flex-shrink: 0;
     height: 1px;
-    margin: 0 8px;
+    margin: 2px 8px;
   }
 }
