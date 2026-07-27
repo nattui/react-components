@@ -1,5 +1,6 @@
-import { Claude, Gemini, OpenAI } from "@lobehub/icons"
+import { Claude, Gemini, Grok, OpenAI } from "@lobehub/icons"
 import {
+  Row,
   Select,
   SelectContent,
   SelectGroup,
@@ -12,30 +13,27 @@ import {
 
 export const MODELS = [
   {
-    label: (
-      <>
-        <OpenAI size={18} />
-        GPT-4o
-      </>
-    ),
-    value: "gpt-4o",
+    description: "Max",
+    icon: Claude.Color,
+    label: "Fable 5",
+    value: "fable-5",
   },
   {
-    label: (
-      <>
-        <Claude.Color size={18} />
-        Claude Sonnet 4
-      </>
-    ),
-    value: "claude-sonnet-4",
+    description: "High Fast",
+    icon: Grok,
+    label: "Grok 4.5",
+    value: "grok-4.5",
   },
   {
-    label: (
-      <>
-        <Gemini.Color size={18} />
-        Gemini 2.5 Pro
-      </>
-    ),
+    description: "Medium",
+    icon: OpenAI,
+    label: "GPT-5.6 Sol",
+    value: "gpt-5.6-sol",
+  },
+  {
+    description: "Fast",
+    icon: Gemini.Color,
+    label: "Gemini 2.5 Pro",
     value: "gemini-2.5-pro",
   },
 ]
@@ -122,19 +120,35 @@ Use `SelectGroup` with a `SelectGroupLabel` to label related options, and `Selec
 
 ## Icons
 
-Options can include an icon before their label. Pass the options to the `items` prop on `Select` so the trigger can also render the selected option's icon and label.
+Options can include an icon before their label and a supporting description. Use the whole option object as the `SelectItem` `value`, and pass a render function to `SelectValue` so the trigger can render the selected option the same way. Provide `itemToStringValue` on `Select` to convert the object to a string for form submission, and set `label` on `SelectItem` for keyboard text navigation.
 
 ```jsx
 // component
 
-<Select defaultValue="gpt-4o" items={MODELS}>
-  <SelectTrigger className="max-w-256">
-    <SelectValue placeholder="Select a model" />
+<Select defaultValue={MODELS[0]} itemToStringValue={(item) => item.value}>
+  <SelectTrigger className="max-w-288">
+    <SelectValue placeholder="Select a model">
+      {(model) => (
+        <Row className="items-center">
+          {model.icon && <model.icon className="mr-8" size={18} />}
+          <span className="truncate">{model.label}</span>
+          {model.description && (
+            <span className="text-12 text-gray-9 font-400 ml-6 truncate">{model.description}</span>
+          )}
+        </Row>
+      )}
+    </SelectValue>
   </SelectTrigger>
   <SelectContent>
-    {MODELS.map((option) => (
-      <SelectItem key={option.value} value={option.value}>
-        {option.label}
+    {MODELS.map((model) => (
+      <SelectItem key={model.value} label={model.label} value={model}>
+        <Row className="items-center">
+          {model.icon && <model.icon className="mr-8" size={18} />}
+          <span className="truncate">{model.label}</span>
+          {model.description && (
+            <span className="text-12 text-gray-9 font-400 ml-6 truncate">{model.description}</span>
+          )}
+        </Row>
       </SelectItem>
     ))}
   </SelectContent>
@@ -144,43 +158,60 @@ Options can include an icon before their label. Pass the options to the `items` 
 ```jsx
 const MODELS = [
   {
-    label: (
-      <>
-        <OpenAI size={18} />
-        GPT-4o
-      </>
-    ),
-    value: "gpt-4o",
+    description: "Max",
+    icon: Claude.Color,
+    label: "Fable 5",
+    value: "fable-5",
   },
   {
-    label: (
-      <>
-        <Claude.Color size={18} />
-        Claude Sonnet 4
-      </>
-    ),
-    value: "claude-sonnet-4",
+    description: "High Fast",
+    icon: Grok,
+    label: "Grok 4.5",
+    value: "grok-4.5",
   },
   {
-    label: (
-      <>
-        <Gemini.Color size={18} />
-        Gemini 2.5 Pro
-      </>
-    ),
+    description: "Medium",
+    icon: OpenAI,
+    label: "GPT-5.6 Sol",
+    value: "gpt-5.6-sol",
+  },
+  {
+    description: "Fast",
+    icon: Gemini.Color,
+    label: "Gemini 2.5 Pro",
     value: "gemini-2.5-pro",
   },
 ]
 
 return (
-  <Select defaultValue="gpt-4o" items={MODELS}>
-    <SelectTrigger className="max-w-256">
-      <SelectValue placeholder="Select a model" />
+  <Select defaultValue={MODELS[0]} itemToStringValue={(item) => item.value}>
+    <SelectTrigger className="max-w-288">
+      <SelectValue placeholder="Select a model">
+        {(model) => (
+          <Row className="items-center">
+            {model.icon && <model.icon className="mr-8" size={18} />}
+            <span className="truncate">{model.label}</span>
+            {model.description && (
+              <span className="text-12 text-gray-9 font-400 ml-6 truncate">
+                {model.description}
+              </span>
+            )}
+          </Row>
+        )}
+      </SelectValue>
     </SelectTrigger>
     <SelectContent>
-      {MODELS.map((option) => (
-        <SelectItem key={option.value} value={option.value}>
-          {option.label}
+      {MODELS.map((model) => (
+        <SelectItem key={model.value} label={model.label} value={model}>
+          <Row className="items-center">
+            {model.icon && <model.icon className="mr-8" size={18} />}
+            <span className="truncate">{model.label}</span>
+            {model.description && (
+              <span className="text-12 text-gray-9 font-400 ml-6 truncate">
+                {model.description}
+              </span>
+            )}
+          </Row>
         </SelectItem>
       ))}
     </SelectContent>
