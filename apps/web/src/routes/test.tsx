@@ -70,7 +70,7 @@ export const Route = createFileRoute("/test")({
                   {model.icon && <model.icon className="mr-8" size={ICON_SIZE} />}
                   <span className="truncate">{model.label}</span>
                   {model.description && (
-                    <span className="text-12 text-gray-9 font-400 ml-6 truncate">
+                    <span className="text-13 text-gray-9 font-400 ml-6 truncate">
                       {model.description}
                     </span>
                   )}
@@ -85,7 +85,7 @@ export const Route = createFileRoute("/test")({
                   {model.icon && <model.icon className="mr-8" size={ICON_SIZE} />}
                   <span className="truncate">{model.label}</span>
                   {model.description && (
-                    <span className="text-12 text-gray-9 font-400 ml-6 truncate">
+                    <span className="text-13 text-gray-9 font-400 ml-6 truncate">
                       {model.description}
                     </span>
                   )}
