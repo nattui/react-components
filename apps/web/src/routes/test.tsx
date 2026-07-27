@@ -1,5 +1,13 @@
 import { Claude, Gemini, Grok, OpenAI, type IconType } from "@lobehub/icons"
-import { IconPlusOutline18 } from "@nattstack/icons"
+import {
+  IconArrowUpRightOutline18,
+  IconChevronDownOutline18,
+  IconMediaLibraryOutline18,
+  IconMediaNextOutline18,
+  IconMediaSkipToEndOutline18,
+  IconMusicPlaylistOutline18,
+  IconPlusOutline18,
+} from "@nattstack/icons"
 import {
   Button,
   Column,
@@ -13,6 +21,19 @@ import {
   ComboboxValue,
   IconButton,
   Label,
+  Menu,
+  MenuCheckboxItem,
+  MenuContent,
+  MenuGroup,
+  MenuGroupLabel,
+  MenuItem,
+  MenuLinkItem,
+  MenuRadioGroup,
+  MenuRadioItem,
+  MenuSeparator,
+  MenuSubmenu,
+  MenuSubmenuTrigger,
+  MenuTrigger,
   Row,
   Select,
   SelectContent,
@@ -454,6 +475,109 @@ export const Route = createFileRoute("/test")({
             <ComboboxValue placeholder="Select a font" />
           </ComboboxTrigger>
         </Combobox>
+        <Spacer height={32} />
+
+        <Label>Menu</Label>
+        <Spacer height={4} />
+
+        <Row>
+          <Menu>
+            <MenuTrigger
+              render={
+                <Button
+                  iconEnd={
+                    <IconChevronDownOutline18
+                      className="
+                        transition-transform duration-150
+                        in-data-popup-open:rotate-180
+                      "
+                      size={14}
+                    />
+                  }
+                  label="Song"
+                  variant="secondary"
+                />
+              }
+            />
+            <MenuContent>
+              <MenuItem>
+                <IconMediaLibraryOutline18 />
+                Add to Library
+              </MenuItem>
+
+              <MenuSubmenu>
+                <MenuSubmenuTrigger>
+                  <IconMusicPlaylistOutline18 />
+                  Add to Playlist
+                </MenuSubmenuTrigger>
+                <MenuContent>
+                  <MenuItem>Get Up!</MenuItem>
+                  <MenuItem>Inside Out</MenuItem>
+                  <MenuItem>Night Beats</MenuItem>
+                  <MenuSeparator />
+                  <MenuItem>
+                    <IconPlusOutline18 />
+                    New playlist
+                  </MenuItem>
+                </MenuContent>
+              </MenuSubmenu>
+
+              <MenuSeparator />
+              <MenuItem>
+                <IconMediaNextOutline18 />
+                Play Next
+              </MenuItem>
+              <MenuItem isDisabled>
+                <IconMediaSkipToEndOutline18 />
+                Play Last
+              </MenuItem>
+              <MenuSeparator />
+              <MenuLinkItem href="https://base-ui.com/react/components/menu" target="_blank">
+                <IconArrowUpRightOutline18 />
+                Menu docs
+              </MenuLinkItem>
+            </MenuContent>
+          </Menu>
+        </Row>
+        <Spacer height={16} />
+
+        <Row>
+          <Menu>
+            <MenuTrigger
+              render={
+                <Button
+                  iconEnd={
+                    <IconChevronDownOutline18
+                      className="
+                        transition-transform duration-150
+                        in-data-popup-open:rotate-180
+                      "
+                      size={14}
+                    />
+                  }
+                  label="View"
+                  variant="secondary"
+                />
+              }
+            />
+            <MenuContent>
+              <MenuRadioGroup defaultValue="date">
+                <MenuGroupLabel>Sort by</MenuGroupLabel>
+                <MenuRadioItem value="date">Date</MenuRadioItem>
+                <MenuRadioItem value="name">Name</MenuRadioItem>
+                <MenuRadioItem value="type">Type</MenuRadioItem>
+              </MenuRadioGroup>
+
+              <MenuSeparator />
+
+              <MenuGroup>
+                <MenuGroupLabel>Workspace</MenuGroupLabel>
+                <MenuCheckboxItem isDefaultChecked>Minimap</MenuCheckboxItem>
+                <MenuCheckboxItem>Sidebar</MenuCheckboxItem>
+              </MenuGroup>
+            </MenuContent>
+          </Menu>
+        </Row>
         <Spacer height={64} />
 
         <Column className="gap-y-16">

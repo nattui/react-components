@@ -1,0 +1,619 @@
+import {
+  Button,
+  Menu,
+  MenuCheckboxItem,
+  MenuContent,
+  MenuGroup,
+  MenuGroupLabel,
+  MenuItem,
+  MenuLinkItem,
+  MenuRadioGroup,
+  MenuRadioItem,
+  MenuSeparator,
+  MenuSubmenu,
+  MenuSubmenuTrigger,
+  MenuTrigger,
+} from "@nattstack/ui"
+import {
+  IconArrowUpRightOutline18,
+  IconChevronDownOutline18,
+  IconDownloadOutline18,
+  IconDuplicateOutline18,
+  IconPencilOutline18,
+  IconPlusOutline18,
+  IconTrashOutline18,
+} from "@nattstack/icons"
+
+# Menu
+
+Menus display a list of actions or choices anchored to a trigger.
+
+The `Menu` component is a Base UI component.
+
+`MenuTrigger` renders no styles of its own — compose it with a `Button` (or any other element) through the `render` prop.
+
+```jsx
+// component
+
+<Menu>
+  <MenuTrigger
+    render={
+      <Button
+        iconEnd={
+          <IconChevronDownOutline18
+            className="transition-transform duration-150 in-data-popup-open:rotate-180"
+            size={14}
+          />
+        }
+        label="Song"
+        variant="secondary"
+      />
+    }
+  />
+  <MenuContent>
+    <MenuItem>Add to Library</MenuItem>
+    <MenuItem>Add to Playlist</MenuItem>
+    <MenuSeparator />
+    <MenuItem>Play Next</MenuItem>
+    <MenuItem>Play Last</MenuItem>
+    <MenuSeparator />
+    <MenuItem>Favorite</MenuItem>
+    <MenuItem>Share</MenuItem>
+  </MenuContent>
+</Menu>
+```
+
+```jsx
+<Menu>
+  <MenuTrigger
+    render={
+      <Button
+        iconEnd={
+          <IconChevronDownOutline18
+            className="transition-transform duration-150 in-data-popup-open:rotate-180"
+            size={14}
+          />
+        }
+        label="Song"
+        variant="secondary"
+      />
+    }
+  />
+  <MenuContent>
+    <MenuItem>Add to Library</MenuItem>
+    <MenuItem>Add to Playlist</MenuItem>
+    <MenuSeparator />
+    <MenuItem>Play Next</MenuItem>
+    <MenuItem>Play Last</MenuItem>
+    <MenuSeparator />
+    <MenuItem>Favorite</MenuItem>
+    <MenuItem>Share</MenuItem>
+  </MenuContent>
+</Menu>
+```
+
+## Icons
+
+Menu items lay out their children in a row with a built-in gap, so an icon can be placed right before the label.
+
+```jsx
+// component
+
+<Menu>
+  <MenuTrigger
+    render={
+      <Button
+        iconEnd={
+          <IconChevronDownOutline18
+            className="transition-transform duration-150 in-data-popup-open:rotate-180"
+            size={14}
+          />
+        }
+        label="Actions"
+        variant="secondary"
+      />
+    }
+  />
+  <MenuContent>
+    <MenuItem>
+      <IconPencilOutline18 />
+      {"Rename"}
+    </MenuItem>
+    <MenuItem>
+      <IconDuplicateOutline18 />
+      {"Duplicate"}
+    </MenuItem>
+    <MenuItem>
+      <IconDownloadOutline18 />
+      {"Download"}
+    </MenuItem>
+    <MenuSeparator />
+    <MenuItem>
+      <IconTrashOutline18 />
+      {"Move to Trash"}
+    </MenuItem>
+  </MenuContent>
+</Menu>
+```
+
+```jsx
+<Menu>
+  <MenuTrigger
+    render={
+      <Button
+        iconEnd={
+          <IconChevronDownOutline18
+            className="transition-transform duration-150 in-data-popup-open:rotate-180"
+            size={14}
+          />
+        }
+        label="Actions"
+        variant="secondary"
+      />
+    }
+  />
+  <MenuContent>
+    <MenuItem>
+      <IconPencilOutline18 />
+      Rename
+    </MenuItem>
+    <MenuItem>
+      <IconDuplicateOutline18 />
+      Duplicate
+    </MenuItem>
+    <MenuItem>
+      <IconDownloadOutline18 />
+      Download
+    </MenuItem>
+    <MenuSeparator />
+    <MenuItem>
+      <IconTrashOutline18 />
+      Move to Trash
+    </MenuItem>
+  </MenuContent>
+</Menu>
+```
+
+## Groups
+
+Use `MenuGroup` with a `MenuGroupLabel` to label related items, and `MenuSeparator` to divide sections.
+
+```jsx
+// component
+
+<Menu>
+  <MenuTrigger
+    render={
+      <Button
+        iconEnd={
+          <IconChevronDownOutline18
+            className="transition-transform duration-150 in-data-popup-open:rotate-180"
+            size={14}
+          />
+        }
+        label="Song"
+        variant="secondary"
+      />
+    }
+  />
+  <MenuContent>
+    <MenuGroup>
+      <MenuGroupLabel>Playback</MenuGroupLabel>
+      <MenuItem>Play Next</MenuItem>
+      <MenuItem>Play Last</MenuItem>
+    </MenuGroup>
+    <MenuSeparator />
+    <MenuGroup>
+      <MenuGroupLabel>Library</MenuGroupLabel>
+      <MenuItem>Favorite</MenuItem>
+      <MenuItem>Share</MenuItem>
+    </MenuGroup>
+  </MenuContent>
+</Menu>
+```
+
+```jsx
+<Menu>
+  <MenuTrigger
+    render={
+      <Button
+        iconEnd={
+          <IconChevronDownOutline18
+            className="transition-transform duration-150 in-data-popup-open:rotate-180"
+            size={14}
+          />
+        }
+        label="Song"
+        variant="secondary"
+      />
+    }
+  />
+  <MenuContent>
+    <MenuGroup>
+      <MenuGroupLabel>Playback</MenuGroupLabel>
+      <MenuItem>Play Next</MenuItem>
+      <MenuItem>Play Last</MenuItem>
+    </MenuGroup>
+    <MenuSeparator />
+    <MenuGroup>
+      <MenuGroupLabel>Library</MenuGroupLabel>
+      <MenuItem>Favorite</MenuItem>
+      <MenuItem>Share</MenuItem>
+    </MenuGroup>
+  </MenuContent>
+</Menu>
+```
+
+## Checkbox items
+
+Use `MenuCheckboxItem` to toggle a setting on or off. Set `isDefaultChecked` to tick an item initially, or use `isChecked` and `onCheckedChange` to control it. Checkbox items keep the menu open when clicked by default — set `closeOnClick` to close it instead.
+
+```jsx
+// component
+
+<Menu>
+  <MenuTrigger
+    render={
+      <Button
+        iconEnd={
+          <IconChevronDownOutline18
+            className="transition-transform duration-150 in-data-popup-open:rotate-180"
+            size={14}
+          />
+        }
+        label="Workspace"
+        variant="secondary"
+      />
+    }
+  />
+  <MenuContent>
+    <MenuCheckboxItem isDefaultChecked>Minimap</MenuCheckboxItem>
+    <MenuCheckboxItem isDefaultChecked>Search</MenuCheckboxItem>
+    <MenuCheckboxItem>Sidebar</MenuCheckboxItem>
+  </MenuContent>
+</Menu>
+```
+
+```jsx
+<Menu>
+  <MenuTrigger
+    render={
+      <Button
+        iconEnd={
+          <IconChevronDownOutline18
+            className="transition-transform duration-150 in-data-popup-open:rotate-180"
+            size={14}
+          />
+        }
+        label="Workspace"
+        variant="secondary"
+      />
+    }
+  />
+  <MenuContent>
+    <MenuCheckboxItem isDefaultChecked>Minimap</MenuCheckboxItem>
+    <MenuCheckboxItem isDefaultChecked>Search</MenuCheckboxItem>
+    <MenuCheckboxItem>Sidebar</MenuCheckboxItem>
+  </MenuContent>
+</Menu>
+```
+
+## Radio items
+
+Use `MenuRadioGroup` with `MenuRadioItem` for a set of mutually exclusive options. Set `defaultValue` to select an item initially, or use `value` and `onValueChange` to control the selection.
+
+```jsx
+// component
+
+<Menu>
+  <MenuTrigger
+    render={
+      <Button
+        iconEnd={
+          <IconChevronDownOutline18
+            className="transition-transform duration-150 in-data-popup-open:rotate-180"
+            size={14}
+          />
+        }
+        label="Sort"
+        variant="secondary"
+      />
+    }
+  />
+  <MenuContent>
+    <MenuRadioGroup defaultValue="date">
+      <MenuGroupLabel>Sort by</MenuGroupLabel>
+      <MenuRadioItem value="date">Date</MenuRadioItem>
+      <MenuRadioItem value="name">Name</MenuRadioItem>
+      <MenuRadioItem value="type">Type</MenuRadioItem>
+    </MenuRadioGroup>
+  </MenuContent>
+</Menu>
+```
+
+```jsx
+<Menu>
+  <MenuTrigger
+    render={
+      <Button
+        iconEnd={
+          <IconChevronDownOutline18
+            className="transition-transform duration-150 in-data-popup-open:rotate-180"
+            size={14}
+          />
+        }
+        label="Sort"
+        variant="secondary"
+      />
+    }
+  />
+  <MenuContent>
+    <MenuRadioGroup defaultValue="date">
+      <MenuGroupLabel>Sort by</MenuGroupLabel>
+      <MenuRadioItem value="date">Date</MenuRadioItem>
+      <MenuRadioItem value="name">Name</MenuRadioItem>
+      <MenuRadioItem value="type">Type</MenuRadioItem>
+    </MenuRadioGroup>
+  </MenuContent>
+</Menu>
+```
+
+## Submenu
+
+Nest a `MenuSubmenu` with a `MenuSubmenuTrigger` inside the menu to open a second level. The submenu opens to the side of its trigger and renders its own `MenuContent`.
+
+```jsx
+// component
+
+<Menu>
+  <MenuTrigger
+    render={
+      <Button
+        iconEnd={
+          <IconChevronDownOutline18
+            className="transition-transform duration-150 in-data-popup-open:rotate-180"
+            size={14}
+          />
+        }
+        label="Song"
+        variant="secondary"
+      />
+    }
+  />
+  <MenuContent>
+    <MenuItem>Add to Library</MenuItem>
+    <MenuSubmenu>
+      <MenuSubmenuTrigger>Add to Playlist</MenuSubmenuTrigger>
+      <MenuContent>
+        <MenuItem>Get Up!</MenuItem>
+        <MenuItem>Inside Out</MenuItem>
+        <MenuItem>Night Beats</MenuItem>
+        <MenuSeparator />
+        <MenuItem>
+          <IconPlusOutline18 />
+          {"New playlist"}
+        </MenuItem>
+      </MenuContent>
+    </MenuSubmenu>
+    <MenuSeparator />
+    <MenuItem>Play Next</MenuItem>
+    <MenuItem>Play Last</MenuItem>
+  </MenuContent>
+</Menu>
+```
+
+```jsx
+<Menu>
+  <MenuTrigger
+    render={
+      <Button
+        iconEnd={
+          <IconChevronDownOutline18
+            className="transition-transform duration-150 in-data-popup-open:rotate-180"
+            size={14}
+          />
+        }
+        label="Song"
+        variant="secondary"
+      />
+    }
+  />
+  <MenuContent>
+    <MenuItem>Add to Library</MenuItem>
+    <MenuSubmenu>
+      <MenuSubmenuTrigger>Add to Playlist</MenuSubmenuTrigger>
+      <MenuContent>
+        <MenuItem>Get Up!</MenuItem>
+        <MenuItem>Inside Out</MenuItem>
+        <MenuItem>Night Beats</MenuItem>
+        <MenuSeparator />
+        <MenuItem>
+          <IconPlusOutline18 />
+          New playlist
+        </MenuItem>
+      </MenuContent>
+    </MenuSubmenu>
+    <MenuSeparator />
+    <MenuItem>Play Next</MenuItem>
+    <MenuItem>Play Last</MenuItem>
+  </MenuContent>
+</Menu>
+```
+
+## Links
+
+Use `MenuLinkItem` to navigate to another page. It renders an `<a>` element, so it supports `href`, `target`, and the other anchor attributes.
+
+```jsx
+// component
+
+<Menu>
+  <MenuTrigger
+    render={
+      <Button
+        iconEnd={
+          <IconChevronDownOutline18
+            className="transition-transform duration-150 in-data-popup-open:rotate-180"
+            size={14}
+          />
+        }
+        label="Docs"
+        variant="secondary"
+      />
+    }
+  />
+  <MenuContent>
+    <MenuLinkItem href="/components/button">Button</MenuLinkItem>
+    <MenuLinkItem href="/components/select">Select</MenuLinkItem>
+    <MenuSeparator />
+    <MenuLinkItem href="https://base-ui.com/react/components/menu" target="_blank">
+      Base UI
+      <IconArrowUpRightOutline18 />
+    </MenuLinkItem>
+  </MenuContent>
+</Menu>
+```
+
+```jsx
+<Menu>
+  <MenuTrigger
+    render={
+      <Button
+        iconEnd={
+          <IconChevronDownOutline18
+            className="transition-transform duration-150 in-data-popup-open:rotate-180"
+            size={14}
+          />
+        }
+        label="Docs"
+        variant="secondary"
+      />
+    }
+  />
+  <MenuContent>
+    <MenuLinkItem href="/components/button">Button</MenuLinkItem>
+    <MenuLinkItem href="/components/select">Select</MenuLinkItem>
+    <MenuSeparator />
+    <MenuLinkItem href="https://base-ui.com/react/components/menu" target="_blank">
+      Base UI
+      <IconArrowUpRightOutline18 />
+    </MenuLinkItem>
+  </MenuContent>
+</Menu>
+```
+
+## Disabled
+
+Use the `isDisabled` prop on an item to prevent a single action, or the `disabled` prop on `MenuTrigger` to disable the whole menu.
+
+```jsx
+// component
+
+<Menu>
+  <MenuTrigger
+    render={
+      <Button
+        iconEnd={
+          <IconChevronDownOutline18
+            className="transition-transform duration-150 in-data-popup-open:rotate-180"
+            size={14}
+          />
+        }
+        label="Song"
+        variant="secondary"
+      />
+    }
+  />
+  <MenuContent>
+    <MenuItem>Play Next</MenuItem>
+    <MenuItem isDisabled>Play Last</MenuItem>
+  </MenuContent>
+</Menu>
+
+<Menu>
+  <MenuTrigger
+    disabled
+    render={
+      <Button
+        iconEnd={
+          <IconChevronDownOutline18
+            className="transition-transform duration-150 in-data-popup-open:rotate-180"
+            size={14}
+          />
+        }
+        label="Song"
+        variant="secondary"
+      />
+    }
+  />
+</Menu>
+```
+
+```jsx
+<Menu>
+  <MenuTrigger
+    render={
+      <Button
+        iconEnd={
+          <IconChevronDownOutline18
+            className="transition-transform duration-150 in-data-popup-open:rotate-180"
+            size={14}
+          />
+        }
+        label="Song"
+        variant="secondary"
+      />
+    }
+  />
+  <MenuContent>
+    <MenuItem>Play Next</MenuItem>
+    <MenuItem isDisabled>Play Last</MenuItem>
+  </MenuContent>
+</Menu>
+
+<Menu>
+  <MenuTrigger
+    disabled
+    render={
+      <Button
+        iconEnd={
+          <IconChevronDownOutline18
+            className="transition-transform duration-150 in-data-popup-open:rotate-180"
+            size={14}
+          />
+        }
+        label="Song"
+        variant="secondary"
+      />
+    }
+  />
+</Menu>
+```
+
+## State
+
+By default, `Menu` is an uncontrolled component that manages its own open state. Use the `defaultOpen` prop to render the menu initially open.
+
+```jsx
+<Menu defaultOpen>
+  <MenuTrigger render={<Button label="Song" variant="secondary" />} />
+  <MenuContent>
+    <MenuItem>Add to Library</MenuItem>
+  </MenuContent>
+</Menu>
+```
+
+Use `open` and `onOpenChange` props if you need to access or control the state, for example to open a dialog from a menu item.
+
+```jsx
+const [isOpen, setIsOpen] = useState(false)
+
+return (
+  <Menu onOpenChange={setIsOpen} open={isOpen}>
+    <MenuTrigger render={<Button label="Song" variant="secondary" />} />
+    <MenuContent>
+      <MenuItem>Add to Library</MenuItem>
+    </MenuContent>
+  </Menu>
+)
+```

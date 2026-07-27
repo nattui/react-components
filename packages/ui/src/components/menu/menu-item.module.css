@@ -1,0 +1,11 @@
+@layer components {
+  /* Diverges from the shared picker item: menu items render their
+     children directly instead of inside the picker label span, so
+     the label typography lives on the item itself. The anchor reset
+     covers the link item and is harmless on the other items. */
+  .base {
+    color: var(--color-text-primary);
+    font-size: 14px;
+    font-weight: 450;
+  }
+}

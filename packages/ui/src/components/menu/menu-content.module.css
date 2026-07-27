@@ -1,0 +1,10 @@
+/* Diverges from the shared picker popup: a menu is anchored to an
+   arbitrary trigger (button, icon button), so the popup hugs its
+   content instead of matching the anchor width. */
+@layer components {
+  .base {
+    max-width: min(var(--available-width), 320px);
+    min-width: 180px;
+    width: max-content;
+  }
+}
