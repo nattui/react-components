@@ -39,11 +39,11 @@ export function ComboboxInput(props: ComboboxInputProps): JSX.Element {
 
       <BaseCombobox.Trigger
         className={styles.trigger}
-        data-slot="combobox-trigger"
+        data-slot="combobox-input-trigger"
         disabled={isDisabled}
         tabIndex={-1}
       >
-        <BaseCombobox.Icon className={styles.icon} data-slot="combobox-icon">
+        <BaseCombobox.Icon className={styles.icon} data-slot="combobox-input-icon">
           {/* chevron-down */}
           <svg height="14" viewBox="0 0 18 18" width="14" xmlns="http://www.w3.org/2000/svg">
             <polyline

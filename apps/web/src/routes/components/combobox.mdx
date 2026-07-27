@@ -9,6 +9,9 @@ import {
   ComboboxInput,
   ComboboxItem,
   ComboboxList,
+  ComboboxSearch,
+  ComboboxTrigger,
+  ComboboxValue,
   Row,
 } from "@nattstack/ui"
 
@@ -165,14 +168,29 @@ return (
 
 ## Icons
 
-Options can include an icon before their label and a supporting description. Use option objects shaped as `{ value, label, ... }`: the `label` is automatically used for the input text and for filtering, and the `value` for form submission.
+Options can include an icon before their label and a supporting description. A text input can only display plain text, so to render the selected option's icon and description in the control, swap `ComboboxInput` for a `ComboboxTrigger` with a `ComboboxValue` render function — like the Select — and move the typing field inside the popup with `ComboboxSearch`.
+
+Use option objects shaped as `{ value, label, ... }`: the `label` is automatically used for filtering, and the `value` for form submission.
 
 ```jsx
 // component
 
-<Combobox items={MODELS}>
-  <ComboboxInput className="max-w-288" placeholder="Search models" />
+<Combobox defaultValue={MODELS[0]} items={MODELS}>
+  <ComboboxTrigger className="max-w-288">
+    <ComboboxValue placeholder="Select a model">
+      {(model) => (
+        <Row className="items-center">
+          {model.icon && <model.icon className="mr-8" size={18} />}
+          <span className="truncate">{model.label}</span>
+          {model.description && (
+            <span className="text-13 text-gray-9 font-400 ml-6 truncate">{model.description}</span>
+          )}
+        </Row>
+      )}
+    </ComboboxValue>
+  </ComboboxTrigger>
   <ComboboxContent>
+    <ComboboxSearch placeholder="Search models" />
     <ComboboxEmpty>No models found.</ComboboxEmpty>
     <ComboboxList>
       {(model) => (
@@ -222,9 +240,24 @@ const MODELS = [
 ]
 
 return (
-  <Combobox items={MODELS}>
-    <ComboboxInput className="max-w-288" placeholder="Search models" />
+  <Combobox defaultValue={MODELS[0]} items={MODELS}>
+    <ComboboxTrigger className="max-w-288">
+      <ComboboxValue placeholder="Select a model">
+        {(model) => (
+          <Row className="items-center">
+            {model.icon && <model.icon className="mr-8" size={18} />}
+            <span className="truncate">{model.label}</span>
+            {model.description && (
+              <span className="text-13 text-gray-9 font-400 ml-6 truncate">
+                {model.description}
+              </span>
+            )}
+          </Row>
+        )}
+      </ComboboxValue>
+    </ComboboxTrigger>
     <ComboboxContent>
+      <ComboboxSearch placeholder="Search models" />
       <ComboboxEmpty>No models found.</ComboboxEmpty>
       <ComboboxList>
         {(model) => (

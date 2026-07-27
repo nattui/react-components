@@ -9,6 +9,9 @@ import {
   ComboboxInput,
   ComboboxItem,
   ComboboxList,
+  ComboboxSearch,
+  ComboboxTrigger,
+  ComboboxValue,
   IconButton,
   Label,
   Row,
@@ -136,9 +139,24 @@ export const Route = createFileRoute("/test")({
         <Label>Combobox</Label>
         <Spacer height={4} />
 
-        <Combobox items={MODELS}>
-          <ComboboxInput className="max-w-288" placeholder="Search a model" />
+        <Combobox defaultValue={MODELS[0]} items={MODELS}>
+          <ComboboxTrigger className="max-w-288">
+            <ComboboxValue placeholder="Select a model">
+              {(model: Model) => (
+                <Row className="items-center">
+                  {model.icon && <model.icon className="mr-8" size={ICON_SIZE} />}
+                  <span className="truncate">{model.label}</span>
+                  {model.description && (
+                    <span className="text-12 text-gray-9 font-400 ml-6 truncate">
+                      {model.description}
+                    </span>
+                  )}
+                </Row>
+              )}
+            </ComboboxValue>
+          </ComboboxTrigger>
           <ComboboxContent>
+            <ComboboxSearch placeholder="Search models" />
             <ComboboxEmpty>No models found.</ComboboxEmpty>
             <ComboboxList>
               {(model: Model) => (
