@@ -488,7 +488,7 @@ export const Route = createFileRoute("/test")({
                   iconEnd={
                     <IconChevronDownOutline18
                       className="
-                        transition-transform duration-150
+                        text-text-secondary transition-transform duration-150
                         in-data-popup-open:rotate-180
                       "
                       size={14}
@@ -549,7 +549,7 @@ export const Route = createFileRoute("/test")({
                   iconEnd={
                     <IconChevronDownOutline18
                       className="
-                        transition-transform duration-150
+                        text-text-secondary transition-transform duration-150
                         in-data-popup-open:rotate-180
                       "
                       size={14}
