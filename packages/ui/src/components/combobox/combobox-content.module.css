@@ -8,9 +8,11 @@
      container so ComboboxSearch stays pinned at the top. */
   .base {
     background-color: var(--color-bg-shell-inner);
+    border-color: var(--color-border);
     border-radius: 12px;
+    border-style: solid;
+    border-width: 1px;
     box-shadow:
-      0 0 0 1px var(--color-border) inset,
       0 0.5px 0 color-mix(in oklab, black 3%, transparent),
       0 36px 15px -4px color-mix(in oklab, black 1%, transparent),
       0 20px 12px -3px color-mix(in oklab, black 3%, transparent),
@@ -26,8 +28,7 @@
     outline-offset: -2px;
     outline-style: solid;
     outline-width: 0;
-    padding: 4px;
-    row-gap: 2px;
+    overflow: hidden;
     transform-origin: var(--transform-origin);
     transition-duration: 150ms;
     transition-property: opacity, transform;
