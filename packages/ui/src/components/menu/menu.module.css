@@ -3,36 +3,38 @@
   /* Trigger */
   /* ===================================================== */
   .menu_trigger {
-    align-items: safe center;
-    background-color: var(--color-gray-2);
-    background-image: linear-gradient(
-      to bottom,
-      color-mix(in oklab, transparent 100%, #000000 0%) 50%,
-      color-mix(in oklab, transparent 100%, #000000 2%) 50%
-    );
+    align-items: center;
+    background-color: var(--color-bg-shell-inner);
     border-radius: 10px;
-    border-style: none;
-    box-shadow: 0 0 0 1px var(--color-gray-4) inset;
+    box-shadow: 0 0 0 1px var(--color-border) inset;
     color: var(--color-text-primary);
     column-gap: 8px;
     cursor: pointer;
     display: inline-flex;
     flex-shrink: 0;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 450;
     height: 40px;
-    justify-content: safe center;
-    line-height: 1.5;
-    outline-color: var(--color-primary-9);
+    outline-color: transparent;
     outline-offset: 2px;
     outline-style: solid;
-    outline-width: 0;
+    outline-width: 2px;
     overflow: hidden;
-    padding: 0 14px;
+    padding: 0 16px;
     transition-duration: 150ms;
-    transition-property: background-color, opacity, translate;
+    transition-property: background-color;
     user-select: none;
     width: max-content;
+  }
+
+  .menu_trigger:disabled {
+    background-color: var(--color-gray-3);
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  .menu_trigger:focus-visible {
+    outline-color: var(--color-primary);
   }
 
   .menu_trigger:hover:not(:disabled),
@@ -40,32 +42,9 @@
     background-color: var(--color-gray-3);
   }
 
-  .menu_trigger:active:not(:disabled),
-  .menu_trigger[data-pressed] {
-    translate: 0 1px;
-  }
-
-  .menu_trigger:disabled {
-    cursor: not-allowed;
-    opacity: 0.5;
-  }
-
-  .menu_trigger:focus-visible {
-    outline-width: 2px;
-  }
-
   .menu_trigger > svg {
-    --size-icon: 16px;
-    height: var(--size-icon);
-    width: var(--size-icon);
-  }
-
-  :global(.dark) .menu_trigger {
-    background-image: linear-gradient(
-      to bottom,
-      color-mix(in oklab, transparent 100%, #ffffff 1%) 50%,
-      color-mix(in oklab, transparent 100%, #ffffff 0%) 50%
-    );
+    height: 16px;
+    width: 16px;
   }
 
   /* ===================================================== */
@@ -81,7 +60,11 @@
     border-radius: 12px;
     box-shadow:
       0 0 0 1px var(--color-border) inset,
-      0 16px 32px color-mix(in oklab, black 16%, transparent);
+      0 0.5px 0 color-mix(in oklab, black 3%, transparent),
+      0 36px 15px -4px color-mix(in oklab, black 1%, transparent),
+      0 20px 12px -3px color-mix(in oklab, black 3%, transparent),
+      0 9px 9px -2px color-mix(in oklab, black 4%, transparent),
+      0 2px 5px -1px color-mix(in oklab, black 5%, transparent);
     color: var(--color-text-primary);
     display: flex;
     flex-direction: column;
@@ -167,18 +150,18 @@
   .menu_link_item,
   .menu_radio_item,
   .menu_submenu_trigger {
-    align-items: safe center;
+    align-items: center;
     border-radius: 8px;
     color: var(--color-text-primary);
     column-gap: 8px;
     cursor: pointer;
     display: flex;
+    flex-shrink: 0;
     font-size: 14px;
-    font-weight: 500;
-    line-height: 1.5;
-    min-height: 32px;
+    font-weight: 450;
+    height: 36px;
     outline: none;
-    padding: 0 8px;
+    padding: 0 12px;
     position: relative;
     text-decoration: none;
     user-select: none;
@@ -203,12 +186,12 @@
 
   .menu_item__icon,
   .menu_item__indicator {
-    align-items: safe center;
+    align-items: center;
     color: var(--color-text-secondary);
     display: flex;
     flex-shrink: 0;
     height: 16px;
-    justify-content: safe center;
+    justify-content: center;
     width: 16px;
   }
 
@@ -243,15 +226,14 @@
   .menu_group_label {
     color: var(--color-text-secondary);
     font-size: 12px;
-    font-weight: 600;
-    line-height: 1.5;
-    padding: 6px 8px 4px;
+    font-weight: 450;
+    padding: 6px 12px 4px;
   }
 
   .menu_separator {
     background-color: var(--color-border);
     flex-shrink: 0;
     height: 1px;
-    margin: 4px;
+    margin: 4px 8px;
   }
 }

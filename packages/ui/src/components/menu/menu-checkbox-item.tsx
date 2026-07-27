@@ -29,8 +29,15 @@ export function MenuCheckboxItem(props: MenuCheckboxItemProps): JSX.Element {
 
   const combinedClassName = cx(MENU_CLASS_NAME.CHECKBOX_ITEM, customClassName)
   const currentIndicator = indicator ?? (
-    <svg fill="none" height="16" viewBox="0 0 16 16" width="16">
-      <path d="M3.5 8.5L6.5 11.5L12.5 4.5" stroke="currentColor" strokeWidth="2" />
+    <svg height="14px" viewBox="0 0 18 18" width="14px" xmlns="http://www.w3.org/2000/svg">
+      <polyline
+        fill="none"
+        points="2.75 9.25 6.75 14.25 15.25 3.75"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+      />
     </svg>
   )
 
