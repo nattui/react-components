@@ -6,7 +6,6 @@ import {
   Combobox,
   ComboboxContent,
   ComboboxEmpty,
-  ComboboxInput,
   ComboboxItem,
   ComboboxList,
   ComboboxSearch,
@@ -178,8 +177,11 @@ export const Route = createFileRoute("/test")({
         <Spacer height={16} />
 
         <Combobox items={FONTS}>
-          <ComboboxInput className="max-w-288" placeholder="Search a font" />
+          <ComboboxTrigger className="max-w-288">
+            <ComboboxValue placeholder="Select a font" />
+          </ComboboxTrigger>
           <ComboboxContent>
+            <ComboboxSearch placeholder="Search fonts" />
             <ComboboxEmpty>No fonts found.</ComboboxEmpty>
             <ComboboxList>
               {(font: string) => (
@@ -193,7 +195,9 @@ export const Route = createFileRoute("/test")({
         <Spacer height={16} />
 
         <Combobox defaultValue="Sans-serif" disabled items={FONTS}>
-          <ComboboxInput className="max-w-288" placeholder="Search a font" />
+          <ComboboxTrigger className="max-w-288">
+            <ComboboxValue placeholder="Select a font" />
+          </ComboboxTrigger>
         </Combobox>
         <Spacer height={64} />
 

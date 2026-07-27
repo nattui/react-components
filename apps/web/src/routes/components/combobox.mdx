@@ -6,7 +6,6 @@ import {
   ComboboxEmpty,
   ComboboxGroup,
   ComboboxGroupLabel,
-  ComboboxInput,
   ComboboxItem,
   ComboboxList,
   ComboboxSearch,
@@ -57,18 +56,21 @@ export const MODELS = [
 
 # Combobox
 
-Comboboxes let users choose an option from a list they can filter by typing into an input.
+Comboboxes let users choose an option from a list they can filter by typing into a search field.
 
 The `Combobox` component is a Base UI component.
 
-Pass the options to the `items` prop on `Combobox` and render each one with a `ComboboxList` render function, so the list is filtered as the user types. `ComboboxEmpty` renders its children when no options match.
+The control is a `ComboboxTrigger` that shows the selected option with `ComboboxValue`, and the typing field lives inside the popup as `ComboboxSearch`. Pass the options to the `items` prop on `Combobox` and render each one with a `ComboboxList` render function, so the list is filtered as the user types. `ComboboxEmpty` renders its children when no options match.
 
 ```jsx
 // component
 
 <Combobox items={FONTS}>
-  <ComboboxInput className="max-w-256" placeholder="Search fonts" />
+  <ComboboxTrigger className="max-w-256">
+    <ComboboxValue placeholder="Select a font" />
+  </ComboboxTrigger>
   <ComboboxContent>
+    <ComboboxSearch placeholder="Search fonts" />
     <ComboboxEmpty>No fonts found.</ComboboxEmpty>
     <ComboboxList>
       {(font) => (
@@ -86,8 +88,11 @@ const FONTS = ["Sans-serif", "Serif", "Monospace", "Cursive", "Fantasy", "System
 
 return (
   <Combobox items={FONTS}>
-    <ComboboxInput className="max-w-256" placeholder="Search fonts" />
+    <ComboboxTrigger className="max-w-256">
+      <ComboboxValue placeholder="Select a font" />
+    </ComboboxTrigger>
     <ComboboxContent>
+      <ComboboxSearch placeholder="Search fonts" />
       <ComboboxEmpty>No fonts found.</ComboboxEmpty>
       <ComboboxList>
         {(font) => (
@@ -109,8 +114,11 @@ Use `ComboboxGroup` with a `ComboboxGroupLabel` to label related options. Repres
 // component
 
 <Combobox items={FONT_GROUPS}>
-  <ComboboxInput className="max-w-256" placeholder="Search fonts" />
+  <ComboboxTrigger className="max-w-256">
+    <ComboboxValue placeholder="Select a font" />
+  </ComboboxTrigger>
   <ComboboxContent>
+    <ComboboxSearch placeholder="Search fonts" />
     <ComboboxEmpty>No fonts found.</ComboboxEmpty>
     <ComboboxList>
       {(group) => (
@@ -144,8 +152,11 @@ const FONT_GROUPS = [
 
 return (
   <Combobox items={FONT_GROUPS}>
-    <ComboboxInput className="max-w-256" placeholder="Search fonts" />
+    <ComboboxTrigger className="max-w-256">
+      <ComboboxValue placeholder="Select a font" />
+    </ComboboxTrigger>
     <ComboboxContent>
+      <ComboboxSearch placeholder="Search fonts" />
       <ComboboxEmpty>No fonts found.</ComboboxEmpty>
       <ComboboxList>
         {(group) => (
@@ -168,7 +179,7 @@ return (
 
 ## Icons
 
-Options can include an icon before their label and a supporting description. A text input can only display plain text, so to render the selected option's icon and description in the control, swap `ComboboxInput` for a `ComboboxTrigger` with a `ComboboxValue` render function — like the Select — and move the typing field inside the popup with `ComboboxSearch`.
+Options can include an icon before their label and a supporting description. Pass a render function to `ComboboxValue` to render the selected option's icon and description in the control — like the Select.
 
 Use option objects shaped as `{ value, label, ... }`: the `label` is automatically used for filtering, and the `value` for form submission.
 
@@ -281,14 +292,17 @@ return (
 
 ## Size
 
-The `ComboboxInput` comes with 5 sizes: `32`, `36`, `40` (default), `44`, and `48`.
+The `ComboboxTrigger` comes with 5 sizes: `32`, `36`, `40` (default), `44`, and `48`.
 
 ```jsx
 // component
 
 <Combobox items={FONTS}>
-  <ComboboxInput className="max-w-256" placeholder="Size 32" size={32} />
+  <ComboboxTrigger className="max-w-256" size={32}>
+    <ComboboxValue placeholder="Size 32" />
+  </ComboboxTrigger>
   <ComboboxContent>
+    <ComboboxSearch placeholder="Search fonts" />
     <ComboboxEmpty>No fonts found.</ComboboxEmpty>
     <ComboboxList>
       {(font) => (
@@ -301,8 +315,11 @@ The `ComboboxInput` comes with 5 sizes: `32`, `36`, `40` (default), `44`, and `4
 </Combobox>
 
 <Combobox items={FONTS}>
-  <ComboboxInput className="max-w-256" placeholder="Size 36" size={36} />
+  <ComboboxTrigger className="max-w-256" size={36}>
+    <ComboboxValue placeholder="Size 36" />
+  </ComboboxTrigger>
   <ComboboxContent>
+    <ComboboxSearch placeholder="Search fonts" />
     <ComboboxEmpty>No fonts found.</ComboboxEmpty>
     <ComboboxList>
       {(font) => (
@@ -315,8 +332,11 @@ The `ComboboxInput` comes with 5 sizes: `32`, `36`, `40` (default), `44`, and `4
 </Combobox>
 
 <Combobox items={FONTS}>
-  <ComboboxInput className="max-w-256" placeholder="Size 40" size={40} />
+  <ComboboxTrigger className="max-w-256" size={40}>
+    <ComboboxValue placeholder="Size 40" />
+  </ComboboxTrigger>
   <ComboboxContent>
+    <ComboboxSearch placeholder="Search fonts" />
     <ComboboxEmpty>No fonts found.</ComboboxEmpty>
     <ComboboxList>
       {(font) => (
@@ -329,8 +349,11 @@ The `ComboboxInput` comes with 5 sizes: `32`, `36`, `40` (default), `44`, and `4
 </Combobox>
 
 <Combobox items={FONTS}>
-  <ComboboxInput className="max-w-256" placeholder="Size 44" size={44} />
+  <ComboboxTrigger className="max-w-256" size={44}>
+    <ComboboxValue placeholder="Size 44" />
+  </ComboboxTrigger>
   <ComboboxContent>
+    <ComboboxSearch placeholder="Search fonts" />
     <ComboboxEmpty>No fonts found.</ComboboxEmpty>
     <ComboboxList>
       {(font) => (
@@ -343,8 +366,11 @@ The `ComboboxInput` comes with 5 sizes: `32`, `36`, `40` (default), `44`, and `4
 </Combobox>
 
 <Combobox items={FONTS}>
-  <ComboboxInput className="max-w-256" placeholder="Size 48" size={48} />
+  <ComboboxTrigger className="max-w-256" size={48}>
+    <ComboboxValue placeholder="Size 48" />
+  </ComboboxTrigger>
   <ComboboxContent>
+    <ComboboxSearch placeholder="Search fonts" />
     <ComboboxEmpty>No fonts found.</ComboboxEmpty>
     <ComboboxList>
       {(font) => (
@@ -359,41 +385,54 @@ The `ComboboxInput` comes with 5 sizes: `32`, `36`, `40` (default), `44`, and `4
 
 ```jsx
 <Combobox items={FONTS}>
-  <ComboboxInput placeholder="Size 32" size={32} />
+  <ComboboxTrigger size={32}>
+    <ComboboxValue placeholder="Size 32" />
+  </ComboboxTrigger>
   <ComboboxContent>{/* ... */}</ComboboxContent>
 </Combobox>
 
 <Combobox items={FONTS}>
-  <ComboboxInput placeholder="Size 36" size={36} />
+  <ComboboxTrigger size={36}>
+    <ComboboxValue placeholder="Size 36" />
+  </ComboboxTrigger>
   <ComboboxContent>{/* ... */}</ComboboxContent>
 </Combobox>
 
 <Combobox items={FONTS}>
-  <ComboboxInput placeholder="Size 40" size={40} />
+  <ComboboxTrigger size={40}>
+    <ComboboxValue placeholder="Size 40" />
+  </ComboboxTrigger>
   <ComboboxContent>{/* ... */}</ComboboxContent>
 </Combobox>
 
 <Combobox items={FONTS}>
-  <ComboboxInput placeholder="Size 44" size={44} />
+  <ComboboxTrigger size={44}>
+    <ComboboxValue placeholder="Size 44" />
+  </ComboboxTrigger>
   <ComboboxContent>{/* ... */}</ComboboxContent>
 </Combobox>
 
 <Combobox items={FONTS}>
-  <ComboboxInput placeholder="Size 48" size={48} />
+  <ComboboxTrigger size={48}>
+    <ComboboxValue placeholder="Size 48" />
+  </ComboboxTrigger>
   <ComboboxContent>{/* ... */}</ComboboxContent>
 </Combobox>
 ```
 
 ## Rounded
 
-Use the `isRounded` prop to give the input fully rounded corners.
+Use the `isRounded` prop to give the trigger fully rounded corners.
 
 ```jsx
 // component
 
 <Combobox items={FONTS}>
-  <ComboboxInput className="max-w-256" isRounded placeholder="Search fonts" />
+  <ComboboxTrigger className="max-w-256" isRounded>
+    <ComboboxValue placeholder="Select a font" />
+  </ComboboxTrigger>
   <ComboboxContent>
+    <ComboboxSearch placeholder="Search fonts" />
     <ComboboxEmpty>No fonts found.</ComboboxEmpty>
     <ComboboxList>
       {(font) => (
@@ -408,8 +447,11 @@ Use the `isRounded` prop to give the input fully rounded corners.
 
 ```jsx
 <Combobox items={FONTS}>
-  <ComboboxInput className="max-w-256" isRounded placeholder="Search fonts" />
+  <ComboboxTrigger className="max-w-256" isRounded>
+    <ComboboxValue placeholder="Select a font" />
+  </ComboboxTrigger>
   <ComboboxContent>
+    <ComboboxSearch placeholder="Search fonts" />
     <ComboboxEmpty>No fonts found.</ComboboxEmpty>
     <ComboboxList>
       {(font) => (
@@ -430,8 +472,11 @@ Use the `isDisabled` prop on `ComboboxItem` to prevent a single option from bein
 // component
 
 <Combobox items={FONTS}>
-  <ComboboxInput className="max-w-256" placeholder="Search fonts" />
+  <ComboboxTrigger className="max-w-256">
+    <ComboboxValue placeholder="Select a font" />
+  </ComboboxTrigger>
   <ComboboxContent>
+    <ComboboxSearch placeholder="Search fonts" />
     <ComboboxEmpty>No fonts found.</ComboboxEmpty>
     <ComboboxList>
       {(font) => (
@@ -444,14 +489,19 @@ Use the `isDisabled` prop on `ComboboxItem` to prevent a single option from bein
 </Combobox>
 
 <Combobox defaultValue="Sans-serif" disabled items={FONTS}>
-  <ComboboxInput className="max-w-256" placeholder="Search fonts" />
+  <ComboboxTrigger className="max-w-256">
+    <ComboboxValue placeholder="Select a font" />
+  </ComboboxTrigger>
 </Combobox>
 ```
 
 ```jsx
 <Combobox items={FONTS}>
-  <ComboboxInput className="max-w-256" placeholder="Search fonts" />
+  <ComboboxTrigger className="max-w-256">
+    <ComboboxValue placeholder="Select a font" />
+  </ComboboxTrigger>
   <ComboboxContent>
+    <ComboboxSearch placeholder="Search fonts" />
     <ComboboxEmpty>No fonts found.</ComboboxEmpty>
     <ComboboxList>
       {(font) => (
@@ -464,7 +514,9 @@ Use the `isDisabled` prop on `ComboboxItem` to prevent a single option from bein
 </Combobox>
 
 <Combobox defaultValue="Sans-serif" disabled items={FONTS}>
-  <ComboboxInput className="max-w-256" placeholder="Search fonts" />
+  <ComboboxTrigger className="max-w-256">
+    <ComboboxValue placeholder="Select a font" />
+  </ComboboxTrigger>
 </Combobox>
 ```
 
@@ -474,19 +526,23 @@ By default, `Combobox` is an uncontrolled component that manages its own state. 
 
 ```jsx
 <Combobox defaultValue="Sans-serif" items={FONTS}>
-  <ComboboxInput placeholder="Search fonts" />
+  <ComboboxTrigger>
+    <ComboboxValue placeholder="Select a font" />
+  </ComboboxTrigger>
   <ComboboxContent>{/* ... */}</ComboboxContent>
 </Combobox>
 ```
 
-Use `value` and `onValueChange` props if you need to access or control the selected option. The text shown in the input can be controlled separately with the `inputValue` and `onInputValueChange` props.
+Use `value` and `onValueChange` props if you need to access or control the selected option. The text typed into `ComboboxSearch` can be controlled separately with the `inputValue` and `onInputValueChange` props.
 
 ```jsx
 const [font, setFont] = useState(null)
 
 return (
   <Combobox items={FONTS} onValueChange={setFont} value={font}>
-    <ComboboxInput placeholder="Search fonts" />
+    <ComboboxTrigger>
+      <ComboboxValue placeholder="Select a font" />
+    </ComboboxTrigger>
     <ComboboxContent>{/* ... */}</ComboboxContent>
   </Combobox>
 )
