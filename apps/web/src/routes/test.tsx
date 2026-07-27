@@ -65,6 +65,11 @@ const MODELS: Model[] = [
 
 const FONTS = ["Sans-serif", "Serif", "Monospace", "Cursive", "Fantasy", "System UI"]
 
+// Long list to exercise scrolling: the search must stay pinned to the top.
+const MANY_FONTS: string[] = FONTS.flatMap((font) =>
+  Array.from({ length: 20 }, (_, index) => `${font} ${index + 1}`),
+)
+
 export const Route = createFileRoute("/test")({
   component: function RouteComponent() {
     return (
@@ -179,6 +184,24 @@ export const Route = createFileRoute("/test")({
         <Combobox items={FONTS}>
           <ComboboxTrigger className="max-w-288">
             <ComboboxValue placeholder="Select a font" />
+          </ComboboxTrigger>
+          <ComboboxContent>
+            <ComboboxSearch placeholder="Search fonts" />
+            <ComboboxEmpty>No fonts found.</ComboboxEmpty>
+            <ComboboxList>
+              {(font: string) => (
+                <ComboboxItem key={font} value={font}>
+                  {font}
+                </ComboboxItem>
+              )}
+            </ComboboxList>
+          </ComboboxContent>
+        </Combobox>
+        <Spacer height={16} />
+
+        <Combobox items={MANY_FONTS}>
+          <ComboboxTrigger className="max-w-288">
+            <ComboboxValue placeholder="Select a font (long list)" />
           </ComboboxTrigger>
           <ComboboxContent>
             <ComboboxSearch placeholder="Search fonts" />
