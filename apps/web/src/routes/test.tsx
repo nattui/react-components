@@ -3,6 +3,12 @@ import { IconPlusOutline18 } from "@nattstack/icons"
 import {
   Button,
   Column,
+  Combobox,
+  ComboboxContent,
+  ComboboxEmpty,
+  ComboboxInput,
+  ComboboxItem,
+  ComboboxList,
   IconButton,
   Label,
   Row,
@@ -54,6 +60,8 @@ const MODELS: Model[] = [
     value: "gemini-2.5-pro",
   },
 ]
+
+const FONTS = ["Sans-serif", "Serif", "Monospace", "Cursive", "Fantasy", "System UI"]
 
 export const Route = createFileRoute("/test")({
   component: function RouteComponent() {
@@ -123,6 +131,52 @@ export const Route = createFileRoute("/test")({
             <SelectValue placeholder="Select a font" />
           </SelectTrigger>
         </Select>
+        <Spacer height={32} />
+
+        <Label>Combobox</Label>
+        <Spacer height={4} />
+
+        <Combobox items={MODELS}>
+          <ComboboxInput className="max-w-288" placeholder="Search a model" />
+          <ComboboxContent>
+            <ComboboxEmpty>No models found.</ComboboxEmpty>
+            <ComboboxList>
+              {(model: Model) => (
+                <ComboboxItem key={model.value} value={model}>
+                  <Row className="items-center">
+                    {model.icon && <model.icon className="mr-8" size={ICON_SIZE} />}
+                    <span className="truncate">{model.label}</span>
+                    {model.description && (
+                      <span className="text-12 text-gray-9 font-400 ml-6 truncate">
+                        {model.description}
+                      </span>
+                    )}
+                  </Row>
+                </ComboboxItem>
+              )}
+            </ComboboxList>
+          </ComboboxContent>
+        </Combobox>
+        <Spacer height={16} />
+
+        <Combobox items={FONTS}>
+          <ComboboxInput className="max-w-288" placeholder="Search a font" />
+          <ComboboxContent>
+            <ComboboxEmpty>No fonts found.</ComboboxEmpty>
+            <ComboboxList>
+              {(font: string) => (
+                <ComboboxItem key={font} value={font}>
+                  {font}
+                </ComboboxItem>
+              )}
+            </ComboboxList>
+          </ComboboxContent>
+        </Combobox>
+        <Spacer height={16} />
+
+        <Combobox defaultValue="Sans-serif" disabled items={FONTS}>
+          <ComboboxInput className="max-w-288" placeholder="Search a font" />
+        </Combobox>
         <Spacer height={64} />
 
         <Column className="gap-y-16">

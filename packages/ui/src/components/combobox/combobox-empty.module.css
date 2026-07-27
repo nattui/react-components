@@ -1,0 +1,11 @@
+@layer components {
+  /* The element must stay mounted for screen readers, so only
+     give it dimensions when it actually renders children. */
+  .base:not(:empty) {
+    color: var(--color-text-secondary);
+    font-size: 14px;
+    font-weight: 450;
+    padding: 8px 12px;
+    text-align: center;
+  }
+}
