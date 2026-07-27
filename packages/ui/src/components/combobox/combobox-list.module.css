@@ -10,6 +10,7 @@
     overscroll-behavior: contain;
     padding: 4px;
     row-gap: 2px;
+    scroll-padding: 4px;
   }
 
   /* Hide the list when no items match so it doesn't leave
