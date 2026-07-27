@@ -27,6 +27,10 @@
     background-color: var(--color-gray-3);
   }
 
+  :global(.dark) .base:disabled {
+    opacity: 0.25;
+  }
+
   .base:focus-visible {
     outline-color: var(--color-primary);
   }
