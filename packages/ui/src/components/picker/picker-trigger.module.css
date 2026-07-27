@@ -35,12 +35,12 @@
     outline-color: var(--color-primary);
   }
 
-  .base:hover:not(:disabled) {
+  .base:hover:not(:disabled, [data-popup-open]) {
     box-shadow: inset 0 0 0 1px var(--color-gray-6);
   }
-
   .base[data-popup-open] {
     background-color: var(--color-gray-3);
+    box-shadow: inset 0 0 0 1px transparent;
   }
 
   /* =================================================== */
