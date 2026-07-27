@@ -17,10 +17,10 @@
     color: var(--color-text-primary);
     display: flex;
     flex-direction: column;
-    font-family: var(--font-body);
     max-height: min(var(--available-height), 480px);
-    max-width: min(var(--available-width), 320px);
-    min-width: max(var(--anchor-width), 180px);
+    max-width: var(--available-width);
+    min-width: max(var(--anchor-width), 240px);
+    width: var(--anchor-width);
     outline-color: var(--color-primary-9);
     outline-offset: -2px;
     outline-style: solid;
