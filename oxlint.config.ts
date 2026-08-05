@@ -41,6 +41,7 @@ export default defineConfig({
   rules: {
     "better-tailwindcss/enforce-consistent-class-order": "error",
     "better-tailwindcss/enforce-consistent-line-wrapping": ["error", { strictness: "loose" }],
+    "better-tailwindcss/no-unknown-classes": "error", // Reject classes Tailwind does not recognize
     "better-tailwindcss/no-unnecessary-whitespace": "error",
     "eslint/capitalized-comments": "allow", // Allow capitalized comments
     "eslint/func-name-matching": "allow", // Allow function name matching
@@ -100,7 +101,7 @@ export default defineConfig({
   },
   settings: {
     "better-tailwindcss": {
-      entryPoint: "apps/web/styles/tailwind.css",
+      entryPoint: "apps/web/src/styles/global.css",
     },
   },
 })
