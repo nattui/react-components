@@ -1,6 +1,7 @@
 ---
 description: Prefer project absolute imports over relative imports.
-alwaysApply: true
+globs: "**/*.{ts,tsx}"
+alwaysApply: false
 ---
 
 # Absolute Imports
