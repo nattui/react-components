@@ -142,7 +142,7 @@ function ToggleColor(props: ToggleColorProps): JSX.Element {
           <Toggle
             aria-label={colorLabel}
             className="
-              aspect-1-1 flex size-full w-full items-center justify-center
+              flex aspect-1-1 size-full w-full items-center justify-center
               overflow-hidden rounded-full border border-solid outline-offset-2
               data-pressed:outline-2
             "

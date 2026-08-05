@@ -10,8 +10,8 @@ import type { JSX } from "react"
 export function InputContent(): JSX.Element {
   return (
     <>
-      <h1 className="text-30 mb-16 text-pretty">Input</h1>
-      <p className="text-16/1-875 mb-24 text-pretty">
+      <h1 className="mb-16 text-30 text-pretty">Input</h1>
+      <p className="mb-24 text-16/1-875 text-pretty">
         Inputs are form controls that let users enter and edit text.
       </p>
 
@@ -19,7 +19,7 @@ export function InputContent(): JSX.Element {
         <Label htmlFor="email">Email</Label>
         <Spacer height={4} />
         <div className="relative">
-          <IconEnvelopeOutline18 className="text-gray-11 pointer-events-none absolute top-14 left-14" />
+          <IconEnvelopeOutline18 className="pointer-events-none absolute top-14 left-14 text-gray-11" />
           <Input className="pl-44!" id="email" placeholder="name@example.com" type="email" />
         </div>
         <Spacer height={16} />
@@ -27,7 +27,7 @@ export function InputContent(): JSX.Element {
         <Label htmlFor="password">Password</Label>
         <Spacer height={4} />
         <div className="relative">
-          <IconLockOutline18 className="text-gray-11 pointer-events-none absolute top-14 left-14" />
+          <IconLockOutline18 className="pointer-events-none absolute top-14 left-14 text-gray-11" />
           <Input className="px-44!" id="password" placeholder="••••••••" type="password" />
           {/* <Button className="group absolute! top-6 right-6" isIconOnly size={32} variant="ghost">
             <IconEyeOutline18
@@ -48,7 +48,7 @@ export function InputContent(): JSX.Element {
         <Label htmlFor="disabled">Disabled</Label>
         <Spacer height={4} />
         <div className="relative">
-          <IconBanOutline18 className="text-gray-11 pointer-events-none absolute top-14 left-14" />
+          <IconBanOutline18 className="pointer-events-none absolute top-14 left-14 text-gray-11" />
           <Input className="pl-44!" id="disabled" isDisabled placeholder="Disabled" type="url" />
         </div>
         <Spacer height={64} />

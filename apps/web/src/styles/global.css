@@ -62,7 +62,7 @@ svg {
   }
 }
 
-.ui-link {
+@utility ui-link {
   text-decoration-color: var(--color-gray-6);
   text-decoration-line: underline;
   text-underline-offset: 2px;
@@ -70,12 +70,10 @@ svg {
   transition-property: color, text-decoration-color, text-underline-offset;
   width: fit-content;
 
-  &:hover {
-    @media (hover: hover) {
-      color: var(--color-primary);
-      text-decoration-color: transparent;
-      text-underline-offset: 4px;
-    }
+  @variant hover {
+    color: var(--color-primary);
+    text-decoration-color: transparent;
+    text-underline-offset: 4px;
   }
 }
 

@@ -80,7 +80,7 @@ export function LogoLink(props: LogoLinkProps): JSX.Element {
   return (
     <Link
       className="
-        rounded-10 flex w-fit items-center p-8 transition-opacity select-none
+        flex w-fit items-center rounded-10 p-8 transition-opacity select-none
         hover:opacity-75
       "
       onMouseEnter={handleMouseEnter}
@@ -104,7 +104,7 @@ export function LogoLink(props: LogoLinkProps): JSX.Element {
           <Spacer width={6} />
           <span
             className="
-              font-code text-12 text-primary relative bottom-4 leading-1
+              relative bottom-4 font-code text-12 leading-1 text-primary
               select-none
             "
           >
