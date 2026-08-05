@@ -165,10 +165,10 @@ body > * {
 /*
     Debug helper for visualizing element bounds
 */
-.d {
+@utility d {
   border: 1px dashed red;
-}
 
-.dark .d {
-  border-color: yellow;
+  @variant dark {
+    border-color: yellow;
+  }
 }
