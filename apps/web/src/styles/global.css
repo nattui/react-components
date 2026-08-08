@@ -77,60 +77,13 @@ svg {
   }
 }
 
-/* Lumis syntax highlighting */
-pre code {
-  --lumis-comment: #737373;
-  --lumis-identifier: #2f6f5f;
-  --lumis-keyword: #8a2d3b;
-  --lumis-plain: #171717;
-  --lumis-property: #b44957;
-}
-
-.dark pre code {
-  --lumis-comment: #8a8f98;
-  --lumis-identifier: #7bd2b4;
-  --lumis-keyword: #8dd8d8;
-  --lumis-plain: #f2f2f2;
-  --lumis-property: #16b3a6;
-}
-
-pre code .l-line {
-  min-height: 1lh;
-}
-
-pre code [class^="l-boolean"],
-pre code [class^="l-constant"],
-pre code [class^="l-constructor"],
-pre code [class^="l-function"],
-pre code [class^="l-keyword"],
-pre code [class^="l-number"],
-pre code [class^="l-tag"],
-pre code [class^="l-type"] {
-  color: var(--lumis-keyword);
-}
-
-pre code [class^="l-module"],
-pre code [class^="l-variable"],
-pre code .l-tag-builtin {
-  color: var(--lumis-identifier);
-}
-
-pre code [class^="l-attribute"],
-pre code [class^="l-property"],
-pre code .l-tag-attribute {
-  color: var(--lumis-property);
-}
-
-pre code [class^="l-markup"],
-pre code [class^="l-operator"],
-pre code [class^="l-punctuation"],
-pre code [class^="l-string"],
-pre code [class^="l-tag-delimiter"] {
-  color: var(--lumis-plain);
-}
-
-pre code [class^="l-comment"] {
-  color: var(--lumis-comment);
+/*
+    Expressive Code owns fenced-block chrome and token colors (see
+    src/utils/expressive-code.ts). Keep the same vertical rhythm as other
+    MDX block elements (mb-24).
+*/
+.expressive-code {
+  margin-bottom: 24px;
 }
 
 /*

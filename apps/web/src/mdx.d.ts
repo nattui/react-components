@@ -1,10 +1,14 @@
+declare module "*.md" {
+  const html: string
+  const frontmatter: Record<string, unknown>
+  export default html
+  export { frontmatter, html }
+}
+
 declare module "*.mdx" {
-  import type { MDXComponents } from "mdx/types"
-  import type { ComponentType } from "react"
+  import type { MDXProps } from "mdx/types"
+  import type { JSX } from "react"
 
-  const MDXContent: ComponentType<{
-    components?: MDXComponents
-  }>
-
-  export default MDXContent
+  export default function MDXContent(props: MDXProps): JSX.Element
+  export const frontmatter: Record<string, unknown>
 }

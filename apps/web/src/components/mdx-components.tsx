@@ -2,7 +2,7 @@
 // oxlint-disable react/only-export-components
 
 import type { MDXComponents } from "mdx/types"
-import type { ComponentProps, JSX } from "react"
+import { type ComponentProps, isValidElement, type JSX, type ReactNode } from "react"
 
 type MdxComponentShowcaseProps = ComponentProps<"div">
 
@@ -49,6 +49,14 @@ function getCodeLanguage(className: string | undefined): string | undefined {
   return className?.match(/(?:^|\s)language-(?<language>[\w-]+)/u)?.groups?.language
 }
 
+function hasElementChild(node: ReactNode): boolean {
+  if (Array.isArray(node)) {
+    return node.some((child) => hasElementChild(child))
+  }
+
+  return isValidElement(node)
+}
+
 function joinClassNames(...classNames: (string | undefined)[]): string {
   return classNames.filter(Boolean).join(" ")
 }
@@ -82,14 +90,10 @@ function MdxCode(props: ComponentProps<"code">): JSX.Element {
   const { children, className, ...rest } = props
   const language = getCodeLanguage(className)
 
-  /* Code fences arrive pre-highlighted by Lumis at MDX compile time. */
-  if (language !== undefined) {
+  // Fenced blocks (Expressive Code) render element children; only style true inline code.
+  if (language !== undefined || hasElementChild(children)) {
     return (
-      <code
-        className={joinClassNames("block min-w-full font-code text-13", className)}
-        data-language={language}
-        {...rest}
-      >
+      <code className={className} data-language={language} {...rest}>
         {children}
       </code>
     )
@@ -193,14 +197,9 @@ function MdxParagraph(props: ComponentProps<"p">): JSX.Element {
 function MdxPre(props: ComponentProps<"pre">): JSX.Element {
   const { children, className, ...rest } = props
 
+  // Fenced blocks are wrapped by Expressive Code; leave framing to that plugin.
   return (
-    <pre
-      className={joinClassNames(
-        "mb-24 overflow-x-auto rounded-16 bg-bg-shell-outer border border-border p-16 text-14",
-        className,
-      )}
-      {...rest}
-    >
+    <pre className={className} {...rest}>
       {children}
     </pre>
   )

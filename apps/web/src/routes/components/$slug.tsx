@@ -1,6 +1,6 @@
 import { createFileRoute, notFound } from "@tanstack/react-router"
-import type { MDXComponents } from "mdx/types"
-import type { ComponentType } from "react"
+import type { MDXProps } from "mdx/types"
+import type { JSX } from "react"
 import { MDX_COMPONENTS } from "#/components/mdx-components"
 import { InputContent } from "#/routes/components/-input-content"
 import ButtonContent from "#/routes/components/button.mdx"
@@ -18,9 +18,7 @@ import TooltipContent from "#/routes/components/tooltip.mdx"
 import { formatTitle } from "#/utils/format-title"
 
 interface ComponentPage {
-  Content: ComponentType<{
-    components?: MDXComponents
-  }>
+  Content: (props: MDXProps) => JSX.Element
   title: string
 }
 

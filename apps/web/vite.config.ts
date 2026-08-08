@@ -1,25 +1,12 @@
-import { htmlLinked } from "@lumis-sh/lumis/formatters"
-import rehypeLumis, { type RehypeLumisOptions } from "@lumis-sh/rehype-lumis"
-import mdx from "@mdx-js/rollup"
 import tailwindcss from "@tailwindcss/vite"
 import { tanstackStart } from "@tanstack/react-start/plugin/vite"
 import react from "@vitejs/plugin-react"
 import { nitro } from "nitro/vite"
+import expressiveCode from "satteri-expressive-code"
 import { defineConfig } from "vite"
+import satteri from "vite-plugin-satteri"
 import { mdxComponentShowcases } from "#/mdx-component-showcases"
-
-const REHYPE_LUMIS_OPTIONS: RehypeLumisOptions = {
-  formatter: (language) => {
-    const formatter = htmlLinked({ language })
-
-    return {
-      ...formatter,
-      /* Fenced code ends with a newline, which Lumis would render as an empty last line. */
-      format: (source) => formatter.format(source.trimEnd()),
-    }
-  },
-  languages: [() => import("@lumis-sh/lumis/langs/javascript")],
-}
+import { expressiveCodeOptions } from "#/utils/expressive-code"
 
 export default defineConfig({
   clearScreen: false,
@@ -30,8 +17,15 @@ export default defineConfig({
       preset: "vercel",
     }),
     mdxComponentShowcases(),
-    mdx({
-      rehypePlugins: [[rehypeLumis, REHYPE_LUMIS_OPTIONS]],
+    satteri({
+      features: {
+        frontmatter: true,
+        gfm: true,
+      },
+      hastPlugins: [expressiveCode(expressiveCodeOptions)],
+      mdx: {
+        jsxImportSource: "react",
+      },
     }),
     react(),
     tailwindcss(),
