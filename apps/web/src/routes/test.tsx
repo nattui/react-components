@@ -314,7 +314,7 @@ export const Route = createFileRoute("/test")({
   component: function RouteComponent() {
     return (
       <Column>
-        <Button2>Button2</Button2>
+        <Button2 label="Button 2" />
         <Spacer height={16} />
 
         <Label>Model</Label>
