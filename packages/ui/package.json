@@ -24,7 +24,8 @@
   ],
   "type": "module",
   "sideEffects": [
-    "**/*.css"
+    "**/*.css",
+    "./dist/components/index.js"
   ],
   "exports": {
     ".": {
