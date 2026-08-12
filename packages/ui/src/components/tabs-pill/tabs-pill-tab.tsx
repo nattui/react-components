@@ -1,6 +1,6 @@
 import { Tabs as BaseTabs } from "@base-ui/react"
 import type { JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { tabsPillTabStyles } from "./tabs-pill-tab.stylex"
 
 export { tabsPillTabStyles } from "./tabs-pill-tab.stylex"
@@ -11,14 +11,14 @@ export function TabsPillTab(props: TabsPillTabProps): JSX.Element {
   const { className: customClassName = "", ...rest } = props
 
   return (
-    <div className={sx(tabsPillTabStyles.wrapper)}>
+    <div className={cn(tabsPillTabStyles.wrapper)}>
       <BaseTabs.Tab
-        className={cn(sx(tabsPillTabStyles.base), customClassName)}
+        className={cn(tabsPillTabStyles.base, customClassName)}
         data-slot="tabs-pill-tab"
         nativeButton
         {...rest}
       />
-      <div className={sx(tabsPillTabStyles.background)} />
+      <div className={cn(tabsPillTabStyles.background)} />
     </div>
   )
 }

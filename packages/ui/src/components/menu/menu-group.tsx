@@ -1,6 +1,6 @@
 import { Menu as BaseMenu } from "@base-ui/react"
 import type { JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { pickerGroupStyles } from "../picker/picker-group.stylex"
 
 export interface MenuGroupProps extends Omit<BaseMenu.Group.Props, "className"> {
@@ -12,7 +12,7 @@ export function MenuGroup(props: MenuGroupProps): JSX.Element {
 
   return (
     <BaseMenu.Group
-      className={cn(sx(pickerGroupStyles.base), customClassName)}
+      className={cn(pickerGroupStyles.base, customClassName)}
       data-slot="menu-group"
       {...rest}
     />

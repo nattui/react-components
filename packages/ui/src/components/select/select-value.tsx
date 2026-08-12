@@ -1,6 +1,6 @@
 import { Select as BaseSelect } from "@base-ui/react"
 import type { JSX, ReactNode } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { selectValueStyles } from "./select-value.stylex"
 
 export { selectValueStyles } from "./select-value.stylex"
@@ -28,7 +28,7 @@ export function SelectValue(props: SelectValueProps): JSX.Element {
 
   return (
     <BaseSelect.Value
-      className={cn(sx(selectValueStyles.base), customClassName)}
+      className={cn(selectValueStyles.base, customClassName)}
       data-slot="select-value"
       placeholder={placeholder}
       render={render}

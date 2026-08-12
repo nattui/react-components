@@ -1,6 +1,6 @@
 import { Combobox as BaseCombobox } from "@base-ui/react"
 import type { JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { pickerListStyles } from "../picker/picker-list.stylex"
 
 export interface ComboboxListProps extends Omit<BaseCombobox.List.Props, "className"> {
@@ -12,7 +12,7 @@ export function ComboboxList(props: ComboboxListProps): JSX.Element {
 
   return (
     <BaseCombobox.List
-      className={cn(sx(pickerListStyles.base), customClassName)}
+      className={cn(pickerListStyles.base, customClassName)}
       data-slot="combobox-list"
       {...rest}
     />

@@ -1,7 +1,7 @@
 // oxlint-disable jsx-a11y/no-autofocus
 
 import type { ComponentProps, JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { inputStyles } from "./input.stylex"
 
 export { inputStyles } from "./input.stylex"
@@ -30,7 +30,9 @@ export function Input(props: InputProps): JSX.Element {
   return (
     <input
       className={cn(
-        sx(inputStyles.base, inputStyles[size], rounded && inputStyles.roundedFull),
+        inputStyles.base,
+        inputStyles[size],
+        rounded && inputStyles.roundedFull,
         customClassName,
       )}
       data-is-active={active}

@@ -1,6 +1,6 @@
 import { Toggle as BaseToggle } from "@base-ui/react"
 import type { JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { toggleGroupItemStyles } from "./toggle-group-item.stylex"
 
 export { toggleGroupItemStyles } from "./toggle-group-item.stylex"
@@ -12,7 +12,7 @@ export function ToggleGroupItem(props: ToggleGroupItemProps): JSX.Element {
 
   return (
     <BaseToggle
-      className={cn(sx(toggleGroupItemStyles.base), customClassName)}
+      className={cn(toggleGroupItemStyles.base, customClassName)}
       data-slot="toggle-group-item"
       nativeButton
       {...rest}

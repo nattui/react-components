@@ -1,5 +1,5 @@
 import type { ComponentProps, JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { dialogResponsiveBarStyles } from "./dialog-responsive-bar.stylex"
 
 export { dialogResponsiveBarStyles } from "./dialog-responsive-bar.stylex"
@@ -11,7 +11,7 @@ export function DialogResponsiveBar(props: DialogResponsiveBarProps): JSX.Elemen
 
   return (
     <div
-      className={cn(sx(dialogResponsiveBarStyles.base), customClassName)}
+      className={cn(dialogResponsiveBarStyles.base, customClassName)}
       data-slot="dialog-responsive-bar"
       {...rest}
     />

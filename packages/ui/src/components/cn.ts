@@ -6,21 +6,32 @@ type StylexStyle = StyleXArray<
 >
 
 /**
- * Join class names, dropping empty values.
+ * Compile StyleX styles and join class names, dropping empty values.
  *
  * `cn` is short for class names.
  *
- * @param {unknown[]} values - Class strings and optional empty values to ignore.
+ * @param {unknown[]} values - StyleX styles, class strings, and optional empty values to ignore.
  * @returns {string} A single space-separated class string.
  */
 export function cn(...values: unknown[]): string {
-  return values
-    .filter((value): value is string => typeof value === "string" && value !== "")
-    .join(" ")
-}
+  const stylexStyles: StylexStyle[] = []
+  const classNames: string[] = []
 
-export function sx(...styles: StylexStyle[]): string {
-  return (
-    (stylex.props as (...args: StylexStyle[]) => { className?: string })(...styles).className ?? ""
-  )
+  for (const value of values) {
+    if (typeof value === "string") {
+      if (value !== "") {
+        classNames.push(value)
+      }
+    } else if (typeof value !== "function") {
+      stylexStyles.push(value as StylexStyle)
+    }
+  }
+
+  const compiled =
+    stylexStyles.length === 0
+      ? ""
+      : ((stylex.props as (...args: StylexStyle[]) => { className?: string })(...stylexStyles)
+          .className ?? "")
+
+  return [compiled, ...classNames].filter((value) => value !== "").join(" ")
 }

@@ -1,6 +1,6 @@
 import { Combobox as BaseCombobox } from "@base-ui/react"
 import type { JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { pickerItemStyles } from "../picker/picker-item.stylex"
 
 export interface ComboboxItemProps extends Omit<BaseCombobox.Item.Props, "className"> {
@@ -12,16 +12,16 @@ export function ComboboxItem(props: ComboboxItemProps): JSX.Element {
 
   return (
     <BaseCombobox.Item
-      className={cn(sx(pickerItemStyles.base), customClassName)}
+      className={cn(pickerItemStyles.base, customClassName)}
       data-slot="combobox-item"
       {...rest}
     >
-      <span className={sx(pickerItemStyles.label)} data-slot="combobox-item-text">
+      <span className={cn(pickerItemStyles.label)} data-slot="combobox-item-text">
         {children}
       </span>
 
       <BaseCombobox.ItemIndicator
-        className={sx(pickerItemStyles.indicator)}
+        className={cn(pickerItemStyles.indicator)}
         data-slot="combobox-item-indicator"
       >
         {/* check */}

@@ -1,6 +1,6 @@
 import { Tabs as BaseTabs } from "@base-ui/react"
 import type { JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { tabsUnderlineTabStyles } from "./tabs-underline-tab.stylex"
 
 export { tabsUnderlineTabStyles } from "./tabs-underline-tab.stylex"
@@ -12,7 +12,7 @@ export function TabsUnderlineTab(props: TabsUnderlineTabProps): JSX.Element {
 
   return (
     <BaseTabs.Tab
-      className={cn(sx(tabsUnderlineTabStyles.base), customClassName)}
+      className={cn(tabsUnderlineTabStyles.base, customClassName)}
       data-slot="tabs-underline-tab"
       nativeButton
       {...rest}

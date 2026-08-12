@@ -1,6 +1,6 @@
 import { Tabs as BaseTabs } from "@base-ui/react"
 import type { JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { tabsPillIndicatorStyles } from "./tabs-pill-indicator.stylex"
 
 export { tabsPillIndicatorStyles } from "./tabs-pill-indicator.stylex"
@@ -12,7 +12,7 @@ export function TabsPillIndicator(props: TabsPillIndicatorProps): JSX.Element {
 
   return (
     <BaseTabs.Indicator
-      className={cn(sx(tabsPillIndicatorStyles.base), customClassName)}
+      className={cn(tabsPillIndicatorStyles.base, customClassName)}
       data-slot="tabs-pill-indicator"
       renderBeforeHydration
       {...rest}

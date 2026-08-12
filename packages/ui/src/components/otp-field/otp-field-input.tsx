@@ -1,6 +1,6 @@
 import { OTPField as OTPFieldBase } from "@base-ui/react"
 import type { JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { otpFieldInputStyles } from "./otp-field-input.stylex"
 import { otpFieldStyles } from "./otp-field.stylex"
 
@@ -13,7 +13,7 @@ export function OTPFieldInput(props: OTPFieldInputProps): JSX.Element {
 
   return (
     <OTPFieldBase.Input
-      className={cn(sx(otpFieldInputStyles.base, otpFieldStyles.maskedInput), customClassName)}
+      className={cn(otpFieldInputStyles.base, otpFieldStyles.maskedInput, customClassName)}
       data-slot="otp-field-input"
       {...rest}
     />

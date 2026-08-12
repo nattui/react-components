@@ -1,6 +1,6 @@
 import { Combobox as BaseCombobox } from "@base-ui/react"
 import type { JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { pickerTriggerStyles } from "../picker/picker-trigger.stylex"
 
 export interface ComboboxTriggerProps extends BaseCombobox.Trigger.Props {
@@ -22,11 +22,9 @@ export function ComboboxTrigger(props: ComboboxTriggerProps): JSX.Element {
   return (
     <BaseCombobox.Trigger
       className={cn(
-        sx(
-          pickerTriggerStyles.base,
-          pickerTriggerStyles[size],
-          rounded && pickerTriggerStyles.roundedFull,
-        ),
+        pickerTriggerStyles.base,
+        pickerTriggerStyles[size],
+        rounded && pickerTriggerStyles.roundedFull,
         customClassName,
       )}
       data-slot="combobox-trigger"
@@ -34,7 +32,7 @@ export function ComboboxTrigger(props: ComboboxTriggerProps): JSX.Element {
     >
       {children}
 
-      <BaseCombobox.Icon className={sx(pickerTriggerStyles.icon)} data-slot="combobox-icon">
+      <BaseCombobox.Icon className={cn(pickerTriggerStyles.icon)} data-slot="combobox-icon">
         {/* chevron-down */}
         <svg height="14" viewBox="0 0 18 18" width="14" xmlns="http://www.w3.org/2000/svg">
           <polyline

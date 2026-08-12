@@ -1,6 +1,6 @@
 import { Checkbox as BaseCheckbox } from "@base-ui/react"
 import type { ComponentProps, JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { CheckboxIcon } from "./checkbox-icon"
 import { checkboxStyles } from "./checkbox.stylex"
 
@@ -13,12 +13,12 @@ export function Checkbox(props: CheckboxProps): JSX.Element {
 
   return (
     <BaseCheckbox.Root
-      className={cn(sx(checkboxStyles.base), customClassName)}
+      className={cn(checkboxStyles.base, customClassName)}
       data-slot="checkbox"
       {...rest}
     >
-      <BaseCheckbox.Indicator className={sx(checkboxStyles.indicator)}>
-        {children ?? <CheckboxIcon className={sx(checkboxStyles.icon)} />}
+      <BaseCheckbox.Indicator className={cn(checkboxStyles.indicator)}>
+        {children ?? <CheckboxIcon className={cn(checkboxStyles.icon)} />}
       </BaseCheckbox.Indicator>
     </BaseCheckbox.Root>
   )

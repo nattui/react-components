@@ -1,6 +1,6 @@
 import { Select as BaseSelect } from "@base-ui/react"
 import type { JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { pickerGroupStyles } from "../picker/picker-group.stylex"
 
 export interface SelectGroupLabelProps extends Omit<BaseSelect.GroupLabel.Props, "className"> {
@@ -12,7 +12,7 @@ export function SelectGroupLabel(props: SelectGroupLabelProps): JSX.Element {
 
   return (
     <BaseSelect.GroupLabel
-      className={cn(sx(pickerGroupStyles.label), customClassName)}
+      className={cn(pickerGroupStyles.label, customClassName)}
       data-slot="select-group-label"
       {...rest}
     />

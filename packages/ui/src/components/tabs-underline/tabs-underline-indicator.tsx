@@ -1,6 +1,6 @@
 import { Tabs as BaseTabs } from "@base-ui/react"
 import type { JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { tabsUnderlineIndicatorStyles } from "./tabs-underline-indicator.stylex"
 
 export { tabsUnderlineIndicatorStyles } from "./tabs-underline-indicator.stylex"
@@ -12,7 +12,7 @@ export function TabsUnderlineIndicator(props: TabsUnderlineIndicatorProps): JSX.
 
   return (
     <BaseTabs.Indicator
-      className={cn(sx(tabsUnderlineIndicatorStyles.base), customClassName)}
+      className={cn(tabsUnderlineIndicatorStyles.base, customClassName)}
       data-slot="tabs-underline-indicator"
       renderBeforeHydration
       {...rest}

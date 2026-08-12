@@ -1,6 +1,6 @@
 import { Drawer as BaseDrawer } from "@base-ui/react"
 import type { JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { dialogResponsivePortalStyles } from "./dialog-responsive-portal.stylex"
 
 export { dialogResponsivePortalStyles } from "./dialog-responsive-portal.stylex"
@@ -12,7 +12,7 @@ export function DialogResponsivePortal(props: DialogResponsivePortalProps): JSX.
 
   return (
     <BaseDrawer.Portal
-      className={cn(sx(dialogResponsivePortalStyles.base), customClassName)}
+      className={cn(dialogResponsivePortalStyles.base, customClassName)}
       data-slot="dialog-responsive-portal"
       {...rest}
     />

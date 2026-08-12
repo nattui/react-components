@@ -1,6 +1,6 @@
 import { Tabs as BaseTabs } from "@base-ui/react"
 import type { JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { tabsSegmentedTabStyles } from "./tabs-segmented-tab.stylex"
 
 export { tabsSegmentedTabStyles } from "./tabs-segmented-tab.stylex"
@@ -12,7 +12,7 @@ export function TabsSegmentedTab(props: TabsSegmentedTabProps): JSX.Element {
 
   return (
     <BaseTabs.Tab
-      className={cn(sx(tabsSegmentedTabStyles.base), customClassName)}
+      className={cn(tabsSegmentedTabStyles.base, customClassName)}
       data-slot="tabs-segmented-tab"
       nativeButton
       {...rest}

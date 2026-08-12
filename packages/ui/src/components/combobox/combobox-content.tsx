@@ -1,6 +1,6 @@
 import { Combobox as BaseCombobox } from "@base-ui/react"
 import type { JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { pickerPopupStyles } from "../picker/picker-popup.stylex"
 
 export interface ComboboxContentProps
@@ -52,7 +52,7 @@ export function ComboboxContent(props: ComboboxContentProps): JSX.Element {
         alignOffset={alignOffset}
         anchor={anchor}
         arrowPadding={arrowPadding}
-        className={sx(pickerPopupStyles.positioner)}
+        className={cn(pickerPopupStyles.positioner)}
         collisionAvoidance={collisionAvoidance}
         collisionBoundary={collisionBoundary}
         collisionPadding={collisionPadding}
@@ -64,7 +64,7 @@ export function ComboboxContent(props: ComboboxContentProps): JSX.Element {
         sticky={sticky}
       >
         <BaseCombobox.Popup
-          className={cn(sx(pickerPopupStyles.base), customClassName)}
+          className={cn(pickerPopupStyles.base, customClassName)}
           data-slot="combobox-content"
           {...rest}
         >

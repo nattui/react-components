@@ -1,6 +1,6 @@
 import { Menu as BaseMenu } from "@base-ui/react"
 import type { JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { pickerGroupStyles } from "../picker/picker-group.stylex"
 
 export interface MenuRadioGroupProps extends Omit<BaseMenu.RadioGroup.Props, "className"> {
@@ -12,7 +12,7 @@ export function MenuRadioGroup(props: MenuRadioGroupProps): JSX.Element {
 
   return (
     <BaseMenu.RadioGroup
-      className={cn(sx(pickerGroupStyles.base), customClassName)}
+      className={cn(pickerGroupStyles.base, customClassName)}
       data-slot="menu-radio-group"
       {...rest}
     />

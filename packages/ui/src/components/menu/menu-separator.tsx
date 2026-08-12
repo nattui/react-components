@@ -1,6 +1,6 @@
 import { Menu as BaseMenu } from "@base-ui/react"
 import type { JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { pickerSeparatorStyles } from "../picker/picker-separator.stylex"
 
 export interface MenuSeparatorProps extends Omit<BaseMenu.Separator.Props, "className"> {
@@ -12,7 +12,7 @@ export function MenuSeparator(props: MenuSeparatorProps): JSX.Element {
 
   return (
     <BaseMenu.Separator
-      className={cn(sx(pickerSeparatorStyles.base), customClassName)}
+      className={cn(pickerSeparatorStyles.base, customClassName)}
       data-slot="menu-separator"
       {...rest}
     />

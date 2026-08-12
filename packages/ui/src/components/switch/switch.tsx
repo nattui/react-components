@@ -1,6 +1,6 @@
 import { Switch as BaseSwitch } from "@base-ui/react"
 import type { ComponentProps, JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { switchStyles } from "./switch.stylex"
 
 export { switchStyles } from "./switch.stylex"
@@ -16,11 +16,11 @@ export function Switch(props: SwitchProps): JSX.Element {
 
   return (
     <BaseSwitch.Root
-      className={cn(sx(switchStyles.base, switchStyles[size]), customClassName)}
+      className={cn(switchStyles.base, switchStyles[size], customClassName)}
       data-slot="switch"
       {...rest}
     >
-      <BaseSwitch.Thumb className={sx(switchStyles.thumb)} />
+      <BaseSwitch.Thumb className={cn(switchStyles.thumb)} />
     </BaseSwitch.Root>
   )
 }

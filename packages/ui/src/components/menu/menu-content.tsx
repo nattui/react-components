@@ -1,6 +1,6 @@
 import { Menu as BaseMenu } from "@base-ui/react"
 import type { JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { pickerListStyles } from "../picker/picker-list.stylex"
 import { pickerPopupStyles } from "../picker/picker-popup.stylex"
 import { menuContentStyles } from "./menu-content.stylex"
@@ -58,7 +58,7 @@ export function MenuContent(props: MenuContentProps): JSX.Element {
         alignOffset={alignOffset}
         anchor={anchor}
         arrowPadding={arrowPadding}
-        className={sx(pickerPopupStyles.positioner)}
+        className={cn(pickerPopupStyles.positioner)}
         collisionAvoidance={collisionAvoidance}
         collisionBoundary={collisionBoundary}
         collisionPadding={collisionPadding}
@@ -70,11 +70,11 @@ export function MenuContent(props: MenuContentProps): JSX.Element {
         sticky={sticky}
       >
         <BaseMenu.Popup
-          className={cn(sx(pickerPopupStyles.base, menuContentStyles.base), customClassName)}
+          className={cn(pickerPopupStyles.base, menuContentStyles.base, customClassName)}
           data-slot="menu-content"
           {...rest}
         >
-          <div className={sx(pickerListStyles.base)} data-slot="menu-list">
+          <div className={cn(pickerListStyles.base)} data-slot="menu-list">
             {children}
           </div>
         </BaseMenu.Popup>

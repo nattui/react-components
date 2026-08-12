@@ -2,6 +2,7 @@ import "./stylex.css"
 
 export * from "./button-link/button-link"
 export * from "./button/button"
+export * from "./button2/button2"
 export * from "./checkbox/checkbox"
 export * from "./column/column"
 export * from "./combobox/combobox"

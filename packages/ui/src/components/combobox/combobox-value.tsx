@@ -1,6 +1,6 @@
 import { Combobox as BaseCombobox } from "@base-ui/react"
 import type { JSX, ReactNode } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { comboboxValueStyles } from "./combobox-value.stylex"
 
 export { comboboxValueStyles } from "./combobox-value.stylex"
@@ -28,7 +28,7 @@ export function ComboboxValue(props: ComboboxValueProps): JSX.Element {
       : children
 
   return (
-    <div className={cn(sx(comboboxValueStyles.base), customClassName)} data-slot="combobox-value">
+    <div className={cn(comboboxValueStyles.base, customClassName)} data-slot="combobox-value">
       <BaseCombobox.Value placeholder={placeholder} {...rest}>
         {resolvedChildren}
       </BaseCombobox.Value>

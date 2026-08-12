@@ -1,6 +1,6 @@
 import { Menu as BaseMenu } from "@base-ui/react"
 import type { JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { pickerGroupStyles } from "../picker/picker-group.stylex"
 
 export interface MenuGroupLabelProps extends Omit<BaseMenu.GroupLabel.Props, "className"> {
@@ -12,7 +12,7 @@ export function MenuGroupLabel(props: MenuGroupLabelProps): JSX.Element {
 
   return (
     <BaseMenu.GroupLabel
-      className={cn(sx(pickerGroupStyles.label), customClassName)}
+      className={cn(pickerGroupStyles.label, customClassName)}
       data-slot="menu-group-label"
       {...rest}
     />

@@ -1,6 +1,6 @@
 import { Tabs as BaseTabs } from "@base-ui/react"
 import type { JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { TabsSegmentedIndicator } from "./tabs-segmented-indicator"
 import { tabsSegmentedListStyles } from "./tabs-segmented-list.stylex"
 
@@ -13,7 +13,7 @@ export function TabsSegmentedList(props: TabsSegmentedListProps): JSX.Element {
 
   return (
     <BaseTabs.List
-      className={cn(sx(tabsSegmentedListStyles.base), customClassName)}
+      className={cn(tabsSegmentedListStyles.base, customClassName)}
       data-slot="tabs-segmented-list"
       {...rest}
     >

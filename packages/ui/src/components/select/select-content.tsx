@@ -1,6 +1,6 @@
 import { Select as BaseSelect } from "@base-ui/react"
 import type { JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { pickerListStyles } from "../picker/picker-list.stylex"
 import { pickerPopupStyles } from "../picker/picker-popup.stylex"
 
@@ -58,7 +58,7 @@ export function SelectContent(props: SelectContentProps): JSX.Element {
         alignOffset={alignOffset}
         anchor={anchor}
         arrowPadding={arrowPadding}
-        className={sx(pickerPopupStyles.positioner)}
+        className={cn(pickerPopupStyles.positioner)}
         collisionAvoidance={collisionAvoidance}
         collisionBoundary={collisionBoundary}
         collisionPadding={collisionPadding}
@@ -70,11 +70,11 @@ export function SelectContent(props: SelectContentProps): JSX.Element {
         sticky={sticky}
       >
         <BaseSelect.Popup
-          className={cn(sx(pickerPopupStyles.base), customClassName)}
+          className={cn(pickerPopupStyles.base, customClassName)}
           data-slot="select-content"
           {...rest}
         >
-          <BaseSelect.List className={sx(pickerListStyles.base)} data-slot="select-list">
+          <BaseSelect.List className={cn(pickerListStyles.base)} data-slot="select-list">
             {children}
           </BaseSelect.List>
         </BaseSelect.Popup>

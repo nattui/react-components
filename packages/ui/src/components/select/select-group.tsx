@@ -1,6 +1,6 @@
 import { Select as BaseSelect } from "@base-ui/react"
 import type { JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { pickerGroupStyles } from "../picker/picker-group.stylex"
 
 export { pickerGroupStyles as selectGroupStyles } from "../picker/picker-group.stylex"
@@ -14,7 +14,7 @@ export function SelectGroup(props: SelectGroupProps): JSX.Element {
 
   return (
     <BaseSelect.Group
-      className={cn(sx(pickerGroupStyles.base), customClassName)}
+      className={cn(pickerGroupStyles.base, customClassName)}
       data-slot="select-group"
       {...rest}
     />

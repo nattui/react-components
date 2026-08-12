@@ -1,6 +1,6 @@
 import { Menu as BaseMenu } from "@base-ui/react"
 import type { JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { pickerItemStyles } from "../picker/picker-item.stylex"
 import { menuItemStyles } from "./menu-item.stylex"
 import { menuSubmenuTriggerStyles } from "./menu-submenu-trigger.stylex"
@@ -17,7 +17,9 @@ export function MenuSubmenuTrigger(props: MenuSubmenuTriggerProps): JSX.Element 
   return (
     <BaseMenu.SubmenuTrigger
       className={cn(
-        sx(pickerItemStyles.base, menuItemStyles.base, menuSubmenuTriggerStyles.base),
+        pickerItemStyles.base,
+        menuItemStyles.base,
+        menuSubmenuTriggerStyles.base,
         customClassName,
       )}
       data-slot="menu-submenu-trigger"
@@ -25,7 +27,7 @@ export function MenuSubmenuTrigger(props: MenuSubmenuTriggerProps): JSX.Element 
     >
       {children}
 
-      <span className={sx(menuSubmenuTriggerStyles.icon)} data-slot="menu-submenu-trigger-icon">
+      <span className={cn(menuSubmenuTriggerStyles.icon)} data-slot="menu-submenu-trigger-icon">
         {/* chevron-right */}
         <svg
           height="14px"

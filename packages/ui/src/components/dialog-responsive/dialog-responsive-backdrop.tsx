@@ -1,6 +1,6 @@
 import { Drawer as BaseDrawer } from "@base-ui/react"
 import type { JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { dialogResponsiveBackdropStyles } from "./dialog-responsive-backdrop.stylex"
 
 export { dialogResponsiveBackdropStyles } from "./dialog-responsive-backdrop.stylex"
@@ -12,7 +12,7 @@ export function DialogResponsiveBackdrop(props: DialogResponsiveBackdropProps): 
 
   return (
     <BaseDrawer.Backdrop
-      className={cn(sx(dialogResponsiveBackdropStyles.base), customClassName)}
+      className={cn(dialogResponsiveBackdropStyles.base, customClassName)}
       data-slot="dialog-responsive-backdrop"
       {...rest}
     />

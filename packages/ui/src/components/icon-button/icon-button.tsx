@@ -2,7 +2,7 @@ import type { JSX, ReactNode } from "react"
 import { getButtonClassName, type ButtonProps } from "../button/button"
 import { ButtonSpinner } from "../button/button-spinner"
 import { buttonStyles } from "../button/button.stylex"
-import { sx } from "../cn"
+import { cn } from "../cn"
 import { iconButtonStyles } from "./icon-button.stylex"
 
 export { iconButtonStyles } from "./icon-button.stylex"
@@ -45,7 +45,7 @@ export function IconButton(props: IconButtonProps): JSX.Element {
       {...rest}
     >
       {loading && <ButtonSpinner />}
-      {loading ? <span className={sx(buttonStyles.loadingContent)}>{icon}</span> : icon}
+      {loading ? <span className={cn(buttonStyles.loadingContent)}>{icon}</span> : icon}
     </button>
   )
 }

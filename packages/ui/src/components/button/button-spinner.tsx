@@ -1,5 +1,5 @@
 import type { CSSProperties, JSX } from "react"
-import { sx } from "../cn"
+import { cn } from "../cn"
 import { buttonSpinnerStyles } from "./button-spinner.stylex"
 
 export { buttonSpinnerStyles } from "./button-spinner.stylex"
@@ -24,12 +24,12 @@ const BAR_STYLES = [
 export function ButtonSpinner(): JSX.Element {
   return (
     <div
-      className={sx(buttonSpinnerStyles.base)}
+      className={cn(buttonSpinnerStyles.base)}
       data-slot="button-spinner"
       style={{ "--size": `${SIZE}px` } as CSSProperties}
     >
       {BAR_STYLES.map((barStyle, index) => (
-        <div className={sx(buttonSpinnerStyles.bar, barStyle)} key={index} />
+        <div className={cn(buttonSpinnerStyles.bar, barStyle)} key={index} />
       ))}
     </div>
   )

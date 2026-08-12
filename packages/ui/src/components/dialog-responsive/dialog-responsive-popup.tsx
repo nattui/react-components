@@ -1,6 +1,6 @@
 import { Drawer as BaseDrawer } from "@base-ui/react"
 import type { JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { DialogResponsiveBackdrop } from "./dialog-responsive-backdrop"
 import { DialogResponsiveBar } from "./dialog-responsive-bar"
 import { dialogResponsivePopupStyles } from "./dialog-responsive-popup.stylex"
@@ -19,7 +19,7 @@ export function DialogResponsivePopup(props: DialogResponsivePopupProps): JSX.El
       <DialogResponsiveBackdrop />
       <DialogResponsiveViewport>
         <BaseDrawer.Popup
-          className={cn(sx(dialogResponsivePopupStyles.base), customClassName)}
+          className={cn(dialogResponsivePopupStyles.base, customClassName)}
           data-slot="dialog-responsive-popup"
           {...rest}
         >

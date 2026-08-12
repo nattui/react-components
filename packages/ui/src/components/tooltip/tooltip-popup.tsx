@@ -1,6 +1,6 @@
 import { Tooltip as BaseTooltip } from "@base-ui/react"
 import type { JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { tooltipPopupStyles } from "./tooltip-popup.stylex"
 
 export { tooltipPopupStyles } from "./tooltip-popup.stylex"
@@ -18,14 +18,14 @@ export function TooltipPopup(props: TooltipPopupProps): JSX.Element {
   } = props
 
   return (
-    <BaseTooltip.Portal className={sx(tooltipPopupStyles.portal)}>
+    <BaseTooltip.Portal className={cn(tooltipPopupStyles.portal)}>
       <BaseTooltip.Positioner
-        className={sx(tooltipPopupStyles.positioner)}
+        className={cn(tooltipPopupStyles.positioner)}
         side={side}
         sideOffset={sideOffset}
       >
         <BaseTooltip.Popup
-          className={cn(sx(tooltipPopupStyles.base), customClassName)}
+          className={cn(tooltipPopupStyles.base, customClassName)}
           data-slot="tooltip-popup"
           {...rest}
         >

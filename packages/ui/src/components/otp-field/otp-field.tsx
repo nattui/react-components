@@ -1,6 +1,6 @@
 import { OTPField as OTPFieldBase } from "@base-ui/react"
 import type { JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { otpFieldStyles } from "./otp-field.stylex"
 
 export { otpFieldStyles } from "./otp-field.stylex"
@@ -14,7 +14,7 @@ export function OTPField(props: OTPFieldProps): JSX.Element {
 
   return (
     <OTPFieldBase.Root
-      className={cn(sx(otpFieldStyles.base), customClassName)}
+      className={cn(otpFieldStyles.base, customClassName)}
       data-is-masked={masked}
       data-slot="otp-field"
       mask={masked}

@@ -1,6 +1,6 @@
 import { Combobox as BaseCombobox } from "@base-ui/react"
 import type { JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { pickerGroupStyles } from "../picker/picker-group.stylex"
 
 export interface ComboboxGroupProps extends Omit<BaseCombobox.Group.Props, "className"> {
@@ -12,7 +12,7 @@ export function ComboboxGroup(props: ComboboxGroupProps): JSX.Element {
 
   return (
     <BaseCombobox.Group
-      className={cn(sx(pickerGroupStyles.base), customClassName)}
+      className={cn(pickerGroupStyles.base, customClassName)}
       data-slot="combobox-group"
       {...rest}
     />

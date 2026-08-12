@@ -1,6 +1,6 @@
 import { Select as BaseSelect } from "@base-ui/react"
 import type { JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { pickerItemStyles } from "../picker/picker-item.stylex"
 
 export { pickerItemStyles as selectItemStyles } from "../picker/picker-item.stylex"
@@ -14,16 +14,16 @@ export function SelectItem(props: SelectItemProps): JSX.Element {
 
   return (
     <BaseSelect.Item
-      className={cn(sx(pickerItemStyles.base), customClassName)}
+      className={cn(pickerItemStyles.base, customClassName)}
       data-slot="select-item"
       {...rest}
     >
-      <BaseSelect.ItemText className={sx(pickerItemStyles.label)} data-slot="select-item-text">
+      <BaseSelect.ItemText className={cn(pickerItemStyles.label)} data-slot="select-item-text">
         {children}
       </BaseSelect.ItemText>
 
       <BaseSelect.ItemIndicator
-        className={sx(pickerItemStyles.indicator)}
+        className={cn(pickerItemStyles.indicator)}
         data-slot="select-item-indicator"
       >
         {/* check */}

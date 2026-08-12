@@ -1,5 +1,5 @@
 import type { ComponentProps, JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { inputStyles } from "../input/input.stylex"
 import { textareaStyles } from "./textarea.stylex"
 
@@ -25,11 +25,9 @@ export function Textarea(props: TextareaProps): JSX.Element {
   return (
     <textarea
       className={cn(
-        sx(
-          inputStyles.base,
-          textareaStyles.base,
-          rounded ? inputStyles.roundedFull : inputStyles.roundedBase,
-        ),
+        inputStyles.base,
+        textareaStyles.base,
+        rounded ? inputStyles.roundedFull : inputStyles.roundedBase,
         customClassName,
       )}
       data-is-active={active}

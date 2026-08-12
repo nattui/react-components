@@ -1,6 +1,6 @@
 import { Select as BaseSelect } from "@base-ui/react"
 import type { JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { pickerTriggerStyles } from "../picker/picker-trigger.stylex"
 
 export { pickerTriggerStyles as selectTriggerStyles } from "../picker/picker-trigger.stylex"
@@ -24,11 +24,9 @@ export function SelectTrigger(props: SelectTriggerProps): JSX.Element {
   return (
     <BaseSelect.Trigger
       className={cn(
-        sx(
-          pickerTriggerStyles.base,
-          pickerTriggerStyles[size],
-          rounded && pickerTriggerStyles.roundedFull,
-        ),
+        pickerTriggerStyles.base,
+        pickerTriggerStyles[size],
+        rounded && pickerTriggerStyles.roundedFull,
         customClassName,
       )}
       data-slot="select-trigger"
@@ -36,7 +34,7 @@ export function SelectTrigger(props: SelectTriggerProps): JSX.Element {
     >
       {children}
 
-      <BaseSelect.Icon className={sx(pickerTriggerStyles.icon)} data-slot="select-icon">
+      <BaseSelect.Icon className={cn(pickerTriggerStyles.icon)} data-slot="select-icon">
         {/* chevron-down */}
         <svg height="14" viewBox="0 0 18 18" width="14" xmlns="http://www.w3.org/2000/svg">
           <polyline

@@ -1,6 +1,6 @@
 import { ToggleGroup as BaseToggleGroup } from "@base-ui/react"
 import type { JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { toggleGroupStyles } from "./toggle-group.stylex"
 
 export { toggleGroupStyles } from "./toggle-group.stylex"
@@ -12,7 +12,7 @@ export function ToggleGroup(props: ToggleGroupProps): JSX.Element {
 
   return (
     <BaseToggleGroup
-      className={cn(sx(toggleGroupStyles.base), customClassName)}
+      className={cn(toggleGroupStyles.base, customClassName)}
       data-slot="toggle-group"
       loopFocus
       {...rest}

@@ -1,6 +1,6 @@
 import { Menu as BaseMenu } from "@base-ui/react"
 import type { JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { pickerItemStyles } from "../picker/picker-item.stylex"
 
 export interface MenuCheckboxItemProps extends Omit<BaseMenu.CheckboxItem.Props, "className"> {
@@ -12,16 +12,16 @@ export function MenuCheckboxItem(props: MenuCheckboxItemProps): JSX.Element {
 
   return (
     <BaseMenu.CheckboxItem
-      className={cn(sx(pickerItemStyles.base), customClassName)}
+      className={cn(pickerItemStyles.base, customClassName)}
       data-slot="menu-checkbox-item"
       {...rest}
     >
-      <span className={sx(pickerItemStyles.label)} data-slot="menu-checkbox-item-text">
+      <span className={cn(pickerItemStyles.label)} data-slot="menu-checkbox-item-text">
         {children}
       </span>
 
       <BaseMenu.CheckboxItemIndicator
-        className={sx(pickerItemStyles.indicator)}
+        className={cn(pickerItemStyles.indicator)}
         data-slot="menu-checkbox-item-indicator"
       >
         {/* check */}

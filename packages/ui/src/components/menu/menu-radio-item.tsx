@@ -1,6 +1,6 @@
 import { Menu as BaseMenu } from "@base-ui/react"
 import type { JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { pickerItemStyles } from "../picker/picker-item.stylex"
 
 export interface MenuRadioItemProps extends Omit<BaseMenu.RadioItem.Props, "className"> {
@@ -12,16 +12,16 @@ export function MenuRadioItem(props: MenuRadioItemProps): JSX.Element {
 
   return (
     <BaseMenu.RadioItem
-      className={cn(sx(pickerItemStyles.base), customClassName)}
+      className={cn(pickerItemStyles.base, customClassName)}
       data-slot="menu-radio-item"
       {...rest}
     >
-      <span className={sx(pickerItemStyles.label)} data-slot="menu-radio-item-text">
+      <span className={cn(pickerItemStyles.label)} data-slot="menu-radio-item-text">
         {children}
       </span>
 
       <BaseMenu.RadioItemIndicator
-        className={sx(pickerItemStyles.indicator)}
+        className={cn(pickerItemStyles.indicator)}
         data-slot="menu-radio-item-indicator"
       >
         {/* check */}

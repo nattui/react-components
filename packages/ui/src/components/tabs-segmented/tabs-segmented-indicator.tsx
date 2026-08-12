@@ -1,6 +1,6 @@
 import { Tabs as BaseTabs } from "@base-ui/react"
 import type { JSX } from "react"
-import { cn, sx } from "../cn"
+import { cn } from "../cn"
 import { tabsSegmentedIndicatorStyles } from "./tabs-segmented-indicator.stylex"
 
 export { tabsSegmentedIndicatorStyles } from "./tabs-segmented-indicator.stylex"
@@ -12,7 +12,7 @@ export function TabsSegmentedIndicator(props: TabsSegmentedIndicatorProps): JSX.
 
   return (
     <BaseTabs.Indicator
-      className={cn(sx(tabsSegmentedIndicatorStyles.base), customClassName)}
+      className={cn(tabsSegmentedIndicatorStyles.base, customClassName)}
       data-slot="tabs-segmented-indicator"
       renderBeforeHydration
       {...rest}
