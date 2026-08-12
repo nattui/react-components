@@ -1,8 +1,10 @@
 import { Menu as BaseMenu } from "@base-ui/react"
-import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import pickerStyles from "../picker/picker-item.module.css"
-import styles from "./menu-item.module.css"
+import { cn, sx } from "../cn"
+import { pickerItemStyles } from "../picker/picker-item.stylex"
+import { menuItemStyles } from "./menu-item.stylex"
+
+export { menuItemStyles } from "./menu-item.stylex"
 
 export interface MenuItemProps extends Omit<BaseMenu.Item.Props, "className" | "disabled"> {
   className?: string
@@ -12,16 +14,12 @@ export interface MenuItemProps extends Omit<BaseMenu.Item.Props, "className" | "
 export function MenuItem(props: MenuItemProps): JSX.Element {
   const { className: customClassName = "", isDisabled = false, ...rest } = props
 
-  const combinedClassName = menuItemVariants({ className: customClassName })
-
   return (
     <BaseMenu.Item
-      className={combinedClassName}
+      className={cn(sx(pickerItemStyles.base, menuItemStyles.base), customClassName)}
       data-slot="menu-item"
       disabled={isDisabled}
       {...rest}
     />
   )
 }
-
-export const menuItemVariants = cva([pickerStyles.base, styles.base])

@@ -1,7 +1,9 @@
 import { ToggleGroup as BaseToggleGroup } from "@base-ui/react"
-import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import styles from "./toggle-group.module.css"
+import { cn, sx } from "../cn"
+import { toggleGroupStyles } from "./toggle-group.stylex"
+
+export { toggleGroupStyles } from "./toggle-group.stylex"
 
 export interface ToggleGroupProps extends Omit<
   BaseToggleGroup.Props,
@@ -21,11 +23,9 @@ export function ToggleGroup(props: ToggleGroupProps): JSX.Element {
     ...rest
   } = props
 
-  const combinedClassName = toggleGroupVariants({ className: customClassName })
-
   return (
     <BaseToggleGroup
-      className={combinedClassName}
+      className={cn(sx(toggleGroupStyles.base), customClassName)}
       data-slot="toggle-group"
       disabled={isDisabled}
       loopFocus={isLoopFocus}
@@ -34,5 +34,3 @@ export function ToggleGroup(props: ToggleGroupProps): JSX.Element {
     />
   )
 }
-
-export const toggleGroupVariants = cva(styles.base)

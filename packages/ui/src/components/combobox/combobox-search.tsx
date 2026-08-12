@@ -1,7 +1,9 @@
 import { Combobox as BaseCombobox } from "@base-ui/react"
-import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import styles from "./combobox-search.module.css"
+import { cn, sx } from "../cn"
+import { comboboxSearchStyles } from "./combobox-search.stylex"
+
+export { comboboxSearchStyles } from "./combobox-search.stylex"
 
 export interface ComboboxSearchProps extends Omit<
   BaseCombobox.Input.Props,
@@ -14,11 +16,9 @@ export interface ComboboxSearchProps extends Omit<
 export function ComboboxSearch(props: ComboboxSearchProps): JSX.Element {
   const { className: customClassName = "", isDisabled = false, ...rest } = props
 
-  const combinedClassName = comboboxSearchVariants({ className: customClassName })
-
   return (
-    <div className={combinedClassName} data-slot="combobox-search">
-      <span className={styles.icon} data-slot="combobox-search-icon">
+    <div className={cn(sx(comboboxSearchStyles.base), customClassName)} data-slot="combobox-search">
+      <span className={sx(comboboxSearchStyles.icon)} data-slot="combobox-search-icon">
         {/* magnifier */}
         <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -41,7 +41,7 @@ export function ComboboxSearch(props: ComboboxSearchProps): JSX.Element {
       </span>
 
       <BaseCombobox.Input
-        className={styles.input}
+        className={sx(comboboxSearchStyles.input)}
         data-slot="combobox-search-input"
         disabled={isDisabled}
         {...rest}
@@ -49,5 +49,3 @@ export function ComboboxSearch(props: ComboboxSearchProps): JSX.Element {
     </div>
   )
 }
-
-export const comboboxSearchVariants = cva(styles.base)

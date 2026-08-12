@@ -1,8 +1,10 @@
 // oxlint-disable jsx-a11y/no-autofocus
 
-import { cva, type VariantProps } from "class-variance-authority"
 import type { ComponentProps, JSX } from "react"
-import styles from "./input.module.css"
+import { cn, sx } from "../cn"
+import { inputStyles } from "./input.stylex"
+
+export { inputStyles } from "./input.stylex"
 
 export interface InputProps extends Omit<
   ComponentProps<"input">,
@@ -19,7 +21,7 @@ export interface InputProps extends Omit<
   size?: InputSize
 }
 
-type InputSize = NonNullable<VariantProps<typeof inputVariants>["size"]>
+export type InputSize = 32 | 36 | 40 | 44 | 48
 
 export function Input(props: InputProps): JSX.Element {
   const {
@@ -37,16 +39,13 @@ export function Input(props: InputProps): JSX.Element {
     ...rest
   } = props
 
-  const combinedClassName = inputVariants({
-    className: customClassName,
-    isRounded,
-    size,
-  })
-
   return (
     <input
       autoFocus={isAutoFocus}
-      className={combinedClassName}
+      className={cn(
+        sx(inputStyles.base, inputStyles[size], isRounded && inputStyles.roundedFull),
+        customClassName,
+      )}
       data-is-active={isActive}
       data-is-invalid={isInvalid}
       data-is-valid={isValid}
@@ -59,23 +58,3 @@ export function Input(props: InputProps): JSX.Element {
     />
   )
 }
-
-export const inputVariants = cva(styles.base, {
-  defaultVariants: {
-    isRounded: false,
-    size: 48,
-  },
-  variants: {
-    isRounded: {
-      false: styles.rounded_base,
-      true: styles.rounded_full,
-    },
-    size: {
-      32: styles.size_32,
-      36: styles.size_36,
-      40: styles.size_40,
-      44: styles.size_44,
-      48: styles.size_48,
-    },
-  },
-})

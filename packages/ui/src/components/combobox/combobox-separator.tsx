@@ -1,7 +1,7 @@
 import { Combobox as BaseCombobox } from "@base-ui/react"
-import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import styles from "../picker/picker-separator.module.css"
+import { cn, sx } from "../cn"
+import { pickerSeparatorStyles } from "../picker/picker-separator.stylex"
 
 export interface ComboboxSeparatorProps extends Omit<BaseCombobox.Separator.Props, "className"> {
   className?: string
@@ -10,15 +10,11 @@ export interface ComboboxSeparatorProps extends Omit<BaseCombobox.Separator.Prop
 export function ComboboxSeparator(props: ComboboxSeparatorProps): JSX.Element {
   const { className: customClassName = "", ...rest } = props
 
-  const combinedClassName = comboboxSeparatorVariants({ className: customClassName })
-
   return (
     <BaseCombobox.Separator
-      className={combinedClassName}
+      className={cn(sx(pickerSeparatorStyles.base), customClassName)}
       data-slot="combobox-separator"
       {...rest}
     />
   )
 }
-
-export const comboboxSeparatorVariants = cva(styles.base)

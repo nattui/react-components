@@ -1,4 +1,6 @@
 import type { ComponentProps, JSX } from "react"
+import { sx } from "../cn"
+import { checkboxStyles } from "./checkbox.stylex"
 
 interface CheckboxIconProps extends ComponentProps<"svg"> {}
 
@@ -16,11 +18,10 @@ export function CheckboxIcon(props: CheckboxIconProps): JSX.Element {
       {...rest}
     >
       <path
+        className={sx(checkboxStyles.iconPath)}
         d="M5 13.875L9.2 18L19 7"
-        stroke="black"
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth="1.5"
       />
     </svg>
   )

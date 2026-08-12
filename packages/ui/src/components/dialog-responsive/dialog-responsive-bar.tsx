@@ -1,15 +1,19 @@
-import { cva } from "class-variance-authority"
 import type { ComponentProps, JSX } from "react"
-import styles from "./dialog-responsive-bar.module.css"
+import { cn, sx } from "../cn"
+import { dialogResponsiveBarStyles } from "./dialog-responsive-bar.stylex"
+
+export { dialogResponsiveBarStyles } from "./dialog-responsive-bar.stylex"
 
 export interface DialogResponsiveBarProps extends ComponentProps<"div"> {}
 
 export function DialogResponsiveBar(props: DialogResponsiveBarProps): JSX.Element {
   const { className: customClassName = "", ...rest } = props
 
-  const combinedClassName = dialogResponsiveBarVariants({ className: customClassName })
-
-  return <div className={combinedClassName} data-slot="dialog-responsive-bar" {...rest} />
+  return (
+    <div
+      className={cn(sx(dialogResponsiveBarStyles.base), customClassName)}
+      data-slot="dialog-responsive-bar"
+      {...rest}
+    />
+  )
 }
-
-export const dialogResponsiveBarVariants = cva(styles.base)

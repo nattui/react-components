@@ -1,7 +1,9 @@
 import { Select as BaseSelect } from "@base-ui/react"
-import { cva } from "class-variance-authority"
 import type { JSX, ReactNode } from "react"
-import styles from "./select-value.module.css"
+import { cn, sx } from "../cn"
+import { selectValueStyles } from "./select-value.stylex"
+
+export { selectValueStyles } from "./select-value.stylex"
 
 export interface SelectValueProps extends BaseSelect.Value.Props {}
 
@@ -13,8 +15,6 @@ export function SelectValue(props: SelectValueProps): JSX.Element {
     render = <div />,
     ...rest
   } = props
-
-  const combinedClassName = selectValueVariants({ className: customClassName })
 
   /* When nothing is selected, Base UI still calls function children (passing
      null) and ignores the placeholder, so the function may crash or render
@@ -28,7 +28,7 @@ export function SelectValue(props: SelectValueProps): JSX.Element {
 
   return (
     <BaseSelect.Value
-      className={combinedClassName}
+      className={cn(sx(selectValueStyles.base), customClassName)}
       data-slot="select-value"
       placeholder={placeholder}
       render={render}
@@ -38,5 +38,3 @@ export function SelectValue(props: SelectValueProps): JSX.Element {
     </BaseSelect.Value>
   )
 }
-
-export const selectValueVariants = cva(styles.base)

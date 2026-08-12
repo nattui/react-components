@@ -1,9 +1,0 @@
-@layer components {
-  .base {
-    column-gap: 8px;
-    display: flex;
-    isolation: isolate;
-    overflow-x: auto;
-    position: relative;
-  }
-}

@@ -1,12 +1,14 @@
 import { Combobox as BaseCombobox } from "@base-ui/react"
-import { cva, type VariantProps } from "class-variance-authority"
 import type { JSX } from "react"
-import styles from "../picker/picker-trigger.module.css"
+import { cn, sx } from "../cn"
+import { pickerTriggerStyles } from "../picker/picker-trigger.stylex"
 
 export interface ComboboxTriggerProps extends BaseCombobox.Trigger.Props {
-  isRounded?: VariantProps<typeof comboboxTriggerVariants>["isRounded"]
-  size?: VariantProps<typeof comboboxTriggerVariants>["size"]
+  isRounded?: boolean
+  size?: ComboboxTriggerSize
 }
+
+export type ComboboxTriggerSize = 32 | 36 | 40 | 44 | 48
 
 export function ComboboxTrigger(props: ComboboxTriggerProps): JSX.Element {
   const {
@@ -17,17 +19,22 @@ export function ComboboxTrigger(props: ComboboxTriggerProps): JSX.Element {
     ...rest
   } = props
 
-  const combinedClassName = comboboxTriggerVariants({
-    className: customClassName,
-    isRounded,
-    size,
-  })
-
   return (
-    <BaseCombobox.Trigger className={combinedClassName} data-slot="combobox-trigger" {...rest}>
+    <BaseCombobox.Trigger
+      className={cn(
+        sx(
+          pickerTriggerStyles.base,
+          pickerTriggerStyles[size],
+          isRounded && pickerTriggerStyles.roundedFull,
+        ),
+        customClassName,
+      )}
+      data-slot="combobox-trigger"
+      {...rest}
+    >
       {children}
 
-      <BaseCombobox.Icon className={styles.icon} data-slot="combobox-icon">
+      <BaseCombobox.Icon className={sx(pickerTriggerStyles.icon)} data-slot="combobox-icon">
         {/* chevron-down */}
         <svg height="14" viewBox="0 0 18 18" width="14" xmlns="http://www.w3.org/2000/svg">
           <polyline
@@ -43,18 +50,3 @@ export function ComboboxTrigger(props: ComboboxTriggerProps): JSX.Element {
     </BaseCombobox.Trigger>
   )
 }
-
-export const comboboxTriggerVariants = cva(styles.base, {
-  variants: {
-    isRounded: {
-      true: styles.rounded_full,
-    },
-    size: {
-      32: styles.size_32,
-      36: styles.size_36,
-      40: styles.size_40,
-      44: styles.size_44,
-      48: styles.size_48,
-    },
-  },
-})

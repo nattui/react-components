@@ -1,16 +1,16 @@
 import { Tabs as BaseTabs } from "@base-ui/react"
-import { cva } from "class-variance-authority"
+import * as stylex from "@stylexjs/stylex"
 import type { JSX } from "react"
-import styles from "./tabs.module.css"
+import { cn } from "../cn"
+import { tabsStyles } from "./tabs.stylex"
+
+export { tabsStyles } from "./tabs.stylex"
 
 export interface TabsProps extends BaseTabs.Root.Props {}
 
 export function Tabs(props: TabsProps): JSX.Element {
-  const { className: customClassName = "", ...rest } = props
+  const { className = "", ...rest } = props
+  const { className: stylexClassName } = stylex.props(tabsStyles.base)
 
-  const combinedClassName = tabsVariants({ className: customClassName })
-
-  return <BaseTabs.Root className={combinedClassName} data-slot="tabs" {...rest} />
+  return <BaseTabs.Root className={cn(stylexClassName, className)} data-slot="tabs" {...rest} />
 }
-
-export const tabsVariants = cva(styles.base)

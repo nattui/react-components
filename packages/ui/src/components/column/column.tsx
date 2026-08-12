@@ -1,4 +1,4 @@
-import { cva } from "class-variance-authority"
+import * as stylex from "@stylexjs/stylex"
 import {
   createElement,
   type ComponentProps,
@@ -6,7 +6,10 @@ import {
   type ElementType,
   type JSX,
 } from "react"
-import styles from "./column.module.css"
+import { cn } from "../cn"
+import { columnStyles } from "./column.stylex"
+
+export { columnStyles } from "./column.stylex"
 
 export type ColumnProps<ComponentType extends ElementType = "div"> = ColumnInternalProps &
   ComponentProps<ComponentType>
@@ -25,7 +28,7 @@ export function Column(props: ColumnProps): JSX.Element {
   const {
     alignItems = undefined,
     as = "div",
-    className: customClassName = "",
+    className = "",
     flexWrap = undefined,
     gap = undefined,
     gapX = undefined,
@@ -35,9 +38,7 @@ export function Column(props: ColumnProps): JSX.Element {
     ...rest
   } = props
 
-  const Component = as
-
-  const combinedClassName = columnVariants({ className: customClassName })
+  const { className: stylexClassName } = stylex.props(columnStyles.base)
 
   const combinedStyle = {
     ...customStyle,
@@ -49,12 +50,10 @@ export function Column(props: ColumnProps): JSX.Element {
     ...(justifyContent === undefined ? {} : { justifyContent }),
   }
 
-  return createElement(Component, {
-    className: combinedClassName,
+  return createElement(as, {
+    className: cn(stylexClassName, className),
     "data-slot": "column",
     style: combinedStyle,
     ...rest,
   })
 }
-
-export const columnVariants = cva(styles.base)

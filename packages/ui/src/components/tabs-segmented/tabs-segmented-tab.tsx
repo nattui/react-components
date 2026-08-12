@@ -1,7 +1,9 @@
 import { Tabs as BaseTabs } from "@base-ui/react"
-import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import styles from "./tabs-segmented-tab.module.css"
+import { cn, sx } from "../cn"
+import { tabsSegmentedTabStyles } from "./tabs-segmented-tab.stylex"
+
+export { tabsSegmentedTabStyles } from "./tabs-segmented-tab.stylex"
 
 export interface TabsSegmentedTabProps extends Omit<BaseTabs.Tab.Props, "nativeButton"> {
   isNativeButton?: BaseTabs.Tab.Props["nativeButton"]
@@ -10,16 +12,12 @@ export interface TabsSegmentedTabProps extends Omit<BaseTabs.Tab.Props, "nativeB
 export function TabsSegmentedTab(props: TabsSegmentedTabProps): JSX.Element {
   const { className: customClassName = "", isNativeButton = true, ...rest } = props
 
-  const combinedClassName = tabsSegmentedTabVariants({ className: customClassName })
-
   return (
     <BaseTabs.Tab
-      className={combinedClassName}
+      className={cn(sx(tabsSegmentedTabStyles.base), customClassName)}
       data-slot="tabs-segmented-tab"
       nativeButton={isNativeButton}
       {...rest}
     />
   )
 }
-
-export const tabsSegmentedTabVariants = cva(styles.base)

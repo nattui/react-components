@@ -1,7 +1,9 @@
 import { Combobox as BaseCombobox } from "@base-ui/react"
-import { cva, type VariantProps } from "class-variance-authority"
 import type { JSX } from "react"
-import styles from "./combobox-input.module.css"
+import { cn, sx } from "../cn"
+import { comboboxInputStyles } from "./combobox-input.stylex"
+
+export { comboboxInputStyles } from "./combobox-input.stylex"
 
 export interface ComboboxInputProps extends Omit<
   BaseCombobox.Input.Props,
@@ -9,9 +11,11 @@ export interface ComboboxInputProps extends Omit<
 > {
   className?: string
   isDisabled?: BaseCombobox.Input.Props["disabled"]
-  isRounded?: VariantProps<typeof comboboxInputVariants>["isRounded"]
-  size?: VariantProps<typeof comboboxInputVariants>["size"]
+  isRounded?: boolean
+  size?: ComboboxInputSize
 }
+
+export type ComboboxInputSize = 32 | 36 | 40 | 44 | 48
 
 export function ComboboxInput(props: ComboboxInputProps): JSX.Element {
   const {
@@ -22,28 +26,32 @@ export function ComboboxInput(props: ComboboxInputProps): JSX.Element {
     ...rest
   } = props
 
-  const combinedClassName = comboboxInputVariants({
-    className: customClassName,
-    isRounded,
-    size,
-  })
-
   return (
-    <BaseCombobox.InputGroup className={combinedClassName} data-slot="combobox-input-group">
+    <BaseCombobox.InputGroup
+      className={cn(
+        sx(
+          comboboxInputStyles.base,
+          comboboxInputStyles[size],
+          isRounded && comboboxInputStyles.roundedFull,
+        ),
+        customClassName,
+      )}
+      data-slot="combobox-input-group"
+    >
       <BaseCombobox.Input
-        className={styles.input}
+        className={sx(comboboxInputStyles.input)}
         data-slot="combobox-input"
         disabled={isDisabled}
         {...rest}
       />
 
       <BaseCombobox.Trigger
-        className={styles.trigger}
+        className={sx(comboboxInputStyles.trigger)}
         data-slot="combobox-input-trigger"
         disabled={isDisabled}
         tabIndex={-1}
       >
-        <BaseCombobox.Icon className={styles.icon} data-slot="combobox-input-icon">
+        <BaseCombobox.Icon className={sx(comboboxInputStyles.icon)} data-slot="combobox-input-icon">
           {/* chevron-down */}
           <svg height="14" viewBox="0 0 18 18" width="14" xmlns="http://www.w3.org/2000/svg">
             <polyline
@@ -60,18 +68,3 @@ export function ComboboxInput(props: ComboboxInputProps): JSX.Element {
     </BaseCombobox.InputGroup>
   )
 }
-
-export const comboboxInputVariants = cva(styles.base, {
-  variants: {
-    isRounded: {
-      true: styles.rounded_full,
-    },
-    size: {
-      32: styles.size_32,
-      36: styles.size_36,
-      40: styles.size_40,
-      44: styles.size_44,
-      48: styles.size_48,
-    },
-  },
-})

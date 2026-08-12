@@ -1,7 +1,7 @@
 import { Select as BaseSelect } from "@base-ui/react"
-import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import styles from "../picker/picker-group.module.css"
+import { cn, sx } from "../cn"
+import { pickerGroupStyles } from "../picker/picker-group.stylex"
 
 export interface SelectGroupLabelProps extends Omit<BaseSelect.GroupLabel.Props, "className"> {
   className?: string
@@ -10,11 +10,11 @@ export interface SelectGroupLabelProps extends Omit<BaseSelect.GroupLabel.Props,
 export function SelectGroupLabel(props: SelectGroupLabelProps): JSX.Element {
   const { className: customClassName = "", ...rest } = props
 
-  const combinedClassName = selectGroupLabelVariants({ className: customClassName })
-
   return (
-    <BaseSelect.GroupLabel className={combinedClassName} data-slot="select-group-label" {...rest} />
+    <BaseSelect.GroupLabel
+      className={cn(sx(pickerGroupStyles.label), customClassName)}
+      data-slot="select-group-label"
+      {...rest}
+    />
   )
 }
-
-export const selectGroupLabelVariants = cva(styles.label)

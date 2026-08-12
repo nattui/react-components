@@ -1,7 +1,7 @@
 import { Combobox as BaseCombobox } from "@base-ui/react"
-import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import styles from "../picker/picker-popup.module.css"
+import { cn, sx } from "../cn"
+import { pickerPopupStyles } from "../picker/picker-popup.stylex"
 
 export interface ComboboxContentProps
   extends
@@ -45,8 +45,6 @@ export function ComboboxContent(props: ComboboxContentProps): JSX.Element {
     ...rest
   } = props
 
-  const combinedClassName = comboboxContentVariants({ className: customClassName })
-
   return (
     <BaseCombobox.Portal container={container} data-slot="combobox-portal">
       <BaseCombobox.Positioner
@@ -54,7 +52,7 @@ export function ComboboxContent(props: ComboboxContentProps): JSX.Element {
         alignOffset={alignOffset}
         anchor={anchor}
         arrowPadding={arrowPadding}
-        className={styles.positioner}
+        className={sx(pickerPopupStyles.positioner)}
         collisionAvoidance={collisionAvoidance}
         collisionBoundary={collisionBoundary}
         collisionPadding={collisionPadding}
@@ -65,12 +63,14 @@ export function ComboboxContent(props: ComboboxContentProps): JSX.Element {
         sideOffset={sideOffset}
         sticky={sticky}
       >
-        <BaseCombobox.Popup className={combinedClassName} data-slot="combobox-content" {...rest}>
+        <BaseCombobox.Popup
+          className={cn(sx(pickerPopupStyles.base), customClassName)}
+          data-slot="combobox-content"
+          {...rest}
+        >
           {children}
         </BaseCombobox.Popup>
       </BaseCombobox.Positioner>
     </BaseCombobox.Portal>
   )
 }
-
-export const comboboxContentVariants = cva(styles.base)

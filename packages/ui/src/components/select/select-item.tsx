@@ -1,7 +1,9 @@
 import { Select as BaseSelect } from "@base-ui/react"
-import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import styles from "../picker/picker-item.module.css"
+import { cn, sx } from "../cn"
+import { pickerItemStyles } from "../picker/picker-item.stylex"
+
+export { pickerItemStyles as selectItemStyles } from "../picker/picker-item.stylex"
 
 export interface SelectItemProps extends Omit<BaseSelect.Item.Props, "className" | "disabled"> {
   className?: string
@@ -11,20 +13,21 @@ export interface SelectItemProps extends Omit<BaseSelect.Item.Props, "className"
 export function SelectItem(props: SelectItemProps): JSX.Element {
   const { children, className: customClassName = "", isDisabled = false, ...rest } = props
 
-  const combinedClassName = selectItemVariants({ className: customClassName })
-
   return (
     <BaseSelect.Item
-      className={combinedClassName}
+      className={cn(sx(pickerItemStyles.base), customClassName)}
       data-slot="select-item"
       disabled={isDisabled}
       {...rest}
     >
-      <BaseSelect.ItemText className={styles.label} data-slot="select-item-text">
+      <BaseSelect.ItemText className={sx(pickerItemStyles.label)} data-slot="select-item-text">
         {children}
       </BaseSelect.ItemText>
 
-      <BaseSelect.ItemIndicator className={styles.indicator} data-slot="select-item-indicator">
+      <BaseSelect.ItemIndicator
+        className={sx(pickerItemStyles.indicator)}
+        data-slot="select-item-indicator"
+      >
         {/* check */}
         <svg
           height="14px"
@@ -47,5 +50,3 @@ export function SelectItem(props: SelectItemProps): JSX.Element {
     </BaseSelect.Item>
   )
 }
-
-export const selectItemVariants = cva(styles.base)

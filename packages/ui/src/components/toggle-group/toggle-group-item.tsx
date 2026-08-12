@@ -1,7 +1,9 @@
 import { Toggle as BaseToggle } from "@base-ui/react"
-import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import styles from "./toggle-group-item.module.css"
+import { cn, sx } from "../cn"
+import { toggleGroupItemStyles } from "./toggle-group-item.stylex"
+
+export { toggleGroupItemStyles } from "./toggle-group-item.stylex"
 
 export interface ToggleGroupItemProps extends Omit<BaseToggle.Props, "disabled" | "nativeButton"> {
   isDisabled?: BaseToggle.Props["disabled"]
@@ -16,11 +18,9 @@ export function ToggleGroupItem(props: ToggleGroupItemProps): JSX.Element {
     ...rest
   } = props
 
-  const combinedClassName = toggleGroupItemVariants({ className: customClassName })
-
   return (
     <BaseToggle
-      className={combinedClassName}
+      className={cn(sx(toggleGroupItemStyles.base), customClassName)}
       data-slot="toggle-group-item"
       disabled={isDisabled}
       nativeButton={isNativeButton}
@@ -28,5 +28,3 @@ export function ToggleGroupItem(props: ToggleGroupItemProps): JSX.Element {
     />
   )
 }
-
-export const toggleGroupItemVariants = cva(styles.base)

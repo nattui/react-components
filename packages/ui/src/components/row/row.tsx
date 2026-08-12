@@ -1,4 +1,4 @@
-import { cva } from "class-variance-authority"
+import * as stylex from "@stylexjs/stylex"
 import {
   createElement,
   type ComponentProps,
@@ -6,7 +6,10 @@ import {
   type ElementType,
   type JSX,
 } from "react"
-import styles from "./row.module.css"
+import { cn } from "../cn"
+import { rowStyles } from "./row.stylex"
+
+export { rowStyles } from "./row.stylex"
 
 export type RowProps<ComponentType extends ElementType = "div"> = ComponentProps<ComponentType> &
   RowInternalProps
@@ -25,7 +28,7 @@ export function Row(props: RowProps): JSX.Element {
   const {
     alignItems = undefined,
     as = "div",
-    className: customClassName = "",
+    className = "",
     flexWrap = undefined,
     gap = undefined,
     gapX = undefined,
@@ -35,9 +38,7 @@ export function Row(props: RowProps): JSX.Element {
     ...rest
   } = props
 
-  const Component = as
-
-  const combinedClassName = rowVariants({ className: customClassName })
+  const { className: stylexClassName } = stylex.props(rowStyles.base)
 
   const combinedStyle = {
     ...customStyle,
@@ -49,12 +50,10 @@ export function Row(props: RowProps): JSX.Element {
     ...(justifyContent === undefined ? {} : { justifyContent }),
   }
 
-  return createElement(Component, {
-    className: combinedClassName,
+  return createElement(as, {
+    className: cn(stylexClassName, className),
     "data-slot": "row",
     style: combinedStyle,
     ...rest,
   })
 }
-
-export const rowVariants = cva(styles.base)

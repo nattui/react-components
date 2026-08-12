@@ -1,7 +1,7 @@
 import { Combobox as BaseCombobox } from "@base-ui/react"
-import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import styles from "../picker/picker-group.module.css"
+import { cn, sx } from "../cn"
+import { pickerGroupStyles } from "../picker/picker-group.stylex"
 
 export interface ComboboxGroupProps extends Omit<BaseCombobox.Group.Props, "className"> {
   className?: string
@@ -10,9 +10,11 @@ export interface ComboboxGroupProps extends Omit<BaseCombobox.Group.Props, "clas
 export function ComboboxGroup(props: ComboboxGroupProps): JSX.Element {
   const { className: customClassName = "", ...rest } = props
 
-  const combinedClassName = comboboxGroupVariants({ className: customClassName })
-
-  return <BaseCombobox.Group className={combinedClassName} data-slot="combobox-group" {...rest} />
+  return (
+    <BaseCombobox.Group
+      className={cn(sx(pickerGroupStyles.base), customClassName)}
+      data-slot="combobox-group"
+      {...rest}
+    />
+  )
 }
-
-export const comboboxGroupVariants = cva(styles.base)

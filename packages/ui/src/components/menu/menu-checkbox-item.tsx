@@ -1,7 +1,7 @@
 import { Menu as BaseMenu } from "@base-ui/react"
-import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import styles from "../picker/picker-item.module.css"
+import { cn, sx } from "../cn"
+import { pickerItemStyles } from "../picker/picker-item.stylex"
 
 export interface MenuCheckboxItemProps extends Omit<
   BaseMenu.CheckboxItem.Props,
@@ -23,23 +23,21 @@ export function MenuCheckboxItem(props: MenuCheckboxItemProps): JSX.Element {
     ...rest
   } = props
 
-  const combinedClassName = menuCheckboxItemVariants({ className: customClassName })
-
   return (
     <BaseMenu.CheckboxItem
       checked={isChecked}
-      className={combinedClassName}
+      className={cn(sx(pickerItemStyles.base), customClassName)}
       data-slot="menu-checkbox-item"
       defaultChecked={isDefaultChecked}
       disabled={isDisabled}
       {...rest}
     >
-      <span className={styles.label} data-slot="menu-checkbox-item-text">
+      <span className={sx(pickerItemStyles.label)} data-slot="menu-checkbox-item-text">
         {children}
       </span>
 
       <BaseMenu.CheckboxItemIndicator
-        className={styles.indicator}
+        className={sx(pickerItemStyles.indicator)}
         data-slot="menu-checkbox-item-indicator"
       >
         {/* check */}
@@ -64,5 +62,3 @@ export function MenuCheckboxItem(props: MenuCheckboxItemProps): JSX.Element {
     </BaseMenu.CheckboxItem>
   )
 }
-
-export const menuCheckboxItemVariants = cva(styles.base)

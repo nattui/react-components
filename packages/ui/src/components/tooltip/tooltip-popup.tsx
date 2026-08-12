@@ -1,7 +1,9 @@
 import { Tooltip as BaseTooltip } from "@base-ui/react"
-import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import styles from "./tooltip-popup.module.css"
+import { cn, sx } from "../cn"
+import { tooltipPopupStyles } from "./tooltip-popup.stylex"
+
+export { tooltipPopupStyles } from "./tooltip-popup.stylex"
 
 export interface TooltipPopupProps
   extends Pick<BaseTooltip.Positioner.Props, "side" | "sideOffset">, BaseTooltip.Popup.Props {}
@@ -15,12 +17,18 @@ export function TooltipPopup(props: TooltipPopupProps): JSX.Element {
     ...rest
   } = props
 
-  const combinedClassName = tooltipPopupVariants({ className: customClassName })
-
   return (
-    <BaseTooltip.Portal className={styles.portal}>
-      <BaseTooltip.Positioner side={side} sideOffset={sideOffset}>
-        <BaseTooltip.Popup className={combinedClassName} data-slot="tooltip-popup" {...rest}>
+    <BaseTooltip.Portal className={sx(tooltipPopupStyles.portal)}>
+      <BaseTooltip.Positioner
+        className={sx(tooltipPopupStyles.positioner)}
+        side={side}
+        sideOffset={sideOffset}
+      >
+        <BaseTooltip.Popup
+          className={cn(sx(tooltipPopupStyles.base), customClassName)}
+          data-slot="tooltip-popup"
+          {...rest}
+        >
           {children}
         </BaseTooltip.Popup>
         <BaseTooltip.Arrow />
@@ -28,5 +36,3 @@ export function TooltipPopup(props: TooltipPopupProps): JSX.Element {
     </BaseTooltip.Portal>
   )
 }
-
-export const tooltipPopupVariants = cva(styles.base)

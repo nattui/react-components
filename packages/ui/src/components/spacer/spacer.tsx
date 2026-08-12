@@ -1,6 +1,9 @@
-import { cva } from "class-variance-authority"
+import * as stylex from "@stylexjs/stylex"
 import type { ComponentProps, CSSProperties, JSX } from "react"
-import styles from "./spacer.module.css"
+import { cn } from "../cn"
+import { spacerStyles } from "./spacer.stylex"
+
+export { spacerStyles } from "./spacer.stylex"
 
 export interface SpacerProps extends Omit<ComponentProps<"div">, "children"> {
   height?: CSSProperties["height"]
@@ -8,9 +11,8 @@ export interface SpacerProps extends Omit<ComponentProps<"div">, "children"> {
 }
 
 export function Spacer(props: SpacerProps): JSX.Element {
-  const { className: customClassName = "", height, style: customStyle, width, ...rest } = props
-
-  const combinedClassName = spacerVariants({ className: customClassName })
+  const { className = "", height, style: customStyle, width, ...rest } = props
+  const { className: stylexClassName } = stylex.props(spacerStyles.base)
 
   const combinedStyle = {
     ...customStyle,
@@ -18,7 +20,12 @@ export function Spacer(props: SpacerProps): JSX.Element {
     ...(height === undefined ? {} : { height }),
   }
 
-  return <div className={combinedClassName} data-slot="spacer" style={combinedStyle} {...rest} />
+  return (
+    <div
+      className={cn(stylexClassName, className)}
+      data-slot="spacer"
+      style={combinedStyle}
+      {...rest}
+    />
+  )
 }
-
-export const spacerVariants = cva(styles.base)

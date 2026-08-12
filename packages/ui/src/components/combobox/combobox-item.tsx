@@ -1,7 +1,7 @@
 import { Combobox as BaseCombobox } from "@base-ui/react"
-import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import styles from "../picker/picker-item.module.css"
+import { cn, sx } from "../cn"
+import { pickerItemStyles } from "../picker/picker-item.stylex"
 
 export interface ComboboxItemProps extends Omit<BaseCombobox.Item.Props, "className" | "disabled"> {
   className?: string
@@ -11,20 +11,21 @@ export interface ComboboxItemProps extends Omit<BaseCombobox.Item.Props, "classN
 export function ComboboxItem(props: ComboboxItemProps): JSX.Element {
   const { children, className: customClassName = "", isDisabled = false, ...rest } = props
 
-  const combinedClassName = comboboxItemVariants({ className: customClassName })
-
   return (
     <BaseCombobox.Item
-      className={combinedClassName}
+      className={cn(sx(pickerItemStyles.base), customClassName)}
       data-slot="combobox-item"
       disabled={isDisabled}
       {...rest}
     >
-      <span className={styles.label} data-slot="combobox-item-text">
+      <span className={sx(pickerItemStyles.label)} data-slot="combobox-item-text">
         {children}
       </span>
 
-      <BaseCombobox.ItemIndicator className={styles.indicator} data-slot="combobox-item-indicator">
+      <BaseCombobox.ItemIndicator
+        className={sx(pickerItemStyles.indicator)}
+        data-slot="combobox-item-indicator"
+      >
         {/* check */}
         <svg
           height="14px"
@@ -47,5 +48,3 @@ export function ComboboxItem(props: ComboboxItemProps): JSX.Element {
     </BaseCombobox.Item>
   )
 }
-
-export const comboboxItemVariants = cva(styles.base)

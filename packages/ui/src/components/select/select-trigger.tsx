@@ -1,12 +1,16 @@
 import { Select as BaseSelect } from "@base-ui/react"
-import { cva, type VariantProps } from "class-variance-authority"
 import type { JSX } from "react"
-import styles from "../picker/picker-trigger.module.css"
+import { cn, sx } from "../cn"
+import { pickerTriggerStyles } from "../picker/picker-trigger.stylex"
+
+export { pickerTriggerStyles as selectTriggerStyles } from "../picker/picker-trigger.stylex"
 
 export interface SelectTriggerProps extends BaseSelect.Trigger.Props {
-  isRounded?: VariantProps<typeof selectTriggerVariants>["isRounded"]
-  size?: VariantProps<typeof selectTriggerVariants>["size"]
+  isRounded?: boolean
+  size?: SelectTriggerSize
 }
+
+export type SelectTriggerSize = 32 | 36 | 40 | 44 | 48
 
 export function SelectTrigger(props: SelectTriggerProps): JSX.Element {
   const {
@@ -17,17 +21,22 @@ export function SelectTrigger(props: SelectTriggerProps): JSX.Element {
     ...rest
   } = props
 
-  const combinedClassName = selectTriggerVariants({
-    className: customClassName,
-    isRounded,
-    size,
-  })
-
   return (
-    <BaseSelect.Trigger className={combinedClassName} data-slot="select-trigger" {...rest}>
+    <BaseSelect.Trigger
+      className={cn(
+        sx(
+          pickerTriggerStyles.base,
+          pickerTriggerStyles[size],
+          isRounded && pickerTriggerStyles.roundedFull,
+        ),
+        customClassName,
+      )}
+      data-slot="select-trigger"
+      {...rest}
+    >
       {children}
 
-      <BaseSelect.Icon className={styles.icon} data-slot="select-icon">
+      <BaseSelect.Icon className={sx(pickerTriggerStyles.icon)} data-slot="select-icon">
         {/* chevron-down */}
         <svg height="14" viewBox="0 0 18 18" width="14" xmlns="http://www.w3.org/2000/svg">
           <polyline
@@ -43,18 +52,3 @@ export function SelectTrigger(props: SelectTriggerProps): JSX.Element {
     </BaseSelect.Trigger>
   )
 }
-
-export const selectTriggerVariants = cva(styles.base, {
-  variants: {
-    isRounded: {
-      true: styles.rounded_full,
-    },
-    size: {
-      32: styles.size_32,
-      36: styles.size_36,
-      40: styles.size_40,
-      44: styles.size_44,
-      48: styles.size_48,
-    },
-  },
-})

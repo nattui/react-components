@@ -1,19 +1,24 @@
-import { cva, type VariantProps } from "class-variance-authority"
 import type { ComponentProps, JSX, ReactNode } from "react"
+import { cn, sx } from "../cn"
 import { ButtonSpinner } from "./button-spinner"
-import styles from "./button.module.css"
+import { buttonRoundedBaseStyles, buttonRoundedFullStyles, buttonStyles } from "./button.stylex"
+
+export { buttonStyles } from "./button.stylex"
 
 export interface ButtonProps extends Omit<ComponentProps<"button">, "children" | "disabled"> {
   iconEnd?: ReactNode
   iconStart?: ReactNode
   isDisabled?: ComponentProps<"button">["disabled"]
-  isFullWidth?: VariantProps<typeof button>["isFullWidth"]
+  isFullWidth?: boolean
   isLoading?: ComponentProps<"button">["disabled"]
-  isRounded?: VariantProps<typeof button>["isRounded"]
+  isRounded?: boolean
   label?: number | number[] | string | string[]
-  size?: VariantProps<typeof button>["size"]
-  variant?: VariantProps<typeof button>["variant"]
+  size?: ButtonSize
+  variant?: ButtonVariant
 }
+export type ButtonSize = 32 | 36 | 40 | 44 | 48
+
+export type ButtonVariant = "ghost" | "primary" | "secondary"
 
 export function Button(props: ButtonProps): JSX.Element {
   const {
@@ -32,7 +37,7 @@ export function Button(props: ButtonProps): JSX.Element {
 
   return (
     <button
-      className={button({
+      className={getButtonClassName({
         className,
         isDisabled,
         isFullWidth,
@@ -47,40 +52,56 @@ export function Button(props: ButtonProps): JSX.Element {
       {...rest}
     >
       {isLoading && <ButtonSpinner />}
-      {iconStart}
-      {label !== "" && <span>{label}</span>}
-      {iconEnd}
+      {hideWhenLoading(iconStart, isLoading)}
+      {label !== "" && (
+        <span className={sx(isLoading && buttonStyles.loadingContent)}>{label}</span>
+      )}
+      {hideWhenLoading(iconEnd, isLoading)}
     </button>
   )
 }
 
-export const button = cva(styles.base, {
-  variants: {
-    isDisabled: {
-      true: styles.disabled,
-    },
-    isFullWidth: {
-      false: styles.width_base,
-      true: styles.width_full,
-    },
-    isLoading: {
-      true: styles.loading,
-    },
-    isRounded: {
-      false: styles.rounded_base,
-      true: styles.rounded_full,
-    },
-    size: {
-      32: styles.size_32,
-      36: styles.size_36,
-      40: styles.size_40,
-      44: styles.size_44,
-      48: styles.size_48,
-    },
-    variant: {
-      ghost: styles.variant_ghost,
-      primary: styles.variant_primary,
-      secondary: styles.variant_secondary,
-    },
+export function getButtonClassName(
+  options: {
+    className?: string
+    isDisabled?: boolean
+    isFullWidth?: boolean
+    isLoading?: boolean
+    isRounded?: boolean
+    size?: ButtonSize
+    variant?: ButtonVariant
   },
-})
+  ...overrides: Parameters<typeof sx>
+): string {
+  const {
+    className = "",
+    isDisabled = false,
+    isFullWidth = false,
+    isLoading = false,
+    isRounded = false,
+    size = 40,
+    variant = "primary",
+  } = options
+
+  return cn(
+    sx(
+      buttonStyles.base,
+      buttonStyles[size],
+      (isRounded ? buttonRoundedFullStyles : buttonRoundedBaseStyles)[size],
+      buttonStyles[variant],
+      isFullWidth ? buttonStyles.widthFull : buttonStyles.widthBase,
+      isDisabled && buttonStyles.disabled,
+      isLoading && buttonStyles.loading,
+      ...overrides,
+    ),
+    className,
+  )
+}
+
+function hideWhenLoading(node: ReactNode, isLoading: boolean): ReactNode {
+  if (!isLoading || node === "") {
+    return node
+  }
+
+  return <span className={sx(buttonStyles.loadingContent)}>{node}</span>
+}

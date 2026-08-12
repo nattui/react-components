@@ -16,9 +16,19 @@
   --color-success: var(--color-primitive-green-9);
   --color-warning: var(--color-primitive-yellow-9);
   --color-error: var(--color-primitive-red-9);
+
+  --color-tooltip: var(--color-gray-dark-12);
+  --color-tooltip-bg: var(--color-gray-dark-1);
+
+  --opacity-dialog-backdrop: 0.25;
+  --opacity-picker-disabled: 0.5;
 }
 
 .dark {
   --color-bg-shell-outer: var(--color-gray-1);
   --color-bg-shell-inner: var(--color-gray-2);
+  --color-tooltip: var(--color-gray-light-12);
+  --color-tooltip-bg: var(--color-gray-light-1);
+  --opacity-dialog-backdrop: 0.75;
+  --opacity-picker-disabled: 0.25;
 }

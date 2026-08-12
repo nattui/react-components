@@ -1,7 +1,7 @@
 import { Menu as BaseMenu } from "@base-ui/react"
-import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import styles from "../picker/picker-item.module.css"
+import { cn, sx } from "../cn"
+import { pickerItemStyles } from "../picker/picker-item.stylex"
 
 export interface MenuRadioItemProps extends Omit<
   BaseMenu.RadioItem.Props,
@@ -14,21 +14,19 @@ export interface MenuRadioItemProps extends Omit<
 export function MenuRadioItem(props: MenuRadioItemProps): JSX.Element {
   const { children, className: customClassName = "", isDisabled = false, ...rest } = props
 
-  const combinedClassName = menuRadioItemVariants({ className: customClassName })
-
   return (
     <BaseMenu.RadioItem
-      className={combinedClassName}
+      className={cn(sx(pickerItemStyles.base), customClassName)}
       data-slot="menu-radio-item"
       disabled={isDisabled}
       {...rest}
     >
-      <span className={styles.label} data-slot="menu-radio-item-text">
+      <span className={sx(pickerItemStyles.label)} data-slot="menu-radio-item-text">
         {children}
       </span>
 
       <BaseMenu.RadioItemIndicator
-        className={styles.indicator}
+        className={sx(pickerItemStyles.indicator)}
         data-slot="menu-radio-item-indicator"
       >
         {/* check */}
@@ -53,5 +51,3 @@ export function MenuRadioItem(props: MenuRadioItemProps): JSX.Element {
     </BaseMenu.RadioItem>
   )
 }
-
-export const menuRadioItemVariants = cva(styles.base)

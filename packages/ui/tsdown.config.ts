@@ -1,3 +1,4 @@
+import stylex from "@stylexjs/unplugin"
 import { defineConfig } from "tsdown"
 
 export default defineConfig((options) => ({
@@ -21,5 +22,13 @@ export default defineConfig((options) => ({
   format: "esm",
   outDir: "dist/components",
   platform: "browser",
+  plugins: [
+    stylex.rolldown({
+      cssInjectionTarget: (fileName) => fileName.includes("stylex.css"),
+      useCSSLayers: {
+        prefix: "components",
+      },
+    }),
+  ],
   unbundle: !options.watch,
 }))

@@ -1,16 +1,21 @@
 import { OTPField as OTPFieldBase } from "@base-ui/react"
-import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import styles from "./otp-field-input.module.css"
+import { cn, sx } from "../cn"
+import { otpFieldInputStyles } from "./otp-field-input.stylex"
+import { otpFieldStyles } from "./otp-field.stylex"
+
+export { otpFieldInputStyles } from "./otp-field-input.stylex"
 
 interface OTPFieldInputProps extends OTPFieldBase.Input.Props {}
 
 export function OTPFieldInput(props: OTPFieldInputProps): JSX.Element {
   const { className: customClassName = "", ...rest } = props
 
-  const combinedClassName = otpFieldInputVariants({ className: customClassName })
-
-  return <OTPFieldBase.Input className={combinedClassName} data-slot="otp-field-input" {...rest} />
+  return (
+    <OTPFieldBase.Input
+      className={cn(sx(otpFieldInputStyles.base, otpFieldStyles.maskedInput), customClassName)}
+      data-slot="otp-field-input"
+      {...rest}
+    />
+  )
 }
-
-export const otpFieldInputVariants = cva(styles.base)

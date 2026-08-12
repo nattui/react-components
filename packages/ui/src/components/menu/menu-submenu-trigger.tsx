@@ -1,9 +1,11 @@
 import { Menu as BaseMenu } from "@base-ui/react"
-import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import pickerStyles from "../picker/picker-item.module.css"
-import itemStyles from "./menu-item.module.css"
-import styles from "./menu-submenu-trigger.module.css"
+import { cn, sx } from "../cn"
+import { pickerItemStyles } from "../picker/picker-item.stylex"
+import { menuItemStyles } from "./menu-item.stylex"
+import { menuSubmenuTriggerStyles } from "./menu-submenu-trigger.stylex"
+
+export { menuSubmenuTriggerStyles } from "./menu-submenu-trigger.stylex"
 
 export interface MenuSubmenuTriggerProps extends Omit<
   BaseMenu.SubmenuTrigger.Props,
@@ -16,18 +18,19 @@ export interface MenuSubmenuTriggerProps extends Omit<
 export function MenuSubmenuTrigger(props: MenuSubmenuTriggerProps): JSX.Element {
   const { children, className: customClassName = "", isDisabled = false, ...rest } = props
 
-  const combinedClassName = menuSubmenuTriggerVariants({ className: customClassName })
-
   return (
     <BaseMenu.SubmenuTrigger
-      className={combinedClassName}
+      className={cn(
+        sx(pickerItemStyles.base, menuItemStyles.base, menuSubmenuTriggerStyles.base),
+        customClassName,
+      )}
       data-slot="menu-submenu-trigger"
       disabled={isDisabled}
       {...rest}
     >
       {children}
 
-      <span className={styles.icon} data-slot="menu-submenu-trigger-icon">
+      <span className={sx(menuSubmenuTriggerStyles.icon)} data-slot="menu-submenu-trigger-icon">
         {/* chevron-right */}
         <svg
           height="14px"
@@ -50,5 +53,3 @@ export function MenuSubmenuTrigger(props: MenuSubmenuTriggerProps): JSX.Element 
     </BaseMenu.SubmenuTrigger>
   )
 }
-
-export const menuSubmenuTriggerVariants = cva([pickerStyles.base, itemStyles.base, styles.base])

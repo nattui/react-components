@@ -1,6 +1,5 @@
-import type { VariantProps } from "class-variance-authority"
 import type { ComponentProps, ElementType, JSX, ReactNode } from "react"
-import { button } from "../button/button"
+import { getButtonClassName, type ButtonSize, type ButtonVariant } from "../button/button"
 
 export type ButtonLinkProps<ComponentType extends ElementType = "a"> =
   ButtonLinkInternalProps<ComponentType> &
@@ -10,11 +9,11 @@ interface ButtonLinkInternalProps<ComponentType extends ElementType = "a"> {
   as?: ComponentType
   iconEnd?: ReactNode
   iconStart?: ReactNode
-  isFullWidth?: VariantProps<typeof button>["isFullWidth"]
-  isRounded?: VariantProps<typeof button>["isRounded"]
+  isFullWidth?: boolean
+  isRounded?: boolean
   label?: number | number[] | string | string[]
-  size?: VariantProps<typeof button>["size"]
-  variant?: VariantProps<typeof button>["variant"]
+  size?: ButtonSize
+  variant?: ButtonVariant
 }
 
 export function ButtonLink<ComponentType extends ElementType = "a">(
@@ -35,7 +34,7 @@ export function ButtonLink<ComponentType extends ElementType = "a">(
 
   return (
     <Component
-      className={button({
+      className={getButtonClassName({
         className,
         isFullWidth,
         isRounded,

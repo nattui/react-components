@@ -1,7 +1,7 @@
 import { Menu as BaseMenu } from "@base-ui/react"
-import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import styles from "../picker/picker-group.module.css"
+import { cn, sx } from "../cn"
+import { pickerGroupStyles } from "../picker/picker-group.stylex"
 
 export interface MenuRadioGroupProps extends Omit<
   BaseMenu.RadioGroup.Props,
@@ -14,16 +14,12 @@ export interface MenuRadioGroupProps extends Omit<
 export function MenuRadioGroup(props: MenuRadioGroupProps): JSX.Element {
   const { className: customClassName = "", isDisabled = false, ...rest } = props
 
-  const combinedClassName = menuRadioGroupVariants({ className: customClassName })
-
   return (
     <BaseMenu.RadioGroup
-      className={combinedClassName}
+      className={cn(sx(pickerGroupStyles.base), customClassName)}
       data-slot="menu-radio-group"
       disabled={isDisabled}
       {...rest}
     />
   )
 }
-
-export const menuRadioGroupVariants = cva(styles.base)

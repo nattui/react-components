@@ -1,9 +1,11 @@
 import { Menu as BaseMenu } from "@base-ui/react"
-import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import listStyles from "../picker/picker-list.module.css"
-import popupStyles from "../picker/picker-popup.module.css"
-import styles from "./menu-content.module.css"
+import { cn, sx } from "../cn"
+import { pickerListStyles } from "../picker/picker-list.stylex"
+import { pickerPopupStyles } from "../picker/picker-popup.stylex"
+import { menuContentStyles } from "./menu-content.stylex"
+
+export { menuContentStyles } from "./menu-content.stylex"
 
 export interface MenuContentProps
   extends
@@ -49,8 +51,6 @@ export function MenuContent(props: MenuContentProps): JSX.Element {
     ...rest
   } = props
 
-  const combinedClassName = menuContentVariants({ className: customClassName })
-
   return (
     <BaseMenu.Portal container={container} data-slot="menu-portal">
       <BaseMenu.Positioner
@@ -58,7 +58,7 @@ export function MenuContent(props: MenuContentProps): JSX.Element {
         alignOffset={alignOffset}
         anchor={anchor}
         arrowPadding={arrowPadding}
-        className={popupStyles.positioner}
+        className={sx(pickerPopupStyles.positioner)}
         collisionAvoidance={collisionAvoidance}
         collisionBoundary={collisionBoundary}
         collisionPadding={collisionPadding}
@@ -69,8 +69,12 @@ export function MenuContent(props: MenuContentProps): JSX.Element {
         sideOffset={sideOffset}
         sticky={sticky}
       >
-        <BaseMenu.Popup className={combinedClassName} data-slot="menu-content" {...rest}>
-          <div className={listStyles.base} data-slot="menu-list">
+        <BaseMenu.Popup
+          className={cn(sx(pickerPopupStyles.base, menuContentStyles.base), customClassName)}
+          data-slot="menu-content"
+          {...rest}
+        >
+          <div className={sx(pickerListStyles.base)} data-slot="menu-list">
             {children}
           </div>
         </BaseMenu.Popup>
@@ -91,5 +95,3 @@ function getDefaultAlignOffset(data: { side: MenuContentSide }): number {
 function getDefaultSideOffset(data: { side: MenuContentSide }): number {
   return data.side === "bottom" || data.side === "top" ? 6 : -4
 }
-
-export const menuContentVariants = cva([popupStyles.base, styles.base])

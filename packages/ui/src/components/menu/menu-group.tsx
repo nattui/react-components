@@ -1,7 +1,7 @@
 import { Menu as BaseMenu } from "@base-ui/react"
-import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import styles from "../picker/picker-group.module.css"
+import { cn, sx } from "../cn"
+import { pickerGroupStyles } from "../picker/picker-group.stylex"
 
 export interface MenuGroupProps extends Omit<BaseMenu.Group.Props, "className"> {
   className?: string
@@ -10,9 +10,11 @@ export interface MenuGroupProps extends Omit<BaseMenu.Group.Props, "className"> 
 export function MenuGroup(props: MenuGroupProps): JSX.Element {
   const { className: customClassName = "", ...rest } = props
 
-  const combinedClassName = menuGroupVariants({ className: customClassName })
-
-  return <BaseMenu.Group className={combinedClassName} data-slot="menu-group" {...rest} />
+  return (
+    <BaseMenu.Group
+      className={cn(sx(pickerGroupStyles.base), customClassName)}
+      data-slot="menu-group"
+      {...rest}
+    />
+  )
 }
-
-export const menuGroupVariants = cva(styles.base)

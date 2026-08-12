@@ -1,7 +1,9 @@
-import { cva } from "class-variance-authority"
 import type { ComponentProps, JSX } from "react"
-import inputStyles from "../input/input.module.css"
-import styles from "./textarea.module.css"
+import { cn, sx } from "../cn"
+import { inputStyles } from "../input/input.stylex"
+import { textareaStyles } from "./textarea.stylex"
+
+export { textareaStyles } from "./textarea.stylex"
 
 export interface TextareaProps extends Omit<
   ComponentProps<"textarea">,
@@ -30,14 +32,16 @@ export function Textarea(props: TextareaProps): JSX.Element {
     ...rest
   } = props
 
-  const combinedClassName = textareaVariants({
-    className: customClassName,
-    isRounded,
-  })
-
   return (
     <textarea
-      className={combinedClassName}
+      className={cn(
+        sx(
+          inputStyles.base,
+          textareaStyles.base,
+          isRounded ? inputStyles.roundedFull : inputStyles.roundedBase,
+        ),
+        customClassName,
+      )}
       data-is-active={isActive}
       data-is-invalid={isInvalid}
       data-is-valid={isValid}
@@ -50,15 +54,3 @@ export function Textarea(props: TextareaProps): JSX.Element {
     />
   )
 }
-
-export const textareaVariants = cva([inputStyles.base, styles.base], {
-  defaultVariants: {
-    isRounded: false,
-  },
-  variants: {
-    isRounded: {
-      false: inputStyles.rounded_base,
-      true: inputStyles.rounded_full,
-    },
-  },
-})

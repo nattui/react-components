@@ -1,8 +1,8 @@
 import { Menu as BaseMenu } from "@base-ui/react"
-import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import pickerStyles from "../picker/picker-item.module.css"
-import styles from "./menu-item.module.css"
+import { cn, sx } from "../cn"
+import { pickerItemStyles } from "../picker/picker-item.stylex"
+import { menuItemStyles } from "./menu-item.stylex"
 
 export interface MenuLinkItemProps extends Omit<BaseMenu.LinkItem.Props, "className"> {
   className?: string
@@ -11,9 +11,11 @@ export interface MenuLinkItemProps extends Omit<BaseMenu.LinkItem.Props, "classN
 export function MenuLinkItem(props: MenuLinkItemProps): JSX.Element {
   const { className: customClassName = "", ...rest } = props
 
-  const combinedClassName = menuLinkItemVariants({ className: customClassName })
-
-  return <BaseMenu.LinkItem className={combinedClassName} data-slot="menu-link-item" {...rest} />
+  return (
+    <BaseMenu.LinkItem
+      className={cn(sx(pickerItemStyles.base, menuItemStyles.base), customClassName)}
+      data-slot="menu-link-item"
+      {...rest}
+    />
+  )
 }
-
-export const menuLinkItemVariants = cva([pickerStyles.base, styles.base])

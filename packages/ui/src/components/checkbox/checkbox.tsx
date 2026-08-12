@@ -1,23 +1,25 @@
 import { Checkbox as BaseCheckbox } from "@base-ui/react"
-import { cva } from "class-variance-authority"
 import type { ComponentProps, JSX } from "react"
+import { cn, sx } from "../cn"
 import { CheckboxIcon } from "./checkbox-icon"
-import styles from "./checkbox.module.css"
+import { checkboxStyles } from "./checkbox.stylex"
+
+export { checkboxStyles } from "./checkbox.stylex"
 
 export interface CheckboxProps extends ComponentProps<typeof BaseCheckbox.Root> {}
 
 export function Checkbox(props: CheckboxProps): JSX.Element {
   const { children = undefined, className: customClassName = "", ...rest } = props
 
-  const combinedClassName = checkboxVariants({ className: customClassName })
-
   return (
-    <BaseCheckbox.Root className={combinedClassName} data-slot="checkbox" {...rest}>
-      <BaseCheckbox.Indicator className={styles.indicator}>
-        {children ?? <CheckboxIcon className={styles.icon} />}
+    <BaseCheckbox.Root
+      className={cn(sx(checkboxStyles.base), customClassName)}
+      data-slot="checkbox"
+      {...rest}
+    >
+      <BaseCheckbox.Indicator className={sx(checkboxStyles.indicator)}>
+        {children ?? <CheckboxIcon className={sx(checkboxStyles.icon)} />}
       </BaseCheckbox.Indicator>
     </BaseCheckbox.Root>
   )
 }
-
-export const checkboxVariants = cva(styles.base)

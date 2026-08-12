@@ -1,23 +1,21 @@
 import { Tabs as BaseTabs } from "@base-ui/react"
-import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import styles from "./tabs-segmented-indicator.module.css"
+import { cn, sx } from "../cn"
+import { tabsSegmentedIndicatorStyles } from "./tabs-segmented-indicator.stylex"
+
+export { tabsSegmentedIndicatorStyles } from "./tabs-segmented-indicator.stylex"
 
 export interface TabsSegmentedIndicatorProps extends BaseTabs.Indicator.Props {}
 
 export function TabsSegmentedIndicator(props: TabsSegmentedIndicatorProps): JSX.Element {
   const { className: customClassName = "", ...rest } = props
 
-  const combinedClassName = tabsSegmentedIndicatorVariants({ className: customClassName })
-
   return (
     <BaseTabs.Indicator
-      className={combinedClassName}
+      className={cn(sx(tabsSegmentedIndicatorStyles.base), customClassName)}
       data-slot="tabs-segmented-indicator"
       renderBeforeHydration
       {...rest}
     />
   )
 }
-
-export const tabsSegmentedIndicatorVariants = cva(styles.base)

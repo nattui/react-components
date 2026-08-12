@@ -1,8 +1,10 @@
 import { Select as BaseSelect } from "@base-ui/react"
-import { cva } from "class-variance-authority"
 import type { JSX } from "react"
-import listStyles from "../picker/picker-list.module.css"
-import popupStyles from "../picker/picker-popup.module.css"
+import { cn, sx } from "../cn"
+import { pickerListStyles } from "../picker/picker-list.stylex"
+import { pickerPopupStyles } from "../picker/picker-popup.stylex"
+
+export { pickerPopupStyles as selectContentStyles } from "../picker/picker-popup.stylex"
 
 export interface SelectContentProps
   extends
@@ -48,8 +50,6 @@ export function SelectContent(props: SelectContentProps): JSX.Element {
     ...rest
   } = props
 
-  const combinedClassName = selectContentVariants({ className: customClassName })
-
   return (
     <BaseSelect.Portal container={container} data-slot="select-portal">
       <BaseSelect.Positioner
@@ -58,7 +58,7 @@ export function SelectContent(props: SelectContentProps): JSX.Element {
         alignOffset={alignOffset}
         anchor={anchor}
         arrowPadding={arrowPadding}
-        className={popupStyles.positioner}
+        className={sx(pickerPopupStyles.positioner)}
         collisionAvoidance={collisionAvoidance}
         collisionBoundary={collisionBoundary}
         collisionPadding={collisionPadding}
@@ -69,8 +69,12 @@ export function SelectContent(props: SelectContentProps): JSX.Element {
         sideOffset={sideOffset}
         sticky={sticky}
       >
-        <BaseSelect.Popup className={combinedClassName} data-slot="select-content" {...rest}>
-          <BaseSelect.List className={listStyles.base} data-slot="select-list">
+        <BaseSelect.Popup
+          className={cn(sx(pickerPopupStyles.base), customClassName)}
+          data-slot="select-content"
+          {...rest}
+        >
+          <BaseSelect.List className={sx(pickerListStyles.base)} data-slot="select-list">
             {children}
           </BaseSelect.List>
         </BaseSelect.Popup>
@@ -78,5 +82,3 @@ export function SelectContent(props: SelectContentProps): JSX.Element {
     </BaseSelect.Portal>
   )
 }
-
-export const selectContentVariants = cva(popupStyles.base)
