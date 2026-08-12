@@ -1,6 +1,6 @@
-import * as stylex from "@stylexjs/stylex"
+import { create } from "@stylexjs/stylex"
 
-export const comboboxSearchStyles = stylex.create({
+export const comboboxSearchStyles = create({
   base: {
     alignItems: "center",
     backgroundColor: "var(--color-bg-shell-inner)",

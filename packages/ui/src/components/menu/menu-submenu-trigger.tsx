@@ -5,29 +5,32 @@ import { pickerItemStyles } from "../picker/picker-item.stylex"
 import { menuItemStyles } from "./menu-item.stylex"
 import { menuSubmenuTriggerStyles } from "./menu-submenu-trigger.stylex"
 
-export { menuSubmenuTriggerStyles } from "./menu-submenu-trigger.stylex"
-
 export interface MenuSubmenuTriggerProps extends Omit<BaseMenu.SubmenuTrigger.Props, "className"> {
   className?: string
 }
 
 export function MenuSubmenuTrigger(props: MenuSubmenuTriggerProps): JSX.Element {
-  const { children, className: customClassName = "", ...rest } = props
+  const { children, className = "", ...rest } = props
+
+  const combinedClassName = cn(
+    pickerItemStyles.base,
+    menuItemStyles.base,
+    menuSubmenuTriggerStyles.base,
+    className,
+  )
 
   return (
     <BaseMenu.SubmenuTrigger
-      className={cn(
-        pickerItemStyles.base,
-        menuItemStyles.base,
-        menuSubmenuTriggerStyles.base,
-        customClassName,
-      )}
-      data-slot="menu-submenu-trigger"
+      className={combinedClassName}
+      data-component="menu-submenu-trigger"
       {...rest}
     >
       {children}
 
-      <span className={cn(menuSubmenuTriggerStyles.icon)} data-slot="menu-submenu-trigger-icon">
+      <span
+        className={cn(menuSubmenuTriggerStyles.icon)}
+        data-component="menu-submenu-trigger-icon"
+      >
         {/* chevron-right */}
         <svg
           height="14px"

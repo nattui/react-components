@@ -1,9 +1,7 @@
 import { Switch as BaseSwitch } from "@base-ui/react"
 import type { ComponentProps, JSX } from "react"
 import { cn } from "../cn"
-import { switchStyles } from "./switch.stylex"
-
-export { switchStyles } from "./switch.stylex"
+import { switchStylesBy, switchStyles } from "./switch.stylex"
 
 export interface SwitchProps extends Omit<ComponentProps<typeof BaseSwitch.Root>, "nativeButton"> {
   size?: SwitchSize
@@ -12,14 +10,12 @@ export interface SwitchProps extends Omit<ComponentProps<typeof BaseSwitch.Root>
 export type SwitchSize = 18 | 24
 
 export function Switch(props: SwitchProps): JSX.Element {
-  const { className: customClassName = "", size = 24, ...rest } = props
+  const { className = "", size = 24, ...rest } = props
+
+  const combinedClassName = cn(switchStyles.base, switchStylesBy.size[size], className)
 
   return (
-    <BaseSwitch.Root
-      className={cn(switchStyles.base, switchStyles[size], customClassName)}
-      data-slot="switch"
-      {...rest}
-    >
+    <BaseSwitch.Root className={combinedClassName} data-component="switch" {...rest}>
       <BaseSwitch.Thumb className={cn(switchStyles.thumb)} />
     </BaseSwitch.Root>
   )

@@ -3,17 +3,17 @@ import type { JSX } from "react"
 import { cn } from "../cn"
 import { dialogResponsiveBackdropStyles } from "./dialog-responsive-backdrop.stylex"
 
-export { dialogResponsiveBackdropStyles } from "./dialog-responsive-backdrop.stylex"
-
 export interface DialogResponsiveBackdropProps extends BaseDrawer.Backdrop.Props {}
 
 export function DialogResponsiveBackdrop(props: DialogResponsiveBackdropProps): JSX.Element {
-  const { className: customClassName = "", ...rest } = props
+  const { className = "", ...rest } = props
+
+  const combinedClassName = cn(dialogResponsiveBackdropStyles.base, className)
 
   return (
     <BaseDrawer.Backdrop
-      className={cn(dialogResponsiveBackdropStyles.base, customClassName)}
-      data-slot="dialog-responsive-backdrop"
+      className={combinedClassName}
+      data-component="dialog-responsive-backdrop"
       {...rest}
     />
   )

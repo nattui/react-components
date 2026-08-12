@@ -1,6 +1,6 @@
-import * as stylex from "@stylexjs/stylex"
+import { create, when } from "@stylexjs/stylex"
 
-export const otpFieldStyles = stylex.create({
+export const otpFieldStyles = create({
   base: {
     display: "flex",
     flexWrap: "wrap",
@@ -8,10 +8,10 @@ export const otpFieldStyles = stylex.create({
     justifyContent: "center",
     width: "fit-content",
   },
-  maskedInput: {
+  masked_input: {
     fontFamily: {
       default: "inherit",
-      [stylex.when.ancestor('[data-is-masked="true"]')]: "var(--font-code)",
+      [when.ancestor('[data-is-masked="true"]')]: "var(--font-code)",
     },
   },
 })

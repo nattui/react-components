@@ -3,17 +3,17 @@ import type { JSX } from "react"
 import { cn } from "../cn"
 import { tabsSegmentedTabStyles } from "./tabs-segmented-tab.stylex"
 
-export { tabsSegmentedTabStyles } from "./tabs-segmented-tab.stylex"
-
 export interface TabsSegmentedTabProps extends BaseTabs.Tab.Props {}
 
 export function TabsSegmentedTab(props: TabsSegmentedTabProps): JSX.Element {
-  const { className: customClassName = "", ...rest } = props
+  const { className = "", ...rest } = props
+
+  const combinedClassName = cn(tabsSegmentedTabStyles.base, className)
 
   return (
     <BaseTabs.Tab
-      className={cn(tabsSegmentedTabStyles.base, customClassName)}
-      data-slot="tabs-segmented-tab"
+      className={combinedClassName}
+      data-component="tabs-segmented-tab"
       nativeButton
       {...rest}
     />

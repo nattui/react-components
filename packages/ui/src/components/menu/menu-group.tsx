@@ -8,13 +8,9 @@ export interface MenuGroupProps extends Omit<BaseMenu.Group.Props, "className"> 
 }
 
 export function MenuGroup(props: MenuGroupProps): JSX.Element {
-  const { className: customClassName = "", ...rest } = props
+  const { className = "", ...rest } = props
 
-  return (
-    <BaseMenu.Group
-      className={cn(pickerGroupStyles.base, customClassName)}
-      data-slot="menu-group"
-      {...rest}
-    />
-  )
+  const combinedClassName = cn(pickerGroupStyles.base, className)
+
+  return <BaseMenu.Group className={combinedClassName} data-component="menu-group" {...rest} />
 }

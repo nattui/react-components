@@ -1,6 +1,6 @@
-import * as stylex from "@stylexjs/stylex"
+import { create } from "@stylexjs/stylex"
 
-export const pickerListStyles = stylex.create({
+export const pickerListStyles = create({
   base: {
     display: {
       ":is([data-empty])": "none",

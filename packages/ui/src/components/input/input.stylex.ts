@@ -1,36 +1,6 @@
-import * as stylex from "@stylexjs/stylex"
+import { create } from "@stylexjs/stylex"
 
-export const inputStyles = stylex.create({
-  32: {
-    borderRadius: 8,
-    minHeight: 32,
-    paddingBlock: 0,
-    paddingInline: 8,
-  },
-  36: {
-    borderRadius: 9,
-    minHeight: 36,
-    paddingBlock: 0,
-    paddingInline: 10,
-  },
-  40: {
-    borderRadius: 10,
-    minHeight: 40,
-    paddingBlock: 0,
-    paddingInline: 12,
-  },
-  44: {
-    borderRadius: 11,
-    minHeight: 44,
-    paddingBlock: 0,
-    paddingInline: 14,
-  },
-  48: {
-    borderRadius: 12,
-    minHeight: 48,
-    paddingBlock: 0,
-    paddingInline: 16,
-  },
+export const inputStyles = create({
   base: {
     "::placeholder": {
       color: "var(--color-gray-9)",
@@ -72,10 +42,54 @@ export const inputStyles = stylex.create({
     transitionProperty: "box-shadow, opacity",
     width: "100%",
   },
-  roundedBase: {
+  rounded_base: {
     borderRadius: 12,
   },
-  roundedFull: {
+  rounded_full: {
     borderRadius: 9999,
   },
+  size_32: {
+    borderRadius: 8,
+    minHeight: 32,
+    paddingBlock: 0,
+    paddingInline: 8,
+  },
+  size_36: {
+    borderRadius: 9,
+    minHeight: 36,
+    paddingBlock: 0,
+    paddingInline: 10,
+  },
+  size_40: {
+    borderRadius: 10,
+    minHeight: 40,
+    paddingBlock: 0,
+    paddingInline: 12,
+  },
+  size_44: {
+    borderRadius: 11,
+    minHeight: 44,
+    paddingBlock: 0,
+    paddingInline: 14,
+  },
+  size_48: {
+    borderRadius: 12,
+    minHeight: 48,
+    paddingBlock: 0,
+    paddingInline: 16,
+  },
 })
+
+export const inputStylesBy = {
+  rounded: {
+    base: inputStyles.rounded_base,
+    full: inputStyles.rounded_full,
+  },
+  size: {
+    32: inputStyles.size_32,
+    36: inputStyles.size_36,
+    40: inputStyles.size_40,
+    44: inputStyles.size_44,
+    48: inputStyles.size_48,
+  },
+}

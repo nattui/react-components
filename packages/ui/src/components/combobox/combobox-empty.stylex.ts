@@ -1,6 +1,6 @@
-import * as stylex from "@stylexjs/stylex"
+import { create } from "@stylexjs/stylex"
 
-export const comboboxEmptyStyles = stylex.create({
+export const comboboxEmptyStyles = create({
   base: {
     color: {
       ":not(:empty)": "var(--color-text-secondary)",

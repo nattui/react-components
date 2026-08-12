@@ -4,8 +4,6 @@ import { cn } from "../cn"
 import { pickerListStyles } from "../picker/picker-list.stylex"
 import { pickerPopupStyles } from "../picker/picker-popup.stylex"
 
-export { pickerPopupStyles as selectContentStyles } from "../picker/picker-popup.stylex"
-
 export interface SelectContentProps
   extends
     Omit<BaseSelect.Popup.Props, "className">,
@@ -37,7 +35,7 @@ export function SelectContent(props: SelectContentProps): JSX.Element {
     anchor = undefined,
     arrowPadding = undefined,
     children,
-    className: customClassName = "",
+    className = "",
     collisionAvoidance = undefined,
     collisionBoundary = undefined,
     collisionPadding = undefined,
@@ -50,8 +48,10 @@ export function SelectContent(props: SelectContentProps): JSX.Element {
     ...rest
   } = props
 
+  const combinedClassName = cn(pickerPopupStyles.base, className)
+
   return (
-    <BaseSelect.Portal container={container} data-slot="select-portal">
+    <BaseSelect.Portal container={container} data-component="select-portal">
       <BaseSelect.Positioner
         align={align}
         alignItemWithTrigger={alignItemWithTrigger}
@@ -62,19 +62,15 @@ export function SelectContent(props: SelectContentProps): JSX.Element {
         collisionAvoidance={collisionAvoidance}
         collisionBoundary={collisionBoundary}
         collisionPadding={collisionPadding}
-        data-slot="select-positioner"
+        data-component="select-positioner"
         disableAnchorTracking={disableAnchorTracking}
         positionMethod={positionMethod}
         side={side}
         sideOffset={sideOffset}
         sticky={sticky}
       >
-        <BaseSelect.Popup
-          className={cn(pickerPopupStyles.base, customClassName)}
-          data-slot="select-content"
-          {...rest}
-        >
-          <BaseSelect.List className={cn(pickerListStyles.base)} data-slot="select-list">
+        <BaseSelect.Popup className={combinedClassName} data-component="select-content" {...rest}>
+          <BaseSelect.List className={cn(pickerListStyles.base)} data-component="select-list">
             {children}
           </BaseSelect.List>
         </BaseSelect.Popup>

@@ -1,6 +1,6 @@
-import * as stylex from "@stylexjs/stylex"
+import { create } from "@stylexjs/stylex"
 
-export const tabsUnderlineIndicatorStyles = stylex.create({
+export const tabsUnderlineIndicatorStyles = create({
   base: {
     backgroundColor: "var(--color-primary-9)",
     bottom: 0,

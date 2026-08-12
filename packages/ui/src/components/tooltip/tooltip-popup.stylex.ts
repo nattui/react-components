@@ -1,6 +1,6 @@
-import * as stylex from "@stylexjs/stylex"
+import { create } from "@stylexjs/stylex"
 
-export const tooltipPopupStyles = stylex.create({
+export const tooltipPopupStyles = create({
   base: {
     backgroundColor: "var(--color-tooltip-bg)",
     borderRadius: 8,

@@ -1,6 +1,6 @@
-import * as stylex from "@stylexjs/stylex"
+import { create } from "@stylexjs/stylex"
 
-export const tabsSegmentedListStyles = stylex.create({
+export const tabsSegmentedListStyles = create({
   base: {
     backgroundColor: "var(--color-gray-3)",
     borderRadius: 12,

@@ -8,13 +8,11 @@ export interface ComboboxListProps extends Omit<BaseCombobox.List.Props, "classN
 }
 
 export function ComboboxList(props: ComboboxListProps): JSX.Element {
-  const { className: customClassName = "", ...rest } = props
+  const { className = "", ...rest } = props
+
+  const combinedClassName = cn(pickerListStyles.base, className)
 
   return (
-    <BaseCombobox.List
-      className={cn(pickerListStyles.base, customClassName)}
-      data-slot="combobox-list"
-      {...rest}
-    />
+    <BaseCombobox.List className={combinedClassName} data-component="combobox-list" {...rest} />
   )
 }

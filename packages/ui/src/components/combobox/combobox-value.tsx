@@ -3,19 +3,12 @@ import type { JSX, ReactNode } from "react"
 import { cn } from "../cn"
 import { comboboxValueStyles } from "./combobox-value.stylex"
 
-export { comboboxValueStyles } from "./combobox-value.stylex"
-
 export interface ComboboxValueProps extends BaseCombobox.Value.Props {
   className?: string
 }
 
 export function ComboboxValue(props: ComboboxValueProps): JSX.Element {
-  const {
-    children = undefined,
-    className: customClassName = "",
-    placeholder = undefined,
-    ...rest
-  } = props
+  const { children = undefined, className = "", placeholder = undefined, ...rest } = props
 
   /* When nothing is selected, Base UI still calls function children (passing
      null) and ignores the placeholder, so the function may crash or render
@@ -27,8 +20,10 @@ export function ComboboxValue(props: ComboboxValueProps): JSX.Element {
           (selectedValue ?? undefined) === undefined ? placeholder : children(selectedValue)
       : children
 
+  const combinedClassName = cn(comboboxValueStyles.base, className)
+
   return (
-    <div className={cn(comboboxValueStyles.base, customClassName)} data-slot="combobox-value">
+    <div className={combinedClassName} data-component="combobox-value">
       <BaseCombobox.Value placeholder={placeholder} {...rest}>
         {resolvedChildren}
       </BaseCombobox.Value>

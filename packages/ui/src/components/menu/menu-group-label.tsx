@@ -8,12 +8,14 @@ export interface MenuGroupLabelProps extends Omit<BaseMenu.GroupLabel.Props, "cl
 }
 
 export function MenuGroupLabel(props: MenuGroupLabelProps): JSX.Element {
-  const { className: customClassName = "", ...rest } = props
+  const { className = "", ...rest } = props
+
+  const combinedClassName = cn(pickerGroupStyles.label, className)
 
   return (
     <BaseMenu.GroupLabel
-      className={cn(pickerGroupStyles.label, customClassName)}
-      data-slot="menu-group-label"
+      className={combinedClassName}
+      data-component="menu-group-label"
       {...rest}
     />
   )

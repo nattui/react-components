@@ -1,10 +1,10 @@
-import * as stylex from "@stylexjs/stylex"
+import { create, when } from "@stylexjs/stylex"
 
-export const comboboxValueStyles = stylex.create({
+export const comboboxValueStyles = create({
   base: {
     color: {
       default: "var(--color-text-primary)",
-      [stylex.when.ancestor("[data-placeholder]")]: "var(--color-gray-9)",
+      [when.ancestor("[data-placeholder]")]: "var(--color-gray-9)",
     },
     fontSize: 14,
     fontWeight: 450,

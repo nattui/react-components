@@ -2,7 +2,7 @@
 
 import type { ComponentProps, ElementType, JSX, ReactNode } from "react"
 import type { ButtonSize, ButtonVariant } from "../button/button"
-import { buttonStyles, buttonStylesBy } from "../button/button.stylex"
+import { buttonStylesBy, buttonStyles } from "../button/button.stylex"
 import { cn } from "../cn"
 
 export type ButtonLinkProps<ComponentType extends ElementType = "a"> =
@@ -14,7 +14,7 @@ interface ButtonLinkInternalProps<ComponentType extends ElementType = "a"> {
   fullWidth?: boolean
   iconEnd?: ReactNode
   iconStart?: ReactNode
-  label?: number | number[] | string | string[]
+  label?: string
   rounded?: boolean
   size?: ButtonSize
   variant?: ButtonVariant
@@ -26,11 +26,11 @@ export function ButtonLink<ComponentType extends ElementType = "a">(
   const {
     as: Component = "a",
     className = "",
-    iconStart = "",
-    iconEnd = "",
     fullWidth = false,
-    rounded = false,
+    iconEnd = "",
+    iconStart = "",
     label = "",
+    rounded = false,
     size = 40,
     variant = "primary",
     ...rest
@@ -46,9 +46,9 @@ export function ButtonLink<ComponentType extends ElementType = "a">(
   )
 
   return (
-    <Component className={combinedClassName} data-slot="button-link" {...rest}>
+    <Component className={combinedClassName} data-component="button-link" {...rest}>
       {iconStart}
-      {label !== "" && <span>{label}</span>}
+      {label}
       {iconEnd}
     </Component>
   )

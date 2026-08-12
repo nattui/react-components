@@ -6,5 +6,5 @@ export interface MenuProps<Payload = unknown> extends BaseMenu.Root.Props<Payloa
 export function Menu<Payload = unknown>(props: MenuProps<Payload>): JSX.Element {
   const { ...rest } = props
 
-  return <BaseMenu.Root data-slot="menu" {...rest} />
+  return <BaseMenu.Root data-component="menu" {...rest} />
 }

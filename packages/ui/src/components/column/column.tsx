@@ -1,4 +1,3 @@
-import * as stylex from "@stylexjs/stylex"
 import {
   createElement,
   type ComponentProps,
@@ -8,8 +7,6 @@ import {
 } from "react"
 import { cn } from "../cn"
 import { columnStyles } from "./column.stylex"
-
-export { columnStyles } from "./column.stylex"
 
 export type ColumnProps<ComponentType extends ElementType = "div"> = ColumnInternalProps &
   ComponentProps<ComponentType>
@@ -38,7 +35,7 @@ export function Column(props: ColumnProps): JSX.Element {
     ...rest
   } = props
 
-  const { className: stylexClassName } = stylex.props(columnStyles.base)
+  const combinedClassName = cn(columnStyles.base, className)
 
   const combinedStyle = {
     ...customStyle,
@@ -51,8 +48,8 @@ export function Column(props: ColumnProps): JSX.Element {
   }
 
   return createElement(as, {
-    className: cn(stylexClassName, className),
-    "data-slot": "column",
+    className: combinedClassName,
+    "data-component": "column",
     style: combinedStyle,
     ...rest,
   })

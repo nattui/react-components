@@ -8,21 +8,19 @@ export interface MenuRadioItemProps extends Omit<BaseMenu.RadioItem.Props, "clas
 }
 
 export function MenuRadioItem(props: MenuRadioItemProps): JSX.Element {
-  const { children, className: customClassName = "", ...rest } = props
+  const { children, className = "", ...rest } = props
+
+  const combinedClassName = cn(pickerItemStyles.base, className)
 
   return (
-    <BaseMenu.RadioItem
-      className={cn(pickerItemStyles.base, customClassName)}
-      data-slot="menu-radio-item"
-      {...rest}
-    >
-      <span className={cn(pickerItemStyles.label)} data-slot="menu-radio-item-text">
+    <BaseMenu.RadioItem className={combinedClassName} data-component="menu-radio-item" {...rest}>
+      <span className={cn(pickerItemStyles.label)} data-component="menu-radio-item-text">
         {children}
       </span>
 
       <BaseMenu.RadioItemIndicator
         className={cn(pickerItemStyles.indicator)}
-        data-slot="menu-radio-item-indicator"
+        data-component="menu-radio-item-indicator"
       >
         {/* check */}
         <svg

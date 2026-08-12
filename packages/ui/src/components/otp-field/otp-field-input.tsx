@@ -4,18 +4,14 @@ import { cn } from "../cn"
 import { otpFieldInputStyles } from "./otp-field-input.stylex"
 import { otpFieldStyles } from "./otp-field.stylex"
 
-export { otpFieldInputStyles } from "./otp-field-input.stylex"
-
-interface OTPFieldInputProps extends OTPFieldBase.Input.Props {}
+export interface OTPFieldInputProps extends OTPFieldBase.Input.Props {}
 
 export function OTPFieldInput(props: OTPFieldInputProps): JSX.Element {
-  const { className: customClassName = "", ...rest } = props
+  const { className = "", ...rest } = props
+
+  const combinedClassName = cn(otpFieldInputStyles.base, otpFieldStyles.masked_input, className)
 
   return (
-    <OTPFieldBase.Input
-      className={cn(otpFieldInputStyles.base, otpFieldStyles.maskedInput, customClassName)}
-      data-slot="otp-field-input"
-      {...rest}
-    />
+    <OTPFieldBase.Input className={combinedClassName} data-component="otp-field-input" {...rest} />
   )
 }

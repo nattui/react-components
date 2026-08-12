@@ -1,6 +1,6 @@
-import * as stylex from "@stylexjs/stylex"
+import { create } from "@stylexjs/stylex"
 
-export const selectValueStyles = stylex.create({
+export const selectValueStyles = create({
   base: {
     color: {
       ":is([data-placeholder])": "var(--color-gray-9)",

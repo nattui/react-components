@@ -8,13 +8,11 @@ export interface ComboboxGroupProps extends Omit<BaseCombobox.Group.Props, "clas
 }
 
 export function ComboboxGroup(props: ComboboxGroupProps): JSX.Element {
-  const { className: customClassName = "", ...rest } = props
+  const { className = "", ...rest } = props
+
+  const combinedClassName = cn(pickerGroupStyles.base, className)
 
   return (
-    <BaseCombobox.Group
-      className={cn(pickerGroupStyles.base, customClassName)}
-      data-slot="combobox-group"
-      {...rest}
-    />
+    <BaseCombobox.Group className={combinedClassName} data-component="combobox-group" {...rest} />
   )
 }

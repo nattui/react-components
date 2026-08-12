@@ -1,6 +1,6 @@
-import * as stylex from "@stylexjs/stylex"
+import { create } from "@stylexjs/stylex"
 
-export const toggleGroupItemStyles = stylex.create({
+export const toggleGroupItemStyles = create({
   base: {
     alignItems: "center",
     backgroundColor: {

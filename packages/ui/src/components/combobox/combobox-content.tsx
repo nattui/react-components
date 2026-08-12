@@ -32,7 +32,7 @@ export function ComboboxContent(props: ComboboxContentProps): JSX.Element {
     anchor = undefined,
     arrowPadding = undefined,
     children,
-    className: customClassName = "",
+    className = "",
     collisionAvoidance = undefined,
     collisionBoundary = undefined,
     collisionPadding = undefined,
@@ -45,8 +45,10 @@ export function ComboboxContent(props: ComboboxContentProps): JSX.Element {
     ...rest
   } = props
 
+  const combinedClassName = cn(pickerPopupStyles.base, className)
+
   return (
-    <BaseCombobox.Portal container={container} data-slot="combobox-portal">
+    <BaseCombobox.Portal container={container} data-component="combobox-portal">
       <BaseCombobox.Positioner
         align={align}
         alignOffset={alignOffset}
@@ -56,7 +58,7 @@ export function ComboboxContent(props: ComboboxContentProps): JSX.Element {
         collisionAvoidance={collisionAvoidance}
         collisionBoundary={collisionBoundary}
         collisionPadding={collisionPadding}
-        data-slot="combobox-positioner"
+        data-component="combobox-positioner"
         disableAnchorTracking={disableAnchorTracking}
         positionMethod={positionMethod}
         side={side}
@@ -64,8 +66,8 @@ export function ComboboxContent(props: ComboboxContentProps): JSX.Element {
         sticky={sticky}
       >
         <BaseCombobox.Popup
-          className={cn(pickerPopupStyles.base, customClassName)}
-          data-slot="combobox-content"
+          className={combinedClassName}
+          data-component="combobox-content"
           {...rest}
         >
           {children}

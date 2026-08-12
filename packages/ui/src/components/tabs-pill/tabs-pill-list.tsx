@@ -4,19 +4,15 @@ import { cn } from "../cn"
 import { TabsPillIndicator } from "./tabs-pill-indicator"
 import { tabsPillListStyles } from "./tabs-pill-list.stylex"
 
-export { tabsPillListStyles } from "./tabs-pill-list.stylex"
-
 export interface TabsPillListProps extends BaseTabs.List.Props {}
 
 export function TabsPillList(props: TabsPillListProps): JSX.Element {
-  const { className: customClassName = "", children = undefined, ...rest } = props
+  const { className = "", children = undefined, ...rest } = props
+
+  const combinedClassName = cn(tabsPillListStyles.base, className)
 
   return (
-    <BaseTabs.List
-      className={cn(tabsPillListStyles.base, customClassName)}
-      data-slot="tabs-pill-list"
-      {...rest}
-    >
+    <BaseTabs.List className={combinedClassName} data-component="tabs-pill-list" {...rest}>
       {children}
       <TabsPillIndicator />
     </BaseTabs.List>

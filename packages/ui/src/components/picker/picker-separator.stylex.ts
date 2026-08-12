@@ -1,6 +1,6 @@
-import * as stylex from "@stylexjs/stylex"
+import { create } from "@stylexjs/stylex"
 
-export const pickerSeparatorStyles = stylex.create({
+export const pickerSeparatorStyles = create({
   base: {
     backgroundColor: "var(--color-border)",
     flexShrink: 0,

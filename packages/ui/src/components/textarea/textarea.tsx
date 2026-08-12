@@ -1,9 +1,9 @@
+// oxlint-disable better-tailwindcss/no-unknown-classes
+
 import type { ComponentProps, JSX } from "react"
 import { cn } from "../cn"
-import { inputStyles } from "../input/input.stylex"
+import { inputStylesBy, inputStyles } from "../input/input.stylex"
 import { textareaStyles } from "./textarea.stylex"
-
-export { textareaStyles } from "./textarea.stylex"
 
 export interface TextareaProps extends Omit<ComponentProps<"textarea">, "aria-pressed"> {
   active?: boolean
@@ -14,7 +14,7 @@ export interface TextareaProps extends Omit<ComponentProps<"textarea">, "aria-pr
 
 export function Textarea(props: TextareaProps): JSX.Element {
   const {
-    className: customClassName = "",
+    className = "",
     active = false,
     invalid = undefined,
     rounded = false,
@@ -22,18 +22,20 @@ export function Textarea(props: TextareaProps): JSX.Element {
     ...rest
   } = props
 
+  const combinedClassName = cn(
+    inputStyles.base,
+    textareaStyles.base,
+    inputStylesBy.rounded[rounded ? "full" : "base"],
+    className,
+  )
+
   return (
     <textarea
-      className={cn(
-        inputStyles.base,
-        textareaStyles.base,
-        rounded ? inputStyles.roundedFull : inputStyles.roundedBase,
-        customClassName,
-      )}
+      className={combinedClassName}
+      data-component="textarea"
       data-is-active={active}
       data-is-invalid={invalid}
       data-is-valid={valid}
-      data-slot="textarea"
       rows={2}
       {...rest}
     />

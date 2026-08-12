@@ -1,12 +1,12 @@
-import * as stylex from "@stylexjs/stylex"
+import { create, keyframes } from "@stylexjs/stylex"
 
-const spinner = stylex.keyframes({
+const spinner = keyframes({
   to: {
     rotate: "1turn",
   },
 })
 
-export const buttonSpinnerStyles = stylex.create({
+export const buttonSpinnerStyles = create({
   1: {
     opacity: 1,
     rotate: "0deg",

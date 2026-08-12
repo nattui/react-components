@@ -9,7 +9,7 @@ export function CheckboxIcon(props: CheckboxIconProps): JSX.Element {
 
   return (
     <svg
-      data-slot="checkbox-icon"
+      data-component="checkbox-icon"
       fill="none"
       height="24"
       viewBox="0 0 24 24"
@@ -18,7 +18,7 @@ export function CheckboxIcon(props: CheckboxIconProps): JSX.Element {
       {...rest}
     >
       <path
-        className={cn(checkboxStyles.iconPath)}
+        className={cn(checkboxStyles.icon_path)}
         d="M5 13.875L9.2 18L19 7"
         strokeLinecap="round"
         strokeLinejoin="round"

@@ -1,6 +1,6 @@
-import * as stylex from "@stylexjs/stylex"
+import { create } from "@stylexjs/stylex"
 
-export const tabsUnderlineTabStyles = stylex.create({
+export const tabsUnderlineTabStyles = create({
   base: {
     alignItems: "center",
     borderRadius: 8,

@@ -8,12 +8,14 @@ export interface MenuRadioGroupProps extends Omit<BaseMenu.RadioGroup.Props, "cl
 }
 
 export function MenuRadioGroup(props: MenuRadioGroupProps): JSX.Element {
-  const { className: customClassName = "", ...rest } = props
+  const { className = "", ...rest } = props
+
+  const combinedClassName = cn(pickerGroupStyles.base, className)
 
   return (
     <BaseMenu.RadioGroup
-      className={cn(pickerGroupStyles.base, customClassName)}
-      data-slot="menu-radio-group"
+      className={combinedClassName}
+      data-component="menu-radio-group"
       {...rest}
     />
   )

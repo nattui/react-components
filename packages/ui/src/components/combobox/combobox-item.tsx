@@ -8,21 +8,19 @@ export interface ComboboxItemProps extends Omit<BaseCombobox.Item.Props, "classN
 }
 
 export function ComboboxItem(props: ComboboxItemProps): JSX.Element {
-  const { children, className: customClassName = "", ...rest } = props
+  const { children, className = "", ...rest } = props
+
+  const combinedClassName = cn(pickerItemStyles.base, className)
 
   return (
-    <BaseCombobox.Item
-      className={cn(pickerItemStyles.base, customClassName)}
-      data-slot="combobox-item"
-      {...rest}
-    >
-      <span className={cn(pickerItemStyles.label)} data-slot="combobox-item-text">
+    <BaseCombobox.Item className={combinedClassName} data-component="combobox-item" {...rest}>
+      <span className={cn(pickerItemStyles.label)} data-component="combobox-item-text">
         {children}
       </span>
 
       <BaseCombobox.ItemIndicator
         className={cn(pickerItemStyles.indicator)}
-        data-slot="combobox-item-indicator"
+        data-component="combobox-item-indicator"
       >
         {/* check */}
         <svg

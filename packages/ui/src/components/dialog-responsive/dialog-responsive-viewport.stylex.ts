@@ -1,6 +1,6 @@
-import * as stylex from "@stylexjs/stylex"
+import { create } from "@stylexjs/stylex"
 
-export const dialogResponsiveViewportStyles = stylex.create({
+export const dialogResponsiveViewportStyles = create({
   base: {
     alignItems: {
       "@media (max-width: 640px)": "safe flex-end",

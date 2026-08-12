@@ -1,6 +1,6 @@
-import * as stylex from "@stylexjs/stylex"
+import { create } from "@stylexjs/stylex"
 
-export const dialogResponsivePortalStyles = stylex.create({
+export const dialogResponsivePortalStyles = create({
   base: {
     isolation: "isolate",
     position: "relative",

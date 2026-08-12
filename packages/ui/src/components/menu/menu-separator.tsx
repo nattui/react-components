@@ -8,13 +8,11 @@ export interface MenuSeparatorProps extends Omit<BaseMenu.Separator.Props, "clas
 }
 
 export function MenuSeparator(props: MenuSeparatorProps): JSX.Element {
-  const { className: customClassName = "", ...rest } = props
+  const { className = "", ...rest } = props
+
+  const combinedClassName = cn(pickerSeparatorStyles.base, className)
 
   return (
-    <BaseMenu.Separator
-      className={cn(pickerSeparatorStyles.base, customClassName)}
-      data-slot="menu-separator"
-      {...rest}
-    />
+    <BaseMenu.Separator className={combinedClassName} data-component="menu-separator" {...rest} />
   )
 }

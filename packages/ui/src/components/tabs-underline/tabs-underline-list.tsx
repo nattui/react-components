@@ -4,19 +4,15 @@ import { cn } from "../cn"
 import { TabsUnderlineIndicator } from "./tabs-underline-indicator"
 import { tabsUnderlineListStyles } from "./tabs-underline-list.stylex"
 
-export { tabsUnderlineListStyles } from "./tabs-underline-list.stylex"
-
 export interface TabsUnderlineListProps extends BaseTabs.List.Props {}
 
 export function TabsUnderlineList(props: TabsUnderlineListProps): JSX.Element {
-  const { className: customClassName = "", children = undefined, ...rest } = props
+  const { className = "", children = undefined, ...rest } = props
+
+  const combinedClassName = cn(tabsUnderlineListStyles.base, className)
 
   return (
-    <BaseTabs.List
-      className={cn(tabsUnderlineListStyles.base, customClassName)}
-      data-slot="tabs-underline-list"
-      {...rest}
-    >
+    <BaseTabs.List className={combinedClassName} data-component="tabs-underline-list" {...rest}>
       {children}
       <TabsUnderlineIndicator />
     </BaseTabs.List>

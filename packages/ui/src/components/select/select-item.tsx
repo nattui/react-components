@@ -3,28 +3,24 @@ import type { JSX } from "react"
 import { cn } from "../cn"
 import { pickerItemStyles } from "../picker/picker-item.stylex"
 
-export { pickerItemStyles as selectItemStyles } from "../picker/picker-item.stylex"
-
 export interface SelectItemProps extends Omit<BaseSelect.Item.Props, "className"> {
   className?: string
 }
 
 export function SelectItem(props: SelectItemProps): JSX.Element {
-  const { children, className: customClassName = "", ...rest } = props
+  const { children, className = "", ...rest } = props
+
+  const combinedClassName = cn(pickerItemStyles.base, className)
 
   return (
-    <BaseSelect.Item
-      className={cn(pickerItemStyles.base, customClassName)}
-      data-slot="select-item"
-      {...rest}
-    >
-      <BaseSelect.ItemText className={cn(pickerItemStyles.label)} data-slot="select-item-text">
+    <BaseSelect.Item className={combinedClassName} data-component="select-item" {...rest}>
+      <BaseSelect.ItemText className={cn(pickerItemStyles.label)} data-component="select-item-text">
         {children}
       </BaseSelect.ItemText>
 
       <BaseSelect.ItemIndicator
         className={cn(pickerItemStyles.indicator)}
-        data-slot="select-item-indicator"
+        data-component="select-item-indicator"
       >
         {/* check */}
         <svg

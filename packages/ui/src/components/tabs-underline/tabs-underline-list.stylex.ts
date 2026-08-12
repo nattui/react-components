@@ -1,6 +1,6 @@
-import * as stylex from "@stylexjs/stylex"
+import { create } from "@stylexjs/stylex"
 
-export const tabsUnderlineListStyles = stylex.create({
+export const tabsUnderlineListStyles = create({
   base: {
     borderBottomColor: "var(--color-gray-4)",
     borderBottomStyle: "solid",

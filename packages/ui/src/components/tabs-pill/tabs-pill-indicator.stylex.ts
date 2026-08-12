@@ -1,6 +1,6 @@
-import * as stylex from "@stylexjs/stylex"
+import { create } from "@stylexjs/stylex"
 
-export const tabsPillIndicatorStyles = stylex.create({
+export const tabsPillIndicatorStyles = create({
   base: {
     backgroundColor: "var(--color-gray-12)",
     borderRadius: 12,

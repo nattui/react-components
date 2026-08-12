@@ -8,12 +8,14 @@ export interface ComboboxSeparatorProps extends Omit<BaseCombobox.Separator.Prop
 }
 
 export function ComboboxSeparator(props: ComboboxSeparatorProps): JSX.Element {
-  const { className: customClassName = "", ...rest } = props
+  const { className = "", ...rest } = props
+
+  const combinedClassName = cn(pickerSeparatorStyles.base, className)
 
   return (
     <BaseCombobox.Separator
-      className={cn(pickerSeparatorStyles.base, customClassName)}
-      data-slot="combobox-separator"
+      className={combinedClassName}
+      data-component="combobox-separator"
       {...rest}
     />
   )

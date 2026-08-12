@@ -9,5 +9,5 @@ export function Select<Value, Multiple extends boolean | undefined = false>(
 ): JSX.Element {
   const { ...rest } = props
 
-  return <BaseSelect.Root data-slot="select" {...rest} />
+  return <BaseSelect.Root data-component="select" {...rest} />
 }

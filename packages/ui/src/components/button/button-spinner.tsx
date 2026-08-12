@@ -2,8 +2,6 @@ import type { CSSProperties, JSX } from "react"
 import { cn } from "../cn"
 import { buttonSpinnerStyles } from "./button-spinner.stylex"
 
-export { buttonSpinnerStyles } from "./button-spinner.stylex"
-
 const SIZE = 18
 
 const BAR_STYLES = [
@@ -25,7 +23,7 @@ export function ButtonSpinner(): JSX.Element {
   return (
     <div
       className={cn(buttonSpinnerStyles.base)}
-      data-slot="button-spinner"
+      data-component="button-spinner"
       style={{ "--size": `${SIZE}px` } as CSSProperties}
     >
       {BAR_STYLES.map((barStyle, index) => (

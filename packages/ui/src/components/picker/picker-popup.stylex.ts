@@ -1,6 +1,6 @@
-import * as stylex from "@stylexjs/stylex"
+import { create } from "@stylexjs/stylex"
 
-export const pickerPopupStyles = stylex.create({
+export const pickerPopupStyles = create({
   base: {
     backgroundColor: "var(--color-bg-shell-inner)",
     borderColor: "var(--color-border)",

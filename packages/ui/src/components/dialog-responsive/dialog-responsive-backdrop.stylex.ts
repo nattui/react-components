@@ -1,6 +1,6 @@
-import * as stylex from "@stylexjs/stylex"
+import { create } from "@stylexjs/stylex"
 
-export const dialogResponsiveBackdropStyles = stylex.create({
+export const dialogResponsiveBackdropStyles = create({
   base: {
     "--backdrop-opacity": "var(--opacity-dialog-backdrop)",
     backgroundColor: "black",

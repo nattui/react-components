@@ -8,12 +8,14 @@ export interface SelectGroupLabelProps extends Omit<BaseSelect.GroupLabel.Props,
 }
 
 export function SelectGroupLabel(props: SelectGroupLabelProps): JSX.Element {
-  const { className: customClassName = "", ...rest } = props
+  const { className = "", ...rest } = props
+
+  const combinedClassName = cn(pickerGroupStyles.label, className)
 
   return (
     <BaseSelect.GroupLabel
-      className={cn(pickerGroupStyles.label, customClassName)}
-      data-slot="select-group-label"
+      className={combinedClassName}
+      data-component="select-group-label"
       {...rest}
     />
   )

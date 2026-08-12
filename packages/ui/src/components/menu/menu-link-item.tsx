@@ -9,13 +9,11 @@ export interface MenuLinkItemProps extends Omit<BaseMenu.LinkItem.Props, "classN
 }
 
 export function MenuLinkItem(props: MenuLinkItemProps): JSX.Element {
-  const { className: customClassName = "", ...rest } = props
+  const { className = "", ...rest } = props
+
+  const combinedClassName = cn(pickerItemStyles.base, menuItemStyles.base, className)
 
   return (
-    <BaseMenu.LinkItem
-      className={cn(pickerItemStyles.base, menuItemStyles.base, customClassName)}
-      data-slot="menu-link-item"
-      {...rest}
-    />
+    <BaseMenu.LinkItem className={combinedClassName} data-component="menu-link-item" {...rest} />
   )
 }

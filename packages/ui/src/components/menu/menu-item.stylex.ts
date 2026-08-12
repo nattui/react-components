@@ -1,6 +1,6 @@
-import * as stylex from "@stylexjs/stylex"
+import { create } from "@stylexjs/stylex"
 
-export const menuItemStyles = stylex.create({
+export const menuItemStyles = create({
   base: {
     color: "var(--color-text-primary)",
     fontSize: 14,

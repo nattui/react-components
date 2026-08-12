@@ -1,6 +1,6 @@
-import * as stylex from "@stylexjs/stylex"
+import { create } from "@stylexjs/stylex"
 
-export const textareaStyles = stylex.create({
+export const textareaStyles = create({
   base: {
     height: "auto",
     maxHeight: "none",

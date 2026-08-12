@@ -7,20 +7,20 @@ import { dialogResponsivePopupStyles } from "./dialog-responsive-popup.stylex"
 import { DialogResponsivePortal } from "./dialog-responsive-portal"
 import { DialogResponsiveViewport } from "./dialog-responsive-viewport"
 
-export { dialogResponsivePopupStyles } from "./dialog-responsive-popup.stylex"
-
 export interface DialogResponsivePopupProps extends BaseDrawer.Popup.Props {}
 
 export function DialogResponsivePopup(props: DialogResponsivePopupProps): JSX.Element {
-  const { children, className: customClassName = "", ...rest } = props
+  const { children, className = "", ...rest } = props
+
+  const combinedClassName = cn(dialogResponsivePopupStyles.base, className)
 
   return (
     <DialogResponsivePortal>
       <DialogResponsiveBackdrop />
       <DialogResponsiveViewport>
         <BaseDrawer.Popup
-          className={cn(dialogResponsivePopupStyles.base, customClassName)}
-          data-slot="dialog-responsive-popup"
+          className={combinedClassName}
+          data-component="dialog-responsive-popup"
           {...rest}
         >
           <DialogResponsiveBar />

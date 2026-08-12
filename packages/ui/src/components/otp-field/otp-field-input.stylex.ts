@@ -1,6 +1,6 @@
-import * as stylex from "@stylexjs/stylex"
+import { create } from "@stylexjs/stylex"
 
-export const otpFieldInputStyles = stylex.create({
+export const otpFieldInputStyles = create({
   base: {
     backgroundColor: "var(--color-gray-3)",
     borderRadius: 14,

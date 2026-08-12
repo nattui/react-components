@@ -11,5 +11,5 @@ export function Combobox<Value, Multiple extends boolean | undefined = false>(
 ): JSX.Element {
   const { ...rest } = props
 
-  return <BaseCombobox.Root data-slot="combobox" {...rest} />
+  return <BaseCombobox.Root data-component="combobox" {...rest} />
 }

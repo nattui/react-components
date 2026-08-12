@@ -8,12 +8,14 @@ export interface ComboboxGroupLabelProps extends Omit<BaseCombobox.GroupLabel.Pr
 }
 
 export function ComboboxGroupLabel(props: ComboboxGroupLabelProps): JSX.Element {
-  const { className: customClassName = "", ...rest } = props
+  const { className = "", ...rest } = props
+
+  const combinedClassName = cn(pickerGroupStyles.label, className)
 
   return (
     <BaseCombobox.GroupLabel
-      className={cn(pickerGroupStyles.label, customClassName)}
-      data-slot="combobox-group-label"
+      className={combinedClassName}
+      data-component="combobox-group-label"
       {...rest}
     />
   )

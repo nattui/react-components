@@ -1,6 +1,6 @@
-import * as stylex from "@stylexjs/stylex"
+import { create } from "@stylexjs/stylex"
 
-export const rowStyles = stylex.create({
+export const rowStyles = create({
   base: {
     display: "flex",
     flexDirection: "row",

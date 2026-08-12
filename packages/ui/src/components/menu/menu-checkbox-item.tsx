@@ -8,21 +8,23 @@ export interface MenuCheckboxItemProps extends Omit<BaseMenu.CheckboxItem.Props,
 }
 
 export function MenuCheckboxItem(props: MenuCheckboxItemProps): JSX.Element {
-  const { children, className: customClassName = "", ...rest } = props
+  const { children, className = "", ...rest } = props
+
+  const combinedClassName = cn(pickerItemStyles.base, className)
 
   return (
     <BaseMenu.CheckboxItem
-      className={cn(pickerItemStyles.base, customClassName)}
-      data-slot="menu-checkbox-item"
+      className={combinedClassName}
+      data-component="menu-checkbox-item"
       {...rest}
     >
-      <span className={cn(pickerItemStyles.label)} data-slot="menu-checkbox-item-text">
+      <span className={cn(pickerItemStyles.label)} data-component="menu-checkbox-item-text">
         {children}
       </span>
 
       <BaseMenu.CheckboxItemIndicator
         className={cn(pickerItemStyles.indicator)}
-        data-slot="menu-checkbox-item-indicator"
+        data-component="menu-checkbox-item-indicator"
       >
         {/* check */}
         <svg

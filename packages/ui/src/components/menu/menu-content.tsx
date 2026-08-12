@@ -5,8 +5,6 @@ import { pickerListStyles } from "../picker/picker-list.stylex"
 import { pickerPopupStyles } from "../picker/picker-popup.stylex"
 import { menuContentStyles } from "./menu-content.stylex"
 
-export { menuContentStyles } from "./menu-content.stylex"
-
 export interface MenuContentProps
   extends
     Omit<BaseMenu.Popup.Props, "className">,
@@ -38,7 +36,7 @@ export function MenuContent(props: MenuContentProps): JSX.Element {
     anchor = undefined,
     arrowPadding = undefined,
     children,
-    className: customClassName = "",
+    className = "",
     collisionAvoidance = undefined,
     collisionBoundary = undefined,
     collisionPadding = undefined,
@@ -51,8 +49,10 @@ export function MenuContent(props: MenuContentProps): JSX.Element {
     ...rest
   } = props
 
+  const combinedClassName = cn(pickerPopupStyles.base, menuContentStyles.base, className)
+
   return (
-    <BaseMenu.Portal container={container} data-slot="menu-portal">
+    <BaseMenu.Portal container={container} data-component="menu-portal">
       <BaseMenu.Positioner
         align={align}
         alignOffset={alignOffset}
@@ -62,19 +62,15 @@ export function MenuContent(props: MenuContentProps): JSX.Element {
         collisionAvoidance={collisionAvoidance}
         collisionBoundary={collisionBoundary}
         collisionPadding={collisionPadding}
-        data-slot="menu-positioner"
+        data-component="menu-positioner"
         disableAnchorTracking={disableAnchorTracking}
         positionMethod={positionMethod}
         side={side}
         sideOffset={sideOffset}
         sticky={sticky}
       >
-        <BaseMenu.Popup
-          className={cn(pickerPopupStyles.base, menuContentStyles.base, customClassName)}
-          data-slot="menu-content"
-          {...rest}
-        >
-          <div className={cn(pickerListStyles.base)} data-slot="menu-list">
+        <BaseMenu.Popup className={combinedClassName} data-component="menu-content" {...rest}>
+          <div className={cn(pickerListStyles.base)} data-component="menu-list">
             {children}
           </div>
         </BaseMenu.Popup>

@@ -1,16 +1,6 @@
-import * as stylex from "@stylexjs/stylex"
+import { create } from "@stylexjs/stylex"
 
-export const switchStyles = stylex.create({
-  18: {
-    "--translateX": "12px",
-    height: 18,
-    width: 30,
-  },
-  24: {
-    "--translateX": "16px",
-    height: 24,
-    width: 40,
-  },
+export const switchStyles = create({
   base: {
     backgroundColor: {
       ":is([data-checked])": "var(--color-primary-9)",
@@ -39,6 +29,16 @@ export const switchStyles = stylex.create({
     transitionDuration: "150ms",
     transitionProperty: "background-color",
   },
+  size_18: {
+    "--translateX": "12px",
+    height: 18,
+    width: 30,
+  },
+  size_24: {
+    "--translateX": "16px",
+    height: 24,
+    width: 40,
+  },
   thumb: {
     aspectRatio: "1 / 1",
     backgroundColor: "white",
@@ -52,3 +52,10 @@ export const switchStyles = stylex.create({
     transitionProperty: "transform",
   },
 })
+
+export const switchStylesBy = {
+  size: {
+    18: switchStyles.size_18,
+    24: switchStyles.size_24,
+  },
+}

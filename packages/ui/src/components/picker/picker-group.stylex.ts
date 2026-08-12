@@ -1,6 +1,6 @@
-import * as stylex from "@stylexjs/stylex"
+import { create } from "@stylexjs/stylex"
 
-export const pickerGroupStyles = stylex.create({
+export const pickerGroupStyles = create({
   base: {
     display: "flex",
     flexDirection: "column",

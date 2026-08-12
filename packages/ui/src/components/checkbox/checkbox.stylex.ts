@@ -1,6 +1,6 @@
-import * as stylex from "@stylexjs/stylex"
+import { create } from "@stylexjs/stylex"
 
-export const checkboxStyles = stylex.create({
+export const checkboxStyles = create({
   base: {
     "--size": "16px",
     alignItems: "center",
@@ -37,7 +37,7 @@ export const checkboxStyles = stylex.create({
     height: "var(--size)",
     width: "var(--size)",
   },
-  iconPath: {
+  icon_path: {
     stroke: "white",
     strokeWidth: 3,
   },

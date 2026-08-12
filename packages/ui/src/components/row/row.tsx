@@ -1,4 +1,3 @@
-import * as stylex from "@stylexjs/stylex"
 import {
   createElement,
   type ComponentProps,
@@ -8,8 +7,6 @@ import {
 } from "react"
 import { cn } from "../cn"
 import { rowStyles } from "./row.stylex"
-
-export { rowStyles } from "./row.stylex"
 
 export type RowProps<ComponentType extends ElementType = "div"> = ComponentProps<ComponentType> &
   RowInternalProps
@@ -38,7 +35,7 @@ export function Row(props: RowProps): JSX.Element {
     ...rest
   } = props
 
-  const { className: stylexClassName } = stylex.props(rowStyles.base)
+  const combinedClassName = cn(rowStyles.base, className)
 
   const combinedStyle = {
     ...customStyle,
@@ -51,8 +48,8 @@ export function Row(props: RowProps): JSX.Element {
   }
 
   return createElement(as, {
-    className: cn(stylexClassName, className),
-    "data-slot": "row",
+    className: combinedClassName,
+    "data-component": "row",
     style: combinedStyle,
     ...rest,
   })

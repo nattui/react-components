@@ -1,6 +1,6 @@
-import * as stylex from "@stylexjs/stylex"
+import { create } from "@stylexjs/stylex"
 
-export const dialogResponsivePopupStyles = stylex.create({
+export const dialogResponsivePopupStyles = create({
   base: {
     "--radius-mobile": {
       "@media (max-width: 640px)": "24px",

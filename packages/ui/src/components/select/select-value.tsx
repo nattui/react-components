@@ -3,14 +3,12 @@ import type { JSX, ReactNode } from "react"
 import { cn } from "../cn"
 import { selectValueStyles } from "./select-value.stylex"
 
-export { selectValueStyles } from "./select-value.stylex"
-
 export interface SelectValueProps extends BaseSelect.Value.Props {}
 
 export function SelectValue(props: SelectValueProps): JSX.Element {
   const {
     children = undefined,
-    className: customClassName = "",
+    className = "",
     placeholder = undefined,
     render = <div />,
     ...rest
@@ -26,10 +24,12 @@ export function SelectValue(props: SelectValueProps): JSX.Element {
           (selectedValue ?? undefined) === undefined ? placeholder : children(selectedValue)
       : children
 
+  const combinedClassName = cn(selectValueStyles.base, className)
+
   return (
     <BaseSelect.Value
-      className={cn(selectValueStyles.base, customClassName)}
-      data-slot="select-value"
+      className={combinedClassName}
+      data-component="select-value"
       placeholder={placeholder}
       render={render}
       {...rest}

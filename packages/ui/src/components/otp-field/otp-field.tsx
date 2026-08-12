@@ -3,20 +3,20 @@ import type { JSX } from "react"
 import { cn } from "../cn"
 import { otpFieldStyles } from "./otp-field.stylex"
 
-export { otpFieldStyles } from "./otp-field.stylex"
-
-interface OTPFieldProps extends Omit<OTPFieldBase.Root.Props, "mask"> {
+export interface OTPFieldProps extends Omit<OTPFieldBase.Root.Props, "mask"> {
   masked?: OTPFieldBase.Root.Props["mask"]
 }
 
 export function OTPField(props: OTPFieldProps): JSX.Element {
-  const { className: customClassName = "", masked = false, ...rest } = props
+  const { className = "", masked = false, ...rest } = props
+
+  const combinedClassName = cn(otpFieldStyles.base, className)
 
   return (
     <OTPFieldBase.Root
-      className={cn(otpFieldStyles.base, customClassName)}
+      className={combinedClassName}
+      data-component="otp-field"
       data-is-masked={masked}
-      data-slot="otp-field"
       mask={masked}
       {...rest}
     />

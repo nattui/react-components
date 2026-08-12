@@ -3,17 +3,17 @@ import type { JSX } from "react"
 import { cn } from "../cn"
 import { toggleGroupStyles } from "./toggle-group.stylex"
 
-export { toggleGroupStyles } from "./toggle-group.stylex"
-
 export interface ToggleGroupProps extends BaseToggleGroup.Props {}
 
 export function ToggleGroup(props: ToggleGroupProps): JSX.Element {
-  const { className: customClassName = "", ...rest } = props
+  const { className = "", ...rest } = props
+
+  const combinedClassName = cn(toggleGroupStyles.base, className)
 
   return (
     <BaseToggleGroup
-      className={cn(toggleGroupStyles.base, customClassName)}
-      data-slot="toggle-group"
+      className={combinedClassName}
+      data-component="toggle-group"
       loopFocus
       {...rest}
     />

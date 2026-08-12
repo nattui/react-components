@@ -4,5 +4,7 @@ import type { JSX } from "react"
 export interface DialogResponsiveProps extends BaseDrawer.Root.Props {}
 
 export function DialogResponsive(props: DialogResponsiveProps): JSX.Element {
-  return <BaseDrawer.Root data-slot="dialog-responsive" swipeDirection="down" {...props} />
+  const { ...rest } = props
+
+  return <BaseDrawer.Root data-component="dialog-responsive" swipeDirection="down" {...rest} />
 }

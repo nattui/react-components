@@ -1,6 +1,6 @@
-import * as stylex from "@stylexjs/stylex"
+import { create } from "@stylexjs/stylex"
 
-export const labelStyles = stylex.create({
+export const labelStyles = create({
   base: {
     color: "var(--color-text-secondary)",
     fontSize: 13,

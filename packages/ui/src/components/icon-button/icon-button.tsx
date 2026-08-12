@@ -1,13 +1,11 @@
-// oxlint-disable better-tailwindcss/no-unknown-classes
+// oxlint-disable react/button-has-type better-tailwindcss/no-unknown-classes
 
 import type { JSX, ReactNode } from "react"
 import type { ButtonProps } from "../button/button"
 import { ButtonSpinner } from "../button/button-spinner"
-import { buttonStyles, buttonStylesBy } from "../button/button.stylex"
+import { buttonStylesBy, buttonStyles } from "../button/button.stylex"
 import { cn } from "../cn"
-import { iconButtonStyles } from "./icon-button.stylex"
-
-export { iconButtonStyles } from "./icon-button.stylex"
+import { iconButtonStylesBy } from "./icon-button.stylex"
 
 export interface IconButtonProps extends Omit<
   ButtonProps,
@@ -19,12 +17,12 @@ export interface IconButtonProps extends Omit<
 export function IconButton(props: IconButtonProps): JSX.Element {
   const {
     className = "",
-    icon = "",
     disabled = false,
+    icon = "",
     loading = false,
     rounded = false,
-    variant = "primary",
     size = 40,
+    variant = "primary",
     ...rest
   } = props
 
@@ -35,20 +33,21 @@ export function IconButton(props: IconButtonProps): JSX.Element {
     buttonStylesBy.variant[variant],
     buttonStylesBy.width.base,
     (disabled || loading) && buttonStyles.disabled,
-    iconButtonStyles[size],
+    iconButtonStylesBy.size[size],
     className,
   )
+
+  const isDisabled = disabled || loading
 
   return (
     <button
       className={combinedClassName}
-      data-slot="icon-button"
-      disabled={disabled || loading}
-      type="button"
+      data-component="icon-button"
+      disabled={isDisabled}
       {...rest}
     >
-      {loading && <ButtonSpinner />}
       {!loading && icon}
+      {loading && <ButtonSpinner />}
     </button>
   )
 }

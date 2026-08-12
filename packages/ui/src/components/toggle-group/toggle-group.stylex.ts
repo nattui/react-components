@@ -1,6 +1,6 @@
-import * as stylex from "@stylexjs/stylex"
+import { create } from "@stylexjs/stylex"
 
-export const toggleGroupStyles = stylex.create({
+export const toggleGroupStyles = create({
   base: {
     display: "flex",
     flexWrap: "wrap",

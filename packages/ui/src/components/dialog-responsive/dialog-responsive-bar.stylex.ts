@@ -1,6 +1,6 @@
-import * as stylex from "@stylexjs/stylex"
+import { create } from "@stylexjs/stylex"
 
-export const dialogResponsiveBarStyles = stylex.create({
+export const dialogResponsiveBarStyles = create({
   base: {
     backgroundColor: "var(--color-gray-4)",
     borderRadius: 9999,

@@ -1,6 +1,6 @@
-import * as stylex from "@stylexjs/stylex"
+import { create } from "@stylexjs/stylex"
 
-export const menuContentStyles = stylex.create({
+export const menuContentStyles = create({
   base: {
     maxWidth: "min(var(--available-width), 320px)",
     minWidth: 180,

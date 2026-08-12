@@ -3,18 +3,18 @@ import type { JSX } from "react"
 import { cn } from "../cn"
 import { comboboxSearchStyles } from "./combobox-search.stylex"
 
-export { comboboxSearchStyles } from "./combobox-search.stylex"
-
 export interface ComboboxSearchProps extends Omit<BaseCombobox.Input.Props, "className" | "size"> {
   className?: string
 }
 
 export function ComboboxSearch(props: ComboboxSearchProps): JSX.Element {
-  const { className: customClassName = "", ...rest } = props
+  const { className = "", ...rest } = props
+
+  const combinedClassName = cn(comboboxSearchStyles.base, className)
 
   return (
-    <div className={cn(comboboxSearchStyles.base, customClassName)} data-slot="combobox-search">
-      <span className={cn(comboboxSearchStyles.icon)} data-slot="combobox-search-icon">
+    <div className={combinedClassName} data-component="combobox-search">
+      <span className={cn(comboboxSearchStyles.icon)} data-component="combobox-search-icon">
         {/* magnifier */}
         <svg height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -38,7 +38,7 @@ export function ComboboxSearch(props: ComboboxSearchProps): JSX.Element {
 
       <BaseCombobox.Input
         className={cn(comboboxSearchStyles.input)}
-        data-slot="combobox-search-input"
+        data-component="combobox-search-input"
         {...rest}
       />
     </div>

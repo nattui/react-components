@@ -1,6 +1,6 @@
-import * as stylex from "@stylexjs/stylex"
+import { create } from "@stylexjs/stylex"
 
-export const tabsPillListStyles = stylex.create({
+export const tabsPillListStyles = create({
   base: {
     columnGap: 8,
     display: "flex",

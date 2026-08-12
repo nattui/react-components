@@ -1,9 +1,7 @@
 import { Combobox as BaseCombobox } from "@base-ui/react"
 import type { JSX } from "react"
 import { cn } from "../cn"
-import { comboboxInputStyles } from "./combobox-input.stylex"
-
-export { comboboxInputStyles } from "./combobox-input.stylex"
+import { comboboxInputStylesBy, comboboxInputStyles } from "./combobox-input.stylex"
 
 export interface ComboboxInputProps extends Omit<BaseCombobox.Input.Props, "className" | "size"> {
   className?: string
@@ -14,38 +12,34 @@ export interface ComboboxInputProps extends Omit<BaseCombobox.Input.Props, "clas
 export type ComboboxInputSize = 32 | 36 | 40 | 44 | 48
 
 export function ComboboxInput(props: ComboboxInputProps): JSX.Element {
-  const {
-    className: customClassName = "",
-    disabled = false,
-    rounded = false,
-    size = 40,
-    ...rest
-  } = props
+  const { className = "", disabled = false, rounded = false, size = 40, ...rest } = props
+
+  const combinedClassName = cn(
+    comboboxInputStyles.base,
+    comboboxInputStylesBy.size[size],
+    rounded && comboboxInputStylesBy.rounded.full,
+    className,
+  )
 
   return (
-    <BaseCombobox.InputGroup
-      className={cn(
-        comboboxInputStyles.base,
-        comboboxInputStyles[size],
-        rounded && comboboxInputStyles.roundedFull,
-        customClassName,
-      )}
-      data-slot="combobox-input-group"
-    >
+    <BaseCombobox.InputGroup className={combinedClassName} data-component="combobox-input-group">
       <BaseCombobox.Input
         className={cn(comboboxInputStyles.input)}
-        data-slot="combobox-input"
+        data-component="combobox-input"
         disabled={disabled}
         {...rest}
       />
 
       <BaseCombobox.Trigger
         className={cn(comboboxInputStyles.trigger)}
-        data-slot="combobox-input-trigger"
+        data-component="combobox-input-trigger"
         disabled={disabled}
         tabIndex={-1}
       >
-        <BaseCombobox.Icon className={cn(comboboxInputStyles.icon)} data-slot="combobox-input-icon">
+        <BaseCombobox.Icon
+          className={cn(comboboxInputStyles.icon)}
+          data-component="combobox-input-icon"
+        >
           {/* chevron-down */}
           <svg height="14" viewBox="0 0 18 18" width="14" xmlns="http://www.w3.org/2000/svg">
             <polyline

@@ -1,33 +1,13 @@
-import * as stylex from "@stylexjs/stylex"
+import { create, when } from "@stylexjs/stylex"
 
-export const comboboxInputStyles = stylex.create({
-  32: {
-    borderRadius: 8,
-    height: 32,
-  },
-  36: {
-    borderRadius: 9,
-    height: 36,
-  },
-  40: {
-    borderRadius: 10,
-    height: 40,
-  },
-  44: {
-    borderRadius: 11,
-    height: 44,
-  },
-  48: {
-    borderRadius: 12,
-    height: 48,
-  },
+export const comboboxInputStyles = create({
   base: {
     alignItems: "center",
     backgroundColor: {
       ":is([data-disabled])": "var(--color-gray-3)",
       ":is([data-popup-open])": "var(--color-gray-3)",
       default: "var(--color-bg-shell-inner)",
-      [stylex.when.descendant(":disabled")]: "var(--color-gray-3)",
+      [when.descendant(":disabled")]: "var(--color-gray-3)",
     },
     boxShadow: {
       ":hover:not([data-disabled], :has(:disabled))": "inset 0 0 0 1px var(--color-gray-6)",
@@ -37,14 +17,14 @@ export const comboboxInputStyles = stylex.create({
     cursor: {
       ":is([data-disabled])": "not-allowed",
       default: "text",
-      [stylex.when.descendant(":disabled")]: "not-allowed",
+      [when.descendant(":disabled")]: "not-allowed",
     },
     display: "inline-flex",
     flexShrink: 0,
     opacity: {
       ":is([data-disabled])": 0.5,
       default: 1,
-      [stylex.when.descendant(":disabled")]: 0.5,
+      [when.descendant(":disabled")]: 0.5,
     },
     outlineColor: {
       ":focus-within": "var(--color-primary)",
@@ -67,7 +47,7 @@ export const comboboxInputStyles = stylex.create({
     justifyContent: "center",
     rotate: {
       default: "0deg",
-      [stylex.when.ancestor("[data-popup-open]")]: "180deg",
+      [when.ancestor("[data-popup-open]")]: "180deg",
     },
     transitionDuration: "150ms",
     transitionProperty: "rotate",
@@ -96,8 +76,28 @@ export const comboboxInputStyles = stylex.create({
     outline: "none",
     padding: 0,
   },
-  roundedFull: {
+  rounded_full: {
     borderRadius: 9999,
+  },
+  size_32: {
+    borderRadius: 8,
+    height: 32,
+  },
+  size_36: {
+    borderRadius: 9,
+    height: 36,
+  },
+  size_40: {
+    borderRadius: 10,
+    height: 40,
+  },
+  size_44: {
+    borderRadius: 11,
+    height: 44,
+  },
+  size_48: {
+    borderRadius: 12,
+    height: 48,
   },
   trigger: {
     alignItems: "center",
@@ -117,3 +117,16 @@ export const comboboxInputStyles = stylex.create({
     width: 16,
   },
 })
+
+export const comboboxInputStylesBy = {
+  rounded: {
+    full: comboboxInputStyles.rounded_full,
+  },
+  size: {
+    32: comboboxInputStyles.size_32,
+    36: comboboxInputStyles.size_36,
+    40: comboboxInputStyles.size_40,
+    44: comboboxInputStyles.size_44,
+    48: comboboxInputStyles.size_48,
+  },
+}

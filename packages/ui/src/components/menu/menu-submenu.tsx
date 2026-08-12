@@ -6,5 +6,5 @@ export interface MenuSubmenuProps extends BaseMenu.SubmenuRoot.Props {}
 export function MenuSubmenu(props: MenuSubmenuProps): JSX.Element {
   const { ...rest } = props
 
-  return <BaseMenu.SubmenuRoot data-slot="menu-submenu" {...rest} />
+  return <BaseMenu.SubmenuRoot data-component="menu-submenu" {...rest} />
 }

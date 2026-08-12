@@ -1,6 +1,6 @@
-import * as stylex from "@stylexjs/stylex"
+import { create } from "@stylexjs/stylex"
 
-export const tabsPanelStyles = stylex.create({
+export const tabsPanelStyles = create({
   base: {
     display: "flex",
     flexDirection: "column",
