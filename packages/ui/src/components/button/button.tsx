@@ -47,7 +47,7 @@ export function Button(props: ButtonProps): JSX.Element {
   const isDisabled = disabled || loading
 
   return (
-    <button className={combinedClassName} disabled={isDisabled} {...rest}>
+    <button className={combinedClassName} disabled={isDisabled} {...rest} data-component="button">
       {!loading && iconStart}
       {loading && <ButtonSpinner />}
       {label}

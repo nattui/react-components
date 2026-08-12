@@ -31,43 +31,43 @@ export const buttonStyles = create({
     cursor: "not-allowed",
     opacity: 0.5,
   },
-  roundedBase_32: {
+  rounded_base_32: {
     borderRadius: 8,
     paddingInline: 12,
   },
-  roundedBase_36: {
+  rounded_base_36: {
     borderRadius: 9,
     paddingInline: 14,
   },
-  roundedBase_40: {
+  rounded_base_40: {
     borderRadius: 10,
     paddingInline: 16,
   },
-  roundedBase_44: {
+  rounded_base_44: {
     borderRadius: 11,
     paddingInline: 18,
   },
-  roundedBase_48: {
+  rounded_base_48: {
     borderRadius: 12,
     paddingInline: 20,
   },
-  roundedFull_32: {
+  rounded_full_32: {
     borderRadius: 16,
     paddingInline: 12,
   },
-  roundedFull_36: {
+  rounded_full_36: {
     borderRadius: 18,
     paddingInline: 17,
   },
-  roundedFull_40: {
+  rounded_full_40: {
     borderRadius: 20,
     paddingInline: 20,
   },
-  roundedFull_44: {
+  rounded_full_44: {
     borderRadius: 22,
     paddingInline: 23,
   },
-  roundedFull_48: {
+  rounded_full_48: {
     borderRadius: 24,
     paddingInline: 28,
   },
@@ -112,10 +112,10 @@ export const buttonStyles = create({
     },
     color: "var(--color-gray-12)",
   },
-  widthBase: {
+  width_base: {
     width: "fit-content",
   },
-  widthFull: {
+  width_full: {
     width: "stretch",
   },
 })
@@ -123,18 +123,18 @@ export const buttonStyles = create({
 export const buttonStylesBy = {
   rounded: {
     base: {
-      32: buttonStyles.roundedBase_32,
-      36: buttonStyles.roundedBase_36,
-      40: buttonStyles.roundedBase_40,
-      44: buttonStyles.roundedBase_44,
-      48: buttonStyles.roundedBase_48,
+      32: buttonStyles.rounded_base_32,
+      36: buttonStyles.rounded_base_36,
+      40: buttonStyles.rounded_base_40,
+      44: buttonStyles.rounded_base_44,
+      48: buttonStyles.rounded_base_48,
     },
     full: {
-      32: buttonStyles.roundedFull_32,
-      36: buttonStyles.roundedFull_36,
-      40: buttonStyles.roundedFull_40,
-      44: buttonStyles.roundedFull_44,
-      48: buttonStyles.roundedFull_48,
+      32: buttonStyles.rounded_full_32,
+      36: buttonStyles.rounded_full_36,
+      40: buttonStyles.rounded_full_40,
+      44: buttonStyles.rounded_full_44,
+      48: buttonStyles.rounded_full_48,
     },
   },
   size: {
@@ -150,7 +150,7 @@ export const buttonStylesBy = {
     secondary: buttonStyles.variant_secondary,
   },
   width: {
-    base: buttonStyles.widthBase,
-    full: buttonStyles.widthFull,
+    base: buttonStyles.width_base,
+    full: buttonStyles.width_full,
   },
 }
