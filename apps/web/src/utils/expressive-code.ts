@@ -88,7 +88,7 @@ export const expressiveCodeOptions = {
     borderWidth: "0px",
     codeBackground: "var(--color-gray-3)",
     codeFontFamily: "var(--font-code), ui-monospace, monospace",
-    codeFontSize: "14px",
+    codeFontSize: "13px",
     codeForeground: TEXT,
     codeLineHeight: "1.714",
     codePaddingBlock: "16px",
