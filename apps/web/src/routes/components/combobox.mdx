@@ -13,6 +13,7 @@ import {
   ComboboxValue,
   Row,
 } from "@nattstack/ui"
+import { createElement } from "react"
 
 export const FONTS = ["Sans-serif", "Serif", "Monospace", "Cursive", "Fantasy", "System UI"]
 
@@ -191,7 +192,7 @@ Use option objects shaped as `{ value, label, ... }`: the `label` is automatical
     <ComboboxValue placeholder="Select a model">
       {(model) => (
         <Row className="items-center">
-          {model.icon && <model.icon className="mr-8" size={18} />}
+          {model.icon && createElement(model.icon, { className: "mr-8", size: 18 })}
           <span className="truncate">{model.label}</span>
           {model.description && (
             <span className="text-13 text-gray-9 font-400 ml-6 truncate">{model.description}</span>
@@ -207,7 +208,7 @@ Use option objects shaped as `{ value, label, ... }`: the `label` is automatical
       {(model) => (
         <ComboboxItem key={model.value} value={model}>
           <Row className="items-center">
-            {model.icon && <model.icon className="mr-8" size={18} />}
+            {model.icon && createElement(model.icon, { className: "mr-8", size: 18 })}
             <span className="truncate">{model.label}</span>
             {model.description && (
               <span className="text-13 text-gray-9 font-400 ml-6 truncate">

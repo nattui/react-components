@@ -10,6 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@nattstack/ui"
+import { createElement } from "react"
 
 export const MODELS = [
   {
@@ -130,7 +131,7 @@ Options can include an icon before their label and a supporting description. Use
     <SelectValue placeholder="Select a model">
       {(model) => (
         <Row className="items-center">
-          {model.icon && <model.icon className="mr-8" size={18} />}
+          {model.icon && createElement(model.icon, { className: "mr-8", size: 18 })}
           <span className="truncate">{model.label}</span>
           {model.description && (
             <span className="text-13 text-gray-9 font-400 ml-6 truncate">{model.description}</span>
@@ -143,7 +144,7 @@ Options can include an icon before their label and a supporting description. Use
     {MODELS.map((model) => (
       <SelectItem key={model.value} label={model.label} value={model}>
         <Row className="items-center">
-          {model.icon && <model.icon className="mr-8" size={18} />}
+          {model.icon && createElement(model.icon, { className: "mr-8", size: 18 })}
           <span className="truncate">{model.label}</span>
           {model.description && (
             <span className="text-13 text-gray-9 font-400 ml-6 truncate">{model.description}</span>
