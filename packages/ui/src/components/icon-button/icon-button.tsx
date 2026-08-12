@@ -5,7 +5,7 @@ import type { ButtonProps } from "../button/button"
 import { ButtonSpinner } from "../button/button-spinner"
 import { buttonStylesBy, buttonStyles } from "../button/button.stylex"
 import { cn } from "../cn"
-import { iconButtonStylesBy } from "./icon-button.stylex"
+import { iconButtonStyles, iconButtonStylesBy } from "./icon-button.stylex"
 
 export interface IconButtonProps extends Omit<
   ButtonProps,
@@ -33,6 +33,7 @@ export function IconButton(props: IconButtonProps): JSX.Element {
     buttonStylesBy.variant[variant],
     buttonStylesBy.width.base,
     (disabled || loading) && buttonStyles.disabled,
+    iconButtonStyles.base,
     iconButtonStylesBy.size[size],
     className,
   )

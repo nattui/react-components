@@ -1,6 +1,9 @@
 import { create } from "@stylexjs/stylex"
 
 export const iconButtonStyles = create({
+  base: {
+    paddingInline: 0,
+  },
   size_32: {
     width: 32,
   },
