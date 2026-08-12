@@ -1,6 +1,6 @@
 # @nattstack/ui
 
-A collection of reusable React components built with Base UI, TypeScript, and CSS Modules.
+A collection of reusable React components built with Base UI and StyleX.
 
 ## Links
 

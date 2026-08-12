@@ -5,18 +5,16 @@ import { tabsUnderlineTabStyles } from "./tabs-underline-tab.stylex"
 
 export { tabsUnderlineTabStyles } from "./tabs-underline-tab.stylex"
 
-export interface TabsUnderlineTabProps extends Omit<BaseTabs.Tab.Props, "nativeButton"> {
-  isNativeButton?: BaseTabs.Tab.Props["nativeButton"]
-}
+export interface TabsUnderlineTabProps extends BaseTabs.Tab.Props {}
 
 export function TabsUnderlineTab(props: TabsUnderlineTabProps): JSX.Element {
-  const { className: customClassName = "", isNativeButton = true, ...rest } = props
+  const { className: customClassName = "", ...rest } = props
 
   return (
     <BaseTabs.Tab
       className={cn(sx(tabsUnderlineTabStyles.base), customClassName)}
       data-slot="tabs-underline-tab"
-      nativeButton={isNativeButton}
+      nativeButton
       {...rest}
     />
   )

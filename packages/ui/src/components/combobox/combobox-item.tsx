@@ -3,19 +3,17 @@ import type { JSX } from "react"
 import { cn, sx } from "../cn"
 import { pickerItemStyles } from "../picker/picker-item.stylex"
 
-export interface ComboboxItemProps extends Omit<BaseCombobox.Item.Props, "className" | "disabled"> {
+export interface ComboboxItemProps extends Omit<BaseCombobox.Item.Props, "className"> {
   className?: string
-  isDisabled?: BaseCombobox.Item.Props["disabled"]
 }
 
 export function ComboboxItem(props: ComboboxItemProps): JSX.Element {
-  const { children, className: customClassName = "", isDisabled = false, ...rest } = props
+  const { children, className: customClassName = "", ...rest } = props
 
   return (
     <BaseCombobox.Item
       className={cn(sx(pickerItemStyles.base), customClassName)}
       data-slot="combobox-item"
-      disabled={isDisabled}
       {...rest}
     >
       <span className={sx(pickerItemStyles.label)} data-slot="combobox-item-text">

@@ -4,7 +4,7 @@ import { cn, sx } from "../cn"
 import { pickerTriggerStyles } from "../picker/picker-trigger.stylex"
 
 export interface ComboboxTriggerProps extends BaseCombobox.Trigger.Props {
-  isRounded?: boolean
+  rounded?: boolean
   size?: ComboboxTriggerSize
 }
 
@@ -14,7 +14,7 @@ export function ComboboxTrigger(props: ComboboxTriggerProps): JSX.Element {
   const {
     children = undefined,
     className: customClassName = "",
-    isRounded = false,
+    rounded = false,
     size = 40,
     ...rest
   } = props
@@ -25,7 +25,7 @@ export function ComboboxTrigger(props: ComboboxTriggerProps): JSX.Element {
         sx(
           pickerTriggerStyles.base,
           pickerTriggerStyles[size],
-          isRounded && pickerTriggerStyles.roundedFull,
+          rounded && pickerTriggerStyles.roundedFull,
         ),
         customClassName,
       )}

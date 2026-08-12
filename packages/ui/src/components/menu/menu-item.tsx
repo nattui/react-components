@@ -6,19 +6,17 @@ import { menuItemStyles } from "./menu-item.stylex"
 
 export { menuItemStyles } from "./menu-item.stylex"
 
-export interface MenuItemProps extends Omit<BaseMenu.Item.Props, "className" | "disabled"> {
+export interface MenuItemProps extends Omit<BaseMenu.Item.Props, "className"> {
   className?: string
-  isDisabled?: BaseMenu.Item.Props["disabled"]
 }
 
 export function MenuItem(props: MenuItemProps): JSX.Element {
-  const { className: customClassName = "", isDisabled = false, ...rest } = props
+  const { className: customClassName = "", ...rest } = props
 
   return (
     <BaseMenu.Item
       className={cn(sx(pickerItemStyles.base, menuItemStyles.base), customClassName)}
       data-slot="menu-item"
-      disabled={isDisabled}
       {...rest}
     />
   )

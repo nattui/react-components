@@ -5,14 +5,13 @@ import { buttonRoundedBaseStyles, buttonRoundedFullStyles, buttonStyles } from "
 
 export { buttonStyles } from "./button.stylex"
 
-export interface ButtonProps extends Omit<ComponentProps<"button">, "children" | "disabled"> {
+export interface ButtonProps extends Omit<ComponentProps<"button">, "children"> {
+  fullWidth?: boolean
   iconEnd?: ReactNode
   iconStart?: ReactNode
-  isDisabled?: ComponentProps<"button">["disabled"]
-  isFullWidth?: boolean
-  isLoading?: ComponentProps<"button">["disabled"]
-  isRounded?: boolean
   label?: number | number[] | string | string[]
+  loading?: boolean
+  rounded?: boolean
   size?: ButtonSize
   variant?: ButtonVariant
 }
@@ -23,12 +22,12 @@ export type ButtonVariant = "ghost" | "primary" | "secondary"
 export function Button(props: ButtonProps): JSX.Element {
   const {
     className = "",
-    isDisabled = false,
+    disabled = false,
     iconStart = "",
     iconEnd = "",
-    isFullWidth = false,
-    isLoading = false,
-    isRounded = false,
+    fullWidth = false,
+    loading = false,
+    rounded = false,
     label = "",
     variant = "primary",
     size = 40,
@@ -39,24 +38,22 @@ export function Button(props: ButtonProps): JSX.Element {
     <button
       className={getButtonClassName({
         className,
-        isDisabled,
-        isFullWidth,
-        isLoading,
-        isRounded,
+        disabled,
+        fullWidth,
+        loading,
+        rounded,
         size,
         variant,
       })}
       data-slot="button"
-      disabled={isDisabled || isLoading}
+      disabled={disabled || loading}
       type="button"
       {...rest}
     >
-      {isLoading && <ButtonSpinner />}
-      {hideWhenLoading(iconStart, isLoading)}
-      {label !== "" && (
-        <span className={sx(isLoading && buttonStyles.loadingContent)}>{label}</span>
-      )}
-      {hideWhenLoading(iconEnd, isLoading)}
+      {loading && <ButtonSpinner />}
+      {hideWhenLoading(iconStart, loading)}
+      {label !== "" && <span className={sx(loading && buttonStyles.loadingContent)}>{label}</span>}
+      {hideWhenLoading(iconEnd, loading)}
     </button>
   )
 }
@@ -64,10 +61,10 @@ export function Button(props: ButtonProps): JSX.Element {
 export function getButtonClassName(
   options: {
     className?: string
-    isDisabled?: boolean
-    isFullWidth?: boolean
-    isLoading?: boolean
-    isRounded?: boolean
+    disabled?: boolean
+    fullWidth?: boolean
+    loading?: boolean
+    rounded?: boolean
     size?: ButtonSize
     variant?: ButtonVariant
   },
@@ -75,10 +72,10 @@ export function getButtonClassName(
 ): string {
   const {
     className = "",
-    isDisabled = false,
-    isFullWidth = false,
-    isLoading = false,
-    isRounded = false,
+    disabled = false,
+    fullWidth = false,
+    loading = false,
+    rounded = false,
     size = 40,
     variant = "primary",
   } = options
@@ -87,19 +84,19 @@ export function getButtonClassName(
     sx(
       buttonStyles.base,
       buttonStyles[size],
-      (isRounded ? buttonRoundedFullStyles : buttonRoundedBaseStyles)[size],
+      (rounded ? buttonRoundedFullStyles : buttonRoundedBaseStyles)[size],
       buttonStyles[variant],
-      isFullWidth ? buttonStyles.widthFull : buttonStyles.widthBase,
-      isDisabled && buttonStyles.disabled,
-      isLoading && buttonStyles.loading,
+      fullWidth ? buttonStyles.widthFull : buttonStyles.widthBase,
+      disabled && buttonStyles.disabled,
+      loading && buttonStyles.loading,
       ...overrides,
     ),
     className,
   )
 }
 
-function hideWhenLoading(node: ReactNode, isLoading: boolean): ReactNode {
-  if (!isLoading || node === "") {
+function hideWhenLoading(node: ReactNode, loading: boolean): ReactNode {
+  if (!loading || node === "") {
     return node
   }
 

@@ -17,9 +17,9 @@ import { Button, ButtonLink, Column, Input, Label, Row, Spacer } from "@nattstac
 
 Use the library's semantic props before duplicating state or accessibility behavior with raw elements:
 
-- Use `Button` for actions. Prefer `isLoading`, `isDisabled`, `isFullWidth`, `isIconOnly`, `isRounded`, `size`, and `variant`.
+- Use `Button` for actions. Prefer `loading`, `disabled`, `fullWidth`, `rounded`, `size`, and `variant`.
 - Use `ButtonLink` for button-styled navigation. With TanStack Router, pass `as={Link}` and `to`.
-- Use `Input`, `Textarea`, and `Label` for form controls. Prefer `isInvalid`, `isDisabled`, `isRequired`, `isReadOnly`, `isValid`, and `size`.
+- Use `Input`, `Textarea`, and `Label` for form controls. Prefer `invalid`, `disabled`, `required`, `readOnly`, `valid`, and `size`.
 - Use `Row`, `Column`, and `Spacer` for simple flex layout and spacing.
 - Use `Menu`, `MenuTrigger`, `MenuContent`, `MenuItem`, and `MenuSeparator` for dropdown menus.
 - Use `Tooltip`, `TooltipTrigger`, `TooltipPopup`, and `TooltipProvider` for tooltips.

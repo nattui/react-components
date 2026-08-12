@@ -7,11 +7,11 @@ export type ButtonLinkProps<ComponentType extends ElementType = "a"> =
 
 interface ButtonLinkInternalProps<ComponentType extends ElementType = "a"> {
   as?: ComponentType
+  fullWidth?: boolean
   iconEnd?: ReactNode
   iconStart?: ReactNode
-  isFullWidth?: boolean
-  isRounded?: boolean
   label?: number | number[] | string | string[]
+  rounded?: boolean
   size?: ButtonSize
   variant?: ButtonVariant
 }
@@ -24,8 +24,8 @@ export function ButtonLink<ComponentType extends ElementType = "a">(
     className = "",
     iconStart = "",
     iconEnd = "",
-    isFullWidth = false,
-    isRounded = false,
+    fullWidth = false,
+    rounded = false,
     label = "",
     size = 40,
     variant = "primary",
@@ -36,8 +36,8 @@ export function ButtonLink<ComponentType extends ElementType = "a">(
     <Component
       className={getButtonClassName({
         className,
-        isFullWidth,
-        isRounded,
+        fullWidth,
+        rounded,
         size,
         variant,
       })}

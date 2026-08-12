@@ -7,16 +7,12 @@ import { menuSubmenuTriggerStyles } from "./menu-submenu-trigger.stylex"
 
 export { menuSubmenuTriggerStyles } from "./menu-submenu-trigger.stylex"
 
-export interface MenuSubmenuTriggerProps extends Omit<
-  BaseMenu.SubmenuTrigger.Props,
-  "className" | "disabled"
-> {
+export interface MenuSubmenuTriggerProps extends Omit<BaseMenu.SubmenuTrigger.Props, "className"> {
   className?: string
-  isDisabled?: BaseMenu.SubmenuTrigger.Props["disabled"]
 }
 
 export function MenuSubmenuTrigger(props: MenuSubmenuTriggerProps): JSX.Element {
-  const { children, className: customClassName = "", isDisabled = false, ...rest } = props
+  const { children, className: customClassName = "", ...rest } = props
 
   return (
     <BaseMenu.SubmenuTrigger
@@ -25,7 +21,6 @@ export function MenuSubmenuTrigger(props: MenuSubmenuTriggerProps): JSX.Element 
         customClassName,
       )}
       data-slot="menu-submenu-trigger"
-      disabled={isDisabled}
       {...rest}
     >
       {children}

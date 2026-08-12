@@ -5,16 +5,12 @@ import { comboboxSearchStyles } from "./combobox-search.stylex"
 
 export { comboboxSearchStyles } from "./combobox-search.stylex"
 
-export interface ComboboxSearchProps extends Omit<
-  BaseCombobox.Input.Props,
-  "className" | "disabled" | "size"
-> {
+export interface ComboboxSearchProps extends Omit<BaseCombobox.Input.Props, "className" | "size"> {
   className?: string
-  isDisabled?: BaseCombobox.Input.Props["disabled"]
 }
 
 export function ComboboxSearch(props: ComboboxSearchProps): JSX.Element {
-  const { className: customClassName = "", isDisabled = false, ...rest } = props
+  const { className: customClassName = "", ...rest } = props
 
   return (
     <div className={cn(sx(comboboxSearchStyles.base), customClassName)} data-slot="combobox-search">
@@ -43,7 +39,6 @@ export function ComboboxSearch(props: ComboboxSearchProps): JSX.Element {
       <BaseCombobox.Input
         className={sx(comboboxSearchStyles.input)}
         data-slot="combobox-search-input"
-        disabled={isDisabled}
         {...rest}
       />
     </div>

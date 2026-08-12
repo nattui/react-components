@@ -16,29 +16,29 @@ A switch is a control that toggles between two states, on and off.
 
 ## Checked state
 
-The `Switch` supports both **uncontrolled** and **controlled** checked states via the `isDefaultChecked` and `isChecked` props.
+The `Switch` supports both **uncontrolled** and **controlled** checked states via the `defaultChecked` and `checked` props.
 
-### isDefaultChecked (Uncontrolled)
+### defaultChecked (Uncontrolled)
 
-Use `isDefaultChecked` when you want the switch to manage its own internal state after the initial render. This is ideal for simple use cases where you don't need to sync the value with external state.
+Use `defaultChecked` when you want the switch to manage its own internal state after the initial render. This is ideal for simple use cases where you don't need to sync the value with external state.
 
 ```jsx
 // component
 
-<Switch isDefaultChecked />
+<Switch defaultChecked />
 ```
 
 ```jsx
-<Switch isDefaultChecked />
+<Switch defaultChecked />
 ```
 
 - Sets the **initial checked state** only
 - After mount, the component manages its own state
 - Does **not** update if the prop changes
 
-### isChecked (Controlled)
+### checked (Controlled)
 
-Use `isChecked` when you need full control over the switch state from outside the component (e.g., via React state). This is the recommended approach for forms, state synchronization, or complex interactions.
+Use `checked` when you need full control over the switch state from outside the component (e.g., via React state). This is the recommended approach for forms, state synchronization, or complex interactions.
 
 ```jsx
 // component
@@ -49,17 +49,17 @@ Use `isChecked` when you need full control over the switch state from outside th
 ```jsx
 const [enabled, setEnabled] = useState(false)
 
-;<Switch isChecked={enabled} onCheckedChange={setEnabled} />
+;<Switch checked={enabled} onCheckedChange={setEnabled} />
 ```
 
 - The checked state is **fully controlled** by your code
 - Requires handling state updates via `onCheckedChange`
-- Always reflects the value passed in `isChecked`
+- Always reflects the value passed in `checked`
 
 ### When to Use Which
 
-- Use **`isDefaultChecked`** for simple, self-contained switches
-- Use **`isChecked`** when the switch state needs to be:
+- Use **`defaultChecked`** for simple, self-contained switches
+- Use **`checked`** when the switch state needs to be:
   - Synchronized with other UI elements
   - Persisted (e.g., settings, forms)
   - Controlled programmatically
@@ -84,18 +84,18 @@ The `Switch` comes with 2 sizes: `18` and `24` (default).
 
 ## Disabled
 
-Use the `isDisabled` prop to prevent a switch from being interacted with. Disabled switches communicate that an action is currently unavailable.
+Use the `disabled` prop to prevent a switch from being interacted with. Disabled switches communicate that an action is currently unavailable.
 
 ```jsx
 // component
 
-<Switch isDisabled />
+<Switch disabled />
 
-<Switch isChecked isDisabled />
+<Switch checked disabled />
 ```
 
 ```jsx
-<Switch isDisabled />
+<Switch disabled />
 
-<Switch isChecked isDisabled />
+<Switch checked disabled />
 ```

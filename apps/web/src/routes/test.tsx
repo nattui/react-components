@@ -359,7 +359,7 @@ export const Route = createFileRoute("/test")({
               <SelectGroupLabel>Fonts</SelectGroupLabel>
               <SelectItem value="sans">Sans-serif</SelectItem>
               <SelectItem value="serif">Serif</SelectItem>
-              <SelectItem isDisabled value="cursive">
+              <SelectItem disabled value="cursive">
                 Cursive
               </SelectItem>
             </SelectGroup>
@@ -527,7 +527,7 @@ export const Route = createFileRoute("/test")({
                 <IconMediaNextOutline18 />
                 Play Next
               </MenuItem>
-              <MenuItem isDisabled>
+              <MenuItem disabled>
                 <IconMediaSkipToEndOutline18 />
                 Play Last
               </MenuItem>
@@ -572,7 +572,7 @@ export const Route = createFileRoute("/test")({
 
               <MenuGroup>
                 <MenuGroupLabel>Workspace</MenuGroupLabel>
-                <MenuCheckboxItem isDefaultChecked>Minimap</MenuCheckboxItem>
+                <MenuCheckboxItem defaultChecked>Minimap</MenuCheckboxItem>
                 <MenuCheckboxItem>Sidebar</MenuCheckboxItem>
               </MenuGroup>
             </MenuContent>
@@ -587,14 +587,14 @@ export const Route = createFileRoute("/test")({
 
           <Button label="Click me" />
 
-          <Button isDisabled label="Disabled" />
-          <Button isLoading label="Loading" />
+          <Button disabled label="Disabled" />
+          <Button label="Loading" loading />
 
-          <Button isRounded label="Size 32" size={32} />
-          <Button isRounded label="Size 36" size={36} />
-          <Button isRounded label="Size 40" size={40} />
-          <Button isRounded label="Size 44" size={44} />
-          <Button isRounded label="Size 48" size={48} />
+          <Button label="Size 32" rounded size={32} />
+          <Button label="Size 36" rounded size={36} />
+          <Button label="Size 40" rounded size={40} />
+          <Button label="Size 44" rounded size={44} />
+          <Button label="Size 48" rounded size={48} />
 
           <Button label="Size 32" size={32} />
           <Button label="Size 36" size={36} />
@@ -602,7 +602,7 @@ export const Route = createFileRoute("/test")({
           <Button label="Size 44" size={44} />
           <Button label="Size 48" size={48} />
 
-          <Button isFullWidth label="Full width" />
+          <Button fullWidth label="Full width" />
 
           <Button label="Ghost" variant="ghost" />
           <Button label="Primary" variant="primary" />

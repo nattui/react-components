@@ -8,8 +8,7 @@ interface RouteRootHead {
 }
 
 const META = {
-  DESCRIPTION:
-    "A collection of reusable React components built with Base UI, TypeScript, and CSS Modules.",
+  DESCRIPTION: "A collection of reusable React components built with Base UI and StyleX.",
   TITLE: "Natt UI",
 }
 

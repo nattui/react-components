@@ -3,33 +3,17 @@ import type { JSX } from "react"
 import { cn, sx } from "../cn"
 import { pickerItemStyles } from "../picker/picker-item.stylex"
 
-export interface MenuCheckboxItemProps extends Omit<
-  BaseMenu.CheckboxItem.Props,
-  "checked" | "className" | "defaultChecked" | "disabled"
-> {
+export interface MenuCheckboxItemProps extends Omit<BaseMenu.CheckboxItem.Props, "className"> {
   className?: string
-  isChecked?: BaseMenu.CheckboxItem.Props["checked"]
-  isDefaultChecked?: BaseMenu.CheckboxItem.Props["defaultChecked"]
-  isDisabled?: BaseMenu.CheckboxItem.Props["disabled"]
 }
 
 export function MenuCheckboxItem(props: MenuCheckboxItemProps): JSX.Element {
-  const {
-    children,
-    className: customClassName = "",
-    isChecked = undefined,
-    isDefaultChecked = false,
-    isDisabled = false,
-    ...rest
-  } = props
+  const { children, className: customClassName = "", ...rest } = props
 
   return (
     <BaseMenu.CheckboxItem
-      checked={isChecked}
       className={cn(sx(pickerItemStyles.base), customClassName)}
       data-slot="menu-checkbox-item"
-      defaultChecked={isDefaultChecked}
-      disabled={isDisabled}
       {...rest}
     >
       <span className={sx(pickerItemStyles.label)} data-slot="menu-checkbox-item-text">

@@ -5,30 +5,20 @@ import { textareaStyles } from "./textarea.stylex"
 
 export { textareaStyles } from "./textarea.stylex"
 
-export interface TextareaProps extends Omit<
-  ComponentProps<"textarea">,
-  "aria-pressed" | "disabled" | "readOnly" | "required"
-> {
-  isActive?: boolean
-  isDisabled?: boolean
-  isInvalid?: boolean
-  isReadOnly?: boolean
-  isRequired?: boolean
-  isRounded?: boolean
-  isValid?: boolean
+export interface TextareaProps extends Omit<ComponentProps<"textarea">, "aria-pressed"> {
+  active?: boolean
+  invalid?: boolean
+  rounded?: boolean
+  valid?: boolean
 }
 
 export function Textarea(props: TextareaProps): JSX.Element {
   const {
     className: customClassName = "",
-    isActive = false,
-    isDisabled = false,
-    isInvalid = undefined,
-    isReadOnly = false,
-    isRequired = false,
-    isRounded = false,
-    isValid = undefined,
-    rows = 2,
+    active = false,
+    invalid = undefined,
+    rounded = false,
+    valid = undefined,
     ...rest
   } = props
 
@@ -38,18 +28,15 @@ export function Textarea(props: TextareaProps): JSX.Element {
         sx(
           inputStyles.base,
           textareaStyles.base,
-          isRounded ? inputStyles.roundedFull : inputStyles.roundedBase,
+          rounded ? inputStyles.roundedFull : inputStyles.roundedBase,
         ),
         customClassName,
       )}
-      data-is-active={isActive}
-      data-is-invalid={isInvalid}
-      data-is-valid={isValid}
+      data-is-active={active}
+      data-is-invalid={invalid}
+      data-is-valid={valid}
       data-slot="textarea"
-      disabled={isDisabled}
-      readOnly={isReadOnly}
-      required={isRequired}
-      rows={rows}
+      rows={2}
       {...rest}
     />
   )

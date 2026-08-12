@@ -73,72 +73,72 @@ You don't need to explicitly set the icon size. Icons inherit the correct sizing
 
 ## Disabled
 
-Use the `isDisabled` prop to prevent a button from being interacted with. Disabled buttons communicate that an action is currently unavailable.
+Use the `disabled` prop to prevent a button from being interacted with. Disabled buttons communicate that an action is currently unavailable.
 
 ```jsx
 // component
 
-<Button isDisabled label="Disabled" variant="primary" />
-<Button isDisabled label="Disabled" variant="secondary" />
-<Button isDisabled label="Disabled" variant="ghost" />
+<Button disabled label="Disabled" variant="primary" />
+<Button disabled label="Disabled" variant="secondary" />
+<Button disabled label="Disabled" variant="ghost" />
 ```
 
 ```jsx
-<Button isDisabled label="Disabled" variant="primary" />
-<Button isDisabled label="Disabled" variant="secondary" />
-<Button isDisabled label="Disabled" variant="ghost" />
+<Button disabled label="Disabled" variant="primary" />
+<Button disabled label="Disabled" variant="secondary" />
+<Button disabled label="Disabled" variant="ghost" />
 ```
 
 ## Loading
 
-Use the `isLoading` prop to indicate that an action is in progress. While loading, the button shows a spinner and cannot be interacted with.
+Use the `loading` prop to indicate that an action is in progress. While loading, the button shows a spinner and cannot be interacted with.
 
-Do not add `isDisabled` when using `isLoading`, as the button is automatically non-interactive while loading.
+Do not add `disabled` when using `loading`, as the button is automatically non-interactive while loading.
 
 ```jsx
 // component
 
-<Button isLoading label="Loading" variant="primary" />
-<Button isLoading label="Loading" variant="secondary" />
-<Button isLoading label="Loading" variant="ghost" />
+<Button label="Loading" loading variant="primary" />
+<Button label="Loading" loading variant="secondary" />
+<Button label="Loading" loading variant="ghost" />
 ```
 
 ```jsx
-<Button isLoading label="Loading" variant="primary" />
-<Button isLoading label="Loading" variant="secondary" />
-<Button isLoading label="Loading" variant="ghost" />
+<Button label="Loading" loading variant="primary" />
+<Button label="Loading" loading variant="secondary" />
+<Button label="Loading" loading variant="ghost" />
 ```
 
 ## Full width
 
-Use the `isFullWidth` prop to make the button expand to the full width of its container.
+Use the `fullWidth` prop to make the button expand to the full width of its container.
 
 ```jsx
 // component
 
-<Button isFullWidth label="Full width" />
+<Button fullWidth label="Full width" />
 ```
 
 ```jsx
-<Button isFullWidth label="Full width" />
+<Button fullWidth label="Full width" />
 ```
 
 ## Rounded
 
-Use the `isRounded` prop to give the button fully rounded corners.
+Use the `rounded` prop to give the button fully rounded corners.
 
 ```jsx
 // component
 
-<Button isRounded label="Rounded" variant="primary" />
-<Button isRounded label="Rounded" variant="secondary" />
-<Button isRounded label="Rounded" variant="ghost" />
+<Button label="Rounded" rounded variant="primary" />
+<Button label="Rounded" rounded variant="secondary" />
+<Button label="Rounded" rounded variant="ghost" />
 ```
 
 ```jsx
-<Button isRounded label="Rounded" variant="primary" />
-<Button isRounded label="Rounded" variant="secondary" />
-<Button isRounded label="Rounded" variant="ghost" />
+<Button label="Rounded" rounded variant="primary" />
+<Button label="Rounded" rounded variant="secondary" />
+<Button label="Rounded" rounded variant="ghost" />
 ```
 
 ## Button link

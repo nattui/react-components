@@ -5,21 +5,19 @@ import { otpFieldStyles } from "./otp-field.stylex"
 
 export { otpFieldStyles } from "./otp-field.stylex"
 
-interface OTPFieldProps extends Omit<OTPFieldBase.Root.Props, "disabled"> {
-  isDisabled?: OTPFieldBase.Root.Props["disabled"]
-  isMasked?: OTPFieldBase.Root.Props["mask"]
+interface OTPFieldProps extends Omit<OTPFieldBase.Root.Props, "mask"> {
+  masked?: OTPFieldBase.Root.Props["mask"]
 }
 
 export function OTPField(props: OTPFieldProps): JSX.Element {
-  const { className: customClassName = "", isDisabled = false, isMasked = false, ...rest } = props
+  const { className: customClassName = "", masked = false, ...rest } = props
 
   return (
     <OTPFieldBase.Root
       className={cn(sx(otpFieldStyles.base), customClassName)}
-      data-is-masked={isMasked}
+      data-is-masked={masked}
       data-slot="otp-field"
-      disabled={isDisabled}
-      mask={isMasked}
+      mask={masked}
       {...rest}
     />
   )

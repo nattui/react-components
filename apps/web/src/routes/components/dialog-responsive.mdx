@@ -31,7 +31,7 @@ The `DialogResponsive` component is a Base UI component.
     <p className="text-center">Anyone to create their own components.</p>
     <Spacer height={24} />
 
-    <Button isFullWidth label="Continue" size={48} />
+    <Button fullWidth label="Continue" size={48} />
   </DialogResponsivePopup>
 </DialogResponsive>
 ```
@@ -53,7 +53,7 @@ The `DialogResponsive` component is a Base UI component.
     <p className="text-center">Anyone to create their own components.</p>
     <Spacer height={24} />
 
-    <Button isFullWidth label="Continue" size={48} />
+    <Button fullWidth label="Continue" size={48} />
   </DialogResponsivePopup>
 </DialogResponsive>
 ```
@@ -69,13 +69,13 @@ By default, `DialogResponsive` is an uncontrolled component that manages its own
 </DialogResponsive>
 ```
 
-Use `isOpen` and `onIsOpenChange` props if you need to access or control the state.
+Use `open` and `onOpenChange` props if you need to access or control the state.
 
 ```jsx
 const [isOpen, setIsOpen] = useState(false)
 
 return (
-  <DialogResponsive isOpen={isOpen} onIsOpenChange={setIsOpen}>
+  <DialogResponsive onOpenChange={setIsOpen} open={isOpen}>
     <DialogResponsiveTrigger render={<Button label="Open dialog" />} />
     <DialogResponsivePopup>Hello!</DialogResponsivePopup>
   </DialogResponsive>

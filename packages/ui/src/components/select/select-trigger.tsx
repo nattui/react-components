@@ -6,7 +6,7 @@ import { pickerTriggerStyles } from "../picker/picker-trigger.stylex"
 export { pickerTriggerStyles as selectTriggerStyles } from "../picker/picker-trigger.stylex"
 
 export interface SelectTriggerProps extends BaseSelect.Trigger.Props {
-  isRounded?: boolean
+  rounded?: boolean
   size?: SelectTriggerSize
 }
 
@@ -16,7 +16,7 @@ export function SelectTrigger(props: SelectTriggerProps): JSX.Element {
   const {
     children = undefined,
     className: customClassName = "",
-    isRounded = false,
+    rounded = false,
     size = 40,
     ...rest
   } = props
@@ -27,7 +27,7 @@ export function SelectTrigger(props: SelectTriggerProps): JSX.Element {
         sx(
           pickerTriggerStyles.base,
           pickerTriggerStyles[size],
-          isRounded && pickerTriggerStyles.roundedFull,
+          rounded && pickerTriggerStyles.roundedFull,
         ),
         customClassName,
       )}

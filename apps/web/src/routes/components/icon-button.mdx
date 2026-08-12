@@ -69,58 +69,58 @@ The `IconButton` comes with 5 sizes: `32`, `36`, `40` (default), `44`, and `48`.
 
 ## Disabled
 
-Use the `isDisabled` prop to prevent a button from being interacted with. Disabled buttons communicate that an action is currently unavailable.
+Use the `disabled` prop to prevent a button from being interacted with. Disabled buttons communicate that an action is currently unavailable.
 
 ```jsx
 // component
 
-<IconButton icon={<IconPlusOutline18 />} isDisabled variant="primary" />
-<IconButton icon={<IconPlusOutline18 />} isDisabled variant="secondary" />
-<IconButton icon={<IconPlusOutline18 />} isDisabled variant="ghost" />
+<IconButton disabled icon={<IconPlusOutline18 />} variant="primary" />
+<IconButton disabled icon={<IconPlusOutline18 />} variant="secondary" />
+<IconButton disabled icon={<IconPlusOutline18 />} variant="ghost" />
 ```
 
 ```jsx
-<IconButton icon={<IconPlusOutline18 />} isDisabled variant="primary" />
-<IconButton icon={<IconPlusOutline18 />} isDisabled variant="secondary" />
-<IconButton icon={<IconPlusOutline18 />} isDisabled variant="ghost" />
+<IconButton disabled icon={<IconPlusOutline18 />} variant="primary" />
+<IconButton disabled icon={<IconPlusOutline18 />} variant="secondary" />
+<IconButton disabled icon={<IconPlusOutline18 />} variant="ghost" />
 ```
 
 ## Loading
 
-Use the `isLoading` prop to indicate that an action is in progress. While loading, the button shows a spinner and cannot be interacted with.
+Use the `loading` prop to indicate that an action is in progress. While loading, the button shows a spinner and cannot be interacted with.
 
-Do not add `isDisabled` when using `isLoading`, as the button is automatically non-interactive while loading.
+Do not add `disabled` when using `loading`, as the button is automatically non-interactive while loading.
 
 ```jsx
 // component
 
-<IconButton icon={<IconPlusOutline18 />} isLoading variant="primary" />
-<IconButton icon={<IconPlusOutline18 />} isLoading variant="secondary" />
-<IconButton icon={<IconPlusOutline18 />} isLoading variant="ghost" />
+<IconButton icon={<IconPlusOutline18 />} loading variant="primary" />
+<IconButton icon={<IconPlusOutline18 />} loading variant="secondary" />
+<IconButton icon={<IconPlusOutline18 />} loading variant="ghost" />
 ```
 
 ```jsx
-<IconButton icon={<IconPlusOutline18 />} isLoading variant="primary" />
-<IconButton icon={<IconPlusOutline18 />} isLoading variant="secondary" />
-<IconButton icon={<IconPlusOutline18 />} isLoading variant="ghost" />
+<IconButton icon={<IconPlusOutline18 />} loading variant="primary" />
+<IconButton icon={<IconPlusOutline18 />} loading variant="secondary" />
+<IconButton icon={<IconPlusOutline18 />} loading variant="ghost" />
 ```
 
 ## Rounded
 
-Use the `isRounded` prop to give the button fully rounded corners.
+Use the `rounded` prop to give the button fully rounded corners.
 
 ```jsx
 // component
 
-<IconButton icon={<IconPlusOutline18 />} isRounded variant="primary" />
-<IconButton icon={<IconPlusOutline18 />} isRounded variant="secondary" />
-<IconButton icon={<IconPlusOutline18 />} isRounded variant="ghost" />
+<IconButton icon={<IconPlusOutline18 />} rounded variant="primary" />
+<IconButton icon={<IconPlusOutline18 />} rounded variant="secondary" />
+<IconButton icon={<IconPlusOutline18 />} rounded variant="ghost" />
 ```
 
 ```jsx
-<IconButton icon={<IconPlusOutline18 />} isRounded variant="primary" />
-<IconButton icon={<IconPlusOutline18 />} isRounded variant="secondary" />
-<IconButton icon={<IconPlusOutline18 />} isRounded variant="ghost" />
+<IconButton icon={<IconPlusOutline18 />} rounded variant="primary" />
+<IconButton icon={<IconPlusOutline18 />} rounded variant="secondary" />
+<IconButton icon={<IconPlusOutline18 />} rounded variant="ghost" />
 ```
 
 ## Icon button

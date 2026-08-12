@@ -9,7 +9,7 @@ export { iconButtonStyles } from "./icon-button.stylex"
 
 export interface IconButtonProps extends Omit<
   ButtonProps,
-  "iconEnd" | "iconStart" | "isFullWidth" | "label"
+  "fullWidth" | "iconEnd" | "iconStart" | "label"
 > {
   icon?: ReactNode
 }
@@ -18,9 +18,9 @@ export function IconButton(props: IconButtonProps): JSX.Element {
   const {
     className = "",
     icon = "",
-    isDisabled = false,
-    isLoading = false,
-    isRounded = false,
+    disabled = false,
+    loading = false,
+    rounded = false,
     variant = "primary",
     size = 40,
     ...rest
@@ -31,21 +31,21 @@ export function IconButton(props: IconButtonProps): JSX.Element {
       className={getButtonClassName(
         {
           className,
-          isDisabled,
-          isLoading,
-          isRounded,
+          disabled,
+          loading,
+          rounded,
           size,
           variant,
         },
         iconButtonStyles[size],
       )}
       data-slot="icon-button"
-      disabled={isDisabled || isLoading}
+      disabled={disabled || loading}
       type="button"
       {...rest}
     >
-      {isLoading && <ButtonSpinner />}
-      {isLoading ? <span className={sx(buttonStyles.loadingContent)}>{icon}</span> : icon}
+      {loading && <ButtonSpinner />}
+      {loading ? <span className={sx(buttonStyles.loadingContent)}>{icon}</span> : icon}
     </button>
   )
 }

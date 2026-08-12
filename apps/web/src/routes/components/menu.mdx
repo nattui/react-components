@@ -246,7 +246,7 @@ Use `MenuGroup` with a `MenuGroupLabel` to label related items, and `MenuSeparat
 
 ## Checkbox items
 
-Use `MenuCheckboxItem` to toggle a setting on or off. Set `isDefaultChecked` to tick an item initially, or use `isChecked` and `onCheckedChange` to control it. Checkbox items keep the menu open when clicked by default — set `closeOnClick` to close it instead.
+Use `MenuCheckboxItem` to toggle a setting on or off. Set `defaultChecked` to tick an item initially, or use `checked` and `onCheckedChange` to control it. Checkbox items keep the menu open when clicked by default — set `closeOnClick` to close it instead.
 
 ```jsx
 // component
@@ -267,8 +267,8 @@ Use `MenuCheckboxItem` to toggle a setting on or off. Set `isDefaultChecked` to 
     }
   />
   <MenuContent>
-    <MenuCheckboxItem isDefaultChecked>Minimap</MenuCheckboxItem>
-    <MenuCheckboxItem isDefaultChecked>Search</MenuCheckboxItem>
+    <MenuCheckboxItem defaultChecked>Minimap</MenuCheckboxItem>
+    <MenuCheckboxItem defaultChecked>Search</MenuCheckboxItem>
     <MenuCheckboxItem>Sidebar</MenuCheckboxItem>
   </MenuContent>
 </Menu>
@@ -291,8 +291,8 @@ Use `MenuCheckboxItem` to toggle a setting on or off. Set `isDefaultChecked` to 
     }
   />
   <MenuContent>
-    <MenuCheckboxItem isDefaultChecked>Minimap</MenuCheckboxItem>
-    <MenuCheckboxItem isDefaultChecked>Search</MenuCheckboxItem>
+    <MenuCheckboxItem defaultChecked>Minimap</MenuCheckboxItem>
+    <MenuCheckboxItem defaultChecked>Search</MenuCheckboxItem>
     <MenuCheckboxItem>Sidebar</MenuCheckboxItem>
   </MenuContent>
 </Menu>
@@ -504,7 +504,7 @@ Use `MenuLinkItem` to navigate to another page. It renders an `<a>` element, so 
 
 ## Disabled
 
-Use the `isDisabled` prop on an item to prevent a single action, or the `disabled` prop on `MenuTrigger` to disable the whole menu.
+Use the `disabled` prop on an item to prevent a single action, or the `disabled` prop on `MenuTrigger` to disable the whole menu.
 
 ```jsx
 // component
@@ -526,7 +526,7 @@ Use the `isDisabled` prop on an item to prevent a single action, or the `disable
   />
   <MenuContent>
     <MenuItem>Play Next</MenuItem>
-    <MenuItem isDisabled>Play Last</MenuItem>
+    <MenuItem disabled>Play Last</MenuItem>
   </MenuContent>
 </Menu>
 
@@ -567,7 +567,7 @@ Use the `isDisabled` prop on an item to prevent a single action, or the `disable
   />
   <MenuContent>
     <MenuItem>Play Next</MenuItem>
-    <MenuItem isDisabled>Play Last</MenuItem>
+    <MenuItem disabled>Play Last</MenuItem>
   </MenuContent>
 </Menu>
 

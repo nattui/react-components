@@ -5,19 +5,17 @@ import { pickerItemStyles } from "../picker/picker-item.stylex"
 
 export { pickerItemStyles as selectItemStyles } from "../picker/picker-item.stylex"
 
-export interface SelectItemProps extends Omit<BaseSelect.Item.Props, "className" | "disabled"> {
+export interface SelectItemProps extends Omit<BaseSelect.Item.Props, "className"> {
   className?: string
-  isDisabled?: BaseSelect.Item.Props["disabled"]
 }
 
 export function SelectItem(props: SelectItemProps): JSX.Element {
-  const { children, className: customClassName = "", isDisabled = false, ...rest } = props
+  const { children, className: customClassName = "", ...rest } = props
 
   return (
     <BaseSelect.Item
       className={cn(sx(pickerItemStyles.base), customClassName)}
       data-slot="select-item"
-      disabled={isDisabled}
       {...rest}
     >
       <BaseSelect.ItemText className={sx(pickerItemStyles.label)} data-slot="select-item-text">

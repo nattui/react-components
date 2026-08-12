@@ -5,25 +5,16 @@ import { toggleGroupItemStyles } from "./toggle-group-item.stylex"
 
 export { toggleGroupItemStyles } from "./toggle-group-item.stylex"
 
-export interface ToggleGroupItemProps extends Omit<BaseToggle.Props, "disabled" | "nativeButton"> {
-  isDisabled?: BaseToggle.Props["disabled"]
-  isNativeButton?: BaseToggle.Props["nativeButton"]
-}
+export interface ToggleGroupItemProps extends BaseToggle.Props {}
 
 export function ToggleGroupItem(props: ToggleGroupItemProps): JSX.Element {
-  const {
-    className: customClassName = "",
-    isDisabled = false,
-    isNativeButton = true,
-    ...rest
-  } = props
+  const { className: customClassName = "", ...rest } = props
 
   return (
     <BaseToggle
       className={cn(sx(toggleGroupItemStyles.base), customClassName)}
       data-slot="toggle-group-item"
-      disabled={isDisabled}
-      nativeButton={isNativeButton}
+      nativeButton
       {...rest}
     />
   )

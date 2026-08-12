@@ -5,19 +5,17 @@ import { tabsPillTabStyles } from "./tabs-pill-tab.stylex"
 
 export { tabsPillTabStyles } from "./tabs-pill-tab.stylex"
 
-export interface TabsPillTabProps extends Omit<BaseTabs.Tab.Props, "nativeButton"> {
-  isNativeButton?: BaseTabs.Tab.Props["nativeButton"]
-}
+export interface TabsPillTabProps extends BaseTabs.Tab.Props {}
 
 export function TabsPillTab(props: TabsPillTabProps): JSX.Element {
-  const { className: customClassName = "", isNativeButton = true, ...rest } = props
+  const { className: customClassName = "", ...rest } = props
 
   return (
     <div className={sx(tabsPillTabStyles.wrapper)}>
       <BaseTabs.Tab
         className={cn(sx(tabsPillTabStyles.base), customClassName)}
         data-slot="tabs-pill-tab"
-        nativeButton={isNativeButton}
+        nativeButton
         {...rest}
       />
       <div className={sx(tabsPillTabStyles.background)} />

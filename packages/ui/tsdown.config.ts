@@ -11,9 +11,6 @@ export default defineConfig((options) => ({
   ],
   css: {
     inject: true,
-    modules: {
-      generateScopedName: "[name]_[local]_[hash]",
-    },
   },
   dts: {
     build: true,

@@ -6,19 +6,12 @@ import { inputStyles } from "./input.stylex"
 
 export { inputStyles } from "./input.stylex"
 
-export interface InputProps extends Omit<
-  ComponentProps<"input">,
-  "aria-pressed" | "autoFocus" | "disabled" | "readOnly" | "required"
-> {
-  isActive?: boolean
-  isAutoFocus?: boolean
-  isDisabled?: boolean
-  isInvalid?: boolean
-  isReadOnly?: boolean
-  isRequired?: boolean
-  isRounded?: boolean
-  isValid?: boolean
+export interface InputProps extends Omit<ComponentProps<"input">, "aria-pressed"> {
+  active?: boolean
+  invalid?: boolean
+  rounded?: boolean
   size?: InputSize
+  valid?: boolean
 }
 
 export type InputSize = 32 | 36 | 40 | 44 | 48
@@ -26,34 +19,25 @@ export type InputSize = 32 | 36 | 40 | 44 | 48
 export function Input(props: InputProps): JSX.Element {
   const {
     className: customClassName = "",
-    isActive = false,
-    isAutoFocus = false,
-    isDisabled = false,
-    isInvalid = undefined,
-    isReadOnly = false,
-    isRequired = false,
-    isRounded = false,
-    isValid = undefined,
+    active = false,
+    invalid = undefined,
+    rounded = false,
+    valid = undefined,
     size = 48,
-    type = "text",
     ...rest
   } = props
 
   return (
     <input
-      autoFocus={isAutoFocus}
       className={cn(
-        sx(inputStyles.base, inputStyles[size], isRounded && inputStyles.roundedFull),
+        sx(inputStyles.base, inputStyles[size], rounded && inputStyles.roundedFull),
         customClassName,
       )}
-      data-is-active={isActive}
-      data-is-invalid={isInvalid}
-      data-is-valid={isValid}
+      data-is-active={active}
+      data-is-invalid={invalid}
+      data-is-valid={valid}
       data-slot="input"
-      disabled={isDisabled}
-      readOnly={isReadOnly}
-      required={isRequired}
-      type={type}
+      type="text"
       {...rest}
     />
   )

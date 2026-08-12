@@ -423,13 +423,13 @@ The `ComboboxTrigger` comes with 5 sizes: `32`, `36`, `40` (default), `44`, and 
 
 ## Rounded
 
-Use the `isRounded` prop to give the trigger fully rounded corners.
+Use the `rounded` prop to give the trigger fully rounded corners.
 
 ```jsx
 // component
 
 <Combobox items={FONTS}>
-  <ComboboxTrigger className="max-w-256" isRounded>
+  <ComboboxTrigger className="max-w-256" rounded>
     <ComboboxValue placeholder="Select a font" />
   </ComboboxTrigger>
   <ComboboxContent>
@@ -448,7 +448,7 @@ Use the `isRounded` prop to give the trigger fully rounded corners.
 
 ```jsx
 <Combobox items={FONTS}>
-  <ComboboxTrigger className="max-w-256" isRounded>
+  <ComboboxTrigger className="max-w-256" rounded>
     <ComboboxValue placeholder="Select a font" />
   </ComboboxTrigger>
   <ComboboxContent>
@@ -467,7 +467,7 @@ Use the `isRounded` prop to give the trigger fully rounded corners.
 
 ## Disabled
 
-Use the `isDisabled` prop on `ComboboxItem` to prevent a single option from being selected, or the `disabled` prop on `Combobox` to disable the entire control.
+Use the `disabled` prop on `ComboboxItem` to prevent a single option from being selected, or the `disabled` prop on `Combobox` to disable the entire control.
 
 ```jsx
 // component
@@ -481,7 +481,7 @@ Use the `isDisabled` prop on `ComboboxItem` to prevent a single option from bein
     <ComboboxEmpty>No fonts found.</ComboboxEmpty>
     <ComboboxList>
       {(font) => (
-        <ComboboxItem isDisabled={font === "Cursive"} key={font} value={font}>
+        <ComboboxItem disabled={font === "Cursive"} key={font} value={font}>
           {font}
         </ComboboxItem>
       )}
@@ -506,7 +506,7 @@ Use the `isDisabled` prop on `ComboboxItem` to prevent a single option from bein
     <ComboboxEmpty>No fonts found.</ComboboxEmpty>
     <ComboboxList>
       {(font) => (
-        <ComboboxItem isDisabled={font === "Cursive"} key={font} value={font}>
+        <ComboboxItem disabled={font === "Cursive"} key={font} value={font}>
           {font}
         </ComboboxItem>
       )}

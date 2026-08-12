@@ -317,13 +317,13 @@ The `SelectTrigger` comes with 5 sizes: `32`, `36`, `40` (default), `44`, and `4
 
 ## Rounded
 
-Use the `isRounded` prop to give the trigger fully rounded corners.
+Use the `rounded` prop to give the trigger fully rounded corners.
 
 ```jsx
 // component
 
 <Select>
-  <SelectTrigger className="max-w-256" isRounded>
+  <SelectTrigger className="max-w-256" rounded>
     <SelectValue placeholder="Select a font" />
   </SelectTrigger>
   <SelectContent>
@@ -336,7 +336,7 @@ Use the `isRounded` prop to give the trigger fully rounded corners.
 
 ```jsx
 <Select>
-  <SelectTrigger className="max-w-256" isRounded>
+  <SelectTrigger className="max-w-256" rounded>
     <SelectValue placeholder="Select a font" />
   </SelectTrigger>
   <SelectContent>
@@ -349,7 +349,7 @@ Use the `isRounded` prop to give the trigger fully rounded corners.
 
 ## Disabled
 
-Use the `isDisabled` prop on `SelectItem` to prevent a single option from being selected, or the `disabled` prop on `Select` to disable the entire control.
+Use the `disabled` prop on `SelectItem` to prevent a single option from being selected, or the `disabled` prop on `Select` to disable the entire control.
 
 ```jsx
 // component
@@ -361,7 +361,7 @@ Use the `isDisabled` prop on `SelectItem` to prevent a single option from being 
   <SelectContent>
     <SelectItem value="sans">Sans-serif</SelectItem>
     <SelectItem value="serif">Serif</SelectItem>
-    <SelectItem isDisabled value="cursive">Cursive</SelectItem>
+    <SelectItem disabled value="cursive">Cursive</SelectItem>
   </SelectContent>
 </Select>
 
@@ -380,7 +380,7 @@ Use the `isDisabled` prop on `SelectItem` to prevent a single option from being 
   <SelectContent>
     <SelectItem value="sans">Sans-serif</SelectItem>
     <SelectItem value="serif">Serif</SelectItem>
-    <SelectItem isDisabled value="cursive">
+    <SelectItem disabled value="cursive">
       Cursive
     </SelectItem>
   </SelectContent>

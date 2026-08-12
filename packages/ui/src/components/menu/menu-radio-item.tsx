@@ -3,22 +3,17 @@ import type { JSX } from "react"
 import { cn, sx } from "../cn"
 import { pickerItemStyles } from "../picker/picker-item.stylex"
 
-export interface MenuRadioItemProps extends Omit<
-  BaseMenu.RadioItem.Props,
-  "className" | "disabled"
-> {
+export interface MenuRadioItemProps extends Omit<BaseMenu.RadioItem.Props, "className"> {
   className?: string
-  isDisabled?: BaseMenu.RadioItem.Props["disabled"]
 }
 
 export function MenuRadioItem(props: MenuRadioItemProps): JSX.Element {
-  const { children, className: customClassName = "", isDisabled = false, ...rest } = props
+  const { children, className: customClassName = "", ...rest } = props
 
   return (
     <BaseMenu.RadioItem
       className={cn(sx(pickerItemStyles.base), customClassName)}
       data-slot="menu-radio-item"
-      disabled={isDisabled}
       {...rest}
     >
       <span className={sx(pickerItemStyles.label)} data-slot="menu-radio-item-text">
