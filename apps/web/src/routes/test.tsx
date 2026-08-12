@@ -1,5 +1,7 @@
 import { Claude, Gemini, Grok, OpenAI, type IconType } from "@lobehub/icons"
 import {
+  IconArrowLeftOutline18,
+  IconArrowRightOutline18,
   IconArrowUpRightOutline18,
   IconChevronDownOutline18,
   IconMediaLibraryOutline18,
@@ -314,8 +316,16 @@ export const Route = createFileRoute("/test")({
   component: function RouteComponent() {
     return (
       <Column>
-        <Button2 label="Button 2" />
-        <Spacer height={16} />
+        <Button2
+          iconEnd={<IconArrowRightOutline18 />}
+          iconStart={<IconArrowLeftOutline18 />}
+          label="Button 2"
+        />
+        <Spacer height={8} />
+        <Button2 disabled label="Button 2" />
+        <Spacer height={8} />
+        <Button2 disabled label="Button 2" />
+        <Spacer height={64} />
 
         <Label>Model</Label>
         <Spacer height={4} />

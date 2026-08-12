@@ -27,6 +27,10 @@ export const button2Styles = create({
     },
     userSelect: "none",
   },
+  disabled: {
+    cursor: "not-allowed",
+    opacity: 0.5,
+  },
   roundedBase_32: {
     borderRadius: 8,
     paddingInline: 12,

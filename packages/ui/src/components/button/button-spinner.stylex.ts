@@ -82,7 +82,7 @@ export const buttonSpinnerStyles = stylex.create({
     animationName: spinner,
     animationTimingFunction: "steps(12, end)",
     height: "var(--size)",
-    position: "absolute",
+    position: "relative",
     scale: "-1 1",
     width: "var(--size)",
   },
