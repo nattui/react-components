@@ -1,5 +1,9 @@
+// oxlint-disable better-tailwindcss/no-unknown-classes
+
 import type { ComponentProps, ElementType, JSX, ReactNode } from "react"
-import { getButtonClassName, type ButtonSize, type ButtonVariant } from "../button/button"
+import type { ButtonSize, ButtonVariant } from "../button/button"
+import { buttonStyles, buttonStylesBy } from "../button/button.stylex"
+import { cn } from "../cn"
 
 export type ButtonLinkProps<ComponentType extends ElementType = "a"> =
   ButtonLinkInternalProps<ComponentType> &
@@ -32,18 +36,17 @@ export function ButtonLink<ComponentType extends ElementType = "a">(
     ...rest
   } = props as ButtonLinkProps
 
+  const combinedClassName = cn(
+    buttonStyles.base,
+    buttonStylesBy.rounded[rounded ? "full" : "base"][size],
+    buttonStylesBy.size[size],
+    buttonStylesBy.variant[variant],
+    buttonStylesBy.width[fullWidth ? "full" : "base"],
+    className,
+  )
+
   return (
-    <Component
-      className={getButtonClassName({
-        className,
-        fullWidth,
-        rounded,
-        size,
-        variant,
-      })}
-      data-slot="button-link"
-      {...rest}
-    >
+    <Component className={combinedClassName} data-slot="button-link" {...rest}>
       {iconStart}
       {label !== "" && <span>{label}</span>}
       {iconEnd}

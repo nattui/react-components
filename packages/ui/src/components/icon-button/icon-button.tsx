@@ -1,7 +1,9 @@
+// oxlint-disable better-tailwindcss/no-unknown-classes
+
 import type { JSX, ReactNode } from "react"
-import { getButtonClassName, type ButtonProps } from "../button/button"
+import type { ButtonProps } from "../button/button"
 import { ButtonSpinner } from "../button/button-spinner"
-import { buttonStyles } from "../button/button.stylex"
+import { buttonStyles, buttonStylesBy } from "../button/button.stylex"
 import { cn } from "../cn"
 import { iconButtonStyles } from "./icon-button.stylex"
 
@@ -26,26 +28,27 @@ export function IconButton(props: IconButtonProps): JSX.Element {
     ...rest
   } = props
 
+  const combinedClassName = cn(
+    buttonStyles.base,
+    buttonStylesBy.rounded[rounded ? "full" : "base"][size],
+    buttonStylesBy.size[size],
+    buttonStylesBy.variant[variant],
+    buttonStylesBy.width.base,
+    (disabled || loading) && buttonStyles.disabled,
+    iconButtonStyles[size],
+    className,
+  )
+
   return (
     <button
-      className={getButtonClassName(
-        {
-          className,
-          disabled,
-          loading,
-          rounded,
-          size,
-          variant,
-        },
-        iconButtonStyles[size],
-      )}
+      className={combinedClassName}
       data-slot="icon-button"
       disabled={disabled || loading}
       type="button"
       {...rest}
     >
       {loading && <ButtonSpinner />}
-      {loading ? <span className={cn(buttonStyles.loadingContent)}>{icon}</span> : icon}
+      {!loading && icon}
     </button>
   )
 }

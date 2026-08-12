@@ -1,15 +1,15 @@
-import type { ComponentProps, JSX, ReactNode } from "react"
-import { cn } from "../cn"
-import { ButtonSpinner } from "./button-spinner"
-import { buttonRoundedBaseStyles, buttonRoundedFullStyles, buttonStyles } from "./button.stylex"
+// oxlint-disable react/button-has-type better-tailwindcss/no-unknown-classes
 
-export { buttonStyles } from "./button.stylex"
+import type { ComponentProps, JSX, ReactNode } from "react"
+import { ButtonSpinner } from "../button/button-spinner"
+import { cn } from "../cn"
+import { buttonStylesBy, buttonStyles } from "./button.stylex"
 
 export interface ButtonProps extends Omit<ComponentProps<"button">, "children"> {
   fullWidth?: boolean
   iconEnd?: ReactNode
   iconStart?: ReactNode
-  label?: number | number[] | string | string[]
+  label?: string
   loading?: boolean
   rounded?: boolean
   size?: ButtonSize
@@ -23,80 +23,35 @@ export function Button(props: ButtonProps): JSX.Element {
   const {
     className = "",
     disabled = false,
-    iconStart = "",
-    iconEnd = "",
     fullWidth = false,
+    iconEnd = "",
+    iconStart = "",
+    label = "",
     loading = false,
     rounded = false,
-    label = "",
-    variant = "primary",
     size = 40,
+    variant = "primary",
     ...rest
   } = props
 
-  return (
-    <button
-      className={getButtonClassName({
-        className,
-        disabled,
-        fullWidth,
-        loading,
-        rounded,
-        size,
-        variant,
-      })}
-      data-slot="button"
-      disabled={disabled || loading}
-      type="button"
-      {...rest}
-    >
-      {loading && <ButtonSpinner />}
-      {hideWhenLoading(iconStart, loading)}
-      {label !== "" && <span className={cn(loading && buttonStyles.loadingContent)}>{label}</span>}
-      {hideWhenLoading(iconEnd, loading)}
-    </button>
-  )
-}
-
-export function getButtonClassName(
-  options: {
-    className?: string
-    disabled?: boolean
-    fullWidth?: boolean
-    loading?: boolean
-    rounded?: boolean
-    size?: ButtonSize
-    variant?: ButtonVariant
-  },
-  ...overrides: Parameters<typeof cn>
-): string {
-  const {
-    className = "",
-    disabled = false,
-    fullWidth = false,
-    loading = false,
-    rounded = false,
-    size = 40,
-    variant = "primary",
-  } = options
-
-  return cn(
+  const combinedClassName = cn(
     buttonStyles.base,
-    buttonStyles[size],
-    (rounded ? buttonRoundedFullStyles : buttonRoundedBaseStyles)[size],
-    buttonStyles[variant],
-    fullWidth ? buttonStyles.widthFull : buttonStyles.widthBase,
-    disabled && buttonStyles.disabled,
-    loading && buttonStyles.loading,
-    ...overrides,
+    buttonStylesBy.rounded[rounded ? "full" : "base"][size],
+    buttonStylesBy.size[size],
+    buttonStylesBy.variant[variant],
+    buttonStylesBy.width[fullWidth ? "full" : "base"],
+    (disabled || loading) && buttonStyles.disabled,
     className,
   )
-}
 
-function hideWhenLoading(node: ReactNode, loading: boolean): ReactNode {
-  if (!loading || node === "") {
-    return node
-  }
+  const isDisabled = disabled || loading
 
-  return <span className={cn(buttonStyles.loadingContent)}>{node}</span>
+  return (
+    <button className={combinedClassName} disabled={isDisabled} {...rest}>
+      {!loading && iconStart}
+      {loading && <ButtonSpinner />}
+      {label}
+      {iconEnd}
+    </button>
+  )
 }

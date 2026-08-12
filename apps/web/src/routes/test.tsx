@@ -43,7 +43,6 @@ import {
   SelectGroupLabel,
   SelectItem,
   SelectSeparator,
-  Button2,
   SelectTrigger,
   SelectValue,
   Spacer,
@@ -316,15 +315,15 @@ export const Route = createFileRoute("/test")({
   component: function RouteComponent() {
     return (
       <Column>
-        <Button2
+        <Button
           iconEnd={<IconArrowRightOutline18 />}
           iconStart={<IconArrowLeftOutline18 />}
           label="Button 2"
         />
         <Spacer height={8} />
-        <Button2 disabled label="Button 2" />
+        <Button disabled label="Button 2" />
         <Spacer height={8} />
-        <Button2 disabled label="Button 2" />
+        <Button disabled label="Button 2" />
         <Spacer height={64} />
 
         <Label>Model</Label>

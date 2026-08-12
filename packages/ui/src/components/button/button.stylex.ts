@@ -1,26 +1,12 @@
-import * as stylex from "@stylexjs/stylex"
+import { create } from "@stylexjs/stylex"
 
-export const buttonStyles = stylex.create({
-  32: {
-    height: 32,
-  },
-  36: {
-    height: 36,
-  },
-  40: {
-    height: 40,
-  },
-  44: {
-    height: 44,
-  },
-  48: {
-    height: 48,
-  },
+export const buttonStyles = create({
   base: {
     alignItems: "center",
     columnGap: 8,
     cursor: "pointer",
     display: "inline-flex",
+    flexShrink: 0,
     fontSize: 14,
     fontWeight: 450,
     justifyContent: "center",
@@ -45,22 +31,69 @@ export const buttonStyles = stylex.create({
     cursor: "not-allowed",
     opacity: 0.5,
   },
-  ghost: {
+  roundedBase_32: {
+    borderRadius: 8,
+    paddingInline: 12,
+  },
+  roundedBase_36: {
+    borderRadius: 9,
+    paddingInline: 14,
+  },
+  roundedBase_40: {
+    borderRadius: 10,
+    paddingInline: 16,
+  },
+  roundedBase_44: {
+    borderRadius: 11,
+    paddingInline: 18,
+  },
+  roundedBase_48: {
+    borderRadius: 12,
+    paddingInline: 20,
+  },
+  roundedFull_32: {
+    borderRadius: 16,
+    paddingInline: 12,
+  },
+  roundedFull_36: {
+    borderRadius: 18,
+    paddingInline: 17,
+  },
+  roundedFull_40: {
+    borderRadius: 20,
+    paddingInline: 20,
+  },
+  roundedFull_44: {
+    borderRadius: 22,
+    paddingInline: 23,
+  },
+  roundedFull_48: {
+    borderRadius: 24,
+    paddingInline: 28,
+  },
+  size_32: {
+    height: 32,
+  },
+  size_36: {
+    height: 36,
+  },
+  size_40: {
+    height: 40,
+  },
+  size_44: {
+    height: 44,
+  },
+  size_48: {
+    height: 48,
+  },
+  variant_ghost: {
     backgroundColor: {
       ":hover:not(:disabled)": "var(--color-gray-4)",
       default: "transparent",
     },
     color: "var(--color-gray-12)",
   },
-  loading: {
-    cursor: "not-allowed",
-    opacity: 0.5,
-  },
-  loadingContent: {
-    color: "transparent",
-    textShadow: "none",
-  },
-  primary: {
+  variant_primary: {
     backgroundColor: {
       ":hover:not(:disabled)":
         "color-mix(in oklab, var(--color-gray-12) 100%, var(--color-gray-1) 25%)",
@@ -68,57 +101,7 @@ export const buttonStyles = stylex.create({
     },
     color: "var(--color-gray-1)",
   },
-  roundedBase32: {
-    borderRadius: 8,
-    paddingBlock: 0,
-    paddingInline: 12,
-  },
-  roundedBase36: {
-    borderRadius: 9,
-    paddingBlock: 0,
-    paddingInline: 14,
-  },
-  roundedBase40: {
-    borderRadius: 10,
-    paddingBlock: 0,
-    paddingInline: 16,
-  },
-  roundedBase44: {
-    borderRadius: 11,
-    paddingBlock: 0,
-    paddingInline: 18,
-  },
-  roundedBase48: {
-    borderRadius: 12,
-    paddingBlock: 0,
-    paddingInline: 20,
-  },
-  roundedFull32: {
-    borderRadius: 16,
-    paddingBlock: 0,
-    paddingInline: 12,
-  },
-  roundedFull36: {
-    borderRadius: 18,
-    paddingBlock: 0,
-    paddingInline: 17,
-  },
-  roundedFull40: {
-    borderRadius: 20,
-    paddingBlock: 0,
-    paddingInline: 20,
-  },
-  roundedFull44: {
-    borderRadius: 22,
-    paddingBlock: 0,
-    paddingInline: 23,
-  },
-  roundedFull48: {
-    borderRadius: 24,
-    paddingBlock: 0,
-    paddingInline: 28,
-  },
-  secondary: {
+  variant_secondary: {
     backgroundColor: {
       ":hover:not(:disabled)": "var(--color-gray-4)",
       default: "var(--color-bg-shell-inner)",
@@ -137,18 +120,37 @@ export const buttonStyles = stylex.create({
   },
 })
 
-export const buttonRoundedBaseStyles = {
-  32: buttonStyles.roundedBase32,
-  36: buttonStyles.roundedBase36,
-  40: buttonStyles.roundedBase40,
-  44: buttonStyles.roundedBase44,
-  48: buttonStyles.roundedBase48,
-} as const
-
-export const buttonRoundedFullStyles = {
-  32: buttonStyles.roundedFull32,
-  36: buttonStyles.roundedFull36,
-  40: buttonStyles.roundedFull40,
-  44: buttonStyles.roundedFull44,
-  48: buttonStyles.roundedFull48,
-} as const
+export const buttonStylesBy = {
+  rounded: {
+    base: {
+      32: buttonStyles.roundedBase_32,
+      36: buttonStyles.roundedBase_36,
+      40: buttonStyles.roundedBase_40,
+      44: buttonStyles.roundedBase_44,
+      48: buttonStyles.roundedBase_48,
+    },
+    full: {
+      32: buttonStyles.roundedFull_32,
+      36: buttonStyles.roundedFull_36,
+      40: buttonStyles.roundedFull_40,
+      44: buttonStyles.roundedFull_44,
+      48: buttonStyles.roundedFull_48,
+    },
+  },
+  size: {
+    32: buttonStyles.size_32,
+    36: buttonStyles.size_36,
+    40: buttonStyles.size_40,
+    44: buttonStyles.size_44,
+    48: buttonStyles.size_48,
+  },
+  variant: {
+    ghost: buttonStyles.variant_ghost,
+    primary: buttonStyles.variant_primary,
+    secondary: buttonStyles.variant_secondary,
+  },
+  width: {
+    base: buttonStyles.widthBase,
+    full: buttonStyles.widthFull,
+  },
+}
