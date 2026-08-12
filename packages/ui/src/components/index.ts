@@ -1,3 +1,9 @@
+/*
+    Build-time only: pins the CSS asset the StyleX plugin appends compiled
+    rules into, so it lands at dist/components/stylex.css (the ./components
+    export). The import is dropped from the built JS — consumers load styles
+    via `@import "@nattstack/ui/components"`.
+*/
 import "./stylex.css"
 
 export * from "./button-link/button-link"

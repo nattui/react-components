@@ -1,7 +1,7 @@
 import stylex from "@stylexjs/unplugin"
 import { defineConfig } from "tsdown"
 
-export default defineConfig((options) => ({
+export default defineConfig({
   clean: ["dist"],
   copy: [
     { from: "src/baseline", to: "dist" },
@@ -9,9 +9,6 @@ export default defineConfig((options) => ({
     { from: "src/tailwind-colors", to: "dist" },
     { from: "src/tailwind-tokenless", to: "dist" },
   ],
-  css: {
-    inject: true,
-  },
   dts: {
     build: true,
   },
@@ -27,5 +24,5 @@ export default defineConfig((options) => ({
       },
     }),
   ],
-  unbundle: !options.watch,
-}))
+  unbundle: true,
+})
