@@ -19,22 +19,22 @@
   },
   "dependencies": {
     "@base-ui/react": "1.7.0",
-    "@lobehub/icons": "5.15.0",
+    "@lobehub/icons": "5.16.0",
     "@nattstack/icons": "npm:nucleo-ui-outline-18@1.5.0",
     "@nattstack/ui": "workspace:*",
     "@openpanel/web": "1.4.1",
     "@tailwindcss/vite": "4.3.3",
     "@tanstack/react-query": "5.101.4",
-    "@tanstack/react-router": "1.170.18",
-    "@tanstack/react-start": "1.168.32",
+    "@tanstack/react-router": "1.170.30",
+    "@tanstack/react-start": "1.168.47",
     "date-fns": "4.4.0",
-    "motion": "12.43.0",
+    "motion": "13.1.0",
     "nitro": "3.0.260610-beta",
     "react": "19.2.8",
     "react-compare-slider": "4.0.0",
     "react-dom": "19.2.8",
     "tailwindcss": "4.3.3",
-    "zustand": "5.0.14"
+    "zustand": "5.0.15"
   },
   "devDependencies": {
     "@types/mdx": "2.0.14",
