@@ -47,10 +47,10 @@
     "oxfmt": "0.62.0",
     "oxlint": "1.77.0",
     "portless": "0.15.5",
-    "satteri": "0.9.5",
-    "satteri-expressive-code": "0.1.18",
+    "satteri": "0.10.3",
+    "satteri-expressive-code": "0.1.22",
     "typescript": "7.0.2",
-    "vite": "8.2.0",
-    "vite-plugin-satteri": "0.2.15"
+    "vite": "8.2.1",
+    "vite-plugin-satteri": "0.3.3"
   }
 }

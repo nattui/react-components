@@ -57,7 +57,7 @@
     "@tsdown/css": "0.22.14",
     "@types/bun": "1.3.14",
     "tsdown": "0.22.14",
-    "typescript": "6.0.3"
+    "typescript": "7.0.2"
   },
   "peerDependencies": {
     "@types/react": "^18 || ^19",
