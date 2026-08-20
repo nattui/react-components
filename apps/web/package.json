@@ -25,10 +25,10 @@
     "@openpanel/web": "1.4.1",
     "@tailwindcss/vite": "4.3.3",
     "@tanstack/react-query": "5.101.4",
-    "@tanstack/react-router": "1.170.30",
-    "@tanstack/react-start": "1.168.47",
+    "@tanstack/react-router": "1.170.31",
+    "@tanstack/react-start": "1.168.48",
     "date-fns": "4.4.0",
-    "motion": "13.1.0",
+    "motion": "13.1.1",
     "nitro": "3.0.260610-beta",
     "react": "19.2.8",
     "react-compare-slider": "4.0.0",
@@ -48,9 +48,9 @@
     "oxlint": "1.77.0",
     "portless": "0.15.5",
     "satteri": "0.10.3",
-    "satteri-expressive-code": "0.1.22",
+    "satteri-expressive-code": "0.1.24",
     "typescript": "7.0.2",
-    "vite": "8.2.1",
-    "vite-plugin-satteri": "0.3.3"
+    "vite": "8.2.2",
+    "vite-plugin-satteri": "0.3.5"
   }
 }
