@@ -1,0 +1,30 @@
+# Getting started
+
+Install `@nattstack/ui`, then import the compiled component styles in your CSS.
+
+```bash
+bun add @nattstack/ui
+```
+
+```css
+@import "tailwindcss";
+@import "@nattstack/ui/tailwind-colors";
+@import "@nattstack/ui/tailwind-tokenless-10";
+@import "@nattstack/ui/components";
+```
+
+Then import components from `@nattstack/ui`:
+
+```tsx
+import { Button } from "@nattstack/ui"
+
+function App() {
+  return (
+    <html className="color-gray-slate color-primary-blue">
+      <body>
+        <Button label="Click me" />
+      </body>
+    </html>
+  )
+}
+```

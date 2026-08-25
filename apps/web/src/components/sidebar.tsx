@@ -33,6 +33,9 @@ export function Sidebar(): JSX.Element {
 
       {/* Middle */}
       <Column className="gap-y-2 overflow-y-auto px-8">
+        <SidebarLink activeOptions={{ exact: true }} to="/">
+          Getting started
+        </SidebarLink>
         {COMPONENT_LINKS.map(({ label, slug }) => (
           <SidebarLink key={slug} params={{ slug }} to="/components/$slug">
             {label}

@@ -1,17 +1,9 @@
-import { Spacer } from "@nattstack/ui"
-import { createFileRoute, Link } from "@tanstack/react-router"
+import { createFileRoute } from "@tanstack/react-router"
+import { MDX_COMPONENTS } from "#/components/mdx-components"
+import GettingStartedContent from "#/routes/-index-content.mdx"
 
 export const Route = createFileRoute("/")({
   component: function RouteIndex() {
-    return (
-      <>
-        <h1 className="text-30 font-500">Welcome to Natt UI React Components</h1>
-        <Spacer height={16} />
-
-        <Link className="ui-link" params={{ slug: "button" }} to="/components/$slug">
-          Get started
-        </Link>
-      </>
-    )
+    return <GettingStartedContent components={MDX_COMPONENTS} />
   },
 })
