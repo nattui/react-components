@@ -4,7 +4,7 @@ import { motion, useReducedMotion } from "motion/react"
 import { useEffect, useRef, useState, type JSX } from "react"
 import { Logomark } from "#/components/logomark"
 import { Logotype } from "#/components/logotype"
-import { isDevelopment } from "#/utils/environment"
+import { ENVIRONMENT } from "#/utils/environment"
 
 const FULL_ROTATION_DEGREES = 360
 const SCROLL_ANIMATION_THRESHOLD_PX = 144
@@ -99,7 +99,7 @@ export function LogoLink(props: LogoLinkProps): JSX.Element {
 
       <Logotype className="text-text-primary" />
 
-      {isDevelopment && (
+      {ENVIRONMENT.IS_DEVELOPMENT && (
         <>
           <Spacer width={6} />
           <span

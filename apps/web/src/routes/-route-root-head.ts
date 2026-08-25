@@ -1,5 +1,5 @@
 import type { JSX } from "react"
-import { isProduction } from "#/utils/environment"
+import { ENVIRONMENT } from "#/utils/environment"
 import CSS from "#/styles/global.css?url"
 
 interface RouteRootHead {
@@ -41,7 +41,7 @@ export function RouteRootHead(): RouteRootHead {
         rel: "stylesheet",
       },
       {
-        href: isProduction ? "/favicon/production.ico" : "/favicon/development.ico",
+        href: ENVIRONMENT.IS_PRODUCTION ? "/favicon/production.ico" : "/favicon/development.ico",
         rel: "icon",
         type: "image/x-icon",
       },
