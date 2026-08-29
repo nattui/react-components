@@ -16,6 +16,7 @@
     "check:type": "turbo check:type",
     "clean": "sh scripts/clean.sh",
     "dev": "turbo dev",
+    "reinstall": "bun run clean && bun install",
     "update": "bun update --interactive --recursive",
     "version": "npm view @nattstack/ui versions"
   },
