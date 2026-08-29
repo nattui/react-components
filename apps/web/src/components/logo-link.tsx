@@ -1,7 +1,7 @@
 import { Spacer } from "@nattstack/ui"
 import { type LinkComponentProps, Link } from "@tanstack/react-router"
-import { motion, useReducedMotion } from "motion/react"
-import { useEffect, useRef, useState, type JSX } from "react"
+import { motion, useMotionValueEvent, useReducedMotion, useScroll } from "motion/react"
+import { useRef, useState, type JSX } from "react"
 import { Logomark } from "#/components/logomark"
 import { Logotype } from "#/components/logotype"
 import { ENVIRONMENT } from "#/utils/environment"
@@ -15,11 +15,18 @@ interface LogoLinkProps extends LinkComponentProps {
 
 export function LogoLink(props: LogoLinkProps): JSX.Element {
   const { preventAnimation = false, to = "/", ...rest } = props
+  const { scrollY } = useScroll()
 
   const [isAnimating, setIsAnimating] = useState(false)
   const [spinCount, setSpinCount] = useState(0)
 
   const hasTriggeredScrollAnimation = useRef(false)
+  const scrollTracking = useRef({
+    hasStartedTracking: false,
+    previousScrollY: 0,
+    totalScrollDistance: 0,
+  })
+
   const shouldReduceMotion = useReducedMotion()
   const shouldPreventAnimation = preventAnimation || shouldReduceMotion
 
@@ -36,46 +43,30 @@ export function LogoLink(props: LogoLinkProps): JSX.Element {
     triggerAnimation()
   }
 
-  useEffect(() => {
-    if (shouldPreventAnimation) {
+  useMotionValueEvent(scrollY, "change", (currentScrollY) => {
+    if (shouldPreventAnimation || hasTriggeredScrollAnimation.current) {
       return
     }
 
-    let previousScrollY = window.scrollY
-    let totalScrollDistance = 0
-    let hasStartedTrackingScroll = false
+    const tracking = scrollTracking.current
 
-    function handleScroll(): void {
-      const currentScrollY = window.scrollY
-
-      // Ignore browser/router scroll restoration before measuring user scroll distance
-      if (!hasStartedTrackingScroll) {
-        hasStartedTrackingScroll = true
-        previousScrollY = currentScrollY
-        return
-      }
-
-      totalScrollDistance += Math.abs(currentScrollY - previousScrollY)
-      previousScrollY = currentScrollY
-
-      if (
-        hasTriggeredScrollAnimation.current ||
-        totalScrollDistance < SCROLL_ANIMATION_THRESHOLD_PX
-      ) {
-        return
-      }
-
-      hasTriggeredScrollAnimation.current = true
-      triggerAnimation()
-      window.removeEventListener("scroll", handleScroll)
+    // Ignore browser/router scroll restoration before measuring user scroll distance
+    if (!tracking.hasStartedTracking) {
+      tracking.hasStartedTracking = true
+      tracking.previousScrollY = currentScrollY
+      return
     }
 
-    window.addEventListener("scroll", handleScroll, { passive: true })
+    tracking.totalScrollDistance += Math.abs(currentScrollY - tracking.previousScrollY)
+    tracking.previousScrollY = currentScrollY
 
-    return function cleanupScrollListener(): void {
-      window.removeEventListener("scroll", handleScroll)
+    if (tracking.totalScrollDistance < SCROLL_ANIMATION_THRESHOLD_PX) {
+      return
     }
-  }, [shouldPreventAnimation])
+
+    hasTriggeredScrollAnimation.current = true
+    triggerAnimation()
+  })
 
   return (
     <Link

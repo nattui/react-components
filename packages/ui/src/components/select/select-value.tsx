@@ -10,6 +10,7 @@ export function SelectValue(props: SelectValueProps): JSX.Element {
     children = undefined,
     className = "",
     placeholder = undefined,
+    // oxlint-disable-next-line react/todo
     render = <div />,
     ...rest
   } = props

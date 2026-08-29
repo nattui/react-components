@@ -2,7 +2,7 @@ import type { JSX } from "react"
 import { ENVIRONMENT } from "#/utils/environment"
 import CSS from "#/styles/global.css?url"
 
-interface RouteRootHead {
+interface RouteRootHeadResult {
   links?: JSX.IntrinsicElements["link"][]
   meta?: JSX.IntrinsicElements["meta"][]
 }
@@ -12,7 +12,7 @@ const META = {
   TITLE: "Natt UI",
 }
 
-export function RouteRootHead(): RouteRootHead {
+export function RouteRootHead(): RouteRootHeadResult {
   return {
     links: [
       /*

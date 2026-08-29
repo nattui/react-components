@@ -52,14 +52,17 @@ export default defineConfig({
     "eslint/max-statements": "allow", // Allow large number of statements
     "eslint/no-console": "allow", // Don't mind `console.log()`
     "eslint/no-inline-comments": "allow", // Able to sort object keys and keep comments
-    "eslint/no-magic-numbers": ["error", { ignore: [0, 1] }], // Allow `0` and `1` for magic numbers
+    "eslint/no-magic-numbers": ["error", { ignore: [-1, 0, 1] }], // Allow `0` and `1` for magic numbers
     "eslint/no-shadow": "allow", // Allow same variable name in different scopes
     "eslint/no-ternary": "allow", // Allow ternary operators
     "eslint/no-undefined": "allow", // Conflicts with unicorn/no-null
     "eslint/no-unused-vars": ["error", { fix: { imports: "safe-fix" } }], // Prune unused imports
     "eslint/no-use-before-define": "allow",
     "eslint/no-warning-comments": "allow", // Don't mind `TODO:` comments
+    "eslint/one-var": "allow", // Prefer multiple declarations per variable
     "eslint/sort-imports": "allow", // Conflicts with oxfmt
+    "jsdoc/require-param-type": "allow", // Types live in TypeScript signatures
+    "jsdoc/require-returns-type": "allow", // Types live in TypeScript signatures
     "no-magic-numbers": "allow", // UI
     "oxc/no-async-await": "allow",
     "oxc/no-optional-chaining": "allow",
@@ -93,9 +96,8 @@ export default defineConfig({
     "react/jsx-props-no-spreading": "allow", // Allow spreading props for react components
     "react/no-array-index-key": "allow", // Allow array index for react keys
     "react/no-multi-comp": "allow",
-    "react/only-export-components": "allow", // UI
-    "react/react-compiler": "allow", // Allows `setState` in useEffect
     "react/react-in-jsx-scope": "allow",
+    "react/set-state-in-effect": "allow", // Allows `setState` in useEffect
     "typescript/no-empty-interface": ["error", { allowSingleExtends: true }], // Allow types to be extensible
     "typescript/no-empty-object-type": ["error", { allowWithName: "Props$" }], // Allow types to be extensible
   },
