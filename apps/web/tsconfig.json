@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
+    "allowImportingTsExtensions": true, // Vite's configLoader: 'native' (planned future default) requires explicit .ts extensions on vite.config.ts imports
     "jsx": "react-jsx",
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "noEmit": true,
     "paths": {
       "#/*": ["./src/*"]
     },
     "skipLibCheck": true,
     "strictNullChecks": true,
-    "target": "ESNext"
+    "target": "esnext"
   }
 }

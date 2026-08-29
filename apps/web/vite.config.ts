@@ -7,6 +7,7 @@ import { defineConfig } from "vite"
 import satteri from "vite-plugin-satteri"
 import { mdxComponentShowcases } from "#/mdx-component-showcases"
 import { expressiveCodeOptions } from "#/utils/expressive-code"
+import { ENVIRONMENT } from "./src/utils/environment.ts"
 
 export default defineConfig({
   clearScreen: false,
@@ -31,14 +32,14 @@ export default defineConfig({
     tailwindcss(),
   ],
   preview: {
-    host: "0.0.0.0",
-    port: 3000,
+    // nitro's preview server defaults to port 3000 and ignores the PORT env var that portless passes
+    port: Number(ENVIRONMENT.PORT),
   },
   resolve: {
     tsconfigPaths: true,
   },
   server: {
-    host: "0.0.0.0",
-    port: 3000,
+    // portless proxies to 127.0.0.1 and passes HOST; without this, Bun binds "localhost" to ::1 only
+    host: ENVIRONMENT.HOST,
   },
 })
