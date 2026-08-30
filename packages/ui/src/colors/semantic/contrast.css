@@ -6,7 +6,7 @@
 */
 
 [data-color-accent] {
-  --color-accent-contrast: #ffffff;
+  --color-neutral-on-accent: #ffffff;
 }
 
 /*
@@ -18,5 +18,5 @@
 [data-color-accent="lime"],
 [data-color-accent="mint"],
 [data-color-accent="sky"] {
-  --color-accent-contrast: #000000;
+  --color-neutral-on-accent: #000000;
 }

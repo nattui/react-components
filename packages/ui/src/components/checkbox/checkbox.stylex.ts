@@ -39,7 +39,7 @@ export const checkboxStyles = create({
   },
   icon_path: {
     /* Dark on the bright accents (sky, mint, lime, yellow, amber), white elsewhere. */
-    stroke: "var(--color-accent-contrast)",
+    stroke: "var(--color-neutral-on-accent)",
     strokeWidth: 3,
   },
   indicator: {

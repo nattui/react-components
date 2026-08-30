@@ -91,7 +91,7 @@ export const buttonStyles = create({
       ":hover:not(:disabled)": "var(--color-accent-10)",
       default: "var(--color-accent-9)",
     },
-    color: "var(--color-accent-contrast)",
+    color: "var(--color-neutral-on-accent)",
   },
   variant_ghost: {
     backgroundColor: {
