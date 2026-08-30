@@ -86,6 +86,13 @@ export const buttonStyles = create({
   size_48: {
     height: 48,
   },
+  variant_accent: {
+    backgroundColor: {
+      ":hover:not(:disabled)": "var(--color-accent-10)",
+      default: "var(--color-accent-9)",
+    },
+    color: "#fff",
+  },
   variant_ghost: {
     backgroundColor: {
       ":hover:not(:disabled)": "var(--color-neutral-4)",
@@ -145,6 +152,7 @@ export const buttonStylesBy = {
     48: buttonStyles.size_48,
   },
   variant: {
+    accent: buttonStyles.variant_accent,
     ghost: buttonStyles.variant_ghost,
     primary: buttonStyles.variant_primary,
     secondary: buttonStyles.variant_secondary,

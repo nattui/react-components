@@ -17,7 +17,7 @@ export interface ButtonProps extends Omit<ComponentProps<"button">, "children"> 
 }
 export type ButtonSize = 32 | 36 | 40 | 44 | 48
 
-export type ButtonVariant = "ghost" | "primary" | "secondary"
+export type ButtonVariant = "accent" | "ghost" | "primary" | "secondary"
 
 export function Button(props: ButtonProps): JSX.Element {
   const {

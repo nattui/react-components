@@ -621,9 +621,10 @@ export const Route = createFileRoute("/test")({
 
           <Button fullWidth label="Full width" />
 
-          <Button label="Ghost" variant="ghost" />
           <Button label="Primary" variant="primary" />
+          <Button label="Accent" variant="accent" />
           <Button label="Secondary" variant="secondary" />
+          <Button label="Ghost" variant="ghost" />
 
           <Button iconStart={<IconPlusOutline18 />} label="Secondary" variant="secondary" />
         </Column>

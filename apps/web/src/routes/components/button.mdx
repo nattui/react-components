@@ -17,18 +17,20 @@ Buttons are controls that let users take action, make choices, and move forward.
 
 ## Variants
 
-The `Button` comes with three variants: `primary` (default), `secondary`, and `ghost`.
+The `Button` comes with four variants: `primary` (default), `accent`, `secondary`, and `ghost`.
 
 ```jsx
 // component
 
 <Button label="Primary" variant="primary" />
+<Button label="Accent" variant="accent" />
 <Button label="Secondary" variant="secondary" />
 <Button label="Ghost" variant="ghost" />
 ```
 
 ```jsx
 <Button label="Primary" variant="primary" />
+<Button label="Accent" variant="accent" />
 <Button label="Secondary" variant="secondary" />
 <Button label="Ghost" variant="ghost" />
 ```
@@ -79,12 +81,14 @@ Use the `disabled` prop to prevent a button from being interacted with. Disabled
 // component
 
 <Button disabled label="Disabled" variant="primary" />
+<Button disabled label="Disabled" variant="accent" />
 <Button disabled label="Disabled" variant="secondary" />
 <Button disabled label="Disabled" variant="ghost" />
 ```
 
 ```jsx
 <Button disabled label="Disabled" variant="primary" />
+<Button disabled label="Disabled" variant="accent" />
 <Button disabled label="Disabled" variant="secondary" />
 <Button disabled label="Disabled" variant="ghost" />
 ```
@@ -99,12 +103,14 @@ Do not add `disabled` when using `loading`, as the button is automatically non-i
 // component
 
 <Button label="Loading" loading variant="primary" />
+<Button label="Loading" loading variant="accent" />
 <Button label="Loading" loading variant="secondary" />
 <Button label="Loading" loading variant="ghost" />
 ```
 
 ```jsx
 <Button label="Loading" loading variant="primary" />
+<Button label="Loading" loading variant="accent" />
 <Button label="Loading" loading variant="secondary" />
 <Button label="Loading" loading variant="ghost" />
 ```
@@ -131,12 +137,14 @@ Use the `rounded` prop to give the button fully rounded corners.
 // component
 
 <Button label="Rounded" rounded variant="primary" />
+<Button label="Rounded" rounded variant="accent" />
 <Button label="Rounded" rounded variant="secondary" />
 <Button label="Rounded" rounded variant="ghost" />
 ```
 
 ```jsx
 <Button label="Rounded" rounded variant="primary" />
+<Button label="Rounded" rounded variant="accent" />
 <Button label="Rounded" rounded variant="secondary" />
 <Button label="Rounded" rounded variant="ghost" />
 ```
