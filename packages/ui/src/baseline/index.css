@@ -16,7 +16,7 @@
 */
 ::selection {
   background: var(--color-accent-6);
-  color: var(--color-neutral-12);
+  color: var(--color-text-primary);
 }
 
 /*
@@ -29,15 +29,10 @@
 html {
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
-  color-scheme: light;
   scrollbar-color: var(--color-border) transparent;
   scrollbar-width: thin;
   text-size-adjust: none;
   touch-action: manipulation;
-}
-
-html[data-color-theme="dark"] {
-  color-scheme: dark;
 }
 
 /*
