@@ -1,6 +1,18 @@
 @custom-variant dark (&:where([data-color-theme="dark"], [data-color-theme="dark"] *));
 
-@theme {
+/*
+    Every value here aliases a runtime variable of the same name, set by the
+    ./colors scales. The flags matter:
+
+    - `inline` inlines the var() value into generated utilities.
+      https://tailwindcss.com/docs/theme#referencing-other-variables
+    - `reference` stops Tailwind from emitting the declarations into :root,
+      where `--color-accent-1: var(--color-accent-1)` would be a self-reference
+      that resolves to invalid. Not on the docs site; the composed flags are
+      documented in https://github.com/tailwindlabs/tailwindcss/pull/14095
+      ("reference (so the variables aren't generated) and inline").
+*/
+@theme inline reference {
   /* Reset ============================================= */
   --color-\*: initial;
 
