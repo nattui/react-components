@@ -1,3 +1,6 @@
+export type ColorAccent = (typeof COLOR.ACCENT)[keyof typeof COLOR.ACCENT]
+export type ColorNeutral = (typeof COLOR.NEUTRAL)[keyof typeof COLOR.NEUTRAL]
+
 export const COLOR = {
   ACCENT: {
     AMBER: "amber",
@@ -62,4 +65,8 @@ export const COLOR_ACCENT_TO_NEUTRAL = {
   [COLOR.ACCENT.TOMATO]: COLOR.NEUTRAL.MAUVE,
   [COLOR.ACCENT.VIOLET]: COLOR.NEUTRAL.MAUVE,
   [COLOR.ACCENT.YELLOW]: COLOR.NEUTRAL.SAND,
-} as const
+} as const satisfies Record<ColorAccent, ColorNeutral>
+
+export function getColorAccentToNeutral(accent: ColorAccent): ColorNeutral {
+  return COLOR_ACCENT_TO_NEUTRAL[accent]
+}
