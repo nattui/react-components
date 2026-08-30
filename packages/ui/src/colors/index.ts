@@ -1,3 +1,10 @@
+/*
+    Palette names for the color scales shipped by the ./colors CSS export.
+
+    Values map 1:1 to the data attributes read by the CSS:
+    <html data-color-neutral="slate" data-color-accent="blue">
+*/
+
 export type ColorAccent = (typeof COLOR.ACCENT)[keyof typeof COLOR.ACCENT]
 export type ColorNeutral = (typeof COLOR.NEUTRAL)[keyof typeof COLOR.NEUTRAL]
 
@@ -39,6 +46,12 @@ export const COLOR = {
   },
 } as const
 
+/*
+    Natural pairing from Radix Colors: each accent scale is designed to sit on a specific
+    gray scale (e.g. Red on Mauve, Blue on Slate, Green on Sage).
+
+    Reference: https://www.radix-ui.com/colors/docs/palette-composition/composing-a-palette
+*/
 export const COLOR_ACCENT_TO_NEUTRAL = {
   [COLOR.ACCENT.AMBER]: COLOR.NEUTRAL.SAND,
   [COLOR.ACCENT.BLUE]: COLOR.NEUTRAL.SLATE,

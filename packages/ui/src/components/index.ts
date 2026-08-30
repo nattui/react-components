@@ -6,6 +6,7 @@
 */
 import "./stylex.css"
 
+export * from "../colors/index"
 export * from "./button-link/button-link"
 export * from "./button/button"
 export * from "./checkbox/checkbox"
@@ -44,7 +45,6 @@ export * from "./menu/menu-submenu-trigger"
 export * from "./menu/menu-trigger"
 export * from "./otp-field/otp-field"
 export * from "./otp-field/otp-field-input"
-export * from "./palette/palette"
 export * from "./row/row"
 export * from "./select/select"
 export * from "./select/select-content"

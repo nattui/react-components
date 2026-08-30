@@ -1,8 +1,4 @@
-import {
-  type AccentPalette as UiAccentPalette,
-  getPairedNeutralPalette,
-  type NeutralPalette,
-} from "@nattstack/ui"
+import { type ColorAccent, type ColorNeutral, getColorAccentToNeutral } from "@nattstack/ui"
 import { useSyncExternalStore } from "react"
 
 /* ====================================================== /
@@ -50,7 +46,7 @@ export const ACCENT_PALETTES = [
   // "lime",
   // "mint",
   // "sky",
-] as const satisfies readonly UiAccentPalette[]
+] as const satisfies readonly ColorAccent[]
 
 export type AccentPalette = (typeof ACCENT_PALETTES)[number]
 
@@ -59,7 +55,7 @@ export interface Appearance {
   mode: ThemeMode
 }
 
-export type { NeutralPalette } from "@nattstack/ui"
+export type { ColorNeutral as NeutralPalette } from "@nattstack/ui"
 
 export type ThemeMode = (typeof THEME_MODES)[number]
 
@@ -72,13 +68,13 @@ const DEFAULT_ACCENT_PALETTE: AccentPalette = "blue"
     is always derived from the accent, never stored on its own.
 */
 const ACCENT_TO_NEUTRAL_PALETTE = Object.fromEntries(
-  ACCENT_PALETTES.map((accent) => [accent, getPairedNeutralPalette(accent)]),
-) as Record<AccentPalette, NeutralPalette>
+  ACCENT_PALETTES.map((accent) => [accent, getColorAccentToNeutral(accent)]),
+) as Record<AccentPalette, ColorNeutral>
 
 interface AppearanceBootConfig {
   accentFallback: AccentPalette
   accentKey: string
-  accentToNeutral: Record<AccentPalette, NeutralPalette>
+  accentToNeutral: Record<AccentPalette, ColorNeutral>
   modeFallback: ThemeMode
   modeKey: string
   modes: readonly ThemeMode[]

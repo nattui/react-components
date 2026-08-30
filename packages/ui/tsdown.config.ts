@@ -5,7 +5,10 @@ export default defineConfig({
   clean: ["dist"],
   copy: [
     { from: "src/baseline", to: "dist" },
-    { from: "src/colors", to: "dist" },
+    /* Only the CSS assets: .ts files in src/colors are compiled, not copied. */
+    { from: "src/colors/accent", to: "dist/colors" },
+    { from: "src/colors/index.css", to: "dist/colors" },
+    { from: "src/colors/neutral", to: "dist/colors" },
     { from: "src/tailwind-colors", to: "dist" },
     { from: "src/tailwind-tokenless", to: "dist" },
   ],
