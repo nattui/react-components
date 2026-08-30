@@ -1,6 +1,7 @@
 import { Column, Row, Spacer } from "@nattstack/ui"
 import type { JSX } from "react"
 import { DialogAppearance } from "#/components/dialog-appearance"
+import { GithubLink } from "#/components/github-link"
 import { LogoLink } from "#/components/logo-link"
 import { SidebarLink } from "#/components/sidebar-link"
 
@@ -47,6 +48,9 @@ export function Sidebar(): JSX.Element {
 
       <Row className="mt-auto mb-[9px] ml-[9px]">
         <DialogAppearance />
+        <Spacer width={4} />
+
+        <GithubLink />
       </Row>
     </Column>
   )
