@@ -1,5 +1,2 @@
-/* Order matters */
-@import "./root.css";
-@import "./root-p3.css";
-@import "./gray.css";
-@import "./primary.css";
+@import "./neutral/index.css";
+@import "./accent/index.css";
