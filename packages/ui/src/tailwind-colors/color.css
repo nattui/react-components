@@ -57,11 +57,11 @@
   --color-bg-secondary: var(--color-bg-secondary);
   --color-bg-shell-outer: var(--color-bg-shell-outer);
   --color-bg-shell-inner: var(--color-bg-shell-inner);
-  --color-bg-tooltip: var(--color-bg-tooltip);
+  --color-bg-inverse: var(--color-bg-inverse);
 
   --color-text-primary: var(--color-text-primary);
   --color-text-secondary: var(--color-text-secondary);
-  --color-text-tooltip: var(--color-text-tooltip);
+  --color-text-inverse: var(--color-text-inverse);
 
   --color-success: var(--color-success);
   --color-warning: var(--color-warning);

@@ -7,13 +7,13 @@
 
   --color-bg-primary: var(--color-neutral-1);
   --color-bg-secondary: var(--color-neutral-2);
+  --color-bg-inverse: var(--color-neutral-12);
   --color-bg-shell-outer: var(--color-neutral-2);
   --color-bg-shell-inner: var(--color-neutral-1);
-  --color-bg-tooltip: var(--color-neutral-12);
 
   --color-text-primary: var(--color-neutral-12);
   --color-text-secondary: var(--color-neutral-11);
-  --color-text-tooltip: var(--color-neutral-1);
+  --color-text-inverse: var(--color-neutral-1);
 
   --color-success: #30a46c;
   --color-warning: #ffe629;
