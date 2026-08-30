@@ -10,8 +10,8 @@ export function RouteRootNotFound(): JSX.Element {
     >
       <div
         className="
-          w-full max-w-[44rem] rounded-[2.4rem] border border-neutral-4 bg-neutral-2
-          p-32 text-center shadow-2
+          w-full max-w-[44rem] rounded-[2.4rem] border border-neutral-4
+          bg-neutral-2 p-32 text-center shadow-2
         "
       >
         <p

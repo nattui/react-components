@@ -195,7 +195,9 @@ Use option objects shaped as `{ value, label, ... }`: the `label` is automatical
           {model.icon && createElement(model.icon, { className: "mr-8", size: 18 })}
           <span className="truncate">{model.label}</span>
           {model.description && (
-            <span className="text-13 text-neutral-9 font-400 ml-6 truncate">{model.description}</span>
+            <span className="text-13 text-neutral-9 font-400 ml-6 truncate">
+              {model.description}
+            </span>
           )}
         </Row>
       )}

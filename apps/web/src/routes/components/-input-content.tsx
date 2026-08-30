@@ -19,7 +19,9 @@ export function InputContent(): JSX.Element {
         <Label htmlFor="email">Email</Label>
         <Spacer height={4} />
         <div className="relative">
-          <IconEnvelopeOutline18 className="pointer-events-none absolute top-14 left-14 text-neutral-11" />
+          <IconEnvelopeOutline18 className="
+            pointer-events-none absolute top-14 left-14 text-neutral-11
+          " />
           <Input className="pl-44!" id="email" placeholder="name@example.com" type="email" />
         </div>
         <Spacer height={16} />
@@ -27,7 +29,9 @@ export function InputContent(): JSX.Element {
         <Label htmlFor="password">Password</Label>
         <Spacer height={4} />
         <div className="relative">
-          <IconLockOutline18 className="pointer-events-none absolute top-14 left-14 text-neutral-11" />
+          <IconLockOutline18 className="
+            pointer-events-none absolute top-14 left-14 text-neutral-11
+          " />
           <Input className="px-44!" id="password" placeholder="••••••••" type="password" />
           {/* <Button className="group absolute! top-6 right-6" size={32} variant="ghost">
             <IconEyeOutline18
@@ -48,7 +52,9 @@ export function InputContent(): JSX.Element {
         <Label htmlFor="disabled">Disabled</Label>
         <Spacer height={4} />
         <div className="relative">
-          <IconBanOutline18 className="pointer-events-none absolute top-14 left-14 text-neutral-11" />
+          <IconBanOutline18 className="
+            pointer-events-none absolute top-14 left-14 text-neutral-11
+          " />
           <Input className="pl-44!" disabled id="disabled" placeholder="Disabled" type="url" />
         </div>
         <Spacer height={64} />

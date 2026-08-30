@@ -92,5 +92,5 @@ function parseStoredPalette<Palette extends string>(
   palettes: readonly Palette[],
   fallback: Palette,
 ): Palette {
-  return stored !== null && palettes.includes(stored as Palette) ? stored as Palette : fallback
+  return stored !== null && palettes.includes(stored as Palette) ? (stored as Palette) : fallback
 }
