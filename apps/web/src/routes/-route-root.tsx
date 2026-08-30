@@ -2,8 +2,7 @@ import { HeadContent, Outlet, Scripts } from "@tanstack/react-router"
 import type { JSX } from "react"
 import { LayoutDashboardMain } from "#/components/layout-dashboard-main"
 import { Providers } from "#/components/providers"
-import { RouteRootPalette } from "#/routes/-route-root-palette"
-import { RouteRootTheme } from "#/routes/-route-root-theme"
+import { RouteRootAppearance } from "#/routes/-route-root-appearance"
 
 export function RouteRoot(): JSX.Element {
   return (
@@ -19,8 +18,7 @@ export function RouteRoot(): JSX.Element {
         <HeadContent />
       </head>
       <body>
-        <RouteRootTheme />
-        <RouteRootPalette />
+        <RouteRootAppearance />
 
         <Providers>
           <LayoutDashboardMain>

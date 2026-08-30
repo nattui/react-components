@@ -1,5 +1,3 @@
-"use client"
-
 import { IconMonitorOutline18, IconMoonOutline18, IconSunOutline18 } from "@nattstack/icons"
 import {
   Tabs,
@@ -9,92 +7,59 @@ import {
   TooltipPopup,
   TooltipTrigger,
 } from "@nattstack/ui"
-import { useState, type JSX } from "react"
+import type { ComponentType, JSX } from "react"
+import {
+  type ThemeMode,
+  formatAppearanceLabel,
+  setThemeMode,
+  THEME_MODES,
+  useAppearance,
+} from "#/utils/appearance"
 
-// oxlint-disable-next-line react/only-export-components
-export const THEME = {
-  AUTO: "auto",
-  DARK: "dark",
-  LIGHT: "light",
-} as const
+const TOOLTIP_SIDE_OFFSET = 6
 
-export type Theme = (typeof THEME)[keyof typeof THEME]
-
-const STORAGE_KEY = "theme"
+const THEME_MODE_ICONS: Record<ThemeMode, ComponentType> = {
+  auto: IconMonitorOutline18,
+  dark: IconMoonOutline18,
+  light: IconSunOutline18,
+}
 
 export function TabsTheme(): JSX.Element {
-  const [theme, setTheme] = useState<Theme | undefined>(() =>
-    typeof localStorage === "undefined" ? undefined : readStoredTheme(),
-  )
-
-  const SIDE_OFFSET = 6
-
-  function onValueChange(value: Theme): void {
-    localStorage.setItem(STORAGE_KEY, value)
-    applyTheme(value)
-    setTheme(value)
-  }
+  const mode = useAppearance()?.mode
 
   return (
-    <Tabs onValueChange={(value) => onValueChange(value)} value={theme}>
-      <TabsSegmentedList aria-label="Theme" className="h-36! rounded-full! [&>span]:rounded-full!">
-        <Tooltip>
-          <TooltipTrigger
-            render={
-              <TabsSegmentedTab className="px-8!" suppressHydrationWarning value={THEME.AUTO}>
-                <IconMonitorOutline18 data-active={theme === THEME.AUTO} suppressHydrationWarning />
-              </TabsSegmentedTab>
-            }
-          />
-          <TooltipPopup sideOffset={SIDE_OFFSET}>{getThemeLabel(THEME.AUTO)}</TooltipPopup>
-        </Tooltip>
-        <Tooltip>
-          <TooltipTrigger
-            render={
-              <TabsSegmentedTab className="px-8!" suppressHydrationWarning value={THEME.LIGHT}>
-                <IconSunOutline18 data-active={theme === THEME.LIGHT} suppressHydrationWarning />
-              </TabsSegmentedTab>
-            }
-          />
-          <TooltipPopup sideOffset={SIDE_OFFSET}>{getThemeLabel(THEME.LIGHT)}</TooltipPopup>
-        </Tooltip>
-        <Tooltip>
-          <TooltipTrigger
-            render={
-              <TabsSegmentedTab className="px-8!" suppressHydrationWarning value={THEME.DARK}>
-                <IconMoonOutline18 data-active={theme === THEME.DARK} suppressHydrationWarning />
-              </TabsSegmentedTab>
-            }
-          />
-          <TooltipPopup sideOffset={SIDE_OFFSET}>{getThemeLabel(THEME.DARK)}</TooltipPopup>
-        </Tooltip>
+    <Tabs onValueChange={(value: ThemeMode) => setThemeMode(value)} value={mode}>
+      <TabsSegmentedList
+        aria-label="Theme"
+        className="
+          h-36! rounded-full!
+          [&>span]:rounded-full!
+        "
+        id="mode"
+      >
+        {THEME_MODES.map((option) => (
+          <TabTheme key={option} mode={option} />
+        ))}
       </TabsSegmentedList>
     </Tabs>
   )
 }
 
-function applyTheme(theme: Theme): void {
-  const root = document.documentElement
-  root.classList.remove(THEME.DARK, THEME.LIGHT)
-  root.dataset.colorTheme = resolveTheme(theme)
-}
+function TabTheme(props: { mode: ThemeMode }): JSX.Element {
+  const { mode } = props
 
-function getThemeLabel(theme: Theme): string {
-  return theme.charAt(0).toUpperCase() + theme.slice(1)
-}
+  const Icon = THEME_MODE_ICONS[mode]
 
-function isTheme(value: unknown): value is Theme {
-  return value === THEME.AUTO || value === THEME.DARK || value === THEME.LIGHT
-}
-
-function readStoredTheme(): Theme {
-  const stored = localStorage.getItem(STORAGE_KEY)
-  return isTheme(stored) ? stored : THEME.AUTO
-}
-
-function resolveTheme(theme: Theme): typeof THEME.DARK | typeof THEME.LIGHT {
-  if (theme !== THEME.AUTO) {
-    return theme
-  }
-  return matchMedia("(prefers-color-scheme: dark)").matches ? THEME.DARK : THEME.LIGHT
+  return (
+    <Tooltip>
+      <TooltipTrigger
+        render={
+          <TabsSegmentedTab className="px-8!" value={mode}>
+            <Icon />
+          </TabsSegmentedTab>
+        }
+      />
+      <TooltipPopup sideOffset={TOOLTIP_SIDE_OFFSET}>{formatAppearanceLabel(mode)}</TooltipPopup>
+    </Tooltip>
+  )
 }

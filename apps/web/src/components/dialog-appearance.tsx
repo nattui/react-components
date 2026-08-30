@@ -1,5 +1,3 @@
-// oxlint-disable react-perf/jsx-no-new-array-as-prop
-
 import { type ToggleProps, Toggle, ToggleGroup } from "@base-ui/react"
 import { IconDarkLightOutline18 } from "@nattstack/icons"
 import {
@@ -14,50 +12,24 @@ import {
   TooltipPopup,
   TooltipTrigger,
 } from "@nattstack/ui"
-import { useEffect, useState, type JSX } from "react"
+import { useMemo, type JSX } from "react"
 import { TabsTheme } from "#/components/tabs-theme"
 import {
   type AccentPalette,
-  ACCENT_PALETTE_OPTIONS,
-  ACCENT_PALETTE_STORAGE_KEY,
-  NEUTRAL_PALETTE_STORAGE_KEY,
-  applyColorPalettes,
-  formatAccentPaletteLabel,
-  getPairedNeutralPalette,
-  readStoredAccentPalette,
-} from "#/utils/theme-palette"
+  ACCENT_PALETTES,
+  formatAppearanceLabel,
+  setAccentPalette,
+  useAppearance,
+} from "#/utils/appearance"
 
 interface ToggleColorProps extends ToggleProps<AccentPalette> {
   value: AccentPalette
 }
 
 export function DialogAppearance(): JSX.Element {
-  const [accentPalette, setAccentPalette] = useState<AccentPalette | undefined>()
+  const accent = useAppearance()?.accent
 
-  /*
-        The server does not know the stored palette, so the first render shows no pressed
-        item. Reading the stored value in an effect re-renders after hydration, which is
-        what actually flips the pressed state in the DOM.
-    */
-  useEffect(() => {
-    setAccentPalette(readStoredAccentPalette())
-  }, [])
-
-  function handleAccentPaletteChange(groupValue: AccentPalette[]): void {
-    const [nextPalette] = groupValue
-
-    if (nextPalette === undefined) {
-      return
-    }
-
-    /* Apply the natural Radix gray pairing, e.g. Red pairs with Mauve, Green with Sage. */
-    const nextNeutralPalette = getPairedNeutralPalette(nextPalette)
-
-    localStorage.setItem(ACCENT_PALETTE_STORAGE_KEY, nextPalette)
-    localStorage.setItem(NEUTRAL_PALETTE_STORAGE_KEY, nextNeutralPalette)
-    setAccentPalette(nextPalette)
-    applyColorPalettes(nextPalette, nextNeutralPalette)
-  }
+  const toggleGroupValue = useMemo(() => (accent === undefined ? [] : [accent]), [accent])
 
   return (
     <div>
@@ -81,29 +53,12 @@ export function DialogAppearance(): JSX.Element {
             <TabsTheme />
           </Row>
           <Spacer height={16} />
-          {/* <ToggleGroup
-              aria-label="Text alignment"
-              className="d flex w-fit items-center"
-              defaultValue={["left"]}
-              id="mode"
-            >
-              <ToggleMode>
-                <IconSunOutline18 />
-              </ToggleMode>
-              <ToggleMode>
-                <IconSunOutline18 />
-              </ToggleMode>
-              <ToggleMode>
-                <IconSunOutline18 />
-              </ToggleMode>
-            </ToggleGroup>
-             */}
 
           <Row className="justify-between">
             <Label htmlFor="color">Color</Label>
 
             <p className="text-14 font-500 text-text-primary">
-              {accentPalette === undefined ? undefined : formatAccentPaletteLabel(accentPalette)}
+              {accent === undefined ? undefined : formatAppearanceLabel(accent)}
             </p>
           </Row>
           <Spacer height={8} />
@@ -114,10 +69,10 @@ export function DialogAppearance(): JSX.Element {
               items-center gap-8
             "
             id="color"
-            onValueChange={handleAccentPaletteChange}
-            value={accentPalette === undefined ? [] : [accentPalette]}
+            onValueChange={handleAccentChange}
+            value={toggleGroupValue}
           >
-            {ACCENT_PALETTE_OPTIONS.map((option) => (
+            {ACCENT_PALETTES.map((option) => (
               <ToggleColor key={option} value={option} />
             ))}
           </ToggleGroup>
@@ -127,10 +82,19 @@ export function DialogAppearance(): JSX.Element {
   )
 }
 
+function handleAccentChange(groupValue: AccentPalette[]): void {
+  const [nextAccent] = groupValue
+
+  /* Re-pressing the active toggle emits an empty group; the selection stays. */
+  if (nextAccent !== undefined) {
+    setAccentPalette(nextAccent)
+  }
+}
+
 function ToggleColor(props: ToggleColorProps): JSX.Element {
   const { value, ...rest } = props
 
-  const colorLabel = formatAccentPaletteLabel(value)
+  const colorLabel = formatAppearanceLabel(value)
 
   return (
     <Tooltip>
