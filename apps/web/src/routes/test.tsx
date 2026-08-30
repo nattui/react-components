@@ -319,6 +319,7 @@ export const Route = createFileRoute("/test")({
           iconEnd={<IconArrowRightOutline18 />}
           iconStart={<IconArrowLeftOutline18 />}
           label="Button 2"
+          variant="accent"
         />
         <Spacer height={8} />
         <Button disabled label="Button 2" />
