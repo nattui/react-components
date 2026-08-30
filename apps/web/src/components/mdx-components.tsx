@@ -133,7 +133,7 @@ function MdxHeading2(props: ComponentProps<"h2">): JSX.Element {
   const { children, className, ...rest } = props
 
   return (
-    <h2 className={joinClassNames("mb-12 text-24", className)} {...rest}>
+    <h2 className={joinClassNames("mb-12 mt-40 text-24", className)} {...rest}>
       {children}
     </h2>
   )
