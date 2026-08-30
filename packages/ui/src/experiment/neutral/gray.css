@@ -1,0 +1,61 @@
+[data-color-theme="light"][data-color-neutral="gray"] {
+  --color-neutral-1: #fcfcfc;
+  --color-neutral-2: #f9f9f9;
+  --color-neutral-3: #f0f0f0;
+  --color-neutral-4: #e8e8e8;
+  --color-neutral-5: #e0e0e0;
+  --color-neutral-6: #d9d9d9;
+  --color-neutral-7: #cecece;
+  --color-neutral-8: #bbbbbb;
+  --color-neutral-9: #8d8d8d;
+  --color-neutral-10: #838383;
+  --color-neutral-11: #646464;
+  --color-neutral-12: #202020;
+}
+
+[data-color-theme="dark"][data-color-neutral="gray"] {
+  --color-neutral-1: #111111;
+  --color-neutral-2: #191919;
+  --color-neutral-3: #222222;
+  --color-neutral-4: #2a2a2a;
+  --color-neutral-5: #313131;
+  --color-neutral-6: #3a3a3a;
+  --color-neutral-7: #484848;
+  --color-neutral-8: #606060;
+  --color-neutral-9: #6e6e6e;
+  --color-neutral-10: #7b7b7b;
+  --color-neutral-11: #b4b4b4;
+  --color-neutral-12: #eeeeee;
+}
+
+@media (color-gamut: p3) {
+  [data-color-theme="light"][data-color-neutral="gray"] {
+    --color-neutral-1: color(display-p3 0.988 0.988 0.988);
+    --color-neutral-2: color(display-p3 0.975 0.975 0.975);
+    --color-neutral-3: color(display-p3 0.939 0.939 0.939);
+    --color-neutral-4: color(display-p3 0.908 0.908 0.908);
+    --color-neutral-5: color(display-p3 0.88 0.88 0.88);
+    --color-neutral-6: color(display-p3 0.849 0.849 0.849);
+    --color-neutral-7: color(display-p3 0.807 0.807 0.807);
+    --color-neutral-8: color(display-p3 0.732 0.732 0.732);
+    --color-neutral-9: color(display-p3 0.553 0.553 0.553);
+    --color-neutral-10: color(display-p3 0.512 0.512 0.512);
+    --color-neutral-11: color(display-p3 0.392 0.392 0.392);
+    --color-neutral-12: color(display-p3 0.125 0.125 0.125);
+  }
+
+  [data-color-theme="dark"][data-color-neutral="gray"] {
+    --color-neutral-1: color(display-p3 0.067 0.067 0.067);
+    --color-neutral-2: color(display-p3 0.098 0.098 0.098);
+    --color-neutral-3: color(display-p3 0.135 0.135 0.135);
+    --color-neutral-4: color(display-p3 0.163 0.163 0.163);
+    --color-neutral-5: color(display-p3 0.192 0.192 0.192);
+    --color-neutral-6: color(display-p3 0.228 0.228 0.228);
+    --color-neutral-7: color(display-p3 0.283 0.283 0.283);
+    --color-neutral-8: color(display-p3 0.375 0.375 0.375);
+    --color-neutral-9: color(display-p3 0.431 0.431 0.431);
+    --color-neutral-10: color(display-p3 0.484 0.484 0.484);
+    --color-neutral-11: color(display-p3 0.706 0.706 0.706);
+    --color-neutral-12: color(display-p3 0.933 0.933 0.933);
+  }
+}

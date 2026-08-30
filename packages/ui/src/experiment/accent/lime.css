@@ -1,0 +1,61 @@
+[data-color-theme="light"][data-color-accent="lime"] {
+  --color-accent-1: #fcfdfa;
+  --color-accent-2: #f8faf3;
+  --color-accent-3: #eef6d6;
+  --color-accent-4: #e2f0bd;
+  --color-accent-5: #d3e7a6;
+  --color-accent-6: #c2da91;
+  --color-accent-7: #abc978;
+  --color-accent-8: #8db654;
+  --color-accent-9: #bdee63;
+  --color-accent-10: #b0e64c;
+  --color-accent-11: #5c7c2f;
+  --color-accent-12: #37401c;
+}
+
+[data-color-theme="dark"][data-color-accent="lime"] {
+  --color-accent-1: #11130c;
+  --color-accent-2: #151a10;
+  --color-accent-3: #1f2917;
+  --color-accent-4: #29371d;
+  --color-accent-5: #334423;
+  --color-accent-6: #3d522a;
+  --color-accent-7: #496231;
+  --color-accent-8: #577538;
+  --color-accent-9: #bdee63;
+  --color-accent-10: #d4ff70;
+  --color-accent-11: #bde56c;
+  --color-accent-12: #e3f7ba;
+}
+
+@media (color-gamut: p3) {
+  [data-color-theme="light"][data-color-accent="lime"] {
+    --color-accent-1: color(display-p3 0.989 0.992 0.981);
+    --color-accent-2: color(display-p3 0.975 0.98 0.954);
+    --color-accent-3: color(display-p3 0.939 0.965 0.851);
+    --color-accent-4: color(display-p3 0.896 0.94 0.76);
+    --color-accent-5: color(display-p3 0.843 0.903 0.678);
+    --color-accent-6: color(display-p3 0.778 0.852 0.599);
+    --color-accent-7: color(display-p3 0.694 0.784 0.508);
+    --color-accent-8: color(display-p3 0.585 0.707 0.378);
+    --color-accent-9: color(display-p3 0.78 0.928 0.466);
+    --color-accent-10: color(display-p3 0.734 0.896 0.397);
+    --color-accent-11: color(display-p3 0.386 0.482 0.227);
+    --color-accent-12: color(display-p3 0.222 0.25 0.128);
+  }
+
+  [data-color-theme="dark"][data-color-accent="lime"] {
+    --color-accent-1: color(display-p3 0.067 0.073 0.048);
+    --color-accent-2: color(display-p3 0.086 0.1 0.067);
+    --color-accent-3: color(display-p3 0.13 0.16 0.099);
+    --color-accent-4: color(display-p3 0.172 0.214 0.126);
+    --color-accent-5: color(display-p3 0.213 0.266 0.153);
+    --color-accent-6: color(display-p3 0.257 0.321 0.182);
+    --color-accent-7: color(display-p3 0.307 0.383 0.215);
+    --color-accent-8: color(display-p3 0.365 0.456 0.25);
+    --color-accent-9: color(display-p3 0.78 0.928 0.466);
+    --color-accent-10: color(display-p3 0.865 0.995 0.519);
+    --color-accent-11: color(display-p3 0.771 0.893 0.485);
+    --color-accent-12: color(display-p3 0.905 0.966 0.753);
+  }
+}
