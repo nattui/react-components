@@ -1,5 +1,5 @@
 [data-color-accent] {
-  --color-neutral-on-accent: var(--color-text-primary);
+  --color-neutral-on-accent: #ffffff;
 }
 
 [data-color-accent="yellow"],
@@ -7,5 +7,5 @@
 [data-color-accent="lime"],
 [data-color-accent="mint"],
 [data-color-accent="sky"] {
-  --color-neutral-on-accent: var(--color-text-inverse);
+  --color-neutral-on-accent: #000000;
 }
