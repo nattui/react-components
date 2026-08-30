@@ -435,9 +435,11 @@ export const Route = createFileRoute("/test")({
                     {model.icon && <model.icon className="mr-8" size={ICON_SIZE} />}
                     <span className="truncate">{model.label}</span>
                     {model.description && (
-                      <span className="
-                        ml-6 truncate text-12 font-400 text-neutral-9
-                      ">
+                      <span
+                        className="
+                          ml-6 truncate text-12 font-400 text-neutral-9
+                        "
+                      >
                         {model.description}
                       </span>
                     )}
