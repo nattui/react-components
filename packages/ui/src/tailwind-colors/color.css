@@ -30,6 +30,9 @@
   --color-neutral-11: var(--color-neutral-11);
   --color-neutral-12: var(--color-neutral-12);
 
+  --color-white: var(--color-white);
+  --color-black: var(--color-black);
+
   /* Accent ============================================ */
   --color-accent-1: var(--color-accent-1);
   --color-accent-2: var(--color-accent-2);
