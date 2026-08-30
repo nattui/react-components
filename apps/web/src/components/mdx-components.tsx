@@ -1,12 +1,23 @@
 // oxlint-disable id-length
 // oxlint-disable react/only-export-components
 
+import { IconChevronDownOutline18 } from "@nattstack/icons"
+import { Spacer } from "@nattstack/ui"
 import type { MDXComponents } from "mdx/types"
-import { type ComponentProps, isValidElement, type JSX, type ReactNode } from "react"
+import {
+  type ComponentProps,
+  isValidElement,
+  type JSX,
+  type ReactNode,
+  useId,
+  useState,
+} from "react"
 
+type MdxComponentExampleProps = ComponentProps<"div">
 type MdxComponentShowcaseProps = ComponentProps<"div">
 
 export const MDX_COMPONENTS: MDXComponents = {
+  MdxComponentExample,
   MdxComponentShowcase,
   a: MdxAnchor,
   blockquote: MdxBlockquote,
@@ -22,13 +33,64 @@ export const MDX_COMPONENTS: MDXComponents = {
   ul: MdxUnorderedList,
 }
 
+export function MdxComponentExample(props: MdxComponentExampleProps): JSX.Element {
+  const { children, className, ...rest } = props
+
+  const [showCode, setShowCode] = useState(false)
+
+  const codeId = useId()
+  const [preview, ...code] = getElementChildren(children)
+  const hasCode = code.length > 0
+
+  function handleToggleCode(): void {
+    setShowCode((current) => !current)
+  }
+
+  return (
+    <div className={joinClassNames("mb-24 [&_.expressive-code]:mb-0", className)} {...rest}>
+      {preview}
+
+      {hasCode ? (
+        <button
+          aria-controls={codeId}
+          aria-expanded={showCode}
+          className="
+            flex h-40 w-full items-center justify-center gap-8 rounded-b-16
+            border border-t-0 border-neutral-4 bg-bg-shell-outer text-14
+            text-neutral-11
+            hover:bg-neutral-3 hover:text-neutral-12
+          "
+          onClick={handleToggleCode}
+          type="button"
+        >
+          {showCode ? "Hide code" : "Show code"}
+          <IconChevronDownOutline18
+            className={joinClassNames(
+              "transition-transform duration-150",
+              showCode ? "rotate-180" : undefined,
+            )}
+          />
+        </button>
+      ) : undefined}
+
+      {hasCode ? (
+        <div hidden={!showCode} id={codeId}>
+          <Spacer height={16} />
+
+          {code}
+        </div>
+      ) : undefined}
+    </div>
+  )
+}
+
 export function MdxComponentShowcase(props: MdxComponentShowcaseProps): JSX.Element {
   const { children, className, ...rest } = props
 
   return (
     <div
       className={joinClassNames(
-        "mb-24 w-full min-w-0 overflow-x-auto rounded-16 border border-neutral-4 bg-bg-shell-outer bg-[radial-gradient(circle,var(--color-border)_1px,transparent_1px)] bg-size-[16px_16px]",
+        "w-full min-w-0 overflow-x-auto rounded-16 border border-neutral-4 bg-bg-shell-outer bg-[radial-gradient(circle,var(--color-border)_1px,transparent_1px)] bg-size-[16px_16px]",
         className,
       )}
       {...rest}
@@ -47,6 +109,18 @@ export function MdxComponentShowcase(props: MdxComponentShowcaseProps): JSX.Elem
 
 function getCodeLanguage(className: string | undefined): string | undefined {
   return className?.match(/(?:^|\s)language-(?<language>[\w-]+)/u)?.groups?.language
+}
+
+function getElementChildren(node: ReactNode): JSX.Element[] {
+  if (Array.isArray(node)) {
+    return node.flatMap((child) => getElementChildren(child))
+  }
+
+  if (isValidElement(node)) {
+    return [node]
+  }
+
+  return []
 }
 
 function hasElementChild(node: ReactNode): boolean {

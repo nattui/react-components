@@ -1,11 +1,16 @@
 import type { Plugin } from "vite"
 
 const COMPONENT_SHOWCASE_MARKER = "// component"
-const NO_CLOSING_FENCE_INDEX = -1
 
 interface CodeFence {
   fence: string
   indent: string
+}
+
+interface ReadFenceResult {
+  closingIndex: number
+  contentLines: string[]
+  openingLine: string
 }
 
 export function mdxComponentShowcases(): Plugin {
@@ -57,51 +62,92 @@ function isClosingFence(line: string, openingFence: string, openingIndent: strin
   return closingFencePattern.test(line.trimEnd())
 }
 
+function isShowcaseSource(contentLines: string[]): boolean {
+  return contentLines.join("\n").trim().startsWith(COMPONENT_SHOWCASE_MARKER)
+}
+
+function readFenceAt(lines: string[], startIndex: number): ReadFenceResult | undefined {
+  const openingFence = getCodeFence(lines[startIndex])
+
+  if (!openingFence) {
+    return
+  }
+
+  const contentLines: string[] = []
+
+  for (let lineIndex = startIndex + 1; lineIndex < lines.length; lineIndex += 1) {
+    if (isClosingFence(lines[lineIndex], openingFence.fence, openingFence.indent)) {
+      return {
+        closingIndex: lineIndex,
+        contentLines,
+        openingLine: lines[startIndex],
+      }
+    }
+
+    contentLines.push(lines[lineIndex])
+  }
+}
+
+function skipBlankLines(lines: string[], startIndex: number): number {
+  let lineIndex = startIndex
+
+  while (lineIndex < lines.length && lines[lineIndex].trim() === "") {
+    lineIndex += 1
+  }
+
+  return lineIndex
+}
+
 function transformComponentShowcases(code: string): string | undefined {
   const lines = code.split("\n")
   const transformedLines: string[] = []
   let hasComponentShowcase = false
 
   for (let lineIndex = 0; lineIndex < lines.length; lineIndex += 1) {
-    const openingFence = getCodeFence(lines[lineIndex])
+    const fence = readFenceAt(lines, lineIndex)
 
-    if (openingFence) {
-      const codeLines: string[] = []
-      let closingFenceIndex = NO_CLOSING_FENCE_INDEX
+    if (fence) {
+      const { closingIndex, contentLines, openingLine } = fence
+      const trimmedCodeContent = contentLines.join("\n").trim()
+      const isComponentShowcase = trimmedCodeContent.startsWith(COMPONENT_SHOWCASE_MARKER)
+      const componentSource = isComponentShowcase
+        ? trimmedCodeContent.slice(COMPONENT_SHOWCASE_MARKER.length).trim()
+        : ""
 
-      for (let codeLineIndex = lineIndex + 1; codeLineIndex < lines.length; codeLineIndex += 1) {
-        const codeLine = lines[codeLineIndex]
+      if (isComponentShowcase && componentSource.length > 0) {
+        hasComponentShowcase = true
 
-        if (isClosingFence(codeLine, openingFence.fence, openingFence.indent)) {
-          closingFenceIndex = codeLineIndex
-          break
-        }
+        const followingFence = readFenceAt(lines, skipBlankLines(lines, closingIndex + 1))
+        const followingSourceFence =
+          followingFence === undefined || isShowcaseSource(followingFence.contentLines)
+            ? undefined
+            : followingFence
 
-        codeLines.push(codeLine)
-      }
+        transformedLines.push(
+          "<MdxComponentExample>",
+          followingSourceFence === undefined
+            ? "<MdxComponentShowcase>"
+            : '<MdxComponentShowcase className="rounded-b-0!">',
+          componentSource,
+          "</MdxComponentShowcase>",
+        )
 
-      if (closingFenceIndex === NO_CLOSING_FENCE_INDEX) {
-        transformedLines.push(lines[lineIndex])
-      } else {
-        const codeContent = codeLines.join("\n")
-        const trimmedCodeContent = codeContent.trim()
-        const isComponentShowcase = trimmedCodeContent.startsWith(COMPONENT_SHOWCASE_MARKER)
-        const componentSource = isComponentShowcase
-          ? trimmedCodeContent.slice(COMPONENT_SHOWCASE_MARKER.length).trim()
-          : ""
-
-        if (isComponentShowcase && componentSource.length > 0) {
-          hasComponentShowcase = true
+        if (followingSourceFence) {
           transformedLines.push(
-            "<MdxComponentShowcase>",
-            componentSource,
-            "</MdxComponentShowcase>",
+            "",
+            followingSourceFence.openingLine,
+            ...followingSourceFence.contentLines,
+            lines[followingSourceFence.closingIndex],
           )
+          lineIndex = followingSourceFence.closingIndex
         } else {
-          transformedLines.push(lines[lineIndex], ...codeLines, lines[closingFenceIndex])
+          lineIndex = closingIndex
         }
 
-        lineIndex = closingFenceIndex
+        transformedLines.push("</MdxComponentExample>")
+      } else {
+        transformedLines.push(openingLine, ...contentLines, lines[closingIndex])
+        lineIndex = closingIndex
       }
     } else {
       transformedLines.push(lines[lineIndex])
