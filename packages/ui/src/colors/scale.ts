@@ -1,4 +1,4 @@
-import { COLOR } from "./index"
+import { COLOR } from "./palette"
 
 const SCHEMA = {
   GAMUT: {
@@ -16,7 +16,7 @@ const SCHEMA = {
   STEP: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
 } as const
 
-export const TOKEN = {
+export const SCALE = {
   [SCHEMA.ROLE.ACCENT]: {
     [COLOR.ACCENT.AMBER]: {
       [SCHEMA.GAMUT.SRGB]: {

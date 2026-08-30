@@ -8,7 +8,7 @@ export default defineConfig({
     /* Only the CSS assets: .ts files in src/colors are compiled, not copied. */
     { from: "src/colors/accent", to: "dist/colors" },
     { from: "src/colors/index.css", to: "dist/colors" },
-    { from: "src/colors/scheme.css", to: "dist/colors" },
+    { from: "src/colors/theme.css", to: "dist/colors" },
     { from: "src/colors/neutral", to: "dist/colors" },
     { from: "src/colors/semantic", to: "dist/colors" },
     { from: "src/tailwind-colors", to: "dist" },
