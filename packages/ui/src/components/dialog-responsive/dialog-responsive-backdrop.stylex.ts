@@ -9,7 +9,7 @@ export const dialogResponsiveBackdropStyles = create({
       ":is([data-ending-style], [data-starting-style])": 0,
       default: "calc(var(--backdrop-opacity) * (1 - var(--drawer-swipe-progress)))",
     },
-    outlineColor: "var(--color-primary-9)",
+    outlineColor: "var(--color-accent-9)",
     position: "fixed",
     transitionDuration: {
       ":is([data-ending-style])": "calc(var(--drawer-swipe-strength) * 400ms)",

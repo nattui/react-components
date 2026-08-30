@@ -25,6 +25,7 @@ export function RouteRootTheme(): JSX.Element {
           const root = document.documentElement;
           root.classList.remove('light', 'dark');
           root.classList.add(resolved);
+          root.setAttribute('data-color-theme', resolved);
         }
 
         function onThemeChange() {

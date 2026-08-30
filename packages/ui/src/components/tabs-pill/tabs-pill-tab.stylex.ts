@@ -2,7 +2,7 @@ import { create } from "@stylexjs/stylex"
 
 export const tabsPillTabStyles = create({
   background: {
-    backgroundColor: "var(--color-gray-3)",
+    backgroundColor: "var(--color-neutral-3)",
     inset: 0,
     position: "absolute",
     zIndex: -2,
@@ -11,14 +11,14 @@ export const tabsPillTabStyles = create({
     "--border-radius": "12px",
     alignItems: "center",
     backgroundColor: {
-      ":hover": "var(--color-gray-4)",
+      ":hover": "var(--color-neutral-4)",
       ":is([data-active])": "transparent",
       default: "transparent",
     },
     borderRadius: "var(--border-radius)",
     color: {
-      ":is([data-active])": "var(--color-gray-1)",
-      default: "var(--color-gray-12)",
+      ":is([data-active])": "var(--color-neutral-1)",
+      default: "var(--color-neutral-12)",
     },
     columnGap: 8,
     cursor: "pointer",
@@ -28,7 +28,7 @@ export const tabsPillTabStyles = create({
     fontWeight: 450,
     height: 40,
     justifyContent: "center",
-    outlineColor: "var(--color-primary-9)",
+    outlineColor: "var(--color-accent-9)",
     outlineOffset: -4,
     outlineStyle: "solid",
     outlineWidth: {

@@ -5,30 +5,30 @@ export function RouteRootNotFound(): JSX.Element {
   return (
     <main
       className="
-        flex min-h-dvh items-center justify-center bg-gray-1 px-24 py-48
+        flex min-h-dvh items-center justify-center bg-neutral-1 px-24 py-48
       "
     >
       <div
         className="
-          w-full max-w-[44rem] rounded-[2.4rem] border border-gray-4 bg-gray-2
+          w-full max-w-[44rem] rounded-[2.4rem] border border-neutral-4 bg-neutral-2
           p-32 text-center shadow-2
         "
       >
         <p
           className="
-            m-0 text-14 font-600 tracking-[0.08em] text-primary-11 uppercase
+            m-0 text-14 font-600 tracking-[0.08em] text-accent-11 uppercase
           "
         >
           404
         </p>
-        <h1 className="mt-12 mb-8 text-30 text-gray-12">Page not found</h1>
-        <p className="m-0 leading-[1.6] text-gray-11">
+        <h1 className="mt-12 mb-8 text-30 text-neutral-12">Page not found</h1>
+        <p className="m-0 leading-[1.6] text-neutral-11">
           The page you were looking for does not exist or may have moved.
         </p>
         <Link
           className="
-            mt-24 inline-flex rounded-full bg-primary-9 px-16 py-12 font-600
-            text-primary-1 transition-opacity
+            mt-24 inline-flex rounded-full bg-accent-9 px-16 py-12 font-600
+            text-accent-1 transition-opacity
             hover:opacity-90
           "
           to="/"

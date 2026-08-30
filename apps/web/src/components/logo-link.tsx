@@ -13,7 +13,7 @@ export function LogoLink(): JSX.Element {
       "
       to="/"
     >
-      <Logomark className="text-primary" />
+      <Logomark className="text-accent" />
       <Spacer width={8} />
 
       <Logotype className="text-text-primary" />
@@ -23,7 +23,7 @@ export function LogoLink(): JSX.Element {
           <Spacer width={6} />
           <span
             className="
-              relative bottom-4 font-code text-12 leading-1 text-primary
+              relative bottom-4 font-code text-12 leading-1 text-accent
               select-none
             "
           >

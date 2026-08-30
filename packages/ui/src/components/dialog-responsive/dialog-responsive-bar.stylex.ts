@@ -2,7 +2,7 @@ import { create } from "@stylexjs/stylex"
 
 export const dialogResponsiveBarStyles = create({
   base: {
-    backgroundColor: "var(--color-gray-4)",
+    backgroundColor: "var(--color-neutral-4)",
     borderRadius: 9999,
     display: {
       "@media (max-width: 640px)": "block",

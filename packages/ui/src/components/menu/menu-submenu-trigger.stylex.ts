@@ -3,7 +3,7 @@ import { create } from "@stylexjs/stylex"
 export const menuSubmenuTriggerStyles = create({
   base: {
     backgroundColor: {
-      ":is([data-popup-open])": "var(--color-gray-3)",
+      ":is([data-popup-open])": "var(--color-neutral-3)",
       default: "transparent",
     },
   },

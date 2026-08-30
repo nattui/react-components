@@ -4,13 +4,13 @@ export const comboboxInputStyles = create({
   base: {
     alignItems: "center",
     backgroundColor: {
-      ":is([data-disabled])": "var(--color-gray-3)",
-      ":is([data-popup-open])": "var(--color-gray-3)",
+      ":is([data-disabled])": "var(--color-neutral-3)",
+      ":is([data-popup-open])": "var(--color-neutral-3)",
       default: "var(--color-bg-shell-inner)",
-      [when.descendant(":disabled")]: "var(--color-gray-3)",
+      [when.descendant(":disabled")]: "var(--color-neutral-3)",
     },
     boxShadow: {
-      ":hover:not([data-disabled], :has(:disabled))": "inset 0 0 0 1px var(--color-gray-6)",
+      ":hover:not([data-disabled], :has(:disabled))": "inset 0 0 0 1px var(--color-neutral-6)",
       default: "inset 0 0 0 1px var(--color-border)",
     },
     columnGap: 8,
@@ -27,7 +27,7 @@ export const comboboxInputStyles = create({
       [when.descendant(":disabled")]: 0.5,
     },
     outlineColor: {
-      ":focus-within": "var(--color-primary)",
+      ":focus-within": "var(--color-accent)",
       default: "transparent",
     },
     outlineOffset: 2,
@@ -55,7 +55,7 @@ export const comboboxInputStyles = create({
   },
   input: {
     "::placeholder": {
-      color: "var(--color-gray-9)",
+      color: "var(--color-neutral-9)",
       userSelect: "none",
     },
     appearance: "none",

@@ -75,8 +75,10 @@ export function TabsTheme(): JSX.Element {
 
 function applyTheme(theme: Theme): void {
   const root = document.documentElement
+  const resolved = resolveTheme(theme)
   root.classList.remove(THEME.DARK, THEME.LIGHT)
-  root.classList.add(resolveTheme(theme))
+  root.classList.add(resolved)
+  root.dataset.colorTheme = resolved
 }
 
 function getThemeLabel(theme: Theme): string {

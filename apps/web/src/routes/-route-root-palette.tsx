@@ -1,16 +1,16 @@
 import { ScriptOnce } from "@tanstack/react-router"
 import type { JSX } from "react"
 import {
-  DEFAULT_GRAY_PALETTE,
-  DEFAULT_PRIMARY_PALETTE,
-  GRAY_PALETTE_OPTIONS,
-  GRAY_PALETTE_STORAGE_KEY,
-  PRIMARY_PALETTE_OPTIONS,
-  PRIMARY_PALETTE_STORAGE_KEY,
+  ACCENT_PALETTE_OPTIONS,
+  ACCENT_PALETTE_STORAGE_KEY,
+  DEFAULT_ACCENT_PALETTE,
+  DEFAULT_NEUTRAL_PALETTE,
+  NEUTRAL_PALETTE_OPTIONS,
+  NEUTRAL_PALETTE_STORAGE_KEY,
 } from "#/utils/theme-palette"
 
 /*
-    Resolves the gray and primary color palettes from localStorage (falling back to the
+    Resolves the neutral and accent color palettes from localStorage (falling back to the
     defaults) and applies them to <html> before React hydrates to avoid a flash of the
     wrong palette (FOUC).
 
@@ -21,27 +21,28 @@ export function RouteRootPalette(): JSX.Element {
   return (
     <ScriptOnce>
       {`
-        const grayPalettes = ${JSON.stringify(GRAY_PALETTE_OPTIONS)};
-        const primaryPalettes = ${JSON.stringify(PRIMARY_PALETTE_OPTIONS)};
+        const neutralPalettes = ${JSON.stringify(NEUTRAL_PALETTE_OPTIONS)};
+        const accentPalettes = ${JSON.stringify(ACCENT_PALETTE_OPTIONS)};
 
-        function applyPalette(palettes, storageKey, fallback) {
-          const stored = localStorage.getItem(storageKey);
-          const palette = palettes.includes(stored) ? stored : fallback;
-          const root = document.documentElement;
-          root.classList.remove(...palettes);
-          root.classList.add(palette);
+        function parseStoredPalette(stored, palettes, fallback) {
+          return palettes.includes(stored) ? stored : fallback;
+        }
+
+        function applyPalette(attribute, palettes, storageKey, fallback) {
+          const palette = parseStoredPalette(localStorage.getItem(storageKey), palettes, fallback);
+          document.documentElement.setAttribute(attribute, palette);
         }
 
         function applyPalettes() {
-          applyPalette(grayPalettes, '${GRAY_PALETTE_STORAGE_KEY}', '${DEFAULT_GRAY_PALETTE}');
-          applyPalette(primaryPalettes, '${PRIMARY_PALETTE_STORAGE_KEY}', '${DEFAULT_PRIMARY_PALETTE}');
+          applyPalette('data-color-neutral', neutralPalettes, '${NEUTRAL_PALETTE_STORAGE_KEY}', '${DEFAULT_NEUTRAL_PALETTE}');
+          applyPalette('data-color-accent', accentPalettes, '${ACCENT_PALETTE_STORAGE_KEY}', '${DEFAULT_ACCENT_PALETTE}');
         }
 
         function onPaletteStorage(event) {
           // event.key is null when storage is cleared; in both cases the palettes may have changed.
           if (
-            event.key === '${GRAY_PALETTE_STORAGE_KEY}' ||
-            event.key === '${PRIMARY_PALETTE_STORAGE_KEY}' ||
+            event.key === '${NEUTRAL_PALETTE_STORAGE_KEY}' ||
+            event.key === '${ACCENT_PALETTE_STORAGE_KEY}' ||
             event.key === null
           ) {
             applyPalettes();

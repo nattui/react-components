@@ -19,7 +19,7 @@ export const pickerPopupStyles = create({
       ":is([data-ending-style], [data-starting-style])": 0,
       default: 1,
     },
-    outlineColor: "var(--color-primary-9)",
+    outlineColor: "var(--color-accent-9)",
     outlineOffset: -2,
     outlineStyle: "solid",
     outlineWidth: {

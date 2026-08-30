@@ -28,7 +28,7 @@ export function MdxComponentShowcase(props: MdxComponentShowcaseProps): JSX.Elem
   return (
     <div
       className={joinClassNames(
-        "mb-24 w-full min-w-0 overflow-x-auto rounded-16 border border-gray-4 bg-bg-shell-outer bg-[radial-gradient(circle,var(--color-border)_1px,transparent_1px)] bg-size-[16px_16px]",
+        "mb-24 w-full min-w-0 overflow-x-auto rounded-16 border border-neutral-4 bg-bg-shell-outer bg-[radial-gradient(circle,var(--color-border)_1px,transparent_1px)] bg-size-[16px_16px]",
         className,
       )}
       {...rest}
@@ -101,7 +101,7 @@ function MdxCode(props: ComponentProps<"code">): JSX.Element {
 
   return (
     <code
-      className={joinClassNames("rounded-4 bg-gray-4/75 px-4 py-2 font-code text-14", className)}
+      className={joinClassNames("rounded-4 bg-neutral-4/75 px-4 py-2 font-code text-14", className)}
       {...rest}
     >
       {children}

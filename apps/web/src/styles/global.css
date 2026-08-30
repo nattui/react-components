@@ -64,7 +64,7 @@ svg {
 }
 
 @utility ui-link {
-  text-decoration-color: var(--color-gray-6);
+  text-decoration-color: var(--color-neutral-6);
   text-decoration-line: underline;
   text-underline-offset: 2px;
   transition-duration: 150ms;
@@ -72,7 +72,7 @@ svg {
   width: fit-content;
 
   @variant hover {
-    color: var(--color-primary);
+    color: var(--color-accent);
     text-decoration-color: transparent;
     text-underline-offset: 4px;
   }

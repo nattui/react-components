@@ -3,17 +3,17 @@ import { create } from "@stylexjs/stylex"
 export const inputStyles = create({
   base: {
     "::placeholder": {
-      color: "var(--color-gray-9)",
+      color: "var(--color-neutral-9)",
       userSelect: "none",
     },
     appearance: "none",
     backgroundColor: "var(--color-bg-shell-inner)",
     borderStyle: "none",
     boxShadow: {
-      ":enabled:active": "inset 0 0 0 1px var(--color-gray-6)",
-      ":enabled:focus": "inset 0 0 0 1px var(--color-gray-6)",
-      ":enabled:hover": "inset 0 0 0 1px var(--color-gray-6)",
-      ':enabled[data-is-active="true"]': "inset 0 0 0 1px var(--color-gray-6)",
+      ":enabled:active": "inset 0 0 0 1px var(--color-neutral-6)",
+      ":enabled:focus": "inset 0 0 0 1px var(--color-neutral-6)",
+      ":enabled:hover": "inset 0 0 0 1px var(--color-neutral-6)",
+      ':enabled[data-is-active="true"]': "inset 0 0 0 1px var(--color-neutral-6)",
       default: "inset 0 0 0 1px var(--color-border)",
     },
     color: "var(--color-text-primary)",

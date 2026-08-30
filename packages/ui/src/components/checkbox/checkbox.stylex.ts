@@ -5,12 +5,12 @@ export const checkboxStyles = create({
     "--size": "16px",
     alignItems: "center",
     backgroundColor: {
-      ":hover": "var(--color-gray-3)",
-      ":is([data-checked])": "var(--color-primary)",
+      ":hover": "var(--color-neutral-3)",
+      ":is([data-checked])": "var(--color-accent)",
       default: "var(--color-bg-shell-inner)",
     },
     borderColor: {
-      ":hover": "var(--color-gray-6)",
+      ":hover": "var(--color-neutral-6)",
       ":is([data-checked])": "transparent",
       default: "var(--color-border)",
     },
@@ -21,7 +21,7 @@ export const checkboxStyles = create({
     display: "flex",
     height: "var(--size)",
     justifyContent: "center",
-    outlineColor: "var(--color-primary)",
+    outlineColor: "var(--color-accent)",
     outlineOffset: 2,
     outlineStyle: "solid",
     outlineWidth: {

@@ -6,7 +6,7 @@ export const dialogResponsivePopupStyles = create({
       "@media (max-width: 640px)": "24px",
       default: "16px",
     },
-    backgroundColor: "var(--color-gray-1)",
+    backgroundColor: "var(--color-neutral-1)",
     borderBottomLeftRadius: {
       "@media (max-width: 640px)": 0,
       default: 16,
@@ -35,7 +35,7 @@ export const dialogResponsivePopupStyles = create({
       },
       default: 1,
     },
-    outlineColor: "var(--color-primary-9)",
+    outlineColor: "var(--color-accent-9)",
     outlineOffset: -4,
     outlineStyle: "solid",
     outlineWidth: {

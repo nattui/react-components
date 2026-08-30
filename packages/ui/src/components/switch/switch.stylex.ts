@@ -3,8 +3,8 @@ import { create } from "@stylexjs/stylex"
 export const switchStyles = create({
   base: {
     backgroundColor: {
-      ":is([data-checked])": "var(--color-primary-9)",
-      default: "var(--color-gray-6)",
+      ":is([data-checked])": "var(--color-accent-9)",
+      default: "var(--color-neutral-6)",
     },
     borderRadius: 9999,
     cursor: {
@@ -17,7 +17,7 @@ export const switchStyles = create({
       ":is([data-disabled])": 0.5,
       default: 1,
     },
-    outlineColor: "var(--color-primary-9)",
+    outlineColor: "var(--color-accent-9)",
     outlineOffset: 2,
     outlineStyle: "solid",
     outlineWidth: {

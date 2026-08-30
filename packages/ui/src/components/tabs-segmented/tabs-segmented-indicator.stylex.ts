@@ -2,7 +2,7 @@ import { create } from "@stylexjs/stylex"
 
 export const tabsSegmentedIndicatorStyles = create({
   base: {
-    backgroundColor: "var(--color-gray-1)",
+    backgroundColor: "var(--color-neutral-1)",
     borderRadius: 10,
     height: "var(--active-tab-height)",
     left: "var(--active-tab-left)",

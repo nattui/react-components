@@ -14,14 +14,14 @@ export const comboboxSearchStyles = create({
   },
   icon: {
     alignItems: "center",
-    color: "var(--color-gray-9)",
+    color: "var(--color-neutral-9)",
     display: "flex",
     flexShrink: 0,
     justifyContent: "center",
   },
   input: {
     "::placeholder": {
-      color: "var(--color-gray-9)",
+      color: "var(--color-neutral-9)",
       userSelect: "none",
     },
     appearance: "none",

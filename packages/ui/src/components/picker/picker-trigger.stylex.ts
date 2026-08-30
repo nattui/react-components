@@ -4,12 +4,12 @@ export const pickerTriggerStyles = create({
   base: {
     alignItems: "center",
     backgroundColor: {
-      ":disabled": "var(--color-gray-3)",
-      ":is([data-popup-open])": "var(--color-gray-3)",
+      ":disabled": "var(--color-neutral-3)",
+      ":is([data-popup-open])": "var(--color-neutral-3)",
       default: "var(--color-bg-shell-inner)",
     },
     boxShadow: {
-      ":hover:not(:disabled, [data-popup-open])": "inset 0 0 0 1px var(--color-gray-6)",
+      ":hover:not(:disabled, [data-popup-open])": "inset 0 0 0 1px var(--color-neutral-6)",
       ":is([data-popup-open])": "inset 0 0 0 1px transparent",
       default: "inset 0 0 0 1px var(--color-border)",
     },
@@ -25,7 +25,7 @@ export const pickerTriggerStyles = create({
       default: 1,
     },
     outlineColor: {
-      ":focus-visible": "var(--color-primary)",
+      ":focus-visible": "var(--color-accent)",
       default: "transparent",
     },
     outlineOffset: 2,

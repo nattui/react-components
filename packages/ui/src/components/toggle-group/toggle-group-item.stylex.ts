@@ -4,13 +4,13 @@ export const toggleGroupItemStyles = create({
   base: {
     alignItems: "center",
     backgroundColor: {
-      ":hover:not(:disabled)": "var(--color-gray-4)",
-      ":is([data-pressed])": "var(--color-gray-3)",
+      ":hover:not(:disabled)": "var(--color-neutral-4)",
+      ":is([data-pressed])": "var(--color-neutral-3)",
       default: "transparent",
     },
     borderRadius: 10,
     boxShadow: {
-      ":is([data-pressed])": "inset 0 0 0 1px var(--color-primary)",
+      ":is([data-pressed])": "inset 0 0 0 1px var(--color-accent)",
       default: "none",
     },
     color: {

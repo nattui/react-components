@@ -15,8 +15,8 @@
     Theme text selection colors
 */
 ::selection {
-  background: var(--color-primary-6);
-  color: var(--color-gray-12);
+  background: var(--color-accent-6);
+  color: var(--color-neutral-12);
 }
 
 /*
@@ -30,7 +30,7 @@ html {
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   color-scheme: light;
-  scrollbar-color: var(--color-gray-6) transparent;
+  scrollbar-color: var(--color-neutral-6) transparent;
   scrollbar-width: thin;
   text-size-adjust: none;
   touch-action: manipulation;

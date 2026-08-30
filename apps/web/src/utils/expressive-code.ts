@@ -1,9 +1,9 @@
 import { ExpressiveCodeTheme, type SatteriExpressiveCodeOptions } from "satteri-expressive-code"
 
-const PRIMARY = "var(--color-primary)"
+const PRIMARY = "var(--color-accent)"
 const TEXT = "var(--color-text-primary)"
-const COMMENT = "var(--color-gray-10)"
-const PUNCTUATION = "var(--color-gray-11)"
+const COMMENT = "var(--color-neutral-10)"
+const PUNCTUATION = "var(--color-neutral-11)"
 
 const MIX_PROPERTY = 85
 const MIX_CONSTANT = 70
@@ -86,7 +86,7 @@ export const expressiveCodeOptions = {
     borderColor: "transparent",
     borderRadius: "16px",
     borderWidth: "0px",
-    codeBackground: "var(--color-gray-3)",
+    codeBackground: "var(--color-neutral-3)",
     codeFontFamily: "var(--font-code), ui-monospace, monospace",
     codeFontSize: "13px",
     codeForeground: TEXT,

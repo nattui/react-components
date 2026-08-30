@@ -2,7 +2,7 @@ import { create } from "@stylexjs/stylex"
 
 export const tabsSegmentedListStyles = create({
   base: {
-    backgroundColor: "var(--color-gray-3)",
+    backgroundColor: "var(--color-neutral-3)",
     borderRadius: 12,
     display: "flex",
     height: 40,

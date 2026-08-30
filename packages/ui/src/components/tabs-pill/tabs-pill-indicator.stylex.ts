@@ -2,7 +2,7 @@ import { create } from "@stylexjs/stylex"
 
 export const tabsPillIndicatorStyles = create({
   base: {
-    backgroundColor: "var(--color-gray-12)",
+    backgroundColor: "var(--color-neutral-12)",
     borderRadius: 12,
     height: "var(--active-tab-height)",
     left: "var(--active-tab-left)",

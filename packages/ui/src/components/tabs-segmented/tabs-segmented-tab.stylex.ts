@@ -5,9 +5,9 @@ export const tabsSegmentedTabStyles = create({
     alignItems: "center",
     borderRadius: 10,
     color: {
-      ":hover": "var(--color-gray-12)",
-      ":is([data-active])": "var(--color-gray-12)",
-      default: "var(--color-gray-11)",
+      ":hover": "var(--color-neutral-12)",
+      ":is([data-active])": "var(--color-neutral-12)",
+      default: "var(--color-neutral-11)",
     },
     columnGap: 8,
     cursor: "pointer",
@@ -17,7 +17,7 @@ export const tabsSegmentedTabStyles = create({
     fontWeight: 450,
     height: "100%",
     justifyContent: "center",
-    outlineColor: "var(--color-primary-9)",
+    outlineColor: "var(--color-accent-9)",
     outlineOffset: -4,
     outlineStyle: "solid",
     outlineWidth: {

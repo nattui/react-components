@@ -5,7 +5,7 @@ export const tabsPanelStyles = create({
     display: "flex",
     flexDirection: "column",
     outlineColor: {
-      ":focus-visible": "var(--color-primary-9)",
+      ":focus-visible": "var(--color-accent-9)",
       default: "transparent",
     },
     outlineOffset: -2,

@@ -32,7 +32,7 @@ import { Button } from "@nattstack/ui"
 
 function App() {
   return (
-    <html className="color-gray-slate color-primary-blue">
+    <html data-color-theme="light" data-color-neutral="slate" data-color-accent="blue">
       <head>...</head>
       <body>
         <Button label="Click me" />

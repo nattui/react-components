@@ -2,10 +2,10 @@ import { create } from "@stylexjs/stylex"
 
 export const otpFieldInputStyles = create({
   base: {
-    backgroundColor: "var(--color-gray-3)",
+    backgroundColor: "var(--color-neutral-3)",
     borderRadius: 14,
     boxShadow: {
-      ":enabled:hover": "inset 0 0 0 1px var(--color-gray-6)",
+      ":enabled:hover": "inset 0 0 0 1px var(--color-neutral-6)",
       default: "inset 0 0 0 1px var(--color-border)",
     },
     color: "var(--color-text-primary)",

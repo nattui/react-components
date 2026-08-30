@@ -88,29 +88,29 @@ export const buttonStyles = create({
   },
   variant_ghost: {
     backgroundColor: {
-      ":hover:not(:disabled)": "var(--color-gray-4)",
+      ":hover:not(:disabled)": "var(--color-neutral-4)",
       default: "transparent",
     },
-    color: "var(--color-gray-12)",
+    color: "var(--color-neutral-12)",
   },
   variant_primary: {
     backgroundColor: {
       ":hover:not(:disabled)":
-        "color-mix(in oklab, var(--color-gray-12) 100%, var(--color-gray-1) 25%)",
-      default: "var(--color-gray-12)",
+        "color-mix(in oklab, var(--color-neutral-12) 100%, var(--color-neutral-1) 25%)",
+      default: "var(--color-neutral-12)",
     },
-    color: "var(--color-gray-1)",
+    color: "var(--color-neutral-1)",
   },
   variant_secondary: {
     backgroundColor: {
-      ":hover:not(:disabled)": "var(--color-gray-4)",
+      ":hover:not(:disabled)": "var(--color-neutral-4)",
       default: "var(--color-bg-shell-inner)",
     },
     boxShadow: {
       ":hover:not(:disabled)": "none",
       default: "inset 0 0 0 1px var(--color-border)",
     },
-    color: "var(--color-gray-12)",
+    color: "var(--color-neutral-12)",
   },
   width_base: {
     width: "fit-content",

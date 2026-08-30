@@ -1,34 +1,32 @@
 :root {
-  --color-gray: var(--color-gray-9);
-  --color-primary: var(--color-primary-9);
+  --color-neutral: var(--color-neutral-9);
+  --color-accent: var(--color-accent-9);
 
-  --color-bg-primary: var(--color-gray-1);
-  --color-bg-secondary: var(--color-gray-2);
-  --color-bg-shell-outer: var(--color-gray-2);
-  --color-bg-shell-inner: var(--color-gray-1);
+  --color-bg-primary: var(--color-neutral-1);
+  --color-bg-secondary: var(--color-neutral-2);
+  --color-bg-shell-outer: var(--color-neutral-2);
+  --color-bg-shell-inner: var(--color-neutral-1);
 
-  --color-border: var(--color-gray-4);
-  --color-outline: var(--color-primary-9);
+  --color-border: var(--color-neutral-4);
+  --color-outline: var(--color-accent-9);
 
-  --color-text-primary: var(--color-gray-12);
-  --color-text-secondary: var(--color-gray-11);
+  --color-text-primary: var(--color-neutral-12);
+  --color-text-secondary: var(--color-neutral-11);
 
-  --color-success: var(--color-primitive-green-9);
-  --color-warning: var(--color-primitive-yellow-9);
-  --color-error: var(--color-primitive-red-9);
+  --color-success: #30a46c;
+  --color-warning: #ffe629;
+  --color-error: #e5484d;
 
-  --color-tooltip: var(--color-gray-dark-12);
-  --color-tooltip-bg: var(--color-gray-dark-1);
+  --color-tooltip: var(--color-neutral-1);
+  --color-tooltip-bg: var(--color-neutral-12);
 
   --opacity-dialog-backdrop: 0.25;
   --opacity-picker-disabled: 0.5;
 }
 
 .dark {
-  --color-bg-shell-outer: var(--color-gray-1);
-  --color-bg-shell-inner: var(--color-gray-2);
-  --color-tooltip: var(--color-gray-light-12);
-  --color-tooltip-bg: var(--color-gray-light-1);
+  --color-bg-shell-outer: var(--color-neutral-1);
+  --color-bg-shell-inner: var(--color-neutral-2);
   --opacity-dialog-backdrop: 0.75;
   --opacity-picker-disabled: 0.25;
 }

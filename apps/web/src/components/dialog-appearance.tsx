@@ -17,21 +17,22 @@ import {
 import { useEffect, useState, type JSX } from "react"
 import { TabsTheme } from "#/components/tabs-theme"
 import {
-  type PrimaryPalette,
-  GRAY_PALETTE_OPTIONS,
-  GRAY_PALETTE_STORAGE_KEY,
-  PRIMARY_PALETTE_OPTIONS,
-  PRIMARY_PALETTE_STORAGE_KEY,
-  formatPrimaryPaletteLabel,
-  getPairedGrayPalette,
-  readStoredPrimaryPalette,
+  type AccentPalette,
+  ACCENT_PALETTE_OPTIONS,
+  ACCENT_PALETTE_STORAGE_KEY,
+  NEUTRAL_PALETTE_STORAGE_KEY,
+  applyColorPalettes,
+  formatAccentPaletteLabel,
+  getPairedNeutralPalette,
+  readStoredAccentPalette,
 } from "#/utils/theme-palette"
-interface ToggleColorProps extends ToggleProps<PrimaryPalette> {
-  value: PrimaryPalette
+
+interface ToggleColorProps extends ToggleProps<AccentPalette> {
+  value: AccentPalette
 }
 
 export function DialogAppearance(): JSX.Element {
-  const [primaryPalette, setPrimaryPalette] = useState<PrimaryPalette | undefined>()
+  const [accentPalette, setAccentPalette] = useState<AccentPalette | undefined>()
 
   /*
         The server does not know the stored palette, so the first render shows no pressed
@@ -39,10 +40,10 @@ export function DialogAppearance(): JSX.Element {
         what actually flips the pressed state in the DOM.
     */
   useEffect(() => {
-    setPrimaryPalette(readStoredPrimaryPalette())
+    setAccentPalette(readStoredAccentPalette())
   }, [])
 
-  function handlePrimaryPaletteChange(groupValue: PrimaryPalette[]): void {
+  function handleAccentPaletteChange(groupValue: AccentPalette[]): void {
     const [nextPalette] = groupValue
 
     if (nextPalette === undefined) {
@@ -50,15 +51,12 @@ export function DialogAppearance(): JSX.Element {
     }
 
     /* Apply the natural Radix gray pairing, e.g. Red pairs with Mauve, Green with Sage. */
-    const nextGrayPalette = getPairedGrayPalette(nextPalette)
+    const nextNeutralPalette = getPairedNeutralPalette(nextPalette)
 
-    localStorage.setItem(PRIMARY_PALETTE_STORAGE_KEY, nextPalette)
-    localStorage.setItem(GRAY_PALETTE_STORAGE_KEY, nextGrayPalette)
-    setPrimaryPalette(nextPalette)
-
-    const root = globalThis.document.documentElement
-    root.classList.remove(...PRIMARY_PALETTE_OPTIONS, ...GRAY_PALETTE_OPTIONS)
-    root.classList.add(nextPalette, nextGrayPalette)
+    localStorage.setItem(ACCENT_PALETTE_STORAGE_KEY, nextPalette)
+    localStorage.setItem(NEUTRAL_PALETTE_STORAGE_KEY, nextNeutralPalette)
+    setAccentPalette(nextPalette)
+    applyColorPalettes(nextPalette, nextNeutralPalette)
   }
 
   return (
@@ -105,7 +103,7 @@ export function DialogAppearance(): JSX.Element {
             <Label htmlFor="color">Color</Label>
 
             <p className="text-14 font-500 text-text-primary">
-              {primaryPalette === undefined ? undefined : formatPrimaryPaletteLabel(primaryPalette)}
+              {accentPalette === undefined ? undefined : formatAccentPaletteLabel(accentPalette)}
             </p>
           </Row>
           <Spacer height={8} />
@@ -116,10 +114,10 @@ export function DialogAppearance(): JSX.Element {
               items-center gap-8
             "
             id="color"
-            onValueChange={handlePrimaryPaletteChange}
-            value={primaryPalette === undefined ? [] : [primaryPalette]}
+            onValueChange={handleAccentPaletteChange}
+            value={accentPalette === undefined ? [] : [accentPalette]}
           >
-            {PRIMARY_PALETTE_OPTIONS.map((option) => (
+            {ACCENT_PALETTE_OPTIONS.map((option) => (
               <ToggleColor key={option} value={option} />
             ))}
           </ToggleGroup>
@@ -132,8 +130,7 @@ export function DialogAppearance(): JSX.Element {
 function ToggleColor(props: ToggleColorProps): JSX.Element {
   const { value, ...rest } = props
 
-  const colorLabel = formatPrimaryPaletteLabel(value)
-  const colorName = value.split("-").at(-1) ?? value
+  const colorLabel = formatAccentPaletteLabel(value)
 
   return (
     <Tooltip>
@@ -146,9 +143,11 @@ function ToggleColor(props: ToggleColorProps): JSX.Element {
               overflow-hidden rounded-full border border-solid outline-offset-2
               data-pressed:outline-2
             "
+            data-color-accent={value}
+            data-color-theme="light"
             style={{
-              backgroundColor: `var(--color-primitive-${colorName}-9)`,
-              borderColor: `var(--color-primitive-${colorName}-10)`,
+              backgroundColor: "var(--color-accent-9)",
+              borderColor: "var(--color-accent-10)",
             }}
             value={value}
             {...rest}

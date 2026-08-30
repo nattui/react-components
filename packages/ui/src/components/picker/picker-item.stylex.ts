@@ -4,8 +4,8 @@ export const pickerItemStyles = create({
   base: {
     alignItems: "center",
     backgroundColor: {
-      ":is([data-highlighted]:not([data-disabled]))": "var(--color-gray-3)",
-      ":is([data-highlighted][data-disabled]:not(:hover))": "var(--color-gray-3)",
+      ":is([data-highlighted]:not([data-disabled]))": "var(--color-neutral-3)",
+      ":is([data-highlighted][data-disabled]:not(:hover))": "var(--color-neutral-3)",
       default: "transparent",
     },
     borderRadius: 8,
@@ -28,7 +28,7 @@ export const pickerItemStyles = create({
   },
   indicator: {
     alignItems: "center",
-    color: "var(--color-primary-9)",
+    color: "var(--color-accent-9)",
     display: "flex",
     flexShrink: 0,
     height: 16,

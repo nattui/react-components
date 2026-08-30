@@ -9,6 +9,9 @@ export function RouteRoot(): JSX.Element {
   return (
     <html
       className="[--margin-page-dashboard:16px] [--margin-page-main:20px]"
+      data-color-accent="blue"
+      data-color-neutral="slate"
+      data-color-theme="light"
       lang="en"
       suppressHydrationWarning
     >

@@ -4,7 +4,7 @@ export const comboboxValueStyles = create({
   base: {
     color: {
       default: "var(--color-text-primary)",
-      [when.ancestor("[data-placeholder]")]: "var(--color-gray-9)",
+      [when.ancestor("[data-placeholder]")]: "var(--color-neutral-9)",
     },
     fontSize: 14,
     fontWeight: 450,
