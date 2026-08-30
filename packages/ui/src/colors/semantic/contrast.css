@@ -1,0 +1,22 @@
+/*
+    Contrast color for content sitting on the solid accent steps (9 and 10).
+
+    Step 9 is identical in light and dark mode, so the value is theme-invariant
+    and only keys off the accent.
+*/
+
+[data-color-accent] {
+  --color-accent-contrast: #ffffff;
+}
+
+/*
+    Bright scales whose solid step needs dark content. Same specificity as the
+    default above, so this block must stay after it.
+*/
+[data-color-accent="yellow"],
+[data-color-accent="amber"],
+[data-color-accent="lime"],
+[data-color-accent="mint"],
+[data-color-accent="sky"] {
+  --color-accent-contrast: #000000;
+}

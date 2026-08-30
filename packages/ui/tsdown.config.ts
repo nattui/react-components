@@ -9,6 +9,7 @@ export default defineConfig({
     { from: "src/colors/accent", to: "dist/colors" },
     { from: "src/colors/index.css", to: "dist/colors" },
     { from: "src/colors/neutral", to: "dist/colors" },
+    { from: "src/colors/semantic", to: "dist/colors" },
     { from: "src/tailwind-colors", to: "dist" },
     { from: "src/tailwind-tokenless", to: "dist" },
   ],

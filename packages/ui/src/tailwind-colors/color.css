@@ -44,6 +44,8 @@
   --color-accent-11: var(--color-accent-11);
   --color-accent-12: var(--color-accent-12);
 
+  --color-accent-contrast: var(--color-accent-contrast);
+
   /* Semantic ========================================== */
   --color-neutral: var(--color-neutral);
   --color-accent: var(--color-accent);
