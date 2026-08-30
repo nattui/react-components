@@ -44,6 +44,10 @@ export const COLOR = {
     SAND: "sand",
     SLATE: "slate",
   },
+  THEME: {
+    DARK: "dark",
+    LIGHT: "light",
+  },
 } as const
 
 /*

@@ -1,3 +1,4 @@
+import { COLOR } from "@nattstack/ui"
 import { HeadContent, Outlet, Scripts } from "@tanstack/react-router"
 import type { JSX } from "react"
 import { LayoutDashboardMain } from "#/components/layout-dashboard-main"
@@ -8,9 +9,9 @@ export function RouteRoot(): JSX.Element {
   return (
     <html
       className="[--margin-page-dashboard:16px] [--margin-page-main:20px]"
-      data-color-accent="blue"
-      data-color-neutral="slate"
-      data-color-theme="light"
+      data-color-accent={COLOR.ACCENT.BLUE}
+      data-color-neutral={COLOR.NEUTRAL.SLATE}
+      data-color-theme={COLOR.THEME.LIGHT}
       lang="en"
       suppressHydrationWarning
     >
