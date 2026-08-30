@@ -1,0 +1,197 @@
+/* ==================================================== */
+/* Gray */
+/* ==================================================== */
+[data-color-theme="light"][data-color-neutral="gray"] {
+  --color-neutral-1: #fcfcfc;
+  --color-neutral-2: #f9f9f9;
+  --color-neutral-3: #f0f0f0;
+  --color-neutral-4: #e8e8e8;
+  --color-neutral-5: #e0e0e0;
+  --color-neutral-6: #d9d9d9;
+  --color-neutral-7: #cecece;
+  --color-neutral-8: #bbbbbb;
+  --color-neutral-9: #8d8d8d;
+  --color-neutral-10: #838383;
+  --color-neutral-11: #646464;
+  --color-neutral-12: #202020;
+}
+
+[data-color-theme="dark"][data-color-neutral="gray"] {
+  --color-neutral-1: #111111;
+  --color-neutral-2: #191919;
+  --color-neutral-3: #222222;
+  --color-neutral-4: #2a2a2a;
+  --color-neutral-5: #313131;
+  --color-neutral-6: #3a3a3a;
+  --color-neutral-7: #484848;
+  --color-neutral-8: #606060;
+  --color-neutral-9: #6e6e6e;
+  --color-neutral-10: #7b7b7b;
+  --color-neutral-11: #b4b4b4;
+  --color-neutral-12: #eeeeee;
+}
+
+/* ==================================================== */
+/* Mauve */
+/* ==================================================== */
+[data-color-theme="light"][data-color-neutral="mauve"] {
+  --color-neutral-1: #fdfcfd;
+  --color-neutral-2: #faf9fb;
+  --color-neutral-3: #f2eff3;
+  --color-neutral-4: #eae7ec;
+  --color-neutral-5: #e3dfe6;
+  --color-neutral-6: #dbd8e0;
+  --color-neutral-7: #d0cdd7;
+  --color-neutral-8: #bcbac7;
+  --color-neutral-9: #8e8c99;
+  --color-neutral-10: #84828e;
+  --color-neutral-11: #65636d;
+  --color-neutral-12: #211f26;
+}
+
+[data-color-theme="dark"][data-color-neutral="mauve"] {
+  --color-neutral-1: #121113;
+  --color-neutral-2: #1a191b;
+  --color-neutral-3: #232225;
+  --color-neutral-4: #2b292d;
+  --color-neutral-5: #323035;
+  --color-neutral-6: #3c393f;
+  --color-neutral-7: #49474e;
+  --color-neutral-8: #625f69;
+  --color-neutral-9: #6f6d78;
+  --color-neutral-10: #7c7a85;
+  --color-neutral-11: #b5b2bc;
+  --color-neutral-12: #eeeef0;
+}
+
+/* ==================================================== */
+/* Slate */
+/* ==================================================== */
+[data-color-theme="light"][data-color-neutral="slate"] {
+  --color-neutral-1: #fcfcfd;
+  --color-neutral-2: #f9f9fb;
+  --color-neutral-3: #f0f0f3;
+  --color-neutral-4: #e8e8ec;
+  --color-neutral-5: #e0e1e6;
+  --color-neutral-6: #d9d9e0;
+  --color-neutral-7: #cdced6;
+  --color-neutral-8: #b9bbc6;
+  --color-neutral-9: #8b8d98;
+  --color-neutral-10: #80838d;
+  --color-neutral-11: #60646c;
+  --color-neutral-12: #1c2024;
+}
+
+[data-color-theme="dark"][data-color-neutral="slate"] {
+  --color-neutral-1: #111113;
+  --color-neutral-2: #18191b;
+  --color-neutral-3: #212225;
+  --color-neutral-4: #272a2d;
+  --color-neutral-5: #2e3135;
+  --color-neutral-6: #363a3f;
+  --color-neutral-7: #43484e;
+  --color-neutral-8: #5a6169;
+  --color-neutral-9: #696e77;
+  --color-neutral-10: #777b84;
+  --color-neutral-11: #b0b4ba;
+  --color-neutral-12: #edeef0;
+}
+
+/* ==================================================== */
+/* Sage */
+/* ==================================================== */
+[data-color-theme="light"][data-color-neutral="sage"] {
+  --color-neutral-1: #fbfdfc;
+  --color-neutral-2: #f7f9f8;
+  --color-neutral-3: #eef1f0;
+  --color-neutral-4: #e6e9e8;
+  --color-neutral-5: #dfe2e0;
+  --color-neutral-6: #d7dad9;
+  --color-neutral-7: #cbcfcd;
+  --color-neutral-8: #b8bcba;
+  --color-neutral-9: #868e8b;
+  --color-neutral-10: #7c8481;
+  --color-neutral-11: #5f6563;
+  --color-neutral-12: #1a211e;
+}
+
+[data-color-theme="dark"][data-color-neutral="sage"] {
+  --color-neutral-1: #101211;
+  --color-neutral-2: #171918;
+  --color-neutral-3: #202221;
+  --color-neutral-4: #272a29;
+  --color-neutral-5: #2e3130;
+  --color-neutral-6: #373b39;
+  --color-neutral-7: #444947;
+  --color-neutral-8: #5b625f;
+  --color-neutral-9: #63706b;
+  --color-neutral-10: #717d79;
+  --color-neutral-11: #adb5b2;
+  --color-neutral-12: #eceeed;
+}
+
+/* ==================================================== */
+/* Olive */
+/* ==================================================== */
+[data-color-theme="light"][data-color-neutral="olive"] {
+  --color-neutral-1: #fcfdfc;
+  --color-neutral-2: #f8faf8;
+  --color-neutral-3: #eff1ef;
+  --color-neutral-4: #e7e9e7;
+  --color-neutral-5: #dfe2df;
+  --color-neutral-6: #d7dad7;
+  --color-neutral-7: #cccfcc;
+  --color-neutral-8: #b9bcb8;
+  --color-neutral-9: #898e87;
+  --color-neutral-10: #7f847d;
+  --color-neutral-11: #60655f;
+  --color-neutral-12: #1d211c;
+}
+
+[data-color-theme="dark"][data-color-neutral="olive"] {
+  --color-neutral-1: #111210;
+  --color-neutral-2: #181917;
+  --color-neutral-3: #212220;
+  --color-neutral-4: #282a27;
+  --color-neutral-5: #2f312e;
+  --color-neutral-6: #383a36;
+  --color-neutral-7: #454843;
+  --color-neutral-8: #5c625b;
+  --color-neutral-9: #687066;
+  --color-neutral-10: #767d74;
+  --color-neutral-11: #afb5ad;
+  --color-neutral-12: #eceeec;
+}
+
+/* ==================================================== */
+/* Sand */
+/* ==================================================== */
+[data-color-theme="light"][data-color-neutral="sand"] {
+  --color-neutral-1: #fdfdfc;
+  --color-neutral-2: #f9f9f8;
+  --color-neutral-3: #f1f0ef;
+  --color-neutral-4: #e9e8e6;
+  --color-neutral-5: #e2e1de;
+  --color-neutral-6: #dad9d6;
+  --color-neutral-7: #cfceca;
+  --color-neutral-8: #bcbbb5;
+  --color-neutral-9: #8d8d86;
+  --color-neutral-10: #82827c;
+  --color-neutral-11: #63635e;
+  --color-neutral-12: #21201c;
+}
+
+[data-color-theme="dark"][data-color-neutral="sand"] {
+  --color-neutral-1: #111110;
+  --color-neutral-2: #191918;
+  --color-neutral-3: #222221;
+  --color-neutral-4: #2a2a28;
+  --color-neutral-5: #31312e;
+  --color-neutral-6: #3b3a37;
+  --color-neutral-7: #494844;
+  --color-neutral-8: #62605b;
+  --color-neutral-9: #6f6d66;
+  --color-neutral-10: #7c7b74;
+  --color-neutral-11: #b5b3ad;
+  --color-neutral-12: #eeeeec;
+}
