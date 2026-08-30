@@ -2,10 +2,10 @@ import { create } from "@stylexjs/stylex"
 
 export const tooltipPopupStyles = create({
   base: {
-    backgroundColor: "var(--color-tooltip-bg)",
+    backgroundColor: "var(--color-bg-tooltip)",
     borderRadius: 8,
     boxShadow: "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",
-    color: "var(--color-tooltip)",
+    color: "var(--color-text-tooltip)",
     fontSize: 13,
     fontWeight: 450,
     opacity: {

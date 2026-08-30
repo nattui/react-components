@@ -1,0 +1,26 @@
+:root {
+  --color-neutral: var(--color-neutral-9);
+  --color-accent: var(--color-accent-9);
+
+  --color-border: var(--color-neutral-4);
+  --color-outline: var(--color-accent-9);
+
+  --color-bg-primary: var(--color-neutral-1);
+  --color-bg-secondary: var(--color-neutral-2);
+  --color-bg-shell-outer: var(--color-neutral-2);
+  --color-bg-shell-inner: var(--color-neutral-1);
+  --color-bg-tooltip: var(--color-neutral-12);
+
+  --color-text-primary: var(--color-neutral-12);
+  --color-text-secondary: var(--color-neutral-11);
+  --color-text-tooltip: var(--color-neutral-1);
+
+  --color-success: #30a46c;
+  --color-warning: #ffe629;
+  --color-error: #e5484d;
+}
+
+[data-color-theme="dark"] {
+  --color-bg-shell-outer: var(--color-neutral-1);
+  --color-bg-shell-inner: var(--color-neutral-2);
+}
