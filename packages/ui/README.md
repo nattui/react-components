@@ -20,8 +20,6 @@ bun add @nattstack/ui
 @import "tailwindcss";
 @import "@nattstack/ui/tailwind-colors";
 @import "@nattstack/ui/tailwind-tokenless-10";
-
-/* Required: the compiled component styles */
 @import "@nattstack/ui/components";
 ```
 
