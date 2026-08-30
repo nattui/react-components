@@ -24,7 +24,7 @@
   --opacity-picker-disabled: 0.5;
 }
 
-.dark {
+[data-color-theme="dark"] {
   --color-bg-shell-outer: var(--color-neutral-1);
   --color-bg-shell-inner: var(--color-neutral-2);
   --opacity-dialog-backdrop: 0.75;

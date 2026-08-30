@@ -94,7 +94,8 @@ export const expressiveCodeOptions = {
     codePaddingBlock: "16px",
     codePaddingInline: "16px",
   },
-  themeCssSelector: (theme): string => (theme.type === "dark" ? ".dark" : ".light"),
+  themeCssSelector: (theme): string =>
+    theme.type === "dark" ? '[data-color-theme="dark"]' : '[data-color-theme="light"]',
   themes: [createNattTheme("light"), createNattTheme("dark")],
   useDarkModeMediaQuery: false,
 } satisfies SatteriExpressiveCodeOptions

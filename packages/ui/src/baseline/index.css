@@ -36,7 +36,7 @@ html {
   touch-action: manipulation;
 }
 
-html.dark {
+html[data-color-theme="dark"] {
   color-scheme: dark;
 }
 

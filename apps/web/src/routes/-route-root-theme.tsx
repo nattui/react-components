@@ -9,7 +9,7 @@ import type { JSX } from "react"
     `ScriptOnce` emits a synchronous inline <script> that runs where it appears in the
     HTML. If rendered after the page content, a hard reload (Cmd+Shift+R) can paint the
     body with the default (light) theme before the script attaches the resolved
-    `dark`/`light` class, producing a visible white flash on dark mode.
+    `data-color-theme`, producing a visible white flash on dark mode.
 
     See: https://tanstack.com/router/latest/docs/guide/document-head-management#inline-scripts-with-scriptonce
 */
@@ -24,7 +24,6 @@ export function RouteRootTheme(): JSX.Element {
           : theme;
           const root = document.documentElement;
           root.classList.remove('light', 'dark');
-          root.classList.add(resolved);
           root.setAttribute('data-color-theme', resolved);
         }
 
