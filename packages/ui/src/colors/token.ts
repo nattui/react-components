@@ -2,8 +2,8 @@ import { COLOR } from "./index"
 
 const SCHEMA = {
   GAMUT: {
-    HEX: "hex",
     P3: "p3",
+    SRGB: "srgb",
   },
   MODE: {
     DARK: "dark",
@@ -19,7 +19,7 @@ const SCHEMA = {
 export const TOKEN = {
   [SCHEMA.ROLE.ACCENT]: {
     [COLOR.ACCENT.AMBER]: {
-      [SCHEMA.GAMUT.HEX]: {
+      [SCHEMA.GAMUT.SRGB]: {
         [SCHEMA.MODE.DARK]: {
           [SCHEMA.STEP[0]]: "#16120c",
           [SCHEMA.STEP[1]]: "#1d180f",
@@ -81,7 +81,7 @@ export const TOKEN = {
       },
     },
     [COLOR.ACCENT.BLUE]: {
-      [SCHEMA.GAMUT.HEX]: {
+      [SCHEMA.GAMUT.SRGB]: {
         [SCHEMA.MODE.DARK]: {
           [SCHEMA.STEP[0]]: "#0d1520",
           [SCHEMA.STEP[1]]: "#111927",
@@ -143,7 +143,7 @@ export const TOKEN = {
       },
     },
     [COLOR.ACCENT.BRONZE]: {
-      [SCHEMA.GAMUT.HEX]: {
+      [SCHEMA.GAMUT.SRGB]: {
         [SCHEMA.MODE.DARK]: {
           [SCHEMA.STEP[0]]: "#141110",
           [SCHEMA.STEP[1]]: "#1c1917",
@@ -205,7 +205,7 @@ export const TOKEN = {
       },
     },
     [COLOR.ACCENT.BROWN]: {
-      [SCHEMA.GAMUT.HEX]: {
+      [SCHEMA.GAMUT.SRGB]: {
         [SCHEMA.MODE.DARK]: {
           [SCHEMA.STEP[0]]: "#12110f",
           [SCHEMA.STEP[1]]: "#1c1816",
@@ -267,7 +267,7 @@ export const TOKEN = {
       },
     },
     [COLOR.ACCENT.CRIMSON]: {
-      [SCHEMA.GAMUT.HEX]: {
+      [SCHEMA.GAMUT.SRGB]: {
         [SCHEMA.MODE.DARK]: {
           [SCHEMA.STEP[0]]: "#191114",
           [SCHEMA.STEP[1]]: "#201318",
@@ -329,7 +329,7 @@ export const TOKEN = {
       },
     },
     [COLOR.ACCENT.CYAN]: {
-      [SCHEMA.GAMUT.HEX]: {
+      [SCHEMA.GAMUT.SRGB]: {
         [SCHEMA.MODE.DARK]: {
           [SCHEMA.STEP[0]]: "#0b161a",
           [SCHEMA.STEP[1]]: "#101b20",
@@ -391,7 +391,7 @@ export const TOKEN = {
       },
     },
     [COLOR.ACCENT.GOLD]: {
-      [SCHEMA.GAMUT.HEX]: {
+      [SCHEMA.GAMUT.SRGB]: {
         [SCHEMA.MODE.DARK]: {
           [SCHEMA.STEP[0]]: "#121211",
           [SCHEMA.STEP[1]]: "#1b1a17",
@@ -453,7 +453,7 @@ export const TOKEN = {
       },
     },
     [COLOR.ACCENT.GRASS]: {
-      [SCHEMA.GAMUT.HEX]: {
+      [SCHEMA.GAMUT.SRGB]: {
         [SCHEMA.MODE.DARK]: {
           [SCHEMA.STEP[0]]: "#0e1511",
           [SCHEMA.STEP[1]]: "#141a15",
@@ -515,7 +515,7 @@ export const TOKEN = {
       },
     },
     [COLOR.ACCENT.GREEN]: {
-      [SCHEMA.GAMUT.HEX]: {
+      [SCHEMA.GAMUT.SRGB]: {
         [SCHEMA.MODE.DARK]: {
           [SCHEMA.STEP[0]]: "#0e1512",
           [SCHEMA.STEP[1]]: "#121b17",
@@ -577,7 +577,7 @@ export const TOKEN = {
       },
     },
     [COLOR.ACCENT.INDIGO]: {
-      [SCHEMA.GAMUT.HEX]: {
+      [SCHEMA.GAMUT.SRGB]: {
         [SCHEMA.MODE.DARK]: {
           [SCHEMA.STEP[0]]: "#11131f",
           [SCHEMA.STEP[1]]: "#141726",
@@ -639,7 +639,7 @@ export const TOKEN = {
       },
     },
     [COLOR.ACCENT.IRIS]: {
-      [SCHEMA.GAMUT.HEX]: {
+      [SCHEMA.GAMUT.SRGB]: {
         [SCHEMA.MODE.DARK]: {
           [SCHEMA.STEP[0]]: "#13131e",
           [SCHEMA.STEP[1]]: "#171625",
@@ -701,7 +701,7 @@ export const TOKEN = {
       },
     },
     [COLOR.ACCENT.JADE]: {
-      [SCHEMA.GAMUT.HEX]: {
+      [SCHEMA.GAMUT.SRGB]: {
         [SCHEMA.MODE.DARK]: {
           [SCHEMA.STEP[0]]: "#0d1512",
           [SCHEMA.STEP[1]]: "#121c18",
@@ -763,7 +763,7 @@ export const TOKEN = {
       },
     },
     [COLOR.ACCENT.LIME]: {
-      [SCHEMA.GAMUT.HEX]: {
+      [SCHEMA.GAMUT.SRGB]: {
         [SCHEMA.MODE.DARK]: {
           [SCHEMA.STEP[0]]: "#11130c",
           [SCHEMA.STEP[1]]: "#151a10",
@@ -825,7 +825,7 @@ export const TOKEN = {
       },
     },
     [COLOR.ACCENT.MINT]: {
-      [SCHEMA.GAMUT.HEX]: {
+      [SCHEMA.GAMUT.SRGB]: {
         [SCHEMA.MODE.DARK]: {
           [SCHEMA.STEP[0]]: "#0e1515",
           [SCHEMA.STEP[1]]: "#0f1b1b",
@@ -887,7 +887,7 @@ export const TOKEN = {
       },
     },
     [COLOR.ACCENT.ORANGE]: {
-      [SCHEMA.GAMUT.HEX]: {
+      [SCHEMA.GAMUT.SRGB]: {
         [SCHEMA.MODE.DARK]: {
           [SCHEMA.STEP[0]]: "#17120e",
           [SCHEMA.STEP[1]]: "#1e160f",
@@ -949,7 +949,7 @@ export const TOKEN = {
       },
     },
     [COLOR.ACCENT.PINK]: {
-      [SCHEMA.GAMUT.HEX]: {
+      [SCHEMA.GAMUT.SRGB]: {
         [SCHEMA.MODE.DARK]: {
           [SCHEMA.STEP[0]]: "#191117",
           [SCHEMA.STEP[1]]: "#21121d",
@@ -1011,7 +1011,7 @@ export const TOKEN = {
       },
     },
     [COLOR.ACCENT.PLUM]: {
-      [SCHEMA.GAMUT.HEX]: {
+      [SCHEMA.GAMUT.SRGB]: {
         [SCHEMA.MODE.DARK]: {
           [SCHEMA.STEP[0]]: "#181118",
           [SCHEMA.STEP[1]]: "#201320",
@@ -1073,7 +1073,7 @@ export const TOKEN = {
       },
     },
     [COLOR.ACCENT.PURPLE]: {
-      [SCHEMA.GAMUT.HEX]: {
+      [SCHEMA.GAMUT.SRGB]: {
         [SCHEMA.MODE.DARK]: {
           [SCHEMA.STEP[0]]: "#18111b",
           [SCHEMA.STEP[1]]: "#1e1523",
@@ -1135,7 +1135,7 @@ export const TOKEN = {
       },
     },
     [COLOR.ACCENT.RED]: {
-      [SCHEMA.GAMUT.HEX]: {
+      [SCHEMA.GAMUT.SRGB]: {
         [SCHEMA.MODE.DARK]: {
           [SCHEMA.STEP[0]]: "#191111",
           [SCHEMA.STEP[1]]: "#201314",
@@ -1197,7 +1197,7 @@ export const TOKEN = {
       },
     },
     [COLOR.ACCENT.RUBY]: {
-      [SCHEMA.GAMUT.HEX]: {
+      [SCHEMA.GAMUT.SRGB]: {
         [SCHEMA.MODE.DARK]: {
           [SCHEMA.STEP[0]]: "#191113",
           [SCHEMA.STEP[1]]: "#1e1517",
@@ -1259,7 +1259,7 @@ export const TOKEN = {
       },
     },
     [COLOR.ACCENT.SKY]: {
-      [SCHEMA.GAMUT.HEX]: {
+      [SCHEMA.GAMUT.SRGB]: {
         [SCHEMA.MODE.DARK]: {
           [SCHEMA.STEP[0]]: "#0d141f",
           [SCHEMA.STEP[1]]: "#111a27",
@@ -1321,7 +1321,7 @@ export const TOKEN = {
       },
     },
     [COLOR.ACCENT.TEAL]: {
-      [SCHEMA.GAMUT.HEX]: {
+      [SCHEMA.GAMUT.SRGB]: {
         [SCHEMA.MODE.DARK]: {
           [SCHEMA.STEP[0]]: "#0d1514",
           [SCHEMA.STEP[1]]: "#111c1b",
@@ -1383,7 +1383,7 @@ export const TOKEN = {
       },
     },
     [COLOR.ACCENT.TOMATO]: {
-      [SCHEMA.GAMUT.HEX]: {
+      [SCHEMA.GAMUT.SRGB]: {
         [SCHEMA.MODE.DARK]: {
           [SCHEMA.STEP[0]]: "#181111",
           [SCHEMA.STEP[1]]: "#1f1513",
@@ -1445,7 +1445,7 @@ export const TOKEN = {
       },
     },
     [COLOR.ACCENT.VIOLET]: {
-      [SCHEMA.GAMUT.HEX]: {
+      [SCHEMA.GAMUT.SRGB]: {
         [SCHEMA.MODE.DARK]: {
           [SCHEMA.STEP[0]]: "#14121f",
           [SCHEMA.STEP[1]]: "#1b1525",
@@ -1507,7 +1507,7 @@ export const TOKEN = {
       },
     },
     [COLOR.ACCENT.YELLOW]: {
-      [SCHEMA.GAMUT.HEX]: {
+      [SCHEMA.GAMUT.SRGB]: {
         [SCHEMA.MODE.DARK]: {
           [SCHEMA.STEP[0]]: "#14120b",
           [SCHEMA.STEP[1]]: "#1b180f",
@@ -1571,7 +1571,7 @@ export const TOKEN = {
   },
   [SCHEMA.ROLE.NEUTRAL]: {
     [COLOR.NEUTRAL.GRAY]: {
-      [SCHEMA.GAMUT.HEX]: {
+      [SCHEMA.GAMUT.SRGB]: {
         [SCHEMA.MODE.DARK]: {
           [SCHEMA.STEP[0]]: "#111111",
           [SCHEMA.STEP[1]]: "#191919",
@@ -1633,7 +1633,7 @@ export const TOKEN = {
       },
     },
     [COLOR.NEUTRAL.MAUVE]: {
-      [SCHEMA.GAMUT.HEX]: {
+      [SCHEMA.GAMUT.SRGB]: {
         [SCHEMA.MODE.DARK]: {
           [SCHEMA.STEP[0]]: "#121113",
           [SCHEMA.STEP[1]]: "#1a191b",
@@ -1695,7 +1695,7 @@ export const TOKEN = {
       },
     },
     [COLOR.NEUTRAL.OLIVE]: {
-      [SCHEMA.GAMUT.HEX]: {
+      [SCHEMA.GAMUT.SRGB]: {
         [SCHEMA.MODE.DARK]: {
           [SCHEMA.STEP[0]]: "#111210",
           [SCHEMA.STEP[1]]: "#181917",
@@ -1757,7 +1757,7 @@ export const TOKEN = {
       },
     },
     [COLOR.NEUTRAL.SAGE]: {
-      [SCHEMA.GAMUT.HEX]: {
+      [SCHEMA.GAMUT.SRGB]: {
         [SCHEMA.MODE.DARK]: {
           [SCHEMA.STEP[0]]: "#101211",
           [SCHEMA.STEP[1]]: "#171918",
@@ -1819,7 +1819,7 @@ export const TOKEN = {
       },
     },
     [COLOR.NEUTRAL.SAND]: {
-      [SCHEMA.GAMUT.HEX]: {
+      [SCHEMA.GAMUT.SRGB]: {
         [SCHEMA.MODE.DARK]: {
           [SCHEMA.STEP[0]]: "#111110",
           [SCHEMA.STEP[1]]: "#191918",
@@ -1881,7 +1881,7 @@ export const TOKEN = {
       },
     },
     [COLOR.NEUTRAL.SLATE]: {
-      [SCHEMA.GAMUT.HEX]: {
+      [SCHEMA.GAMUT.SRGB]: {
         [SCHEMA.MODE.DARK]: {
           [SCHEMA.STEP[0]]: "#111113",
           [SCHEMA.STEP[1]]: "#18191b",
