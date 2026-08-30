@@ -1,4 +1,4 @@
-import { type ColorAccent, type ColorNeutral, getColorAccentToNeutral } from "@nattstack/ui"
+import { COLOR, type ColorAccent, type ColorNeutral, getColorAccentToNeutral } from "@nattstack/ui"
 import { useSyncExternalStore } from "react"
 
 /* ====================================================== /
@@ -21,31 +21,30 @@ export const THEME_MODES = ["auto", "light", "dark"] as const
 
 /* Sorted by hue following the Radix Colors palette order, not alphabetically. */
 export const ACCENT_PALETTES = [
-  "orange",
-  "tomato",
-  "red",
-  "ruby",
-  "crimson",
-  "pink",
-  "plum",
-  "purple",
-  "violet",
-  "iris",
-  "indigo",
-  "blue",
-  "cyan",
-  "teal",
-  "jade",
-  "green",
-  "grass",
-  "bronze",
-  "gold",
-  "brown",
-  // "amber",
-  // "yellow",
-  // "lime",
-  // "mint",
-  // "sky",
+  COLOR.ACCENT.TOMATO,
+  COLOR.ACCENT.RED,
+  COLOR.ACCENT.RUBY,
+  COLOR.ACCENT.CRIMSON,
+  COLOR.ACCENT.PINK,
+  COLOR.ACCENT.PLUM,
+  COLOR.ACCENT.PURPLE,
+  COLOR.ACCENT.VIOLET,
+  COLOR.ACCENT.IRIS,
+  COLOR.ACCENT.INDIGO,
+  COLOR.ACCENT.BLUE,
+  COLOR.ACCENT.CYAN,
+  COLOR.ACCENT.TEAL,
+  COLOR.ACCENT.JADE,
+  COLOR.ACCENT.GREEN,
+  COLOR.ACCENT.GRASS,
+  COLOR.ACCENT.YELLOW,
+  COLOR.ACCENT.AMBER,
+  COLOR.ACCENT.LIME,
+  COLOR.ACCENT.MINT,
+  COLOR.ACCENT.SKY,
+  COLOR.ACCENT.GOLD,
+  COLOR.ACCENT.BRONZE,
+  COLOR.ACCENT.BROWN,
 ] as const satisfies readonly ColorAccent[]
 
 export type AccentPalette = (typeof ACCENT_PALETTES)[number]
@@ -60,7 +59,7 @@ export type { ColorNeutral as NeutralPalette } from "@nattstack/ui"
 export type ThemeMode = (typeof THEME_MODES)[number]
 
 const DEFAULT_THEME_MODE: ThemeMode = "auto"
-const DEFAULT_ACCENT_PALETTE: AccentPalette = "blue"
+const DEFAULT_ACCENT_PALETTE: AccentPalette = COLOR.ACCENT.BLUE
 
 /*
     Natural pairing from Radix Colors (shipped by @nattstack/ui), narrowed to the
