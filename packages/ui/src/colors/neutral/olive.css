@@ -1,61 +1,67 @@
-[data-color-theme="light"][data-color-neutral="olive"] {
-  --color-neutral-1: #fcfdfc;
-  --color-neutral-2: #f8faf8;
-  --color-neutral-3: #eff1ef;
-  --color-neutral-4: #e7e9e7;
-  --color-neutral-5: #dfe2df;
-  --color-neutral-6: #d7dad7;
-  --color-neutral-7: #cccfcc;
-  --color-neutral-8: #b9bcb8;
-  --color-neutral-9: #898e87;
-  --color-neutral-10: #7f847d;
-  --color-neutral-11: #60655f;
-  --color-neutral-12: #1d211c;
-}
-
-[data-color-theme="dark"][data-color-neutral="olive"] {
-  --color-neutral-1: #111210;
-  --color-neutral-2: #181917;
-  --color-neutral-3: #212220;
-  --color-neutral-4: #282a27;
-  --color-neutral-5: #2f312e;
-  --color-neutral-6: #383a36;
-  --color-neutral-7: #454843;
-  --color-neutral-8: #5c625b;
-  --color-neutral-9: #687066;
-  --color-neutral-10: #767d74;
-  --color-neutral-11: #afb5ad;
-  --color-neutral-12: #eceeec;
+[data-color-neutral="olive"] {
+  --color-neutral-1: light-dark(#fcfdfc, #111210);
+  --color-neutral-2: light-dark(#f8faf8, #181917);
+  --color-neutral-3: light-dark(#eff1ef, #212220);
+  --color-neutral-4: light-dark(#e7e9e7, #282a27);
+  --color-neutral-5: light-dark(#dfe2df, #2f312e);
+  --color-neutral-6: light-dark(#d7dad7, #383a36);
+  --color-neutral-7: light-dark(#cccfcc, #454843);
+  --color-neutral-8: light-dark(#b9bcb8, #5c625b);
+  --color-neutral-9: light-dark(#898e87, #687066);
+  --color-neutral-10: light-dark(#7f847d, #767d74);
+  --color-neutral-11: light-dark(#60655f, #afb5ad);
+  --color-neutral-12: light-dark(#1d211c, #eceeec);
 }
 
 @media (color-gamut: p3) {
-  [data-color-theme="light"][data-color-neutral="olive"] {
-    --color-neutral-1: color(display-p3 0.989 0.992 0.989);
-    --color-neutral-2: color(display-p3 0.974 0.98 0.973);
-    --color-neutral-3: color(display-p3 0.939 0.945 0.937);
-    --color-neutral-4: color(display-p3 0.907 0.914 0.905);
-    --color-neutral-5: color(display-p3 0.878 0.885 0.875);
-    --color-neutral-6: color(display-p3 0.846 0.855 0.843);
-    --color-neutral-7: color(display-p3 0.803 0.812 0.8);
-    --color-neutral-8: color(display-p3 0.727 0.738 0.723);
-    --color-neutral-9: color(display-p3 0.541 0.556 0.532);
-    --color-neutral-10: color(display-p3 0.5 0.515 0.491);
-    --color-neutral-11: color(display-p3 0.38 0.395 0.374);
-    --color-neutral-12: color(display-p3 0.117 0.129 0.111);
-  }
-
-  [data-color-theme="dark"][data-color-neutral="olive"] {
-    --color-neutral-1: color(display-p3 0.067 0.07 0.063);
-    --color-neutral-2: color(display-p3 0.095 0.098 0.091);
-    --color-neutral-3: color(display-p3 0.131 0.135 0.126);
-    --color-neutral-4: color(display-p3 0.158 0.163 0.153);
-    --color-neutral-5: color(display-p3 0.186 0.192 0.18);
-    --color-neutral-6: color(display-p3 0.221 0.229 0.215);
-    --color-neutral-7: color(display-p3 0.273 0.284 0.266);
-    --color-neutral-8: color(display-p3 0.365 0.382 0.359);
-    --color-neutral-9: color(display-p3 0.414 0.438 0.404);
-    --color-neutral-10: color(display-p3 0.467 0.49 0.458);
-    --color-neutral-11: color(display-p3 0.69 0.709 0.682);
-    --color-neutral-12: color(display-p3 0.927 0.933 0.926);
+  [data-color-neutral="olive"] {
+    --color-neutral-1: light-dark(
+      color(display-p3 0.989 0.992 0.989),
+      color(display-p3 0.067 0.07 0.063)
+    );
+    --color-neutral-2: light-dark(
+      color(display-p3 0.974 0.98 0.973),
+      color(display-p3 0.095 0.098 0.091)
+    );
+    --color-neutral-3: light-dark(
+      color(display-p3 0.939 0.945 0.937),
+      color(display-p3 0.131 0.135 0.126)
+    );
+    --color-neutral-4: light-dark(
+      color(display-p3 0.907 0.914 0.905),
+      color(display-p3 0.158 0.163 0.153)
+    );
+    --color-neutral-5: light-dark(
+      color(display-p3 0.878 0.885 0.875),
+      color(display-p3 0.186 0.192 0.18)
+    );
+    --color-neutral-6: light-dark(
+      color(display-p3 0.846 0.855 0.843),
+      color(display-p3 0.221 0.229 0.215)
+    );
+    --color-neutral-7: light-dark(
+      color(display-p3 0.803 0.812 0.8),
+      color(display-p3 0.273 0.284 0.266)
+    );
+    --color-neutral-8: light-dark(
+      color(display-p3 0.727 0.738 0.723),
+      color(display-p3 0.365 0.382 0.359)
+    );
+    --color-neutral-9: light-dark(
+      color(display-p3 0.541 0.556 0.532),
+      color(display-p3 0.414 0.438 0.404)
+    );
+    --color-neutral-10: light-dark(
+      color(display-p3 0.5 0.515 0.491),
+      color(display-p3 0.467 0.49 0.458)
+    );
+    --color-neutral-11: light-dark(
+      color(display-p3 0.38 0.395 0.374),
+      color(display-p3 0.69 0.709 0.682)
+    );
+    --color-neutral-12: light-dark(
+      color(display-p3 0.117 0.129 0.111),
+      color(display-p3 0.927 0.933 0.926)
+    );
   }
 }

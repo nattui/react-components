@@ -30,7 +30,7 @@ html {
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   color-scheme: light;
-  scrollbar-color: var(--color-neutral-6) transparent;
+  scrollbar-color: var(--color-border) transparent;
   scrollbar-width: thin;
   text-size-adjust: none;
   touch-action: manipulation;
