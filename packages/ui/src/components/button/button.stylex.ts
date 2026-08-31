@@ -23,7 +23,7 @@ export const buttonStyles = create({
     transitionDuration: "150ms",
     transitionProperty: "background-color, box-shadow, translate",
     translate: {
-      ":active:not(:disabled)": "0 10px",
+      ":active:not(:disabled)": "0 1px",
       default: "0 0",
     },
     userSelect: "none",
