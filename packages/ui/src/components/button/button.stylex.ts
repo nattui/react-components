@@ -1,4 +1,5 @@
 import { create } from "@stylexjs/stylex"
+import { COLOR_ACCENT, COLOR_NEUTRAL, CONTROL } from "../token.stylex"
 
 export const buttonStyles = create({
   base: {
@@ -7,8 +8,8 @@ export const buttonStyles = create({
     cursor: "pointer",
     display: "inline-flex",
     flexShrink: 0,
-    fontSize: 14,
-    fontWeight: 450,
+    fontSize: CONTROL.BUTTON_FONT_SIZE,
+    fontWeight: CONTROL.BUTTON_FONT_WEIGHT,
     justifyContent: "center",
     outlineColor: {
       ":focus-visible": "var(--color-outline)",
@@ -22,7 +23,7 @@ export const buttonStyles = create({
     transitionDuration: "150ms",
     transitionProperty: "background-color, box-shadow, translate",
     translate: {
-      ":active:not(:disabled)": "0 1px",
+      ":active:not(:disabled)": "0 10px",
       default: "0 0",
     },
     userSelect: "none",
@@ -88,36 +89,36 @@ export const buttonStyles = create({
   },
   variant_accent: {
     backgroundColor: {
-      ":hover:not(:disabled)": "var(--color-accent-10)",
-      default: "var(--color-accent-9)",
+      ":hover:not(:disabled)": COLOR_ACCENT["10"],
+      default: COLOR_ACCENT["09"],
     },
     color: "var(--color-neutral-on-accent)",
   },
   variant_ghost: {
     backgroundColor: {
-      ":hover:not(:disabled)": "var(--color-neutral-4)",
+      ":hover:not(:disabled)": COLOR_NEUTRAL["04"],
       default: "transparent",
     },
-    color: "var(--color-neutral-12)",
+    color: COLOR_NEUTRAL["12"],
   },
   variant_primary: {
     backgroundColor: {
       ":hover:not(:disabled)":
         "color-mix(in oklab, var(--color-neutral-12) 100%, var(--color-neutral-1) 25%)",
-      default: "var(--color-neutral-12)",
+      default: COLOR_NEUTRAL["12"],
     },
-    color: "var(--color-neutral-1)",
+    color: COLOR_NEUTRAL["01"],
   },
   variant_secondary: {
     backgroundColor: {
-      ":hover:not(:disabled)": "var(--color-neutral-4)",
+      ":hover:not(:disabled)": COLOR_NEUTRAL["04"],
       default: "var(--color-bg-shell-inner)",
     },
     boxShadow: {
       ":hover:not(:disabled)": "none",
       default: "inset 0 0 0 1px var(--color-border)",
     },
-    color: "var(--color-neutral-12)",
+    color: COLOR_NEUTRAL["12"],
   },
   width_base: {
     width: "fit-content",
