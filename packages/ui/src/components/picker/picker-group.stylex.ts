@@ -10,7 +10,8 @@ export const pickerGroupStyles = create({
     color: "var(--color-text-secondary)",
     fontSize: 12,
     fontWeight: 450,
-    paddingBlock: "6px 4px",
+    paddingBlockEnd: 4,
+    paddingBlockStart: 6,
     paddingInline: 12,
   },
 })

@@ -11,6 +11,7 @@ export const pickerListStyles = create({
     overscrollBehavior: "contain",
     padding: 4,
     rowGap: 2,
+    // oxlint-disable-next-line stylex/valid-styles -- `scrollPadding` is valid CSS the rule's whitelist misses
     scrollPadding: 4,
   },
 })

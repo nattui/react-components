@@ -3,6 +3,7 @@ import { create } from "@stylexjs/stylex"
 export const dialogResponsiveViewportStyles = create({
   base: {
     alignItems: {
+      // oxlint-disable-next-line stylex/valid-styles -- `safe flex-end` is valid CSS the rule's whitelist misses
       "@media (max-width: 640px)": "safe flex-end",
       default: "safe center",
     },

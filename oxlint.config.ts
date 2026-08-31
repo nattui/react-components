@@ -26,6 +26,10 @@ export default defineConfig({
       name: "perfectionist",
       specifier: "eslint-plugin-perfectionist",
     },
+    {
+      name: "stylex",
+      specifier: "@stylexjs/eslint-plugin",
+    },
   ],
   plugins: [
     "eslint",
@@ -98,6 +102,15 @@ export default defineConfig({
     "react/no-multi-comp": "allow",
     "react/react-in-jsx-scope": "allow",
     "react/set-state-in-effect": "allow", // Allows `setState` in useEffect
+    "stylex/enforce-extension": "allow", // Repo convention keeps `create()` styles in `.stylex.ts` files
+    "stylex/no-conflicting-props": "error",
+    "stylex/no-legacy-contextual-styles": "error",
+    "stylex/no-lookahead-selectors": "allow", // `:has()` is within this repo's browser baseline
+    "stylex/no-nonstandard-styles": "error",
+    "stylex/no-unused": "error",
+    "stylex/sort-keys": "allow", // Keys are kept alphabetical instead, matching the rest of the repo
+    "stylex/valid-shorthands": "error",
+    "stylex/valid-styles": "error",
     "typescript/no-empty-interface": ["error", { allowSingleExtends: true }], // Allow types to be extensible
     "typescript/no-empty-object-type": ["error", { allowWithName: "Props$" }], // Allow types to be extensible
   },
