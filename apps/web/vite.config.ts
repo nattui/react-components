@@ -14,9 +14,7 @@ export default defineConfig({
   plugins: [
     // Order matters
     tanstackStart(),
-    nitro({
-      preset: "vercel",
-    }),
+    nitro(),
     mdxComponentShowcases(),
     satteri({
       features: {
