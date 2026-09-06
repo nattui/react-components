@@ -18,9 +18,9 @@
     "update": "bun update --interactive --recursive"
   },
   "dependencies": {
-    "@base-ui/react": "1.7.0",
-    "@lobehub/icons": "5.16.0",
-    "@nattstack/icons": "npm:nucleo-ui-outline-18@1.5.0",
+    "@base-ui/react": "1.8.0",
+    "@lobehub/icons": "5.18.0",
+    "@nattstack/icons": "npm:nucleo-ui-outline-18@1.5.1",
     "@nattstack/ui": "workspace:*",
     "@openpanel/web": "1.4.1",
     "@tailwindcss/vite": "4.3.3",
@@ -28,8 +28,8 @@
     "@tanstack/react-router": "1.170.32",
     "@tanstack/react-start": "1.168.49",
     "date-fns": "4.4.0",
-    "motion": "13.1.1",
-    "nitro": "3.0.260610-beta",
+    "motion": "13.2.0",
+    "nitro": "3.0.260903-beta",
     "react": "19.2.8",
     "react-compare-slider": "4.0.0",
     "react-dom": "19.2.8",
@@ -39,7 +39,7 @@
   "devDependencies": {
     "@types/mdx": "2.0.14",
     "@types/react": "19.2.18",
-    "@types/react-dom": "19.2.5",
+    "@types/react-dom": "19.2.7",
     "@vitejs/plugin-react": "6.1.1",
     "lefthook": "2.1.12",
     "portless": "0.15.6",
